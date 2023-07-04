@@ -1,0 +1,155 @@
+\doxysection{Scene Class Reference}
+\hypertarget{a01593}{}\label{a01593}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+
+
+Inheritance diagram for Scene\+:
+% FIG 0
+
+
+Collaboration diagram for Scene\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window)=0
+\item 
+virtual void \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter)=0
+\item 
+virtual void \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{get\+Inputs}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{halt\+Input}} ()=0
+\item 
+\mbox{\hyperlink{a01593_a2d4adbebcfba5f7540f4cd32b2c8b883}{Scene}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}})
+\item 
+virtual void \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event)=0
+\item 
+virtual void \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{update}} (float delta\+Time)=0
+\item 
+\mbox{\hyperlink{a01593_a631eef7493cafce5d74739a2cad12a58}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01593_a2d4adbebcfba5f7540f4cd32b2c8b883}\label{a01593_a2d4adbebcfba5f7540f4cd32b2c8b883} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01593_a631eef7493cafce5d74739a2cad12a58}\label{a01593_a631eef7493cafce5d74739a2cad12a58} 
+\index{Scene@{Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01593_ad561c930945ff79dbf442b4c85995e0e}\label{a01593_ad561c930945ff79dbf442b4c85995e0e} 
+\index{Scene@{Scene}!draw@{draw}}
+\index{draw@{draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_a9965c9e4d3b3c2ae6dba279906e52e6b}{Login}}, \mbox{\hyperlink{a01573_a8da2ec7b5fa11a8453d63db723dea4b5}{Main\+Menu}}, \mbox{\hyperlink{a01577_a51aa616935222f799c14ed4a5084a067}{Map}}, \mbox{\hyperlink{a01581_a78fc3ba1e0502419bf526bf7896671f1}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205}{Register}}, and \mbox{\hyperlink{a01589_a121fbfaa905ebf606a78d88c9044eff0}{rent\+Scene}}.
+
+\Hypertarget{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}\label{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71} 
+\index{Scene@{Scene}!draw@{draw}}
+\index{draw@{draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_a93184348774e4aff77e4479a47757f2c}{Login}}, \mbox{\hyperlink{a01573_a4711182d50cde5e1423694263101ca9e}{Main\+Menu}}, \mbox{\hyperlink{a01577_a540b1c76368adca56622102ea683d4c5}{Map}}, \mbox{\hyperlink{a01581_acf1e254425ea4829343ae618f096f38a}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_ada5fb2208c0eda9a3b192679642c9618}{Register}}, and \mbox{\hyperlink{a01589_aa4a40b38f087d24504dc6cc0c3a67b47}{rent\+Scene}}.
+
+\Hypertarget{a01593_afc68d68a1b03fabbf213d127e17bc36c}\label{a01593_afc68d68a1b03fabbf213d127e17bc36c} 
+\index{Scene@{Scene}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily virtual void Scene\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_ab1640c12ea2b606a883d3bb6392e782b}{Login}}, \mbox{\hyperlink{a01573_aff480dcfccafc73d9d792501d3f885aa}{Main\+Menu}}, \mbox{\hyperlink{a01577_a6db239da3075fb93d51e18a83bf7e0d6}{Map}}, \mbox{\hyperlink{a01581_a80d577433c20201bfbc02b1389166615}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_aaecaf64854d00415090abf6be3961bdd}{Register}}, and \mbox{\hyperlink{a01589_a3bb1c3858693e00dafbb8076bb59c8d8}{rent\+Scene}}.
+
+\Hypertarget{a01593_a0b7698c3a7bc93a13afd02befa01ef78}\label{a01593_a0b7698c3a7bc93a13afd02befa01ef78} 
+\index{Scene@{Scene}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily virtual bool Scene\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_abaaf6c8caef6ffa11a86bec05fded910}{Login}}, \mbox{\hyperlink{a01573_a895f496a061a3089e0460f19e3238ad6}{Main\+Menu}}, \mbox{\hyperlink{a01577_aa85322516788968183877971ddcbac94}{Map}}, \mbox{\hyperlink{a01581_a7e5bb01d8fc7940cd228e97877ce7dbe}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_a64736ddd3cef04a8c2a0e1798a79a8e7}{Register}}, and \mbox{\hyperlink{a01589_ae6bfc393d89b38456cade2844ef9a447}{rent\+Scene}}.
+
+\Hypertarget{a01593_a7e07245e8761ac9023a23098de489493}\label{a01593_a7e07245e8761ac9023a23098de489493} 
+\index{Scene@{Scene}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily virtual void Scene\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_a9fea1f616c23343a24be9ed6dad62014}{Login}}, \mbox{\hyperlink{a01573_a6454ffc1d7f1112f365788f52912663a}{Main\+Menu}}, \mbox{\hyperlink{a01577_a60f6cddb8674ebbe96d457c68e818ccb}{Map}}, \mbox{\hyperlink{a01581_a4e391a60b233b6f5cd808cbde32a60ef}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_a2860e0682b21a22a31107d3e867963e3}{Register}}, and \mbox{\hyperlink{a01589_afaa4f1ab1decfa012cbd16db4ef55a33}{rent\+Scene}}.
+
+\Hypertarget{a01593_ae4154243f2354068c7644c8087551191}\label{a01593_ae4154243f2354068c7644c8087551191} 
+\index{Scene@{Scene}!update@{update}}
+\index{update@{update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{a01565_a8b04bac3063b8e19572c17d86ceb840f}{Login}}, \mbox{\hyperlink{a01573_a01c57232226b8c32acacfc1bbf9be1a7}{Main\+Menu}}, \mbox{\hyperlink{a01577_aa47b2935f4bc9af5b045f05bfebe0f2f}{Map}}, \mbox{\hyperlink{a01581_a428d261f53d263272842d1d5817b763b}{recepcionist\+Panel}}, \mbox{\hyperlink{a01585_a4a762e080ef1113c7b1f2c2dfbc2980f}{Register}}, and \mbox{\hyperlink{a01589_a51c559227bd077dda792d3d487c76656}{rent\+Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{Scene@{Scene}!answers@{answers}}
+\index{answers@{answers}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{Scene@{Scene}!inputs@{inputs}}
+\index{inputs@{inputs}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{Scene@{Scene}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{Scene@{Scene}!type@{type}}
+\index{type@{type}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00302}{Scene.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00647}{Scene.\+cpp}}\end{DoxyCompactItemize}

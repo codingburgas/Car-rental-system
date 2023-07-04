@@ -1,0 +1,496 @@
+\doxysection{sf\+::Color Class Reference}
+\hypertarget{a01685}{}\label{a01685}\index{sf::Color@{sf::Color}}
+
+
+Utility class for manipulating RGBA colors.  
+
+
+
+
+{\ttfamily \#include $<$Color.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Color\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01685_ac2eb4393fb11ad3fa3ccf34e92fe08e4}{Color}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685_a5449f4b2b9a78230d40ce2c223c9ab2e}{Color}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} color)
+\begin{DoxyCompactList}\small\item\em Construct the color from 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685_ac791dc61be4c60baac50fe700f1c9850}{Color}} (\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} red, \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} green, \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} blue, \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=255)
+\begin{DoxyCompactList}\small\item\em Construct the color from its 4 RGBA components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01685_abb46e6942c4fe0d221574a46e642caa9}{to\+Integer}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the color as a 32-\/bit unsigned integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{a01685_a56dbdb47d5f040d9b78ac6a0b8b3a831}{a}}
+\begin{DoxyCompactList}\small\item\em Alpha (opacity) component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{a01685_a6707aedd0609c8920e12df5d7abc53cb}{b}}
+\begin{DoxyCompactList}\small\item\em Blue component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{a01685_a591daf9c3c55dea830c76c962d6ba1a5}{g}}
+\begin{DoxyCompactList}\small\item\em Green component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \mbox{\hyperlink{a01685_a6a5256ca24a4f9f0e0808f6fc23e01e1}{r}}
+\begin{DoxyCompactList}\small\item\em Red component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a77c688197b981338f0b19dc58bd2facd}{Black}}
+\begin{DoxyCompactList}\small\item\em Black predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_ab03770d4817426b2614cfc33cf0e245c}{Blue}}
+\begin{DoxyCompactList}\small\item\em Blue predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a64ae9beb0b9a5865dd811cda4bb18340}{Cyan}}
+\begin{DoxyCompactList}\small\item\em Cyan predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a95629b30de8c6856aa7d3afed12eb865}{Green}}
+\begin{DoxyCompactList}\small\item\em Green predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a6fe70d90b65b2163dd066a84ac00426c}{Magenta}}
+\begin{DoxyCompactList}\small\item\em Magenta predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{Red}}
+\begin{DoxyCompactList}\small\item\em Red predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a569b45471737f770656f50ae7bbac292}{Transparent}}
+\begin{DoxyCompactList}\small\item\em Transparent (black) predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a4fd874712178d9e206f53226002aa4ca}{White}}
+\begin{DoxyCompactList}\small\item\em White predefined color. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_af8896b5f56650935f5b9d72d528802c7}{Yellow}}
+\begin{DoxyCompactList}\small\item\em Yellow predefined color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{a01685_a5d6501b7dd05f481b79f7163899f1d92}{operator!=}} (const \mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the != operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_aa9de267d831b4ec8ba65b627e51d50c3}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary \texorpdfstring{$\ast$}{*} operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01685_a8953be58a47ced92fb25966d6ee90511}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary \texorpdfstring{$\ast$}{*}= operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a90e79ecc276114cda519a88119ac645b}{operator+}} (const \mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary + operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01685_a19917f2453a4acfd69de2539bfab8031}{operator+=}} (\mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary += operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01685_a6d9047ddbcec2bbab8519d93300bb2aa}{operator-\/}} (const \mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary -\/ operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01685_a86ceee6b959136932020db4036918ecd}{operator-\/=}} (\mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the binary -\/= operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{a01685_a7498d4670c7655e8d4d91ef49cc6064e}{operator==}} (const \mbox{\hyperlink{a01685}{Color}} \&left, const \mbox{\hyperlink{a01685}{Color}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of the == operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for manipulating RGBA colors. 
+
+\doxylink{a01685}{sf\+::\+Color} is a simple color class composed of 4 components\+:
+
+\begin{DoxyItemize}
+\item Red \item Green \item Blue \item Alpha (opacity)\end{DoxyItemize}
+Each component is a public member, an unsigned integer in the range \mbox{[}0, 255\mbox{]}. Thus, colors can be constructed and manipulated very easily\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ color(255,\ 0,\ 0);\ \textcolor{comment}{//\ red}}
+\DoxyCodeLine{color.r\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ it\ black}}
+\DoxyCodeLine{color.b\ =\ 128;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ it\ dark\ blue}}
+
+\end{DoxyCode}
+
+
+The fourth component of colors, named \"{}alpha\"{}, represents the opacity of the color. A color with an alpha value of 255 will be fully opaque, while an alpha value of 0 will make a color fully transparent, whatever the value of the other components is.
+
+The most common colors are already defined as static variables\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ black\ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_a77c688197b981338f0b19dc58bd2facd}{sf::Color::Black}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ white\ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_a4fd874712178d9e206f53226002aa4ca}{sf::Color::White}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ red\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ green\ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_a95629b30de8c6856aa7d3afed12eb865}{sf::Color::Green}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ blue\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_ab03770d4817426b2614cfc33cf0e245c}{sf::Color::Blue}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ yellow\ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_af8896b5f56650935f5b9d72d528802c7}{sf::Color::Yellow}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ magenta\ \ \ \ \ =\ \mbox{\hyperlink{a01685_a6fe70d90b65b2163dd066a84ac00426c}{sf::Color::Magenta}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ cyan\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{a01685_a64ae9beb0b9a5865dd811cda4bb18340}{sf::Color::Cyan}};}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ transparent\ =\ \mbox{\hyperlink{a01685_a569b45471737f770656f50ae7bbac292}{sf::Color::Transparent}};}
+
+\end{DoxyCode}
+
+
+Colors can also be added and modulated (multiplied) using the overloaded operators + and \texorpdfstring{$\ast$}{*}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01685_ac2eb4393fb11ad3fa3ccf34e92fe08e4}\label{a01685_ac2eb4393fb11ad3fa3ccf34e92fe08e4} 
+\index{sf::Color@{sf::Color}!Color@{Color}}
+\index{Color@{Color}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily sf\+::\+Color\+::\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructs an opaque black color. It is equivalent to \doxylink{a01685}{sf\+::\+Color(0, 0, 0, 255)}. \Hypertarget{a01685_ac791dc61be4c60baac50fe700f1c9850}\label{a01685_ac791dc61be4c60baac50fe700f1c9850} 
+\index{sf::Color@{sf::Color}!Color@{Color}}
+\index{Color@{Color}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily sf\+::\+Color\+::\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{red,  }\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{green,  }\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{blue,  }\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{alpha = {\ttfamily 255} }\end{DoxyParamCaption})}
+
+
+
+Construct the color from its 4 RGBA components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & Red component (in the range \mbox{[}0, 255\mbox{]}) \\
+\hline
+{\em green} & Green component (in the range \mbox{[}0, 255\mbox{]}) \\
+\hline
+{\em blue} & Blue component (in the range \mbox{[}0, 255\mbox{]}) \\
+\hline
+{\em alpha} & Alpha (opacity) component (in the range \mbox{[}0, 255\mbox{]}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01685_a5449f4b2b9a78230d40ce2c223c9ab2e}\label{a01685_a5449f4b2b9a78230d40ce2c223c9ab2e} 
+\index{sf::Color@{sf::Color}!Color@{Color}}
+\index{Color@{Color}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily sf\+::\+Color\+::\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the color from 32-\/bit unsigned integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Number containing the RGBA components (in that order) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01685_abb46e6942c4fe0d221574a46e642caa9}\label{a01685_abb46e6942c4fe0d221574a46e642caa9} 
+\index{sf::Color@{sf::Color}!toInteger@{toInteger}}
+\index{toInteger@{toInteger}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{toInteger()}{toInteger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Color\+::to\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the color as a 32-\/bit unsigned integer. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01685}{Color} represented as a 32-\/bit unsigned integer 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01685_a5d6501b7dd05f481b79f7163899f1d92}\label{a01685_a5d6501b7dd05f481b79f7163899f1d92} 
+\index{sf::Color@{sf::Color}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the != operator. 
+
+This operator compares two colors and check if they are different.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if colors are different, false if they are equal 
+\end{DoxyReturn}
+\Hypertarget{a01685_aa9de267d831b4ec8ba65b627e51d50c3}\label{a01685_aa9de267d831b4ec8ba65b627e51d50c3} 
+\index{sf::Color@{sf::Color}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary \texorpdfstring{$\ast$}{*} operator. 
+
+This operator returns the component-\/wise multiplication (also called \"{}modulation\"{}) of two colors. Components are then divided by 255 so that the result is still in the range \mbox{[}0, 255\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of {\itshape left} \texorpdfstring{$\ast$}{*} {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a8953be58a47ced92fb25966d6ee90511}\label{a01685_a8953be58a47ced92fb25966d6ee90511} 
+\index{sf::Color@{sf::Color}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary \texorpdfstring{$\ast$}{*}= operator. 
+
+This operator returns the component-\/wise multiplication (also called \"{}modulation\"{}) of two colors, and assigns the result to the left operand. Components are then divided by 255 so that the result is still in the range \mbox{[}0, 255\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a90e79ecc276114cda519a88119ac645b}\label{a01685_a90e79ecc276114cda519a88119ac645b} 
+\index{sf::Color@{sf::Color}!operator+@{operator+}}
+\index{operator+@{operator+}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary + operator. 
+
+This operator returns the component-\/wise sum of two colors. Components that exceed 255 are clamped to 255.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of {\itshape left} + {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a19917f2453a4acfd69de2539bfab8031}\label{a01685_a19917f2453a4acfd69de2539bfab8031} 
+\index{sf::Color@{sf::Color}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary += operator. 
+
+This operator computes the component-\/wise sum of two colors, and assigns the result to the left operand. Components that exceed 255 are clamped to 255.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a6d9047ddbcec2bbab8519d93300bb2aa}\label{a01685_a6d9047ddbcec2bbab8519d93300bb2aa} 
+\index{sf::Color@{sf::Color}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary -\/ operator. 
+
+This operator returns the component-\/wise subtraction of two colors. Components below 0 are clamped to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of {\itshape left} -\/ {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a86ceee6b959136932020db4036918ecd}\label{a01685_a86ceee6b959136932020db4036918ecd} 
+\index{sf::Color@{sf::Color}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01685}{Color}} \& operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the binary -\/= operator. 
+
+This operator computes the component-\/wise subtraction of two colors, and assigns the result to the left operand. Components below 0 are clamped to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01685_a7498d4670c7655e8d4d91ef49cc6064e}\label{a01685_a7498d4670c7655e8d4d91ef49cc6064e} 
+\index{sf::Color@{sf::Color}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of the == operator. 
+
+This operator compares two colors and check if they are equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand \\
+\hline
+{\em right} & Right operand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if colors are equal, false if they are different 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01685_a56dbdb47d5f040d9b78ac6a0b8b3a831}\label{a01685_a56dbdb47d5f040d9b78ac6a0b8b3a831} 
+\index{sf::Color@{sf::Color}!a@{a}}
+\index{a@{a}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} sf\+::\+Color\+::a}
+
+
+
+Alpha (opacity) component. 
+
+\Hypertarget{a01685_a6707aedd0609c8920e12df5d7abc53cb}\label{a01685_a6707aedd0609c8920e12df5d7abc53cb} 
+\index{sf::Color@{sf::Color}!b@{b}}
+\index{b@{b}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} sf\+::\+Color\+::b}
+
+
+
+Blue component. 
+
+\Hypertarget{a01685_a77c688197b981338f0b19dc58bd2facd}\label{a01685_a77c688197b981338f0b19dc58bd2facd} 
+\index{sf::Color@{sf::Color}!Black@{Black}}
+\index{Black@{Black}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Black}{Black}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Black\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Black predefined color. 
+
+\Hypertarget{a01685_ab03770d4817426b2614cfc33cf0e245c}\label{a01685_ab03770d4817426b2614cfc33cf0e245c} 
+\index{sf::Color@{sf::Color}!Blue@{Blue}}
+\index{Blue@{Blue}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Blue}{Blue}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Blue\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Blue predefined color. 
+
+\Hypertarget{a01685_a64ae9beb0b9a5865dd811cda4bb18340}\label{a01685_a64ae9beb0b9a5865dd811cda4bb18340} 
+\index{sf::Color@{sf::Color}!Cyan@{Cyan}}
+\index{Cyan@{Cyan}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Cyan}{Cyan}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Cyan\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Cyan predefined color. 
+
+\Hypertarget{a01685_a591daf9c3c55dea830c76c962d6ba1a5}\label{a01685_a591daf9c3c55dea830c76c962d6ba1a5} 
+\index{sf::Color@{sf::Color}!g@{g}}
+\index{g@{g}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} sf\+::\+Color\+::g}
+
+
+
+Green component. 
+
+\Hypertarget{a01685_a95629b30de8c6856aa7d3afed12eb865}\label{a01685_a95629b30de8c6856aa7d3afed12eb865} 
+\index{sf::Color@{sf::Color}!Green@{Green}}
+\index{Green@{Green}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Green}{Green}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Green\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Green predefined color. 
+
+\Hypertarget{a01685_a6fe70d90b65b2163dd066a84ac00426c}\label{a01685_a6fe70d90b65b2163dd066a84ac00426c} 
+\index{sf::Color@{sf::Color}!Magenta@{Magenta}}
+\index{Magenta@{Magenta}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Magenta}{Magenta}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Magenta\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Magenta predefined color. 
+
+\Hypertarget{a01685_a6a5256ca24a4f9f0e0808f6fc23e01e1}\label{a01685_a6a5256ca24a4f9f0e0808f6fc23e01e1} 
+\index{sf::Color@{sf::Color}!r@{r}}
+\index{r@{r}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} sf\+::\+Color\+::r}
+
+
+
+Red component. 
+
+\Hypertarget{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}\label{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a} 
+\index{sf::Color@{sf::Color}!Red@{Red}}
+\index{Red@{Red}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Red}{Red}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Red\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Red predefined color. 
+
+\Hypertarget{a01685_a569b45471737f770656f50ae7bbac292}\label{a01685_a569b45471737f770656f50ae7bbac292} 
+\index{sf::Color@{sf::Color}!Transparent@{Transparent}}
+\index{Transparent@{Transparent}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Transparent}{Transparent}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Transparent\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Transparent (black) predefined color. 
+
+\Hypertarget{a01685_a4fd874712178d9e206f53226002aa4ca}\label{a01685_a4fd874712178d9e206f53226002aa4ca} 
+\index{sf::Color@{sf::Color}!White@{White}}
+\index{White@{White}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{White}{White}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+White\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+White predefined color. 
+
+\Hypertarget{a01685_af8896b5f56650935f5b9d72d528802c7}\label{a01685_af8896b5f56650935f5b9d72d528802c7} 
+\index{sf::Color@{sf::Color}!Yellow@{Yellow}}
+\index{Yellow@{Yellow}!sf::Color@{sf::Color}}
+\doxysubsubsection{\texorpdfstring{Yellow}{Yellow}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} sf\+::\+Color\+::\+Yellow\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Yellow predefined color. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00371}{Color.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\doxysection{options.\+h}
+\hypertarget{a00128_source}{}\label{a00128_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/options.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/options.h}}
+\mbox{\hyperlink{a00128}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURLINC\_OPTIONS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURLINC\_OPTIONS\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \_\ \_\_\_\_\ \ \_}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ Project\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_\_|\ |\ |\ |\ \ \_\ \(\backslash\)|\ |}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /\ \_\_|\ |\ |\ |\ |\_)\ |\ |}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (\_\_|\ |\_|\ |\ \ \_\ <|\ |\_\_\_}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_|\(\backslash\)\_\_\_/|\_|\ \(\backslash\)\_\(\backslash\)\_\_\_\_\_|}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2018\ -\/\ 2020,\ Daniel\ Stenberg,\ <daniel@haxx.se>,\ et\ al.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ This\ software\ is\ licensed\ as\ described\ in\ the\ file\ COPYING,\ which}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ you\ should\ have\ received\ as\ part\ of\ this\ distribution.\ The\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ are\ also\ available\ at\ https://curl.se/docs/copyright.html.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ You\ may\ opt\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute\ and/or\ sell}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ under\ the\ terms\ of\ the\ COPYING\ file.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ software\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ basis,\ WITHOUT\ WARRANTY\ OF\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3ab7009d1e588ec704a5f6d46599dad468}{CURLOT\_LONG}},\ \ \ \ \textcolor{comment}{/*\ long\ (a\ range\ of\ values)\ */}}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3a63f5bec758a07350f388b1358a9ad33a}{CURLOT\_VALUES}},\ \ \textcolor{comment}{/*\ \ \ \ \ \ (a\ defined\ set\ or\ bitmask)\ */}}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3ab2f20f4437f65087ba3879272325ed88}{CURLOT\_OFF\_T}},\ \ \ \textcolor{comment}{/*\ curl\_off\_t\ (a\ range\ of\ values)\ */}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3ad7c01a6e4521984019d7d4f5e0206a86}{CURLOT\_OBJECT}},\ \ \textcolor{comment}{/*\ pointer\ (void\ *)\ */}}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3a94950ce83e46b98655fa755cf5a5c947}{CURLOT\_STRING}},\ \ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ (char\ *\ to\ zero\ terminated\ buffer)\ */}}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3a944901d43f192935c8cbb1af13edabb5}{CURLOT\_SLIST}},\ \ \ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ (struct\ curl\_slist\ *)\ */}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3ac3319dfed3bb8ccaa8eb5a3665ca4747}{CURLOT\_CBPTR}},\ \ \ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ (void\ *\ passed\ as-\/is\ to\ a\ callback)\ */}}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3a39b6faf0cb480dd2b87602b8e692d0ba}{CURLOT\_BLOB}},\ \ \ \ \textcolor{comment}{/*\ blob\ (struct\ curl\_blob\ *)\ */}}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3adbb78c83e40e6fb7a4c1af595cad194c}{CURLOT\_FUNCTION}}\ \textcolor{comment}{/*\ function\ pointer\ */}}
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3}{curl\_easytype}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ Flag\ bits\ */}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ "{}alias"{}\ means\ it\ is\ provided\ for\ old\ programs\ to\ remain\ functional,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ we\ prefer\ another\ name\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ CURLOT\_FLAG\_ALIAS\ (1<<0)}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ The\ CURLOPTTYPE\_*\ id\ ranges\ can\ still\ be\ used\ to\ figure\ out\ what\ type/size}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ to\ use\ for\ curl\_easy\_setopt()\ for\ the\ given\ id\ */}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00985}{curl\_easyoption}}\ \{}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00985_a814dbefa0621759dc89b553e4e087898}{name}};}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{a00113_a683f408ac299e0409f0c8b3f73c36610}{CURLoption}}\ \mbox{\hyperlink{a00985_a6d13068c982675ef321be38b3b644703}{id}};}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{a00128_a5d56458e1b4d5e7a0b56a297142c09c3}{curl\_easytype}}\ \mbox{\hyperlink{a00985_a34f1949be0fe4b2e906a6eb60d468ab3}{type}};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00985_a1b10fbcd7f3af82ae1daac1f615a5b55}{flags}};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00985}{curl\_easyoption}}\ *}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{a00128_a1b01d804970ee838b45a9455988bf4df}{curl\_easy\_option\_by\_name}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00985_a814dbefa0621759dc89b553e4e087898}{name}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00985}{curl\_easyoption}}\ *}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{a00128_a64882f519c1e3cb782dd075ae79af765}{curl\_easy\_option\_by\_id}}\ (\mbox{\hyperlink{a00113_a683f408ac299e0409f0c8b3f73c36610}{CURLoption}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00985}{curl\_easyoption}}\ *}
+\DoxyCodeLine{00063\ \mbox{\hyperlink{a00128_a463bfbaad53990b8153cd4e12982a7bb}{curl\_easy\_option\_next}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00985}{curl\_easyoption}}\ *prev);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00066\ \}\ \textcolor{comment}{/*\ end\ of\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CURLINC\_OPTIONS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

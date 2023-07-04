@@ -1,0 +1,235 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/cpr/ssl\+\_\+options.h File Reference}
+\hypertarget{a00092}{}\label{a00092}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/ssl\_options.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/ssl\_options.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$curl/curl.\+h$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for ssl\+\_\+options.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00877}{cpr\+::ssl\+::\+Ca\+Info}}
+\item 
+class \mbox{\hyperlink{a00881}{cpr\+::ssl\+::\+Ca\+Path}}
+\item 
+class \mbox{\hyperlink{a00833}{cpr\+::ssl\+::\+Cert\+File}}
+\item 
+class \mbox{\hyperlink{a00889}{cpr\+::ssl\+::\+Ciphers}}
+\item 
+class \mbox{\hyperlink{a00885}{cpr\+::ssl\+::\+Crl}}
+\item 
+class \mbox{\hyperlink{a00837}{cpr\+::ssl\+::\+Der\+Cert}}
+\item 
+class \mbox{\hyperlink{a00845}{cpr\+::ssl\+::\+Der\+Key}}
+\item 
+class \mbox{\hyperlink{a00841}{cpr\+::ssl\+::\+Key\+File}}
+\item 
+class \mbox{\hyperlink{a00893}{cpr\+::ssl\+::\+No\+Revoke}}
+\item 
+class \mbox{\hyperlink{a00849}{cpr\+::ssl\+::\+Pinned\+Public\+Key}}
+\item 
+struct \mbox{\hyperlink{a00897}{cpr\+::\+Ssl\+Options}}
+\item 
+struct \mbox{\hyperlink{a00869}{cpr\+::ssl\+::\+SSLv2}}
+\item 
+struct \mbox{\hyperlink{a00873}{cpr\+::ssl\+::\+SSLv3}}
+\item 
+struct \mbox{\hyperlink{a00865}{cpr\+::ssl\+::\+TLSv1}}
+\item 
+class \mbox{\hyperlink{a00853}{cpr\+::ssl\+::\+Verify\+Host}}
+\item 
+class \mbox{\hyperlink{a00857}{cpr\+::ssl\+::\+Verify\+Peer}}
+\item 
+class \mbox{\hyperlink{a00829}{cpr\+::\+Verify\+Ssl}}
+\item 
+class \mbox{\hyperlink{a00861}{cpr\+::ssl\+::\+Verify\+Status}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00656}{cpr}}
+\item 
+namespace \mbox{\hyperlink{a00657}{cpr\+::priv}}
+\item 
+namespace \mbox{\hyperlink{a00658}{cpr\+::ssl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(major,  minor)
+\item 
+\#define \mbox{\hyperlink{a00092_a3333a8ee1dc781c65f9d039522064c3e}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT}}(major,  minor)
+\item 
+\#define \mbox{\hyperlink{a00092_a0ab84b68e4ba622c753bf450f37e23fc}{SUPPORT\+\_\+\+ALPN}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 36)
+\item 
+\#define \mbox{\hyperlink{a00092_abbcbd6f44146f8aa7d022547afe4eec9}{SUPPORT\+\_\+\+MAX\+\_\+\+TLS\+\_\+\+VERSION}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)
+\item 
+\#define \mbox{\hyperlink{a00092_a30f56d27ce6bdbcba55fac8131490802}{SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+1}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)
+\item 
+\#define \mbox{\hyperlink{a00092_a34f2760fb13382a3cb14930ede9f717f}{SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+2}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)
+\item 
+\#define \mbox{\hyperlink{a00092_a894a0df05a4ea10ffd7a2f5cbcb37a8f}{SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+3}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)
+\item 
+\#define \mbox{\hyperlink{a00092_aa1f60ad14ff7ee707a1fdccb107709b7}{SUPPORT\+\_\+\+NPN}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 36)
+\item 
+\#define \mbox{\hyperlink{a00092_a51c4753647ce5ff5f93e133c276f93de}{SUPPORT\+\_\+\+SESSIONID\+\_\+\+CACHE}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 16)
+\item 
+\#define \mbox{\hyperlink{a00092_aac44246ecfb6b09a9a97b3abc77f69dc}{SUPPORT\+\_\+\+SSL\+\_\+\+FALSESTART}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 42)
+\item 
+\#define \mbox{\hyperlink{a00092_a947b2fbe63cdab23ece74e0b8134158b}{SUPPORT\+\_\+\+SSL\+\_\+\+NO\+\_\+\+REVOKE}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 44)
+\item 
+\#define \mbox{\hyperlink{a00092_ac9fdb93e871a9619924f8030974f6338}{SUPPORT\+\_\+\+SSLv2}}~\mbox{\hyperlink{a00092_a3333a8ee1dc781c65f9d039522064c3e}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT}}(7, 19)
+\item 
+\#define \mbox{\hyperlink{a00092_a5278018c40806a259f65a4adc35bfe97}{SUPPORT\+\_\+\+SSLv3}}~\mbox{\hyperlink{a00092_a3333a8ee1dc781c65f9d039522064c3e}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT}}(7, 39)
+\item 
+\#define \mbox{\hyperlink{a00092_a2649b6373e3afd392661c3c52b0f2f6d}{SUPPORT\+\_\+\+TLSv13\+\_\+\+CIPHERS}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 61)
+\item 
+\#define \mbox{\hyperlink{a00092_acef30a31e494a17df5ee9e1a3de2141b}{SUPPORT\+\_\+\+TLSv1\+\_\+0}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)
+\item 
+\#define \mbox{\hyperlink{a00092_a376fb4246f6439a9e5751abcac74b5ef}{SUPPORT\+\_\+\+TLSv1\+\_\+1}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)
+\item 
+\#define \mbox{\hyperlink{a00092_a4cb6156b255cf7007bf3a6b1fc8d8642}{SUPPORT\+\_\+\+TLSv1\+\_\+2}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)
+\item 
+\#define \mbox{\hyperlink{a00092_a2c751437a46cd720b6b38fb1d58813cf}{SUPPORT\+\_\+\+TLSv1\+\_\+3}}~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 52)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00658_a2154269c724d85bbc7b05d89edac1a25}{cpr\+::ssl\+::\+Pem\+Cert}} = \mbox{\hyperlink{a00833}{Cert\+File}}
+\item 
+using \mbox{\hyperlink{a00658_ae33e6729912c675d6a033f312e2ff76a}{cpr\+::ssl\+::\+Pem\+Key}} = \mbox{\hyperlink{a00841}{Key\+File}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{cpr\+::priv\+::set\+\_\+ssl\+\_\+option}} (\mbox{\hyperlink{a00897}{Ssl\+Options}} \&opts, T \&\&t)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\void \mbox{\hyperlink{a00657_a71e18b96f0055c941bd0835b85532dec}{cpr\+::priv\+::set\+\_\+ssl\+\_\+option}} (\mbox{\hyperlink{a00897}{Ssl\+Options}} \&opts, T \&\&t, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00897}{Ssl\+Options}} \mbox{\hyperlink{a00656_ab6ba1be905e3cd62c1968ea5d4578ccd}{cpr\+::\+Ssl}} (Ts \&\&... ts)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00092_a97ed02284b5eb4908c949f37bfd292a1}\label{a00092_a97ed02284b5eb4908c949f37bfd292a1} 
+\index{ssl\_options.h@{ssl\_options.h}!\_\_LIBCURL\_VERSION\_GTE@{\_\_LIBCURL\_VERSION\_GTE}}
+\index{\_\_LIBCURL\_VERSION\_GTE@{\_\_LIBCURL\_VERSION\_GTE}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LIBCURL\_VERSION\_GTE}{\_\_LIBCURL\_VERSION\_GTE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ ((\mbox{\hyperlink{a00116_aab6d7bae480f300f66158427a74d0e3b}{LIBCURL\_VERSION\_MAJOR}}\ >\ (major))\ ||\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ ((\mbox{\hyperlink{a00116_aab6d7bae480f300f66158427a74d0e3b}{LIBCURL\_VERSION\_MAJOR}}\ ==\ (major))\ \&\&\ (\mbox{\hyperlink{a00116_ab9b4ee2929f8c723475cff2d85f55113}{LIBCURL\_VERSION\_MINOR}}\ >=\ (minor))))}
+
+\end{DoxyCode}
+\Hypertarget{a00092_a3333a8ee1dc781c65f9d039522064c3e}\label{a00092_a3333a8ee1dc781c65f9d039522064c3e} 
+\index{ssl\_options.h@{ssl\_options.h}!\_\_LIBCURL\_VERSION\_LT@{\_\_LIBCURL\_VERSION\_LT}}
+\index{\_\_LIBCURL\_VERSION\_LT@{\_\_LIBCURL\_VERSION\_LT}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LIBCURL\_VERSION\_LT}{\_\_LIBCURL\_VERSION\_LT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ ((\mbox{\hyperlink{a00116_aab6d7bae480f300f66158427a74d0e3b}{LIBCURL\_VERSION\_MAJOR}}\ <\ (major))\ ||\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ ((\mbox{\hyperlink{a00116_aab6d7bae480f300f66158427a74d0e3b}{LIBCURL\_VERSION\_MAJOR}}\ ==\ (major))\ \&\&\ (\mbox{\hyperlink{a00116_ab9b4ee2929f8c723475cff2d85f55113}{LIBCURL\_VERSION\_MINOR}}\ <\ (minor))))}
+
+\end{DoxyCode}
+\Hypertarget{a00092_a0ab84b68e4ba622c753bf450f37e23fc}\label{a00092_a0ab84b68e4ba622c753bf450f37e23fc} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_ALPN@{SUPPORT\_ALPN}}
+\index{SUPPORT\_ALPN@{SUPPORT\_ALPN}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_ALPN}{SUPPORT\_ALPN}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+ALPN~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 36)}
+
+\Hypertarget{a00092_abbcbd6f44146f8aa7d022547afe4eec9}\label{a00092_abbcbd6f44146f8aa7d022547afe4eec9} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_MAX\_TLS\_VERSION@{SUPPORT\_MAX\_TLS\_VERSION}}
+\index{SUPPORT\_MAX\_TLS\_VERSION@{SUPPORT\_MAX\_TLS\_VERSION}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_MAX\_TLS\_VERSION}{SUPPORT\_MAX\_TLS\_VERSION}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+MAX\+\_\+\+TLS\+\_\+\+VERSION~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)}
+
+\Hypertarget{a00092_a30f56d27ce6bdbcba55fac8131490802}\label{a00092_a30f56d27ce6bdbcba55fac8131490802} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_MAX\_TLSv1\_1@{SUPPORT\_MAX\_TLSv1\_1}}
+\index{SUPPORT\_MAX\_TLSv1\_1@{SUPPORT\_MAX\_TLSv1\_1}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_MAX\_TLSv1\_1}{SUPPORT\_MAX\_TLSv1\_1}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+1~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)}
+
+\Hypertarget{a00092_a34f2760fb13382a3cb14930ede9f717f}\label{a00092_a34f2760fb13382a3cb14930ede9f717f} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_MAX\_TLSv1\_2@{SUPPORT\_MAX\_TLSv1\_2}}
+\index{SUPPORT\_MAX\_TLSv1\_2@{SUPPORT\_MAX\_TLSv1\_2}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_MAX\_TLSv1\_2}{SUPPORT\_MAX\_TLSv1\_2}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+2~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)}
+
+\Hypertarget{a00092_a894a0df05a4ea10ffd7a2f5cbcb37a8f}\label{a00092_a894a0df05a4ea10ffd7a2f5cbcb37a8f} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_MAX\_TLSv1\_3@{SUPPORT\_MAX\_TLSv1\_3}}
+\index{SUPPORT\_MAX\_TLSv1\_3@{SUPPORT\_MAX\_TLSv1\_3}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_MAX\_TLSv1\_3}{SUPPORT\_MAX\_TLSv1\_3}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+MAX\+\_\+\+TLSv1\+\_\+3~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 54)}
+
+\Hypertarget{a00092_aa1f60ad14ff7ee707a1fdccb107709b7}\label{a00092_aa1f60ad14ff7ee707a1fdccb107709b7} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_NPN@{SUPPORT\_NPN}}
+\index{SUPPORT\_NPN@{SUPPORT\_NPN}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_NPN}{SUPPORT\_NPN}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+NPN~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 36)}
+
+\Hypertarget{a00092_a51c4753647ce5ff5f93e133c276f93de}\label{a00092_a51c4753647ce5ff5f93e133c276f93de} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_SESSIONID\_CACHE@{SUPPORT\_SESSIONID\_CACHE}}
+\index{SUPPORT\_SESSIONID\_CACHE@{SUPPORT\_SESSIONID\_CACHE}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_SESSIONID\_CACHE}{SUPPORT\_SESSIONID\_CACHE}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+SESSIONID\+\_\+\+CACHE~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 16)}
+
+\Hypertarget{a00092_aac44246ecfb6b09a9a97b3abc77f69dc}\label{a00092_aac44246ecfb6b09a9a97b3abc77f69dc} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_SSL\_FALSESTART@{SUPPORT\_SSL\_FALSESTART}}
+\index{SUPPORT\_SSL\_FALSESTART@{SUPPORT\_SSL\_FALSESTART}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_SSL\_FALSESTART}{SUPPORT\_SSL\_FALSESTART}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+SSL\+\_\+\+FALSESTART~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 42)}
+
+\Hypertarget{a00092_a947b2fbe63cdab23ece74e0b8134158b}\label{a00092_a947b2fbe63cdab23ece74e0b8134158b} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_SSL\_NO\_REVOKE@{SUPPORT\_SSL\_NO\_REVOKE}}
+\index{SUPPORT\_SSL\_NO\_REVOKE@{SUPPORT\_SSL\_NO\_REVOKE}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_SSL\_NO\_REVOKE}{SUPPORT\_SSL\_NO\_REVOKE}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+SSL\+\_\+\+NO\+\_\+\+REVOKE~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 44)}
+
+\Hypertarget{a00092_ac9fdb93e871a9619924f8030974f6338}\label{a00092_ac9fdb93e871a9619924f8030974f6338} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_SSLv2@{SUPPORT\_SSLv2}}
+\index{SUPPORT\_SSLv2@{SUPPORT\_SSLv2}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_SSLv2}{SUPPORT\_SSLv2}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+SSLv2~\mbox{\hyperlink{a00092_a3333a8ee1dc781c65f9d039522064c3e}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT}}(7, 19)}
+
+\Hypertarget{a00092_a5278018c40806a259f65a4adc35bfe97}\label{a00092_a5278018c40806a259f65a4adc35bfe97} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_SSLv3@{SUPPORT\_SSLv3}}
+\index{SUPPORT\_SSLv3@{SUPPORT\_SSLv3}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_SSLv3}{SUPPORT\_SSLv3}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+SSLv3~\mbox{\hyperlink{a00092_a3333a8ee1dc781c65f9d039522064c3e}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+LT}}(7, 39)}
+
+\Hypertarget{a00092_a2649b6373e3afd392661c3c52b0f2f6d}\label{a00092_a2649b6373e3afd392661c3c52b0f2f6d} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_TLSv13\_CIPHERS@{SUPPORT\_TLSv13\_CIPHERS}}
+\index{SUPPORT\_TLSv13\_CIPHERS@{SUPPORT\_TLSv13\_CIPHERS}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_TLSv13\_CIPHERS}{SUPPORT\_TLSv13\_CIPHERS}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+TLSv13\+\_\+\+CIPHERS~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 61)}
+
+\Hypertarget{a00092_acef30a31e494a17df5ee9e1a3de2141b}\label{a00092_acef30a31e494a17df5ee9e1a3de2141b} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_TLSv1\_0@{SUPPORT\_TLSv1\_0}}
+\index{SUPPORT\_TLSv1\_0@{SUPPORT\_TLSv1\_0}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_TLSv1\_0}{SUPPORT\_TLSv1\_0}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+TLSv1\+\_\+0~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)}
+
+\Hypertarget{a00092_a376fb4246f6439a9e5751abcac74b5ef}\label{a00092_a376fb4246f6439a9e5751abcac74b5ef} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_TLSv1\_1@{SUPPORT\_TLSv1\_1}}
+\index{SUPPORT\_TLSv1\_1@{SUPPORT\_TLSv1\_1}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_TLSv1\_1}{SUPPORT\_TLSv1\_1}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+TLSv1\+\_\+1~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)}
+
+\Hypertarget{a00092_a4cb6156b255cf7007bf3a6b1fc8d8642}\label{a00092_a4cb6156b255cf7007bf3a6b1fc8d8642} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_TLSv1\_2@{SUPPORT\_TLSv1\_2}}
+\index{SUPPORT\_TLSv1\_2@{SUPPORT\_TLSv1\_2}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_TLSv1\_2}{SUPPORT\_TLSv1\_2}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+TLSv1\+\_\+2~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 34)}
+
+\Hypertarget{a00092_a2c751437a46cd720b6b38fb1d58813cf}\label{a00092_a2c751437a46cd720b6b38fb1d58813cf} 
+\index{ssl\_options.h@{ssl\_options.h}!SUPPORT\_TLSv1\_3@{SUPPORT\_TLSv1\_3}}
+\index{SUPPORT\_TLSv1\_3@{SUPPORT\_TLSv1\_3}!ssl\_options.h@{ssl\_options.h}}
+\doxysubsubsection{\texorpdfstring{SUPPORT\_TLSv1\_3}{SUPPORT\_TLSv1\_3}}
+{\footnotesize\ttfamily \#define SUPPORT\+\_\+\+TLSv1\+\_\+3~\mbox{\hyperlink{a00092_a97ed02284b5eb4908c949f37bfd292a1}{\+\_\+\+\_\+\+LIBCURL\+\_\+\+VERSION\+\_\+\+GTE}}(7, 52)}
+

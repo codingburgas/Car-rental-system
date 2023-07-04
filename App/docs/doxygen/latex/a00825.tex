@@ -1,0 +1,794 @@
+\doxysection{cpr\+::Session Class Reference}
+\hypertarget{a00825}{}\label{a00825}\index{cpr::Session@{cpr::Session}}
+
+
+{\ttfamily \#include $<$session.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_ad3cfdc01e5e0a6996e8a9f859cc44d3b}{Complete}} (\mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+error)
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_a0ad49a747a0c56a7fc3cd10fe4032337}{Delete}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_ae5c95118d805ce8c12c819b57d89e9a7}{Download}} (const \mbox{\hyperlink{a00705}{Write\+Callback}} \&write)
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_aea9618ab6483da2cc8021f694bc63cda}{Download}} (std\+::ofstream \&file)
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_a782e3ef742ca63169e21702326e4ff0b}{Get}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a00749}{Curl\+Holder}} $>$ \mbox{\hyperlink{a00825_a576d0ac459eb6be2eb0c753314323d3f}{Get\+Curl\+Holder}} ()
+\item 
+\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} \mbox{\hyperlink{a00825_aeb736ad892873b7018caeb496c13dd1d}{Get\+Download\+File\+Length}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_a6a12f412e2b424c054cf795acc21ff66}{Head}} ()
+\item 
+\mbox{\hyperlink{a00825}{Session}} \& \mbox{\hyperlink{a00825_a0c33bfe070f8f04dbe41ed1872a14f9e}{operator=}} (const \mbox{\hyperlink{a00825}{Session}} \&other)=delete
+\item 
+\mbox{\hyperlink{a00825}{Session}} \& \mbox{\hyperlink{a00825_a953bd41a54b8e25f667c0a0fcb0f8a68}{operator=}} (\mbox{\hyperlink{a00825}{Session}} \&\&old) noexcept
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_ab296793770689d344b69926ec1258b03}{Options}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_ab79c7500603b3f2d4f14316ab4b7c65b}{Patch}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_a3d96d865fc382114cd3daee45ec67b66}{Post}} ()
+\item 
+void \mbox{\hyperlink{a00825_a1bc917df4763251613116ba14781097d}{Prepare\+Delete}} ()
+\item 
+void \mbox{\hyperlink{a00825_aed11421c47627740d5e38084dca5ee12}{Prepare\+Get}} ()
+\item 
+void \mbox{\hyperlink{a00825_a10f0e68896b8721f016eece66feb513f}{Prepare\+Head}} ()
+\item 
+void \mbox{\hyperlink{a00825_a1b3493cf42808ece1dde3dc81c598e37}{Prepare\+Options}} ()
+\item 
+void \mbox{\hyperlink{a00825_ab1191e3d7d74cf2fac1d58644e0b4d2b}{Prepare\+Patch}} ()
+\item 
+void \mbox{\hyperlink{a00825_a24cfa38c07778fb7aef45cf0cc65e90c}{Prepare\+Post}} ()
+\item 
+void \mbox{\hyperlink{a00825_a436a045fecaf7e9dc99287024fe1235c}{Prepare\+Put}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00825_a62082c07d46ef678b8a81f1d5684e910}{Put}} ()
+\item 
+\mbox{\hyperlink{a00825_ad0f527fa1fdb36a319f784b3513bd42d}{Session}} ()
+\item 
+\mbox{\hyperlink{a00825_ae02155add5a081ff57a40e9735ec2cbd}{Session}} (const \mbox{\hyperlink{a00825}{Session}} \&other)=delete
+\item 
+\mbox{\hyperlink{a00825_aa15ee4e1b1c86abf0bac2b0d7eb13981}{Session}} (\mbox{\hyperlink{a00825}{Session}} \&\&old) noexcept
+\item 
+void \mbox{\hyperlink{a00825_afe7567a848dfaa95b85b264dac4be341}{Set\+Auth}} (const \mbox{\hyperlink{a00689}{Authentication}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a61b948243d1a11e116f2da667f820eb3}{Set\+Body}} (\mbox{\hyperlink{a00693}{Body}} \&\&body)
+\item 
+void \mbox{\hyperlink{a00825_acb212f981f513951b810800e3cba84c2}{Set\+Body}} (const \mbox{\hyperlink{a00693}{Body}} \&body)
+\item 
+void \mbox{\hyperlink{a00825_a2900948eab72aa68bb3d71e2e9cd3c33}{Set\+Connect\+Timeout}} (const \mbox{\hyperlink{a00717}{Connect\+Timeout}} \&timeout)
+\item 
+void \mbox{\hyperlink{a00825_a58ad9e652edb062d7035cdd1db273f64}{Set\+Cookies}} (const \mbox{\hyperlink{a00721}{Cookies}} \&cookies)
+\item 
+void \mbox{\hyperlink{a00825_a555ce38c6d50ab1c2097881c7d1dd20e}{Set\+Debug\+Callback}} (const \mbox{\hyperlink{a00713}{Debug\+Callback}} \&debug)
+\item 
+void \mbox{\hyperlink{a00825_ace244e22ccff686fd0ad8c160459f3db}{Set\+Digest}} (const \mbox{\hyperlink{a00753}{Digest}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a347e70fe86d9c43887675da066aa6a89}{Set\+Header}} (const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&header)
+\item 
+void \mbox{\hyperlink{a00825_acdd75cce25d3fee416327ff82c2c2baa}{Set\+Header\+Callback}} (const \mbox{\hyperlink{a00701}{Header\+Callback}} \&header)
+\item 
+void \mbox{\hyperlink{a00825_afae4fc02a9b8077c74df5670855ea40e}{Set\+Http\+Version}} (const \mbox{\hyperlink{a00761}{Http\+Version}} \&version)
+\item 
+void \mbox{\hyperlink{a00825_a9060a9ba892d25b829b51dcf49528e9d}{Set\+Interface}} (const \mbox{\hyperlink{a00765}{Interface}} \&iface)
+\item 
+void \mbox{\hyperlink{a00825_a2fdac5f0c5417249b2eab6b151e4bbe3}{Set\+Low\+Speed}} (const \mbox{\hyperlink{a00773}{Low\+Speed}} \&low\+\_\+speed)
+\item 
+void \mbox{\hyperlink{a00825_aa3c05645bfd7cf6b9f7486629da58738}{Set\+Multipart}} (const \mbox{\hyperlink{a00789}{Multipart}} \&multipart)
+\item 
+void \mbox{\hyperlink{a00825_a4e6d342ed17d4b18782aac486cef7c46}{Set\+Multipart}} (\mbox{\hyperlink{a00789}{Multipart}} \&\&multipart)
+\item 
+void \mbox{\hyperlink{a00825_a9dcd3bd027b019bd64cffd9b05eecea6}{Set\+NTLM}} (const \mbox{\hyperlink{a00793}{NTLM}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a1e9244603f62a9450dc964eb36adad2c}{Set\+Option}} (\mbox{\hyperlink{a00693}{Body}} \&\&body)
+\item 
+void \mbox{\hyperlink{a00825_ad7448e1392a11692404e6509b2f1ee55}{Set\+Option}} (const \mbox{\hyperlink{a00689}{Authentication}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a6b944f8f05761931dda3ade12440e00e}{Set\+Option}} (const \mbox{\hyperlink{a00693}{Body}} \&body)
+\item 
+void \mbox{\hyperlink{a00825_a3ef5a6a1416c9bb3824ce00eb8dc3473}{Set\+Option}} (const \mbox{\hyperlink{a00717}{Connect\+Timeout}} \&timeout)
+\item 
+void \mbox{\hyperlink{a00825_ae4199a777133904751f9ae04c7687235}{Set\+Option}} (const \mbox{\hyperlink{a00721}{Cookies}} \&cookies)
+\item 
+void \mbox{\hyperlink{a00825_ae8e64827c253394a6f431338a510cdbf}{Set\+Option}} (const \mbox{\hyperlink{a00713}{Debug\+Callback}} \&debug)
+\item 
+void \mbox{\hyperlink{a00825_a6b7bbecd50453f49638c7dbaca009c8c}{Set\+Option}} (const \mbox{\hyperlink{a00753}{Digest}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a15d32ba9a3b85a62e870d32f9ffb4050}{Set\+Option}} (const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&header)
+\item 
+void \mbox{\hyperlink{a00825_af180a28ba29218a2bec5f8ad135c9726}{Set\+Option}} (const \mbox{\hyperlink{a00701}{Header\+Callback}} \&header)
+\item 
+void \mbox{\hyperlink{a00825_a246fbfdbf319d99d723e68309b363676}{Set\+Option}} (const \mbox{\hyperlink{a00761}{Http\+Version}} \&version)
+\item 
+void \mbox{\hyperlink{a00825_adb2189f7c006f26fd4164c5869a661a8}{Set\+Option}} (const \mbox{\hyperlink{a00765}{Interface}} \&iface)
+\item 
+void \mbox{\hyperlink{a00825_a645119e9349a3d7b5c972d2e2276849b}{Set\+Option}} (const \mbox{\hyperlink{a00769}{Limit\+Rate}} \&limit\+\_\+rate)
+\item 
+void \mbox{\hyperlink{a00825_a165de7a2e6fbe6fbb1785a28521f2ce6}{Set\+Option}} (const \mbox{\hyperlink{a00773}{Low\+Speed}} \&low\+\_\+speed)
+\item 
+void \mbox{\hyperlink{a00825_a9d6ba7de9608c16c2aeb929c85bb9986}{Set\+Option}} (const \mbox{\hyperlink{a00789}{Multipart}} \&multipart)
+\item 
+void \mbox{\hyperlink{a00825_a8bbb9121cb168cfac70810110955531a}{Set\+Option}} (const \mbox{\hyperlink{a00793}{NTLM}} \&auth)
+\item 
+void \mbox{\hyperlink{a00825_a92c9a9ee09fc7b02a610f93aa3a91a09}{Set\+Option}} (const \mbox{\hyperlink{a00797}{Parameters}} \&parameters)
+\item 
+void \mbox{\hyperlink{a00825_a6d31e9ff4e817043a9304547d169b6ab}{Set\+Option}} (const \mbox{\hyperlink{a00801}{Payload}} \&payload)
+\item 
+void \mbox{\hyperlink{a00825_a39d241d76f99fc5844939d2a3e6a9dfa}{Set\+Option}} (const \mbox{\hyperlink{a00709}{Progress\+Callback}} \&progress)
+\item 
+void \mbox{\hyperlink{a00825_a17d15e06326f2aacadebcb122a1b81a7}{Set\+Option}} (const \mbox{\hyperlink{a00805}{Proxies}} \&proxies)
+\item 
+void \mbox{\hyperlink{a00825_a0542e154bec94a4f091770d1fac9bc8f}{Set\+Option}} (const \mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&proxy\+\_\+auth)
+\item 
+void \mbox{\hyperlink{a00825_abafd22860794e8cd3a3deb6cfb030578}{Set\+Option}} (const \mbox{\hyperlink{a00697}{Read\+Callback}} \&read)
+\item 
+void \mbox{\hyperlink{a00825_aa11bfeb079d314b12af52eef80aca030}{Set\+Option}} (const \mbox{\hyperlink{a00817}{Redirect}} \&redirect)
+\item 
+void \mbox{\hyperlink{a00825_a9787251e000d77e3c36a92da4755fec9}{Set\+Option}} (const \mbox{\hyperlink{a00897}{Ssl\+Options}} \&options)
+\item 
+void \mbox{\hyperlink{a00825_ad3bb5b183bbb41c044ba2acdca76bd53}{Set\+Option}} (const \mbox{\hyperlink{a00901}{Timeout}} \&timeout)
+\item 
+void \mbox{\hyperlink{a00825_a1c295fd8e1d9cb1986e3ff6872ac7272}{Set\+Option}} (const \mbox{\hyperlink{a00905}{Unix\+Socket}} \&unix\+\_\+socket)
+\item 
+void \mbox{\hyperlink{a00825_a8b6ed0ac4062760c9234c5cf69c146d3}{Set\+Option}} (const \mbox{\hyperlink{a00729}{Url}} \&url)
+\item 
+void \mbox{\hyperlink{a00825_af741f0cb6a61adfbd3358632fb618390}{Set\+Option}} (const \mbox{\hyperlink{a00909}{User\+Agent}} \&ua)
+\item 
+void \mbox{\hyperlink{a00825_a9e4cacd38a91c0647c0627725263e436}{Set\+Option}} (const \mbox{\hyperlink{a00913}{Verbose}} \&verbose)
+\item 
+void \mbox{\hyperlink{a00825_a69b0a397a73db0c0a4fd78fa0f7d68d0}{Set\+Option}} (const \mbox{\hyperlink{a00829}{Verify\+Ssl}} \&verify)
+\item 
+void \mbox{\hyperlink{a00825_a06e52f980f714c95c97483af19629501}{Set\+Option}} (const \mbox{\hyperlink{a00705}{Write\+Callback}} \&write)
+\item 
+void \mbox{\hyperlink{a00825_aace8827ac5ce65889e15bcfca2118758}{Set\+Option}} (\mbox{\hyperlink{a00789}{Multipart}} \&\&multipart)
+\item 
+void \mbox{\hyperlink{a00825_a029f1e022f83f6f9ddd0dcf0fb32034f}{Set\+Option}} (\mbox{\hyperlink{a00797}{Parameters}} \&\&parameters)
+\item 
+void \mbox{\hyperlink{a00825_aeb8869c79a646fa440d1bdfc4ca2169b}{Set\+Option}} (\mbox{\hyperlink{a00801}{Payload}} \&\&payload)
+\item 
+void \mbox{\hyperlink{a00825_a35cb37d03a4d3454c4269d53c8b4df8a}{Set\+Option}} (\mbox{\hyperlink{a00805}{Proxies}} \&\&proxies)
+\item 
+void \mbox{\hyperlink{a00825_af794291561c1382bb9ff3ffe0d68a3e4}{Set\+Option}} (\mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&\&proxy\+\_\+auth)
+\item 
+void \mbox{\hyperlink{a00825_ababd3fd493651756fc734e65e1a22010}{Set\+Parameters}} (const \mbox{\hyperlink{a00797}{Parameters}} \&parameters)
+\item 
+void \mbox{\hyperlink{a00825_a8838b25ec833921c0db1f53004100531}{Set\+Parameters}} (\mbox{\hyperlink{a00797}{Parameters}} \&\&parameters)
+\item 
+void \mbox{\hyperlink{a00825_af73b3a553d20a38ed7398fa1495a36c7}{Set\+Payload}} (const \mbox{\hyperlink{a00801}{Payload}} \&payload)
+\item 
+void \mbox{\hyperlink{a00825_ad9f5e70c4cfc0ac60d5adf5961e9399a}{Set\+Payload}} (\mbox{\hyperlink{a00801}{Payload}} \&\&payload)
+\item 
+void \mbox{\hyperlink{a00825_aa85821705625367c8809e7165ce7800d}{Set\+Progress\+Callback}} (const \mbox{\hyperlink{a00709}{Progress\+Callback}} \&progress)
+\item 
+void \mbox{\hyperlink{a00825_ade9a3ffb77e099e7737759ec84cdccd5}{Set\+Proxies}} (const \mbox{\hyperlink{a00805}{Proxies}} \&proxies)
+\item 
+void \mbox{\hyperlink{a00825_a63af131835aa9a1f8c2c796aff99f68e}{Set\+Proxies}} (\mbox{\hyperlink{a00805}{Proxies}} \&\&proxies)
+\item 
+void \mbox{\hyperlink{a00825_afc2f23fa7c8d00c8004c0267716268dc}{Set\+Proxy\+Auth}} (const \mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&proxy\+\_\+auth)
+\item 
+void \mbox{\hyperlink{a00825_a9324afd23ffabc8e0a608bcab8868651}{Set\+Proxy\+Auth}} (\mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&\&proxy\+\_\+auth)
+\item 
+void \mbox{\hyperlink{a00825_a3893e839f95be669ebc8c9e406213b2c}{Set\+Read\+Callback}} (const \mbox{\hyperlink{a00697}{Read\+Callback}} \&read)
+\item 
+void \mbox{\hyperlink{a00825_a46a2e5372e4e4d3ff74b5548d3ab25cb}{Set\+Redirect}} (const \mbox{\hyperlink{a00817}{Redirect}} \&redirect)
+\item 
+void \mbox{\hyperlink{a00825_a94db32170b1657d6dbfb119c2bdcfcd7}{Set\+Ssl\+Options}} (const \mbox{\hyperlink{a00897}{Ssl\+Options}} \&options)
+\item 
+void \mbox{\hyperlink{a00825_a5258c775dfc19b5fa6f52cd4f493a191}{Set\+Timeout}} (const \mbox{\hyperlink{a00901}{Timeout}} \&timeout)
+\item 
+void \mbox{\hyperlink{a00825_a3dff2204b431595d5b2e313612b15e7c}{Set\+Unix\+Socket}} (const \mbox{\hyperlink{a00905}{Unix\+Socket}} \&unix\+\_\+socket)
+\item 
+void \mbox{\hyperlink{a00825_ac2c92dc4697a0ba0960ef8dc4a2b2df2}{Set\+Url}} (const \mbox{\hyperlink{a00729}{Url}} \&url)
+\item 
+void \mbox{\hyperlink{a00825_aec13333347dd910ca091bfa4959444d9}{Set\+User\+Agent}} (const \mbox{\hyperlink{a00909}{User\+Agent}} \&ua)
+\item 
+void \mbox{\hyperlink{a00825_ad6506e42bb752d8577dad35412742bf7}{Set\+Verbose}} (const \mbox{\hyperlink{a00913}{Verbose}} \&verbose)
+\item 
+void \mbox{\hyperlink{a00825_a0feca99d1e0576b957c4f017396be47b}{Set\+Verify\+Ssl}} (const \mbox{\hyperlink{a00829}{Verify\+Ssl}} \&verify)
+\item 
+void \mbox{\hyperlink{a00825_abac400e0876e922d22041373dabe30b7}{Set\+Write\+Callback}} (const \mbox{\hyperlink{a00705}{Write\+Callback}} \&write)
+\item 
+void \mbox{\hyperlink{a00825_ae1bd7d9e94f504a72e5570fcd095b986}{Update\+Header}} (const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&header)
+\item 
+\mbox{\hyperlink{a00825_a7df1bd414e6abfb51931459269eab797}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ Impl $>$ \mbox{\hyperlink{a00825_a1f11e154db96f2e1c77a83b7ee788ca9}{pimpl\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00825_ad0f527fa1fdb36a319f784b3513bd42d}\label{a00825_ad0f527fa1fdb36a319f784b3513bd42d} 
+\index{cpr::Session@{cpr::Session}!Session@{Session}}
+\index{Session@{Session}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily cpr\+::\+Session\+::\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aa15ee4e1b1c86abf0bac2b0d7eb13981}\label{a00825_aa15ee4e1b1c86abf0bac2b0d7eb13981} 
+\index{cpr::Session@{cpr::Session}!Session@{Session}}
+\index{Session@{Session}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily cpr\+::\+Session\+::\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00825}{Session}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00825_ae02155add5a081ff57a40e9735ec2cbd}\label{a00825_ae02155add5a081ff57a40e9735ec2cbd} 
+\index{cpr::Session@{cpr::Session}!Session@{Session}}
+\index{Session@{Session}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily cpr\+::\+Session\+::\+Session (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00825}{Session}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a00825_a7df1bd414e6abfb51931459269eab797}\label{a00825_a7df1bd414e6abfb51931459269eab797} 
+\index{cpr::Session@{cpr::Session}!````~Session@{\texorpdfstring{$\sim$}{\string~}Session}}
+\index{````~Session@{\texorpdfstring{$\sim$}{\string~}Session}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Session()}{\string~Session()}}
+{\footnotesize\ttfamily cpr\+::\+Session\+::\texorpdfstring{$\sim$}{\string~}\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00825_ad3cfdc01e5e0a6996e8a9f859cc44d3b}\label{a00825_ad3cfdc01e5e0a6996e8a9f859cc44d3b} 
+\index{cpr::Session@{cpr::Session}!Complete@{Complete}}
+\index{Complete@{Complete}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Complete()}{Complete()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Complete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}}]{curl\+\_\+error }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a0ad49a747a0c56a7fc3cd10fe4032337}\label{a00825_a0ad49a747a0c56a7fc3cd10fe4032337} 
+\index{cpr::Session@{cpr::Session}!Delete@{Delete}}
+\index{Delete@{Delete}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ae5c95118d805ce8c12c819b57d89e9a7}\label{a00825_ae5c95118d805ce8c12c819b57d89e9a7} 
+\index{cpr::Session@{cpr::Session}!Download@{Download}}
+\index{Download@{Download}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Download()}{Download()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Download (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00705}{Write\+Callback}} \&}]{write }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aea9618ab6483da2cc8021f694bc63cda}\label{a00825_aea9618ab6483da2cc8021f694bc63cda} 
+\index{cpr::Session@{cpr::Session}!Download@{Download}}
+\index{Download@{Download}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Download()}{Download()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Download (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a782e3ef742ca63169e21702326e4ff0b}\label{a00825_a782e3ef742ca63169e21702326e4ff0b} 
+\index{cpr::Session@{cpr::Session}!Get@{Get}}
+\index{Get@{Get}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a576d0ac459eb6be2eb0c753314323d3f}\label{a00825_a576d0ac459eb6be2eb0c753314323d3f} 
+\index{cpr::Session@{cpr::Session}!GetCurlHolder@{GetCurlHolder}}
+\index{GetCurlHolder@{GetCurlHolder}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{GetCurlHolder()}{GetCurlHolder()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a00749}{Curl\+Holder}} $>$ cpr\+::\+Session\+::\+Get\+Curl\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aeb736ad892873b7018caeb496c13dd1d}\label{a00825_aeb736ad892873b7018caeb496c13dd1d} 
+\index{cpr::Session@{cpr::Session}!GetDownloadFileLength@{GetDownloadFileLength}}
+\index{GetDownloadFileLength@{GetDownloadFileLength}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{GetDownloadFileLength()}{GetDownloadFileLength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} cpr\+::\+Session\+::\+Get\+Download\+File\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a6a12f412e2b424c054cf795acc21ff66}\label{a00825_a6a12f412e2b424c054cf795acc21ff66} 
+\index{cpr::Session@{cpr::Session}!Head@{Head}}
+\index{Head@{Head}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Head()}{Head()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a0c33bfe070f8f04dbe41ed1872a14f9e}\label{a00825_a0c33bfe070f8f04dbe41ed1872a14f9e} 
+\index{cpr::Session@{cpr::Session}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00825}{Session}} \& cpr\+::\+Session\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00825}{Session}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a00825_a953bd41a54b8e25f667c0a0fcb0f8a68}\label{a00825_a953bd41a54b8e25f667c0a0fcb0f8a68} 
+\index{cpr::Session@{cpr::Session}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00825}{Session}} \& cpr\+::\+Session\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00825}{Session}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00825_ab296793770689d344b69926ec1258b03}\label{a00825_ab296793770689d344b69926ec1258b03} 
+\index{cpr::Session@{cpr::Session}!Options@{Options}}
+\index{Options@{Options}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Options()}{Options()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ab79c7500603b3f2d4f14316ab4b7c65b}\label{a00825_ab79c7500603b3f2d4f14316ab4b7c65b} 
+\index{cpr::Session@{cpr::Session}!Patch@{Patch}}
+\index{Patch@{Patch}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Patch()}{Patch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Patch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a3d96d865fc382114cd3daee45ec67b66}\label{a00825_a3d96d865fc382114cd3daee45ec67b66} 
+\index{cpr::Session@{cpr::Session}!Post@{Post}}
+\index{Post@{Post}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Post()}{Post()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a1bc917df4763251613116ba14781097d}\label{a00825_a1bc917df4763251613116ba14781097d} 
+\index{cpr::Session@{cpr::Session}!PrepareDelete@{PrepareDelete}}
+\index{PrepareDelete@{PrepareDelete}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PrepareDelete()}{PrepareDelete()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aed11421c47627740d5e38084dca5ee12}\label{a00825_aed11421c47627740d5e38084dca5ee12} 
+\index{cpr::Session@{cpr::Session}!PrepareGet@{PrepareGet}}
+\index{PrepareGet@{PrepareGet}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PrepareGet()}{PrepareGet()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a10f0e68896b8721f016eece66feb513f}\label{a00825_a10f0e68896b8721f016eece66feb513f} 
+\index{cpr::Session@{cpr::Session}!PrepareHead@{PrepareHead}}
+\index{PrepareHead@{PrepareHead}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PrepareHead()}{PrepareHead()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a1b3493cf42808ece1dde3dc81c598e37}\label{a00825_a1b3493cf42808ece1dde3dc81c598e37} 
+\index{cpr::Session@{cpr::Session}!PrepareOptions@{PrepareOptions}}
+\index{PrepareOptions@{PrepareOptions}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PrepareOptions()}{PrepareOptions()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ab1191e3d7d74cf2fac1d58644e0b4d2b}\label{a00825_ab1191e3d7d74cf2fac1d58644e0b4d2b} 
+\index{cpr::Session@{cpr::Session}!PreparePatch@{PreparePatch}}
+\index{PreparePatch@{PreparePatch}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PreparePatch()}{PreparePatch()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Patch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a24cfa38c07778fb7aef45cf0cc65e90c}\label{a00825_a24cfa38c07778fb7aef45cf0cc65e90c} 
+\index{cpr::Session@{cpr::Session}!PreparePost@{PreparePost}}
+\index{PreparePost@{PreparePost}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PreparePost()}{PreparePost()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a436a045fecaf7e9dc99287024fe1235c}\label{a00825_a436a045fecaf7e9dc99287024fe1235c} 
+\index{cpr::Session@{cpr::Session}!PreparePut@{PreparePut}}
+\index{PreparePut@{PreparePut}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{PreparePut()}{PreparePut()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Prepare\+Put (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a62082c07d46ef678b8a81f1d5684e910}\label{a00825_a62082c07d46ef678b8a81f1d5684e910} 
+\index{cpr::Session@{cpr::Session}!Put@{Put}}
+\index{Put@{Put}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} cpr\+::\+Session\+::\+Put (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_afe7567a848dfaa95b85b264dac4be341}\label{a00825_afe7567a848dfaa95b85b264dac4be341} 
+\index{cpr::Session@{cpr::Session}!SetAuth@{SetAuth}}
+\index{SetAuth@{SetAuth}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetAuth()}{SetAuth()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Auth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00689}{Authentication}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a61b948243d1a11e116f2da667f820eb3}\label{a00825_a61b948243d1a11e116f2da667f820eb3} 
+\index{cpr::Session@{cpr::Session}!SetBody@{SetBody}}
+\index{SetBody@{SetBody}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetBody()}{SetBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00693}{Body}} \&\&}]{body }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_acb212f981f513951b810800e3cba84c2}\label{a00825_acb212f981f513951b810800e3cba84c2} 
+\index{cpr::Session@{cpr::Session}!SetBody@{SetBody}}
+\index{SetBody@{SetBody}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetBody()}{SetBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Body (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00693}{Body}} \&}]{body }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a2900948eab72aa68bb3d71e2e9cd3c33}\label{a00825_a2900948eab72aa68bb3d71e2e9cd3c33} 
+\index{cpr::Session@{cpr::Session}!SetConnectTimeout@{SetConnectTimeout}}
+\index{SetConnectTimeout@{SetConnectTimeout}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetConnectTimeout()}{SetConnectTimeout()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Connect\+Timeout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00717}{Connect\+Timeout}} \&}]{timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a58ad9e652edb062d7035cdd1db273f64}\label{a00825_a58ad9e652edb062d7035cdd1db273f64} 
+\index{cpr::Session@{cpr::Session}!SetCookies@{SetCookies}}
+\index{SetCookies@{SetCookies}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetCookies()}{SetCookies()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Cookies (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00721}{Cookies}} \&}]{cookies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a555ce38c6d50ab1c2097881c7d1dd20e}\label{a00825_a555ce38c6d50ab1c2097881c7d1dd20e} 
+\index{cpr::Session@{cpr::Session}!SetDebugCallback@{SetDebugCallback}}
+\index{SetDebugCallback@{SetDebugCallback}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetDebugCallback()}{SetDebugCallback()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Debug\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00713}{Debug\+Callback}} \&}]{debug }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ace244e22ccff686fd0ad8c160459f3db}\label{a00825_ace244e22ccff686fd0ad8c160459f3db} 
+\index{cpr::Session@{cpr::Session}!SetDigest@{SetDigest}}
+\index{SetDigest@{SetDigest}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetDigest()}{SetDigest()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Digest (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00753}{Digest}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a347e70fe86d9c43887675da066aa6a89}\label{a00825_a347e70fe86d9c43887675da066aa6a89} 
+\index{cpr::Session@{cpr::Session}!SetHeader@{SetHeader}}
+\index{SetHeader@{SetHeader}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetHeader()}{SetHeader()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&}]{header }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_acdd75cce25d3fee416327ff82c2c2baa}\label{a00825_acdd75cce25d3fee416327ff82c2c2baa} 
+\index{cpr::Session@{cpr::Session}!SetHeaderCallback@{SetHeaderCallback}}
+\index{SetHeaderCallback@{SetHeaderCallback}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetHeaderCallback()}{SetHeaderCallback()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Header\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00701}{Header\+Callback}} \&}]{header }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_afae4fc02a9b8077c74df5670855ea40e}\label{a00825_afae4fc02a9b8077c74df5670855ea40e} 
+\index{cpr::Session@{cpr::Session}!SetHttpVersion@{SetHttpVersion}}
+\index{SetHttpVersion@{SetHttpVersion}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetHttpVersion()}{SetHttpVersion()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Http\+Version (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00761}{Http\+Version}} \&}]{version }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9060a9ba892d25b829b51dcf49528e9d}\label{a00825_a9060a9ba892d25b829b51dcf49528e9d} 
+\index{cpr::Session@{cpr::Session}!SetInterface@{SetInterface}}
+\index{SetInterface@{SetInterface}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetInterface()}{SetInterface()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00765}{Interface}} \&}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a2fdac5f0c5417249b2eab6b151e4bbe3}\label{a00825_a2fdac5f0c5417249b2eab6b151e4bbe3} 
+\index{cpr::Session@{cpr::Session}!SetLowSpeed@{SetLowSpeed}}
+\index{SetLowSpeed@{SetLowSpeed}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetLowSpeed()}{SetLowSpeed()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Low\+Speed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00773}{Low\+Speed}} \&}]{low\+\_\+speed }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aa3c05645bfd7cf6b9f7486629da58738}\label{a00825_aa3c05645bfd7cf6b9f7486629da58738} 
+\index{cpr::Session@{cpr::Session}!SetMultipart@{SetMultipart}}
+\index{SetMultipart@{SetMultipart}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetMultipart()}{SetMultipart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Multipart (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00789}{Multipart}} \&}]{multipart }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a4e6d342ed17d4b18782aac486cef7c46}\label{a00825_a4e6d342ed17d4b18782aac486cef7c46} 
+\index{cpr::Session@{cpr::Session}!SetMultipart@{SetMultipart}}
+\index{SetMultipart@{SetMultipart}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetMultipart()}{SetMultipart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Multipart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00789}{Multipart}} \&\&}]{multipart }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9dcd3bd027b019bd64cffd9b05eecea6}\label{a00825_a9dcd3bd027b019bd64cffd9b05eecea6} 
+\index{cpr::Session@{cpr::Session}!SetNTLM@{SetNTLM}}
+\index{SetNTLM@{SetNTLM}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetNTLM()}{SetNTLM()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+NTLM (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00793}{NTLM}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a1e9244603f62a9450dc964eb36adad2c}\label{a00825_a1e9244603f62a9450dc964eb36adad2c} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [1/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00693}{Body}} \&\&}]{body }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ad7448e1392a11692404e6509b2f1ee55}\label{a00825_ad7448e1392a11692404e6509b2f1ee55} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [2/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00689}{Authentication}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a6b944f8f05761931dda3ade12440e00e}\label{a00825_a6b944f8f05761931dda3ade12440e00e} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [3/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00693}{Body}} \&}]{body }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a3ef5a6a1416c9bb3824ce00eb8dc3473}\label{a00825_a3ef5a6a1416c9bb3824ce00eb8dc3473} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [4/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00717}{Connect\+Timeout}} \&}]{timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ae4199a777133904751f9ae04c7687235}\label{a00825_ae4199a777133904751f9ae04c7687235} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [5/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00721}{Cookies}} \&}]{cookies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ae8e64827c253394a6f431338a510cdbf}\label{a00825_ae8e64827c253394a6f431338a510cdbf} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [6/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00713}{Debug\+Callback}} \&}]{debug }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a6b7bbecd50453f49638c7dbaca009c8c}\label{a00825_a6b7bbecd50453f49638c7dbaca009c8c} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [7/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00753}{Digest}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a15d32ba9a3b85a62e870d32f9ffb4050}\label{a00825_a15d32ba9a3b85a62e870d32f9ffb4050} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [8/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&}]{header }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_af180a28ba29218a2bec5f8ad135c9726}\label{a00825_af180a28ba29218a2bec5f8ad135c9726} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [9/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00701}{Header\+Callback}} \&}]{header }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a246fbfdbf319d99d723e68309b363676}\label{a00825_a246fbfdbf319d99d723e68309b363676} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [10/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00761}{Http\+Version}} \&}]{version }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_adb2189f7c006f26fd4164c5869a661a8}\label{a00825_adb2189f7c006f26fd4164c5869a661a8} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [11/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00765}{Interface}} \&}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a645119e9349a3d7b5c972d2e2276849b}\label{a00825_a645119e9349a3d7b5c972d2e2276849b} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [12/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00769}{Limit\+Rate}} \&}]{limit\+\_\+rate }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a165de7a2e6fbe6fbb1785a28521f2ce6}\label{a00825_a165de7a2e6fbe6fbb1785a28521f2ce6} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [13/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00773}{Low\+Speed}} \&}]{low\+\_\+speed }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9d6ba7de9608c16c2aeb929c85bb9986}\label{a00825_a9d6ba7de9608c16c2aeb929c85bb9986} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [14/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00789}{Multipart}} \&}]{multipart }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a8bbb9121cb168cfac70810110955531a}\label{a00825_a8bbb9121cb168cfac70810110955531a} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [15/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00793}{NTLM}} \&}]{auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a92c9a9ee09fc7b02a610f93aa3a91a09}\label{a00825_a92c9a9ee09fc7b02a610f93aa3a91a09} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [16/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00797}{Parameters}} \&}]{parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a6d31e9ff4e817043a9304547d169b6ab}\label{a00825_a6d31e9ff4e817043a9304547d169b6ab} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [17/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00801}{Payload}} \&}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a39d241d76f99fc5844939d2a3e6a9dfa}\label{a00825_a39d241d76f99fc5844939d2a3e6a9dfa} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [18/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00709}{Progress\+Callback}} \&}]{progress }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a17d15e06326f2aacadebcb122a1b81a7}\label{a00825_a17d15e06326f2aacadebcb122a1b81a7} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [19/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00805}{Proxies}} \&}]{proxies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a0542e154bec94a4f091770d1fac9bc8f}\label{a00825_a0542e154bec94a4f091770d1fac9bc8f} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [20/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&}]{proxy\+\_\+auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_abafd22860794e8cd3a3deb6cfb030578}\label{a00825_abafd22860794e8cd3a3deb6cfb030578} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [21/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00697}{Read\+Callback}} \&}]{read }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aa11bfeb079d314b12af52eef80aca030}\label{a00825_aa11bfeb079d314b12af52eef80aca030} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [22/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00817}{Redirect}} \&}]{redirect }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9787251e000d77e3c36a92da4755fec9}\label{a00825_a9787251e000d77e3c36a92da4755fec9} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [23/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00897}{Ssl\+Options}} \&}]{options }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ad3bb5b183bbb41c044ba2acdca76bd53}\label{a00825_ad3bb5b183bbb41c044ba2acdca76bd53} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [24/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00901}{Timeout}} \&}]{timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a1c295fd8e1d9cb1986e3ff6872ac7272}\label{a00825_a1c295fd8e1d9cb1986e3ff6872ac7272} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [25/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00905}{Unix\+Socket}} \&}]{unix\+\_\+socket }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a8b6ed0ac4062760c9234c5cf69c146d3}\label{a00825_a8b6ed0ac4062760c9234c5cf69c146d3} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [26/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00729}{Url}} \&}]{url }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_af741f0cb6a61adfbd3358632fb618390}\label{a00825_af741f0cb6a61adfbd3358632fb618390} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [27/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00909}{User\+Agent}} \&}]{ua }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9e4cacd38a91c0647c0627725263e436}\label{a00825_a9e4cacd38a91c0647c0627725263e436} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [28/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00913}{Verbose}} \&}]{verbose }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a69b0a397a73db0c0a4fd78fa0f7d68d0}\label{a00825_a69b0a397a73db0c0a4fd78fa0f7d68d0} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [29/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00829}{Verify\+Ssl}} \&}]{verify }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a06e52f980f714c95c97483af19629501}\label{a00825_a06e52f980f714c95c97483af19629501} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [30/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00705}{Write\+Callback}} \&}]{write }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aace8827ac5ce65889e15bcfca2118758}\label{a00825_aace8827ac5ce65889e15bcfca2118758} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [31/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00789}{Multipart}} \&\&}]{multipart }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a029f1e022f83f6f9ddd0dcf0fb32034f}\label{a00825_a029f1e022f83f6f9ddd0dcf0fb32034f} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [32/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00797}{Parameters}} \&\&}]{parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aeb8869c79a646fa440d1bdfc4ca2169b}\label{a00825_aeb8869c79a646fa440d1bdfc4ca2169b} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [33/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00801}{Payload}} \&\&}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a35cb37d03a4d3454c4269d53c8b4df8a}\label{a00825_a35cb37d03a4d3454c4269d53c8b4df8a} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [34/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00805}{Proxies}} \&\&}]{proxies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_af794291561c1382bb9ff3ffe0d68a3e4}\label{a00825_af794291561c1382bb9ff3ffe0d68a3e4} 
+\index{cpr::Session@{cpr::Session}!SetOption@{SetOption}}
+\index{SetOption@{SetOption}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetOption()}{SetOption()}\hspace{0.1cm}{\footnotesize\ttfamily [35/35]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&\&}]{proxy\+\_\+auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ababd3fd493651756fc734e65e1a22010}\label{a00825_ababd3fd493651756fc734e65e1a22010} 
+\index{cpr::Session@{cpr::Session}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00797}{Parameters}} \&}]{parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a8838b25ec833921c0db1f53004100531}\label{a00825_a8838b25ec833921c0db1f53004100531} 
+\index{cpr::Session@{cpr::Session}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00797}{Parameters}} \&\&}]{parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_af73b3a553d20a38ed7398fa1495a36c7}\label{a00825_af73b3a553d20a38ed7398fa1495a36c7} 
+\index{cpr::Session@{cpr::Session}!SetPayload@{SetPayload}}
+\index{SetPayload@{SetPayload}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetPayload()}{SetPayload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Payload (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00801}{Payload}} \&}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ad9f5e70c4cfc0ac60d5adf5961e9399a}\label{a00825_ad9f5e70c4cfc0ac60d5adf5961e9399a} 
+\index{cpr::Session@{cpr::Session}!SetPayload@{SetPayload}}
+\index{SetPayload@{SetPayload}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetPayload()}{SetPayload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Payload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00801}{Payload}} \&\&}]{payload }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aa85821705625367c8809e7165ce7800d}\label{a00825_aa85821705625367c8809e7165ce7800d} 
+\index{cpr::Session@{cpr::Session}!SetProgressCallback@{SetProgressCallback}}
+\index{SetProgressCallback@{SetProgressCallback}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetProgressCallback()}{SetProgressCallback()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Progress\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00709}{Progress\+Callback}} \&}]{progress }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ade9a3ffb77e099e7737759ec84cdccd5}\label{a00825_ade9a3ffb77e099e7737759ec84cdccd5} 
+\index{cpr::Session@{cpr::Session}!SetProxies@{SetProxies}}
+\index{SetProxies@{SetProxies}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetProxies()}{SetProxies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Proxies (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00805}{Proxies}} \&}]{proxies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a63af131835aa9a1f8c2c796aff99f68e}\label{a00825_a63af131835aa9a1f8c2c796aff99f68e} 
+\index{cpr::Session@{cpr::Session}!SetProxies@{SetProxies}}
+\index{SetProxies@{SetProxies}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetProxies()}{SetProxies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Proxies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00805}{Proxies}} \&\&}]{proxies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_afc2f23fa7c8d00c8004c0267716268dc}\label{a00825_afc2f23fa7c8d00c8004c0267716268dc} 
+\index{cpr::Session@{cpr::Session}!SetProxyAuth@{SetProxyAuth}}
+\index{SetProxyAuth@{SetProxyAuth}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetProxyAuth()}{SetProxyAuth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Proxy\+Auth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&}]{proxy\+\_\+auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a9324afd23ffabc8e0a608bcab8868651}\label{a00825_a9324afd23ffabc8e0a608bcab8868651} 
+\index{cpr::Session@{cpr::Session}!SetProxyAuth@{SetProxyAuth}}
+\index{SetProxyAuth@{SetProxyAuth}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetProxyAuth()}{SetProxyAuth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Proxy\+Auth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00813}{Proxy\+Authentication}} \&\&}]{proxy\+\_\+auth }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a3893e839f95be669ebc8c9e406213b2c}\label{a00825_a3893e839f95be669ebc8c9e406213b2c} 
+\index{cpr::Session@{cpr::Session}!SetReadCallback@{SetReadCallback}}
+\index{SetReadCallback@{SetReadCallback}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetReadCallback()}{SetReadCallback()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Read\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00697}{Read\+Callback}} \&}]{read }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a46a2e5372e4e4d3ff74b5548d3ab25cb}\label{a00825_a46a2e5372e4e4d3ff74b5548d3ab25cb} 
+\index{cpr::Session@{cpr::Session}!SetRedirect@{SetRedirect}}
+\index{SetRedirect@{SetRedirect}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetRedirect()}{SetRedirect()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Redirect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00817}{Redirect}} \&}]{redirect }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a94db32170b1657d6dbfb119c2bdcfcd7}\label{a00825_a94db32170b1657d6dbfb119c2bdcfcd7} 
+\index{cpr::Session@{cpr::Session}!SetSslOptions@{SetSslOptions}}
+\index{SetSslOptions@{SetSslOptions}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetSslOptions()}{SetSslOptions()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Ssl\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00897}{Ssl\+Options}} \&}]{options }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a5258c775dfc19b5fa6f52cd4f493a191}\label{a00825_a5258c775dfc19b5fa6f52cd4f493a191} 
+\index{cpr::Session@{cpr::Session}!SetTimeout@{SetTimeout}}
+\index{SetTimeout@{SetTimeout}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetTimeout()}{SetTimeout()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Timeout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00901}{Timeout}} \&}]{timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a3dff2204b431595d5b2e313612b15e7c}\label{a00825_a3dff2204b431595d5b2e313612b15e7c} 
+\index{cpr::Session@{cpr::Session}!SetUnixSocket@{SetUnixSocket}}
+\index{SetUnixSocket@{SetUnixSocket}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetUnixSocket()}{SetUnixSocket()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Unix\+Socket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00905}{Unix\+Socket}} \&}]{unix\+\_\+socket }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ac2c92dc4697a0ba0960ef8dc4a2b2df2}\label{a00825_ac2c92dc4697a0ba0960ef8dc4a2b2df2} 
+\index{cpr::Session@{cpr::Session}!SetUrl@{SetUrl}}
+\index{SetUrl@{SetUrl}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetUrl()}{SetUrl()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Url (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00729}{Url}} \&}]{url }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_aec13333347dd910ca091bfa4959444d9}\label{a00825_aec13333347dd910ca091bfa4959444d9} 
+\index{cpr::Session@{cpr::Session}!SetUserAgent@{SetUserAgent}}
+\index{SetUserAgent@{SetUserAgent}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetUserAgent()}{SetUserAgent()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+User\+Agent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00909}{User\+Agent}} \&}]{ua }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ad6506e42bb752d8577dad35412742bf7}\label{a00825_ad6506e42bb752d8577dad35412742bf7} 
+\index{cpr::Session@{cpr::Session}!SetVerbose@{SetVerbose}}
+\index{SetVerbose@{SetVerbose}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetVerbose()}{SetVerbose()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Verbose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00913}{Verbose}} \&}]{verbose }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_a0feca99d1e0576b957c4f017396be47b}\label{a00825_a0feca99d1e0576b957c4f017396be47b} 
+\index{cpr::Session@{cpr::Session}!SetVerifySsl@{SetVerifySsl}}
+\index{SetVerifySsl@{SetVerifySsl}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetVerifySsl()}{SetVerifySsl()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Verify\+Ssl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00829}{Verify\+Ssl}} \&}]{verify }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_abac400e0876e922d22041373dabe30b7}\label{a00825_abac400e0876e922d22041373dabe30b7} 
+\index{cpr::Session@{cpr::Session}!SetWriteCallback@{SetWriteCallback}}
+\index{SetWriteCallback@{SetWriteCallback}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{SetWriteCallback()}{SetWriteCallback()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Set\+Write\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00705}{Write\+Callback}} \&}]{write }\end{DoxyParamCaption})}
+
+\Hypertarget{a00825_ae1bd7d9e94f504a72e5570fcd095b986}\label{a00825_ae1bd7d9e94f504a72e5570fcd095b986} 
+\index{cpr::Session@{cpr::Session}!UpdateHeader@{UpdateHeader}}
+\index{UpdateHeader@{UpdateHeader}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{UpdateHeader()}{UpdateHeader()}}
+{\footnotesize\ttfamily void cpr\+::\+Session\+::\+Update\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \&}]{header }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00825_a1f11e154db96f2e1c77a83b7ee788ca9}\label{a00825_a1f11e154db96f2e1c77a83b7ee788ca9} 
+\index{cpr::Session@{cpr::Session}!pimpl\_@{pimpl\_}}
+\index{pimpl\_@{pimpl\_}!cpr::Session@{cpr::Session}}
+\doxysubsubsection{\texorpdfstring{pimpl\_}{pimpl\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$Impl$>$ cpr\+::\+Session\+::pimpl\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00089}{session.\+h}}\end{DoxyCompactItemize}

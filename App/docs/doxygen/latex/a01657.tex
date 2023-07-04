@@ -1,0 +1,125 @@
+\doxysection{sf\+::Sound\+File\+Writer Class Reference}
+\hypertarget{a01657}{}\label{a01657}\index{sf::SoundFileWriter@{sf::SoundFileWriter}}
+
+
+Abstract base class for sound file encoding.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+File\+Writer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{a01657_a5c92bcaaa880ef4d3eaab18dae1d3d07}{open}} (const std\+::string \&filename, unsigned int sample\+Rate, unsigned int channel\+Count)=0
+\begin{DoxyCompactList}\small\item\em Open a sound file for writing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01657_a4ce597e7682d22c5b2c98d77e931a1da}{write}} (const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}samples, \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} count)=0
+\begin{DoxyCompactList}\small\item\em Write audio samples to the open file. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01657_a76944fc158688f35050bd5b592c90270}{\texorpdfstring{$\sim$}{\string~}\+Sound\+File\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for sound file encoding. 
+
+This class allows users to write audio file formats not natively supported by SFML, and thus extend the set of supported writable audio formats.
+
+A valid sound file writer must override the open and write functions, as well as providing a static check function; the latter is used by SFML to find a suitable writer for a given filename.
+
+To register a new writer, use the \doxylink{a01637_a3a59140e6ccf1f252f721b790eddd661}{sf\+::\+Sound\+File\+Factory\+::register\+Writer} template function.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MySoundFileWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01657}{sf::SoundFileWriter}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ check(\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ typically,\ check\ the\ extension}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ true\ if\ the\ writer\ can\ handle\ the\ format}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ open(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ sampleRate,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ channelCount)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ open\ the\ file\ 'filename'\ for\ writing,}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ write\ the\ given\ sample\ rate\ and\ channel\ count\ to\ the\ file\ header}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ true\ on\ success}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ write(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}*\ samples,\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}}\ count)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ write\ 'count'\ samples\ stored\ at\ address\ 'samples',}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ them\ (for\ example\ to\ normalized\ float)\ if\ the\ format\ requires\ it}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{sf::SoundFileFactory::registerWriter<MySoundFileWriter>();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01621}{sf\+::\+Output\+Sound\+File}, \doxylink{a01637}{sf\+::\+Sound\+File\+Factory}, \doxylink{a01649}{sf\+::\+Sound\+File\+Reader} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01657_a76944fc158688f35050bd5b592c90270}\label{a01657_a76944fc158688f35050bd5b592c90270} 
+\index{sf::SoundFileWriter@{sf::SoundFileWriter}!````~SoundFileWriter@{\texorpdfstring{$\sim$}{\string~}SoundFileWriter}}
+\index{````~SoundFileWriter@{\texorpdfstring{$\sim$}{\string~}SoundFileWriter}!sf::SoundFileWriter@{sf::SoundFileWriter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundFileWriter()}{\string~SoundFileWriter()}}
+{\footnotesize\ttfamily virtual sf\+::\+Sound\+File\+Writer\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+File\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01657_a5c92bcaaa880ef4d3eaab18dae1d3d07}\label{a01657_a5c92bcaaa880ef4d3eaab18dae1d3d07} 
+\index{sf::SoundFileWriter@{sf::SoundFileWriter}!open@{open}}
+\index{open@{open}!sf::SoundFileWriter@{sf::SoundFileWriter}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual bool sf\+::\+Sound\+File\+Writer\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{unsigned int}]{sample\+Rate,  }\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a sound file for writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the file to open \\
+\hline
+{\em sample\+Rate} & Sample rate of the sound \\
+\hline
+{\em channel\+Count} & Number of channels of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\Hypertarget{a01657_a4ce597e7682d22c5b2c98d77e931a1da}\label{a01657_a4ce597e7682d22c5b2c98d77e931a1da} 
+\index{sf::SoundFileWriter@{sf::SoundFileWriter}!write@{write}}
+\index{write@{write}!sf::SoundFileWriter@{sf::SoundFileWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+File\+Writer\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}}]{samples,  }\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write audio samples to the open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the sample array to write \\
+\hline
+{\em count} & Number of samples to write \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00344}{Sound\+File\+Writer.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,700 @@
+\doxysection{sf\+::Transform Class Reference}
+\hypertarget{a01789}{}\label{a01789}\index{sf::Transform@{sf::Transform}}
+
+
+Define a 3x3 transform matrix.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Transform\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_ad8403f888799b5c9f781cb9f3757f2a4}{combine}} (const \mbox{\hyperlink{a01789}{Transform}} \&transform)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with another one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01789_a14f49e81af44aabcff7611f6703a1e4a}{get\+Inverse}} () const
+\begin{DoxyCompactList}\small\item\em Return the inverse of the transform. \end{DoxyCompactList}\item 
+const float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01789_ab85cb4194f42a965d337a8f02783c534}{get\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Return the transform as a 4x4 matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a11aa9a4fbd9254e7d22b96f92f018d09}{rotate}} (float angle, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&center)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_ad78237e81d1de866d1b3c040ad003971}{rotate}} (float angle, float centerX, float centerY)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a23fe4e63821354600b7592be90f2d65e}{scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factors)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a486a4a1946208a883c7f8ec1e9cf2e35}{scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factors, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&center)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}} (float scaleX, float scaleY)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_af1ad4ae13dacaf812b6411142243042b}{scale}} (float scaleX, float scaleY, float centerX, float centerY)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789_ac32de51bd0b9f3d52fbe0838225ee83b}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789_a78c48677712fcf41122d02f1301d71a3}{Transform}} (float a00, float a01, float a02, float a10, float a11, float a12, float a20, float a21, float a22)
+\begin{DoxyCompactList}\small\item\em Construct a transform from a 3x3 matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01789_ab42a0bb7a252c6d221004f6372ce5fdc}{transform\+Point}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&point) const
+\begin{DoxyCompactList}\small\item\em \doxylink{a01789}{Transform} a 2D point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01789_af2e38c3c077d28898686662558b41135}{transform\+Point}} (float x, float y) const
+\begin{DoxyCompactList}\small\item\em \doxylink{a01789}{Transform} a 2D point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01789_a3824a20505d81a94bc22be1ffee57d3d}{transform\+Rect}} (const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&rectangle) const
+\begin{DoxyCompactList}\small\item\em \doxylink{a01789}{Transform} a rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a2426209f1fd3cc02129dec373a3c6f69}{translate}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&offset)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a translation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a translation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01789_aa4eb1eecbcb9979d76e2543b337fdb13}{Identity}}
+\begin{DoxyCompactList}\small\item\em The identity transform (does nothing) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01789_a1cd7f71fbf796010bb141806b67d73c9}{m\+\_\+matrix}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em 4x4 matrix defining the transformation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{a01789_ae8ea92b5f2531547173b510b5fe80eb9}{operator!=}} (const \mbox{\hyperlink{a01789}{Transform}} \&left, const \mbox{\hyperlink{a01789}{Transform}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator != to compare two transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01789_a423ade8d6aa1378c695f8eb4bfce8981}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{a01789}{Transform}} \&left, const \mbox{\hyperlink{a01789}{Transform}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*} to combine two transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01789_ac729169ec3036f3f3f3024c98efd041d}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{a01789}{Transform}} \&left, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*} to transform a point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01789_a45a9de70a463117f851f1264a6f558ba}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{a01789}{Transform}} \&left, const \mbox{\hyperlink{a01789}{Transform}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*}= to combine two transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool \mbox{\hyperlink{a01789_a542b6e28b891d92b68acbb6cf4c1165e}{operator==}} (const \mbox{\hyperlink{a01789}{Transform}} \&left, const \mbox{\hyperlink{a01789}{Transform}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator == to compare two transforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define a 3x3 transform matrix. 
+
+A \doxylink{a01789}{sf\+::\+Transform} specifies how to translate, rotate, scale, shear, project, whatever things. In mathematical terms, it defines how to transform a coordinate system into another.
+
+For example, if you apply a rotation transform to a sprite, the result will be a rotated sprite. And anything that is transformed by this rotation transform will be rotated the same way, according to its initial position.
+
+Transforms are typically used for drawing. But they can also be used for any computation that requires to transform points between the local and global coordinate systems of an entity (like collision detection).
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ define\ a\ translation\ transform}}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ translation;}
+\DoxyCodeLine{translation.\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(20,\ 50);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ define\ a\ rotation\ transform}}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ rotation;}
+\DoxyCodeLine{rotation.\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ combine\ them}}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform\ =\ translation\ *\ rotation;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ use\ the\ result\ to\ transform\ stuff...}}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ point\ =\ transform.\mbox{\hyperlink{a01789_af2e38c3c077d28898686662558b41135}{transformPoint}}(10,\ 20);}
+\DoxyCodeLine{\mbox{\hyperlink{a01737}{sf::FloatRect}}\ rect\ =\ transform.\mbox{\hyperlink{a01789_a3824a20505d81a94bc22be1ffee57d3d}{transformRect}}(\mbox{\hyperlink{a01737}{sf::FloatRect}}(0,\ 0,\ 10,\ 100));}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793}{sf\+::\+Transformable}, \doxylink{a01745}{sf\+::\+Render\+States} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01789_ac32de51bd0b9f3d52fbe0838225ee83b}\label{a01789_ac32de51bd0b9f3d52fbe0838225ee83b} 
+\index{sf::Transform@{sf::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an identity transform (a transform that does nothing). \Hypertarget{a01789_a78c48677712fcf41122d02f1301d71a3}\label{a01789_a78c48677712fcf41122d02f1301d71a3} 
+\index{sf::Transform@{sf::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{float}]{a00,  }\item[{float}]{a01,  }\item[{float}]{a02,  }\item[{float}]{a10,  }\item[{float}]{a11,  }\item[{float}]{a12,  }\item[{float}]{a20,  }\item[{float}]{a21,  }\item[{float}]{a22 }\end{DoxyParamCaption})}
+
+
+
+Construct a transform from a 3x3 matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a00} & Element (0, 0) of the matrix \\
+\hline
+{\em a01} & Element (0, 1) of the matrix \\
+\hline
+{\em a02} & Element (0, 2) of the matrix \\
+\hline
+{\em a10} & Element (1, 0) of the matrix \\
+\hline
+{\em a11} & Element (1, 1) of the matrix \\
+\hline
+{\em a12} & Element (1, 2) of the matrix \\
+\hline
+{\em a20} & Element (2, 0) of the matrix \\
+\hline
+{\em a21} & Element (2, 1) of the matrix \\
+\hline
+{\em a22} & Element (2, 2) of the matrix \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01789_ad8403f888799b5c9f781cb9f3757f2a4}\label{a01789_ad8403f888799b5c9f781cb9f3757f2a4} 
+\index{sf::Transform@{sf::Transform}!combine@{combine}}
+\index{combine@{combine}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{combine()}{combine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::combine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{transform }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with another one. 
+
+The result is a transform that is equivalent to applying \texorpdfstring{$\ast$}{*}this followed by {\itshape transform}. Mathematically, it is equivalent to a matrix multiplication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & \doxylink{a01789}{Transform} to combine with this transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this 
+\end{DoxyReturn}
+\Hypertarget{a01789_a14f49e81af44aabcff7611f6703a1e4a}\label{a01789_a14f49e81af44aabcff7611f6703a1e4a} 
+\index{sf::Transform@{sf::Transform}!getInverse@{getInverse}}
+\index{getInverse@{getInverse}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{getInverse()}{getInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transform\+::get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the inverse of the transform. 
+
+If the inverse cannot be computed, an identity transform is returned.
+
+\begin{DoxyReturn}{Returns}
+A new transform which is the inverse of self 
+\end{DoxyReturn}
+\Hypertarget{a01789_ab85cb4194f42a965d337a8f02783c534}\label{a01789_ab85cb4194f42a965d337a8f02783c534} 
+\index{sf::Transform@{sf::Transform}!getMatrix@{getMatrix}}
+\index{getMatrix@{getMatrix}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
+{\footnotesize\ttfamily const float \texorpdfstring{$\ast$}{*} sf\+::\+Transform\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the transform as a 4x4 matrix. 
+
+This function returns a pointer to an array of 16 floats containing the transform elements as a 4x4 matrix, which is directly compatible with Open\+GL functions.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform\ =\ ...;}
+\DoxyCodeLine{glLoadMatrixf(transform.\mbox{\hyperlink{a01789_ab85cb4194f42a965d337a8f02783c534}{getMatrix}}());}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer to a 4x4 matrix 
+\end{DoxyReturn}
+\Hypertarget{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}\label{a01789_ad09ce22a1fb08709f66f30befc7b2e7b} 
+\index{sf::Transform@{sf::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a rotation. 
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(90).\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(50,\ 20);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_a11aa9a4fbd9254e7d22b96f92f018d09}\label{a01789_a11aa9a4fbd9254e7d22b96f92f018d09} 
+\index{sf::Transform@{sf::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{center }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a rotation. 
+
+The center of rotation is provided for convenience as a second argument, so that you can build rotations around arbitrary points more easily (and efficiently) than the usual translate(-\/center).rotate(angle).translate(center).
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(90,\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(8,\ 3)).\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(50,\ 20));}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees \\
+\hline
+{\em center} & Center of rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_ad78237e81d1de866d1b3c040ad003971}\label{a01789_ad78237e81d1de866d1b3c040ad003971} 
+\index{sf::Transform@{sf::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{centerX,  }\item[{float}]{centerY }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a rotation. 
+
+The center of rotation is provided for convenience as a second argument, so that you can build rotations around arbitrary points more easily (and efficiently) than the usual translate(-\/center).rotate(angle).translate(center).
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(90,\ 8,\ 3).\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(50,\ 20);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees \\
+\hline
+{\em centerX} & X coordinate of the center of rotation \\
+\hline
+{\em centerY} & Y coordinate of the center of rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_a23fe4e63821354600b7592be90f2d65e}\label{a01789_a23fe4e63821354600b7592be90f2d65e} 
+\index{sf::Transform@{sf::Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factors }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a scaling. 
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(2,\ 1)).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & Scaling factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_a486a4a1946208a883c7f8ec1e9cf2e35}\label{a01789_a486a4a1946208a883c7f8ec1e9cf2e35} 
+\index{sf::Transform@{sf::Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factors,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{center }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a scaling. 
+
+The center of scaling is provided for convenience as a second argument, so that you can build scaling around arbitrary points more easily (and efficiently) than the usual translate(-\/center).scale(factors).translate(center).
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(2,\ 1),\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(8,\ 3)).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & Scaling factors \\
+\hline
+{\em center} & Center of scaling\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_a846e9ff8567f50adea9b3ce4c70c1554}\label{a01789_a846e9ff8567f50adea9b3ce4c70c1554} 
+\index{sf::Transform@{sf::Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{float}]{scaleX,  }\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a scaling. 
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}}(2,\ 1).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleX} & Scaling factor on the X axis \\
+\hline
+{\em scaleY} & Scaling factor on the Y axis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_af1ad4ae13dacaf812b6411142243042b}\label{a01789_af1ad4ae13dacaf812b6411142243042b} 
+\index{sf::Transform@{sf::Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{float}]{centerX,  }\item[{float}]{centerY }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a scaling. 
+
+The center of scaling is provided for convenience as a second argument, so that you can build scaling around arbitrary points more easily (and efficiently) than the usual translate(-\/center).scale(factors).translate(center).
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}}(2,\ 1,\ 8,\ 3).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleX} & Scaling factor on X axis \\
+\hline
+{\em scaleY} & Scaling factor on Y axis \\
+\hline
+{\em centerX} & X coordinate of the center of scaling \\
+\hline
+{\em centerY} & Y coordinate of the center of scaling\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_a053cd024e320ae719837386d126d0f51}{translate}, \doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_ab42a0bb7a252c6d221004f6372ce5fdc}\label{a01789_ab42a0bb7a252c6d221004f6372ce5fdc} 
+\index{sf::Transform@{sf::Transform}!transformPoint@{transformPoint}}
+\index{transformPoint@{transformPoint}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{transformPoint()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transform\+::transform\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+\doxylink{a01789}{Transform} a 2D point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed point 
+\end{DoxyReturn}
+\Hypertarget{a01789_af2e38c3c077d28898686662558b41135}\label{a01789_af2e38c3c077d28898686662558b41135} 
+\index{sf::Transform@{sf::Transform}!transformPoint@{transformPoint}}
+\index{transformPoint@{transformPoint}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{transformPoint()}{transformPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transform\+::transform\+Point (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const}
+
+
+
+\doxylink{a01789}{Transform} a 2D point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the point to transform \\
+\hline
+{\em y} & Y coordinate of the point to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed point 
+\end{DoxyReturn}
+\Hypertarget{a01789_a3824a20505d81a94bc22be1ffee57d3d}\label{a01789_a3824a20505d81a94bc22be1ffee57d3d} 
+\index{sf::Transform@{sf::Transform}!transformRect@{transformRect}}
+\index{transformRect@{transformRect}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{transformRect()}{transformRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Transform\+::transform\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&}]{rectangle }\end{DoxyParamCaption}) const}
+
+
+
+\doxylink{a01789}{Transform} a rectangle. 
+
+Since SFML doesn\textquotesingle{}t provide support for oriented rectangles, the result of this function is always an axis-\/aligned rectangle. Which means that if the transform contains a rotation, the bounding rectangle of the transformed rectangle is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed rectangle 
+\end{DoxyReturn}
+\Hypertarget{a01789_a2426209f1fd3cc02129dec373a3c6f69}\label{a01789_a2426209f1fd3cc02129dec373a3c6f69} 
+\index{sf::Transform@{sf::Transform}!translate@{translate}}
+\index{translate@{translate}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{offset }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a translation. 
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(100,\ 200)).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Translation offset to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}, \doxylink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01789_a053cd024e320ae719837386d126d0f51}\label{a01789_a053cd024e320ae719837386d126d0f51} 
+\index{sf::Transform@{sf::Transform}!translate@{translate}}
+\index{translate@{translate}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Combine the current transform with a translation. 
+
+This function returns a reference to \texorpdfstring{$\ast$}{*}this, so that calls can be chained. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01789}{sf::Transform}}\ transform;}
+\DoxyCodeLine{transform.\mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(100,\ 200).\mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(45);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Offset to apply on X axis \\
+\hline
+{\em y} & Offset to apply on Y axis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to \texorpdfstring{$\ast$}{*}this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}, \doxylink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01789_ae8ea92b5f2531547173b510b5fe80eb9}\label{a01789_ae8ea92b5f2531547173b510b5fe80eb9} 
+\index{sf::Transform@{sf::Transform}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator != to compare two transforms. 
+
+This call is equivalent to !(left == right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transforms are not equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01789_a423ade8d6aa1378c695f8eb4bfce8981}\label{a01789_a423ade8d6aa1378c695f8eb4bfce8981} 
+\index{sf::Transform@{sf::Transform}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01789}{Transform}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*} to combine two transforms. 
+
+This call is equivalent to calling Transform(left).combine(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New combined transform 
+\end{DoxyReturn}
+\Hypertarget{a01789_ac729169ec3036f3f3f3024c98efd041d}\label{a01789_ac729169ec3036f3f3f3024c98efd041d} 
+\index{sf::Transform@{sf::Transform}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{left,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*} to transform a point. 
+
+This call is equivalent to calling left.\+transform\+Point(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the transform) \\
+\hline
+{\em right} & Right operand (the point to transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New transformed point 
+\end{DoxyReturn}
+\Hypertarget{a01789_a45a9de70a463117f851f1264a6f558ba}\label{a01789_a45a9de70a463117f851f1264a6f558ba} 
+\index{sf::Transform@{sf::Transform}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a01789}{Transform}} \& operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01789}{Transform}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*}= to combine two transforms. 
+
+This call is equivalent to calling left.\+combine(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The combined transform 
+\end{DoxyReturn}
+\Hypertarget{a01789_a542b6e28b891d92b68acbb6cf4c1165e}\label{a01789_a542b6e28b891d92b68acbb6cf4c1165e} 
+\index{sf::Transform@{sf::Transform}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator == to compare two transforms. 
+
+Performs an element-\/wise comparison of the elements of the left transform with the elements of the right transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transforms are equal, false otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01789_aa4eb1eecbcb9979d76e2543b337fdb13}\label{a01789_aa4eb1eecbcb9979d76e2543b337fdb13} 
+\index{sf::Transform@{sf::Transform}!Identity@{Identity}}
+\index{Identity@{Identity}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{Identity}{Identity}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transform\+::\+Identity\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The identity transform (does nothing) 
+
+\Hypertarget{a01789_a1cd7f71fbf796010bb141806b67d73c9}\label{a01789_a1cd7f71fbf796010bb141806b67d73c9} 
+\index{sf::Transform@{sf::Transform}!m\_matrix@{m\_matrix}}
+\index{m\_matrix@{m\_matrix}!sf::Transform@{sf::Transform}}
+\doxysubsubsection{\texorpdfstring{m\_matrix}{m\_matrix}}
+{\footnotesize\ttfamily float sf\+::\+Transform\+::m\+\_\+matrix\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+4x4 matrix defining the transformation 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00434}{Transform.\+hpp}}\end{DoxyCompactItemize}

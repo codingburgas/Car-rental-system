@@ -1,0 +1,332 @@
+\doxysection{sf\+::Socket Class Reference}
+\hypertarget{a01849}{}\label{a01849}\index{sf::Socket@{sf::Socket}}
+
+
+Base class for all the socket types.  
+
+
+
+
+{\ttfamily \#include $<$Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Socket\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Socket\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19}{Any\+Port}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Some special values used by sockets. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \{ \newline
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}{Done}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09}{Not\+Ready}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706}{Partial}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1}{Disconnected}}
+, \newline
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes that may be returned by socket functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the socket is in blocking or non-\/blocking mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} (bool blocking)
+\begin{DoxyCompactList}\small\item\em Set the blocking state of the socket. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01849_a79a4b5918f0b34a2f8db449089694788}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \{ \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214}{Tcp}}
+, \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2}{Udp}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of protocols that the socket can use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01849_a71f2f5c2aa99e01cafe824fee4c573be}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the socket gracefully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781}{create}} (\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket from a socket handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{a01849_a675457784284ae2f5640bbbe16729393}{get\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Return the internal handle of the socket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a80ffb47ec0bafc83af019055d3e6a303}{Socket}} (\mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01849_a0eed7647c471354050aef148bf43081f}{m\+\_\+is\+Blocking}}
+\begin{DoxyCompactList}\small\item\em Current blocking mode of the socket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{a01849_a83b63e07a0cfdb2bb1852990afe7762d}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01849}{Socket} descriptor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \mbox{\hyperlink{a01849_a0c41f91229069c06859746a458731617}{m\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of the socket (TCP or UDP) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01849_a23fafd48278ea4f8f9c25f1f0f43693c}{Socket\+Selector}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all the socket types. 
+
+This class mainly defines internal stuff to be used by derived classes.
+
+The only public features that it defines, and which is therefore common to all the socket classes, is the blocking state. All sockets can be set as blocking or non-\/blocking.
+
+In blocking mode, socket functions will hang until the operation completes, which means that the entire program (well, in fact the current thread if you use multiple ones) will be stuck waiting for your socket operation to complete.
+
+In non-\/blocking mode, all the socket functions will return immediately. If the socket is not ready to complete the requested operation, the function simply returns the proper status code (\doxylink{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09}{Socket\+::\+Not\+Ready}).
+
+The default mode, which is blocking, is the one that is generally used, in combination with threads or selectors. The non-\/blocking mode is rather used in real-\/time applications that run an endless loop that can poll the socket often enough, and cannot afford blocking this loop.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01857}{sf\+::\+Tcp\+Listener}, \doxylink{a01861}{sf\+::\+Tcp\+Socket}, \doxylink{a01869}{sf\+::\+Udp\+Socket} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01849_a618e172642e2628694492e6bfddc6d47}\label{a01849_a618e172642e2628694492e6bfddc6d47} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Some special values used by sockets. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnyPort@{AnyPort}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!AnyPort@{AnyPort}}}\Hypertarget{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19}\label{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19} 
+Any\+Port&Special value that tells the system to pick any available port. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dc}\label{a01849_a51bf0fd51057b98a10fbb866246176dc} 
+\index{sf::Socket@{sf::Socket}!Status@{Status}}
+\index{Status@{Status}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{sf\+::\+Socket\+::\+Status}}}
+
+
+
+Status codes that may be returned by socket functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Done@{Done}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}\label{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!NotReady@{NotReady}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09}\label{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Partial@{Partial}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706}\label{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Disconnected@{Disconnected}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1}\label{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Error@{Error}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d}\label{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d} 
+Error&An unexpected error happened. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8} 
+\index{sf::Socket@{sf::Socket}!Type@{Type}}
+\index{Type@{Type}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{sf\+::\+Socket\+::\+Type}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Types of protocols that the socket can use. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Tcp@{Tcp}}}\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::Socket@{sf::Socket}}\index{sf::Socket@{sf::Socket}!Udp@{Udp}}}\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2} 
+Udp&UDP protocol. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01849_a79a4b5918f0b34a2f8db449089694788}\label{a01849_a79a4b5918f0b34a2f8db449089694788} 
+\index{sf::Socket@{sf::Socket}!````~Socket@{\texorpdfstring{$\sim$}{\string~}Socket}}
+\index{````~Socket@{\texorpdfstring{$\sim$}{\string~}Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Socket()}{\string~Socket()}}
+{\footnotesize\ttfamily virtual sf\+::\+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\Hypertarget{a01849_a80ffb47ec0bafc83af019055d3e6a303}\label{a01849_a80ffb47ec0bafc83af019055d3e6a303} 
+\index{sf::Socket@{sf::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}}
+{\footnotesize\ttfamily sf\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+This constructor can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the socket (TCP or UDP) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01849_a71f2f5c2aa99e01cafe824fee4c573be}\label{a01849_a71f2f5c2aa99e01cafe824fee4c573be} 
+\index{sf::Socket@{sf::Socket}!close@{close}}
+\index{close@{close}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Close the socket gracefully. 
+
+This function can only be accessed by derived classes. \Hypertarget{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc}\label{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket. 
+
+This function can only be accessed by derived classes. \Hypertarget{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781}\label{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781} 
+\index{sf::Socket@{sf::Socket}!create@{create}}
+\index{create@{create}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create the internal representation of the socket from a socket handle. 
+
+This function can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & OS-\/specific handle of the socket to wrap \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01849_a675457784284ae2f5640bbbe16729393}\label{a01849_a675457784284ae2f5640bbbe16729393} 
+\index{sf::Socket@{sf::Socket}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Return the internal handle of the socket. 
+
+The returned handle may be invalid if the socket was not created yet (or already destroyed). This function can only be accessed by derived classes.
+
+\begin{DoxyReturn}{Returns}
+The internal (OS-\/specific) handle of the socket 
+\end{DoxyReturn}
+\Hypertarget{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}\label{a01849_ab1ceca9ac114b8baeeda3b34a0aca468} 
+\index{sf::Socket@{sf::Socket}!isBlocking@{isBlocking}}
+\index{isBlocking@{isBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{isBlocking()}{isBlocking()}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether the socket is in blocking or non-\/blocking mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the socket is blocking, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking} 
+\end{DoxySeeAlso}
+\Hypertarget{a01849_a165fc1423e281ea2714c70303d3a9782}\label{a01849_a165fc1423e281ea2714c70303d3a9782} 
+\index{sf::Socket@{sf::Socket}!setBlocking@{setBlocking}}
+\index{setBlocking@{setBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{setBlocking()}{setBlocking()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::set\+Blocking (\begin{DoxyParamCaption}\item[{bool}]{blocking }\end{DoxyParamCaption})}
+
+
+
+Set the blocking state of the socket. 
+
+In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won\textquotesingle{}t return until some data was actually received. In non-\/blocking mode, calls will always return immediately, using the return code to signal whether there was data available or not. By default, all sockets are blocking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocking} & True to set the socket as blocking, false for non-\/blocking\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01849_a23fafd48278ea4f8f9c25f1f0f43693c}\label{a01849_a23fafd48278ea4f8f9c25f1f0f43693c} 
+\index{sf::Socket@{sf::Socket}!SocketSelector@{SocketSelector}}
+\index{SocketSelector@{SocketSelector}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{SocketSelector}{SocketSelector}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01853}{Socket\+Selector}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01849_a0eed7647c471354050aef148bf43081f}\label{a01849_a0eed7647c471354050aef148bf43081f} 
+\index{sf::Socket@{sf::Socket}!m\_isBlocking@{m\_isBlocking}}
+\index{m\_isBlocking@{m\_isBlocking}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_isBlocking}{m\_isBlocking}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::m\+\_\+is\+Blocking\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current blocking mode of the socket. 
+
+\Hypertarget{a01849_a83b63e07a0cfdb2bb1852990afe7762d}\label{a01849_a83b63e07a0cfdb2bb1852990afe7762d} 
+\index{sf::Socket@{sf::Socket}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01849}{Socket} descriptor. 
+
+\Hypertarget{a01849_a0c41f91229069c06859746a458731617}\label{a01849_a0c41f91229069c06859746a458731617} 
+\index{sf::Socket@{sf::Socket}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!sf::Socket@{sf::Socket}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} sf\+::\+Socket\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Type of the socket (TCP or UDP) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00470}{Socket.\+hpp}}\end{DoxyCompactItemize}

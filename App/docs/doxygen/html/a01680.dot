@@ -1,0 +1,15 @@
+digraph "sf::CircleShape"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="sf::CircleShape",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Specialized shape representing a circle."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sf::Shape",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01773.html",tooltip="Base class for textured shapes with outline."];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="sf::Drawable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01693.html",tooltip="Abstract base class for objects that can be drawn to a render target."];
+  Node4 -> Node2 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="sf::Transformable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01793.html",tooltip="Decomposed transform defined by a position, a rotation and a scale."];
+}

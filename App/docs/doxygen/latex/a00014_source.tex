@@ -1,0 +1,37 @@
+\doxysection{auth.\+h}
+\hypertarget{a00014_source}{}\label{a00014_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/auth.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/auth.h}}
+\mbox{\hyperlink{a00014}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_AUTH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_AUTH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00689}{Authentication}}\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a00689_aeba8083f2a405a4f7729c0d68ef5d3a6}{Authentication}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password)}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00689_af0f532f0e7ec182a80c63457362cd089}{auth\_string\_}}\{username\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ password\}\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a00689_ac0551d3c71c9801b74cfe86aff3651ea}{Authentication}}(std::string\&\&\ username,\ std::string\&\&\ password)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00689_af0f532f0e7ec182a80c63457362cd089}{auth\_string\_}}\{\mbox{\hyperlink{a00667}{std}}::move(username)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ \mbox{\hyperlink{a00667}{std}}::move(password)\}\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{a00689_a95062532f4c8e935879bb80ca40fd86c}{Authentication}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00689}{Authentication}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a00689_ae4ba43104c50d6c84b852cc0d36a6f67}{Authentication}}(\mbox{\hyperlink{a00689}{Authentication}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00689_afd3359b8dfd2dcb591197c2fb7c21677}{\string~Authentication}}()\ noexcept\ =\ default;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{a00689}{Authentication}}\&\ operator=(\mbox{\hyperlink{a00689}{Authentication}}\&\&\ old)\ noexcept\ =\ default;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a00689}{Authentication}}\&\ operator=(const\ \mbox{\hyperlink{a00689}{Authentication}}\&\ other)\ =\ default;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ virtual\ const\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00689_a7d9b936f849eaab60cf80987a1769503}{GetAuthString}}()\ const\ noexcept;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ protected:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a00667}{std}}::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00689_af0f532f0e7ec182a80c63457362cd089}{auth\_string\_}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

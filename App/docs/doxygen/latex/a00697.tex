@@ -1,0 +1,82 @@
+\doxysection{cpr\+::Read\+Callback Class Reference}
+\hypertarget{a00697}{}\label{a00697}\index{cpr::ReadCallback@{cpr::ReadCallback}}
+
+
+{\ttfamily \#include $<$callback.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00697_a39cd18855550d1c8eba0c2cbd48bb6c4}{operator()}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&buffer\+\_\+size) const
+\item 
+\mbox{\hyperlink{a00697_adba79ec87a53070e6887f63f824a24c5}{Read\+Callback}} ()=default
+\item 
+\mbox{\hyperlink{a00697_a5a23b4dd6badf23f5bde016f9993576c}{Read\+Callback}} (\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} p\+\_\+size, std\+::function$<$ bool(char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&\mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$ p\+\_\+callback, intptr\+\_\+t p\+\_\+userdata=0)
+\item 
+\mbox{\hyperlink{a00697_a7db1de67489563ce305a6c680a2a6e04}{Read\+Callback}} (std\+::function$<$ bool(char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&\mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$ p\+\_\+callback, intptr\+\_\+t p\+\_\+userdata=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ bool(char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&\mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$ \mbox{\hyperlink{a00697_ade2e17efe140a984b578606d270312bd}{callback}}
+\item 
+\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} \mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}} \{\}
+\item 
+intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00697_adba79ec87a53070e6887f63f824a24c5}\label{a00697_adba79ec87a53070e6887f63f824a24c5} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!ReadCallback@{ReadCallback}}
+\index{ReadCallback@{ReadCallback}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{ReadCallback()}{ReadCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily cpr\+::\+Read\+Callback\+::\+Read\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00697_a7db1de67489563ce305a6c680a2a6e04}\label{a00697_a7db1de67489563ce305a6c680a2a6e04} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!ReadCallback@{ReadCallback}}
+\index{ReadCallback@{ReadCallback}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{ReadCallback()}{ReadCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily cpr\+::\+Read\+Callback\+::\+Read\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&\mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$}]{p\+\_\+callback,  }\item[{intptr\+\_\+t}]{p\+\_\+userdata = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00697_a5a23b4dd6badf23f5bde016f9993576c}\label{a00697_a5a23b4dd6badf23f5bde016f9993576c} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!ReadCallback@{ReadCallback}}
+\index{ReadCallback@{ReadCallback}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{ReadCallback()}{ReadCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily cpr\+::\+Read\+Callback\+::\+Read\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}}}]{p\+\_\+size,  }\item[{std\+::function$<$ bool(char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t \&\mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$}]{p\+\_\+callback,  }\item[{intptr\+\_\+t}]{p\+\_\+userdata = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00697_a39cd18855550d1c8eba0c2cbd48bb6c4}\label{a00697_a39cd18855550d1c8eba0c2cbd48bb6c4} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool cpr\+::\+Read\+Callback\+::operator() (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t \&}]{buffer\+\_\+size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00697_ade2e17efe140a984b578606d270312bd}\label{a00697_ade2e17efe140a984b578606d270312bd} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!callback@{callback}}
+\index{callback@{callback}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily std\+::function$<$bool(char\texorpdfstring{$\ast$}{*} buffer, size\+\_\+t\& \mbox{\hyperlink{a00697_a8d16630c61c00727398a85c0b6981ef9}{size}}, intptr\+\_\+t \mbox{\hyperlink{a00697_a00f664dd8075c61fdcd9965601b9a03f}{userdata}})$>$ cpr\+::\+Read\+Callback\+::callback}
+
+\Hypertarget{a00697_a8d16630c61c00727398a85c0b6981ef9}\label{a00697_a8d16630c61c00727398a85c0b6981ef9} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!size@{size}}
+\index{size@{size}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} cpr\+::\+Read\+Callback\+::size \{\}}
+
+\Hypertarget{a00697_a00f664dd8075c61fdcd9965601b9a03f}\label{a00697_a00f664dd8075c61fdcd9965601b9a03f} 
+\index{cpr::ReadCallback@{cpr::ReadCallback}!userdata@{userdata}}
+\index{userdata@{userdata}!cpr::ReadCallback@{cpr::ReadCallback}}
+\doxysubsubsection{\texorpdfstring{userdata}{userdata}}
+{\footnotesize\ttfamily intptr\+\_\+t cpr\+::\+Read\+Callback\+::userdata}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00023}{callback.\+h}}\end{DoxyCompactItemize}

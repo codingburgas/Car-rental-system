@@ -1,0 +1,151 @@
+\doxysection{urlapi.\+h}
+\hypertarget{a00140_source}{}\label{a00140_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/urlapi.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/urlapi.h}}
+\mbox{\hyperlink{a00140}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURLINC\_URLAPI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURLINC\_URLAPI\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \_\ \_\_\_\_\ \ \_}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ Project\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_\_|\ |\ |\ |\ \ \_\ \(\backslash\)|\ |}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /\ \_\_|\ |\ |\ |\ |\_)\ |\ |}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (\_\_|\ |\_|\ |\ \ \_\ <|\ |\_\_\_}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_|\(\backslash\)\_\_\_/|\_|\ \(\backslash\)\_\(\backslash\)\_\_\_\_\_|}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2018\ -\/\ 2021,\ Daniel\ Stenberg,\ <daniel@haxx.se>,\ et\ al.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ This\ software\ is\ licensed\ as\ described\ in\ the\ file\ COPYING,\ which}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ you\ should\ have\ received\ as\ part\ of\ this\ distribution.\ The\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ are\ also\ available\ at\ https://curl.se/docs/copyright.html.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ You\ may\ opt\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute\ and/or\ sell}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ under\ the\ terms\ of\ the\ COPYING\ file.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ software\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ basis,\ WITHOUT\ WARRANTY\ OF\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00113}{curl.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ the\ error\ codes\ for\ the\ URL\ API\ */}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6978036a5edd2be695e5ab72f86d983e}{CURLUE\_OK}},}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae8291f68426ea3dfbe38cd9dfd16ac14}{CURLUE\_BAD\_HANDLE}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ */}}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea091341eba174530893461cbc196adbf9}{CURLUE\_BAD\_PARTPOINTER}},\ \ \ \ \ \textcolor{comment}{/*\ 2\ */}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae32cb8539b7e8ec6fcfafcb7c3567638}{CURLUE\_MALFORMED\_INPUT}},\ \ \ \ \ \textcolor{comment}{/*\ 3\ */}}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea0ba90c652a34f6aa06c90cab4ea6dcb0}{CURLUE\_BAD\_PORT\_NUMBER}},\ \ \ \ \ \textcolor{comment}{/*\ 4\ */}}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3cd335f8655b5ae976a00795cdde5474}{CURLUE\_UNSUPPORTED\_SCHEME}},\ \ \textcolor{comment}{/*\ 5\ */}}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea061d471905cef7476aede5eb6afafb87}{CURLUE\_URLDECODE}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 6\ */}}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae947d8e39c047c7d45c735b736225e0b}{CURLUE\_OUT\_OF\_MEMORY}},\ \ \ \ \ \ \ \textcolor{comment}{/*\ 7\ */}}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2e085bf461f244975782d033af83813}{CURLUE\_USER\_NOT\_ALLOWED}},\ \ \ \ \textcolor{comment}{/*\ 8\ */}}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf51060f7da011a1ef255ae71a8b16d19}{CURLUE\_UNKNOWN\_PART}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 9\ */}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea61e604b67efc46cfc616571c17315cc0}{CURLUE\_NO\_SCHEME}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 10\ */}}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaac4dd71b6c5300cd470ad231634337b3}{CURLUE\_NO\_USER}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 11\ */}}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea094bcca2e67eb06c2a1386a43b4b8c7f}{CURLUE\_NO\_PASSWORD}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 12\ */}}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dead6544c3594d9fccf22317dc96b109c75}{CURLUE\_NO\_OPTIONS}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 13\ */}}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae33b2ef7005707fe7c69f9ac1196233e}{CURLUE\_NO\_HOST}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 14\ */}}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaecd176f6842d34eb9b49ff0f7ab27129}{CURLUE\_NO\_PORT}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 15\ */}}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea97e5b574504124bb31e46bd6cb2dfbd6}{CURLUE\_NO\_QUERY}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 16\ */}}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea7c177b1f52f0b54102e1e1ed82bcf24e}{CURLUE\_NO\_FRAGMENT}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 17\ */}}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea48be9da4e87eaad2ce30be2236504331}{CURLUE\_NO\_ZONEID}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 18\ */}}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea90dcad88582c3682bb7cc63a3c043b6d}{CURLUE\_BAD\_FILE\_URL}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 19\ */}}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2b675d6639fea01ba998be2f37956b0}{CURLUE\_BAD\_FRAGMENT}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 20\ */}}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deafc06a12dc204cfa1e941402ed0fbdfc1}{CURLUE\_BAD\_HOSTNAME}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 21\ */}}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea12897c330005da0b76b6a667694db9dd}{CURLUE\_BAD\_IPV6}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 22\ */}}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea38ebdd66c97ee165ce264e128dae1bf3}{CURLUE\_BAD\_LOGIN}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 23\ */}}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf554fd97e913301ac052fb12684b2dee}{CURLUE\_BAD\_PASSWORD}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 24\ */}}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6920a3c8c16a247b54eb38d330e4ac8c}{CURLUE\_BAD\_PATH}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 25\ */}}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf2a5d7e1bb8488da41312de0bfe3c405}{CURLUE\_BAD\_QUERY}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 26\ */}}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea37dd5f3421a062bf2dc6507bc1e8bccd}{CURLUE\_BAD\_SCHEME}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 27\ */}}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea95b975c74629b9ae62820de01b22490b}{CURLUE\_BAD\_SLASHES}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 28\ */}}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea86405410a804d0ad4ead2368ac754c1f}{CURLUE\_BAD\_USER}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 29\ */}}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3a5a66ce79df211fd430594760e3a9cd}{CURLUE\_LAST}}}
+\DoxyCodeLine{00064\ \}\ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba652d7cac677d1aca71efd0386e57f927}{CURLUPART\_URL}},}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba78d43413bf7e618d74014aea871032a1}{CURLUPART\_SCHEME}},}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba31b7e4d52954c2d447b851e4891cf7a0}{CURLUPART\_USER}},}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba236a55190e38fc4c46bfcff176207e72}{CURLUPART\_PASSWORD}},}
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba46b928429eaa2b25f385a437ba6f8146}{CURLUPART\_OPTIONS}},}
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba347b25d9d344dbf29c5274bd184ac706}{CURLUPART\_HOST}},}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebabc452edee4006b5ff6a86d2a4d916dee}{CURLUPART\_PORT}},}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba55cc24daefc3debfca5396c267a5d04b}{CURLUPART\_PATH}},}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebad44a6470deff9d6fc0b423aab47462e8}{CURLUPART\_QUERY}},}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab322766509b004b024796aa64977308b}{CURLUPART\_FRAGMENT}},}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab36449974c5d036fce6a92a73055f4c4}{CURLUPART\_ZONEID}}\ \textcolor{comment}{/*\ added\ in\ 7.65.0\ */}}
+\DoxyCodeLine{00078\ \}\ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ CURLU\_DEFAULT\_PORT\ (1<<0)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ return\ default\ port\ number\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ CURLU\_NO\_DEFAULT\_PORT\ (1<<1)\ \ \ \ }\textcolor{comment}{/*\ act\ as\ if\ no\ port\ number\ was\ set,}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ the\ port\ number\ matches\ the}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ default\ for\ the\ scheme\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ CURLU\_DEFAULT\_SCHEME\ (1<<2)\ \ \ \ \ }\textcolor{comment}{/*\ return\ default\ scheme\ if}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ missing\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ CURLU\_NON\_SUPPORT\_SCHEME\ (1<<3)\ }\textcolor{comment}{/*\ allow\ non-\/supported\ scheme\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ CURLU\_PATH\_AS\_IS\ (1<<4)\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ leave\ dot\ sequences\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ CURLU\_DISALLOW\_USER\ (1<<5)\ \ \ \ \ \ }\textcolor{comment}{/*\ no\ user+password\ allowed\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CURLU\_URLDECODE\ (1<<6)\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ URL\ decode\ on\ get\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ CURLU\_URLENCODE\ (1<<7)\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ URL\ encode\ on\ set\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ CURLU\_APPENDQUERY\ (1<<8)\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ append\ a\ form\ style\ part\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ CURLU\_GUESS\_SCHEME\ (1<<9)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ legacy\ curl-\/style\ guessing\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ CURLU\_NO\_AUTHORITY\ (1<<10)\ \ \ \ \ \ }\textcolor{comment}{/*\ Allow\ empty\ authority\ when\ the}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scheme\ is\ unknown.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ CURLU\_ALLOW\_SPACE\ (1<<11)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Allow\ spaces\ in\ the\ URL\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Curl\_URL\ \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ curl\_url()\ creates\ a\ new\ CURLU\ handle\ and\ returns\ a\ pointer\ to\ it.}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ *\ Must\ be\ freed\ with\ curl\_url\_cleanup().}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00103\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *\mbox{\hyperlink{a00140_a22fb38de1b8f65bd40f9b8d877d0930c}{curl\_url}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ *\ curl\_url\_cleanup()\ frees\ the\ CURLU\ handle\ and\ related\ resources\ used\ for}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ *\ the\ URL\ parsing.\ It\ will\ not\ free\ strings\ previously\ returned\ with\ the\ URL}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ *\ API.}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00110\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00140_a41c5e8b4caf610a0984ef4473ca4163e}{curl\_url\_cleanup}}(\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *handle);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ *\ curl\_url\_dup()\ duplicates\ a\ CURLU\ handle\ and\ returns\ a\ new\ copy.\ The\ new}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ *\ handle\ must\ also\ be\ freed\ with\ curl\_url\_cleanup().}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00116\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *\mbox{\hyperlink{a00140_a5759ad7262d19c14728a8226317c6b92}{curl\_url\_dup}}(\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *in);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ *\ curl\_url\_get()\ extracts\ a\ specific\ part\ of\ the\ URL\ from\ a\ CURLU}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ *\ handle.\ Returns\ error\ code.\ The\ returned\ pointer\ MUST\ be\ freed\ with}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ *\ curl\_free()\ afterwards.}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00123\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}}\ \mbox{\hyperlink{a00140_abfb2378e801e13033e70c3819d8afca1}{curl\_url\_get}}(\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *handle,\ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}}\ what,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **part,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ *\ curl\_url\_set()\ sets\ a\ specific\ part\ of\ the\ URL\ in\ a\ CURLU\ handle.\ Returns}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ *\ error\ code.\ The\ passed\ in\ string\ will\ be\ copied.\ Passing\ a\ NULL\ instead\ of}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ *\ a\ part\ string,\ clears\ that\ part.}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00131\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}}\ \mbox{\hyperlink{a00140_a1cb93c92958648f06fab038f397cfeae}{curl\_url\_set}}(\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}\ *handle,\ \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}}\ what,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *part,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *\ curl\_url\_strerror()\ turns\ a\ CURLUcode\ value\ into\ the\ equivalent\ human}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ *\ readable\ error\ string.\ \ This\ is\ useful\ for\ printing\ meaningful\ error}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ *\ messages.}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00139\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00140_ac626e2d285a90685b9076453a14ad967}{curl\_url\_strerror}}(\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00142\ \}\ \textcolor{comment}{/*\ end\ of\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CURLINC\_URLAPI\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\doxysection{Vertex\+Array.\+hpp}
+\hypertarget{a00443_source}{}\label{a00443_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/VertexArray.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/VertexArray.hpp}}
+\mbox{\hyperlink{a00443}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_VERTEXARRAY\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_VERTEXARRAY\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02206}{SFML/Graphics/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00440}{SFML/Graphics/Vertex.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00395}{SFML/Graphics/PrimitiveType.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00398}{SFML/Graphics/Rect.hpp}}>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00377}{SFML/Graphics/Drawable.hpp}}>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01801}{VertexArray}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01693}{Drawable}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a01801_a15729e01df8fc0021f9774dfb56295c1}{VertexArray}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01801_a4bb1c29a0e3354a035075899d84f02f9}{VertexArray}}(\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{PrimitiveType}}\ type,\ std::size\_t\ vertexCount\ =\ 0);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{a01801_abda90e8d841a273d93164f0c0032bd8d}{getVertexCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{a01797}{Vertex}}\&\ operator\ [](std::size\_t\ index);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01797}{Vertex}}\&\ operator\ [](std::size\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01801_a3654c424aca1f9e468f369bc777c839c}{clear}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01801_a0c0fe239e8f9a54e64d3bbc96bf548c0}{resize}}(std::size\_t\ vertexCount);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01801_a80c8f6865e53bd21fc6cb10fffa10035}{append}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01797}{Vertex}}\&\ vertex);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01801_aa38c10707c28a97f4627ae8b2f3ad969}{setPrimitiveType}}(\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{PrimitiveType}}\ type);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{PrimitiveType}}\ \mbox{\hyperlink{a01801_aa1a60d84543aa6e220683349b645f130}{getPrimitiveType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{a01737}{FloatRect}}\ \mbox{\hyperlink{a01801_abd57744c732abfc7d4c98d8e1d4ccca1}{getBounds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01801_aa461f084e4a65fabfa4992885dabbea6}{draw}}(\mbox{\hyperlink{a01749}{RenderTarget}}\&\ target,\ \mbox{\hyperlink{a01745}{RenderStates}}\ states)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00190\ \textcolor{comment}{}\ \ \ \ std::vector<Vertex>\ \mbox{\hyperlink{a01801_a95a90bb68868a1548345651a3d9eae04}{m\_vertices}};\ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{PrimitiveType}}\ \ \ \ \ \ \ \mbox{\hyperlink{a01801_a5d1b94b429267b30301430b4974c5f48}{m\_primitiveType}};\ }
+\DoxyCodeLine{00192\ \};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_VERTEXARRAY\_HPP}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+
+\end{DoxyCode}

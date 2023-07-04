@@ -1,0 +1,510 @@
+\doxysection{sf\+::Sound\+Source Class Reference}
+\hypertarget{a01665}{}\label{a01665}\index{sf::SoundSource@{sf::SoundSource}}
+
+
+Base class defining a sound\textquotesingle{}s properties.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+Source.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Sound\+Source\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Sound\+Source\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} \{ \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a}{Stopped}}
+, \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41}{Paused}}
+, \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18}{Playing}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the sound source states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation}} () const
+\begin{DoxyCompactList}\small\item\em Get the attenuation factor of the sound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance}} () const
+\begin{DoxyCompactList}\small\item\em Get the minimum distance of the sound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a4736acc2c802f927544c9ce52a44a9e4}{get\+Pitch}} () const
+\begin{DoxyCompactList}\small\item\em Get the pitch of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \mbox{\hyperlink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} \mbox{\hyperlink{a01665_aa8d313c31b968159582a999aa66e5ed7}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the current status of the sound (stopped, paused, playing) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a04243fb5edf64561689b1d58953fc4ce}{get\+Volume}} () const
+\begin{DoxyCompactList}\small\item\em Get the volume of the sound. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}{is\+Relative\+To\+Listener}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the sound\textquotesingle{}s position is relative to the listener or is absolute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01665}{Sound\+Source}} \& \mbox{\hyperlink{a01665_a4b494e4a0b819bae9cd99b43e2f3f59d}{operator=}} (const \mbox{\hyperlink{a01665}{Sound\+Source}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01665_a21553d4e8fcf136231dd8c7ad4630aba}{pause}} ()=0
+\begin{DoxyCompactList}\small\item\em Pause the sound source. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21}{play}} ()=0
+\begin{DoxyCompactList}\small\item\em Start or resume playing the sound source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation}} (float attenuation)
+\begin{DoxyCompactList}\small\item\em Set the attenuation factor of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance}} (float distance)
+\begin{DoxyCompactList}\small\item\em Set the minimum distance of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{set\+Pitch}} (float pitch)
+\begin{DoxyCompactList}\small\item\em Set the pitch of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a17ba9ed01925395652181a7b2a7d3aef}{set\+Position}} (const \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \&position)
+\begin{DoxyCompactList}\small\item\em Set the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}{set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_ac478a8b813faf7dd575635b102081d0d}{set\+Relative\+To\+Listener}} (bool relative)
+\begin{DoxyCompactList}\small\item\em Make the sound\textquotesingle{}s position relative to the listener or absolute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}{set\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Set the volume of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01665_ae0c7728c1449fdebe65749ab6fcb3170}{Sound\+Source}} (const \mbox{\hyperlink{a01665}{Sound\+Source}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01665_a06501a25b12376befcc7ee1ed4865fda}{stop}} ()=0
+\begin{DoxyCompactList}\small\item\em Stop playing the sound source. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01665_a77c7c1524f8cb81df2de9375b0f87c5c}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01665_aefa4bd4460f387d81a0637d293979436}{Sound\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01665_a0223cef4b1c587e6e1e17b4c92c4479c}{m\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em Open\+AL source identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class defining a sound\textquotesingle{}s properties. 
+
+\doxylink{a01665}{sf\+::\+Sound\+Source} is not meant to be used directly, it only serves as a common base for all audio objects that can live in the audio environment.
+
+It defines several properties for the sound\+: pitch, volume, position, attenuation, etc. All of them can be changed at any time with no impact on performances.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01625}{sf\+::\+Sound}, \doxylink{a01669}{sf\+::\+Sound\+Stream} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03}\label{a01665_ac43af72c98c077500b239bc75b812f03} 
+\index{sf::SoundSource@{sf::SoundSource}!Status@{Status}}
+\index{Status@{Status}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{sf\+::\+Sound\+Source\+::\+Status}}}
+
+
+
+Enumeration of the sound source states. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stopped@{Stopped}!sf::SoundSource@{sf::SoundSource}}\index{sf::SoundSource@{sf::SoundSource}!Stopped@{Stopped}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a}\label{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a} 
+Stopped&\doxylink{a01625}{Sound} is not playing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paused@{Paused}!sf::SoundSource@{sf::SoundSource}}\index{sf::SoundSource@{sf::SoundSource}!Paused@{Paused}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41}\label{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41} 
+Paused&\doxylink{a01625}{Sound} is paused. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Playing@{Playing}!sf::SoundSource@{sf::SoundSource}}\index{sf::SoundSource@{sf::SoundSource}!Playing@{Playing}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18}\label{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18} 
+Playing&\doxylink{a01625}{Sound} is playing. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01665_ae0c7728c1449fdebe65749ab6fcb3170}\label{a01665_ae0c7728c1449fdebe65749ab6fcb3170} 
+\index{sf::SoundSource@{sf::SoundSource}!SoundSource@{SoundSource}}
+\index{SoundSource@{SoundSource}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{SoundSource()}{SoundSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Source\+::\+Sound\+Source (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01665}{Sound\+Source}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & Instance to copy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01665_a77c7c1524f8cb81df2de9375b0f87c5c}\label{a01665_a77c7c1524f8cb81df2de9375b0f87c5c} 
+\index{sf::SoundSource@{sf::SoundSource}!````~SoundSource@{\texorpdfstring{$\sim$}{\string~}SoundSource}}
+\index{````~SoundSource@{\texorpdfstring{$\sim$}{\string~}SoundSource}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundSource()}{\string~SoundSource()}}
+{\footnotesize\ttfamily virtual sf\+::\+Sound\+Source\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\Hypertarget{a01665_aefa4bd4460f387d81a0637d293979436}\label{a01665_aefa4bd4460f387d81a0637d293979436} 
+\index{sf::SoundSource@{sf::SoundSource}!SoundSource@{SoundSource}}
+\index{SoundSource@{SoundSource}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{SoundSource()}{SoundSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Source\+::\+Sound\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+This constructor is meant to be called by derived classes only. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}\label{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9} 
+\index{sf::SoundSource@{sf::SoundSource}!getAttenuation@{getAttenuation}}
+\index{getAttenuation@{getAttenuation}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getAttenuation()}{getAttenuation()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Attenuation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the attenuation factor of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Attenuation factor of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation}, \doxylink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a605ca7f359ec1c36fcccdcd4696562ac}\label{a01665_a605ca7f359ec1c36fcccdcd4696562ac} 
+\index{sf::SoundSource@{sf::SoundSource}!getMinDistance@{getMinDistance}}
+\index{getMinDistance@{getMinDistance}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getMinDistance()}{getMinDistance()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Min\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the minimum distance of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Minimum distance of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance}, \doxylink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a4736acc2c802f927544c9ce52a44a9e4}\label{a01665_a4736acc2c802f927544c9ce52a44a9e4} 
+\index{sf::SoundSource@{sf::SoundSource}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the pitch of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Pitch of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{set\+Pitch} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a8d199521f55550c7a3b2b0f6950dffa1}\label{a01665_a8d199521f55550c7a3b2b0f6950dffa1} 
+\index{sf::SoundSource@{sf::SoundSource}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} sf\+::\+Sound\+Source\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the 3D position of the sound in the audio scene. 
+
+\begin{DoxyReturn}{Returns}
+Position of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_aa8d313c31b968159582a999aa66e5ed7}\label{a01665_aa8d313c31b968159582a999aa66e5ed7} 
+\index{sf::SoundSource@{sf::SoundSource}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} sf\+::\+Sound\+Source\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the current status of the sound (stopped, paused, playing) 
+
+\begin{DoxyReturn}{Returns}
+Current status of the sound 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{a01625_a406fc363594a7718a53ebef49a870f51}{sf\+::\+Sound}}, and \mbox{\hyperlink{a01669_a64a8193ed728da37c115c65de015849f}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01665_a04243fb5edf64561689b1d58953fc4ce}\label{a01665_a04243fb5edf64561689b1d58953fc4ce} 
+\index{sf::SoundSource@{sf::SoundSource}!getVolume@{getVolume}}
+\index{getVolume@{getVolume}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the volume of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Volume of the sound, in the range \mbox{[}0, 100\mbox{]}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}{set\+Volume} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}\label{a01665_adcdb4ef32c2f4481d34aff0b5c31534b} 
+\index{sf::SoundSource@{sf::SoundSource}!isRelativeToListener@{isRelativeToListener}}
+\index{isRelativeToListener@{isRelativeToListener}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{isRelativeToListener()}{isRelativeToListener()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Source\+::is\+Relative\+To\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether the sound\textquotesingle{}s position is relative to the listener or is absolute. 
+
+\begin{DoxyReturn}{Returns}
+True if the position is relative, false if it\textquotesingle{}s absolute
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_ac478a8b813faf7dd575635b102081d0d}{set\+Relative\+To\+Listener} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a4b494e4a0b819bae9cd99b43e2f3f59d}\label{a01665_a4b494e4a0b819bae9cd99b43e2f3f59d} 
+\index{sf::SoundSource@{sf::SoundSource}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01665}{Sound\+Source}} \& sf\+::\+Sound\+Source\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01665}{Sound\+Source}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a01665_a21553d4e8fcf136231dd8c7ad4630aba}\label{a01665_a21553d4e8fcf136231dd8c7ad4630aba} 
+\index{sf::SoundSource@{sf::SoundSource}!pause@{pause}}
+\index{pause@{pause}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+Source\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pause the sound source. 
+
+This function pauses the source if it was playing, otherwise (source already paused or stopped) it has no effect.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21}{play}, \doxylink{a01665_a06501a25b12376befcc7ee1ed4865fda}{stop} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{a01625_a5eeb25815bfa8cdc4a6cc000b7b19ad5}{sf\+::\+Sound}}, and \mbox{\hyperlink{a01669_a932ff181e661503cad288b4bb6fe45ca}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21}\label{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21} 
+\index{sf::SoundSource@{sf::SoundSource}!play@{play}}
+\index{play@{play}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+Source\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start or resume playing the sound source. 
+
+This function starts the source if it was stopped, resumes it if it was paused, and restarts it from the beginning if it was already playing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a21553d4e8fcf136231dd8c7ad4630aba}{pause}, \doxylink{a01665_a06501a25b12376befcc7ee1ed4865fda}{stop} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{a01625_a2953ffe632536e72e696fd880ced2532}{sf\+::\+Sound}}, and \mbox{\hyperlink{a01669_afdc08b69cab5f243d9324940a85a1144}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}\label{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626} 
+\index{sf::SoundSource@{sf::SoundSource}!setAttenuation@{setAttenuation}}
+\index{setAttenuation@{setAttenuation}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setAttenuation()}{setAttenuation()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Attenuation (\begin{DoxyParamCaption}\item[{float}]{attenuation }\end{DoxyParamCaption})}
+
+
+
+Set the attenuation factor of the sound. 
+
+The attenuation is a multiplicative factor which makes the sound more or less loud according to its distance from the listener. An attenuation of 0 will produce a non-\/attenuated sound, i.\+e. its volume will always be the same whether it is heard from near or from far. On the other hand, an attenuation value such as 100 will make the sound fade out very quickly as it gets further from the listener. The default value of the attenuation is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em attenuation} & New attenuation factor of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation}, \doxylink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a75bbc2c34addc8b25a14edb908508afe}\label{a01665_a75bbc2c34addc8b25a14edb908508afe} 
+\index{sf::SoundSource@{sf::SoundSource}!setMinDistance@{setMinDistance}}
+\index{setMinDistance@{setMinDistance}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setMinDistance()}{setMinDistance()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Min\+Distance (\begin{DoxyParamCaption}\item[{float}]{distance }\end{DoxyParamCaption})}
+
+
+
+Set the minimum distance of the sound. 
+
+The \"{}minimum distance\"{} of a sound is the maximum distance at which it is heard at its maximum volume. Further than the minimum distance, it will start to fade out according to its attenuation factor. A value of 0 (\"{}inside the head of the listener\"{}) is an invalid value and is forbidden. The default value of the minimum distance is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & New minimum distance of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance}, \doxylink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}\label{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6} 
+\index{sf::SoundSource@{sf::SoundSource}!setPitch@{setPitch}}
+\index{setPitch@{setPitch}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setPitch()}{setPitch()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch }\end{DoxyParamCaption})}
+
+
+
+Set the pitch of the sound. 
+
+The pitch represents the perceived fundamental frequency of a sound; thus you can make a sound more acute or grave by changing its pitch. A side effect of changing the pitch is to modify the playing speed of the sound as well. The default value for the pitch is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pitch} & New pitch to apply to the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a4736acc2c802f927544c9ce52a44a9e4}{get\+Pitch} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a17ba9ed01925395652181a7b2a7d3aef}\label{a01665_a17ba9ed01925395652181a7b2a7d3aef} 
+\index{sf::SoundSource@{sf::SoundSource}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Set the 3D position of the sound in the audio scene. 
+
+Only sounds with one channel (mono sounds) can be spatialized. The default position of a sound is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the sound in the scene\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}\label{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2} 
+\index{sf::SoundSource@{sf::SoundSource}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the 3D position of the sound in the audio scene. 
+
+Only sounds with one channel (mono sounds) can be spatialized. The default position of a sound is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the position of the sound in the scene \\
+\hline
+{\em y} & Y coordinate of the position of the sound in the scene \\
+\hline
+{\em z} & Z coordinate of the position of the sound in the scene\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_ac478a8b813faf7dd575635b102081d0d}\label{a01665_ac478a8b813faf7dd575635b102081d0d} 
+\index{sf::SoundSource@{sf::SoundSource}!setRelativeToListener@{setRelativeToListener}}
+\index{setRelativeToListener@{setRelativeToListener}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setRelativeToListener()}{setRelativeToListener()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Relative\+To\+Listener (\begin{DoxyParamCaption}\item[{bool}]{relative }\end{DoxyParamCaption})}
+
+
+
+Make the sound\textquotesingle{}s position relative to the listener or absolute. 
+
+Making a sound relative to the listener will ensure that it will always be played the same way regardless of the position of the listener. This can be useful for non-\/spatialized sounds, sounds that are produced by the listener, or sounds attached to it. The default value is false (position is absolute).
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative} & True to set the position relative, false to set it absolute\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}{is\+Relative\+To\+Listener} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}\label{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2} 
+\index{sf::SoundSource@{sf::SoundSource}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+Set the volume of the sound. 
+
+The volume is a value between 0 (mute) and 100 (full volume). The default value for the volume is 100.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Volume of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a04243fb5edf64561689b1d58953fc4ce}{get\+Volume} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a06501a25b12376befcc7ee1ed4865fda}\label{a01665_a06501a25b12376befcc7ee1ed4865fda} 
+\index{sf::SoundSource@{sf::SoundSource}!stop@{stop}}
+\index{stop@{stop}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+Source\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Stop playing the sound source. 
+
+This function stops the source if it was playing or paused, and does nothing if it was already stopped. It also resets the playing position (unlike \doxylink{a01665_a21553d4e8fcf136231dd8c7ad4630aba}{pause()}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21}{play}, \doxylink{a01665_a21553d4e8fcf136231dd8c7ad4630aba}{pause} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{a01625_aa9c91c34f7c6d344d5ee9b997511f754}{sf\+::\+Sound}}, and \mbox{\hyperlink{a01669_a16cc6a0404b32e42c4dce184bb94d0f4}{sf\+::\+Sound\+Stream}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01665_a0223cef4b1c587e6e1e17b4c92c4479c}\label{a01665_a0223cef4b1c587e6e1e17b4c92c4479c} 
+\index{sf::SoundSource@{sf::SoundSource}!m\_source@{m\_source}}
+\index{m\_source@{m\_source}!sf::SoundSource@{sf::SoundSource}}
+\doxysubsubsection{\texorpdfstring{m\_source}{m\_source}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Source\+::m\+\_\+source\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Open\+AL source identifier. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00350}{Sound\+Source.\+hpp}}\end{DoxyCompactItemize}

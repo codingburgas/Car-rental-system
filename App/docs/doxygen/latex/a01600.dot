@@ -1,0 +1,23 @@
+digraph "sf::AlResource"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="sf::AlResource",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Base class for classes that require an OpenAL context."];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="firebrick4",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sf::SoundBuffer",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01629.html",tooltip="Storage for audio samples defining a sound."];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",dir="back",color="firebrick4",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="sf::SoundRecorder",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01661.html",tooltip="Abstract base class for capturing sound data."];
+  Node3 -> Node4 [id="edge10_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="sf::SoundBufferRecorder",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01633.html",tooltip="Specialized SoundRecorder which stores the captured audio data into a sound buffer."];
+  Node1 -> Node5 [id="edge11_Node000001_Node000005",dir="back",color="firebrick4",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="sf::SoundSource",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01665.html",tooltip="Base class defining a sound's properties."];
+  Node5 -> Node6 [id="edge12_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="sf::Sound",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01625.html",tooltip="Regular sound that can be played in the audio environment."];
+  Node5 -> Node7 [id="edge13_Node000005_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="sf::SoundStream",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01669.html",tooltip="Abstract base class for streamed audio sources."];
+  Node7 -> Node8 [id="edge14_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="sf::Music",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01613.html",tooltip="Streamed music played from an audio file."];
+}

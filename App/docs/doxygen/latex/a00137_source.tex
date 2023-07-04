@@ -1,0 +1,713 @@
+\doxysection{typecheck-\/gcc.h}
+\hypertarget{a00137_source}{}\label{a00137_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/typecheck-\/gcc.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/typecheck-\/gcc.h}}
+\mbox{\hyperlink{a00137}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURLINC\_TYPECHECK\_GCC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURLINC\_TYPECHECK\_GCC\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \_\ \_\_\_\_\ \ \_}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ Project\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_\_|\ |\ |\ |\ \ \_\ \(\backslash\)|\ |}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /\ \_\_|\ |\ |\ |\ |\_)\ |\ |}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (\_\_|\ |\_|\ |\ \ \_\ <|\ |\_\_\_}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_|\(\backslash\)\_\_\_/|\_|\ \(\backslash\)\_\(\backslash\)\_\_\_\_\_|}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1998\ -\/\ 2021,\ Daniel\ Stenberg,\ <daniel@haxx.se>,\ et\ al.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ This\ software\ is\ licensed\ as\ described\ in\ the\ file\ COPYING,\ which}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ you\ should\ have\ received\ as\ part\ of\ this\ distribution.\ The\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ are\ also\ available\ at\ https://curl.se/docs/copyright.html.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ You\ may\ opt\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute\ and/or\ sell}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ under\ the\ terms\ of\ the\ COPYING\ file.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ software\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ basis,\ WITHOUT\ WARRANTY\ OF\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ wraps\ curl\_easy\_setopt()\ with\ typechecking\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ To\ add\ a\ new\ kind\ of\ warning,\ add\ an}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ \ \ if(curlcheck\_sometype\_option(\_curl\_opt))}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ \ \ \ \ if(!curlcheck\_sometype(value))}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_sometype();}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ block\ and\ define\ curlcheck\_sometype\_option,\ curlcheck\_sometype\ and}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ \_curl\_easy\_setopt\_err\_sometype\ below}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ NOTE:\ We\ use\ two\ nested\ 'if'\ statements\ here\ instead\ of\ the\ \&\&\ operator,\ in}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ \ \ \ \ \ \ order\ to\ work\ around\ gcc\ bug\ \#32061.\ \ It\ affects\ only\ gcc\ 4.3.x/4.4.x}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ \ \ \ \ \ \ when\ compiling\ with\ -\/Wlogical-\/op.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ To\ add\ an\ option\ that\ uses\ the\ same\ type\ as\ an\ existing\ option,\ you'll\ just}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ need\ to\ extend\ the\ appropriate\ \_curl\_*\_option\ macro}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ curl\_easy\_setopt(handle,\ option,\ value)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \_\_extension\_\_(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \_\_typeof\_\_(option)\ \_curl\_opt\ =\ option;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \ \ if(\_\_builtin\_constant\_p(\_curl\_opt))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_long\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_long(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_long();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_off\_t\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_off\_t(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_curl\_off\_t();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_string\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_string(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_string();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_write\_cb\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_write\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_write\_callback();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_RESOLVER\_START\_FUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_resolver\_start\_callback(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_resolver\_start\_callback();\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_READFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_read\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_read\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_IOCTLFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_ioctl\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_ioctl\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_SOCKOPTFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_sockopt\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_sockopt\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_OPENSOCKETFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_opensocket\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_opensocket\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_PROGRESSFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_progress\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_progress\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_DEBUGFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_debug\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_debug\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_SSL\_CTX\_FUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_ssl\_ctx\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_ssl\_ctx\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_conv\_cb\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_conv\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_conv\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_SEEKFUNCTION)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_seek\_cb(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_seek\_cb();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_cb\_data\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_cb\_data(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_cb\_data();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_ERRORBUFFER)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_error\_buffer(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_error\_buffer();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_STDERR)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_FILE(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_FILE();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_postfields\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_postfields(value))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_postfields();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_HTTPPOST)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((value),\ struct\ curl\_httppost))\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_curl\_httpost();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_MIMEPOST)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_ptr((value),\ curl\_mime))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_curl\_mimepost();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_slist\_option(\_curl\_opt))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((value),\ struct\ curl\_slist))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_curl\_slist();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if((\_curl\_opt)\ ==\ CURLOPT\_SHARE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_ptr((value),\ CURLSH))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_setopt\_err\_CURLSH();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \ \ curl\_easy\_setopt(handle,\ \_curl\_opt,\ value);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ \})}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{/*\ wraps\ curl\_easy\_getinfo()\ with\ typechecking\ */}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ curl\_easy\_getinfo(handle,\ info,\ arg)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \_\_extension\_\_(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \_\_typeof\_\_(info)\ \_curl\_info\ =\ info;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ if(\_\_builtin\_constant\_p(\_curl\_info))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_string\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ char\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_string();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_long\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ long))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_long();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_double\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ double))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_double();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_slist\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ struct\ curl\_slist\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_slist();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_tlssessioninfo\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ struct\ curl\_tlssessioninfo\ *))\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_tlssesssioninfo();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_certinfo\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ struct\ curl\_certinfo\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_certinfo();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_socket\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ curl\_socket\_t))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_socket();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(curlcheck\_off\_t\_info(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ if(!curlcheck\_arr((arg),\ curl\_off\_t))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_off\_t();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ \ \ curl\_easy\_getinfo(handle,\ \_curl\_info,\ arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ \})}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ *\ For\ now,\ just\ make\ sure\ that\ the\ functions\ are\ called\ with\ three\ arguments}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ curl\_share\_setopt(share,opt,param)\ curl\_share\_setopt(share,opt,param)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ curl\_multi\_setopt(handle,opt,param)\ curl\_multi\_setopt(handle,opt,param)}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{/*\ the\ actual\ warnings,\ triggered\ by\ calling\ the\ \_curl\_easy\_setopt\_err*}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ *\ functions\ */}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{/*\ To\ define\ a\ new\ warning,\ use\ \_CURL\_WARNING(identifier,\ "{}message"{})\ */}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ CURLWARNING(id,\ message)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ static\ void\ \_\_attribute\_\_((\_\_warning\_\_(message)))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \_\_attribute\_\_((\_\_unused\_\_))\ \_\_attribute\_\_((\_\_noinline\_\_))\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ id(void)\ \{\ \_\_asm\_\_("{}"{}});\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_long,}
+\DoxyCodeLine{00165\ \ \ \textcolor{stringliteral}{"{}curl\_easy\_setopt\ expects\ a\ long\ argument\ for\ this\ option"{}})}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_curl\_off\_t,}
+\DoxyCodeLine{00167\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_string,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ "{}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\textcolor{keywordtype}{string}\ ('\textcolor{keywordtype}{char}\ *'\ or\ \textcolor{keywordtype}{char}[])\ argument\ for\ this\ option"{}}
+\DoxyCodeLine{00171\ \ \ )}
+\DoxyCodeLine{00172\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_write\_callback,}
+\DoxyCodeLine{00173\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\_write\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00174\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_resolver\_start\_callback,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ "{}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00113_a9cfebb6f48d46c45ca37ff3db2f6ce6f}{curl\_resolver\_start\_callback}}\ argument\ for\ this\ option"{}}
+\DoxyCodeLine{00177\ \ \ )}
+\DoxyCodeLine{00178\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_read\_cb,}
+\DoxyCodeLine{00179\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\_read\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00180\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_ioctl\_cb,}
+\DoxyCodeLine{00181\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_ae0524f6ec082005e39eb275c71c59a3b}{curl\_ioctl\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00182\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_sockopt\_cb,}
+\DoxyCodeLine{00183\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\_sockopt\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00184\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_opensocket\_cb,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ "{}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00113_a1b8b8f3e1a4e538a6bb1dd83a3388547}{curl\_opensocket\_callback}}\ argument\ for\ this\ option"{}}
+\DoxyCodeLine{00187\ \ \ )}
+\DoxyCodeLine{00188\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_progress\_cb,}
+\DoxyCodeLine{00189\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\_progress\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00190\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_debug\_cb,}
+\DoxyCodeLine{00191\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_ad967e4ffcbaf6c9dc7105b798d0f5b32}{curl\_debug\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_ssl\_ctx\_cb,}
+\DoxyCodeLine{00193\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\_ssl\_ctx\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00194\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_conv\_cb,}
+\DoxyCodeLine{00195\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_acb230bf6dbf7bcb6e4e8740ea42ca3b3}{curl\_conv\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00196\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_seek\_cb,}
+\DoxyCodeLine{00197\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\_seek\_callback}}\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_cb\_data,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ "{}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}private\ data\ pointer\ as\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_error\_buffer,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ "{}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\textcolor{keywordtype}{char}\ buffer\ of\ \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\_ERROR\_SIZE}}\ as\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00204\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_FILE,}
+\DoxyCodeLine{00205\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ 'FILE\ *'\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_postfields,}
+\DoxyCodeLine{00207\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ '\textcolor{keywordtype}{void}\ *'\ or\ '\textcolor{keywordtype}{char}\ *'\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_curl\_httpost,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ 'struct\ \mbox{\hyperlink{a00917}{curl\_httppost}}\ *'\ "{}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}argument\ for\ this\ option"{})}
+\DoxyCodeLine{00211\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_curl\_mimepost,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ '\mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\_mime}}\ *'\ "{}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}argument\ for\ this\ option"{})}
+\DoxyCodeLine{00214\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_curl\_slist,}
+\DoxyCodeLine{00215\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ 'struct\ \mbox{\hyperlink{a00949}{curl\_slist}}\ *'\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_setopt\_err\_CURLSH,}
+\DoxyCodeLine{00217\ \ \ "{}\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\_easy\_setopt}}\ expects\ a\ \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}}*\ argument\ for\ this\ option"{})}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_string,}
+\DoxyCodeLine{00220\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ '\textcolor{keywordtype}{char}\ *'\ for\ this\ info"{})}
+\DoxyCodeLine{00221\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_long,}
+\DoxyCodeLine{00222\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ \textcolor{keywordtype}{long}\ for\ this\ info"{})}
+\DoxyCodeLine{00223\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_double,}
+\DoxyCodeLine{00224\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ \textcolor{keywordtype}{double}\ for\ this\ info"{})}
+\DoxyCodeLine{00225\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_curl\_slist,}
+\DoxyCodeLine{00226\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ 'struct\ \mbox{\hyperlink{a00949}{curl\_slist}}\ *'\ for\ this\ info"{})}
+\DoxyCodeLine{00227\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_curl\_tlssesssioninfo,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ "{}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}'struct\ \mbox{\hyperlink{a00961}{curl\_tlssessioninfo}}\ *'\ for\ this\ info"{})}
+\DoxyCodeLine{00230\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_curl\_certinfo,}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ "{}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}'struct\ \mbox{\hyperlink{a00957}{curl\_certinfo}}\ *'\ for\ this\ info"{})}
+\DoxyCodeLine{00233\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_curl\_socket,}
+\DoxyCodeLine{00234\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ for\ this\ info"{})}
+\DoxyCodeLine{00235\ \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(\_curl\_easy\_getinfo\_err\_curl\_off\_t,}
+\DoxyCodeLine{00236\ \ \ "{}\mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\_easy\_getinfo}}\ expects\ a\ pointer\ to\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ for\ this\ info"{})}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{comment}{/*\ groups\ of\ curl\_easy\_setops\ options\ that\ take\ the\ same\ type\ of\ argument\ */}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{comment}{/*\ To\ add\ a\ new\ option\ to\ one\ of\ the\ groups,\ just\ add}}
+\DoxyCodeLine{00241\ \textcolor{comment}{\ *\ \ \ (option)\ ==\ CURLOPT\_SOMETHING}}
+\DoxyCodeLine{00242\ \textcolor{comment}{\ *\ to\ the\ or-\/expression.\ If\ the\ option\ takes\ a\ long\ or\ curl\_off\_t,\ you\ don't}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ *\ have\ to\ do\ anything}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ long\ argument\ */}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ curlcheck\_long\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ (0\ <\ (option)\ \&\&\ (option)\ <\ CURLOPTTYPE\_OBJECTPOINT)}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ curlcheck\_off\_t\_option(option)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ (((option)\ >\ CURLOPTTYPE\_OFF\_T)\ \&\&\ ((option)\ <\ CURLOPTTYPE\_BLOB))}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ char*\ argument\ */}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ curlcheck\_string\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_ABSTRACT\_UNIX\_SOCKET\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_ACCEPT\_ENCODING\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_ALTSVC\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CAINFO\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CAPATH\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_COOKIE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_COOKIEFILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_COOKIEJAR\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_COOKIELIST\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CRLFILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CUSTOMREQUEST\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DEFAULT\_PROTOCOL\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DNS\_INTERFACE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DNS\_LOCAL\_IP4\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DNS\_LOCAL\_IP6\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DNS\_SERVERS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DOH\_URL\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_EGDSOCKET\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_FTPPORT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_FTP\_ACCOUNT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_FTP\_ALTERNATIVE\_TO\_USER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_HSTS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_INTERFACE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_ISSUERCERT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_KEYPASSWD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_KRBLEVEL\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_LOGIN\_OPTIONS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_MAIL\_AUTH\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_MAIL\_FROM\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_NETRC\_FILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_NOPROXY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PASSWORD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PINNEDPUBLICKEY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PRE\_PROXY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXYPASSWORD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXYUSERNAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXYUSERPWD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_CAINFO\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_CAPATH\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_CRLFILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_ISSUERCERT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_KEYPASSWD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_PINNEDPUBLICKEY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SERVICE\_NAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SSLCERT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SSLCERTTYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SSLKEY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SSLKEYTYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_SSL\_CIPHER\_LIST\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_TLS13\_CIPHERS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_TLSAUTH\_PASSWORD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_TLSAUTH\_TYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXY\_TLSAUTH\_USERNAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RANDOM\_FILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RANGE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_REFERER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_REQUEST\_TARGET\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RTSP\_SESSION\_ID\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RTSP\_STREAM\_URI\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RTSP\_TRANSPORT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SASL\_AUTHZID\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SERVICE\_NAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SOCKS5\_GSSAPI\_SERVICE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_HOST\_PUBLIC\_KEY\_MD5\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_HOST\_PUBLIC\_KEY\_SHA256\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_KNOWNHOSTS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_PRIVATE\_KEYFILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_PUBLIC\_KEYFILE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSLCERT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSLCERTTYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSLENGINE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSLKEY\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSLKEYTYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSL\_CIPHER\_LIST\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TLS13\_CIPHERS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TLSAUTH\_PASSWORD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TLSAUTH\_TYPE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TLSAUTH\_USERNAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_UNIX\_SOCKET\_PATH\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_URL\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_USERAGENT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_USERNAME\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_AWS\_SIGV4\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_USERPWD\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_XOAUTH2\_BEARER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSL\_EC\_CURVES\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\ \ \ 0)}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ curl\_write\_callback\ argument\ */}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ curlcheck\_write\_cb\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_HEADERFUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_WRITEFUNCTION)}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ curl\_conv\_callback\ argument\ */}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ curlcheck\_conv\_cb\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_CONV\_TO\_NETWORK\_FUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CONV\_FROM\_NETWORK\_FUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CONV\_FROM\_UTF8\_FUNCTION)}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ data\ argument\ to\ pass\ to\ a\ callback\ */}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ curlcheck\_cb\_data\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_CHUNK\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CLOSESOCKETDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_DEBUGDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_FNMATCH\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_HEADERDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_HSTSREADDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_HSTSWRITEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_INTERLEAVEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_IOCTLDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_OPENSOCKETDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PREREQDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROGRESSDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_READDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SEEKDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SOCKOPTDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSH\_KEYDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_SSL\_CTX\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_WRITEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RESOLVER\_START\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TRAILERDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ \ 0)}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ POST\ data\ argument\ (void*\ or\ char*)\ */}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ curlcheck\_postfields\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_POSTFIELDS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_COPYPOSTFIELDS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\ \ \ 0)}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ option\ takes\ a\ struct\ curl\_slist\ *\ argument\ */}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ curlcheck\_slist\_option(option)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\ \ ((option)\ ==\ CURLOPT\_HTTP200ALIASES\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_HTTPHEADER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_MAIL\_RCPT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_POSTQUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PREQUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_PROXYHEADER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_QUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_RESOLVE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_TELNETOPTIONS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\ \ \ (option)\ ==\ CURLOPT\_CONNECT\_TO\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\ \ \ 0)}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{comment}{/*\ groups\ of\ curl\_easy\_getinfo\ infos\ that\ take\ the\ same\ type\ of\ argument\ */}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ info\ expects\ a\ pointer\ to\ char\ *\ argument\ */}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ curlcheck\_string\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\ \ (CURLINFO\_STRING\ <\ (info)\ \&\&\ (info)\ <\ CURLINFO\_LONG\ \&\&\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\ \ \ (info)\ !=\ CURLINFO\_PRIVATE)}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ info\ expects\ a\ pointer\ to\ long\ argument\ */}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ curlcheck\_long\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\ \ (CURLINFO\_LONG\ <\ (info)\ \&\&\ (info)\ <\ CURLINFO\_DOUBLE)}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ info\ expects\ a\ pointer\ to\ double\ argument\ */}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ curlcheck\_double\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\ \ (CURLINFO\_DOUBLE\ <\ (info)\ \&\&\ (info)\ <\ CURLINFO\_SLIST)}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \textcolor{comment}{/*\ true\ if\ info\ expects\ a\ pointer\ to\ struct\ curl\_slist\ *\ argument\ */}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ curlcheck\_slist\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\ \ (((info)\ ==\ CURLINFO\_SSL\_ENGINES)\ ||\ ((info)\ ==\ CURLINFO\_COOKIELIST))}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \textcolor{comment}{/*\ true\ if\ info\ expects\ a\ pointer\ to\ struct\ curl\_tlssessioninfo\ *\ argument\ */}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ curlcheck\_tlssessioninfo\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\ \ (((info)\ ==\ CURLINFO\_TLS\_SSL\_PTR)\ ||\ ((info)\ ==\ CURLINFO\_TLS\_SESSION))}}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \textcolor{comment}{/*\ true\ if\ info\ expects\ a\ pointer\ to\ struct\ curl\_certinfo\ *\ argument\ */}}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ curlcheck\_certinfo\_info(info)\ ((info)\ ==\ CURLINFO\_CERTINFO)}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{comment}{/*\ true\ if\ info\ expects\ a\ pointer\ to\ struct\ curl\_socket\_t\ argument\ */}}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ curlcheck\_socket\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\ \ (CURLINFO\_SOCKET\ <\ (info)\ \&\&\ (info)\ <\ CURLINFO\_OFF\_T)}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{comment}{/*\ true\ if\ info\ expects\ a\ pointer\ to\ curl\_off\_t\ argument\ */}}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ curlcheck\_off\_t\_info(info)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\ \ (CURLINFO\_OFF\_T\ <\ (info))}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \textcolor{comment}{/*\ typecheck\ helpers\ -\/-\/\ check\ whether\ given\ expression\ has\ requested\ type*/}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \textcolor{comment}{/*\ For\ pointers,\ you\ can\ use\ the\ curlcheck\_ptr/curlcheck\_arr\ macros,}}
+\DoxyCodeLine{00437\ \textcolor{comment}{\ *\ otherwise\ define\ a\ new\ macro.\ Search\ for\ \_\_builtin\_types\_compatible\_p}}
+\DoxyCodeLine{00438\ \textcolor{comment}{\ *\ in\ the\ GCC\ manual.}}
+\DoxyCodeLine{00439\ \textcolor{comment}{\ *\ NOTE:\ these\ macros\ MUST\ NOT\ EVALUATE\ their\ arguments!\ The\ argument\ is}}
+\DoxyCodeLine{00440\ \textcolor{comment}{\ *\ the\ actual\ expression\ passed\ to\ the\ curl\_easy\_setopt\ macro.\ This}}
+\DoxyCodeLine{00441\ \textcolor{comment}{\ *\ means\ that\ you\ can\ only\ apply\ the\ sizeof\ and\ \_\_typeof\_\_\ operators,\ no}}
+\DoxyCodeLine{00442\ \textcolor{comment}{\ *\ ==\ or\ whatsoever.}}
+\DoxyCodeLine{00443\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{comment}{/*\ XXX:\ should\ evaluate\ to\ true\ if\ expr\ is\ a\ pointer\ */}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ curlcheck\_any\_ptr(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\ \ (sizeof(expr)\ ==\ sizeof(void\ *))}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ NULL\ */}}
+\DoxyCodeLine{00450\ \textcolor{comment}{/*\ XXX:\ must\ not\ evaluate\ expr,\ so\ this\ check\ is\ not\ accurate\ */}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ curlcheck\_NULL(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \_\_typeof\_\_(NULL)))}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ type*,\ const\ type*\ or\ NULL\ */}}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ curlcheck\_ptr(expr,\ type)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ type\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ const\ type\ *))}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ one\ of\ type[],\ type*,\ NULL\ or\ const\ type*\ */}}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ curlcheck\_arr(expr,\ type)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\ \ (curlcheck\_ptr((expr),\ type)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ type\ []))}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ a\ string\ */}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ curlcheck\_string(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\ \ (curlcheck\_arr((expr),\ char)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\ \ \ curlcheck\_arr((expr),\ signed\ char)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\ \ \ curlcheck\_arr((expr),\ unsigned\ char))}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ a\ long\ (no\ matter\ the\ signedness)}}
+\DoxyCodeLine{00472\ \textcolor{comment}{\ *\ XXX:\ for\ now,\ int\ is\ also\ accepted\ (and\ therefore\ short\ and\ char,\ which}}
+\DoxyCodeLine{00473\ \textcolor{comment}{\ *\ are\ promoted\ to\ int\ when\ passed\ to\ a\ variadic\ function)\ */}}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ curlcheck\_long(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ long)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ signed\ long)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ unsigned\ long)\ ||\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ int)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ signed\ int)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ unsigned\ int)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ short)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ signed\ short)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ unsigned\ short)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ char)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ signed\ char)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ unsigned\ char))}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_off\_t\ */}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ curlcheck\_off\_t(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ curl\_off\_t))}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ abuffer\ suitable\ for\ CURLOPT\_ERRORBUFFER\ */}}
+\DoxyCodeLine{00493\ \textcolor{comment}{/*\ XXX:\ also\ check\ size\ of\ an\ char[]\ array?\ */}}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ curlcheck\_error\_buffer(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ char\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ char[]))}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ (const)\ void*\ or\ (const)\ FILE*\ */}}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ curlcheck\_cb\_data(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\ \ (curlcheck\_ptr((expr),\ void)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\ \ \ curlcheck\_ptr((expr),\ FILE))}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ be\ less\ strict\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ curlcheck\_cb\_data(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\ \ curlcheck\_any\_ptr(expr)}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ FILE*\ */}}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ curlcheck\_FILE(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\ \ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ FILE\ *)))}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ can\ be\ passed\ as\ POST\ data\ (void*\ or\ char*)\ */}}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ curlcheck\_postfields(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\ \ (curlcheck\_ptr((expr),\ void)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\ \ \ curlcheck\_arr((expr),\ char)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\ \ \ curlcheck\_arr((expr),\ unsigned\ char))}}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{comment}{/*\ helper:\ \_\_builtin\_types\_compatible\_p\ distinguishes\ between\ functions\ and}}
+\DoxyCodeLine{00521\ \textcolor{comment}{\ *\ function\ pointers,\ hide\ it\ */}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ curlcheck\_cb\_compatible(func,\ type)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(func),\ type)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(func)\ *,\ type))}}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_resolver\_start\_callback\ */}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ curlcheck\_resolver\_start\_callback(expr)\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_resolver\_start\_callback))}}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_read\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ curlcheck\_read\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_\_typeof\_\_(fread)\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_read\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback4)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback5)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_read\_callback6))}}
+\DoxyCodeLine{00542\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_aacfd185dafa598f8b5df1eaa1ac900b0}{\_curl\_read\_callback1}})(\textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00543\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a576c249c3991b21165876ca119d64d62}{\_curl\_read\_callback2}})(\textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00544\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a82a99add955b5c643b3f1ea170b8e554}{\_curl\_read\_callback3}})(\textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,\ FILE\ *);}
+\DoxyCodeLine{00545\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_aafe8965a018fd6d8b344ce3eea6a2c6b}{\_curl\_read\_callback4}})(\textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00546\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a9dd031c624308e056537f4751e9bd5ef}{\_curl\_read\_callback5}})(\textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00547\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a35bde23c703bc5ae3657b6a89c519a5d}{\_curl\_read\_callback6}})(\textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,\ FILE\ *);}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_write\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ curlcheck\_write\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\ \ (curlcheck\_read\_cb(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_\_typeof\_\_(fwrite)\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00553\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_write\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback4)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback5)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_write\_callback6))}}
+\DoxyCodeLine{00560\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a669540a16ae7f1648d735c63d96e1355}{\_curl\_write\_callback1}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00561\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_acd7fd194408321ca707af083fee0b99b}{\_curl\_write\_callback2}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00563\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a8841fa71ec5ea92a87c7b2e666267c10}{\_curl\_write\_callback3}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ size\_t,\ FILE\ *);}
+\DoxyCodeLine{00564\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a390241e810677d2f53c3e0c00ac78059}{\_curl\_write\_callback4}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00565\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a3cede95e6bd530a0b60bf73ef043eb9b}{\_curl\_write\_callback5}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00567\ \textcolor{keyword}{typedef}\ size\_t\ (*\mbox{\hyperlink{a00137_a379005b0ccb12abf8d0150e2241e1328}{\_curl\_write\_callback6}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ size\_t,\ size\_t,\ FILE\ *);}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_ioctl\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ curlcheck\_ioctl\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_ioctl\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ioctl\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ioctl\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ioctl\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ioctl\_callback4))}}
+\DoxyCodeLine{00577\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}\ (*\mbox{\hyperlink{a00137_aec8e2c9251f04a8c7b51664ba0369269}{\_curl\_ioctl\_callback1}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ int,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00578\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}\ (*\mbox{\hyperlink{a00137_a9dac65f9b65c11726cb5048d31292200}{\_curl\_ioctl\_callback2}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ int,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00579\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}\ (*\mbox{\hyperlink{a00137_a55d2ffa0e79788cc5409349296b6fe51}{\_curl\_ioctl\_callback3}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}},\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00580\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}\ (*\mbox{\hyperlink{a00137_a01acc993bc13db9d0aa10e70039502f5}{\_curl\_ioctl\_callback4}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_sockopt\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ curlcheck\_sockopt\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_sockopt\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_sockopt\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_sockopt\_callback2))}}
+\DoxyCodeLine{00588\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a8095bc0db8d83538b34e95870b2ae70a}{\_curl\_sockopt\_callback1}})(\textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}},\ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}});}
+\DoxyCodeLine{00589\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_acdd8dd1aa1817d2dd29e808b90a40a3a}{\_curl\_sockopt\_callback2}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}},}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}});}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_opensocket\_callback\ or}}
+\DoxyCodeLine{00593\ \textcolor{comment}{\ \ \ "{}similar"{}\ */}}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ curlcheck\_opensocket\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_opensocket\_callback)\ ||\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_opensocket\_callback1)\ ||\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_opensocket\_callback2)\ ||\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_opensocket\_callback3)\ ||\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_opensocket\_callback4))}}
+\DoxyCodeLine{00601\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ (*\mbox{\hyperlink{a00137_a819bb252904432a41f3a5f92c3b9b549}{\_curl\_opensocket\_callback1}})}
+\DoxyCodeLine{00602\ \ \ (\textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}},\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00929}{curl\_sockaddr}}\ *);}
+\DoxyCodeLine{00603\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ (*\mbox{\hyperlink{a00137_a6df6792a0a55cef77b0da1df205043e8}{\_curl\_opensocket\_callback2}})}
+\DoxyCodeLine{00604\ \ \ (\textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}},\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00929}{curl\_sockaddr}}\ *);}
+\DoxyCodeLine{00605\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ (*\mbox{\hyperlink{a00137_a1c1d3a193d4500643fbdb6b1e386f791}{\_curl\_opensocket\_callback3}})}
+\DoxyCodeLine{00606\ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}},\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00929}{curl\_sockaddr}}\ *);}
+\DoxyCodeLine{00607\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ (*\mbox{\hyperlink{a00137_adecf08e4c0d78c6d51309b12664b0737}{\_curl\_opensocket\_callback4}})}
+\DoxyCodeLine{00608\ \ \ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}},\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00929}{curl\_sockaddr}}\ *);}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_progress\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ curlcheck\_progress\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_progress\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_progress\_callback1)\ ||\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_progress\_callback2))}}
+\DoxyCodeLine{00616\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_adbcff69be30b73e3d35f7b7d0d5bd11e}{\_curl\_progress\_callback1}})(\textcolor{keywordtype}{void}\ *,}
+\DoxyCodeLine{00617\ \ \ \ \ double,\ double,\ double,\ double);}
+\DoxyCodeLine{00618\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a941c9ed8a0fa75c1dfd6cff36c2f829b}{\_curl\_progress\_callback2}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,}
+\DoxyCodeLine{00619\ \ \ \ \ double,\ double,\ double,\ double);}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_debug\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ curlcheck\_debug\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_debug\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback4)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback5)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback6)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback7)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_debug\_callback8))}}
+\DoxyCodeLine{00633\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a905fe54d1b3b440e018416beec106189}{\_curl\_debug\_callback1}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00634\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00635\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a3642779ad78ad0b93bef0cd3fbe34f0b}{\_curl\_debug\_callback2}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00636\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00637\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a3db426b2a5b83fd90d67d9657a9ca2a9}{\_curl\_debug\_callback3}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00638\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00639\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a817b3e1f4c7849792288cc9ebc7c407c}{\_curl\_debug\_callback4}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00640\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00641\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_afe2ada9913295617d1b1255d025c649a}{\_curl\_debug\_callback5}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00642\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00643\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a8bb900b90c8e024cab1089db1e5646a4}{\_curl\_debug\_callback6}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00644\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00645\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a22eff22e058a10231ff96a540f2b7d65}{\_curl\_debug\_callback7}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00646\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00647\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00137_a9970f7cec319006f1bb7f73633a88a70}{\_curl\_debug\_callback8}})\ (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,}
+\DoxyCodeLine{00648\ \ \ \ \ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *,\ size\_t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_ssl\_ctx\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00651\ \textcolor{comment}{/*\ this\ is\ getting\ even\ messier...\ */}}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ curlcheck\_ssl\_ctx\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_ssl\_ctx\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback4)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback5)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback6)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback7)\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_ssl\_ctx\_callback8))}}
+\DoxyCodeLine{00663\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00664\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_abbd25dcbb87d03ee1aaae5be3d988b4c}{\_curl\_ssl\_ctx\_callback2}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00665\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a51942fbbfdca41bfdf71dd7eb2656d71}{\_curl\_ssl\_ctx\_callback3}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00666\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_acd15cc21030062058bc5b01a4c448ec9}{\_curl\_ssl\_ctx\_callback4}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#ifdef\ HEADER\_SSL\_H}}
+\DoxyCodeLine{00669\ \textcolor{comment}{/*\ hack:\ if\ we\ included\ OpenSSL's\ ssl.h,\ we\ know\ about\ SSL\_CTX}}
+\DoxyCodeLine{00670\ \textcolor{comment}{\ *\ this\ will\ of\ course\ break\ if\ we're\ included\ before\ OpenSSL\ headers...}}
+\DoxyCodeLine{00671\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00672\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_ab603023e8514bafb4f44a5f7830beda0}{\_curl\_ssl\_ctx\_callback5}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ SSL\_CTX\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00673\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}{\_curl\_ssl\_ctx\_callback6}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ SSL\_CTX\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00674\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_ae2ebdce539e2b1b1348bca8c74831d86}{\_curl\_ssl\_ctx\_callback7}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keyword}{const}\ SSL\_CTX\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00675\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_aeea9c5ad63d27b7ce77216a872b737c6}{\_curl\_ssl\_ctx\_callback8}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *,\ \textcolor{keyword}{const}\ SSL\_CTX\ *,}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00678\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}}\ \mbox{\hyperlink{a00137_ab603023e8514bafb4f44a5f7830beda0}{\_curl\_ssl\_ctx\_callback5}};}
+\DoxyCodeLine{00679\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}}\ \mbox{\hyperlink{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}{\_curl\_ssl\_ctx\_callback6}};}
+\DoxyCodeLine{00680\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}}\ \mbox{\hyperlink{a00137_ae2ebdce539e2b1b1348bca8c74831d86}{\_curl\_ssl\_ctx\_callback7}};}
+\DoxyCodeLine{00681\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}}\ \mbox{\hyperlink{a00137_aeea9c5ad63d27b7ce77216a872b737c6}{\_curl\_ssl\_ctx\_callback8}};}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_conv\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ curlcheck\_conv\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_conv\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_conv\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_conv\_callback2)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_conv\_callback3)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_conv\_callback4))}}
+\DoxyCodeLine{00692\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_ae23e3d9711c086a0e6d7ed71528af612}{\_curl\_conv\_callback1}})(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00693\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a0fea29cfe79074a01e621e1a60991ef5}{\_curl\_conv\_callback2}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00694\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a860c9f69cd61f0d62fe6d1c07f997557}{\_curl\_conv\_callback3}})(\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00695\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_ac3b116e3ba589ed78cc87e7c3112ea3a}{\_curl\_conv\_callback4}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t}\ length);}
+\DoxyCodeLine{00696\ }
+\DoxyCodeLine{00697\ \textcolor{comment}{/*\ evaluates\ to\ true\ if\ expr\ is\ of\ type\ curl\_seek\_callback\ or\ "{}similar"{}\ */}}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ curlcheck\_seek\_cb(expr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\ \ (curlcheck\_NULL(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ curl\_seek\_callback)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_seek\_callback1)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\ \ \ curlcheck\_cb\_compatible((expr),\ \_curl\_seek\_callback2))}}
+\DoxyCodeLine{00703\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_adebe91c0cf6ae015cc98752e4fe2c363}{\_curl\_seek\_callback1}})(\textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}},\ int);}
+\DoxyCodeLine{00704\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ (*\mbox{\hyperlink{a00137_a704fb61f39b18a5fde22c82d59b60865}{\_curl\_seek\_callback2}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}},\ int);}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CURLINC\_TYPECHECK\_GCC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

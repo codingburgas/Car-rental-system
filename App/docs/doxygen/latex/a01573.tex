@@ -1,0 +1,328 @@
+\doxysection{Main\+Menu Class Reference}
+\hypertarget{a01573}{}\label{a01573}\index{MainMenu@{MainMenu}}
+
+
+{\ttfamily \#include $<$Main\+Menu.\+hpp$>$}
+
+
+
+Inheritance diagram for Main\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for Main\+Menu\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01573_a8da2ec7b5fa11a8453d63db723dea4b5}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01573_a4711182d50cde5e1423694263101ca9e}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+void \mbox{\hyperlink{a01573_aff480dcfccafc73d9d792501d3f885aa}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01573_a895f496a061a3089e0460f19e3238ad6}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01573_a5553aeaece208d6e2f6121a2d47bf3ae}{Main\+Menu}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}, string email)
+\item 
+void \mbox{\hyperlink{a01573_a6454ffc1d7f1112f365788f52912663a}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01573_a01c57232226b8c32acacfc1bbf9be1a7}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01573_a3d3862e2675018556d5c0fd4ad1984fd}{\texorpdfstring{$\sim$}{\string~}\+Main\+Menu}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01569_a396a24606b365ce28bce2af5b87a3d95}{check\+Login\+Register}} (string entered\+Name, string enetered\+Contact\+Number, string email, string password, string is\+Log\+Or\+Reg)
+\item 
+string \mbox{\hyperlink{a01569_a5ebfee89a4826283f106f53121d72793}{get\+Name}} (string entered\+Email)
+\item 
+string \mbox{\hyperlink{a01569_a49a939337ade8008aa3fb8b144cf2ec1}{get\+Role}} (string entered\+Email)
+\item 
+int \mbox{\hyperlink{a01569_aab20c6cc959d5ef048318de89cf0a983}{get\+User\+Id}} (string entered\+Email)
+\item 
+void \mbox{\hyperlink{a01569_a108699573f2614e409b37b4eb3d33870}{get\+Users}} ()
+\item 
+vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ \mbox{\hyperlink{a01569_a14d0e8e584ddf8114f85fdef922d6750}{get\+Vehicle\+Parametres}} ()
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{a01569_a21768834c5cf95e4af16678fabe85b10}{get\+Vehicle\+Prices\+Indexes}} (int budget\+Choice, string car\+Type)
+\item 
+void \mbox{\hyperlink{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}{pass\+Data}} (std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ data)
+\item 
+void \mbox{\hyperlink{a01569_a76295e017aeca3f3e079c28977ddbdaf}{post\+User}} (string entered\+Name, string entered\+Contact\+Number, string entered\+Email, string entered\+Password, string entered\+Role)
+\item 
+void \mbox{\hyperlink{a01569_ab8a12aa600a7ae3bce2387c025df808c}{put\+Vehicle}} (string vehicle\+Type, string \mbox{\hyperlink{a01573_a40327c437df6701a2521242ea49d40a6}{name}}, string manufacturer, string model, bool is\+Reserved, string reservation\+Date, string location, string price, int reserved\+By\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01573_a8cc20d7dc9d55aa5013eace8b8e097e5}{bg}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01573_a4db728e0f397b8e8bd98b5098499a0c1}{bg\+Texture}}
+\item 
+vector$<$ vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ $>$ \mbox{\hyperlink{a01573_a773aeda6f728a60c0a75995dacb8aad1}{buttons}}
+\item 
+\mbox{\hyperlink{a01697}{Font}} \mbox{\hyperlink{a01573_a8c20e647d11d32e8c9b7fe1ae7036e67}{font}}
+\item 
+\mbox{\hyperlink{a00677}{Handler}} \mbox{\hyperlink{a01569_ad23161563ec0c989b590333fb546840e}{handler}}
+\item 
+\mbox{\hyperlink{a01569}{Login\+Register}} \mbox{\hyperlink{a01573_ae8eb7b87cf173566f0ae766e29d0bfc3}{log\+Register}}
+\item 
+string \mbox{\hyperlink{a01573_a40327c437df6701a2521242ea49d40a6}{name}}
+\item 
+string \mbox{\hyperlink{a01573_aaf2ac839eeccaa6c52ef2dd0a8e2da61}{role}}
+\item 
+\mbox{\hyperlink{a01781}{Text}} \mbox{\hyperlink{a01573_a88638e5cb976de8f64416baa9c5271fc}{text\+Name}}
+\item 
+\mbox{\hyperlink{a01781}{Text}} \mbox{\hyperlink{a01573_a19bf87bbcd8ef4568448168b4c8cd5e0}{text\+Role}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01573_a5553aeaece208d6e2f6121a2d47bf3ae}\label{a01573_a5553aeaece208d6e2f6121a2d47bf3ae} 
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{MainMenu()}{MainMenu()}}
+{\footnotesize\ttfamily Main\+Menu\+::\+Main\+Menu (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{string}]{email }\end{DoxyParamCaption})}
+
+\Hypertarget{a01573_a3d3862e2675018556d5c0fd4ad1984fd}\label{a01573_a3d3862e2675018556d5c0fd4ad1984fd} 
+\index{MainMenu@{MainMenu}!````~MainMenu@{\texorpdfstring{$\sim$}{\string~}MainMenu}}
+\index{````~MainMenu@{\texorpdfstring{$\sim$}{\string~}MainMenu}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainMenu()}{\string~MainMenu()}}
+{\footnotesize\ttfamily Main\+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01569_a396a24606b365ce28bce2af5b87a3d95}\label{a01569_a396a24606b365ce28bce2af5b87a3d95} 
+\index{MainMenu@{MainMenu}!checkLoginRegister@{checkLoginRegister}}
+\index{checkLoginRegister@{checkLoginRegister}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{checkLoginRegister()}{checkLoginRegister()}}
+{\footnotesize\ttfamily bool Login\+Register\+::check\+Login\+Register (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{enetered\+Contact\+Number,  }\item[{string}]{email,  }\item[{string}]{password,  }\item[{string}]{is\+Log\+Or\+Reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01573_a8da2ec7b5fa11a8453d63db723dea4b5}\label{a01573_a8da2ec7b5fa11a8453d63db723dea4b5} 
+\index{MainMenu@{MainMenu}!draw@{draw}}
+\index{draw@{draw}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Main\+Menu\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01573_a4711182d50cde5e1423694263101ca9e}\label{a01573_a4711182d50cde5e1423694263101ca9e} 
+\index{MainMenu@{MainMenu}!draw@{draw}}
+\index{draw@{draw}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Main\+Menu\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01573_aff480dcfccafc73d9d792501d3f885aa}\label{a01573_aff480dcfccafc73d9d792501d3f885aa} 
+\index{MainMenu@{MainMenu}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void Main\+Menu\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01569_a5ebfee89a4826283f106f53121d72793}\label{a01569_a5ebfee89a4826283f106f53121d72793} 
+\index{MainMenu@{MainMenu}!getName@{getName}}
+\index{getName@{getName}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Name (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a49a939337ade8008aa3fb8b144cf2ec1}\label{a01569_a49a939337ade8008aa3fb8b144cf2ec1} 
+\index{MainMenu@{MainMenu}!getRole@{getRole}}
+\index{getRole@{getRole}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Role (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_aab20c6cc959d5ef048318de89cf0a983}\label{a01569_aab20c6cc959d5ef048318de89cf0a983} 
+\index{MainMenu@{MainMenu}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily int Login\+Register\+::get\+User\+Id (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a108699573f2614e409b37b4eb3d33870}\label{a01569_a108699573f2614e409b37b4eb3d33870} 
+\index{MainMenu@{MainMenu}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily void Login\+Register\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a14d0e8e584ddf8114f85fdef922d6750}\label{a01569_a14d0e8e584ddf8114f85fdef922d6750} 
+\index{MainMenu@{MainMenu}!getVehicleParametres@{getVehicleParametres}}
+\index{getVehicleParametres@{getVehicleParametres}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getVehicleParametres()}{getVehicleParametres()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ Login\+Register\+::get\+Vehicle\+Parametres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a21768834c5cf95e4af16678fabe85b10}\label{a01569_a21768834c5cf95e4af16678fabe85b10} 
+\index{MainMenu@{MainMenu}!getVehiclePricesIndexes@{getVehiclePricesIndexes}}
+\index{getVehiclePricesIndexes@{getVehiclePricesIndexes}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{getVehiclePricesIndexes()}{getVehiclePricesIndexes()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Login\+Register\+::get\+Vehicle\+Prices\+Indexes (\begin{DoxyParamCaption}\item[{int}]{budget\+Choice,  }\item[{string}]{car\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01573_a895f496a061a3089e0460f19e3238ad6}\label{a01573_a895f496a061a3089e0460f19e3238ad6} 
+\index{MainMenu@{MainMenu}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool Main\+Menu\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}\label{a01569_a22fce4252a4f797af0dbbf2fdc6510a9} 
+\index{MainMenu@{MainMenu}!passData@{passData}}
+\index{passData@{passData}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{passData()}{passData()}}
+{\footnotesize\ttfamily void Login\+Register\+::pass\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a76295e017aeca3f3e079c28977ddbdaf}\label{a01569_a76295e017aeca3f3e079c28977ddbdaf} 
+\index{MainMenu@{MainMenu}!postUser@{postUser}}
+\index{postUser@{postUser}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{postUser()}{postUser()}}
+{\footnotesize\ttfamily void Login\+Register\+::post\+User (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{entered\+Contact\+Number,  }\item[{string}]{entered\+Email,  }\item[{string}]{entered\+Password,  }\item[{string}]{entered\+Role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_ab8a12aa600a7ae3bce2387c025df808c}\label{a01569_ab8a12aa600a7ae3bce2387c025df808c} 
+\index{MainMenu@{MainMenu}!putVehicle@{putVehicle}}
+\index{putVehicle@{putVehicle}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{putVehicle()}{putVehicle()}}
+{\footnotesize\ttfamily void Login\+Register\+::put\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{vehicle\+Type,  }\item[{string}]{name,  }\item[{string}]{manufacturer,  }\item[{string}]{model,  }\item[{bool}]{is\+Reserved,  }\item[{string}]{reservation\+Date,  }\item[{string}]{location,  }\item[{string}]{price,  }\item[{int}]{reserved\+By\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01573_a6454ffc1d7f1112f365788f52912663a}\label{a01573_a6454ffc1d7f1112f365788f52912663a} 
+\index{MainMenu@{MainMenu}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void Main\+Menu\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01573_a01c57232226b8c32acacfc1bbf9be1a7}\label{a01573_a01c57232226b8c32acacfc1bbf9be1a7} 
+\index{MainMenu@{MainMenu}!update@{update}}
+\index{update@{update}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Main\+Menu\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{MainMenu@{MainMenu}!answers@{answers}}
+\index{answers@{answers}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01573_a8cc20d7dc9d55aa5013eace8b8e097e5}\label{a01573_a8cc20d7dc9d55aa5013eace8b8e097e5} 
+\index{MainMenu@{MainMenu}!bg@{bg}}
+\index{bg@{bg}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{bg}{bg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Main\+Menu\+::bg\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_a4db728e0f397b8e8bd98b5098499a0c1}\label{a01573_a4db728e0f397b8e8bd98b5098499a0c1} 
+\index{MainMenu@{MainMenu}!bgTexture@{bgTexture}}
+\index{bgTexture@{bgTexture}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{bgTexture}{bgTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Main\+Menu\+::bg\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_a773aeda6f728a60c0a75995dacb8aad1}\label{a01573_a773aeda6f728a60c0a75995dacb8aad1} 
+\index{MainMenu@{MainMenu}!buttons@{buttons}}
+\index{buttons@{buttons}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{buttons}{buttons}}
+{\footnotesize\ttfamily vector$<$vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ $>$ Main\+Menu\+::buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{a01573_a8c20e647d11d32e8c9b7fe1ae7036e67}\label{a01573_a8c20e647d11d32e8c9b7fe1ae7036e67} 
+\index{MainMenu@{MainMenu}!font@{font}}
+\index{font@{font}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01697}{Font}} Main\+Menu\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01569_ad23161563ec0c989b590333fb546840e}\label{a01569_ad23161563ec0c989b590333fb546840e} 
+\index{MainMenu@{MainMenu}!handler@{handler}}
+\index{handler@{handler}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00677}{Handler}} Login\+Register\+::handler\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{MainMenu@{MainMenu}!inputs@{inputs}}
+\index{inputs@{inputs}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{MainMenu@{MainMenu}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01573_ae8eb7b87cf173566f0ae766e29d0bfc3}\label{a01573_ae8eb7b87cf173566f0ae766e29d0bfc3} 
+\index{MainMenu@{MainMenu}!logRegister@{logRegister}}
+\index{logRegister@{logRegister}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{logRegister}{logRegister}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01569}{Login\+Register}} Main\+Menu\+::log\+Register\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_a40327c437df6701a2521242ea49d40a6}\label{a01573_a40327c437df6701a2521242ea49d40a6} 
+\index{MainMenu@{MainMenu}!name@{name}}
+\index{name@{name}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Main\+Menu\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_aaf2ac839eeccaa6c52ef2dd0a8e2da61}\label{a01573_aaf2ac839eeccaa6c52ef2dd0a8e2da61} 
+\index{MainMenu@{MainMenu}!role@{role}}
+\index{role@{role}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{role}{role}}
+{\footnotesize\ttfamily string Main\+Menu\+::role\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_a88638e5cb976de8f64416baa9c5271fc}\label{a01573_a88638e5cb976de8f64416baa9c5271fc} 
+\index{MainMenu@{MainMenu}!textName@{textName}}
+\index{textName@{textName}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{textName}{textName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01781}{Text}} Main\+Menu\+::text\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01573_a19bf87bbcd8ef4568448168b4c8cd5e0}\label{a01573_a19bf87bbcd8ef4568448168b4c8cd5e0} 
+\index{MainMenu@{MainMenu}!textRole@{textRole}}
+\index{textRole@{textRole}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{textRole}{textRole}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01781}{Text}} Main\+Menu\+::text\+Role\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{MainMenu@{MainMenu}!type@{type}}
+\index{type@{type}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00284}{Main\+Menu.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00632}{Main\+Menu.\+cpp}}\end{DoxyCompactItemize}

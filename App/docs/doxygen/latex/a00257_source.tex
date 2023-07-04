@@ -1,0 +1,233 @@
+\doxysection{ordered\+\_\+map.\+hpp}
+\hypertarget{a00257_source}{}\label{a00257_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/ordered\_map.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/ordered\_map.hpp}}
+\mbox{\hyperlink{a00257}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}\ \textcolor{comment}{//\ less}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}\ \textcolor{comment}{//\ initializer\_list}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iterator>}\ \textcolor{comment}{//\ input\_iterator\_tag,\ iterator\_traits}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ allocator}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}\ \textcolor{comment}{//\ for\ out\_of\_range}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <type\_traits>}\ \textcolor{comment}{//\ enable\_if,\ is\_convertible}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <utility>}\ \textcolor{comment}{//\ pair}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}\ \textcolor{comment}{//\ vector}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00206}{nlohmann/detail/macro\_scope.hpp}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Key,\ \textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ IgnoredLess\ =\ std::less<Key>,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class}\ Allocator\ =\ std::allocator<std::pair<const\ Key,\ T>>>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01553}{ordered\_map}}\ :\ std::vector<std::pair<const\ Key,\ T>,\ Allocator>}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_a57095c6ed403f02e1bc2c240a13c9ed8}{key\_type}}\ =\ Key;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_a1c9c1509ee714a9814b45a8030c84ec7}{mapped\_type}}\ =\ T;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_a0cabe346c38a4f1ab1b8a396fbd2bbe2}{Container}}\ =\ std::vector<std::pair<const\ Key,\ T>,\ Allocator>;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ =\ \textcolor{keyword}{typename}\ Container::iterator;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_a8276ac13f6e6ad27594a7e287a5ea071}{const\_iterator}}\ =\ \textcolor{keyword}{typename}\ Container::const\_iterator;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_ab5044ef3fc07cf7aee67241c4d10ce9d}{size\_type}}\ =\ \textcolor{keyword}{typename}\ Container::size\_type;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_abe9b97ae84d9c40616913b50b2778150}{value\_type}}\ =\ \textcolor{keyword}{typename}\ Container::value\_type;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Explicit\ constructors\ instead\ of\ \`{}using\ Container::Container`}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ otherwise\ older\ compilers\ choke\ on\ it\ (GCC\ <=\ 5.5,\ xcode\ <=\ 9.4)}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{a01553_a87938c10b76510dac00412d2cb5fd1e4}{ordered\_map}}(\textcolor{keyword}{const}\ Allocator\&\ alloc\ =\ Allocator())\ :\ \mbox{\hyperlink{a01553_a0cabe346c38a4f1ab1b8a396fbd2bbe2}{Container}}\{alloc\}\ \{\}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ It>}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a01553_a9d25efb51325cc1be027b8ea00c1f8b8}{ordered\_map}}(It\ first,\ It\ last,\ \textcolor{keyword}{const}\ Allocator\&\ alloc\ =\ Allocator())}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01553_a0cabe346c38a4f1ab1b8a396fbd2bbe2}{Container}}\{first,\ last,\ alloc\}\ \{\}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{a01553_a0482ea79e7786367a2d9b5c789c091ce}{ordered\_map}}(std::initializer\_list<T>\ init,\ \textcolor{keyword}{const}\ Allocator\&\ alloc\ =\ Allocator()\ )}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01553_a0cabe346c38a4f1ab1b8a396fbd2bbe2}{Container}}\{init,\ alloc\}\ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::pair<iterator,\ bool>\ \mbox{\hyperlink{a01553_af0bcef59054b40d52707bc1bf984e482}{emplace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01553_a57095c6ed403f02e1bc2c240a13c9ed8}{key\_type}}\&\ key,\ T\&\&\ t)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{it,\ \textcolor{keyword}{false}\};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Container::emplace\_back(key,\ t);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{-\/-\/this-\/>end(),\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ T\&\ \mbox{\hyperlink{a01553_a6b0fab5f824a32ddddfd423821e597c6}{operator[]}}(\textcolor{keyword}{const}\ Key\&\ key)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01553_af0bcef59054b40d52707bc1bf984e482}{emplace}}(key,\ T\{\}).first-\/>second;}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{a01553_af552370550cd51d72663c2ae72042f9a}{operator[]}}(\textcolor{keyword}{const}\ Key\&\ key)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01553_a016027563c9a115a546bd046027c1a8e}{at}}(key);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ T\&\ \mbox{\hyperlink{a01553_a016027563c9a115a546bd046027c1a8e}{at}}(\textcolor{keyword}{const}\ Key\&\ key)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key\ not\ found"{}}));}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{a01553_a20d0c541bd54ea70648bb5efd5a4aaa9}{at}}(\textcolor{keyword}{const}\ Key\&\ key)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(std::out\_of\_range(\textcolor{stringliteral}{"{}key\ not\ found"{}}));}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{a01553_ab5044ef3fc07cf7aee67241c4d10ce9d}{size\_type}}\ \mbox{\hyperlink{a01553_a583c8976bbf0c137ff8e2439878f3058}{erase}}(\textcolor{keyword}{const}\ Key\&\ key)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Since\ we\ cannot\ move\ const\ Keys,\ re-\/construct\ them\ in\ place}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ next\ =\ it;\ ++next\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>\string~value\_type();\ \textcolor{comment}{//\ Destroy\ but\ keep\ allocation}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (\&*it)\ \mbox{\hyperlink{a01553_abe9b97ae84d9c40616913b50b2778150}{value\_type}}\{std::move(*next)\};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Container::pop\_back();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ \mbox{\hyperlink{a01553_a26053569acb0a858d87482b2fa3d5dc5}{erase}}(\mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ pos)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01553_a583c8976bbf0c137ff8e2439878f3058}{erase}}(pos,\ std::next(pos));}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ \mbox{\hyperlink{a01553_a6f766b4df72c42ac14d55603c85f9e36}{erase}}(\mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ first,\ \mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ last)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ elements\_affected\ =\ std::distance(first,\ last);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ offset\ =\ std::distance(Container::begin(),\ first);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ the\ start\ situation.\ We\ need\ to\ delete\ elements\_affected}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ elements\ (3\ in\ this\ example:\ e,\ f,\ g),\ and\ need\ to\ return\ an}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iterator\ past\ the\ last\ deleted\ element\ (h\ in\ this\ example).}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note\ that\ offset\ is\ the\ distance\ from\ the\ start\ of\ the\ vector}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ first.\ We\ will\ need\ this\ later.}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [\ a,\ b,\ c,\ d,\ e,\ f,\ g,\ h,\ i,\ j\ ]}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string^\ \ \ \ \ \ \ \ \string^}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ first\ \ \ \ last}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Since\ we\ cannot\ move\ const\ Keys,\ we\ re-\/construct\ them\ in\ place.}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ start\ at\ first\ and\ re-\/construct\ (viz.\ copy)\ the\ elements\ from}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ back\ of\ the\ vector.\ Example\ for\ first\ iteration:}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,-\/-\/-\/-\/-\/-\/-\/-\/.}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ \ \ \ \ \ \ \ |\ \ \ destroy\ e\ and\ re-\/construct\ with\ h}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [\ a,\ b,\ c,\ d,\ e,\ f,\ g,\ h,\ i,\ j\ ]}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string^\ \ \ \ \ \ \ \ \string^}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ \ \ \ \ \ \ it\ +\ elements\_affected}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ first;\ std::next(it,\ elements\_affected)\ !=\ Container::end();\ ++it)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>\string~value\_type();\ \textcolor{comment}{//\ destroy\ but\ keep\ allocation}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ (\&*it)\ \mbox{\hyperlink{a01553_abe9b97ae84d9c40616913b50b2778150}{value\_type}}\{std::move(*std::next(it,\ elements\_affected))\};\ \textcolor{comment}{//\ "{}move"{}\ next\ element\ to\ it}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [\ a,\ b,\ c,\ d,\ h,\ i,\ j,\ h,\ i,\ j\ ]}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string^\ \ \ \ \ \ \ \ \string^}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ first\ \ \ \ last}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ the\ unneeded\ elements\ at\ the\ end\ of\ the\ vector}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ Container::resize(this-\/>size()\ -\/\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01553_ab5044ef3fc07cf7aee67241c4d10ce9d}{size\_type}}\textcolor{keyword}{>}(elements\_affected));}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ [\ a,\ b,\ c,\ d,\ h,\ i,\ j\ ]}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string^\ \ \ \ \ \ \ \ \string^}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ first\ \ \ \ last}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ first\ is\ now\ pointing\ past\ the\ last\ deleted\ element,\ but\ we\ cannot}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ use\ this\ iterator,\ because\ it\ may\ have\ been\ invalidated\ by\ the}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ resize\ call.\ Instead,\ we\ can\ return\ begin()\ +\ offset.}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Container::begin()\ +\ offset;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{a01553_ab5044ef3fc07cf7aee67241c4d10ce9d}{size\_type}}\ \mbox{\hyperlink{a01553_aee2c188dcc802d6b28910f707a5e637b}{count}}(\textcolor{keyword}{const}\ Key\&\ key)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{a01553_aef8bc179883da4194bc6b657b87eeb07}{iterator}}\ \mbox{\hyperlink{a01553_a2486527ac56e07d58946ae9a93a46bc8}{find}}(\textcolor{keyword}{const}\ Key\&\ key)}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Container::end();}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{a01553_a8276ac13f6e6ad27594a7e287a5ea071}{const\_iterator}}\ \mbox{\hyperlink{a01553_a41e6e34fa8a90b96cbe5c71fec10d2ee}{find}}(\textcolor{keyword}{const}\ Key\&\ key)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Container::end();}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ std::pair<iterator,\ bool>\ \mbox{\hyperlink{a01553_a2dafd3fdc7dbd3233bb8c85824ee7cb0}{insert}}(\ \mbox{\hyperlink{a01553_abe9b97ae84d9c40616913b50b2778150}{value\_type}}\&\&\ value\ )}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01553_af0bcef59054b40d52707bc1bf984e482}{emplace}}(value.first,\ std::move(value.second));}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ std::pair<iterator,\ bool>\ \mbox{\hyperlink{a01553_aad604df2c242c3cf28f595e692aed753}{insert}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01553_abe9b97ae84d9c40616913b50b2778150}{value\_type}}\&\ value\ )}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ ++it)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ value.first)}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{it,\ \textcolor{keyword}{false}\};}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ Container::push\_back(value);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{-\/-\/this-\/>end(),\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01553_a89cc338e8466e74baaa138664c79ee98}{require\_input\_iter}}\ =\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_convertible<typename\ std::iterator\_traits<InputIt>::iterator\_category,}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ std::input\_iterator\_tag>::value>::type;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt,\ \textcolor{keyword}{typename}\ =\ require\_input\_iter<InputIt>>}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01553_a2c8509f72bc33307661f1a0ed5763f9e}{insert}}(InputIt\ first,\ InputIt\ last)}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ first;\ it\ !=\ last;\ ++it)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01553_a2dafd3fdc7dbd3233bb8c85824ee7cb0}{insert}}(*it);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \}\ \ \textcolor{comment}{//\ namespace\ nlohmann}}
+
+\end{DoxyCode}

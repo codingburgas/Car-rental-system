@@ -1,0 +1,1566 @@
+\doxysection{nlohmann\+::detail Namespace Reference}
+\hypertarget{a00662}{}\label{a00662}\index{nlohmann::detail@{nlohmann::detail}}
+
+
+detail namespace with internal helper functions  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00666}{container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl}}
+\item 
+namespace \mbox{\hyperlink{a00664}{dtoa\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em implements the Grisu2 algorithm for binary to decimal floating-\/point conversion. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00668}{utility\+\_\+internal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01077}{binary\+\_\+reader}}
+\begin{DoxyCompactList}\small\item\em deserialization of CBOR, Message\+Pack, and UBJSON values \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01513}{binary\+\_\+writer}}
+\begin{DoxyCompactList}\small\item\em serialization to CBOR and Message\+Pack values \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01333}{conjunction}}
+\item 
+struct \mbox{\hyperlink{a01337}{conjunction$<$ B1 $>$}}
+\item 
+struct \mbox{\hyperlink{a01341}{conjunction$<$ B1, Bn... $>$}}
+\item 
+struct \mbox{\hyperlink{a01265}{detector}}
+\item 
+struct \mbox{\hyperlink{a01269}{detector$<$ Default, void\+\_\+t$<$ Op$<$ Args... $>$ $>$, Op, Args... $>$}}
+\item 
+class \mbox{\hyperlink{a01053}{exception}}
+\begin{DoxyCompactList}\small\item\em general exception of the \doxylink{a01541}{basic\+\_\+json} class \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01013}{external\+\_\+constructor}}
+\item 
+struct \mbox{\hyperlink{a01041}{external\+\_\+constructor$<$ value\+\_\+t\+::array $>$}}
+\item 
+struct \mbox{\hyperlink{a01025}{external\+\_\+constructor$<$ value\+\_\+t\+::binary $>$}}
+\item 
+struct \mbox{\hyperlink{a01017}{external\+\_\+constructor$<$ value\+\_\+t\+::boolean $>$}}
+\item 
+struct \mbox{\hyperlink{a01029}{external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+float $>$}}
+\item 
+struct \mbox{\hyperlink{a01037}{external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+integer $>$}}
+\item 
+struct \mbox{\hyperlink{a01033}{external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+unsigned $>$}}
+\item 
+struct \mbox{\hyperlink{a01045}{external\+\_\+constructor$<$ value\+\_\+t\+::object $>$}}
+\item 
+struct \mbox{\hyperlink{a01021}{external\+\_\+constructor$<$ value\+\_\+t\+::string $>$}}
+\item 
+class \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a00997}{from\+\_\+json\+\_\+fn}}
+\item 
+struct \mbox{\hyperlink{a01305}{has\+\_\+from\+\_\+json}}
+\item 
+struct \mbox{\hyperlink{a01313}{has\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01317}{has\+\_\+non\+\_\+default\+\_\+from\+\_\+json}}
+\item 
+struct \mbox{\hyperlink{a01321}{has\+\_\+non\+\_\+default\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01325}{has\+\_\+to\+\_\+json}}
+\item 
+struct \mbox{\hyperlink{a01329}{has\+\_\+to\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01277}{identity\+\_\+tag}}
+\item 
+class \mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01225}{integer\+\_\+sequence}}
+\item 
+struct \mbox{\hyperlink{a01165}{internal\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em an iterator value \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01061}{invalid\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em exception indicating errors with iterators \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}
+\item 
+struct \mbox{\hyperlink{a01293}{is\+\_\+basic\+\_\+json$<$ NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL $>$}}
+\item 
+struct \mbox{\hyperlink{a01449}{is\+\_\+compatible\+\_\+array\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01441}{is\+\_\+compatible\+\_\+array\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01445}{is\+\_\+compatible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ iterator\+\_\+t, Compatible\+Array\+Type $>$\+::value \&\&is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ detected\+\_\+t$<$ iterator\+\_\+t, Compatible\+Array\+Type $>$ $>$ $>$\+::value \&\&!std\+::is\+\_\+same$<$ Compatible\+Array\+Type, detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Compatible\+Array\+Type $>$ $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01469}{is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01473}{is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$ Real\+Integer\+Type $>$\+::value \&\&std\+::is\+\_\+integral$<$ Compatible\+Number\+Integer\+Type $>$\+::value \&\&!std\+::is\+\_\+same$<$ bool, Compatible\+Number\+Integer\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01409}{is\+\_\+compatible\+\_\+object\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01413}{is\+\_\+compatible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Object\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ mapped\+\_\+type\+\_\+t, Compatible\+Object\+Type $>$\+::value \&\&is\+\_\+detected$<$ key\+\_\+type\+\_\+t, Compatible\+Object\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01433}{is\+\_\+compatible\+\_\+string\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01489}{is\+\_\+compatible\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01481}{is\+\_\+compatible\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01485}{is\+\_\+compatible\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+complete\+\_\+type$<$ Compatible\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01401}{is\+\_\+complete\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01405}{is\+\_\+complete\+\_\+type$<$ T, decltype(void(sizeof(\+T)))$>$}}
+\item 
+struct \mbox{\hyperlink{a01369}{is\+\_\+constructible}}
+\item 
+struct \mbox{\hyperlink{a01377}{is\+\_\+constructible$<$ const std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01385}{is\+\_\+constructible$<$ const std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01373}{is\+\_\+constructible$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01381}{is\+\_\+constructible$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01465}{is\+\_\+constructible\+\_\+array\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01453}{is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01461}{is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::value\+\_\+type $>$\+::value \&\&!is\+\_\+compatible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\+::value \&\&is\+\_\+default\+\_\+constructible$<$ Constructible\+Array\+Type $>$\+::value \&\&(std\+::is\+\_\+move\+\_\+assignable$<$ Constructible\+Array\+Type $>$\+::value\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+copy\+\_\+assignable$<$ Constructible\+Array\+Type $>$\+::value)\&\&is\+\_\+detected$<$ iterator\+\_\+t, Constructible\+Array\+Type $>$\+::value \&\&is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ detected\+\_\+t$<$ iterator\+\_\+t, Constructible\+Array\+Type $>$ $>$ $>$\+::value \&\&is\+\_\+detected$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$\+::value \&\&!std\+::is\+\_\+same$<$ Constructible\+Array\+Type, detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$ $>$\+::value \&\&is\+\_\+complete\+\_\+type$<$ detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$ $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01457}{is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::value\+\_\+type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01421}{is\+\_\+constructible\+\_\+object\+\_\+type\+\_\+impl}}
+\item 
+struct \mbox{\hyperlink{a01425}{is\+\_\+constructible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Object\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ mapped\+\_\+type\+\_\+t, Constructible\+Object\+Type $>$\+::value \&\&is\+\_\+detected$<$ key\+\_\+type\+\_\+t, Constructible\+Object\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{a01493}{is\+\_\+constructible\+\_\+tuple}}
+\item 
+struct \mbox{\hyperlink{a01497}{is\+\_\+constructible\+\_\+tuple$<$ T1, std\+::tuple$<$ Args... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01349}{is\+\_\+default\+\_\+constructible}}
+\item 
+struct \mbox{\hyperlink{a01357}{is\+\_\+default\+\_\+constructible$<$ const std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01365}{is\+\_\+default\+\_\+constructible$<$ const std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01353}{is\+\_\+default\+\_\+constructible$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01361}{is\+\_\+default\+\_\+constructible$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01273}{is\+\_\+detected\+\_\+lazy}}
+\item 
+struct \mbox{\hyperlink{a01309}{is\+\_\+getable}}
+\item 
+struct \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}
+\item 
+struct \mbox{\hyperlink{a01389}{is\+\_\+iterator\+\_\+traits}}
+\item 
+struct \mbox{\hyperlink{a01393}{is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01297}{is\+\_\+json\+\_\+ref}}
+\item 
+struct \mbox{\hyperlink{a01301}{is\+\_\+json\+\_\+ref$<$ json\+\_\+ref$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01501}{is\+\_\+ordered\+\_\+map}}
+\item 
+struct \mbox{\hyperlink{a01397}{is\+\_\+range}}
+\item 
+struct \mbox{\hyperlink{a01281}{is\+\_\+sax}}
+\item 
+struct \mbox{\hyperlink{a01285}{is\+\_\+sax\+\_\+static\+\_\+asserts}}
+\item 
+class \mbox{\hyperlink{a01177}{iter\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em a template for a bidirectional iterator for the \doxylink{a01541}{basic\+\_\+json} class This class implements a both iterators (iterator and const\+\_\+iterator) for the \doxylink{a01541}{basic\+\_\+json} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01169}{iteration\+\_\+proxy}}
+\begin{DoxyCompactList}\small\item\em proxy class for the items() function \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01173}{iteration\+\_\+proxy\+\_\+value}}
+\item 
+class \mbox{\hyperlink{a01089}{iterator\+\_\+input\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01109}{iterator\+\_\+input\+\_\+adapter\+\_\+factory}}
+\item 
+struct \mbox{\hyperlink{a01117}{iterator\+\_\+input\+\_\+adapter\+\_\+factory$<$ Iterator\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+iterator\+\_\+of\+\_\+multibyte$<$ Iterator\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}
+\item 
+struct \mbox{\hyperlink{a01205}{iterator\+\_\+traits$<$ T \texorpdfstring{$\ast$}{*}, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+object$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01201}{iterator\+\_\+traits$<$ T, enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+pointer$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01189}{iterator\+\_\+types}}
+\item 
+struct \mbox{\hyperlink{a01193}{iterator\+\_\+types$<$ It, void\+\_\+t$<$ typename It\+::difference\+\_\+type, typename It\+::value\+\_\+type, typename It\+::pointer, typename It\+::reference, typename It\+::iterator\+\_\+category $>$ $>$}}
+\item 
+class \mbox{\hyperlink{a01221}{json\+\_\+ref}}
+\item 
+class \mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em a template for a reverse iterator class \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01145}{json\+\_\+sax\+\_\+acceptor}}
+\item 
+class \mbox{\hyperlink{a01141}{json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser}}
+\item 
+class \mbox{\hyperlink{a01137}{json\+\_\+sax\+\_\+dom\+\_\+parser}}
+\begin{DoxyCompactList}\small\item\em SAX implementation to create a JSON value from SAX events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01153}{lexer}}
+\begin{DoxyCompactList}\small\item\em lexical analysis \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01149}{lexer\+\_\+base}}
+\item 
+struct \mbox{\hyperlink{a01509}{make\+\_\+void}}
+\item 
+struct \mbox{\hyperlink{a01345}{negation}}
+\item 
+struct \mbox{\hyperlink{a01261}{nonesuch}}
+\item 
+class \mbox{\hyperlink{a01073}{other\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em exception indicating other library errors \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01069}{out\+\_\+of\+\_\+range}}
+\begin{DoxyCompactList}\small\item\em exception indicating access out of the defined range \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01533}{output\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01517}{output\+\_\+adapter\+\_\+protocol}}
+\begin{DoxyCompactList}\small\item\em abstract output adapter interface \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01525}{output\+\_\+stream\+\_\+adapter}}
+\begin{DoxyCompactList}\small\item\em output adapter for output streams \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01529}{output\+\_\+string\+\_\+adapter}}
+\begin{DoxyCompactList}\small\item\em output adapter for basic\+\_\+string \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01521}{output\+\_\+vector\+\_\+adapter}}
+\begin{DoxyCompactList}\small\item\em output adapter for byte vectors \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01057}{parse\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em exception indicating a parse error \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01157}{parser}}
+\begin{DoxyCompactList}\small\item\em syntax analysis \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01161}{position\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em struct to capture the start position of the current token \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a01249}{priority\+\_\+tag}}
+\item 
+struct \mbox{\hyperlink{a01253}{priority\+\_\+tag$<$ 0 $>$}}
+\item 
+class \mbox{\hyperlink{a01537}{serializer}}
+\item 
+class \mbox{\hyperlink{a01129}{span\+\_\+input\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01257}{static\+\_\+const}}
+\item 
+struct \mbox{\hyperlink{a01049}{to\+\_\+json\+\_\+fn}}
+\item 
+class \mbox{\hyperlink{a01065}{type\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em exception indicating executing a member function with a wrong type \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01105}{wide\+\_\+string\+\_\+input\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01093}{wide\+\_\+string\+\_\+input\+\_\+helper}}
+\item 
+struct \mbox{\hyperlink{a01101}{wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 2 $>$}}
+\item 
+struct \mbox{\hyperlink{a01097}{wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 4 $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Binary $>$ }\\using \mbox{\hyperlink{a00662_a4948bef216c2594dae7921d9c4045455}{binary\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{binary}}(std\+::declval$<$ Binary \& $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a45ec87326503b8884b664a9ef23a6c99}{boolean\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}}(std\+::declval$<$ bool $>$()))
+\item 
+using \mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} = decltype(\mbox{\hyperlink{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}{input\+\_\+adapter}}(std\+::declval$<$ const char \texorpdfstring{$\ast$}{*} $>$(), std\+::declval$<$ const char \texorpdfstring{$\ast$}{*} $>$()))
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{detected\+\_\+or}} = \mbox{\hyperlink{a01265}{detector}}$<$ Default, void, Op, Args... $>$
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a7ac5b8ef0363101275a2827b3b117dcf}{detected\+\_\+or\+\_\+t}} = typename \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{detected\+\_\+or}}$<$ Default, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}} = typename \mbox{\hyperlink{a01265}{detector}}$<$ \mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a3603b59a17d1c5e15050743b847992f2}{difference\+\_\+type\+\_\+t}} = typename T\+::difference\+\_\+type
+\item 
+{\footnotesize template$<$bool B, typename T  = void$>$ }\\using \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}} = typename std\+::enable\+\_\+if$<$ B, T $>$\+::type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_aec53c029383b34a72182210e58fadb79}{end\+\_\+array\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().end\+\_\+array())
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_af52d6d2521c386998ae940d118182ebc}{end\+\_\+object\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().end\+\_\+object())
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{a00662_a1711ee5cef66a0523055c8d9f024f322}{from\+\_\+json\+\_\+function}} = decltype(T\+::from\+\_\+json(std\+::declval$<$ Args $>$()...))
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{a00662_ab4d22cdb6521ee3508db496dea66711e}{get\+\_\+template\+\_\+function}} = decltype(std\+::declval$<$ T $>$().template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ U $>$())
+\item 
+{\footnotesize template$<$size\+\_\+t... Ints$>$ }\\using \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}} = \mbox{\hyperlink{a01225}{integer\+\_\+sequence}}$<$ size\+\_\+t, Ints... $>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{a00662_a24800493c6ec02ce033dcbb47b7fd28e}{index\+\_\+sequence\+\_\+for}} = \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$ sizeof...(Ts)$>$
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a9135fcf616d6ac6e231a86e0a055ac44}{is\+\_\+detected}} = typename \mbox{\hyperlink{a01265}{detector}}$<$ \mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args... $>$\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{\+::value\+\_\+t}}
+\item 
+{\footnotesize template$<$class To , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a5262e531c46e357b33007060f294673b}{is\+\_\+detected\+\_\+convertible}} = std\+::is\+\_\+convertible$<$ \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ Op, Args... $>$, To $>$
+\item 
+{\footnotesize template$<$class Expected , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a7542b4dbac07817fd4849ecfa4619def}{is\+\_\+detected\+\_\+exact}} = std\+::is\+\_\+same$<$ Expected, \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ Op, Args... $>$ $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_ad22d2aa3aab018050ae519f6754366e1}{iterator\+\_\+category\+\_\+t}} = typename T\+::iterator\+\_\+category
+\item 
+{\footnotesize template$<$typename R $>$ }\\using \mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{iterator\+\_\+t}} = \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01397}{is\+\_\+range}}$<$ R $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, result\+\_\+of\+\_\+begin$<$ decltype(std\+::declval$<$ R \& $>$())$>$ $>$
+\item 
+{\footnotesize template$<$typename T , typename String $>$ }\\using \mbox{\hyperlink{a00662_a44869ca9f422b260625d78e4e8121559}{key\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}}(std\+::declval$<$ String \& $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a66dfe39f03b05d6b7265a0ff748d64ef}{key\+\_\+type\+\_\+t}} = typename T\+::key\+\_\+type
+\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\using \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}} = \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\+\_\+integer\+\_\+sequence}}$<$ size\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$typename T , T N$>$ }\\using \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\+\_\+integer\+\_\+sequence}} = typename \mbox{\hyperlink{a01241}{utility\+\_\+internal\+::\+Gen}}$<$ T, N $>$\+::type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a9c1795c148875722f8482d39e0eb9364}{mapped\+\_\+type\+\_\+t}} = typename T\+::mapped\+\_\+type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_ac1b4e524746bf8b790b2b776048b93c4}{null\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}}())
+\item 
+{\footnotesize template$<$typename T , typename Float , typename String $>$ }\\using \mbox{\hyperlink{a00662_ad42df56e913abe26ed556e0e92f386f4}{number\+\_\+float\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{number\+\_\+float}}(std\+::declval$<$ Float $>$(), std\+::declval$<$ const String \& $>$()))
+\item 
+{\footnotesize template$<$typename T , typename Integer $>$ }\\using \mbox{\hyperlink{a00662_a4a3e14a011b9ea1ff849fc6d2411e6a0}{number\+\_\+integer\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{number\+\_\+integer}}(std\+::declval$<$ Integer $>$()))
+\item 
+{\footnotesize template$<$typename T , typename Unsigned $>$ }\\using \mbox{\hyperlink{a00662_a74da7b17bda76f65d276feb18209c913}{number\+\_\+unsigned\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{number\+\_\+unsigned}}(std\+::declval$<$ Unsigned $>$()))
+\item 
+{\footnotesize template$<$typename Char\+Type $>$ }\\using \mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a01517}{output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$ $>$
+\begin{DoxyCompactList}\small\item\em a type to simplify interfaces \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Exception $>$ }\\using \mbox{\hyperlink{a00662_a264d4d58bc1fd82bcc7bf6bf73d6acad}{parse\+\_\+error\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a01057}{parse\+\_\+error}}(std\+::declval$<$ std\+::size\+\_\+t $>$(), std\+::declval$<$ const std\+::string \& $>$(), std\+::declval$<$ const Exception \& $>$()))
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\using \mbox{\hyperlink{a00662_a2ac1bb00523b2502c10c97d70359ffc8}{parser\+\_\+callback\+\_\+t}} = std\+::function$<$ bool(int, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{parse\+\_\+event\+\_\+t}}, Basic\+Json\+Type \&)$>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a26dc71e2dd9336587e56062178f9abce}{pointer\+\_\+t}} = typename T\+::pointer
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a1eb075b086024e7c18e3a56db93a6688}{range\+\_\+value\+\_\+t}} = \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{value\+\_\+type\+\_\+t}}$<$ \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$ \mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{iterator\+\_\+t}}$<$ T $>$ $>$ $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a082bdafd3b4c61d9d1e92b35b8f75ee3}{reference\+\_\+t}} = typename T\+::reference
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a80273cecc45765d7b2826ec931fbffdd}{start\+\_\+array\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().start\+\_\+array(std\+::declval$<$ std\+::size\+\_\+t $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a5fff1e6dcaabd367d9b1109a5682f9d4}{start\+\_\+object\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().start\+\_\+object(std\+::declval$<$ std\+::size\+\_\+t $>$()))
+\item 
+{\footnotesize template$<$typename T , typename String $>$ }\\using \mbox{\hyperlink{a00662_a27c3fc3bd42ac406f763184aa8ae4cb0}{string\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{string}}(std\+::declval$<$ String \& $>$()))
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{a00662_af846b6cf2f926009ff3a7a61495ca383}{to\+\_\+json\+\_\+function}} = decltype(T\+::to\+\_\+json(std\+::declval$<$ Args $>$()...))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a53a082eedad9f4729fcd8fed552a21f7}{uncvref\+\_\+t}} = typename std\+::remove\+\_\+cv$<$ typename std\+::remove\+\_\+reference$<$ T $>$\+::type $>$\+::type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{value\+\_\+type\+\_\+t}} = typename T\+::value\+\_\+type
+\item 
+{\footnotesize template$<$typename ... Ts$>$ }\\using \mbox{\hyperlink{a00662_a92a167c49c6697b6ffe4f79492c705e5}{void\+\_\+t}} = typename \mbox{\hyperlink{a01509}{make\+\_\+void}}$<$ Ts... $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9ac}{cbor\+\_\+tag\+\_\+handler\+\_\+t}} \{ \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{error}}
+, \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca567bc1d268f135496de3d5b946b691f3}{ignore}}
+, \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca8cd892b7b97ef9489ae4479d3f4ef0fc}{store}}
+ \}
+\begin{DoxyCompactList}\small\item\em how to treat CBOR tags \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{a00662_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}} \{ \mbox{\hyperlink{a00662_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{strict}}
+, \mbox{\hyperlink{a00662_a5a76b60b26dc8c47256a996d18d967dfa9dde360102c103867bd2f45872f1129c}{replace}}
+, \mbox{\hyperlink{a00662_a5a76b60b26dc8c47256a996d18d967dfa567bc1d268f135496de3d5b946b691f3}{ignore}}
+ \}
+\begin{DoxyCompactList}\small\item\em how to treat decoding errors \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40}{input\+\_\+format\+\_\+t}} \{ \newline
+\mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a466deec76ecdf5fca6d38571f6324d54}{json}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea}{cbor}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a}{msgpack}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8}{ubjson}}
+, \newline
+\mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4}{bson}}
+ \}
+\begin{DoxyCompactList}\small\item\em the supported input formats \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{parse\+\_\+event\+\_\+t}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042ae73f17027cb0acbb537f29d0a6944b26}{object\+\_\+start}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042af63e2a2468a37aa4f394fcc3bcb8249c}{object\+\_\+end}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042aa4388a3d92419edbb1c6efd4d52461f3}{array\+\_\+start}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a49642fb732aa2e112188fba1f9d3ef7f}{array\+\_\+end}}
+, \newline
+\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}}
+ \}
+\item 
+enum class \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\+\_\+t}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{object}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{string}}
+, \newline
+\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{number\+\_\+integer}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{number\+\_\+unsigned}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{number\+\_\+float}}
+, \newline
+\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{binary}}
+, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46}{discarded}}
+ \}
+\begin{DoxyCompactList}\small\item\em the JSON type enumeration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a00662_a66eb4d912b6f872d6983f7d0826f32c6}{combine}} (std\+::size\+\_\+t seed, std\+::size\+\_\+t h) noexcept
+\item 
+{\footnotesize template$<$typename T , typename U , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+same$<$ T, U $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\T \mbox{\hyperlink{a00662_af6c76d47b35f0493b1072b9323e98ca8}{conditional\+\_\+static\+\_\+cast}} (U \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+std\+::string \mbox{\hyperlink{a00662_a9d486a036924098fe1a77de14d23f56c}{escape}} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em string escaping as described in RFC 6901 (Sect. 4) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a2fc11f4d69598863c9f0fdfbc278f4d5}{from\+\_\+json}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, N $>$ $>$ tag) -\/$>$ decltype(\mbox{\hyperlink{a00662_ab9b6b026d31c13ee70b197b464654967}{from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl}}(std\+::forward$<$ Basic\+Json\+Type $>$(j), tag, \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$ N $>$ \{\}))
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Tuple\+Related $>$ }\\auto \mbox{\hyperlink{a00662_a3e111e6cef3aa52f1d36fd7b85991ffb}{from\+\_\+json}} (Basic\+Json\+Type \&\&j, Tuple\+Related \&\&t) -\/$>$ decltype(\mbox{\hyperlink{a00662_a816851affc091e8a6bef26d759ff266f}{from\+\_\+json\+\_\+tuple\+\_\+impl}}(std\+::forward$<$ Basic\+Json\+Type $>$(j), std\+::forward$<$ Tuple\+Related $>$(t), \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$ \{\}))
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a839b0ab50d2c9bce669068f56bc41202}{from\+\_\+json}} (const Basic\+Json\+Type \&j, Arithmetic\+Type \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01465}{is\+\_\+constructible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::binary\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_aaa047a3e6a297a70e41fab254a3ea8b3}{from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr) -\/$>$ decltype(\mbox{\hyperlink{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}{from\+\_\+json\+\_\+array\+\_\+impl}}(j, arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$ \{\}), j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ typename Constructible\+Array\+Type\+::value\+\_\+type $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5b24896e5f5db6af06d939dde4b63fe1}{from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+Object\+Type \&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+String\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a2932f2bc2943dac6d51669312f4fc0f5}{from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+String\+Type \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5440d650150d01e8015133521351b459}{from\+\_\+json}} (const Basic\+Json\+Type \&j, Enum\+Type \&e)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , typename Allocator , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5cfb765aad92795abd7fda29d017272a}{from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::forward\+\_\+list$<$ T, Allocator $>$ \&l)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Compare , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ }\\void \mbox{\hyperlink{a00662_ae93147a54d2740228ef16a5e6210ca3e}{from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::map$<$ Key, Value, Compare, Allocator $>$ \&m)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Hash , typename Key\+Equal , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ }\\void \mbox{\hyperlink{a00662_aef5c8ea108f4d2b03fb4a635617510de}{from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::unordered\+\_\+map$<$ Key, Value, Hash, Key\+Equal, Allocator $>$ \&m)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3df497b1d3977f071b488ecac1401517}{from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::valarray$<$ T $>$ \&l)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a7deb2db8eed6f1762373dde7a6595760}{from\+\_\+json}} (const Basic\+Json\+Type \&j, T(\&arr)\mbox{[}N\mbox{]}) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ T $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aeabc1adfeb8bcfbdf24c533380d1e773}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::binary\+\_\+t \&bin)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a58117f225f43d03e3a0a4a6f3d77c9d9}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::boolean\+\_\+t \&b)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a7cb5dd7d46a60e65f9a8e0873b3f7dd8}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a047d881e611fcac709dc318f730a1732}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ace4d5680ba413d9fd897ccb5d9c61a1c}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ad74d89f77ada7a57eff38b43d4bf2335}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::string\+\_\+t \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a1f0395aad0fe853a4539288749d3a603}{from\+\_\+json}} (const Basic\+Json\+Type \&j, typename std\+::nullptr\+\_\+t \&n)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3b306ea5f5176f748572ca5b1c9a4dda}{from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_a7c06b590679604ecb0ea2a3b62bd254b}{from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$) -\/$>$ decltype(arr.\+reserve(std\+::declval$<$ typename Constructible\+Array\+Type\+::size\+\_\+type $>$()), j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ typename Constructible\+Array\+Type\+::value\+\_\+type $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_aba0ce45ebb69fd2c7132a00f9a56b503}{from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, std\+::array$<$ T, N $>$ \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ T $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}{from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::array\+\_\+t \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t... Idx$>$ }\\std\+::array$<$ T, sizeof...(Idx)$>$ \mbox{\hyperlink{a00662_ab9b6b026d31c13ee70b197b464654967}{from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, sizeof...(Idx)$>$ $>$, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , class A1 , class A2 $>$ }\\std\+::pair$<$ A1, A2 $>$ \mbox{\hyperlink{a00662_a816851affc091e8a6bef26d759ff266f}{from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::pair$<$ A1, A2 $>$ $>$, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args$>$ }\\std\+::tuple$<$ Args... $>$ \mbox{\hyperlink{a00662_a0b548bd52fe1aa3ff5e264a21be9c5e4}{from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::tuple$<$ Args... $>$ $>$, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename A1 , typename A2 $>$ }\\void \mbox{\hyperlink{a00662_af1bc20d589bcfe61a23974cb17a34d6f}{from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, std\+::pair$<$ A1, A2 $>$ \&p, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args$>$ }\\void \mbox{\hyperlink{a00662_a31838a6c7a461d3a889e6fc40b3a19e6}{from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, std\+::tuple$<$ Args... $>$ \&t, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args, std\+::size\+\_\+t... Idx$>$ }\\std\+::tuple$<$ Args... $>$ \mbox{\hyperlink{a00662_ab329a20f4ae849584a2e71f527637f87}{from\+\_\+json\+\_\+tuple\+\_\+impl\+\_\+base}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N, typename Iterator\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ N==0, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}} (const \mbox{\hyperlink{a01173}{nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value}}$<$ Iterator\+Type $>$ \&i) -\/$>$ decltype(i.\+key())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a85955b9c6dd31846e4b8e891f78614b6}{get\+\_\+arithmetic\+\_\+value}} (const Basic\+Json\+Type \&j, Arithmetic\+Type \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\std\+::size\+\_\+t \mbox{\hyperlink{a00662_a679e5e522ac6afa5d5923292fab450b8}{hash}} (const Basic\+Json\+Type \&j)
+\begin{DoxyCompactList}\small\item\em hash a JSON value \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+array$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+integral$<$ typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&sizeof(typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type)==1, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} \mbox{\hyperlink{a00662_a690f7e555056ce490bd47dd5cdf9b48d}{input\+\_\+adapter}} (CharT b)
+\item 
+{\footnotesize template$<$typename Container\+Type $>$ }\\\mbox{\hyperlink{a01121}{container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl\+::container\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Container\+Type $>$\+::adapter\+\_\+type \mbox{\hyperlink{a00662_ae3a7ab0e7df1d14fcb7b8d2e671d2360}{input\+\_\+adapter}} (const Container\+Type \&container)
+\item 
+{\footnotesize template$<$typename Iterator\+Type $>$ }\\\mbox{\hyperlink{a01109}{iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type $>$\+::adapter\+\_\+type \mbox{\hyperlink{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}{input\+\_\+adapter}} (Iterator\+Type first, Iterator\+Type last)
+\item 
+\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \mbox{\hyperlink{a00662_a520988513cac994a1dfd16b5859a1ca6}{input\+\_\+adapter}} (std\+::\+FILE \texorpdfstring{$\ast$}{*}file)
+\item 
+\mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} \mbox{\hyperlink{a00662_aaf150c2591ecac4e821e9036ef847ef8}{input\+\_\+adapter}} (std\+::istream \&\&stream)
+\item 
+\mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} \mbox{\hyperlink{a00662_af9fa97bf92767dc7f9dfe1abdfb1c6ce}{input\+\_\+adapter}} (std\+::istream \&stream)
+\item 
+{\footnotesize template$<$typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a7908f7aa06f20e6083619d1d4b4eb769}{input\+\_\+adapter}} (T(\&\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}})\mbox{[}N\mbox{]}) -\/$>$ decltype(input\+\_\+adapter(\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}+N))
+\item 
+{\footnotesize template$<$typename string\+\_\+type $>$ }\\void \mbox{\hyperlink{a00662_a3c45286b0a2f15ea0a756cb87a76cf9b}{int\+\_\+to\+\_\+string}} (string\+\_\+type \&target, std\+::size\+\_\+t \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+static bool \mbox{\hyperlink{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9}{little\+\_\+endianness}} (int num=1) noexcept
+\begin{DoxyCompactList}\small\item\em determine system byte order \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a00662_a09169efff3bd1771fff29bd92cea19e0}{operator$<$}} (const \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\+\_\+t}} lhs, const \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\+\_\+t}} rhs) noexcept
+\begin{DoxyCompactList}\small\item\em comparison operator for JSON types \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00662_aceff996baf082d6dc1873ad176d10609}{replace\+\_\+substring}} (std\+::string \&s, const std\+::string \&f, const std\+::string \&t)
+\begin{DoxyCompactList}\small\item\em replace all occurrences of a substring by another string \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00662_a4ceeb4ec7f2cd493dd9cf328044c1e3c}{to\+\_\+chars}} (char \texorpdfstring{$\ast$}{*}first, const char \texorpdfstring{$\ast$}{*}last, Float\+Type \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em generates a decimal representation of the floating-\/point number value in \mbox{[}first, last). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Integer\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t, Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a91fe576be579c8c2fdd14610605c6dd2}{to\+\_\+json}} (Basic\+Json\+Type \&j, Compatible\+Number\+Integer\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Unsigned\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t, Compatible\+Number\+Unsigned\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_ae5fd66b5517b3b5a6c6b9fd9f29ba8dc}{to\+\_\+json}} (Basic\+Json\+Type \&j, Compatible\+Number\+Unsigned\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01449}{is\+\_\+compatible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01433}{is\+\_\+compatible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::binary\+\_\+t, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3afebc132c5ff83f9cd160e52030fdfd}{to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+Array\+Type \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a24c9c12f3839c94e09532f08de85e949}{to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+Object\+Type \&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+String , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Compatible\+String $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a7356ed05cdbbb080cee80e1211e1c6c9}{to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+String \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T1 , typename T2 , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T1 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T2 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_ab64eeb55b44db44eb8e9070229eb97df}{to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::pair$<$ T1, T2 $>$ \&p)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a7f7c7b9760161b774cdc0b4b838fae64}{to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::valarray$<$ T $>$ \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aeca6fb5fede5ed1e12a4420d98a5692b}{to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::vector$<$ bool $>$ \&e)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, \mbox{\hyperlink{a01173}{iteration\+\_\+proxy\+\_\+value}}$<$ typename Basic\+Json\+Type\+::iterator $>$ $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_aaa77b0c9745130b77733a92a1a2e82ec}{to\+\_\+json}} (Basic\+Json\+Type \&j, const T \&b)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, const T(\&)\mbox{[}N\mbox{]}$>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a20ea5175c8999fc8b673e46b892f71f6}{to\+\_\+json}} (Basic\+Json\+Type \&j, const T(\&arr)\mbox{[}N\mbox{]})
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a22191081208b226e3875e1118107c281}{to\+\_\+json}} (Basic\+Json\+Type \&j, const typename Basic\+Json\+Type\+::binary\+\_\+t \&bin)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a0c8b159dba71981d6c555d284cf6e2bf}{to\+\_\+json}} (Basic\+Json\+Type \&j, Enum\+Type e) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Float\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+floating\+\_\+point$<$ Float\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a22bffdc8bc7e43af380ba2050696b230}{to\+\_\+json}} (Basic\+Json\+Type \&j, Float\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a1a804b98cbe89b7e44b698f2ca860490}{to\+\_\+json}} (Basic\+Json\+Type \&j, T b) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aa0fd1b5788e9ba37e31da43dda738cb5}{to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::array\+\_\+t \&\&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ac9f7a5542851c61d93740148eaec509f}{to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::object\+\_\+t \&\&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a4aa1ca6b7c61bf19d1f30ea5b669f68e}{to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::string\+\_\+t \&\&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Tuple , std\+::size\+\_\+t... Idx$>$ }\\void \mbox{\hyperlink{a00662_a510dfa15b01e9a8afe31600a27b28199}{to\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&j, const Tuple \&t, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\item 
+static void \mbox{\hyperlink{a00662_a0b76dc40f2f2c2f983b6b7f74976cc89}{unescape}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em string unescaping as described in RFC 6901 (Sect. 4) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+detail namespace with internal helper functions 
+
+This namespace collects functions that should not be exposed, implementations of some \doxylink{a01541}{basic\+\_\+json} methods, and meta-\/programming helpers.
+
+\begin{DoxySince}{Since}
+version 2.\+1.\+0 
+\end{DoxySince}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00662_a4948bef216c2594dae7921d9c4045455}\label{a00662_a4948bef216c2594dae7921d9c4045455} 
+\index{nlohmann::detail@{nlohmann::detail}!binary\_function\_t@{binary\_function\_t}}
+\index{binary\_function\_t@{binary\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{binary\_function\_t}{binary\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename Binary $>$ \\
+using \mbox{\hyperlink{a00662_a4948bef216c2594dae7921d9c4045455}{nlohmann\+::detail\+::binary\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{binary}}(std\+::declval$<$Binary\&$>$()))}
+
+\Hypertarget{a00662_a45ec87326503b8884b664a9ef23a6c99}\label{a00662_a45ec87326503b8884b664a9ef23a6c99} 
+\index{nlohmann::detail@{nlohmann::detail}!boolean\_function\_t@{boolean\_function\_t}}
+\index{boolean\_function\_t@{boolean\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{boolean\_function\_t}{boolean\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a45ec87326503b8884b664a9ef23a6c99}{nlohmann\+::detail\+::boolean\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}}(std\+::declval$<$bool$>$()))}
+
+\Hypertarget{a00662_abc51edd46a1d1a0ff06a19f08ceff563}\label{a00662_abc51edd46a1d1a0ff06a19f08ceff563} 
+\index{nlohmann::detail@{nlohmann::detail}!contiguous\_bytes\_input\_adapter@{contiguous\_bytes\_input\_adapter}}
+\index{contiguous\_bytes\_input\_adapter@{contiguous\_bytes\_input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{contiguous\_bytes\_input\_adapter}{contiguous\_bytes\_input\_adapter}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{nlohmann\+::detail\+::contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} = typedef decltype(\mbox{\hyperlink{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}{input\+\_\+adapter}}(std\+::declval$<$const char\texorpdfstring{$\ast$}{*}$>$(), std\+::declval$<$const char\texorpdfstring{$\ast$}{*}$>$()))}
+
+\Hypertarget{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}\label{a00662_a240ce21919ab08e8a6cb3a5cfa412bce} 
+\index{nlohmann::detail@{nlohmann::detail}!detected\_or@{detected\_or}}
+\index{detected\_or@{detected\_or}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{detected\_or}{detected\_or}}
+{\footnotesize\ttfamily template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{nlohmann\+::detail\+::detected\+\_\+or}} = typedef \mbox{\hyperlink{a01265}{detector}}$<$Default, void, Op, Args...$>$}
+
+\Hypertarget{a00662_a7ac5b8ef0363101275a2827b3b117dcf}\label{a00662_a7ac5b8ef0363101275a2827b3b117dcf} 
+\index{nlohmann::detail@{nlohmann::detail}!detected\_or\_t@{detected\_or\_t}}
+\index{detected\_or\_t@{detected\_or\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{detected\_or\_t}{detected\_or\_t}}
+{\footnotesize\ttfamily template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a7ac5b8ef0363101275a2827b3b117dcf}{nlohmann\+::detail\+::detected\+\_\+or\+\_\+t}} = typedef typename \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{detected\+\_\+or}}$<$Default, Op, Args...$>$\+::type}
+
+\Hypertarget{a00662_a37e97a32d0b94ce5f745427e4e40204d}\label{a00662_a37e97a32d0b94ce5f745427e4e40204d} 
+\index{nlohmann::detail@{nlohmann::detail}!detected\_t@{detected\_t}}
+\index{detected\_t@{detected\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{detected\_t}{detected\_t}}
+{\footnotesize\ttfamily template$<$template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{nlohmann\+::detail\+::detected\+\_\+t}} = typedef typename \mbox{\hyperlink{a01265}{detector}}$<$\mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args...$>$\+::type}
+
+\Hypertarget{a00662_a3603b59a17d1c5e15050743b847992f2}\label{a00662_a3603b59a17d1c5e15050743b847992f2} 
+\index{nlohmann::detail@{nlohmann::detail}!difference\_type\_t@{difference\_type\_t}}
+\index{difference\_type\_t@{difference\_type\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{difference\_type\_t}{difference\_type\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a3603b59a17d1c5e15050743b847992f2}{nlohmann\+::detail\+::difference\+\_\+type\+\_\+t}} = typedef typename T\+::difference\+\_\+type}
+
+\Hypertarget{a00662_a02bcbc878bee413f25b985ada771aa9c}\label{a00662_a02bcbc878bee413f25b985ada771aa9c} 
+\index{nlohmann::detail@{nlohmann::detail}!enable\_if\_t@{enable\_if\_t}}
+\index{enable\_if\_t@{enable\_if\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{enable\_if\_t}{enable\_if\_t}}
+{\footnotesize\ttfamily template$<$bool B, typename T  = void$>$ \\
+using \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{nlohmann\+::detail\+::enable\+\_\+if\+\_\+t}} = typedef typename std\+::enable\+\_\+if$<$B, T$>$\+::type}
+
+\Hypertarget{a00662_aec53c029383b34a72182210e58fadb79}\label{a00662_aec53c029383b34a72182210e58fadb79} 
+\index{nlohmann::detail@{nlohmann::detail}!end\_array\_function\_t@{end\_array\_function\_t}}
+\index{end\_array\_function\_t@{end\_array\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{end\_array\_function\_t}{end\_array\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_aec53c029383b34a72182210e58fadb79}{nlohmann\+::detail\+::end\+\_\+array\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().end\+\_\+array())}
+
+\Hypertarget{a00662_af52d6d2521c386998ae940d118182ebc}\label{a00662_af52d6d2521c386998ae940d118182ebc} 
+\index{nlohmann::detail@{nlohmann::detail}!end\_object\_function\_t@{end\_object\_function\_t}}
+\index{end\_object\_function\_t@{end\_object\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{end\_object\_function\_t}{end\_object\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_af52d6d2521c386998ae940d118182ebc}{nlohmann\+::detail\+::end\+\_\+object\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().end\+\_\+object())}
+
+\Hypertarget{a00662_a1711ee5cef66a0523055c8d9f024f322}\label{a00662_a1711ee5cef66a0523055c8d9f024f322} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_function@{from\_json\_function}}
+\index{from\_json\_function@{from\_json\_function}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_function}{from\_json\_function}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+using \mbox{\hyperlink{a00662_a1711ee5cef66a0523055c8d9f024f322}{nlohmann\+::detail\+::from\+\_\+json\+\_\+function}} = typedef decltype(T\+::from\+\_\+json(std\+::declval$<$Args$>$()...))}
+
+\Hypertarget{a00662_ab4d22cdb6521ee3508db496dea66711e}\label{a00662_ab4d22cdb6521ee3508db496dea66711e} 
+\index{nlohmann::detail@{nlohmann::detail}!get\_template\_function@{get\_template\_function}}
+\index{get\_template\_function@{get\_template\_function}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{get\_template\_function}{get\_template\_function}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+using \mbox{\hyperlink{a00662_ab4d22cdb6521ee3508db496dea66711e}{nlohmann\+::detail\+::get\+\_\+template\+\_\+function}} = typedef decltype(std\+::declval$<$T$>$().template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$U$>$())}
+
+\Hypertarget{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}\label{a00662_a422430dab7adbe4dfcf125dfcfbeffd0} 
+\index{nlohmann::detail@{nlohmann::detail}!index\_sequence@{index\_sequence}}
+\index{index\_sequence@{index\_sequence}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{index\_sequence}{index\_sequence}}
+{\footnotesize\ttfamily template$<$size\+\_\+t... Ints$>$ \\
+using \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{nlohmann\+::detail\+::index\+\_\+sequence}} = typedef \mbox{\hyperlink{a01225}{integer\+\_\+sequence}}$<$size\+\_\+t, Ints...$>$}
+
+\Hypertarget{a00662_a24800493c6ec02ce033dcbb47b7fd28e}\label{a00662_a24800493c6ec02ce033dcbb47b7fd28e} 
+\index{nlohmann::detail@{nlohmann::detail}!index\_sequence\_for@{index\_sequence\_for}}
+\index{index\_sequence\_for@{index\_sequence\_for}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{index\_sequence\_for}{index\_sequence\_for}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{a00662_a24800493c6ec02ce033dcbb47b7fd28e}{nlohmann\+::detail\+::index\+\_\+sequence\+\_\+for}} = typedef \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$sizeof...(Ts)$>$}
+
+\Hypertarget{a00662_a9135fcf616d6ac6e231a86e0a055ac44}\label{a00662_a9135fcf616d6ac6e231a86e0a055ac44} 
+\index{nlohmann::detail@{nlohmann::detail}!is\_detected@{is\_detected}}
+\index{is\_detected@{is\_detected}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{is\_detected}{is\_detected}}
+{\footnotesize\ttfamily template$<$template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a9135fcf616d6ac6e231a86e0a055ac44}{nlohmann\+::detail\+::is\+\_\+detected}} = typedef typename \mbox{\hyperlink{a01265}{detector}}$<$\mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args...$>$\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{\+::value\+\_\+t}}}
+
+\Hypertarget{a00662_a5262e531c46e357b33007060f294673b}\label{a00662_a5262e531c46e357b33007060f294673b} 
+\index{nlohmann::detail@{nlohmann::detail}!is\_detected\_convertible@{is\_detected\_convertible}}
+\index{is\_detected\_convertible@{is\_detected\_convertible}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{is\_detected\_convertible}{is\_detected\_convertible}}
+{\footnotesize\ttfamily template$<$class To , template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a5262e531c46e357b33007060f294673b}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+convertible}} = typedef std\+::is\+\_\+convertible$<$\mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$Op, Args...$>$, To$>$}
+
+\Hypertarget{a00662_a7542b4dbac07817fd4849ecfa4619def}\label{a00662_a7542b4dbac07817fd4849ecfa4619def} 
+\index{nlohmann::detail@{nlohmann::detail}!is\_detected\_exact@{is\_detected\_exact}}
+\index{is\_detected\_exact@{is\_detected\_exact}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{is\_detected\_exact}{is\_detected\_exact}}
+{\footnotesize\ttfamily template$<$class Expected , template$<$ class... $>$ class Op, class... Args$>$ \\
+using \mbox{\hyperlink{a00662_a7542b4dbac07817fd4849ecfa4619def}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+exact}} = typedef std\+::is\+\_\+same$<$Expected, \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$Op, Args...$>$ $>$}
+
+\Hypertarget{a00662_ad22d2aa3aab018050ae519f6754366e1}\label{a00662_ad22d2aa3aab018050ae519f6754366e1} 
+\index{nlohmann::detail@{nlohmann::detail}!iterator\_category\_t@{iterator\_category\_t}}
+\index{iterator\_category\_t@{iterator\_category\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{iterator\_category\_t}{iterator\_category\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_ad22d2aa3aab018050ae519f6754366e1}{nlohmann\+::detail\+::iterator\+\_\+category\+\_\+t}} = typedef typename T\+::iterator\+\_\+category}
+
+\Hypertarget{a00662_a520ea901ba1560b9bc3e274b61497afe}\label{a00662_a520ea901ba1560b9bc3e274b61497afe} 
+\index{nlohmann::detail@{nlohmann::detail}!iterator\_t@{iterator\_t}}
+\index{iterator\_t@{iterator\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{iterator\_t}{iterator\_t}}
+{\footnotesize\ttfamily template$<$typename R $>$ \\
+using \mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{nlohmann\+::detail\+::iterator\+\_\+t}} = typedef \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$\mbox{\hyperlink{a01397}{is\+\_\+range}}$<$R$>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, result\+\_\+of\+\_\+begin$<$decltype(std\+::declval$<$R\&$>$())$>$ $>$}
+
+\Hypertarget{a00662_a44869ca9f422b260625d78e4e8121559}\label{a00662_a44869ca9f422b260625d78e4e8121559} 
+\index{nlohmann::detail@{nlohmann::detail}!key\_function\_t@{key\_function\_t}}
+\index{key\_function\_t@{key\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{key\_function\_t}{key\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename String $>$ \\
+using \mbox{\hyperlink{a00662_a44869ca9f422b260625d78e4e8121559}{nlohmann\+::detail\+::key\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}}(std\+::declval$<$String\&$>$()))}
+
+\Hypertarget{a00662_a66dfe39f03b05d6b7265a0ff748d64ef}\label{a00662_a66dfe39f03b05d6b7265a0ff748d64ef} 
+\index{nlohmann::detail@{nlohmann::detail}!key\_type\_t@{key\_type\_t}}
+\index{key\_type\_t@{key\_type\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{key\_type\_t}{key\_type\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a66dfe39f03b05d6b7265a0ff748d64ef}{nlohmann\+::detail\+::key\+\_\+type\+\_\+t}} = typedef typename T\+::key\+\_\+type}
+
+\Hypertarget{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}\label{a00662_a9b47f1c18e3c9739b20633aeee0d0f62} 
+\index{nlohmann::detail@{nlohmann::detail}!make\_index\_sequence@{make\_index\_sequence}}
+\index{make\_index\_sequence@{make\_index\_sequence}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{make\_index\_sequence}{make\_index\_sequence}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{nlohmann\+::detail\+::make\+\_\+index\+\_\+sequence}} = typedef \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\+\_\+integer\+\_\+sequence}}$<$size\+\_\+t, N$>$}
+
+\Hypertarget{a00662_a745268b2c803a873cdbe1fdecb4e88b2}\label{a00662_a745268b2c803a873cdbe1fdecb4e88b2} 
+\index{nlohmann::detail@{nlohmann::detail}!make\_integer\_sequence@{make\_integer\_sequence}}
+\index{make\_integer\_sequence@{make\_integer\_sequence}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{make\_integer\_sequence}{make\_integer\_sequence}}
+{\footnotesize\ttfamily template$<$typename T , T N$>$ \\
+using \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{nlohmann\+::detail\+::make\+\_\+integer\+\_\+sequence}} = typedef typename \mbox{\hyperlink{a01241}{utility\+\_\+internal\+::\+Gen}}$<$T, N$>$\+::type}
+
+\Hypertarget{a00662_a9c1795c148875722f8482d39e0eb9364}\label{a00662_a9c1795c148875722f8482d39e0eb9364} 
+\index{nlohmann::detail@{nlohmann::detail}!mapped\_type\_t@{mapped\_type\_t}}
+\index{mapped\_type\_t@{mapped\_type\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{mapped\_type\_t}{mapped\_type\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a9c1795c148875722f8482d39e0eb9364}{nlohmann\+::detail\+::mapped\+\_\+type\+\_\+t}} = typedef typename T\+::mapped\+\_\+type}
+
+\Hypertarget{a00662_ac1b4e524746bf8b790b2b776048b93c4}\label{a00662_ac1b4e524746bf8b790b2b776048b93c4} 
+\index{nlohmann::detail@{nlohmann::detail}!null\_function\_t@{null\_function\_t}}
+\index{null\_function\_t@{null\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{null\_function\_t}{null\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_ac1b4e524746bf8b790b2b776048b93c4}{nlohmann\+::detail\+::null\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}}())}
+
+\Hypertarget{a00662_ad42df56e913abe26ed556e0e92f386f4}\label{a00662_ad42df56e913abe26ed556e0e92f386f4} 
+\index{nlohmann::detail@{nlohmann::detail}!number\_float\_function\_t@{number\_float\_function\_t}}
+\index{number\_float\_function\_t@{number\_float\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{number\_float\_function\_t}{number\_float\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename Float , typename String $>$ \\
+using \mbox{\hyperlink{a00662_ad42df56e913abe26ed556e0e92f386f4}{nlohmann\+::detail\+::number\+\_\+float\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{number\+\_\+float}}( std\+::declval$<$Float$>$(), std\+::declval$<$const String\&$>$()))}
+
+\Hypertarget{a00662_a4a3e14a011b9ea1ff849fc6d2411e6a0}\label{a00662_a4a3e14a011b9ea1ff849fc6d2411e6a0} 
+\index{nlohmann::detail@{nlohmann::detail}!number\_integer\_function\_t@{number\_integer\_function\_t}}
+\index{number\_integer\_function\_t@{number\_integer\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{number\_integer\_function\_t}{number\_integer\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename Integer $>$ \\
+using \mbox{\hyperlink{a00662_a4a3e14a011b9ea1ff849fc6d2411e6a0}{nlohmann\+::detail\+::number\+\_\+integer\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{number\+\_\+integer}}(std\+::declval$<$Integer$>$()))}
+
+\Hypertarget{a00662_a74da7b17bda76f65d276feb18209c913}\label{a00662_a74da7b17bda76f65d276feb18209c913} 
+\index{nlohmann::detail@{nlohmann::detail}!number\_unsigned\_function\_t@{number\_unsigned\_function\_t}}
+\index{number\_unsigned\_function\_t@{number\_unsigned\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{number\_unsigned\_function\_t}{number\_unsigned\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename Unsigned $>$ \\
+using \mbox{\hyperlink{a00662_a74da7b17bda76f65d276feb18209c913}{nlohmann\+::detail\+::number\+\_\+unsigned\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{number\+\_\+unsigned}}(std\+::declval$<$Unsigned$>$()))}
+
+\Hypertarget{a00662_a9b680ddfb58f27eb53a67229447fc556}\label{a00662_a9b680ddfb58f27eb53a67229447fc556} 
+\index{nlohmann::detail@{nlohmann::detail}!output\_adapter\_t@{output\_adapter\_t}}
+\index{output\_adapter\_t@{output\_adapter\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{output\_adapter\_t}{output\_adapter\_t}}
+{\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
+using \mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+t}} = typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{a01517}{output\+\_\+adapter\+\_\+protocol}}$<$Char\+Type$>$ $>$}
+
+
+
+a type to simplify interfaces 
+
+\Hypertarget{a00662_a264d4d58bc1fd82bcc7bf6bf73d6acad}\label{a00662_a264d4d58bc1fd82bcc7bf6bf73d6acad} 
+\index{nlohmann::detail@{nlohmann::detail}!parse\_error\_function\_t@{parse\_error\_function\_t}}
+\index{parse\_error\_function\_t@{parse\_error\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{parse\_error\_function\_t}{parse\_error\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename Exception $>$ \\
+using \mbox{\hyperlink{a00662_a264d4d58bc1fd82bcc7bf6bf73d6acad}{nlohmann\+::detail\+::parse\+\_\+error\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a01057}{parse\+\_\+error}}( std\+::declval$<$std\+::size\+\_\+t$>$(), std\+::declval$<$const std\+::string\&$>$(), std\+::declval$<$const Exception\&$>$()))}
+
+\Hypertarget{a00662_a2ac1bb00523b2502c10c97d70359ffc8}\label{a00662_a2ac1bb00523b2502c10c97d70359ffc8} 
+\index{nlohmann::detail@{nlohmann::detail}!parser\_callback\_t@{parser\_callback\_t}}
+\index{parser\_callback\_t@{parser\_callback\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{parser\_callback\_t}{parser\_callback\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a00662_a2ac1bb00523b2502c10c97d70359ffc8}{nlohmann\+::detail\+::parser\+\_\+callback\+\_\+t}} = typedef std\+::function$<$bool(int , \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{parse\+\_\+event\+\_\+t}} , Basic\+Json\+Type\& )$>$}
+
+\Hypertarget{a00662_a26dc71e2dd9336587e56062178f9abce}\label{a00662_a26dc71e2dd9336587e56062178f9abce} 
+\index{nlohmann::detail@{nlohmann::detail}!pointer\_t@{pointer\_t}}
+\index{pointer\_t@{pointer\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{pointer\_t}{pointer\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a26dc71e2dd9336587e56062178f9abce}{nlohmann\+::detail\+::pointer\+\_\+t}} = typedef typename T\+::pointer}
+
+\Hypertarget{a00662_a1eb075b086024e7c18e3a56db93a6688}\label{a00662_a1eb075b086024e7c18e3a56db93a6688} 
+\index{nlohmann::detail@{nlohmann::detail}!range\_value\_t@{range\_value\_t}}
+\index{range\_value\_t@{range\_value\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{range\_value\_t}{range\_value\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a1eb075b086024e7c18e3a56db93a6688}{nlohmann\+::detail\+::range\+\_\+value\+\_\+t}} = typedef \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{value\+\_\+type\+\_\+t}}$<$\mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$\mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{iterator\+\_\+t}}$<$T$>$ $>$$>$}
+
+\Hypertarget{a00662_a082bdafd3b4c61d9d1e92b35b8f75ee3}\label{a00662_a082bdafd3b4c61d9d1e92b35b8f75ee3} 
+\index{nlohmann::detail@{nlohmann::detail}!reference\_t@{reference\_t}}
+\index{reference\_t@{reference\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{reference\_t}{reference\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a082bdafd3b4c61d9d1e92b35b8f75ee3}{nlohmann\+::detail\+::reference\+\_\+t}} = typedef typename T\+::reference}
+
+\Hypertarget{a00662_a80273cecc45765d7b2826ec931fbffdd}\label{a00662_a80273cecc45765d7b2826ec931fbffdd} 
+\index{nlohmann::detail@{nlohmann::detail}!start\_array\_function\_t@{start\_array\_function\_t}}
+\index{start\_array\_function\_t@{start\_array\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{start\_array\_function\_t}{start\_array\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a80273cecc45765d7b2826ec931fbffdd}{nlohmann\+::detail\+::start\+\_\+array\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().start\+\_\+array(std\+::declval$<$std\+::size\+\_\+t$>$()))}
+
+\Hypertarget{a00662_a5fff1e6dcaabd367d9b1109a5682f9d4}\label{a00662_a5fff1e6dcaabd367d9b1109a5682f9d4} 
+\index{nlohmann::detail@{nlohmann::detail}!start\_object\_function\_t@{start\_object\_function\_t}}
+\index{start\_object\_function\_t@{start\_object\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{start\_object\_function\_t}{start\_object\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a5fff1e6dcaabd367d9b1109a5682f9d4}{nlohmann\+::detail\+::start\+\_\+object\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().start\+\_\+object(std\+::declval$<$std\+::size\+\_\+t$>$()))}
+
+\Hypertarget{a00662_a27c3fc3bd42ac406f763184aa8ae4cb0}\label{a00662_a27c3fc3bd42ac406f763184aa8ae4cb0} 
+\index{nlohmann::detail@{nlohmann::detail}!string\_function\_t@{string\_function\_t}}
+\index{string\_function\_t@{string\_function\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{string\_function\_t}{string\_function\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename String $>$ \\
+using \mbox{\hyperlink{a00662_a27c3fc3bd42ac406f763184aa8ae4cb0}{nlohmann\+::detail\+::string\+\_\+function\+\_\+t}} = typedef decltype(std\+::declval$<$T\&$>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{string}}(std\+::declval$<$String\&$>$()))}
+
+\Hypertarget{a00662_af846b6cf2f926009ff3a7a61495ca383}\label{a00662_af846b6cf2f926009ff3a7a61495ca383} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json\_function@{to\_json\_function}}
+\index{to\_json\_function@{to\_json\_function}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json\_function}{to\_json\_function}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+using \mbox{\hyperlink{a00662_af846b6cf2f926009ff3a7a61495ca383}{nlohmann\+::detail\+::to\+\_\+json\+\_\+function}} = typedef decltype(T\+::to\+\_\+json(std\+::declval$<$Args$>$()...))}
+
+\Hypertarget{a00662_a53a082eedad9f4729fcd8fed552a21f7}\label{a00662_a53a082eedad9f4729fcd8fed552a21f7} 
+\index{nlohmann::detail@{nlohmann::detail}!uncvref\_t@{uncvref\_t}}
+\index{uncvref\_t@{uncvref\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{uncvref\_t}{uncvref\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_a53a082eedad9f4729fcd8fed552a21f7}{nlohmann\+::detail\+::uncvref\+\_\+t}} = typedef typename std\+::remove\+\_\+cv$<$typename std\+::remove\+\_\+reference$<$T$>$\+::type$>$\+::type}
+
+\Hypertarget{a00662_af91beae90c2fb0f931079b3d50a343bc}\label{a00662_af91beae90c2fb0f931079b3d50a343bc} 
+\index{nlohmann::detail@{nlohmann::detail}!value\_type\_t@{value\_type\_t}}
+\index{value\_type\_t@{value\_type\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{value\_type\_t}{value\_type\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{nlohmann\+::detail\+::value\+\_\+type\+\_\+t}} = typedef typename T\+::value\+\_\+type}
+
+\Hypertarget{a00662_a92a167c49c6697b6ffe4f79492c705e5}\label{a00662_a92a167c49c6697b6ffe4f79492c705e5} 
+\index{nlohmann::detail@{nlohmann::detail}!void\_t@{void\_t}}
+\index{void\_t@{void\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{void\_t}{void\_t}}
+{\footnotesize\ttfamily template$<$typename ... Ts$>$ \\
+using \mbox{\hyperlink{a00662_a92a167c49c6697b6ffe4f79492c705e5}{nlohmann\+::detail\+::void\+\_\+t}} = typedef typename \mbox{\hyperlink{a01509}{make\+\_\+void}}$<$Ts...$>$\+::type}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00662_a58bb1ef1a9ad287a9cfaf1855784d9ac}\label{a00662_a58bb1ef1a9ad287a9cfaf1855784d9ac} 
+\index{nlohmann::detail@{nlohmann::detail}!cbor\_tag\_handler\_t@{cbor\_tag\_handler\_t}}
+\index{cbor\_tag\_handler\_t@{cbor\_tag\_handler\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{cbor\_tag\_handler\_t}{cbor\_tag\_handler\_t}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9ac}{nlohmann\+::detail\+::cbor\+\_\+tag\+\_\+handler\+\_\+t}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+how to treat CBOR tags 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error@{error}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!error@{error}}}\Hypertarget{a00662_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}\label{a00662_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282} 
+error&throw a \doxylink{a01057}{parse\+\_\+error} exception in case of a tag \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignore@{ignore}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!ignore@{ignore}}}\Hypertarget{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca567bc1d268f135496de3d5b946b691f3}\label{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca567bc1d268f135496de3d5b946b691f3} 
+ignore&ignore tags \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{store@{store}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!store@{store}}}\Hypertarget{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca8cd892b7b97ef9489ae4479d3f4ef0fc}\label{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca8cd892b7b97ef9489ae4479d3f4ef0fc} 
+store&store tags as binary type \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00662_a5a76b60b26dc8c47256a996d18d967df}\label{a00662_a5a76b60b26dc8c47256a996d18d967df} 
+\index{nlohmann::detail@{nlohmann::detail}!error\_handler\_t@{error\_handler\_t}}
+\index{error\_handler\_t@{error\_handler\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{error\_handler\_t}{error\_handler\_t}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00662_a5a76b60b26dc8c47256a996d18d967df}{nlohmann\+::detail\+::error\+\_\+handler\+\_\+t}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+how to treat decoding errors 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{strict@{strict}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!strict@{strict}}}\Hypertarget{a00662_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}\label{a00662_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792} 
+strict&throw a \doxylink{a01065}{type\+\_\+error} exception in case of invalid UTF-\/8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{replace@{replace}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!replace@{replace}}}\Hypertarget{a00662_a5a76b60b26dc8c47256a996d18d967dfa9dde360102c103867bd2f45872f1129c}\label{a00662_a5a76b60b26dc8c47256a996d18d967dfa9dde360102c103867bd2f45872f1129c} 
+replace&replace invalid UTF-\/8 sequences with U+\+FFFD \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignore@{ignore}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!ignore@{ignore}}}\Hypertarget{a00662_a5a76b60b26dc8c47256a996d18d967dfa567bc1d268f135496de3d5b946b691f3}\label{a00662_a5a76b60b26dc8c47256a996d18d967dfa567bc1d268f135496de3d5b946b691f3} 
+ignore&ignore invalid UTF-\/8 sequences \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_format\_t@{input\_format\_t}}
+\index{input\_format\_t@{input\_format\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_format\_t}{input\_format\_t}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40}{nlohmann\+::detail\+::input\+\_\+format\+\_\+t}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+the supported input formats 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{json@{json}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!json@{json}}}\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40a466deec76ecdf5fca6d38571f6324d54}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40a466deec76ecdf5fca6d38571f6324d54} 
+json&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cbor@{cbor}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!cbor@{cbor}}}\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea} 
+cbor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msgpack@{msgpack}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!msgpack@{msgpack}}}\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a} 
+msgpack&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ubjson@{ubjson}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!ubjson@{ubjson}}}\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8} 
+ubjson&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bson@{bson}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!bson@{bson}}}\Hypertarget{a00662_aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4}\label{a00662_aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4} 
+bson&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042} 
+\index{nlohmann::detail@{nlohmann::detail}!parse\_event\_t@{parse\_event\_t}}
+\index{parse\_event\_t@{parse\_event\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{parse\_event\_t}{parse\_event\_t}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{nlohmann\+::detail\+::parse\+\_\+event\+\_\+t}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{object\_start@{object\_start}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!object\_start@{object\_start}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042ae73f17027cb0acbb537f29d0a6944b26}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042ae73f17027cb0acbb537f29d0a6944b26} 
+object\+\_\+start&the parser read {\ttfamily \{} and started to process a JSON object \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{object\_end@{object\_end}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!object\_end@{object\_end}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042af63e2a2468a37aa4f394fcc3bcb8249c}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042af63e2a2468a37aa4f394fcc3bcb8249c} 
+object\+\_\+end&the parser read {\ttfamily \}} and finished processing a JSON object \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{array\_start@{array\_start}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!array\_start@{array\_start}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042aa4388a3d92419edbb1c6efd4d52461f3}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042aa4388a3d92419edbb1c6efd4d52461f3} 
+array\+\_\+start&the parser read {\ttfamily \mbox{[}} and started to process a JSON array \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{array\_end@{array\_end}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!array\_end@{array\_end}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042a49642fb732aa2e112188fba1f9d3ef7f}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042a49642fb732aa2e112188fba1f9d3ef7f} 
+array\+\_\+end&the parser read {\ttfamily \mbox{]}} and finished processing a JSON array \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{key@{key}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!key@{key}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d} 
+key&the parser read a key of a value in an object \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value@{value}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!value@{value}}}\Hypertarget{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}\label{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804} 
+value&the parser finished reading a JSON value \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985} 
+\index{nlohmann::detail@{nlohmann::detail}!value\_t@{value\_t}}
+\index{value\_t@{value\_t}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{value\_t}{value\_t}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{nlohmann\+::detail\+::value\+\_\+t}} \+: std\+::uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+the JSON type enumeration 
+
+This enumeration collects the different JSON types. It is internally used to distinguish the stored values, and the functions \doxylink{a01541_aedc7afad96292b5ab61a2e0ad3067f5f}{basic\+\_\+json\+::is\+\_\+null()}, \doxylink{a01541_a57e8411a770a6263d6d8f2116c37f3aa}{basic\+\_\+json\+::is\+\_\+object()}, \doxylink{a01541_ab5b70d60a636b9c5e10f6c8caac60b9e}{basic\+\_\+json\+::is\+\_\+array()}, \doxylink{a01541_ab303d17366c26fca12242c7f8def1bb7}{basic\+\_\+json\+::is\+\_\+string()}, \doxylink{a01541_a911b11e855e685fa59ea1d111490b36b}{basic\+\_\+json\+::is\+\_\+boolean()}, \doxylink{a01541_abd47ac8eba63833152795280f75b5851}{basic\+\_\+json\+::is\+\_\+number()} (with \doxylink{a01541_ac4b4acf2c0ad075c0dc125a65c102362}{basic\+\_\+json\+::is\+\_\+number\+\_\+integer()}, \doxylink{a01541_a5493f2ed1e07b0ece428bd5a47e2fb95}{basic\+\_\+json\+::is\+\_\+number\+\_\+unsigned()}, and \doxylink{a01541_a116cdb9300b56519fc9cf756609296cb}{basic\+\_\+json\+::is\+\_\+number\+\_\+float()}), \doxylink{a01541_aecaaa0613d3f3a5b49b34b02afc5f85d}{basic\+\_\+json\+::is\+\_\+discarded()}, \doxylink{a01541_a548d2d4013da24e7d7510d90febc80c4}{basic\+\_\+json\+::is\+\_\+primitive()}, and \doxylink{a01541_a4e05a7d5deec758f1d830741b68b4249}{basic\+\_\+json\+::is\+\_\+structured()} rely on it.
+
+\begin{DoxyNote}{Note}
+There are three enumeration entries (number\+\_\+integer, number\+\_\+unsigned, and number\+\_\+float), because the library distinguishes these three types for numbers\+: \doxylink{a01541_ae09af9c23351b7245d9be4d1b2035fef}{basic\+\_\+json\+::number\+\_\+unsigned\+\_\+t} is used for unsigned integers, \doxylink{a01541_a11e390944da90db83089eb2426a749d3}{basic\+\_\+json\+::number\+\_\+integer\+\_\+t} is used for signed integers, and \doxylink{a01541_a5b8abaebd922d82d69756327c0c347e6}{basic\+\_\+json\+::number\+\_\+float\+\_\+t} is used for floating-\/point numbers or to approximate integers which do not fit in the limits of their respective type.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+see \doxylink{a01541_a19734fbc9c97d536832892ddacd6b62a}{basic\+\_\+json\+::basic\+\_\+json(const value\+\_\+t value\+\_\+type)} -- create a JSON \doxylink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value} with the default \doxylink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value} for a given type
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+version 1.\+0.\+0 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{null@{null}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!null@{null}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd} 
+null&null value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{object@{object}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!object@{object}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666} 
+object&object (unordered set of name/value pairs) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{array@{array}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!array@{array}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5} 
+array&array (ordered collection of values) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{string@{string}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!string@{string}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21} 
+string&string value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{boolean@{boolean}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!boolean@{boolean}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27} 
+boolean&boolean value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{number\_integer@{number\_integer}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!number\_integer@{number\_integer}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc} 
+number\+\_\+integer&number value (signed integer) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{number\_unsigned@{number\_unsigned}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!number\_unsigned@{number\_unsigned}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e} 
+number\+\_\+unsigned&number value (unsigned integer) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{number\_float@{number\_float}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!number\_float@{number\_float}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef} 
+number\+\_\+float&number value (floating-\/point) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{binary@{binary}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!binary@{binary}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20} 
+binary&binary array (ordered collection of bytes) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{discarded@{discarded}!nlohmann::detail@{nlohmann::detail}}\index{nlohmann::detail@{nlohmann::detail}!discarded@{discarded}}}\Hypertarget{a00662_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46}\label{a00662_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46} 
+discarded&discarded by the parser callback function \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00662_a66eb4d912b6f872d6983f7d0826f32c6}\label{a00662_a66eb4d912b6f872d6983f7d0826f32c6} 
+\index{nlohmann::detail@{nlohmann::detail}!combine@{combine}}
+\index{combine@{combine}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{combine()}{combine()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t nlohmann\+::detail\+::combine (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{seed,  }\item[{std\+::size\+\_\+t}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_af6c76d47b35f0493b1072b9323e98ca8}\label{a00662_af6c76d47b35f0493b1072b9323e98ca8} 
+\index{nlohmann::detail@{nlohmann::detail}!conditional\_static\_cast@{conditional\_static\_cast}}
+\index{conditional\_static\_cast@{conditional\_static\_cast}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{conditional\_static\_cast()}{conditional\_static\_cast()}}
+{\footnotesize\ttfamily template$<$typename T , typename U , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+same$<$ T, U $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+T nlohmann\+::detail\+::conditional\+\_\+static\+\_\+cast (\begin{DoxyParamCaption}\item[{U}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a9d486a036924098fe1a77de14d23f56c}\label{a00662_a9d486a036924098fe1a77de14d23f56c} 
+\index{nlohmann::detail@{nlohmann::detail}!escape@{escape}}
+\index{escape@{escape}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily std\+::string nlohmann\+::detail\+::escape (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+string escaping as described in RFC 6901 (Sect. 4) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & string to escape \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+escaped string
+\end{DoxyReturn}
+Note the order of escaping \"{}\texorpdfstring{$\sim$}{\string~}\"{} to \"{}\texorpdfstring{$\sim$}{\string~}0\"{} and \"{}/\"{} to \"{}\texorpdfstring{$\sim$}{\string~}1\"{} is important. \Hypertarget{a00662_a2fc11f4d69598863c9f0fdfbc278f4d5}\label{a00662_a2fc11f4d69598863c9f0fdfbc278f4d5} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [1/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{\mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, N $>$ $>$}]{tag }\end{DoxyParamCaption}) -\/$>$ decltype(\mbox{\hyperlink{a00662_ab9b6b026d31c13ee70b197b464654967}{from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl}}(std\+::forward$<$Basic\+Json\+Type$>$(j), tag, \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$N$>$ \{\})) }
+
+\Hypertarget{a00662_a3e111e6cef3aa52f1d36fd7b85991ffb}\label{a00662_a3e111e6cef3aa52f1d36fd7b85991ffb} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [2/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Tuple\+Related $>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{Tuple\+Related \&\&}]{t }\end{DoxyParamCaption}) -\/$>$ decltype(\mbox{\hyperlink{a00662_a816851affc091e8a6bef26d759ff266f}{from\+\_\+json\+\_\+tuple\+\_\+impl}}(std\+::forward$<$Basic\+Json\+Type$>$(j), std\+::forward$<$Tuple\+Related$>$(t), \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$3$>$ \{\})) }
+
+\Hypertarget{a00662_a839b0ab50d2c9bce669068f56bc41202}\label{a00662_a839b0ab50d2c9bce669068f56bc41202} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [3/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Arithmetic\+Type \&}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_aaa047a3e6a297a70e41fab254a3ea8b3}\label{a00662_aaa047a3e6a297a70e41fab254a3ea8b3} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [4/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01465}{is\+\_\+constructible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::binary\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Constructible\+Array\+Type \&}]{arr }\end{DoxyParamCaption}) -\/$>$ decltype(\mbox{\hyperlink{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}{from\+\_\+json\+\_\+array\+\_\+impl}}(j, arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$3$>$ \{\}), j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$typename Constructible\+Array\+Type\+::value\+\_\+type$>$(), void()) }
+
+\Hypertarget{a00662_a5b24896e5f5db6af06d939dde4b63fe1}\label{a00662_a5b24896e5f5db6af06d939dde4b63fe1} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [5/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Constructible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Constructible\+Object\+Type \&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a2932f2bc2943dac6d51669312f4fc0f5}\label{a00662_a2932f2bc2943dac6d51669312f4fc0f5} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [6/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Constructible\+String\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Constructible\+String\+Type \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a5440d650150d01e8015133521351b459}\label{a00662_a5440d650150d01e8015133521351b459} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [7/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Enum\+Type \&}]{e }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a5cfb765aad92795abd7fda29d017272a}\label{a00662_a5cfb765aad92795abd7fda29d017272a} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [8/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , typename Allocator , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{std\+::forward\+\_\+list$<$ T, Allocator $>$ \&}]{l }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ae93147a54d2740228ef16a5e6210ca3e}\label{a00662_ae93147a54d2740228ef16a5e6210ca3e} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [9/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Compare , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{std\+::map$<$ Key, Value, Compare, Allocator $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_aef5c8ea108f4d2b03fb4a635617510de}\label{a00662_aef5c8ea108f4d2b03fb4a635617510de} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [10/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Hash , typename Key\+Equal , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{std\+::unordered\+\_\+map$<$ Key, Value, Hash, Key\+Equal, Allocator $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a3df497b1d3977f071b488ecac1401517}\label{a00662_a3df497b1d3977f071b488ecac1401517} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [11/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{std\+::valarray$<$ T $>$ \&}]{l }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a7deb2db8eed6f1762373dde7a6595760}\label{a00662_a7deb2db8eed6f1762373dde7a6595760} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [12/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{T(\&)}]{arr\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption}) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$T$>$(), void()) }
+
+\Hypertarget{a00662_aeabc1adfeb8bcfbdf24c533380d1e773}\label{a00662_aeabc1adfeb8bcfbdf24c533380d1e773} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [13/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::binary\+\_\+t \&}]{bin }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a58117f225f43d03e3a0a4a6f3d77c9d9}\label{a00662_a58117f225f43d03e3a0a4a6f3d77c9d9} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [14/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::boolean\+\_\+t \&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a7cb5dd7d46a60e65f9a8e0873b3f7dd8}\label{a00662_a7cb5dd7d46a60e65f9a8e0873b3f7dd8} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [15/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t \&}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a047d881e611fcac709dc318f730a1732}\label{a00662_a047d881e611fcac709dc318f730a1732} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [16/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t \&}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ace4d5680ba413d9fd897ccb5d9c61a1c}\label{a00662_ace4d5680ba413d9fd897ccb5d9c61a1c} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [17/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t \&}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ad74d89f77ada7a57eff38b43d4bf2335}\label{a00662_ad74d89f77ada7a57eff38b43d4bf2335} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [18/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::string\+\_\+t \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a1f0395aad0fe853a4539288749d3a603}\label{a00662_a1f0395aad0fe853a4539288749d3a603} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [19/19]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename std\+::nullptr\+\_\+t \&}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a3b306ea5f5176f748572ca5b1c9a4dda}\label{a00662_a3b306ea5f5176f748572ca5b1c9a4dda} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_array\_impl@{from\_json\_array\_impl}}
+\index{from\_json\_array\_impl@{from\_json\_array\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_array\_impl()}{from\_json\_array\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Constructible\+Array\+Type \&}]{arr,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a7c06b590679604ecb0ea2a3b62bd254b}\label{a00662_a7c06b590679604ecb0ea2a3b62bd254b} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_array\_impl@{from\_json\_array\_impl}}
+\index{from\_json\_array\_impl@{from\_json\_array\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_array\_impl()}{from\_json\_array\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Constructible\+Array\+Type \&}]{arr,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$}]{ }\end{DoxyParamCaption}) -\/$>$ decltype(     arr.\+reserve(std\+::declval$<$typename Constructible\+Array\+Type\+::size\+\_\+type$>$()),     j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$typename Constructible\+Array\+Type\+::value\+\_\+type$>$(),     void()) }
+
+\Hypertarget{a00662_aba0ce45ebb69fd2c7132a00f9a56b503}\label{a00662_aba0ce45ebb69fd2c7132a00f9a56b503} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_array\_impl@{from\_json\_array\_impl}}
+\index{from\_json\_array\_impl@{from\_json\_array\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_array\_impl()}{from\_json\_array\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ \\
+auto nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{std\+::array$<$ T, N $>$ \&}]{arr,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$}]{ }\end{DoxyParamCaption}) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$T$>$(), void()) }
+
+\Hypertarget{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}\label{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_array\_impl@{from\_json\_array\_impl}}
+\index{from\_json\_array\_impl@{from\_json\_array\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_array\_impl()}{from\_json\_array\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::array\+\_\+t \&}]{arr,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ab9b6b026d31c13ee70b197b464654967}\label{a00662_ab9b6b026d31c13ee70b197b464654967} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_inplace\_array\_impl@{from\_json\_inplace\_array\_impl}}
+\index{from\_json\_inplace\_array\_impl@{from\_json\_inplace\_array\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_inplace\_array\_impl()}{from\_json\_inplace\_array\_impl()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t... Idx$>$ \\
+std\+::array$<$ T, sizeof...(Idx)$>$ nlohmann\+::detail\+::from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{\mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, sizeof...(Idx)$>$ $>$}]{,  }\item[{\mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a816851affc091e8a6bef26d759ff266f}\label{a00662_a816851affc091e8a6bef26d759ff266f} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_tuple\_impl@{from\_json\_tuple\_impl}}
+\index{from\_json\_tuple\_impl@{from\_json\_tuple\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_tuple\_impl()}{from\_json\_tuple\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , class A1 , class A2 $>$ \\
+std\+::pair$<$ A1, A2 $>$ nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{\mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::pair$<$ A1, A2 $>$ $>$}]{,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a0b548bd52fe1aa3ff5e264a21be9c5e4}\label{a00662_a0b548bd52fe1aa3ff5e264a21be9c5e4} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_tuple\_impl@{from\_json\_tuple\_impl}}
+\index{from\_json\_tuple\_impl@{from\_json\_tuple\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_tuple\_impl()}{from\_json\_tuple\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename... Args$>$ \\
+std\+::tuple$<$ Args... $>$ nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{\mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::tuple$<$ Args... $>$ $>$}]{,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_af1bc20d589bcfe61a23974cb17a34d6f}\label{a00662_af1bc20d589bcfe61a23974cb17a34d6f} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_tuple\_impl@{from\_json\_tuple\_impl}}
+\index{from\_json\_tuple\_impl@{from\_json\_tuple\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_tuple\_impl()}{from\_json\_tuple\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename A1 , typename A2 $>$ \\
+void nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{std\+::pair$<$ A1, A2 $>$ \&}]{p,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a31838a6c7a461d3a889e6fc40b3a19e6}\label{a00662_a31838a6c7a461d3a889e6fc40b3a19e6} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_tuple\_impl@{from\_json\_tuple\_impl}}
+\index{from\_json\_tuple\_impl@{from\_json\_tuple\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_tuple\_impl()}{from\_json\_tuple\_impl()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename... Args$>$ \\
+void nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{std\+::tuple$<$ Args... $>$ \&}]{t,  }\item[{\mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ab329a20f4ae849584a2e71f527637f87}\label{a00662_ab329a20f4ae849584a2e71f527637f87} 
+\index{nlohmann::detail@{nlohmann::detail}!from\_json\_tuple\_impl\_base@{from\_json\_tuple\_impl\_base}}
+\index{from\_json\_tuple\_impl\_base@{from\_json\_tuple\_impl\_base}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{from\_json\_tuple\_impl\_base()}{from\_json\_tuple\_impl\_base()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename... Args, std\+::size\+\_\+t... Idx$>$ \\
+std\+::tuple$<$ Args... $>$ nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl\+\_\+base (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&\&}]{j,  }\item[{\mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_acc422c11342b31368f610b6f96fcedc6}\label{a00662_acc422c11342b31368f610b6f96fcedc6} 
+\index{nlohmann::detail@{nlohmann::detail}!get@{get}}
+\index{get@{get}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N, typename Iterator\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ N==0, int $>$  = 0$>$ \\
+auto nlohmann\+::detail\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01173}{nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value}}$<$ Iterator\+Type $>$ \&}]{i }\end{DoxyParamCaption}) -\/$>$ decltype(i.\+key()) }
+
+\Hypertarget{a00662_a85955b9c6dd31846e4b8e891f78614b6}\label{a00662_a85955b9c6dd31846e4b8e891f78614b6} 
+\index{nlohmann::detail@{nlohmann::detail}!get\_arithmetic\_value@{get\_arithmetic\_value}}
+\index{get\_arithmetic\_value@{get\_arithmetic\_value}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{get\_arithmetic\_value()}{get\_arithmetic\_value()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::get\+\_\+arithmetic\+\_\+value (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{Arithmetic\+Type \&}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a679e5e522ac6afa5d5923292fab450b8}\label{a00662_a679e5e522ac6afa5d5923292fab450b8} 
+\index{nlohmann::detail@{nlohmann::detail}!hash@{hash}}
+\index{hash@{hash}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::size\+\_\+t nlohmann\+::detail\+::hash (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})}
+
+
+
+hash a JSON value 
+
+The hash function tries to rely on std\+::hash where possible. Furthermore, the type of the JSON value is taken into account to have different hash values for null, 0, 0U, and false, etc.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Basic\+Json\+Type} & \doxylink{a01541}{basic\+\_\+json} specialization \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em j} & JSON value to hash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash value of j 
+\end{DoxyReturn}
+\Hypertarget{a00662_a690f7e555056ce490bd47dd5cdf9b48d}\label{a00662_a690f7e555056ce490bd47dd5cdf9b48d} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+array$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+integral$<$ typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&sizeof(typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type)==1, int $>$\+::type  = 0$>$ \\
+\mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{CharT}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ae3a7ab0e7df1d14fcb7b8d2e671d2360}\label{a00662_ae3a7ab0e7df1d14fcb7b8d2e671d2360} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename Container\+Type $>$ \\
+\mbox{\hyperlink{a01121}{container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl\+::container\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Container\+Type $>$\+::adapter\+\_\+type nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{const Container\+Type \&}]{container }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}\label{a00662_a616a53cc3114fdc113fc44e6af4c3c7f} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+\mbox{\hyperlink{a01109}{iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type $>$\+::adapter\+\_\+type nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{Iterator\+Type}]{first,  }\item[{Iterator\+Type}]{last }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a520988513cac994a1dfd16b5859a1ca6}\label{a00662_a520988513cac994a1dfd16b5859a1ca6} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::\+FILE \texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00662_aaf150c2591ecac4e821e9036ef847ef8}\label{a00662_aaf150c2591ecac4e821e9036ef847ef8} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::istream \&\&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00662_af9fa97bf92767dc7f9dfe1abdfb1c6ce}\label{a00662_af9fa97bf92767dc7f9dfe1abdfb1c6ce} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00662_a7908f7aa06f20e6083619d1d4b4eb769}\label{a00662_a7908f7aa06f20e6083619d1d4b4eb769} 
+\index{nlohmann::detail@{nlohmann::detail}!input\_adapter@{input\_adapter}}
+\index{input\_adapter@{input\_adapter}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{input\_adapter()}{input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+auto nlohmann\+::detail\+::input\+\_\+adapter (\begin{DoxyParamCaption}\item[{T(\&)}]{array\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption}) -\/$>$ decltype(input\+\_\+adapter(\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}} + N))  }
+
+\Hypertarget{a00662_a3c45286b0a2f15ea0a756cb87a76cf9b}\label{a00662_a3c45286b0a2f15ea0a756cb87a76cf9b} 
+\index{nlohmann::detail@{nlohmann::detail}!int\_to\_string@{int\_to\_string}}
+\index{int\_to\_string@{int\_to\_string}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{int\_to\_string()}{int\_to\_string()}}
+{\footnotesize\ttfamily template$<$typename string\+\_\+type $>$ \\
+void nlohmann\+::detail\+::int\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{string\+\_\+type \&}]{target,  }\item[{std\+::size\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9}\label{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9} 
+\index{nlohmann::detail@{nlohmann::detail}!little\_endianness@{little\_endianness}}
+\index{little\_endianness@{little\_endianness}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{little\_endianness()}{little\_endianness()}}
+{\footnotesize\ttfamily static bool nlohmann\+::detail\+::little\+\_\+endianness (\begin{DoxyParamCaption}\item[{int}]{num = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+determine system byte order 
+
+\begin{DoxyReturn}{Returns}
+true if and only if system\textquotesingle{}s byte order is little endian
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+from \href{https://stackoverflow.com/a/1001328/266378}{\texttt{ https\+://stackoverflow.\+com/a/1001328/266378}} 
+\end{DoxyNote}
+\Hypertarget{a00662_a09169efff3bd1771fff29bd92cea19e0}\label{a00662_a09169efff3bd1771fff29bd92cea19e0} 
+\index{nlohmann::detail@{nlohmann::detail}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool nlohmann\+::detail\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\+\_\+t}}}]{lhs,  }\item[{const \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\+\_\+t}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+comparison operator for JSON types 
+
+Returns an ordering that is similar to Python\+:
+\begin{DoxyItemize}
+\item order\+: null \texorpdfstring{$<$}{<} boolean \texorpdfstring{$<$}{<} number \texorpdfstring{$<$}{<} object \texorpdfstring{$<$}{<} array \texorpdfstring{$<$}{<} string \texorpdfstring{$<$}{<} binary
+\item furthermore, each type is not smaller than itself
+\item discarded values are not comparable
+\item binary is represented as a b\"{}\"{} string in python and directly comparable to a string; however, making a binary array directly comparable with a string would be surprising behavior in a JSON file.
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+version 1.\+0.\+0 
+\end{DoxySince}
+\Hypertarget{a00662_aceff996baf082d6dc1873ad176d10609}\label{a00662_aceff996baf082d6dc1873ad176d10609} 
+\index{nlohmann::detail@{nlohmann::detail}!replace\_substring@{replace\_substring}}
+\index{replace\_substring@{replace\_substring}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{replace\_substring()}{replace\_substring()}}
+{\footnotesize\ttfamily void nlohmann\+::detail\+::replace\+\_\+substring (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{const std\+::string \&}]{f,  }\item[{const std\+::string \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+replace all occurrences of a substring by another string 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em s} & the string to manipulate; changed so that all occurrences of {\itshape f} are replaced with {\itshape t} \\
+\hline
+\mbox{\texttt{ in}}  & {\em f} & the substring to replace with {\itshape t} \\
+\hline
+\mbox{\texttt{ in}}  & {\em t} & the string to replace {\itshape f} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The search string {\itshape f} must not be empty. {\bfseries{This precondition is enforced with an assertion.}}
+\end{DoxyPrecond}
+\begin{DoxySince}{Since}
+version 2.\+0.\+0 
+\end{DoxySince}
+\Hypertarget{a00662_a4ceeb4ec7f2cd493dd9cf328044c1e3c}\label{a00662_a4ceeb4ec7f2cd493dd9cf328044c1e3c} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_chars@{to\_chars}}
+\index{to\_chars@{to\_chars}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_chars()}{to\_chars()}}
+{\footnotesize\ttfamily template$<$typename Float\+Type $>$ \\
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} nlohmann\+::detail\+::to\+\_\+chars (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{first,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{last,  }\item[{Float\+Type}]{value }\end{DoxyParamCaption})}
+
+
+
+generates a decimal representation of the floating-\/point number value in \mbox{[}first, last). 
+
+The format of the resulting decimal representation is similar to printf\textquotesingle{}s g format. Returns an iterator pointing past-\/the-\/end of the decimal representation.
+
+\begin{DoxyNote}{Note}
+The input number must be finite, i.\+e. NaN\textquotesingle{}s and Inf\textquotesingle{}s are not supported. 
+
+The buffer must be large enough. 
+
+The result is NOT null-\/terminated. 
+\end{DoxyNote}
+\Hypertarget{a00662_a91fe576be579c8c2fdd14610605c6dd2}\label{a00662_a91fe576be579c8c2fdd14610605c6dd2} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [1/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Integer\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t, Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{Compatible\+Number\+Integer\+Type}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_ae5fd66b5517b3b5a6c6b9fd9f29ba8dc}\label{a00662_ae5fd66b5517b3b5a6c6b9fd9f29ba8dc} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [2/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Unsigned\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t, Compatible\+Number\+Unsigned\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{Compatible\+Number\+Unsigned\+Type}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_a3afebc132c5ff83f9cd160e52030fdfd}\label{a00662_a3afebc132c5ff83f9cd160e52030fdfd} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [3/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01449}{is\+\_\+compatible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01433}{is\+\_\+compatible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::binary\+\_\+t, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const Compatible\+Array\+Type \&}]{arr }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a24c9c12f3839c94e09532f08de85e949}\label{a00662_a24c9c12f3839c94e09532f08de85e949} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [4/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const Compatible\+Object\+Type \&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a7356ed05cdbbb080cee80e1211e1c6c9}\label{a00662_a7356ed05cdbbb080cee80e1211e1c6c9} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [5/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Compatible\+String , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Compatible\+String $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const Compatible\+String \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ab64eeb55b44db44eb8e9070229eb97df}\label{a00662_ab64eeb55b44db44eb8e9070229eb97df} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [6/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T1 , typename T2 , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T1 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T2 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const std\+::pair$<$ T1, T2 $>$ \&}]{p }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a7f7c7b9760161b774cdc0b4b838fae64}\label{a00662_a7f7c7b9760161b774cdc0b4b838fae64} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [7/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const std\+::valarray$<$ T $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_aeca6fb5fede5ed1e12a4420d98a5692b}\label{a00662_aeca6fb5fede5ed1e12a4420d98a5692b} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [8/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const std\+::vector$<$ bool $>$ \&}]{e }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_aaa77b0c9745130b77733a92a1a2e82ec}\label{a00662_aaa77b0c9745130b77733a92a1a2e82ec} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [9/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, \mbox{\hyperlink{a01173}{iteration\+\_\+proxy\+\_\+value}}$<$ typename Basic\+Json\+Type\+::iterator $>$ $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const T \&}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a20ea5175c8999fc8b673e46b892f71f6}\label{a00662_a20ea5175c8999fc8b673e46b892f71f6} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [10/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, const T(\&)\mbox{[}N\mbox{]}$>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const T(\&)}]{arr\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a22191081208b226e3875e1118107c281}\label{a00662_a22191081208b226e3875e1118107c281} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [11/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const typename Basic\+Json\+Type\+::binary\+\_\+t \&}]{bin }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a0c8b159dba71981d6c555d284cf6e2bf}\label{a00662_a0c8b159dba71981d6c555d284cf6e2bf} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [12/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{Enum\+Type}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_a22bffdc8bc7e43af380ba2050696b230}\label{a00662_a22bffdc8bc7e43af380ba2050696b230} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [13/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Float\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+floating\+\_\+point$<$ Float\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{Float\+Type}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_a1a804b98cbe89b7e44b698f2ca860490}\label{a00662_a1a804b98cbe89b7e44b698f2ca860490} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [14/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{T}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00662_aa0fd1b5788e9ba37e31da43dda738cb5}\label{a00662_aa0fd1b5788e9ba37e31da43dda738cb5} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [15/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::array\+\_\+t \&\&}]{arr }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_ac9f7a5542851c61d93740148eaec509f}\label{a00662_ac9f7a5542851c61d93740148eaec509f} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [16/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::object\+\_\+t \&\&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a4aa1ca6b7c61bf19d1f30ea5b669f68e}\label{a00662_a4aa1ca6b7c61bf19d1f30ea5b669f68e} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}\hspace{0.1cm}{\footnotesize\ttfamily [17/17]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void nlohmann\+::detail\+::to\+\_\+json (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{typename Basic\+Json\+Type\+::string\+\_\+t \&\&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a510dfa15b01e9a8afe31600a27b28199}\label{a00662_a510dfa15b01e9a8afe31600a27b28199} 
+\index{nlohmann::detail@{nlohmann::detail}!to\_json\_tuple\_impl@{to\_json\_tuple\_impl}}
+\index{to\_json\_tuple\_impl@{to\_json\_tuple\_impl}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{to\_json\_tuple\_impl()}{to\_json\_tuple\_impl()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Tuple , std\+::size\+\_\+t... Idx$>$ \\
+void nlohmann\+::detail\+::to\+\_\+json\+\_\+tuple\+\_\+impl (\begin{DoxyParamCaption}\item[{Basic\+Json\+Type \&}]{j,  }\item[{const Tuple \&}]{t,  }\item[{\mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00662_a0b76dc40f2f2c2f983b6b7f74976cc89}\label{a00662_a0b76dc40f2f2c2f983b6b7f74976cc89} 
+\index{nlohmann::detail@{nlohmann::detail}!unescape@{unescape}}
+\index{unescape@{unescape}!nlohmann::detail@{nlohmann::detail}}
+\doxysubsubsection{\texorpdfstring{unescape()}{unescape()}}
+{\footnotesize\ttfamily static void nlohmann\+::detail\+::unescape (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+string unescaping as described in RFC 6901 (Sect. 4) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & string to unescape \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unescaped string
+\end{DoxyReturn}
+Note the order of escaping \"{}\texorpdfstring{$\sim$}{\string~}1\"{} to \"{}/\"{} and \"{}\texorpdfstring{$\sim$}{\string~}0\"{} to \"{}\texorpdfstring{$\sim$}{\string~}\"{} is important. 

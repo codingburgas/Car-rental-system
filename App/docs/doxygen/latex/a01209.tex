@@ -1,0 +1,264 @@
+\doxysection{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator\texorpdfstring{$<$}{<} Base \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01209}{}\label{a01209}\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+
+
+a template for a reverse iterator class  
+
+
+
+
+{\ttfamily \#include $<$json\+\_\+reverse\+\_\+iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator\texorpdfstring{$<$}{<} Base \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator\texorpdfstring{$<$}{<} Base \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01209_a6b2ef1d632fe49bfcc22fbd1abd62395}{base\+\_\+iterator}} = std\+::reverse\+\_\+iterator$<$ Base $>$
+\begin{DoxyCompactList}\small\item\em shortcut to the reverse iterator adapter \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} = std\+::ptrdiff\+\_\+t
+\item 
+using \mbox{\hyperlink{a01209_a42f51a69bac7b2aebb613b2164e457f1}{reference}} = typename Base\+::reference
+\begin{DoxyCompactList}\small\item\em the reference type for the pointed-\/to element \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01209_a6c2d025530114ed989188e8adfc8467e}{json\+\_\+reverse\+\_\+iterator}} (const \mbox{\hyperlink{a01209_a6b2ef1d632fe49bfcc22fbd1abd62395}{base\+\_\+iterator}} \&it) noexcept
+\begin{DoxyCompactList}\small\item\em create reverse iterator from base class \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209_a0246de16ece16293f2917dfa5d96e278}{json\+\_\+reverse\+\_\+iterator}} (const typename base\+\_\+iterator\+::iterator\+\_\+type \&it) noexcept
+\begin{DoxyCompactList}\small\item\em create reverse iterator from iterator \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{a01209_adc648a641e8e9a1072c5abd56ad06401}{key}} () const -\/$>$ decltype(std\+::declval$<$ Base $>$().key())
+\begin{DoxyCompactList}\small\item\em return the key of an object iterator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{a01209_aabf172b436988e2edde22f13f27caaed}{operator+}} (\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} i) const
+\begin{DoxyCompactList}\small\item\em add to iterator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209_af59444009efa2f8038191090d113f8db}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em pre-\/increment (++it) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} const \mbox{\hyperlink{a01209_aada9d2b320002ef870c5283cda2c1e9d}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em post-\/increment (it++) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209_a595336e4d683e7df647bba2cfc9bb544}{operator+=}} (\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} i)
+\begin{DoxyCompactList}\small\item\em add to iterator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} \mbox{\hyperlink{a01209_aaaa6c0b1d74e74e35e5f7b56dfd6c5d1}{operator-\/}} (const \mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \&other) const
+\begin{DoxyCompactList}\small\item\em return difference \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{a01209_a549c6eb10b6434eaf772f71d129a6d79}{operator-\/}} (\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} i) const
+\begin{DoxyCompactList}\small\item\em subtract from iterator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209_adf01962240de86b1882b62525534589a}{operator-\/-\/}} ()
+\begin{DoxyCompactList}\small\item\em pre-\/decrement (--it) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} const \mbox{\hyperlink{a01209_a2c170f51371538da2c8f4094305da3d3}{operator-\/-\/}} (int)
+\begin{DoxyCompactList}\small\item\em post-\/decrement (it--) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209_a42f51a69bac7b2aebb613b2164e457f1}{reference}} \mbox{\hyperlink{a01209_a8ed9e445e03c49c46612eb7f7d55bb61}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} n) const
+\begin{DoxyCompactList}\small\item\em access to successor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01209_a42f51a69bac7b2aebb613b2164e457f1}{reference}} \mbox{\hyperlink{a01209_ae22803d442d483041d17239615f83b58}{value}} () const
+\begin{DoxyCompactList}\small\item\em return the value of an iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Base$>$\newline
+class nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator$<$ Base $>$}
+a template for a reverse iterator class 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Base} & the base iterator type to reverse. Valid types are iterator (to create reverse\+\_\+iterator) and const\+\_\+iterator (to create const\+\_\+reverse\+\_\+iterator).\\
+\hline
+\end{DoxyTemplParams}
+@requirement The class satisfies the following concept requirements\+:
+\begin{DoxyItemize}
+\item \href{https://en.cppreference.com/w/cpp/named_req/BidirectionalIterator}{\texttt{ Bidirectional\+Iterator}}\+: The iterator that can be moved can be moved in both directions (i.\+e. incremented and decremented).
+\item \href{https://en.cppreference.com/w/cpp/named_req/OutputIterator}{\texttt{ Output\+Iterator}}\+: It is possible to write to the pointed-\/to element (only if {\itshape Base} is iterator).
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+version 1.\+0.\+0 
+\end{DoxySince}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01209_a6b2ef1d632fe49bfcc22fbd1abd62395}\label{a01209_a6b2ef1d632fe49bfcc22fbd1abd62395} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!base\_iterator@{base\_iterator}}
+\index{base\_iterator@{base\_iterator}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{base\_iterator}{base\_iterator}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+using \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::base\+\_\+iterator =  std\+::reverse\+\_\+iterator$<$Base$>$}
+
+
+
+shortcut to the reverse iterator adapter 
+
+\Hypertarget{a01209_a9ab55987c05ec6427ad36082e351cc45}\label{a01209_a9ab55987c05ec6427ad36082e351cc45} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+using \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::difference\+\_\+type =  std\+::ptrdiff\+\_\+t}
+
+\Hypertarget{a01209_a42f51a69bac7b2aebb613b2164e457f1}\label{a01209_a42f51a69bac7b2aebb613b2164e457f1} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!reference@{reference}}
+\index{reference@{reference}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+using \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::reference =  typename Base\+::reference}
+
+
+
+the reference type for the pointed-\/to element 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01209_a0246de16ece16293f2917dfa5d96e278}\label{a01209_a0246de16ece16293f2917dfa5d96e278} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!json\_reverse\_iterator@{json\_reverse\_iterator}}
+\index{json\_reverse\_iterator@{json\_reverse\_iterator}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{json\_reverse\_iterator()}{json\_reverse\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::json\+\_\+reverse\+\_\+iterator (\begin{DoxyParamCaption}\item[{const typename base\+\_\+iterator\+::iterator\+\_\+type \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+create reverse iterator from iterator 
+
+\Hypertarget{a01209_a6c2d025530114ed989188e8adfc8467e}\label{a01209_a6c2d025530114ed989188e8adfc8467e} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!json\_reverse\_iterator@{json\_reverse\_iterator}}
+\index{json\_reverse\_iterator@{json\_reverse\_iterator}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{json\_reverse\_iterator()}{json\_reverse\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::json\+\_\+reverse\+\_\+iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01209_a6b2ef1d632fe49bfcc22fbd1abd62395}{base\+\_\+iterator}} \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+create reverse iterator from base class 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01209_adc648a641e8e9a1072c5abd56ad06401}\label{a01209_adc648a641e8e9a1072c5abd56ad06401} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!key@{key}}
+\index{key@{key}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+auto \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ decltype(std\+::declval$<$Base$>$().key())     \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the key of an object iterator 
+
+\Hypertarget{a01209_aabf172b436988e2edde22f13f27caaed}\label{a01209_aabf172b436988e2edde22f13f27caaed} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add to iterator 
+
+\Hypertarget{a01209_af59444009efa2f8038191090d113f8db}\label{a01209_af59444009efa2f8038191090d113f8db} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pre-\/increment (++it) 
+
+\Hypertarget{a01209_aada9d2b320002ef870c5283cda2c1e9d}\label{a01209_aada9d2b320002ef870c5283cda2c1e9d} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} const \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+post-\/increment (it++) 
+
+\Hypertarget{a01209_a595336e4d683e7df647bba2cfc9bb544}\label{a01209_a595336e4d683e7df647bba2cfc9bb544} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add to iterator 
+
+\Hypertarget{a01209_aaaa6c0b1d74e74e35e5f7b56dfd6c5d1}\label{a01209_aaaa6c0b1d74e74e35e5f7b56dfd6c5d1} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}} \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return difference 
+
+\Hypertarget{a01209_a549c6eb10b6434eaf772f71d129a6d79}\label{a01209_a549c6eb10b6434eaf772f71d129a6d79} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+subtract from iterator 
+
+\Hypertarget{a01209_adf01962240de86b1882b62525534589a}\label{a01209_adf01962240de86b1882b62525534589a} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} \& \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pre-\/decrement (--it) 
+
+\Hypertarget{a01209_a2c170f51371538da2c8f4094305da3d3}\label{a01209_a2c170f51371538da2c8f4094305da3d3} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209}{json\+\_\+reverse\+\_\+iterator}} const \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+post-\/decrement (it--) 
+
+\Hypertarget{a01209_a8ed9e445e03c49c46612eb7f7d55bb61}\label{a01209_a8ed9e445e03c49c46612eb7f7d55bb61} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209_a42f51a69bac7b2aebb613b2164e457f1}{reference}} \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01209_a9ab55987c05ec6427ad36082e351cc45}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+access to successor 
+
+\Hypertarget{a01209_ae22803d442d483041d17239615f83b58}\label{a01209_ae22803d442d483041d17239615f83b58} 
+\index{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}!value@{value}}
+\index{value@{value}!nlohmann::detail::json\_reverse\_iterator$<$ Base $>$@{nlohmann::detail::json\_reverse\_iterator$<$ Base $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename Base $>$ \\
+\mbox{\hyperlink{a01209_a42f51a69bac7b2aebb613b2164e457f1}{reference}} \mbox{\hyperlink{a01209}{nlohmann\+::detail\+::json\+\_\+reverse\+\_\+iterator}}$<$ Base $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the value of an iterator 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/iterators/\mbox{\hyperlink{a00194}{json\+\_\+reverse\+\_\+iterator.\+hpp}}\end{DoxyCompactItemize}

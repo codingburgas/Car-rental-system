@@ -1,0 +1,141 @@
+\doxysection{sf\+::Glsl Namespace Reference}
+\hypertarget{a00671}{}\label{a00671}\index{sf::Glsl@{sf::Glsl}}
+
+
+Namespace with GLSL types.  
+
+
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{a01953}{Vector2}}$<$ bool $>$ \mbox{\hyperlink{a00671_a59d8cf909c3d71ebf3db057480b464da}{Bvec2}}
+\begin{DoxyCompactList}\small\item\em 2D bool vector ({\ttfamily bvec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01957}{Vector3}}$<$ bool $>$ \mbox{\hyperlink{a00671_a4166ffc506619b4912d576e6eba2c957}{Bvec3}}
+\begin{DoxyCompactList}\small\item\em 3D bool vector ({\ttfamily bvec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$ bool $>$ \mbox{\hyperlink{a00671_a5f4f38e06558ae1baa610b119e45ea0b}{Bvec4}}
+\item 
+typedef \mbox{\hyperlink{a01953}{Vector2}}$<$ int $>$ \mbox{\hyperlink{a00671_aab803ee70c4b7bfcd63ec09e10408fd3}{Ivec2}}
+\begin{DoxyCompactList}\small\item\em 2D int vector ({\ttfamily ivec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01957}{Vector3}}$<$ int $>$ \mbox{\hyperlink{a00671_a64f403dd0219e7f128ffddca641394df}{Ivec3}}
+\begin{DoxyCompactList}\small\item\em 3D int vector ({\ttfamily ivec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$ int $>$ \mbox{\hyperlink{a00671_abcba8791f75382199ea03f6932a91d9b}{Ivec4}}
+\item 
+typedef \mbox{\hyperlink{a01713}{priv\+::\+Matrix}}$<$ 3, 3 $>$ \mbox{\hyperlink{a00671_a1bf4595b60b08c79473a882e2c1dbff8}{Mat3}}
+\item 
+typedef \mbox{\hyperlink{a01713}{priv\+::\+Matrix}}$<$ 4, 4 $>$ \mbox{\hyperlink{a00671_aab545f0a373a3ea8ad145811b747f3e4}{Mat4}}
+\item 
+typedef \mbox{\hyperlink{a01953}{Vector2}}$<$ float $>$ \mbox{\hyperlink{a00671_adeed356d346d87634b4c197a530e4edf}{Vec2}}
+\begin{DoxyCompactList}\small\item\em 2D float vector ({\ttfamily vec2} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01957}{Vector3}}$<$ float $>$ \mbox{\hyperlink{a00671_a9bdd0463b7cb5316244a082007bd50f0}{Vec3}}
+\begin{DoxyCompactList}\small\item\em 3D float vector ({\ttfamily vec3} in GLSL) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$ float $>$ \mbox{\hyperlink{a00671_a862f8df4771d2403de28653328fac5d0}{Vec4}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace with GLSL types. 
+
+The \doxylink{a00671}{sf\+::\+Glsl} namespace contains types that match their equivalents in GLSL, the Open\+GL shading language. These types are exclusively used by the \doxylink{a01765}{sf\+::\+Shader} class.
+
+Types that already exist in SFML, such as \doxylink{a01953}{sf\+::\+Vector2$<$\+T$>$} and \doxylink{a01957}{sf\+::\+Vector3$<$\+T$>$}, are reused as typedefs, so you can use the types in this namespace as well as the original ones. Others are newly defined, such as \doxylink{a00671_a862f8df4771d2403de28653328fac5d0}{Glsl\+::\+Vec4} or \doxylink{a00671_a1bf4595b60b08c79473a882e2c1dbff8}{Glsl\+::\+Mat3}. Their actual type is an implementation detail and should not be used.
+
+All vector types support a default constructor that initializes every component to zero, in addition to a constructor with one parameter for each component. The components are stored in member variables called x, y, z, and w.
+
+All matrix types support a constructor with a float\texorpdfstring{$\ast$}{*} parameter that points to a float array of the appropriate size (that is, 9 in a 3x3 matrix, 16 in a 4x4 matrix). Furthermore, they can be converted from \doxylink{a01789}{sf\+::\+Transform} objects.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01765}{sf\+::\+Shader} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00671_a59d8cf909c3d71ebf3db057480b464da}\label{a00671_a59d8cf909c3d71ebf3db057480b464da} 
+\index{sf::Glsl@{sf::Glsl}!Bvec2@{Bvec2}}
+\index{Bvec2@{Bvec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec2}{Bvec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01953}{Vector2}}$<$bool$>$ \mbox{\hyperlink{a00671_a59d8cf909c3d71ebf3db057480b464da}{sf\+::\+Glsl\+::\+Bvec2}}}
+
+
+
+2D bool vector ({\ttfamily bvec2} in GLSL) 
+
+\Hypertarget{a00671_a4166ffc506619b4912d576e6eba2c957}\label{a00671_a4166ffc506619b4912d576e6eba2c957} 
+\index{sf::Glsl@{sf::Glsl}!Bvec3@{Bvec3}}
+\index{Bvec3@{Bvec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec3}{Bvec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01957}{Vector3}}$<$bool$>$ \mbox{\hyperlink{a00671_a4166ffc506619b4912d576e6eba2c957}{sf\+::\+Glsl\+::\+Bvec3}}}
+
+
+
+3D bool vector ({\ttfamily bvec3} in GLSL) 
+
+\Hypertarget{a00671_a5f4f38e06558ae1baa610b119e45ea0b}\label{a00671_a5f4f38e06558ae1baa610b119e45ea0b} 
+\index{sf::Glsl@{sf::Glsl}!Bvec4@{Bvec4}}
+\index{Bvec4@{Bvec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Bvec4}{Bvec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$bool$>$ \mbox{\hyperlink{a00671_a5f4f38e06558ae1baa610b119e45ea0b}{sf\+::\+Glsl\+::\+Bvec4}}}
+
+\Hypertarget{a00671_aab803ee70c4b7bfcd63ec09e10408fd3}\label{a00671_aab803ee70c4b7bfcd63ec09e10408fd3} 
+\index{sf::Glsl@{sf::Glsl}!Ivec2@{Ivec2}}
+\index{Ivec2@{Ivec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec2}{Ivec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01953}{Vector2}}$<$int$>$ \mbox{\hyperlink{a00671_aab803ee70c4b7bfcd63ec09e10408fd3}{sf\+::\+Glsl\+::\+Ivec2}}}
+
+
+
+2D int vector ({\ttfamily ivec2} in GLSL) 
+
+\Hypertarget{a00671_a64f403dd0219e7f128ffddca641394df}\label{a00671_a64f403dd0219e7f128ffddca641394df} 
+\index{sf::Glsl@{sf::Glsl}!Ivec3@{Ivec3}}
+\index{Ivec3@{Ivec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec3}{Ivec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01957}{Vector3}}$<$int$>$ \mbox{\hyperlink{a00671_a64f403dd0219e7f128ffddca641394df}{sf\+::\+Glsl\+::\+Ivec3}}}
+
+
+
+3D int vector ({\ttfamily ivec3} in GLSL) 
+
+\Hypertarget{a00671_abcba8791f75382199ea03f6932a91d9b}\label{a00671_abcba8791f75382199ea03f6932a91d9b} 
+\index{sf::Glsl@{sf::Glsl}!Ivec4@{Ivec4}}
+\index{Ivec4@{Ivec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Ivec4}{Ivec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$int$>$ \mbox{\hyperlink{a00671_abcba8791f75382199ea03f6932a91d9b}{sf\+::\+Glsl\+::\+Ivec4}}}
+
+\Hypertarget{a00671_a1bf4595b60b08c79473a882e2c1dbff8}\label{a00671_a1bf4595b60b08c79473a882e2c1dbff8} 
+\index{sf::Glsl@{sf::Glsl}!Mat3@{Mat3}}
+\index{Mat3@{Mat3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Mat3}{Mat3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01713}{priv\+::\+Matrix}}$<$3, 3$>$ \mbox{\hyperlink{a00671_a1bf4595b60b08c79473a882e2c1dbff8}{sf\+::\+Glsl\+::\+Mat3}}}
+
+\Hypertarget{a00671_aab545f0a373a3ea8ad145811b747f3e4}\label{a00671_aab545f0a373a3ea8ad145811b747f3e4} 
+\index{sf::Glsl@{sf::Glsl}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Mat4}{Mat4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01713}{priv\+::\+Matrix}}$<$4, 4$>$ \mbox{\hyperlink{a00671_aab545f0a373a3ea8ad145811b747f3e4}{sf\+::\+Glsl\+::\+Mat4}}}
+
+\Hypertarget{a00671_adeed356d346d87634b4c197a530e4edf}\label{a00671_adeed356d346d87634b4c197a530e4edf} 
+\index{sf::Glsl@{sf::Glsl}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec2}{Vec2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01953}{Vector2}}$<$float$>$ \mbox{\hyperlink{a00671_adeed356d346d87634b4c197a530e4edf}{sf\+::\+Glsl\+::\+Vec2}}}
+
+
+
+2D float vector ({\ttfamily vec2} in GLSL) 
+
+\Hypertarget{a00671_a9bdd0463b7cb5316244a082007bd50f0}\label{a00671_a9bdd0463b7cb5316244a082007bd50f0} 
+\index{sf::Glsl@{sf::Glsl}!Vec3@{Vec3}}
+\index{Vec3@{Vec3}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec3}{Vec3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01957}{Vector3}}$<$float$>$ \mbox{\hyperlink{a00671_a9bdd0463b7cb5316244a082007bd50f0}{sf\+::\+Glsl\+::\+Vec3}}}
+
+
+
+3D float vector ({\ttfamily vec3} in GLSL) 
+
+\Hypertarget{a00671_a862f8df4771d2403de28653328fac5d0}\label{a00671_a862f8df4771d2403de28653328fac5d0} 
+\index{sf::Glsl@{sf::Glsl}!Vec4@{Vec4}}
+\index{Vec4@{Vec4}!sf::Glsl@{sf::Glsl}}
+\doxysubsubsection{\texorpdfstring{Vec4}{Vec4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01717}{priv\+::\+Vector4}}$<$float$>$ \mbox{\hyperlink{a00671_a862f8df4771d2403de28653328fac5d0}{sf\+::\+Glsl\+::\+Vec4}}}
+

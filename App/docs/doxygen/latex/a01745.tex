@@ -1,0 +1,232 @@
+\doxysection{sf\+::Render\+States Class Reference}
+\hypertarget{a01745}{}\label{a01745}\index{sf::RenderStates@{sf::RenderStates}}
+
+
+Define the states used for drawing to a \doxylink{a01749}{Render\+Target}.  
+
+
+
+
+{\ttfamily \#include $<$Render\+States.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Render\+States\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01745_a885bf14070d0d5391f062f62b270b7d0}{Render\+States}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01745_acac8830a593c8a4523ac2fdf3cac8a01}{Render\+States}} (const \mbox{\hyperlink{a01677}{Blend\+Mode}} \&the\+Blend\+Mode)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom blend mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01745_ab5eda13cd8c79c74eba3b1b0df817d67}{Render\+States}} (const \mbox{\hyperlink{a01677}{Blend\+Mode}} \&the\+Blend\+Mode, const \mbox{\hyperlink{a01789}{Transform}} \&the\+Transform, const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}the\+Texture, const \mbox{\hyperlink{a01765}{Shader}} \texorpdfstring{$\ast$}{*}the\+Shader)
+\begin{DoxyCompactList}\small\item\em Construct a set of render states with all its attributes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01745_a39f94233f464739d8d8522f3aefe97d0}{Render\+States}} (const \mbox{\hyperlink{a01765}{Shader}} \texorpdfstring{$\ast$}{*}the\+Shader)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom shader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01745_a8f4ca3be0e27dafea0c4ab8547439bb1}{Render\+States}} (const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}the\+Texture)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01745_a3e99cad6ab05971d40357949930ed890}{Render\+States}} (const \mbox{\hyperlink{a01789}{Transform}} \&the\+Transform)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01677}{Blend\+Mode}} \mbox{\hyperlink{a01745_ad6ac87f1b5006dae7ebfee4b5d40f5a8}{blend\+Mode}}
+\begin{DoxyCompactList}\small\item\em Blending mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01765}{Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01745_ad4f79ecdd0c60ed0d24fbe555b221bd8}{shader}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01765}{Shader}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01745_a457fc5a41731889de9cf39cf9b3436c3}{texture}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01785}{Texture}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01745_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01789}{Transform}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{a01745}{Render\+States}} \mbox{\hyperlink{a01745_ad29672df29f19ce50c3021d95f2bb062}{Default}}
+\begin{DoxyCompactList}\small\item\em Special instance holding the default render states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define the states used for drawing to a \doxylink{a01749}{Render\+Target}. 
+
+There are four global states that can be applied to the drawn objects\+:
+
+\begin{DoxyItemize}
+\item the blend mode\+: how pixels of the object are blended with the background \item the transform\+: how the object is positioned/rotated/scaled \item the texture\+: what image is mapped to the object \item the shader\+: what custom effect is applied to the object\end{DoxyItemize}
+High-\/level objects such as sprites or text force some of these states when they are drawn. For example, a sprite will set its own texture, so that you don\textquotesingle{}t have to care about it when drawing the sprite.
+
+The transform is a special case\+: sprites, texts and shapes (and it\textquotesingle{}s a good idea to do it with your own drawable classes too) combine their transform with the one that is passed in the \doxylink{a01745}{Render\+States} structure. So that you can use a \"{}global\"{} transform on top of each object\textquotesingle{}s transform.
+
+Most objects, especially high-\/level drawables, can be drawn directly without defining render states explicitly -- the default set of states is ok in most cases. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{window.draw(sprite);}
+
+\end{DoxyCode}
+
+
+If you want to use a single specific render state, for example a shader, you can pass it directly to the Draw function\+: \doxylink{a01745}{sf\+::\+Render\+States} has an implicit one-\/argument constructor for each state. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{window.draw(sprite,\ \mbox{\hyperlink{a01745_ad4f79ecdd0c60ed0d24fbe555b221bd8}{shader}});}
+
+\end{DoxyCode}
+
+
+When you\textquotesingle{}re inside the Draw function of a drawable object (inherited from \doxylink{a01693}{sf\+::\+Drawable}), you can either pass the render states unmodified, or change some of them. For example, a transformable object will combine the current transform with its own transform. A sprite will set its texture. Etc.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01749}{sf\+::\+Render\+Target}, \doxylink{a01693}{sf\+::\+Drawable} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01745_a885bf14070d0d5391f062f62b270b7d0}\label{a01745_a885bf14070d0d5391f062f62b270b7d0} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructing a default set of render states is equivalent to using \doxylink{a01745_ad29672df29f19ce50c3021d95f2bb062}{sf\+::\+Render\+States\+::\+Default}. The default set defines\+: \begin{DoxyItemize}
+\item the Blend\+Alpha blend mode \item the identity transform \item a null texture \item a null shader \end{DoxyItemize}
+\Hypertarget{a01745_acac8830a593c8a4523ac2fdf3cac8a01}\label{a01745_acac8830a593c8a4523ac2fdf3cac8a01} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01677}{Blend\+Mode}} \&}]{the\+Blend\+Mode }\end{DoxyParamCaption})}
+
+
+
+Construct a default set of render states with a custom blend mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Blend\+Mode} & Blend mode to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01745_a3e99cad6ab05971d40357949930ed890}\label{a01745_a3e99cad6ab05971d40357949930ed890} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{the\+Transform }\end{DoxyParamCaption})}
+
+
+
+Construct a default set of render states with a custom transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Transform} & \doxylink{a01789}{Transform} to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01745_a8f4ca3be0e27dafea0c4ab8547439bb1}\label{a01745_a8f4ca3be0e27dafea0c4ab8547439bb1} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}}]{the\+Texture }\end{DoxyParamCaption})}
+
+
+
+Construct a default set of render states with a custom texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Texture} & \doxylink{a01785}{Texture} to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01745_a39f94233f464739d8d8522f3aefe97d0}\label{a01745_a39f94233f464739d8d8522f3aefe97d0} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01765}{Shader}} \texorpdfstring{$\ast$}{*}}]{the\+Shader }\end{DoxyParamCaption})}
+
+
+
+Construct a default set of render states with a custom shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Shader} & \doxylink{a01765}{Shader} to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01745_ab5eda13cd8c79c74eba3b1b0df817d67}\label{a01745_ab5eda13cd8c79c74eba3b1b0df817d67} 
+\index{sf::RenderStates@{sf::RenderStates}!RenderStates@{RenderStates}}
+\index{RenderStates@{RenderStates}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{RenderStates()}{RenderStates()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily sf\+::\+Render\+States\+::\+Render\+States (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01677}{Blend\+Mode}} \&}]{the\+Blend\+Mode,  }\item[{const \mbox{\hyperlink{a01789}{Transform}} \&}]{the\+Transform,  }\item[{const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}}]{the\+Texture,  }\item[{const \mbox{\hyperlink{a01765}{Shader}} \texorpdfstring{$\ast$}{*}}]{the\+Shader }\end{DoxyParamCaption})}
+
+
+
+Construct a set of render states with all its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Blend\+Mode} & Blend mode to use \\
+\hline
+{\em the\+Transform} & \doxylink{a01789}{Transform} to use \\
+\hline
+{\em the\+Texture} & \doxylink{a01785}{Texture} to use \\
+\hline
+{\em the\+Shader} & \doxylink{a01765}{Shader} to use \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01745_ad6ac87f1b5006dae7ebfee4b5d40f5a8}\label{a01745_ad6ac87f1b5006dae7ebfee4b5d40f5a8} 
+\index{sf::RenderStates@{sf::RenderStates}!blendMode@{blendMode}}
+\index{blendMode@{blendMode}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{blendMode}{blendMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01677}{Blend\+Mode}} sf\+::\+Render\+States\+::blend\+Mode}
+
+
+
+Blending mode. 
+
+\Hypertarget{a01745_ad29672df29f19ce50c3021d95f2bb062}\label{a01745_ad29672df29f19ce50c3021d95f2bb062} 
+\index{sf::RenderStates@{sf::RenderStates}!Default@{Default}}
+\index{Default@{Default}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{Default}{Default}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01745}{Render\+States}} sf\+::\+Render\+States\+::\+Default\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Special instance holding the default render states. 
+
+\Hypertarget{a01745_ad4f79ecdd0c60ed0d24fbe555b221bd8}\label{a01745_ad4f79ecdd0c60ed0d24fbe555b221bd8} 
+\index{sf::RenderStates@{sf::RenderStates}!shader@{shader}}
+\index{shader@{shader}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01765}{Shader}}\texorpdfstring{$\ast$}{*} sf\+::\+Render\+States\+::shader}
+
+
+
+\doxylink{a01765}{Shader}. 
+
+\Hypertarget{a01745_a457fc5a41731889de9cf39cf9b3436c3}\label{a01745_a457fc5a41731889de9cf39cf9b3436c3} 
+\index{sf::RenderStates@{sf::RenderStates}!texture@{texture}}
+\index{texture@{texture}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01785}{Texture}}\texorpdfstring{$\ast$}{*} sf\+::\+Render\+States\+::texture}
+
+
+
+\doxylink{a01785}{Texture}. 
+
+\Hypertarget{a01745_a1f737981a0f2f0d4bb8dac866a8d1149}\label{a01745_a1f737981a0f2f0d4bb8dac866a8d1149} 
+\index{sf::RenderStates@{sf::RenderStates}!transform@{transform}}
+\index{transform@{transform}!sf::RenderStates@{sf::RenderStates}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Render\+States\+::transform}
+
+
+
+\doxylink{a01789}{Transform}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00407}{Render\+States.\+hpp}}\end{DoxyCompactItemize}

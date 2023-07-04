@@ -1,0 +1,37 @@
+\doxysection{user\+\_\+agent.\+h}
+\hypertarget{a00104_source}{}\label{a00104_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/user\_agent.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/user\_agent.h}}
+\mbox{\hyperlink{a00104}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_USERAGENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_USERAGENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00035}{cpr/cprtypes.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00909}{UserAgent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a00725}{StringHolder}}<UserAgent>\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a00909_a9e4952ec4e0eb59a0223af4afad74170}{UserAgent}}()\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>()\ \{\}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a00909_aa3ebdd72f236d74e073637ffe8a2109d}{UserAgent}}(\textcolor{keyword}{const}\ std::string\&\ useragent)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>(useragent)\ \{\}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{a00909_ae0d6f22472700f4d65d0923b32c8f86a}{UserAgent}}(std::string\&\&\ useragent)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>(\mbox{\hyperlink{a00667}{std}}::move(useragent))\ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{a00909_a65975b239486e6a490f540d20d2f5d60}{UserAgent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ useragent)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>(useragent)\ \{\}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{a00909_a2073e69218d29035476e5c27fc2c6012}{UserAgent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}},\ \textcolor{keywordtype}{size\_t}\ len)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>(\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}},\ len)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{a00909_a10a2898388da36c62456d72fc6eb8596}{UserAgent}}(\textcolor{keyword}{const}\ std::initializer\_list<std::string>\ args)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00909}{UserAgent}}>(args)\ \{\}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a00909_ae9b3630154cca6be0a8eda4e903f1812}{UserAgent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00909}{UserAgent}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{a00909_a907e18e42b7275dbb136c8471e1fe43c}{UserAgent}}(\mbox{\hyperlink{a00909}{UserAgent}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{a00909_a12e06244550e16e378c9cd94f0db6bea}{\string~UserAgent}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{a00909}{UserAgent}}\&\ \mbox{\hyperlink{a00909_afe04f3bd5437957565167f990d0471c1}{operator=}}(\mbox{\hyperlink{a00909}{UserAgent}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a00909}{UserAgent}}\&\ \mbox{\hyperlink{a00909_a9d63892a7649260b145813f5d4656501}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00909}{UserAgent}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

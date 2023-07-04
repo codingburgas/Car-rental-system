@@ -1,0 +1,58 @@
+\doxysection{curl\+\_\+container.\+h}
+\hypertarget{a00044_source}{}\label{a00044_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/curl\_container.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/curl\_container.h}}
+\mbox{\hyperlink{a00044}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURL\_CONTAINER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURL\_CONTAINER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00041}{cpr/curlholder.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00737}{Parameter}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{a00737_a1d8309a0935f7f6534e63ebfea65668f}{Parameter}}(\textcolor{keyword}{const}\ std::string\&\ p\_key,\ \textcolor{keyword}{const}\ std::string\&\ p\_value)\ :\ \mbox{\hyperlink{a00737_a755a3fd78edc0c251c73184bbd71c14a}{key}}\{p\_key\},\ \mbox{\hyperlink{a00737_a4474bea75ea8b33412d363aa38fef542}{value}}\{p\_value\}\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{a00737_a7c7d0c439501f87779117c124dbf038f}{Parameter}}(std::string\&\&\ p\_key,\ std::string\&\&\ p\_value)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00737_a755a3fd78edc0c251c73184bbd71c14a}{key}}\{\mbox{\hyperlink{a00667}{std}}::move(p\_key)\},\ \mbox{\hyperlink{a00737_a4474bea75ea8b33412d363aa38fef542}{value}}\{\mbox{\hyperlink{a00667}{std}}::move(p\_value)\}\ \{\}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{a00737_a755a3fd78edc0c251c73184bbd71c14a}{key}};}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{a00737_a4474bea75ea8b33412d363aa38fef542}{value}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00741}{Pair}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{a00741_aef6ece2ffc578c813015a960a9c72b9d}{Pair}}(\textcolor{keyword}{const}\ std::string\&\ p\_key,\ \textcolor{keyword}{const}\ std::string\&\ p\_value)\ :\ \mbox{\hyperlink{a00741_af365573b8a2ef20f4f829e236494a2b8}{key}}(p\_key),\ \mbox{\hyperlink{a00741_a8c65fea5696f240255d802251dcfe68a}{value}}(p\_value)\ \{\}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{a00741_aa49964dfb9fe40dc9a36f4c8662ec049}{Pair}}(std::string\&\&\ p\_key,\ std::string\&\&\ p\_value)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00741_af365573b8a2ef20f4f829e236494a2b8}{key}}(\mbox{\hyperlink{a00667}{std}}::move(p\_key)),\ \mbox{\hyperlink{a00741_a8c65fea5696f240255d802251dcfe68a}{value}}(\mbox{\hyperlink{a00667}{std}}::move(p\_value))\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{a00741_af365573b8a2ef20f4f829e236494a2b8}{key}};}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{a00741_a8c65fea5696f240255d802251dcfe68a}{value}};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00745}{CurlContainer}}\ \{}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00745_af659b55d0124ebddcde5adb4b3420b2e}{encode}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{a00745_af3b8196b5df2fe827ceb15e4b7d0b7a6}{CurlContainer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a00745_a71dbdb7d3532719ffcb0d60cf7bb8183}{CurlContainer}}(\textcolor{keyword}{const}\ std::initializer\_list<T>\&);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00745_a5a54228640d0e8a86da06a7d85fcfc7b}{Add}}(\textcolor{keyword}{const}\ std::initializer\_list<T>\&);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00745_accc0ca45d3fed467a66e8446c3597bb9}{Add}}(\textcolor{keyword}{const}\ T\&);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{a00745_a7e0ca020182ed1c166230c9e4a5029d5}{GetContent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00749}{CurlHolder}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{a00745_aa130d8f377ae13253177eafd7a6118ae}{containerList\_}};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//}}
+
+\end{DoxyCode}

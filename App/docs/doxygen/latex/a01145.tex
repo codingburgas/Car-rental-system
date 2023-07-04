@@ -1,0 +1,185 @@
+\doxysection{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01145}{}\label{a01145}\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+
+
+{\ttfamily \#include $<$json\+\_\+sax.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01145_a56346d95ee4e539eaded2e6826fecf66}{binary\+\_\+t}} = typename Basic\+Json\+Type\+::binary\+\_\+t
+\item 
+using \mbox{\hyperlink{a01145_a5502f483fc60a1bcd73e0e46b6ab36e4}{number\+\_\+float\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t
+\item 
+using \mbox{\hyperlink{a01145_a41876b17c0e8bdb55580eaf5e4e2ded8}{number\+\_\+integer\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t
+\item 
+using \mbox{\hyperlink{a01145_ae07454608ea6f3cfb765f95e3c850043}{number\+\_\+unsigned\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t
+\item 
+using \mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} = typename Basic\+Json\+Type\+::string\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01145_a3d193985aac764f99398e3ae8ba0c5db}{binary}} (\mbox{\hyperlink{a01145_a56346d95ee4e539eaded2e6826fecf66}{binary\+\_\+t}} \&)
+\item 
+bool \mbox{\hyperlink{a01145_a3f5fe42a9b195de8d251d6d98d5ee92c}{boolean}} (bool)
+\item 
+bool \mbox{\hyperlink{a01145_a22ef94ca5476a9563dcaca15b7d6e654}{end\+\_\+array}} ()
+\item 
+bool \mbox{\hyperlink{a01145_a919645fd1827a561a994d70a435e3f19}{end\+\_\+object}} ()
+\item 
+bool \mbox{\hyperlink{a01145_a59e1ea5e9c8d25346a564bf9287a5c2a}{key}} (\mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&)
+\item 
+bool \mbox{\hyperlink{a01145_ad7ad55168af6e03ed8b844c94a17b9ce}{null}} ()
+\item 
+bool \mbox{\hyperlink{a01145_aebf8800023eb20d472f111f86b189e60}{number\+\_\+float}} (\mbox{\hyperlink{a01145_a5502f483fc60a1bcd73e0e46b6ab36e4}{number\+\_\+float\+\_\+t}}, const \mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&)
+\item 
+bool \mbox{\hyperlink{a01145_a976bf4ce6e9a2ffe48f683ddff80af00}{number\+\_\+integer}} (\mbox{\hyperlink{a01145_a41876b17c0e8bdb55580eaf5e4e2ded8}{number\+\_\+integer\+\_\+t}})
+\item 
+bool \mbox{\hyperlink{a01145_ad15b288f3351287edbe289502f595491}{number\+\_\+unsigned}} (\mbox{\hyperlink{a01145_ae07454608ea6f3cfb765f95e3c850043}{number\+\_\+unsigned\+\_\+t}})
+\item 
+bool \mbox{\hyperlink{a01145_a95bb3e8b6feaa523ecda8106fb5e38e3}{parse\+\_\+error}} (std\+::size\+\_\+t, const std\+::string \&, const \mbox{\hyperlink{a01053}{detail\+::exception}} \&)
+\item 
+bool \mbox{\hyperlink{a01145_a9255aab848624a21f0dabd1e172b0c8b}{start\+\_\+array}} (std\+::size\+\_\+t=static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1))
+\item 
+bool \mbox{\hyperlink{a01145_a271f0709144d1b25534d6260c600a607}{start\+\_\+object}} (std\+::size\+\_\+t=static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1))
+\item 
+bool \mbox{\hyperlink{a01145_aaa69255e757a6ecc4403a2aa4931fc60}{string}} (\mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01145_a56346d95ee4e539eaded2e6826fecf66}\label{a01145_a56346d95ee4e539eaded2e6826fecf66} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!binary\_t@{binary\_t}}
+\index{binary\_t@{binary\_t}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_t}{binary\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::binary\+\_\+t =  typename Basic\+Json\+Type\+::binary\+\_\+t}
+
+\Hypertarget{a01145_a5502f483fc60a1bcd73e0e46b6ab36e4}\label{a01145_a5502f483fc60a1bcd73e0e46b6ab36e4} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_float\_t@{number\_float\_t}}
+\index{number\_float\_t@{number\_float\_t}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_float\_t}{number\_float\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+float\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t}
+
+\Hypertarget{a01145_a41876b17c0e8bdb55580eaf5e4e2ded8}\label{a01145_a41876b17c0e8bdb55580eaf5e4e2ded8} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_integer\_t@{number\_integer\_t}}
+\index{number\_integer\_t@{number\_integer\_t}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_integer\_t}{number\_integer\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+integer\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t}
+
+\Hypertarget{a01145_ae07454608ea6f3cfb765f95e3c850043}\label{a01145_ae07454608ea6f3cfb765f95e3c850043} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_unsigned\_t@{number\_unsigned\_t}}
+\index{number\_unsigned\_t@{number\_unsigned\_t}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_unsigned\_t}{number\_unsigned\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+unsigned\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t}
+
+\Hypertarget{a01145_a3a8078bbf865ec355106f6048241609a}\label{a01145_a3a8078bbf865ec355106f6048241609a} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!string\_t@{string\_t}}
+\index{string\_t@{string\_t}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{string\_t}{string\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::string\+\_\+t =  typename Basic\+Json\+Type\+::string\+\_\+t}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01145_a3d193985aac764f99398e3ae8ba0c5db}\label{a01145_a3d193985aac764f99398e3ae8ba0c5db} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!binary@{binary}}
+\index{binary@{binary}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{binary()}{binary()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_a56346d95ee4e539eaded2e6826fecf66}{binary\+\_\+t}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a3f5fe42a9b195de8d251d6d98d5ee92c}\label{a01145_a3f5fe42a9b195de8d251d6d98d5ee92c} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!boolean@{boolean}}
+\index{boolean@{boolean}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{boolean()}{boolean()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::boolean (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a22ef94ca5476a9563dcaca15b7d6e654}\label{a01145_a22ef94ca5476a9563dcaca15b7d6e654} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!end\_array@{end\_array}}
+\index{end\_array@{end\_array}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{end\_array()}{end\_array()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::end\+\_\+array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a919645fd1827a561a994d70a435e3f19}\label{a01145_a919645fd1827a561a994d70a435e3f19} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!end\_object@{end\_object}}
+\index{end\_object@{end\_object}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{end\_object()}{end\_object()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::end\+\_\+object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a59e1ea5e9c8d25346a564bf9287a5c2a}\label{a01145_a59e1ea5e9c8d25346a564bf9287a5c2a} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!key@{key}}
+\index{key@{key}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_ad7ad55168af6e03ed8b844c94a17b9ce}\label{a01145_ad7ad55168af6e03ed8b844c94a17b9ce} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!null@{null}}
+\index{null@{null}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{null()}{null()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_aebf8800023eb20d472f111f86b189e60}\label{a01145_aebf8800023eb20d472f111f86b189e60} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_float@{number\_float}}
+\index{number\_float@{number\_float}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_float()}{number\_float()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_a5502f483fc60a1bcd73e0e46b6ab36e4}{number\+\_\+float\+\_\+t}}}]{,  }\item[{const \mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a976bf4ce6e9a2ffe48f683ddff80af00}\label{a01145_a976bf4ce6e9a2ffe48f683ddff80af00} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_integer@{number\_integer}}
+\index{number\_integer@{number\_integer}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_integer()}{number\_integer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_a41876b17c0e8bdb55580eaf5e4e2ded8}{number\+\_\+integer\+\_\+t}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_ad15b288f3351287edbe289502f595491}\label{a01145_ad15b288f3351287edbe289502f595491} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!number\_unsigned@{number\_unsigned}}
+\index{number\_unsigned@{number\_unsigned}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_unsigned()}{number\_unsigned()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::number\+\_\+unsigned (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_ae07454608ea6f3cfb765f95e3c850043}{number\+\_\+unsigned\+\_\+t}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a95bb3e8b6feaa523ecda8106fb5e38e3}\label{a01145_a95bb3e8b6feaa523ecda8106fb5e38e3} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!parse\_error@{parse\_error}}
+\index{parse\_error@{parse\_error}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{parse\_error()}{parse\_error()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::parse\+\_\+error (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{,  }\item[{const std\+::string \&}]{,  }\item[{const \mbox{\hyperlink{a01053}{detail\+::exception}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a9255aab848624a21f0dabd1e172b0c8b}\label{a01145_a9255aab848624a21f0dabd1e172b0c8b} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!start\_array@{start\_array}}
+\index{start\_array@{start\_array}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{start\_array()}{start\_array()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::start\+\_\+array (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{ = {\ttfamily static\+\_\+cast$<$std\+:\+:size\+\_\+t$>$(-\/1)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_a271f0709144d1b25534d6260c600a607}\label{a01145_a271f0709144d1b25534d6260c600a607} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!start\_object@{start\_object}}
+\index{start\_object@{start\_object}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{start\_object()}{start\_object()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::start\+\_\+object (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{ = {\ttfamily static\+\_\+cast$<$std\+:\+:size\+\_\+t$>$(-\/1)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01145_aaa69255e757a6ecc4403a2aa4931fc60}\label{a01145_aaa69255e757a6ecc4403a2aa4931fc60} 
+\index{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}!string@{string}}
+\index{string@{string}!nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$@{nlohmann::detail::json\_sax\_acceptor$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{string()}{string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{a01145}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+acceptor}}$<$ Basic\+Json\+Type $>$\+::string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01145_a3a8078bbf865ec355106f6048241609a}{string\+\_\+t}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/input/\mbox{\hyperlink{a00170}{json\+\_\+sax.\+hpp}}\end{DoxyCompactItemize}

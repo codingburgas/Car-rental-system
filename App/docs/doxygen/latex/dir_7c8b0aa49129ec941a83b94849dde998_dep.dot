@@ -1,0 +1,17 @@
+digraph "D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_a9231c2cf9a34043c20f49959b8894d2 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="SFML", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_a9231c2cf9a34043c20f49959b8894d2.html",tooltip=""]
+  dir_48e84550f41b49969f717c7f91dd5235 [label="System", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_48e84550f41b49969f717c7f91dd5235.html",tooltip=""];
+  dir_d7fb8a94a50a9b82daf2747727b913cd [label="Window", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d7fb8a94a50a9b82daf2747727b913cd.html",tooltip=""];
+  dir_7c8b0aa49129ec941a83b94849dde998 [label="Graphics", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_7c8b0aa49129ec941a83b94849dde998.html",tooltip=""];
+  }
+  dir_7c8b0aa49129ec941a83b94849dde998->dir_48e84550f41b49969f717c7f91dd5235 [headlabel="14", labeldistance=1.5 headhref="dir_000009_000026.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7c8b0aa49129ec941a83b94849dde998->dir_d7fb8a94a50a9b82daf2747727b913cd [headlabel="5", labeldistance=1.5 headhref="dir_000009_000028.html" color="steelblue1" fontcolor="steelblue1"];
+}

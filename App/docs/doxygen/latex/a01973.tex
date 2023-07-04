@@ -1,0 +1,314 @@
+\doxysection{sf\+::Cursor Class Reference}
+\hypertarget{a01973}{}\label{a01973}\index{sf::Cursor@{sf::Cursor}}
+
+
+\doxylink{a01973}{Cursor} defines the appearance of a system cursor.  
+
+
+
+
+{\ttfamily \#include $<$Cursor.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Cursor\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Cursor\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} \{ \newline
+\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa8d9a9cd284dabb4246ab4f147ba779a3}{Arrow}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa16c3acb967f2175434d6bbad7f1300bf}{Arrow\+Wait}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aabeb51ea58e48e4477ab802d46ad2cbdd}{Wait}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa1a9979392de58ff11d5b4ab330e6393d}{Text}}
+, \newline
+\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aae826935374aa0414723918ba79f13368}{Hand}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa0131508eaa8802dba34b8c9b41aec6e9}{Size\+Horizontal}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aab3cefa56d3a0fe9fe64680c7ec11eab5}{Size\+Vertical}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa934ddc380262a94358ccb5a4ab7bbe1c}{Size\+Top\+Left\+Bottom\+Right}}
+, \newline
+\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aac047cea5795b6074fbb4d6479452e8ef}{Size\+Bottom\+Left\+Top\+Right}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa256a64be04f0347e6a44cbf84e5410bd}{Size\+All}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf3b3213aad68863c7dec96587681fecd}{Cross}}
+, \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf2c0ed3674b334ebf8365aee243186f5}{Help}}
+, \newline
+\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aadb1ec726725dd81ec9906cbe06fec805}{Not\+Allowed}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the native system cursor types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01973_a6a36a0a5943b22b77b00cac839dd715c}{Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01973_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels}} (const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*}pixels, \mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} size, \mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} hotspot)
+\begin{DoxyCompactList}\small\item\em Create a cursor with the provided image. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01973_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System}} (\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930a}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Create a native system cursor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01973_a777ba6a1d0d68f8eb9dc85976a5b9727}{\texorpdfstring{$\sim$}{\string~}\+Cursor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const priv\+::\+Cursor\+Impl \& \mbox{\hyperlink{a01973_a4219624c65ae8349bdec6841cc9b5fdf}{get\+Impl}} () const
+\begin{DoxyCompactList}\small\item\em Get access to the underlying implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+priv\+::\+Cursor\+Impl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01973_a49fc938d6aceb515a3621b63e18327df}{m\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em Platform-\/specific implementation of the cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01973_a553f958a25683445088050a69d3de8e9}{Window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{a01973}{Cursor} defines the appearance of a system cursor. 
+
+\begin{DoxyWarning}{Warning}
+Features related to \doxylink{a01973}{Cursor} are not supported on i\+OS and Android.
+\end{DoxyWarning}
+This class abstracts the operating system resources associated with either a native system cursor or a custom cursor.
+
+After loading the cursor the graphical appearance with either \doxylink{a01973_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels()} or \doxylink{a01973_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System()}, the cursor can be changed with \doxylink{a02069_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor()}.
+
+The behaviour is undefined if the cursor is destroyed while in use by the window.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a02069}{sf::Window}}\ window;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ ...\ create\ window\ as\ usual\ ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01973}{sf::Cursor}}\ cursor;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (cursor.\mbox{\hyperlink{a01973_ad41999c8633c2fbaa2364e379c1ab25b}{loadFromSystem}}(\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930aae826935374aa0414723918ba79f13368}{sf::Cursor::Hand}}))}
+\DoxyCodeLine{\ \ \ \ window.\mbox{\hyperlink{a02069_aab7a05baece72b08ad120063b143d19b}{setMouseCursor}}(cursor);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a02069_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930a}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930a} 
+\index{sf::Cursor@{sf::Cursor}!Type@{Type}}
+\index{Type@{Type}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}}}
+
+
+
+Enumeration of the native system cursor types. 
+
+Refer to the following table to determine which cursor is available on which platform.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Linux   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mac OS X   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows    }\\\cline{1-4}
+\endhead
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa8d9a9cd284dabb4246ab4f147ba779a3}{sf\+::\+Cursor\+::\+Arrow}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa16c3acb967f2175434d6bbad7f1300bf}{sf\+::\+Cursor\+::\+Arrow\+Wait}   &\PBS\centering no   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aabeb51ea58e48e4477ab802d46ad2cbdd}{sf\+::\+Cursor\+::\+Wait}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa1a9979392de58ff11d5b4ab330e6393d}{sf\+::\+Cursor\+::\+Text}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aae826935374aa0414723918ba79f13368}{sf\+::\+Cursor\+::\+Hand}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa0131508eaa8802dba34b8c9b41aec6e9}{sf\+::\+Cursor\+::\+Size\+Horizontal}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aab3cefa56d3a0fe9fe64680c7ec11eab5}{sf\+::\+Cursor\+::\+Size\+Vertical}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa934ddc380262a94358ccb5a4ab7bbe1c}{sf\+::\+Cursor\+::\+Size\+Top\+Left\+Bottom\+Right}   &\PBS\centering no   &\PBS\centering yes\texorpdfstring{$\ast$}{*}   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aac047cea5795b6074fbb4d6479452e8ef}{sf\+::\+Cursor\+::\+Size\+Bottom\+Left\+Top\+Right}   &\PBS\centering no   &\PBS\centering yes\texorpdfstring{$\ast$}{*}   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aa256a64be04f0347e6a44cbf84e5410bd}{sf\+::\+Cursor\+::\+Size\+All}   &\PBS\centering yes   &\PBS\centering no   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf3b3213aad68863c7dec96587681fecd}{sf\+::\+Cursor\+::\+Cross}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf2c0ed3674b334ebf8365aee243186f5}{sf\+::\+Cursor\+::\+Help}   &\PBS\centering yes   &\PBS\centering yes\texorpdfstring{$\ast$}{*}   &\PBS\centering yes    \\\cline{1-4}
+\doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930aadb1ec726725dd81ec9906cbe06fec805}{sf\+::\+Cursor\+::\+Not\+Allowed}   &\PBS\centering yes   &\PBS\centering yes   &\PBS\centering yes   \\\cline{1-4}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item These cursor types are undocumented so may not be available on all versions, but have been tested on 10.\+13 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Arrow@{Arrow}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa8d9a9cd284dabb4246ab4f147ba779a3}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa8d9a9cd284dabb4246ab4f147ba779a3} 
+Arrow&Arrow cursor (default) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowWait@{ArrowWait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!ArrowWait@{ArrowWait}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa16c3acb967f2175434d6bbad7f1300bf}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa16c3acb967f2175434d6bbad7f1300bf} 
+Arrow\+Wait&Busy arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wait@{Wait}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Wait@{Wait}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aabeb51ea58e48e4477ab802d46ad2cbdd}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aabeb51ea58e48e4477ab802d46ad2cbdd} 
+Wait&Busy cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Text@{Text}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa1a9979392de58ff11d5b4ab330e6393d}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa1a9979392de58ff11d5b4ab330e6393d} 
+Text&I-\/beam, cursor when hovering over a field allowing text entry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hand@{Hand}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Hand@{Hand}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aae826935374aa0414723918ba79f13368}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aae826935374aa0414723918ba79f13368} 
+Hand&Pointing hand cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeHorizontal@{SizeHorizontal}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeHorizontal@{SizeHorizontal}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa0131508eaa8802dba34b8c9b41aec6e9}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa0131508eaa8802dba34b8c9b41aec6e9} 
+Size\+Horizontal&Horizontal double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeVertical@{SizeVertical}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeVertical@{SizeVertical}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aab3cefa56d3a0fe9fe64680c7ec11eab5}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aab3cefa56d3a0fe9fe64680c7ec11eab5} 
+Size\+Vertical&Vertical double arrow cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeTopLeftBottomRight@{SizeTopLeftBottomRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeTopLeftBottomRight@{SizeTopLeftBottomRight}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa934ddc380262a94358ccb5a4ab7bbe1c}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa934ddc380262a94358ccb5a4ab7bbe1c} 
+Size\+Top\+Left\+Bottom\+Right&Double arrow cursor going from top-\/left to bottom-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeBottomLeftTopRight@{SizeBottomLeftTopRight}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeBottomLeftTopRight@{SizeBottomLeftTopRight}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aac047cea5795b6074fbb4d6479452e8ef}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aac047cea5795b6074fbb4d6479452e8ef} 
+Size\+Bottom\+Left\+Top\+Right&Double arrow cursor going from bottom-\/left to top-\/right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAll@{SizeAll}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!SizeAll@{SizeAll}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aa256a64be04f0347e6a44cbf84e5410bd}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aa256a64be04f0347e6a44cbf84e5410bd} 
+Size\+All&Combination of Size\+Horizontal and Size\+Vertical. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross@{Cross}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Cross@{Cross}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf3b3213aad68863c7dec96587681fecd}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf3b3213aad68863c7dec96587681fecd} 
+Cross&Crosshair cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!Help@{Help}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf2c0ed3674b334ebf8365aee243186f5}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aaf2c0ed3674b334ebf8365aee243186f5} 
+Help&Help cursor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotAllowed@{NotAllowed}!sf::Cursor@{sf::Cursor}}\index{sf::Cursor@{sf::Cursor}!NotAllowed@{NotAllowed}}}\Hypertarget{a01973_ab9ab152aec1f8a4955e34ccae08f930aadb1ec726725dd81ec9906cbe06fec805}\label{a01973_ab9ab152aec1f8a4955e34ccae08f930aadb1ec726725dd81ec9906cbe06fec805} 
+Not\+Allowed&Action not allowed cursor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01973_a6a36a0a5943b22b77b00cac839dd715c}\label{a01973_a6a36a0a5943b22b77b00cac839dd715c} 
+\index{sf::Cursor@{sf::Cursor}!Cursor@{Cursor}}
+\index{Cursor@{Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor doesn\textquotesingle{}t actually create the cursor; initially the new instance is invalid and must not be used until either \doxylink{a01973_ac24ecf82ac7d9ba6703389397f948b3a}{load\+From\+Pixels()} or \doxylink{a01973_ad41999c8633c2fbaa2364e379c1ab25b}{load\+From\+System()} is called and successfully created a cursor. \Hypertarget{a01973_a777ba6a1d0d68f8eb9dc85976a5b9727}\label{a01973_a777ba6a1d0d68f8eb9dc85976a5b9727} 
+\index{sf::Cursor@{sf::Cursor}!````~Cursor@{\texorpdfstring{$\sim$}{\string~}Cursor}}
+\index{````~Cursor@{\texorpdfstring{$\sim$}{\string~}Cursor}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Cursor()}{\string~Cursor()}}
+{\footnotesize\ttfamily sf\+::\+Cursor\+::\texorpdfstring{$\sim$}{\string~}\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+This destructor releases the system resources associated with this cursor, if any. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01973_a4219624c65ae8349bdec6841cc9b5fdf}\label{a01973_a4219624c65ae8349bdec6841cc9b5fdf} 
+\index{sf::Cursor@{sf::Cursor}!getImpl@{getImpl}}
+\index{getImpl@{getImpl}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{getImpl()}{getImpl()}}
+{\footnotesize\ttfamily const priv\+::\+Cursor\+Impl \& sf\+::\+Cursor\+::get\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get access to the underlying implementation. 
+
+This is primarily designed for \doxylink{a02069_aab7a05baece72b08ad120063b143d19b}{sf\+::\+Window\+::set\+Mouse\+Cursor}, hence the friendship.
+
+\begin{DoxyReturn}{Returns}
+a reference to the OS-\/specific implementation 
+\end{DoxyReturn}
+\Hypertarget{a01973_ac24ecf82ac7d9ba6703389397f948b3a}\label{a01973_ac24ecf82ac7d9ba6703389397f948b3a} 
+\index{sf::Cursor@{sf::Cursor}!loadFromPixels@{loadFromPixels}}
+\index{loadFromPixels@{loadFromPixels}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromPixels()}{loadFromPixels()}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*}}]{pixels,  }\item[{\mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}}}]{size,  }\item[{\mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}}}]{hotspot }\end{DoxyParamCaption})}
+
+
+
+Create a cursor with the provided image. 
+
+{\itshape pixels} must be an array of {\itshape width} by {\itshape height} pixels in 32-\/bit RGBA format. If not, this will cause undefined behavior.
+
+If {\itshape pixels} is null or either {\itshape width} or {\itshape height} are 0, the current cursor is left unchanged and the function will return false.
+
+In addition to specifying the pixel data, you can also specify the location of the hotspot of the cursor. The hotspot is the pixel coordinate within the cursor image which will be located exactly where the mouse pointer position is. Any mouse actions that are performed will return the window/screen location of the hotspot.
+
+\begin{DoxyWarning}{Warning}
+On Unix, the pixels are mapped into a monochrome bitmap\+: pixels with an alpha channel to 0 are transparent, black if the RGB channel are close to zero, and white otherwise.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em pixels} & Array of pixels of the image \\
+\hline
+{\em size} & Width and height of the image \\
+\hline
+{\em hotspot} & (x,y) location of the hotspot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cursor was successfully loaded; false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01973_ad41999c8633c2fbaa2364e379c1ab25b}\label{a01973_ad41999c8633c2fbaa2364e379c1ab25b} 
+\index{sf::Cursor@{sf::Cursor}!loadFromSystem@{loadFromSystem}}
+\index{loadFromSystem@{loadFromSystem}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{loadFromSystem()}{loadFromSystem()}}
+{\footnotesize\ttfamily bool sf\+::\+Cursor\+::load\+From\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01973_ab9ab152aec1f8a4955e34ccae08f930a}{Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Create a native system cursor. 
+
+Refer to the list of cursor available on each system (see \doxylink{a01973_ab9ab152aec1f8a4955e34ccae08f930a}{sf\+::\+Cursor\+::\+Type}) to know whether a given cursor is expected to load successfully or is not supported by the operating system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Native system cursor type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if the corresponding cursor is natively supported by the operating system; false otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01973_a553f958a25683445088050a69d3de8e9}\label{a01973_a553f958a25683445088050a69d3de8e9} 
+\index{sf::Cursor@{sf::Cursor}!Window@{Window}}
+\index{Window@{Window}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{Window}{Window}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a02069}{Window}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01973_a49fc938d6aceb515a3621b63e18327df}\label{a01973_a49fc938d6aceb515a3621b63e18327df} 
+\index{sf::Cursor@{sf::Cursor}!m\_impl@{m\_impl}}
+\index{m\_impl@{m\_impl}!sf::Cursor@{sf::Cursor}}
+\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
+{\footnotesize\ttfamily priv\+::\+Cursor\+Impl\texorpdfstring{$\ast$}{*} sf\+::\+Cursor\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Platform-\/specific implementation of the cursor. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00578}{Cursor.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,163 @@
+\doxysection{cpr\+::Cookies Class Reference}
+\hypertarget{a00721}{}\label{a00721}\index{cpr::Cookies@{cpr::Cookies}}
+
+
+{\ttfamily \#include $<$cookies.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} = std\+::map$<$ std\+::string, std\+::string $>$\+::const\+\_\+iterator
+\item 
+using \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}} = std\+::map$<$ std\+::string, std\+::string $>$\+::iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}} \mbox{\hyperlink{a00721_a997e9c8e0725422e500252f117ca6428}{begin}} ()
+\item 
+\mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} \mbox{\hyperlink{a00721_a893e233b0f85c9eb6336888af9d30175}{begin}} () const
+\item 
+\mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} \mbox{\hyperlink{a00721_aa0bb5278380f72b89b8066eda6e802df}{cbegin}} () const
+\item 
+\mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} \mbox{\hyperlink{a00721_ae6a7bf70dbd60e2ea36f2b58900e172f}{cend}} () const
+\item 
+\mbox{\hyperlink{a00721_a1387ee9510ac60af99137d7d246e15e2}{Cookies}} (bool p\+\_\+encode=true)
+\item 
+\mbox{\hyperlink{a00721_a5779b901b876b4f6f6a2cb68a0d9db60}{Cookies}} (const std\+::initializer\+\_\+list$<$ std\+::pair$<$ const std\+::string, std\+::string $>$ $>$ \&pairs, bool p\+\_\+encode=true)
+\item 
+\mbox{\hyperlink{a00721_af6308bd2bd982098aedaf63e9a203a82}{Cookies}} (const std\+::map$<$ std\+::string, std\+::string $>$ \&map, bool p\+\_\+encode=true)
+\item 
+\mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}} \mbox{\hyperlink{a00721_ac252e547024cbf931e75c65c52ac820a}{end}} ()
+\item 
+\mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} \mbox{\hyperlink{a00721_ab4b50d04014a96eb12965ec3fd8536d1}{end}} () const
+\item 
+std\+::string \mbox{\hyperlink{a00721_a731d1769d444cc86b0fb5817a07584c7}{Get\+Encoded}} (const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&holder) const
+\item 
+std\+::string \& \mbox{\hyperlink{a00721_aa73faaf27f427fc4feb308b22b45a1ca}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00721_aaa2d99b5d192958c59f1e057ab7f4257}{encode}} \{true\}
+\begin{DoxyCompactList}\small\item\em Should we URL-\/encode cookies when making a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{a00721_aac3942d80e16e07fc940fd91668b8436}{map\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a00721_af454600aba5841d46a135a8950c381c9}\label{a00721_af454600aba5841d46a135a8950c381c9} 
+\index{cpr::Cookies@{cpr::Cookies}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{cpr\+::\+Cookies\+::const\+\_\+iterator}} =  std\+::map$<$std\+::string, std\+::string$>$\+::const\+\_\+iterator}
+
+\Hypertarget{a00721_a36b09375809b229c3db60c874e5f8360}\label{a00721_a36b09375809b229c3db60c874e5f8360} 
+\index{cpr::Cookies@{cpr::Cookies}!iterator@{iterator}}
+\index{iterator@{iterator}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{cpr\+::\+Cookies\+::iterator}} =  std\+::map$<$std\+::string, std\+::string$>$\+::iterator}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00721_a1387ee9510ac60af99137d7d246e15e2}\label{a00721_a1387ee9510ac60af99137d7d246e15e2} 
+\index{cpr::Cookies@{cpr::Cookies}!Cookies@{Cookies}}
+\index{Cookies@{Cookies}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{Cookies()}{Cookies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily cpr\+::\+Cookies\+::\+Cookies (\begin{DoxyParamCaption}\item[{bool}]{p\+\_\+encode = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00721_a5779b901b876b4f6f6a2cb68a0d9db60}\label{a00721_a5779b901b876b4f6f6a2cb68a0d9db60} 
+\index{cpr::Cookies@{cpr::Cookies}!Cookies@{Cookies}}
+\index{Cookies@{Cookies}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{Cookies()}{Cookies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily cpr\+::\+Cookies\+::\+Cookies (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ std\+::pair$<$ const std\+::string, std\+::string $>$ $>$ \&}]{pairs,  }\item[{bool}]{p\+\_\+encode = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00721_af6308bd2bd982098aedaf63e9a203a82}\label{a00721_af6308bd2bd982098aedaf63e9a203a82} 
+\index{cpr::Cookies@{cpr::Cookies}!Cookies@{Cookies}}
+\index{Cookies@{Cookies}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{Cookies()}{Cookies()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily cpr\+::\+Cookies\+::\+Cookies (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{map,  }\item[{bool}]{p\+\_\+encode = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00721_a997e9c8e0725422e500252f117ca6428}\label{a00721_a997e9c8e0725422e500252f117ca6428} 
+\index{cpr::Cookies@{cpr::Cookies}!begin@{begin}}
+\index{begin@{begin}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}} cpr\+::\+Cookies\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00721_a893e233b0f85c9eb6336888af9d30175}\label{a00721_a893e233b0f85c9eb6336888af9d30175} 
+\index{cpr::Cookies@{cpr::Cookies}!begin@{begin}}
+\index{begin@{begin}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} cpr\+::\+Cookies\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{a00721_aa0bb5278380f72b89b8066eda6e802df}\label{a00721_aa0bb5278380f72b89b8066eda6e802df} 
+\index{cpr::Cookies@{cpr::Cookies}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} cpr\+::\+Cookies\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{a00721_ae6a7bf70dbd60e2ea36f2b58900e172f}\label{a00721_ae6a7bf70dbd60e2ea36f2b58900e172f} 
+\index{cpr::Cookies@{cpr::Cookies}!cend@{cend}}
+\index{cend@{cend}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} cpr\+::\+Cookies\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{a00721_ac252e547024cbf931e75c65c52ac820a}\label{a00721_ac252e547024cbf931e75c65c52ac820a} 
+\index{cpr::Cookies@{cpr::Cookies}!end@{end}}
+\index{end@{end}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}} cpr\+::\+Cookies\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00721_ab4b50d04014a96eb12965ec3fd8536d1}\label{a00721_ab4b50d04014a96eb12965ec3fd8536d1} 
+\index{cpr::Cookies@{cpr::Cookies}!end@{end}}
+\index{end@{end}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\+\_\+iterator}} cpr\+::\+Cookies\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{a00721_a731d1769d444cc86b0fb5817a07584c7}\label{a00721_a731d1769d444cc86b0fb5817a07584c7} 
+\index{cpr::Cookies@{cpr::Cookies}!GetEncoded@{GetEncoded}}
+\index{GetEncoded@{GetEncoded}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{GetEncoded()}{GetEncoded()}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Cookies\+::\+Get\+Encoded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&}]{holder }\end{DoxyParamCaption}) const}
+
+\Hypertarget{a00721_aa73faaf27f427fc4feb308b22b45a1ca}\label{a00721_aa73faaf27f427fc4feb308b22b45a1ca} 
+\index{cpr::Cookies@{cpr::Cookies}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::string \& cpr\+::\+Cookies\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00721_aaa2d99b5d192958c59f1e057ab7f4257}\label{a00721_aaa2d99b5d192958c59f1e057ab7f4257} 
+\index{cpr::Cookies@{cpr::Cookies}!encode@{encode}}
+\index{encode@{encode}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{encode}{encode}}
+{\footnotesize\ttfamily bool cpr\+::\+Cookies\+::encode \{true\}}
+
+
+
+Should we URL-\/encode cookies when making a request. 
+
+Based on RFC6265, it is recommended but not mandatory to encode cookies.
+
+\DoxyHorRuler{0}
+ To maximize compatibility with user agents, servers that wish to store arbitrary data in a cookie-\/value SHOULD encode that data, for \hypertarget{a00721_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{example, using Base64 \mbox{[}\+RFC4648\mbox{]}.}{example, using Base64 [RFC4648].}}\label{a00721_autotoc_md1}
+Source\+: RFC6265 (\href{https://www.ietf.org/rfc/rfc6265.txt}{\texttt{ https\+://www.\+ietf.\+org/rfc/rfc6265.\+txt}}) \Hypertarget{a00721_aac3942d80e16e07fc940fd91668b8436}\label{a00721_aac3942d80e16e07fc940fd91668b8436} 
+\index{cpr::Cookies@{cpr::Cookies}!map\_@{map\_}}
+\index{map\_@{map\_}!cpr::Cookies@{cpr::Cookies}}
+\doxysubsubsection{\texorpdfstring{map\_}{map\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ cpr\+::\+Cookies\+::map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00029}{cookies.\+h}}\end{DoxyCompactItemize}

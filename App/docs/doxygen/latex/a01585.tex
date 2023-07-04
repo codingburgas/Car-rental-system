@@ -1,0 +1,278 @@
+\doxysection{Register Class Reference}
+\hypertarget{a01585}{}\label{a01585}\index{Register@{Register}}
+
+
+{\ttfamily \#include $<$Register.\+hpp$>$}
+
+
+
+Inheritance diagram for Register\+:
+% FIG 0
+
+
+Collaboration diagram for Register\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01585_a2f1b8a7db830d53a841e43dc33addcca}{background\+Transformation}} (\mbox{\hyperlink{a01777}{Sprite}} sprite1, \mbox{\hyperlink{a01777}{Sprite}} sprite2, \mbox{\hyperlink{a01785}{Texture}} Texture2, float \texorpdfstring{$\ast$}{*}transform\+Progess, int index)
+\item 
+void \mbox{\hyperlink{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01585_ada5fb2208c0eda9a3b192679642c9618}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+int \mbox{\hyperlink{a01585_a55a906b422766116e82fdb37040389ba}{get\+Anim\+State}} ()
+\item 
+void \mbox{\hyperlink{a01585_aaecaf64854d00415090abf6be3961bdd}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01585_a64736ddd3cef04a8c2a0e1798a79a8e7}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01585_a551942ff85e6add40707d1a6c3312072}{Register}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}})
+\item 
+void \mbox{\hyperlink{a01585_a2860e0682b21a22a31107d3e867963e3}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01585_a4a762e080ef1113c7b1f2c2dfbc2980f}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01585_a7da001cf9e9f71d78f3328a6b6a9f7f9}{\texorpdfstring{$\sim$}{\string~}\+Register}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a01585_aa6dab2e190dced9ec2052377927230e7}{anim\+State}} = 0
+\item 
+float \mbox{\hyperlink{a01585_a81d30bc43f77de6ca110601a44350c45}{elapsed\+Time}} = 0
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01585_aa673f1cad30f2f9c987bc55293b60ff7}{logo}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01585_a3eeba8eee5aacb3ee4b9f54047af1689}{logo\+Texture}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01585_a2b13f182bb5761d85b33d9b6584df93b}{register\+Black}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01585_ad9bbfc28906670ab7ebcdfbf2292c6c5}{register\+Black\+Texture}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01585_ad682745cfd1d70a9f2f2b36d68b6872f}{register\+White}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01585_ac9d1a5aa9c97ff3f7ed1296a1ea2b4e5}{register\+White\+Texture}}
+\item 
+\mbox{\hyperlink{a01757}{Render\+Texture}} \mbox{\hyperlink{a01585_a3dc65af0ab97dc7c0261902b3d4fa0ce}{render\+Texture}}
+\item 
+float \mbox{\hyperlink{a01585_a5dcde3dc659ed6ad66c79fee7e8f08a5}{transform\+Progress}} \mbox{[}100\mbox{]}
+\item 
+float \mbox{\hyperlink{a01585_aa473453b2d950cb8904fd659f5922c5f}{transform\+Speed}}
+\item 
+\mbox{\hyperlink{a01873}{Clock}} \mbox{\hyperlink{a01585_a8600fce55ecad566ab9ab4093ded2022}{transition\+Clock}}
+\item 
+float \mbox{\hyperlink{a01585_a0066c888181ddde92c7ff4ac2b50c27d}{transition\+Duration}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01585_a551942ff85e6add40707d1a6c3312072}\label{a01585_a551942ff85e6add40707d1a6c3312072} 
+\index{Register@{Register}!Register@{Register}}
+\index{Register@{Register}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily Register\+::\+Register (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01585_a7da001cf9e9f71d78f3328a6b6a9f7f9}\label{a01585_a7da001cf9e9f71d78f3328a6b6a9f7f9} 
+\index{Register@{Register}!````~Register@{\texorpdfstring{$\sim$}{\string~}Register}}
+\index{````~Register@{\texorpdfstring{$\sim$}{\string~}Register}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Register()}{\string~Register()}}
+{\footnotesize\ttfamily Register\+::\texorpdfstring{$\sim$}{\string~}\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01585_a2f1b8a7db830d53a841e43dc33addcca}\label{a01585_a2f1b8a7db830d53a841e43dc33addcca} 
+\index{Register@{Register}!backgroundTransformation@{backgroundTransformation}}
+\index{backgroundTransformation@{backgroundTransformation}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{backgroundTransformation()}{backgroundTransformation()}}
+{\footnotesize\ttfamily void Register\+::background\+Transformation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01777}{Sprite}}}]{sprite1,  }\item[{\mbox{\hyperlink{a01777}{Sprite}}}]{sprite2,  }\item[{\mbox{\hyperlink{a01785}{Texture}}}]{Texture2,  }\item[{float \texorpdfstring{$\ast$}{*}}]{transform\+Progess,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205}\label{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205} 
+\index{Register@{Register}!draw@{draw}}
+\index{draw@{draw}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Register\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01585_ada5fb2208c0eda9a3b192679642c9618}\label{a01585_ada5fb2208c0eda9a3b192679642c9618} 
+\index{Register@{Register}!draw@{draw}}
+\index{draw@{draw}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Register\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01585_a55a906b422766116e82fdb37040389ba}\label{a01585_a55a906b422766116e82fdb37040389ba} 
+\index{Register@{Register}!getAnimState@{getAnimState}}
+\index{getAnimState@{getAnimState}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{getAnimState()}{getAnimState()}}
+{\footnotesize\ttfamily int Register\+::get\+Anim\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a01585_aaecaf64854d00415090abf6be3961bdd}\label{a01585_aaecaf64854d00415090abf6be3961bdd} 
+\index{Register@{Register}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void Register\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01585_a64736ddd3cef04a8c2a0e1798a79a8e7}\label{a01585_a64736ddd3cef04a8c2a0e1798a79a8e7} 
+\index{Register@{Register}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool Register\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01585_a2860e0682b21a22a31107d3e867963e3}\label{a01585_a2860e0682b21a22a31107d3e867963e3} 
+\index{Register@{Register}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void Register\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01585_a4a762e080ef1113c7b1f2c2dfbc2980f}\label{a01585_a4a762e080ef1113c7b1f2c2dfbc2980f} 
+\index{Register@{Register}!update@{update}}
+\index{update@{update}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Register\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01585_aa6dab2e190dced9ec2052377927230e7}\label{a01585_aa6dab2e190dced9ec2052377927230e7} 
+\index{Register@{Register}!animState@{animState}}
+\index{animState@{animState}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{animState}{animState}}
+{\footnotesize\ttfamily int Register\+::anim\+State = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{Register@{Register}!answers@{answers}}
+\index{answers@{answers}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01585_a81d30bc43f77de6ca110601a44350c45}\label{a01585_a81d30bc43f77de6ca110601a44350c45} 
+\index{Register@{Register}!elapsedTime@{elapsedTime}}
+\index{elapsedTime@{elapsedTime}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{elapsedTime}{elapsedTime}}
+{\footnotesize\ttfamily float Register\+::elapsed\+Time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{Register@{Register}!inputs@{inputs}}
+\index{inputs@{inputs}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{Register@{Register}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01585_aa673f1cad30f2f9c987bc55293b60ff7}\label{a01585_aa673f1cad30f2f9c987bc55293b60ff7} 
+\index{Register@{Register}!logo@{logo}}
+\index{logo@{logo}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{logo}{logo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Register\+::logo\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a3eeba8eee5aacb3ee4b9f54047af1689}\label{a01585_a3eeba8eee5aacb3ee4b9f54047af1689} 
+\index{Register@{Register}!logoTexture@{logoTexture}}
+\index{logoTexture@{logoTexture}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{logoTexture}{logoTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Register\+::logo\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a2b13f182bb5761d85b33d9b6584df93b}\label{a01585_a2b13f182bb5761d85b33d9b6584df93b} 
+\index{Register@{Register}!registerBlack@{registerBlack}}
+\index{registerBlack@{registerBlack}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{registerBlack}{registerBlack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Register\+::register\+Black\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_ad9bbfc28906670ab7ebcdfbf2292c6c5}\label{a01585_ad9bbfc28906670ab7ebcdfbf2292c6c5} 
+\index{Register@{Register}!registerBlackTexture@{registerBlackTexture}}
+\index{registerBlackTexture@{registerBlackTexture}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{registerBlackTexture}{registerBlackTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Register\+::register\+Black\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_ad682745cfd1d70a9f2f2b36d68b6872f}\label{a01585_ad682745cfd1d70a9f2f2b36d68b6872f} 
+\index{Register@{Register}!registerWhite@{registerWhite}}
+\index{registerWhite@{registerWhite}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{registerWhite}{registerWhite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Register\+::register\+White\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_ac9d1a5aa9c97ff3f7ed1296a1ea2b4e5}\label{a01585_ac9d1a5aa9c97ff3f7ed1296a1ea2b4e5} 
+\index{Register@{Register}!registerWhiteTexture@{registerWhiteTexture}}
+\index{registerWhiteTexture@{registerWhiteTexture}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{registerWhiteTexture}{registerWhiteTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Register\+::register\+White\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a3dc65af0ab97dc7c0261902b3d4fa0ce}\label{a01585_a3dc65af0ab97dc7c0261902b3d4fa0ce} 
+\index{Register@{Register}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{renderTexture}{renderTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01757}{Render\+Texture}} Register\+::render\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a5dcde3dc659ed6ad66c79fee7e8f08a5}\label{a01585_a5dcde3dc659ed6ad66c79fee7e8f08a5} 
+\index{Register@{Register}!transformProgress@{transformProgress}}
+\index{transformProgress@{transformProgress}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{transformProgress}{transformProgress}}
+{\footnotesize\ttfamily float Register\+::transform\+Progress\mbox{[}100\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_aa473453b2d950cb8904fd659f5922c5f}\label{a01585_aa473453b2d950cb8904fd659f5922c5f} 
+\index{Register@{Register}!transformSpeed@{transformSpeed}}
+\index{transformSpeed@{transformSpeed}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{transformSpeed}{transformSpeed}}
+{\footnotesize\ttfamily float Register\+::transform\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a8600fce55ecad566ab9ab4093ded2022}\label{a01585_a8600fce55ecad566ab9ab4093ded2022} 
+\index{Register@{Register}!transitionClock@{transitionClock}}
+\index{transitionClock@{transitionClock}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{transitionClock}{transitionClock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01873}{Clock}} Register\+::transition\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01585_a0066c888181ddde92c7ff4ac2b50c27d}\label{a01585_a0066c888181ddde92c7ff4ac2b50c27d} 
+\index{Register@{Register}!transitionDuration@{transitionDuration}}
+\index{transitionDuration@{transitionDuration}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{transitionDuration}{transitionDuration}}
+{\footnotesize\ttfamily float Register\+::transition\+Duration = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{Register@{Register}!type@{type}}
+\index{type@{type}!Register@{Register}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00296}{Register.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00641}{Register.\+cpp}}\end{DoxyCompactItemize}

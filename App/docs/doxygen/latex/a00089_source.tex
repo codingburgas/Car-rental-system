@@ -1,0 +1,161 @@
+\doxysection{session.\+h}
+\hypertarget{a00089_source}{}\label{a00089_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/session.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/session.h}}
+\mbox{\hyperlink{a00089}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_SESSION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_SESSION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00014}{cpr/auth.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00017}{cpr/bearer.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00020}{cpr/body.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00023}{cpr/callback.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00026}{cpr/connect\_timeout.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00029}{cpr/cookies.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00035}{cpr/cprtypes.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00041}{cpr/curlholder.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00047}{cpr/digest.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00053}{cpr/http\_version.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00056}{cpr/interface.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00059}{cpr/limit\_rate.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00062}{cpr/low\_speed.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00065}{cpr/multipart.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00068}{cpr/ntlm.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00071}{cpr/parameters.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00074}{cpr/payload.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00077}{cpr/proxies.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00080}{cpr/proxyauth.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00083}{cpr/redirect.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00086}{cpr/response.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00092}{cpr/ssl\_options.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00098}{cpr/timeout.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00101}{cpr/unix\_socket.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00104}{cpr/user\_agent.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00110}{cpr/verbose.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00825}{Session}}\ \{}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{a00825_ad0f527fa1fdb36a319f784b3513bd42d}{Session}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{a00825_aa15ee4e1b1c86abf0bac2b0d7eb13981}{Session}}(\mbox{\hyperlink{a00825}{Session}}\&\&\ old)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{a00825_ae02155add5a081ff57a40e9735ec2cbd}{Session}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00825}{Session}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{a00825_a7df1bd414e6abfb51931459269eab797}{\string~Session}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\&\ \mbox{\hyperlink{a00825_a953bd41a54b8e25f667c0a0fcb0f8a68}{operator=}}(\mbox{\hyperlink{a00825}{Session}}\&\&\ old)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\&\ \mbox{\hyperlink{a00825_a0c33bfe070f8f04dbe41ed1872a14f9e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00825}{Session}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ac2c92dc4697a0ba0960ef8dc4a2b2df2}{SetUrl}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00729}{Url}}\&\ url);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ababd3fd493651756fc734e65e1a22010}{SetParameters}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00797}{Parameters}}\&\ parameters);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a8838b25ec833921c0db1f53004100531}{SetParameters}}(\mbox{\hyperlink{a00797}{Parameters}}\&\&\ parameters);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a347e70fe86d9c43887675da066aa6a89}{SetHeader}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}}\&\ header);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ae1bd7d9e94f504a72e5570fcd095b986}{UpdateHeader}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}}\&\ header);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a5258c775dfc19b5fa6f52cd4f493a191}{SetTimeout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00901}{Timeout}}\&\ timeout);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a2900948eab72aa68bb3d71e2e9cd3c33}{SetConnectTimeout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00717}{ConnectTimeout}}\&\ timeout);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_afe7567a848dfaa95b85b264dac4be341}{SetAuth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00689}{Authentication}}\&\ auth);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ace244e22ccff686fd0ad8c160459f3db}{SetDigest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00753}{Digest}}\&\ auth);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aec13333347dd910ca091bfa4959444d9}{SetUserAgent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00909}{UserAgent}}\&\ ua);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ad9f5e70c4cfc0ac60d5adf5961e9399a}{SetPayload}}(\mbox{\hyperlink{a00801}{Payload}}\&\&\ payload);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_af73b3a553d20a38ed7398fa1495a36c7}{SetPayload}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00801}{Payload}}\&\ payload);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a63af131835aa9a1f8c2c796aff99f68e}{SetProxies}}(\mbox{\hyperlink{a00805}{Proxies}}\&\&\ proxies);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ade9a3ffb77e099e7737759ec84cdccd5}{SetProxies}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00805}{Proxies}}\&\ proxies);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9324afd23ffabc8e0a608bcab8868651}{SetProxyAuth}}(\mbox{\hyperlink{a00813}{ProxyAuthentication}}\&\&\ proxy\_auth);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_afc2f23fa7c8d00c8004c0267716268dc}{SetProxyAuth}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00813}{ProxyAuthentication}}\&\ proxy\_auth);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a4e6d342ed17d4b18782aac486cef7c46}{SetMultipart}}(\mbox{\hyperlink{a00789}{Multipart}}\&\&\ multipart);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aa3c05645bfd7cf6b9f7486629da58738}{SetMultipart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00789}{Multipart}}\&\ multipart);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9dcd3bd027b019bd64cffd9b05eecea6}{SetNTLM}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00793}{NTLM}}\&\ auth);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a46a2e5372e4e4d3ff74b5548d3ab25cb}{SetRedirect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00817}{Redirect}}\&\ redirect);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a58ad9e652edb062d7035cdd1db273f64}{SetCookies}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00721}{Cookies}}\&\ cookies);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a61b948243d1a11e116f2da667f820eb3}{SetBody}}(\mbox{\hyperlink{a00693}{Body}}\&\&\ body);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_acb212f981f513951b810800e3cba84c2}{SetBody}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00693}{Body}}\&\ body);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a2fdac5f0c5417249b2eab6b151e4bbe3}{SetLowSpeed}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00773}{LowSpeed}}\&\ low\_speed);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a0feca99d1e0576b957c4f017396be47b}{SetVerifySsl}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00829}{VerifySsl}}\&\ verify);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a3dff2204b431595d5b2e313612b15e7c}{SetUnixSocket}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00905}{UnixSocket}}\&\ unix\_socket);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a94db32170b1657d6dbfb119c2bdcfcd7}{SetSslOptions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00897}{SslOptions}}\&\ options);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a3893e839f95be669ebc8c9e406213b2c}{SetReadCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00697}{ReadCallback}}\&\ read);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_acdd75cce25d3fee416327ff82c2c2baa}{SetHeaderCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00701}{HeaderCallback}}\&\ header);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_abac400e0876e922d22041373dabe30b7}{SetWriteCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00705}{WriteCallback}}\&\ write);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aa85821705625367c8809e7165ce7800d}{SetProgressCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00709}{ProgressCallback}}\&\ progress);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a555ce38c6d50ab1c2097881c7d1dd20e}{SetDebugCallback}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00713}{DebugCallback}}\&\ debug);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ad6506e42bb752d8577dad35412742bf7}{SetVerbose}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00913}{Verbose}}\&\ verbose);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9060a9ba892d25b829b51dcf49528e9d}{SetInterface}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00765}{Interface}}\&\ iface);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_afae4fc02a9b8077c74df5670855ea40e}{SetHttpVersion}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00761}{HttpVersion}}\&\ version);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Used\ in\ templated\ functions}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a8b6ed0ac4062760c9234c5cf69c146d3}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00729}{Url}}\&\ url);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a92c9a9ee09fc7b02a610f93aa3a91a09}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00797}{Parameters}}\&\ parameters);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a029f1e022f83f6f9ddd0dcf0fb32034f}{SetOption}}(\mbox{\hyperlink{a00797}{Parameters}}\&\&\ parameters);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a15d32ba9a3b85a62e870d32f9ffb4050}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}}\&\ header);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ad3bb5b183bbb41c044ba2acdca76bd53}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00901}{Timeout}}\&\ timeout);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a3ef5a6a1416c9bb3824ce00eb8dc3473}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00717}{ConnectTimeout}}\&\ timeout);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ad7448e1392a11692404e6509b2f1ee55}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00689}{Authentication}}\&\ auth);}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ Only\ supported\ with\ libcurl\ >=\ 7.61.0.}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ As\ an\ alternative\ use\ SetHeader\ and\ add\ the\ token\ manually.}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x073D00}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a8b6ed0ac4062760c9234c5cf69c146d3}{SetOption}}(\textcolor{keyword}{const}\ Bearer\&\ auth);}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a6b7bbecd50453f49638c7dbaca009c8c}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00753}{Digest}}\&\ auth);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_af741f0cb6a61adfbd3358632fb618390}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00909}{UserAgent}}\&\ ua);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aeb8869c79a646fa440d1bdfc4ca2169b}{SetOption}}(\mbox{\hyperlink{a00801}{Payload}}\&\&\ payload);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a6d31e9ff4e817043a9304547d169b6ab}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00801}{Payload}}\&\ payload);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a645119e9349a3d7b5c972d2e2276849b}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00769}{LimitRate}}\&\ limit\_rate);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a35cb37d03a4d3454c4269d53c8b4df8a}{SetOption}}(\mbox{\hyperlink{a00805}{Proxies}}\&\&\ proxies);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a17d15e06326f2aacadebcb122a1b81a7}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00805}{Proxies}}\&\ proxies);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_af794291561c1382bb9ff3ffe0d68a3e4}{SetOption}}(\mbox{\hyperlink{a00813}{ProxyAuthentication}}\&\&\ proxy\_auth);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a0542e154bec94a4f091770d1fac9bc8f}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00813}{ProxyAuthentication}}\&\ proxy\_auth);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aace8827ac5ce65889e15bcfca2118758}{SetOption}}(\mbox{\hyperlink{a00789}{Multipart}}\&\&\ multipart);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9d6ba7de9608c16c2aeb929c85bb9986}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00789}{Multipart}}\&\ multipart);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a8bbb9121cb168cfac70810110955531a}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00793}{NTLM}}\&\ auth);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aa11bfeb079d314b12af52eef80aca030}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00817}{Redirect}}\&\ redirect);}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ae4199a777133904751f9ae04c7687235}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00721}{Cookies}}\&\ cookies);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a1e9244603f62a9450dc964eb36adad2c}{SetOption}}(\mbox{\hyperlink{a00693}{Body}}\&\&\ body);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a6b944f8f05761931dda3ade12440e00e}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00693}{Body}}\&\ body);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_abafd22860794e8cd3a3deb6cfb030578}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00697}{ReadCallback}}\&\ read);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_af180a28ba29218a2bec5f8ad135c9726}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00701}{HeaderCallback}}\&\ header);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a06e52f980f714c95c97483af19629501}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00705}{WriteCallback}}\&\ write);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a39d241d76f99fc5844939d2a3e6a9dfa}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00709}{ProgressCallback}}\&\ progress);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ae8e64827c253394a6f431338a510cdbf}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00713}{DebugCallback}}\&\ debug);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a165de7a2e6fbe6fbb1785a28521f2ce6}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00773}{LowSpeed}}\&\ low\_speed);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a69b0a397a73db0c0a4fd78fa0f7d68d0}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00829}{VerifySsl}}\&\ verify);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9e4cacd38a91c0647c0627725263e436}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00913}{Verbose}}\&\ verbose);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a1c295fd8e1d9cb1986e3ff6872ac7272}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00905}{UnixSocket}}\&\ unix\_socket);}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a9787251e000d77e3c36a92da4755fec9}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00897}{SslOptions}}\&\ options);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_adb2189f7c006f26fd4164c5869a661a8}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00765}{Interface}}\&\ iface);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a246fbfdbf319d99d723e68309b363676}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00761}{HttpVersion}}\&\ version);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\_off\_t}}\ \mbox{\hyperlink{a00825_aeb736ad892873b7018caeb496c13dd1d}{GetDownloadFileLength}}();}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_a0ad49a747a0c56a7fc3cd10fe4032337}{Delete}}();}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_ae5c95118d805ce8c12c819b57d89e9a7}{Download}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00705}{WriteCallback}}\&\ write);}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_aea9618ab6483da2cc8021f694bc63cda}{Download}}(std::ofstream\&\ file);}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_a782e3ef742ca63169e21702326e4ff0b}{Get}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_a6a12f412e2b424c054cf795acc21ff66}{Head}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_ab296793770689d344b69926ec1258b03}{Options}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_ab79c7500603b3f2d4f14316ab4b7c65b}{Patch}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_a3d96d865fc382114cd3daee45ec67b66}{Post}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_a62082c07d46ef678b8a81f1d5684e910}{Put}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ std::shared\_ptr<CurlHolder>\ \mbox{\hyperlink{a00825_a576d0ac459eb6be2eb0c753314323d3f}{GetCurlHolder}}();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a1bc917df4763251613116ba14781097d}{PrepareDelete}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_aed11421c47627740d5e38084dca5ee12}{PrepareGet}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a10f0e68896b8721f016eece66feb513f}{PrepareHead}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a1b3493cf42808ece1dde3dc81c598e37}{PrepareOptions}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_ab1191e3d7d74cf2fac1d58644e0b4d2b}{PreparePatch}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a24cfa38c07778fb7aef45cf0cc65e90c}{PreparePost}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00825_a436a045fecaf7e9dc99287024fe1235c}{PreparePut}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00825_ad3cfdc01e5e0a6996e8a9f859cc44d3b}{Complete}}(\mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ curl\_error);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{class\ }Impl;}
+\DoxyCodeLine{00150\ \ \ \ \ std::unique\_ptr<Impl>\ \mbox{\hyperlink{a00825_a1f11e154db96f2e1c77a83b7ee788ca9}{pimpl\_}};}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

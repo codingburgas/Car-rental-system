@@ -1,0 +1,572 @@
+\doxysection{sf\+::View Class Reference}
+\hypertarget{a01809}{}\label{a01809}\index{sf::View@{sf::View}}
+
+
+2D camera that defines what region is shown on screen  
+
+
+
+
+{\ttfamily \#include $<$View.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::View\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Get the center of the view. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01809_aa685c17a56aae7c7df4c90ea6285fd46}{get\+Inverse\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the inverse projection transform of the view. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01809_a324d8885f4ab17f1f7b0313580c9b84e}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the current orientation of the view. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01809_a57e4a87cf0d724678675d22a0093719a}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the view. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01809_ac9c1dab0cb8c1ac143b031035d821ce5}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the projection transform of the view. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \& \mbox{\hyperlink{a01809_aa2006fa4269078be4fd5ca999dcb6244}{get\+Viewport}} () const
+\begin{DoxyCompactList}\small\item\em Get the target viewport rectangle of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a4c98a6e04fed756dfaff8f629de50862}{move}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&offset)
+\begin{DoxyCompactList}\small\item\em Move the view relatively to its current position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a0c82144b837caf812f7cb25a43d80c41}{move}} (float offsetX, float offsetY)
+\begin{DoxyCompactList}\small\item\em Move the view relatively to its current position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_ac95b636eafab3922b7e8304fb6c00d7d}{reset}} (const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Reset the view to the given rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a5fd3901aae1845586ca40add94faa378}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotate the view relatively to its current orientation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_ab0296b03793e0873e6ae9e15311f3e78}{set\+Center}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&center)
+\begin{DoxyCompactList}\small\item\em Set the center of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Set the center of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a24d0503c9c51f5ef5918612786d325c1}{set\+Rotation}} (float angle)
+\begin{DoxyCompactList}\small\item\em Set the orientation of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a9e08d471ce21aa0e69ce55ff9de66d29}{set\+Size}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&size)
+\begin{DoxyCompactList}\small\item\em Set the size of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size}} (float width, float height)
+\begin{DoxyCompactList}\small\item\em Set the size of the view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a8eaec46b7d332fe834f016d0187d4b4a}{set\+Viewport}} (const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&viewport)
+\begin{DoxyCompactList}\small\item\em Set the target viewport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01809_a28c38308ff089ae5bdacd001d12286d3}{View}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01809_a1d63bc49e041b3b1ff992bb6430e1326}{View}} (const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Construct the view from a rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01809_afdaf84cfc910ef160450d63603457ea4}{View}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&center, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&size)
+\begin{DoxyCompactList}\small\item\em Construct the view from its center and size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01809_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom}} (float factor)
+\begin{DoxyCompactList}\small\item\em Resize the view rectangle relatively to its current size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01809_a2aafc31cea5b8f9afd273df7f33198be}{m\+\_\+center}}
+\begin{DoxyCompactList}\small\item\em Center of the view, in scene coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01809_a2913d790e9dfb0e433ced3589be5182e}{m\+\_\+inverse\+Transform}}
+\begin{DoxyCompactList}\small\item\em Precomputed inverse projection transform corresponding to the view. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01809_a4fc36421401c03bd9c3f556023e891f7}{m\+\_\+inv\+Transform\+Updated}}
+\begin{DoxyCompactList}\small\item\em Internal state telling if the inverse transform needs to be updated. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01809_a7f1500a1904edffffc5daa76f2f95037}{m\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em Angle of rotation of the view rectangle, in degrees. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01809_ab7eb79d4cbfb717cfd5a4ad3c6d19dd5}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of the view, in scene coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01809_ab27082a1c1fb6b00bd44d2aa322082aa}{m\+\_\+transform}}
+\begin{DoxyCompactList}\small\item\em Precomputed projection transform corresponding to the view. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01809_a64c4c557714b453d1e75b937e56eedd5}{m\+\_\+transform\+Updated}}
+\begin{DoxyCompactList}\small\item\em Internal state telling if the transform needs to be updated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01809_a2d89b9e2b7ae058c98f1f80c132ae8d6}{m\+\_\+viewport}}
+\begin{DoxyCompactList}\small\item\em Viewport rectangle, expressed as a factor of the render-\/target\textquotesingle{}s size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D camera that defines what region is shown on screen 
+
+\doxylink{a01809}{sf\+::\+View} defines a camera in the 2D scene. This is a very powerful concept\+: you can scroll, rotate or zoom the entire scene without altering the way that your drawable objects are drawn.
+
+A view is composed of a source rectangle, which defines what part of the 2D scene is shown, and a target viewport, which defines where the contents of the source rectangle will be displayed on the render target (window or texture).
+
+The viewport allows to map the scene to a custom part of the render target, and can be used for split-\/screen or for displaying a minimap, for example. If the source rectangle doesn\textquotesingle{}t have the same size as the viewport, its contents will be stretched to fit in.
+
+To apply a view, you have to assign it to the render target. Then, objects drawn in this render target will be affected by the view until you use another view.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01761}{sf::RenderWindow}}\ window;}
+\DoxyCodeLine{\mbox{\hyperlink{a01809}{sf::View}}\ view;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Initialize\ the\ view\ to\ a\ rectangle\ located\ at\ (100,\ 100)\ and\ with\ a\ size\ of\ 400x200}}
+\DoxyCodeLine{view.\mbox{\hyperlink{a01809_ac95b636eafab3922b7e8304fb6c00d7d}{reset}}(\mbox{\hyperlink{a01737}{sf::FloatRect}}(100,\ 100,\ 400,\ 200));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Rotate\ it\ by\ 45\ degrees}}
+\DoxyCodeLine{view.\mbox{\hyperlink{a01809_a5fd3901aae1845586ca40add94faa378}{rotate}}(45);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Set\ its\ target\ viewport\ to\ be\ half\ of\ the\ window}}
+\DoxyCodeLine{view.\mbox{\hyperlink{a01809_a8eaec46b7d332fe834f016d0187d4b4a}{setViewport}}(\mbox{\hyperlink{a01737}{sf::FloatRect}}(0.f,\ 0.f,\ 0.5f,\ 1.f));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Apply\ it}}
+\DoxyCodeLine{window.\mbox{\hyperlink{a01749_a063db6dd0a14913504af30e50cb6d946}{setView}}(view);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Render\ stuff}}
+\DoxyCodeLine{window.\mbox{\hyperlink{a01749_a12417a3bcc245c41d957b29583556f39}{draw}}(someSprite);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Set\ the\ default\ view\ back}}
+\DoxyCodeLine{window.\mbox{\hyperlink{a01749_a063db6dd0a14913504af30e50cb6d946}{setView}}(window.\mbox{\hyperlink{a01749_a7741129e3ef7ab4f0a40024fca13480c}{getDefaultView}}());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Render\ stuff\ not\ affected\ by\ the\ view}}
+\DoxyCodeLine{window.\mbox{\hyperlink{a01749_a12417a3bcc245c41d957b29583556f39}{draw}}(someText);}
+
+\end{DoxyCode}
+
+
+See also the note on coordinates and undistorted rendering in \doxylink{a01793}{sf\+::\+Transformable}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01761}{sf\+::\+Render\+Window}, \doxylink{a01757}{sf\+::\+Render\+Texture} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01809_a28c38308ff089ae5bdacd001d12286d3}\label{a01809_a28c38308ff089ae5bdacd001d12286d3} 
+\index{sf::View@{sf::View}!View@{View}}
+\index{View@{View}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily sf\+::\+View\+::\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates a default view of (0, 0, 1000, 1000) \Hypertarget{a01809_a1d63bc49e041b3b1ff992bb6430e1326}\label{a01809_a1d63bc49e041b3b1ff992bb6430e1326} 
+\index{sf::View@{sf::View}!View@{View}}
+\index{View@{View}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily sf\+::\+View\+::\+View (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&}]{rectangle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the view from a rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle defining the zone to display \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01809_afdaf84cfc910ef160450d63603457ea4}\label{a01809_afdaf84cfc910ef160450d63603457ea4} 
+\index{sf::View@{sf::View}!View@{View}}
+\index{View@{View}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily sf\+::\+View\+::\+View (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{center,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct the view from its center and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & Center of the zone to display \\
+\hline
+{\em size} & Size of zone to display \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01809_a8bd01cd2bcad03e547232b190c215b09}\label{a01809_a8bd01cd2bcad03e547232b190c215b09} 
+\index{sf::View@{sf::View}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+View\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the center of the view. 
+
+\begin{DoxyReturn}{Returns}
+Center of the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a57e4a87cf0d724678675d22a0093719a}{get\+Size}, \doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_aa685c17a56aae7c7df4c90ea6285fd46}\label{a01809_aa685c17a56aae7c7df4c90ea6285fd46} 
+\index{sf::View@{sf::View}!getInverseTransform@{getInverseTransform}}
+\index{getInverseTransform@{getInverseTransform}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getInverseTransform()}{getInverseTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+View\+::get\+Inverse\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the inverse projection transform of the view. 
+
+This function is meant for internal use only.
+
+\begin{DoxyReturn}{Returns}
+Inverse of the projection transform defining the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_ac9c1dab0cb8c1ac143b031035d821ce5}{get\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a324d8885f4ab17f1f7b0313580c9b84e}\label{a01809_a324d8885f4ab17f1f7b0313580c9b84e} 
+\index{sf::View@{sf::View}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float sf\+::\+View\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current orientation of the view. 
+
+\begin{DoxyReturn}{Returns}
+Rotation angle of the view, in degrees
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a24d0503c9c51f5ef5918612786d325c1}{set\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a57e4a87cf0d724678675d22a0093719a}\label{a01809_a57e4a87cf0d724678675d22a0093719a} 
+\index{sf::View@{sf::View}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+View\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the view. 
+
+\begin{DoxyReturn}{Returns}
+Size of the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center}, \doxylink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_ac9c1dab0cb8c1ac143b031035d821ce5}\label{a01809_ac9c1dab0cb8c1ac143b031035d821ce5} 
+\index{sf::View@{sf::View}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+View\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the projection transform of the view. 
+
+This function is meant for internal use only.
+
+\begin{DoxyReturn}{Returns}
+Projection transform defining the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa685c17a56aae7c7df4c90ea6285fd46}{get\+Inverse\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_aa2006fa4269078be4fd5ca999dcb6244}\label{a01809_aa2006fa4269078be4fd5ca999dcb6244} 
+\index{sf::View@{sf::View}!getViewport@{getViewport}}
+\index{getViewport@{getViewport}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{getViewport()}{getViewport()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \& sf\+::\+View\+::get\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the target viewport rectangle of the view. 
+
+\begin{DoxyReturn}{Returns}
+Viewport rectangle, expressed as a factor of the target size
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a8eaec46b7d332fe834f016d0187d4b4a}{set\+Viewport} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a4c98a6e04fed756dfaff8f629de50862}\label{a01809_a4c98a6e04fed756dfaff8f629de50862} 
+\index{sf::View@{sf::View}!move@{move}}
+\index{move@{move}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{offset }\end{DoxyParamCaption})}
+
+
+
+Move the view relatively to its current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Move offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}, \doxylink{a01809_a5fd3901aae1845586ca40add94faa378}{rotate}, \doxylink{a01809_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a0c82144b837caf812f7cb25a43d80c41}\label{a01809_a0c82144b837caf812f7cb25a43d80c41} 
+\index{sf::View@{sf::View}!move@{move}}
+\index{move@{move}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::move (\begin{DoxyParamCaption}\item[{float}]{offsetX,  }\item[{float}]{offsetY }\end{DoxyParamCaption})}
+
+
+
+Move the view relatively to its current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offsetX} & X coordinate of the move offset \\
+\hline
+{\em offsetY} & Y coordinate of the move offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}, \doxylink{a01809_a5fd3901aae1845586ca40add94faa378}{rotate}, \doxylink{a01809_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_ac95b636eafab3922b7e8304fb6c00d7d}\label{a01809_ac95b636eafab3922b7e8304fb6c00d7d} 
+\index{sf::View@{sf::View}!reset@{reset}}
+\index{reset@{reset}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void sf\+::\+View\+::reset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&}]{rectangle }\end{DoxyParamCaption})}
+
+
+
+Reset the view to the given rectangle. 
+
+Note that this function resets the rotation angle to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle defining the zone to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}, \doxylink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size}, \doxylink{a01809_a24d0503c9c51f5ef5918612786d325c1}{set\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a5fd3901aae1845586ca40add94faa378}\label{a01809_a5fd3901aae1845586ca40add94faa378} 
+\index{sf::View@{sf::View}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void sf\+::\+View\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Rotate the view relatively to its current orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle to rotate, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a24d0503c9c51f5ef5918612786d325c1}{set\+Rotation}, \doxylink{a01809_a0c82144b837caf812f7cb25a43d80c41}{move}, \doxylink{a01809_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_ab0296b03793e0873e6ae9e15311f3e78}\label{a01809_ab0296b03793e0873e6ae9e15311f3e78} 
+\index{sf::View@{sf::View}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{center }\end{DoxyParamCaption})}
+
+
+
+Set the center of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & New center\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size}, \doxylink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_aa8e3fedb008306ff9811163545fb75f2}\label{a01809_aa8e3fedb008306ff9811163545fb75f2} 
+\index{sf::View@{sf::View}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Center (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Set the center of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new center \\
+\hline
+{\em y} & Y coordinate of the new center\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size}, \doxylink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a24d0503c9c51f5ef5918612786d325c1}\label{a01809_a24d0503c9c51f5ef5918612786d325c1} 
+\index{sf::View@{sf::View}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Set the orientation of the view. 
+
+The default rotation of a view is 0 degree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & New angle, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a324d8885f4ab17f1f7b0313580c9b84e}{get\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a9e08d471ce21aa0e69ce55ff9de66d29}\label{a01809_a9e08d471ce21aa0e69ce55ff9de66d29} 
+\index{sf::View@{sf::View}!setSize@{setSize}}
+\index{setSize@{setSize}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the size of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}, \doxylink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a9525b73fe9fbaceb9568faf56b399dab}\label{a01809_a9525b73fe9fbaceb9568faf56b399dab} 
+\index{sf::View@{sf::View}!setSize@{setSize}}
+\index{setSize@{setSize}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+Set the size of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New width of the view \\
+\hline
+{\em height} & New height of the view\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa8e3fedb008306ff9811163545fb75f2}{set\+Center}, \doxylink{a01809_a8bd01cd2bcad03e547232b190c215b09}{get\+Center} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a8eaec46b7d332fe834f016d0187d4b4a}\label{a01809_a8eaec46b7d332fe834f016d0187d4b4a} 
+\index{sf::View@{sf::View}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}}
+{\footnotesize\ttfamily void sf\+::\+View\+::set\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \&}]{viewport }\end{DoxyParamCaption})}
+
+
+
+Set the target viewport. 
+
+The viewport is the rectangle into which the contents of the view are displayed, expressed as a factor (between 0 and 1) of the size of the \doxylink{a01749}{Render\+Target} to which the view is applied. For example, a view which takes the left side of the target would be defined with \doxylink{a01809_a8eaec46b7d332fe834f016d0187d4b4a}{View.\+set\+Viewport}(\doxylink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{sf\+::\+Float\+Rect}(0, 0, 0.\+5, 1)). By default, a view has a viewport which covers the entire target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em viewport} & New viewport rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_aa2006fa4269078be4fd5ca999dcb6244}{get\+Viewport} 
+\end{DoxySeeAlso}
+\Hypertarget{a01809_a4a72a360a5792fbe4e99cd6feaf7726e}\label{a01809_a4a72a360a5792fbe4e99cd6feaf7726e} 
+\index{sf::View@{sf::View}!zoom@{zoom}}
+\index{zoom@{zoom}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void sf\+::\+View\+::zoom (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+Resize the view rectangle relatively to its current size. 
+
+Resizing the view simulates a zoom, as the zone displayed on screen grows or shrinks. {\itshape factor} is a multiplier\+: \begin{DoxyItemize}
+\item 1 keeps the size unchanged \item \texorpdfstring{$>$}{>} 1 makes the view bigger (objects appear smaller) \item \texorpdfstring{$<$}{<} 1 makes the view smaller (objects appear bigger)\end{DoxyItemize}
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & Zoom factor to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01809_a9525b73fe9fbaceb9568faf56b399dab}{set\+Size}, \doxylink{a01809_a0c82144b837caf812f7cb25a43d80c41}{move}, \doxylink{a01809_a5fd3901aae1845586ca40add94faa378}{rotate} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01809_a2aafc31cea5b8f9afd273df7f33198be}\label{a01809_a2aafc31cea5b8f9afd273df7f33198be} 
+\index{sf::View@{sf::View}!m\_center@{m\_center}}
+\index{m\_center@{m\_center}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_center}{m\_center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+View\+::m\+\_\+center\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Center of the view, in scene coordinates. 
+
+\Hypertarget{a01809_a2913d790e9dfb0e433ced3589be5182e}\label{a01809_a2913d790e9dfb0e433ced3589be5182e} 
+\index{sf::View@{sf::View}!m\_inverseTransform@{m\_inverseTransform}}
+\index{m\_inverseTransform@{m\_inverseTransform}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_inverseTransform}{m\_inverseTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+View\+::m\+\_\+inverse\+Transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Precomputed inverse projection transform corresponding to the view. 
+
+\Hypertarget{a01809_a4fc36421401c03bd9c3f556023e891f7}\label{a01809_a4fc36421401c03bd9c3f556023e891f7} 
+\index{sf::View@{sf::View}!m\_invTransformUpdated@{m\_invTransformUpdated}}
+\index{m\_invTransformUpdated@{m\_invTransformUpdated}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_invTransformUpdated}{m\_invTransformUpdated}}
+{\footnotesize\ttfamily bool sf\+::\+View\+::m\+\_\+inv\+Transform\+Updated\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Internal state telling if the inverse transform needs to be updated. 
+
+\Hypertarget{a01809_a7f1500a1904edffffc5daa76f2f95037}\label{a01809_a7f1500a1904edffffc5daa76f2f95037} 
+\index{sf::View@{sf::View}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily float sf\+::\+View\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Angle of rotation of the view rectangle, in degrees. 
+
+\Hypertarget{a01809_ab7eb79d4cbfb717cfd5a4ad3c6d19dd5}\label{a01809_ab7eb79d4cbfb717cfd5a4ad3c6d19dd5} 
+\index{sf::View@{sf::View}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+View\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the view, in scene coordinates. 
+
+\Hypertarget{a01809_ab27082a1c1fb6b00bd44d2aa322082aa}\label{a01809_ab27082a1c1fb6b00bd44d2aa322082aa} 
+\index{sf::View@{sf::View}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+View\+::m\+\_\+transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Precomputed projection transform corresponding to the view. 
+
+\Hypertarget{a01809_a64c4c557714b453d1e75b937e56eedd5}\label{a01809_a64c4c557714b453d1e75b937e56eedd5} 
+\index{sf::View@{sf::View}!m\_transformUpdated@{m\_transformUpdated}}
+\index{m\_transformUpdated@{m\_transformUpdated}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_transformUpdated}{m\_transformUpdated}}
+{\footnotesize\ttfamily bool sf\+::\+View\+::m\+\_\+transform\+Updated\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Internal state telling if the transform needs to be updated. 
+
+\Hypertarget{a01809_a2d89b9e2b7ae058c98f1f80c132ae8d6}\label{a01809_a2d89b9e2b7ae058c98f1f80c132ae8d6} 
+\index{sf::View@{sf::View}!m\_viewport@{m\_viewport}}
+\index{m\_viewport@{m\_viewport}!sf::View@{sf::View}}
+\doxysubsubsection{\texorpdfstring{m\_viewport}{m\_viewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+View\+::m\+\_\+viewport\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Viewport rectangle, expressed as a factor of the render-\/target\textquotesingle{}s size. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00449}{View.\+hpp}}\end{DoxyCompactItemize}

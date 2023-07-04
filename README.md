@@ -1,87 +1,78 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10252648&assignment_repo_type=AssignmentRepo)
-# 2223-10: On the job training (OTJ) project
+<h1 align="center">Car Rental project</h1>
+<br>
 
-# The Car Rental System
-This document describes the OTJ project for 10th graders. **It will be updated frequently**.
+<p align = "center">
+    <img alt="GitHub top language" src ="https://img.shields.io/github/languages/top/ZYPetkova20/Neos?style=for-the-badge">
+    <img alt="Github languages count" src="https://img.shields.io/github/languages/count/ZYPetkova20/Neos?style=for-the-badge">
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ZYPetkova20/Neos?style=for-the-badge">
+</p>
+<br>
 
-# 1. Assignment Goals
-A car rental system is an application that manages the renting of automobiles for a short period of time—a few hours to a few weeks. 
-A car rental system has a number of offices in different locations within each city. 
-It allows the users to reserve and return a vehicle from different locations and is primarily located near airports or city areas.T
-he car rental system keeps a list of all its clients in a database. The database includes the name, address, and contact number of each new customer.
-A member can reserve a car for a certain number of days, hire a car, or return the car that was rented. 
-A member makes a reservation by supplying the pickup and drop-off locations, the kind of vehicle, and the day and time of the reservation.
+## 📰 Video
+  - [Complete walkthrough of the project](https://codingburgas-my.sharepoint.com/:v:/g/personal/isbachvarov21_codingburgas_bg/EU8LTYaevyxIsEpaicTJ0qgBNJ91qE15pjbTWItU7BaYtA?e=YPQk21)
+    <br>
+## 🚀 Application Tech Stack 
+  <p align="left"> 
+     <a href="https://www.cplusplus.com/"><img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" alt="C++"/></a>
+     <a href="https://www.raylib.com/"><img src="https://cdn.discordapp.com/attachments/900689339179216926/1092194637701189822/Raylib_logo_1.png"/></a>
+     <a href="https://docs.libcpr.org/introduction.html"><img src="https://cdn.discordapp.com/attachments/900689339179216926/1092188134793560176/687474703a2f2f692e696d6775722e636f6d2f643958747974732e706e67_1.png"/></a>
+    <a href="https://curl.se/"><img src="https://cdn.discordapp.com/attachments/900689339179216926/1092189749625753831/68747470733a2f2f6375726c2e73652f6c6f676f2f6375726c2d6c6f676f2e737667_1.png"/></a>
+  </p>
+  
+## 🔗 DB & Server Tech Stack 
+  <p align="left"> 
+    <a href="https://www.prisma.io/"><img src="https://img.icons8.com/ios/50/null/prisma-orm.png"/></a>
+    <a href="https://www.postgresql.org/"><img src="https://img.icons8.com/color/48/null/postgreesql.png"/></a>
+    <a href="https://azure.microsoft.com/en-us"><img src="https://img.icons8.com/fluency/48/null/azure-1.png"/></a>
+    <a href="https://azure.microsoft.com/en-us"><img src="https://cdn.discordapp.com/attachments/900689339179216926/1093035146963329084/image_6.png"/></a>
+   
+  </p> 
+  
+## 🔨 Tools
+  <p align="left"> 
+    <a href="https://visualstudio.microsoft.com/"><img src="https://img.icons8.com/fluency/48/000000/visual-studio.png" alt="Visual Studio 2019"/></a>
+    <a href="https://code.visualstudio.com/"><img src="https://img.icons8.com/color/51/null/visual-studio-code-2019.png"/></a>
+    <a href="https://www.figma.com/"><img src="https://img.icons8.com/fluency/48/null/figma.png"/></a>
+    <a href="https://www.postman.com/"><img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/null/external-postman-is-the-only-complete-api-development-environment-logo-shadow-tal-revivo.png"/></a>
+     <a href="https://www.adobe.com/creativecloud.html"><img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px /></a>
+      <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=48px /></a>
+    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=48px />
+    <a href="https://www.microsoft.com/en-us/microsoft-365/excel"><img src="https://img.icons8.com/fluency/48/000000/microsoft-excel-2019.png" alt="MS Excel logo"/></a>
+    <a href="https://git-scm.com/"><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git"/></a>
+    <a href="https://www.testcaselab.com/"><img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_d64820c5928a1ce8f91d728566c58d72/testcaselab.jpg" alt="Test Case Lab" width=48px /></a>
+    <a href="https://www.figma.com/"><img src="https://img.icons8.com/color/48/null/blender-3d.png"/></a>
+  </p>   
+## 🔧 Installation
 
-# 2. Expectations from the interviewee
-The car rental system consists of multiple components. Each component has its own functionality and constraints. 
-This section provides an overview of some of the main expectations that the interviewer will want to hear you discuss in more detail during the interview.
+```
+You can download our project by using the green "Code" button.
 
-## 2.1. Vehicle types
-An interviewer would expect you to discuss the different vehicle types, and ask the following questions:
-* What types of vehicles will that system support?
-* How can we identify the specific vehicle?
+Or by pasting the following code in your CMD:
+git clone https://github.com/SYSolakov20/onsens.git
+```
+## 🔑 Application Access
 
-## 2.2. Search interface
-Members will use the application and add location and the reservation date. They will receive several options to select the vehicle. 
-Therefore, an interviewer would expect you to ask questions listed below:
-* Is it possible to search a vehicle using its name or type?
-* Can we search for a vehicle by its model number?
+*You can access our program by:*
+<ol>
+    <li>Downloading it from our site link to site</li>
+    <li>Downloading it from github release</li>
+    <li>Or you can run the code on your local device by these steps:</li>
+</ol>
 
-## 2.3. Services
-An interviewer would also expect you to discuss the services of the car rental system and may ask the following questions:
-* Does a car rental system assign a driver to its customer?
-* Does a car rental system provide roadside assistance to its customer?
+*Open cmd and clone our repo by typing:*
 
-## 2.4. Reservation cancelation
-There will be many duplicate instances in our system. The interviewer expects you to ask questions listed below:
+```
+git clone https://github.com/codingburgas/2223-otj-10-project-the-car-rental-system-DNDonchev20.git
+```
 
-* Can the member be able to cancel a reservation?
-* Which member is allowed to request a vehicle reservation cancelation and when?
+*Then navigate to our solution file and open it with VS2022, on platform and debugger select:*
 
-## 2.5. Payment flexibility
-One of the car rental system’s most significant attributes is its customer payment structure. The payment depends on the vehicle type and time stamp. Therefore, an interviewer would expect you to ask questions listed below:
+```
+release/x64 
+```
 
-* How can customers pay at different branch locations and by different methods (cash, credit, or cheque)?
-* If there are multiple branches of the car rental system, how will the system keep track of the customer having already paid at a particular branch?
-
-# 3. Requirements for the Car Rental System
-The set of requirements for the car rental system are listed below:
-
- ## Authentication
-* R1: There can be two types of users in the car rental system, i.e., customers and receptionists.
-
-* R2: The system should handle multiple types of vehicles. Initially, the system should cater to the following vehicles: cars, trucks, vans, and motorcycles.
-
-## Users Management
-* R3: There can be multiple subtypes for vehicles. The car type can be economy, luxury, standard, and compact. The van type can be passenger or cargo. Moreover, the motorcycle type can be cruiser, touring, or sports.The truck type can be light, medium, or high-duty.
-
-* R4: The system should be able to keep a record of who reserved a particular vehicle and on which date the vehicle was issued.
-
-* R5: The system should be able to find out how many vehicles have been rented out by the specific customer.
-
-* R6: The customers should be able to cancel their reservations.
-
-* R7: To keep track of all events related to the vehicle, the system should maintain a vehicle log.
-
-* R8: The system should allow the users to add equipment to the reservations like a ski rack, child seat, and navigation.
-
-* R9: The system should allow the users to add services to the reservations like a driver, Wi-Fi, and roadside assistance.
-
-## Projects Management
-* R10: The system should send a notification to the customer and generate a fine if the vehicle is not returned within the due date.
-
-* R11: The system should allow the user to search the vehicles by type or model.
-
-* R12: A system should be able to manage the multiple branches of the car rental system.
-
-* R13: Every branch of the car rental system should have parking stalls to park the vehicles.
-
-# Base requirements
-
-* Programming language: C++
-* Visual Studio 2022 (latest release)
-* Git for Windows (latest release)
-* Skill for working with Git from command line (CLI) & Git extension in Visual Studio
-* Following the best practices for C++ / Git / GitHub is a mandatory requirement
-
-Additional requirements will be added later.
+*then debug the project, run it and enjoy our app!*
+ 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer&customColorList=2,3,12,19,21,23,26" width="1200px"/>
+</p>

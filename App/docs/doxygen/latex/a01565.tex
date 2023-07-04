@@ -1,0 +1,222 @@
+\doxysection{Login Class Reference}
+\hypertarget{a01565}{}\label{a01565}\index{Login@{Login}}
+
+
+{\ttfamily \#include $<$Login.\+hpp$>$}
+
+
+
+Inheritance diagram for Login\+:
+% FIG 0
+
+
+Collaboration diagram for Login\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01565_afd3141ad97e8c8e618e41eeca9abb903}{background\+Transformation}} (\mbox{\hyperlink{a01777}{Sprite}} sprite1, \mbox{\hyperlink{a01777}{Sprite}} sprite2, \mbox{\hyperlink{a01785}{Texture}} Texture2, float \texorpdfstring{$\ast$}{*}transform\+Progess, int index)
+\item 
+void \mbox{\hyperlink{a01565_a9965c9e4d3b3c2ae6dba279906e52e6b}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01565_a93184348774e4aff77e4479a47757f2c}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+void \mbox{\hyperlink{a01565_ab1640c12ea2b606a883d3bb6392e782b}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01565_abaaf6c8caef6ffa11a86bec05fded910}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01565_a3ef5b9ea02a34b27b238b889e06d82de}{Login}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}})
+\item 
+void \mbox{\hyperlink{a01565_a9fea1f616c23343a24be9ed6dad62014}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01565_a8b04bac3063b8e19572c17d86ceb840f}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01565_ac483a2042bd8c981551ff0037cb3beaa}{\texorpdfstring{$\sim$}{\string~}\+Login}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01757}{Render\+Texture}} \mbox{\hyperlink{a01565_a6a3bd8ff980c4a1882dea2ccd3b31e02}{render\+Texture}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01565_a79ebe811d3740a1902e0e866cb173d9d}{sprite\+Login\+Black}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01565_a52348fea220c32c4d169b8fc1f790be4}{sprite\+Login\+White}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01565_abdd992e6c965371926c5c1d65784d07f}{texture\+Login\+Black}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01565_a9ecd3734246ce349a6af19206e7ff9af}{texture\+Login\+White}}
+\item 
+float \mbox{\hyperlink{a01565_afe2b8fb029e8e266a3b525cc45e2e0f4}{transform\+Progress}} \mbox{[}100\mbox{]}
+\item 
+float \mbox{\hyperlink{a01565_aa106829d483af0dfb263a8d63dff2981}{transform\+Speed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01565_a3ef5b9ea02a34b27b238b889e06d82de}\label{a01565_a3ef5b9ea02a34b27b238b889e06d82de} 
+\index{Login@{Login}!Login@{Login}}
+\index{Login@{Login}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily Login\+::\+Login (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01565_ac483a2042bd8c981551ff0037cb3beaa}\label{a01565_ac483a2042bd8c981551ff0037cb3beaa} 
+\index{Login@{Login}!````~Login@{\texorpdfstring{$\sim$}{\string~}Login}}
+\index{````~Login@{\texorpdfstring{$\sim$}{\string~}Login}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Login()}{\string~Login()}}
+{\footnotesize\ttfamily Login\+::\texorpdfstring{$\sim$}{\string~}\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01565_afd3141ad97e8c8e618e41eeca9abb903}\label{a01565_afd3141ad97e8c8e618e41eeca9abb903} 
+\index{Login@{Login}!backgroundTransformation@{backgroundTransformation}}
+\index{backgroundTransformation@{backgroundTransformation}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{backgroundTransformation()}{backgroundTransformation()}}
+{\footnotesize\ttfamily void Login\+::background\+Transformation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01777}{Sprite}}}]{sprite1,  }\item[{\mbox{\hyperlink{a01777}{Sprite}}}]{sprite2,  }\item[{\mbox{\hyperlink{a01785}{Texture}}}]{Texture2,  }\item[{float \texorpdfstring{$\ast$}{*}}]{transform\+Progess,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{a01565_a9965c9e4d3b3c2ae6dba279906e52e6b}\label{a01565_a9965c9e4d3b3c2ae6dba279906e52e6b} 
+\index{Login@{Login}!draw@{draw}}
+\index{draw@{draw}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Login\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01565_a93184348774e4aff77e4479a47757f2c}\label{a01565_a93184348774e4aff77e4479a47757f2c} 
+\index{Login@{Login}!draw@{draw}}
+\index{draw@{draw}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Login\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01565_ab1640c12ea2b606a883d3bb6392e782b}\label{a01565_ab1640c12ea2b606a883d3bb6392e782b} 
+\index{Login@{Login}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void Login\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01565_abaaf6c8caef6ffa11a86bec05fded910}\label{a01565_abaaf6c8caef6ffa11a86bec05fded910} 
+\index{Login@{Login}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool Login\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01565_a9fea1f616c23343a24be9ed6dad62014}\label{a01565_a9fea1f616c23343a24be9ed6dad62014} 
+\index{Login@{Login}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void Login\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01565_a8b04bac3063b8e19572c17d86ceb840f}\label{a01565_a8b04bac3063b8e19572c17d86ceb840f} 
+\index{Login@{Login}!update@{update}}
+\index{update@{update}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Login\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{Login@{Login}!answers@{answers}}
+\index{answers@{answers}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{Login@{Login}!inputs@{inputs}}
+\index{inputs@{inputs}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{Login@{Login}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01565_a6a3bd8ff980c4a1882dea2ccd3b31e02}\label{a01565_a6a3bd8ff980c4a1882dea2ccd3b31e02} 
+\index{Login@{Login}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{renderTexture}{renderTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01757}{Render\+Texture}} Login\+::render\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_a79ebe811d3740a1902e0e866cb173d9d}\label{a01565_a79ebe811d3740a1902e0e866cb173d9d} 
+\index{Login@{Login}!spriteLoginBlack@{spriteLoginBlack}}
+\index{spriteLoginBlack@{spriteLoginBlack}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{spriteLoginBlack}{spriteLoginBlack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Login\+::sprite\+Login\+Black\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_a52348fea220c32c4d169b8fc1f790be4}\label{a01565_a52348fea220c32c4d169b8fc1f790be4} 
+\index{Login@{Login}!spriteLoginWhite@{spriteLoginWhite}}
+\index{spriteLoginWhite@{spriteLoginWhite}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{spriteLoginWhite}{spriteLoginWhite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} Login\+::sprite\+Login\+White\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_abdd992e6c965371926c5c1d65784d07f}\label{a01565_abdd992e6c965371926c5c1d65784d07f} 
+\index{Login@{Login}!textureLoginBlack@{textureLoginBlack}}
+\index{textureLoginBlack@{textureLoginBlack}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{textureLoginBlack}{textureLoginBlack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Login\+::texture\+Login\+Black\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_a9ecd3734246ce349a6af19206e7ff9af}\label{a01565_a9ecd3734246ce349a6af19206e7ff9af} 
+\index{Login@{Login}!textureLoginWhite@{textureLoginWhite}}
+\index{textureLoginWhite@{textureLoginWhite}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{textureLoginWhite}{textureLoginWhite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} Login\+::texture\+Login\+White\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_afe2b8fb029e8e266a3b525cc45e2e0f4}\label{a01565_afe2b8fb029e8e266a3b525cc45e2e0f4} 
+\index{Login@{Login}!transformProgress@{transformProgress}}
+\index{transformProgress@{transformProgress}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{transformProgress}{transformProgress}}
+{\footnotesize\ttfamily float Login\+::transform\+Progress\mbox{[}100\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01565_aa106829d483af0dfb263a8d63dff2981}\label{a01565_aa106829d483af0dfb263a8d63dff2981} 
+\index{Login@{Login}!transformSpeed@{transformSpeed}}
+\index{transformSpeed@{transformSpeed}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{transformSpeed}{transformSpeed}}
+{\footnotesize\ttfamily float Login\+::transform\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{Login@{Login}!type@{type}}
+\index{type@{type}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00278}{Login.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00623}{Login.\+cpp}}\end{DoxyCompactItemize}

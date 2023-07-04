@@ -1,0 +1,111 @@
+\doxysection{nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter Class Reference}
+\hypertarget{a01081}{}\label{a01081}\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+
+
+{\ttfamily \#include $<$input\+\_\+adapters.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01081_ac853c96c60f93dc97433dacd98179f35}{char\+\_\+type}} = char
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01081_a308099b496a0cba2123a06fe99a95d02}{file\+\_\+input\+\_\+adapter}} (const \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&)=delete
+\item 
+\mbox{\hyperlink{a01081_a5a35c5bc8d6216ee6e4070fc4b6b0127}{file\+\_\+input\+\_\+adapter}} (\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&\&) noexcept=default
+\item 
+\mbox{\hyperlink{a01081_aeade050f2793280503be93feff2ece5b}{file\+\_\+input\+\_\+adapter}} (std\+::\+FILE \texorpdfstring{$\ast$}{*}f) noexcept
+\item 
+std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type \mbox{\hyperlink{a01081_acd3cff5e0b14fef206c40aa6b96a3ef2}{get\+\_\+character}} () noexcept
+\item 
+\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \& \mbox{\hyperlink{a01081_a8e2293f81491dabe5dc74b2d4910d400}{operator=}} (const \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&)=delete
+\item 
+\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \& \mbox{\hyperlink{a01081_a54d43cbc6f5677d8f7b4a3123692e541}{operator=}} (\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&\&)=delete
+\item 
+\mbox{\hyperlink{a01081_a6977a9d721de8181253d8431a335ba63}{\texorpdfstring{$\sim$}{\string~}file\+\_\+input\+\_\+adapter}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::\+FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01081_a164fbe2739ac97e517e22bc1fff1c174}{m\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em the file pointer to read from \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input adapter for stdio file access. This adapter read only 1 byte and do not use any buffer. This adapter is a very low level adapter. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01081_ac853c96c60f93dc97433dacd98179f35}\label{a01081_ac853c96c60f93dc97433dacd98179f35} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01081_ac853c96c60f93dc97433dacd98179f35}{nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::char\+\_\+type}} =  char}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01081_aeade050f2793280503be93feff2ece5b}\label{a01081_aeade050f2793280503be93feff2ece5b} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!file\_input\_adapter@{file\_input\_adapter}}
+\index{file\_input\_adapter@{file\_input\_adapter}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{file\_input\_adapter()}{file\_input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::file\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::\+FILE \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01081_a308099b496a0cba2123a06fe99a95d02}\label{a01081_a308099b496a0cba2123a06fe99a95d02} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!file\_input\_adapter@{file\_input\_adapter}}
+\index{file\_input\_adapter@{file\_input\_adapter}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{file\_input\_adapter()}{file\_input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::file\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01081_a5a35c5bc8d6216ee6e4070fc4b6b0127}\label{a01081_a5a35c5bc8d6216ee6e4070fc4b6b0127} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!file\_input\_adapter@{file\_input\_adapter}}
+\index{file\_input\_adapter@{file\_input\_adapter}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{file\_input\_adapter()}{file\_input\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::file\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01081_a6977a9d721de8181253d8431a335ba63}\label{a01081_a6977a9d721de8181253d8431a335ba63} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!````~file\_input\_adapter@{\texorpdfstring{$\sim$}{\string~}file\_input\_adapter}}
+\index{````~file\_input\_adapter@{\texorpdfstring{$\sim$}{\string~}file\_input\_adapter}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}file\_input\_adapter()}{\string~file\_input\_adapter()}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::\texorpdfstring{$\sim$}{\string~}file\+\_\+input\+\_\+adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01081_acd3cff5e0b14fef206c40aa6b96a3ef2}\label{a01081_acd3cff5e0b14fef206c40aa6b96a3ef2} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!get\_character@{get\_character}}
+\index{get\_character@{get\_character}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{get\_character()}{get\_character()}}
+{\footnotesize\ttfamily std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::get\+\_\+character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01081_a8e2293f81491dabe5dc74b2d4910d400}\label{a01081_a8e2293f81491dabe5dc74b2d4910d400} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \& nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01081_a54d43cbc6f5677d8f7b4a3123692e541}\label{a01081_a54d43cbc6f5677d8f7b4a3123692e541} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \& nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01081_a164fbe2739ac97e517e22bc1fff1c174}\label{a01081_a164fbe2739ac97e517e22bc1fff1c174} 
+\index{nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}!m\_file@{m\_file}}
+\index{m\_file@{m\_file}!nlohmann::detail::file\_input\_adapter@{nlohmann::detail::file\_input\_adapter}}
+\doxysubsubsection{\texorpdfstring{m\_file}{m\_file}}
+{\footnotesize\ttfamily std\+::\+FILE\texorpdfstring{$\ast$}{*} nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter\+::m\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the file pointer to read from 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/input/\mbox{\hyperlink{a00167}{input\+\_\+adapters.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,139 @@
+\doxysection{Login\+Register Class Reference}
+\hypertarget{a01569}{}\label{a01569}\index{LoginRegister@{LoginRegister}}
+
+
+{\ttfamily \#include $<$Login\+Register.\+hpp$>$}
+
+
+
+Inheritance diagram for Login\+Register\+:
+% FIG 0
+
+
+Collaboration diagram for Login\+Register\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01569_a396a24606b365ce28bce2af5b87a3d95}{check\+Login\+Register}} (string entered\+Name, string enetered\+Contact\+Number, string email, string password, string is\+Log\+Or\+Reg)
+\item 
+string \mbox{\hyperlink{a01569_a5ebfee89a4826283f106f53121d72793}{get\+Name}} (string entered\+Email)
+\item 
+string \mbox{\hyperlink{a01569_a49a939337ade8008aa3fb8b144cf2ec1}{get\+Role}} (string entered\+Email)
+\item 
+int \mbox{\hyperlink{a01569_aab20c6cc959d5ef048318de89cf0a983}{get\+User\+Id}} (string entered\+Email)
+\item 
+void \mbox{\hyperlink{a01569_a108699573f2614e409b37b4eb3d33870}{get\+Users}} ()
+\item 
+vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ \mbox{\hyperlink{a01569_a14d0e8e584ddf8114f85fdef922d6750}{get\+Vehicle\+Parametres}} ()
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{a01569_a21768834c5cf95e4af16678fabe85b10}{get\+Vehicle\+Prices\+Indexes}} (int budget\+Choice, string car\+Type)
+\item 
+\mbox{\hyperlink{a01569_a9c24371ea5aa3f387ee0d7fd4d34ba1c}{Login\+Register}} ()=default
+\item 
+void \mbox{\hyperlink{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}{pass\+Data}} (std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ data)
+\item 
+void \mbox{\hyperlink{a01569_a76295e017aeca3f3e079c28977ddbdaf}{post\+User}} (string entered\+Name, string entered\+Contact\+Number, string entered\+Email, string entered\+Password, string entered\+Role)
+\item 
+void \mbox{\hyperlink{a01569_ab8a12aa600a7ae3bce2387c025df808c}{put\+Vehicle}} (string vehicle\+Type, string name, string manufacturer, string model, bool is\+Reserved, string reservation\+Date, string location, string price, int reserved\+By\+Id)
+\item 
+\mbox{\hyperlink{a01569_abf397af0b3de607db31f6904c081ce15}{\texorpdfstring{$\sim$}{\string~}\+Login\+Register}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00677}{Handler}} \mbox{\hyperlink{a01569_ad23161563ec0c989b590333fb546840e}{handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01569_a9c24371ea5aa3f387ee0d7fd4d34ba1c}\label{a01569_a9c24371ea5aa3f387ee0d7fd4d34ba1c} 
+\index{LoginRegister@{LoginRegister}!LoginRegister@{LoginRegister}}
+\index{LoginRegister@{LoginRegister}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{LoginRegister()}{LoginRegister()}}
+{\footnotesize\ttfamily Login\+Register\+::\+Login\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a01569_abf397af0b3de607db31f6904c081ce15}\label{a01569_abf397af0b3de607db31f6904c081ce15} 
+\index{LoginRegister@{LoginRegister}!````~LoginRegister@{\texorpdfstring{$\sim$}{\string~}LoginRegister}}
+\index{````~LoginRegister@{\texorpdfstring{$\sim$}{\string~}LoginRegister}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LoginRegister()}{\string~LoginRegister()}}
+{\footnotesize\ttfamily Login\+Register\+::\texorpdfstring{$\sim$}{\string~}\+Login\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01569_a396a24606b365ce28bce2af5b87a3d95}\label{a01569_a396a24606b365ce28bce2af5b87a3d95} 
+\index{LoginRegister@{LoginRegister}!checkLoginRegister@{checkLoginRegister}}
+\index{checkLoginRegister@{checkLoginRegister}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{checkLoginRegister()}{checkLoginRegister()}}
+{\footnotesize\ttfamily bool Login\+Register\+::check\+Login\+Register (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{enetered\+Contact\+Number,  }\item[{string}]{email,  }\item[{string}]{password,  }\item[{string}]{is\+Log\+Or\+Reg }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a5ebfee89a4826283f106f53121d72793}\label{a01569_a5ebfee89a4826283f106f53121d72793} 
+\index{LoginRegister@{LoginRegister}!getName@{getName}}
+\index{getName@{getName}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Name (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a49a939337ade8008aa3fb8b144cf2ec1}\label{a01569_a49a939337ade8008aa3fb8b144cf2ec1} 
+\index{LoginRegister@{LoginRegister}!getRole@{getRole}}
+\index{getRole@{getRole}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Role (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_aab20c6cc959d5ef048318de89cf0a983}\label{a01569_aab20c6cc959d5ef048318de89cf0a983} 
+\index{LoginRegister@{LoginRegister}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily int Login\+Register\+::get\+User\+Id (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a108699573f2614e409b37b4eb3d33870}\label{a01569_a108699573f2614e409b37b4eb3d33870} 
+\index{LoginRegister@{LoginRegister}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily void Login\+Register\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a14d0e8e584ddf8114f85fdef922d6750}\label{a01569_a14d0e8e584ddf8114f85fdef922d6750} 
+\index{LoginRegister@{LoginRegister}!getVehicleParametres@{getVehicleParametres}}
+\index{getVehicleParametres@{getVehicleParametres}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getVehicleParametres()}{getVehicleParametres()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ Login\+Register\+::get\+Vehicle\+Parametres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a21768834c5cf95e4af16678fabe85b10}\label{a01569_a21768834c5cf95e4af16678fabe85b10} 
+\index{LoginRegister@{LoginRegister}!getVehiclePricesIndexes@{getVehiclePricesIndexes}}
+\index{getVehiclePricesIndexes@{getVehiclePricesIndexes}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{getVehiclePricesIndexes()}{getVehiclePricesIndexes()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Login\+Register\+::get\+Vehicle\+Prices\+Indexes (\begin{DoxyParamCaption}\item[{int}]{budget\+Choice,  }\item[{string}]{car\+Type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}\label{a01569_a22fce4252a4f797af0dbbf2fdc6510a9} 
+\index{LoginRegister@{LoginRegister}!passData@{passData}}
+\index{passData@{passData}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{passData()}{passData()}}
+{\footnotesize\ttfamily void Login\+Register\+::pass\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_a76295e017aeca3f3e079c28977ddbdaf}\label{a01569_a76295e017aeca3f3e079c28977ddbdaf} 
+\index{LoginRegister@{LoginRegister}!postUser@{postUser}}
+\index{postUser@{postUser}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{postUser()}{postUser()}}
+{\footnotesize\ttfamily void Login\+Register\+::post\+User (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{entered\+Contact\+Number,  }\item[{string}]{entered\+Email,  }\item[{string}]{entered\+Password,  }\item[{string}]{entered\+Role }\end{DoxyParamCaption})}
+
+\Hypertarget{a01569_ab8a12aa600a7ae3bce2387c025df808c}\label{a01569_ab8a12aa600a7ae3bce2387c025df808c} 
+\index{LoginRegister@{LoginRegister}!putVehicle@{putVehicle}}
+\index{putVehicle@{putVehicle}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{putVehicle()}{putVehicle()}}
+{\footnotesize\ttfamily void Login\+Register\+::put\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{vehicle\+Type,  }\item[{string}]{name,  }\item[{string}]{manufacturer,  }\item[{string}]{model,  }\item[{bool}]{is\+Reserved,  }\item[{string}]{reservation\+Date,  }\item[{string}]{location,  }\item[{string}]{price,  }\item[{int}]{reserved\+By\+Id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01569_ad23161563ec0c989b590333fb546840e}\label{a01569_ad23161563ec0c989b590333fb546840e} 
+\index{LoginRegister@{LoginRegister}!handler@{handler}}
+\index{handler@{handler}!LoginRegister@{LoginRegister}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00677}{Handler}} Login\+Register\+::handler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00281}{Login\+Register.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00626}{Login\+Register.\+cpp}}\end{DoxyCompactItemize}

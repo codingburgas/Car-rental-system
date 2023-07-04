@@ -1,0 +1,195 @@
+\doxysection{sf\+::Vertex Class Reference}
+\hypertarget{a01797}{}\label{a01797}\index{sf::Vertex@{sf::Vertex}}
+
+
+Define a point with color and texture coordinates.  
+
+
+
+
+{\ttfamily \#include $<$Vertex.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Vertex\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01797_a6b4c79cd69f7ec1296fede536f39e9c8}{Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01797_a4dccc5c351b73b6fac169fe442535b40}{Vertex}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Position)
+\begin{DoxyCompactList}\small\item\em Construct the vertex from its position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01797_a70b0679b4ec531d5bd1a7d0225c7321a}{Vertex}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Position, const \mbox{\hyperlink{a01685}{Color}} \&the\+Color)
+\begin{DoxyCompactList}\small\item\em Construct the vertex from its position and color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01797_ad5943f2b3cbc64b6e714bb37ccaf4960}{Vertex}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Position, const \mbox{\hyperlink{a01685}{Color}} \&the\+Color, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Tex\+Coords)
+\begin{DoxyCompactList}\small\item\em Construct the vertex from its position, color and texture coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01797_ab9bf849c4c0d82d09bf5bece23d2456a}{Vertex}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Position, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&the\+Tex\+Coords)
+\begin{DoxyCompactList}\small\item\em Construct the vertex from its position and texture coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01797_a799faa0629442e90f07cd2edb568ff80}{color}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01685}{Color} of the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01797_a8a4e0f4dfa7f1eb215c92e93d04f0ac0}{position}}
+\begin{DoxyCompactList}\small\item\em 2D position of the vertex \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01797_a9e79bd05818d36c4789751908037097c}{tex\+Coords}}
+\begin{DoxyCompactList}\small\item\em Coordinates of the texture\textquotesingle{}s pixel to map to the vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define a point with color and texture coordinates. 
+
+A vertex is an improved point. It has a position and other extra attributes that will be used for drawing\+: in SFML, vertices also have a color and a pair of texture coordinates.
+
+The vertex is the building block of drawing. Everything which is visible on screen is made of vertices. They are grouped as 2D primitives (triangles, quads, ...), and these primitives are grouped to create even more complex 2D entities such as sprites, texts, etc.
+
+If you use the graphical entities of SFML (sprite, text, shape) you won\textquotesingle{}t have to deal with vertices directly. But if you want to define your own 2D entities, such as tiled maps or particle systems, using vertices will allow you to get maximum performances.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ define\ a\ 100x100\ square,\ red,\ with\ a\ 10x10\ texture\ mapped\ on\ it}}
+\DoxyCodeLine{\mbox{\hyperlink{a01797}{sf::Vertex}}\ vertices[]\ =}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01797}{sf::Vertex}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(\ \ 0,\ \ \ 0),\ \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}},\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(\ 0,\ \ 0)),}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01797}{sf::Vertex}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(\ \ 0,\ 100),\ \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}},\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(\ 0,\ 10)),}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01797}{sf::Vertex}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(100,\ 100),\ \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}},\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(10,\ 10)),}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01797}{sf::Vertex}}(\mbox{\hyperlink{a01953}{sf::Vector2f}}(100,\ \ \ 0),\ \mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}},\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(10,\ \ 0))}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ draw\ it}}
+\DoxyCodeLine{window.draw(vertices,\ 4,\ \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}{sf::Quads}});}
+
+\end{DoxyCode}
+
+
+Note\+: although texture coordinates are supposed to be an integer amount of pixels, their type is float because of some buggy graphics drivers that are not able to process integer coordinates correctly.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01801}{sf\+::\+Vertex\+Array} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01797_a6b4c79cd69f7ec1296fede536f39e9c8}\label{a01797_a6b4c79cd69f7ec1296fede536f39e9c8} 
+\index{sf::Vertex@{sf::Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+::\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01797_a4dccc5c351b73b6fac169fe442535b40}\label{a01797_a4dccc5c351b73b6fac169fe442535b40} 
+\index{sf::Vertex@{sf::Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Position }\end{DoxyParamCaption})}
+
+
+
+Construct the vertex from its position. 
+
+The vertex color is white and texture coordinates are (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Position} & \doxylink{a01797}{Vertex} position \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01797_a70b0679b4ec531d5bd1a7d0225c7321a}\label{a01797_a70b0679b4ec531d5bd1a7d0225c7321a} 
+\index{sf::Vertex@{sf::Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Position,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{the\+Color }\end{DoxyParamCaption})}
+
+
+
+Construct the vertex from its position and color. 
+
+The texture coordinates are (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Position} & \doxylink{a01797}{Vertex} position \\
+\hline
+{\em the\+Color} & \doxylink{a01797}{Vertex} color \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01797_ab9bf849c4c0d82d09bf5bece23d2456a}\label{a01797_ab9bf849c4c0d82d09bf5bece23d2456a} 
+\index{sf::Vertex@{sf::Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Position,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Tex\+Coords }\end{DoxyParamCaption})}
+
+
+
+Construct the vertex from its position and texture coordinates. 
+
+The vertex color is white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Position} & \doxylink{a01797}{Vertex} position \\
+\hline
+{\em the\+Tex\+Coords} & \doxylink{a01797}{Vertex} texture coordinates \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01797_ad5943f2b3cbc64b6e714bb37ccaf4960}\label{a01797_ad5943f2b3cbc64b6e714bb37ccaf4960} 
+\index{sf::Vertex@{sf::Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Position,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{the\+Color,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{the\+Tex\+Coords }\end{DoxyParamCaption})}
+
+
+
+Construct the vertex from its position, color and texture coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Position} & \doxylink{a01797}{Vertex} position \\
+\hline
+{\em the\+Color} & \doxylink{a01797}{Vertex} color \\
+\hline
+{\em the\+Tex\+Coords} & \doxylink{a01797}{Vertex} texture coordinates \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01797_a799faa0629442e90f07cd2edb568ff80}\label{a01797_a799faa0629442e90f07cd2edb568ff80} 
+\index{sf::Vertex@{sf::Vertex}!color@{color}}
+\index{color@{color}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Vertex\+::color}
+
+
+
+\doxylink{a01685}{Color} of the vertex. 
+
+\Hypertarget{a01797_a8a4e0f4dfa7f1eb215c92e93d04f0ac0}\label{a01797_a8a4e0f4dfa7f1eb215c92e93d04f0ac0} 
+\index{sf::Vertex@{sf::Vertex}!position@{position}}
+\index{position@{position}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Vertex\+::position}
+
+
+
+2D position of the vertex 
+
+\Hypertarget{a01797_a9e79bd05818d36c4789751908037097c}\label{a01797_a9e79bd05818d36c4789751908037097c} 
+\index{sf::Vertex@{sf::Vertex}!texCoords@{texCoords}}
+\index{texCoords@{texCoords}!sf::Vertex@{sf::Vertex}}
+\doxysubsubsection{\texorpdfstring{texCoords}{texCoords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Vertex\+::tex\+Coords}
+
+
+
+Coordinates of the texture\textquotesingle{}s pixel to map to the vertex. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00440}{Vertex.\+hpp}}\end{DoxyCompactItemize}

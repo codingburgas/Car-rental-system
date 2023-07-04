@@ -1,0 +1,43 @@
+\doxysection{curlholder.\+h}
+\hypertarget{a00041_source}{}\label{a00041_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/curlholder.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/curlholder.h}}
+\mbox{\hyperlink{a00041}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_CURL\_HOLDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_CURL\_HOLDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00113}{curl/curl.h}}>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00749}{CurlHolder}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ It\ does\ not\ make\ sense\ to\ make\ a\ std::mutex\ const.}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE\ (cppcoreguidelines-\/avoid-\/non-\/const-\/global-\/variables)\ \ \ \ }}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ \mbox{\hyperlink{a00749_ad3d145b96b82e82d7deef575e74627d7}{curl\_easy\_init\_mutex\_}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}*\ \mbox{\hyperlink{a00749_ae239c4424fca4b55b84f30f985b865a8}{handle}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00949}{curl\_slist}}*\ \mbox{\hyperlink{a00749_a7f63438690f1805b1dfab6739f539f8b}{chunk}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00917}{curl\_httppost}}*\ \mbox{\hyperlink{a00749_ac5f453c13093fcdde303a477c95c5cad}{formpost}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00028\ \ \ \ \ std::array<char,\ CURL\_ERROR\_SIZE>\ \mbox{\hyperlink{a00749_ac24bac69e9cc384ebcb84905fb5a5357}{error}}\{\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{a00749_a2aeb8cf309e46dbf85f793d7a745e975}{CurlHolder}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{a00749_a4241aac98b70c2bf6bdafd5d73e430a9}{CurlHolder}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00749}{CurlHolder}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{a00749_a0979ce08aa5ec2cc39ec847fefb9aada}{CurlHolder}}(\mbox{\hyperlink{a00749}{CurlHolder}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{a00749_a2b6481daffc7528f25ba8a8c25ee4931}{\string~CurlHolder}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a00749}{CurlHolder}}\&\ \mbox{\hyperlink{a00749_a48af508c2477bdb975688b9b91b687f2}{operator=}}(\mbox{\hyperlink{a00749}{CurlHolder}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a00749}{CurlHolder}}\&\ \mbox{\hyperlink{a00749_a8fa7ae3d659d04b87f052d1b40a28d2e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00749}{CurlHolder}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{a00749_aa37d6bce3799080931d325d7707fc573}{urlEncode}}(\textcolor{keyword}{const}\ std::string\&\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{a00749_a933c684249c29a8620b22785050458af}{urlDecode}}(\textcolor{keyword}{const}\ std::string\&\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

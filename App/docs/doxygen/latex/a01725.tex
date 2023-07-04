@@ -1,0 +1,157 @@
+\doxysection{Vector4\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01725}{}\label{a01725}\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+
+
+4D vector type, used to set uniforms in GLSL  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01725_afdef97d94e5697622b5322637028accf}{Vector4}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, creates a zero vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01725_af1da65a743ddbb5c779b41eae766c00d}{Vector4}} (const Color \&color)
+\begin{DoxyCompactList}\small\item\em Construct float vector implicitly from color. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U $>$ }\\\mbox{\hyperlink{a01725_a6413d8b504d7fdfbb600a0caf9c90cc2}{Vector4}} (const \mbox{\hyperlink{a01725}{Vector4}}$<$ U $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Conversion constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01725_ae099ed0a6d7d78ed38ac023d0e4cec25}{Vector4}} (T X, T Y, T Z, T W)
+\begin{DoxyCompactList}\small\item\em Construct from 4 vector components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{a01725_a83daff43fa2b88b4e76474f4b9a45276}{w}}
+\begin{DoxyCompactList}\small\item\em 4th component (W) of the 4D vector \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{a01725_a2cedf20d2f695a4f0254681b13311ac9}{x}}
+\begin{DoxyCompactList}\small\item\em 1st component (X) of the 4D vector \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{a01725_aad001ba27515dc2dcb921e9c83596520}{y}}
+\begin{DoxyCompactList}\small\item\em 2nd component (Y) of the 4D vector \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{a01725_a5a7a1452d661e0b24e4b04c4dbff8ae7}{z}}
+\begin{DoxyCompactList}\small\item\em 3rd component (Z) of the 4D vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Vector4$<$ T $>$}
+4D vector type, used to set uniforms in GLSL 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01725_afdef97d94e5697622b5322637028accf}\label{a01725_afdef97d94e5697622b5322637028accf} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\mbox{\hyperlink{a01725}{\+::\+Vector4}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor, creates a zero vector. 
+
+\Hypertarget{a01725_ae099ed0a6d7d78ed38ac023d0e4cec25}\label{a01725_ae099ed0a6d7d78ed38ac023d0e4cec25} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\mbox{\hyperlink{a01725}{\+::\+Vector4}} (\begin{DoxyParamCaption}\item[{T}]{X,  }\item[{T}]{Y,  }\item[{T}]{Z,  }\item[{T}]{W }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct from 4 vector components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Component of the 4D vector \\
+\hline
+{\em Y} & Component of the 4D vector \\
+\hline
+{\em Z} & Component of the 4D vector \\
+\hline
+{\em W} & Component of the 4D vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01725_a6413d8b504d7fdfbb600a0caf9c90cc2}\label{a01725_a6413d8b504d7fdfbb600a0caf9c90cc2} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+\mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\mbox{\hyperlink{a01725}{\+::\+Vector4}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01725}{Vector4}}$<$ U $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Conversion constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & 4D vector of different type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01725_af1da65a743ddbb5c779b41eae766c00d}\label{a01725_af1da65a743ddbb5c779b41eae766c00d} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!Vector4@{Vector4}}
+\index{Vector4@{Vector4}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector4()}{Vector4()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\mbox{\hyperlink{a01725}{\+::\+Vector4}} (\begin{DoxyParamCaption}\item[{const Color \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct float vector implicitly from color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Color instance. Is normalized to \mbox{[}0, 1\mbox{]} for floats, and left as-\/is for ints. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01725_a83daff43fa2b88b4e76474f4b9a45276}\label{a01725_a83daff43fa2b88b4e76474f4b9a45276} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!w@{w}}
+\index{w@{w}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\+::w}
+
+
+
+4th component (W) of the 4D vector 
+
+\Hypertarget{a01725_a2cedf20d2f695a4f0254681b13311ac9}\label{a01725_a2cedf20d2f695a4f0254681b13311ac9} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!x@{x}}
+\index{x@{x}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\+::x}
+
+
+
+1st component (X) of the 4D vector 
+
+\Hypertarget{a01725_aad001ba27515dc2dcb921e9c83596520}\label{a01725_aad001ba27515dc2dcb921e9c83596520} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!y@{y}}
+\index{y@{y}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\+::y}
+
+
+
+2nd component (Y) of the 4D vector 
+
+\Hypertarget{a01725_a5a7a1452d661e0b24e4b04c4dbff8ae7}\label{a01725_a5a7a1452d661e0b24e4b04c4dbff8ae7} 
+\index{Vector4$<$ T $>$@{Vector4$<$ T $>$}!z@{z}}
+\index{z@{z}!Vector4$<$ T $>$@{Vector4$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01725}{Vector4}}$<$ T $>$\+::z}
+
+
+
+3rd component (Z) of the 4D vector 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00386}{Glsl.\+inl}}\end{DoxyCompactItemize}

@@ -1,0 +1,820 @@
+\doxysection{sf\+::Time Class Reference}
+\hypertarget{a01933}{}\label{a01933}\index{sf::Time@{sf::Time}}
+
+
+Represents a time value.  
+
+
+
+
+{\ttfamily \#include $<$Time.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Time\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{a01933_a000c2c64b74658ebd228b9294a464275}{as\+Microseconds}} () const
+\begin{DoxyCompactList}\small\item\em Return the time value as a number of microseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} \mbox{\hyperlink{a01933_aa16858ca030a07eb18958c321f256e5a}{as\+Milliseconds}} () const
+\begin{DoxyCompactList}\small\item\em Return the time value as a number of milliseconds. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{as\+Seconds}} () const
+\begin{DoxyCompactList}\small\item\em Return the time value as a number of seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933_acba0cfbc49e3a09a22a8e079eb67a05c}{Time}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Zero}}
+\begin{DoxyCompactList}\small\item\em Predefined \"{}zero\"{} time value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01933_abb009ceaef7f7e234572128cc81ba9b0}{Time}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}{microseconds}})
+\begin{DoxyCompactList}\small\item\em Construct from a number of microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{a01933_a9f00785b8e837350682e056ada05dd51}{m\+\_\+microseconds}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01933}{Time} value stored as microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}{microseconds}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}})
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853}{milliseconds}} (\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}})
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_abe757d058fd820b4c84232c1451c1efa}{seconds}} (float)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a951fd7219641f1e8191887f5dfe0dc31}{microseconds}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} amount)
+\begin{DoxyCompactList}\small\item\em Construct a time value from a number of microseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ae379d420bc07170668f51522023957b9}{milliseconds}} (\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} amount)
+\begin{DoxyCompactList}\small\item\em Construct a time value from a number of milliseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_ae06b561f6422ec8ca414d400efd2cf4b}{operator!=}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_aafb8b12fb0ac0e366d6ea9c9e9f93335}{operator\%}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \% operator to compute remainder of a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_af12dd271f14a17b58c9d737395e776d4}{operator\%=}} (\mbox{\hyperlink{a01933}{Time}} \&left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \%= operator to compute/assign remainder of a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a63723c9e9c5ff6151377ec4350c6f36e}{operator\texorpdfstring{$\ast$}{*}}} (float left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a40a6d0938fb4a43731d54fd90bfc6476}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ac1386c6360872d354b9b59eadcd9778d}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{a01933}{Time}} left, float right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_acd021b3ebb108053d7dec56869e27385}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_a8996b6a6fcb8f3854b486b8e43949b50}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{a01933}{Time}} \&left, float right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*}= operator to scale/assign a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_a6656a0a1a1802009a72d93fbba61f24a}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{a01933}{Time}} \&left, \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary \texorpdfstring{$\ast$}{*}= operator to scale/assign a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a7155e965f238f8c32d63649b0189ef47}{operator+}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary + operator to add two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_a831c8df4b7b9b47eaa0c5a52a1be654c}{operator+=}} (\mbox{\hyperlink{a01933}{Time}} \&left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary += operator to add/assign two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ace92ab9bc7aec80239af7218cd89cc80}{operator-\/}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary -\/ operator to subtract two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a1b23b91cf367764338c2ff922c65da4e}{operator-\/}} (\mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of unary -\/ operator to negate a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_aaf7888302cf4847f97cfc26875367b94}{operator-\/=}} (\mbox{\hyperlink{a01933}{Time}} \&left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary -\/= operator to subtract/assign two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_a3386c392dbc62e51dfa59730854d1ed2}{operator/}} (\mbox{\hyperlink{a01933}{Time}} left, float right)
+\begin{DoxyCompactList}\small\item\em Overload of binary / operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ab72f2de3e2bb592b4b4008dc1ac79056}{operator/}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary / operator to scale a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} float \mbox{\hyperlink{a01933_ac3ae4f4d24a93e088d8e36d68322ea0f}{operator/}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary / operator to compute the ratio of two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_a9835490c54cab06492ec3aa9e9275ef9}{operator/=}} (\mbox{\hyperlink{a01933}{Time}} \&left, float right)
+\begin{DoxyCompactList}\small\item\em Overload of binary /= operator to scale/assign a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& \mbox{\hyperlink{a01933_ad51871e3db77def834ae8688e64504ff}{operator/=}} (\mbox{\hyperlink{a01933}{Time}} \&left, \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} right)
+\begin{DoxyCompactList}\small\item\em Overload of binary /= operator to scale/assign a time value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_ac222933174ddcff5d14c3ac7d1020d54}{operator$<$}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_a2c22369869bf903578635bc6517c44d4}{operator$<$=}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<}= operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_a2b8453227f651e9d5db3663fa08c47e2}{operator==}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_a23978402846bf3c7ac54a3f2c6b397a2}{operator$>$}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>} operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01933_ad69edc80cd01b7a03f5673b4276181eb}{operator$>$=}} (\mbox{\hyperlink{a01933}{Time}} left, \mbox{\hyperlink{a01933}{Time}} right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>}= operator to compare two time values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01933_ae36b9ef700f0ed0516abf0194ceb546b}{seconds}} (float amount)
+\begin{DoxyCompactList}\small\item\em Construct a time value from a number of seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a time value. 
+
+\doxylink{a01933}{sf\+::\+Time} encapsulates a time value in a flexible way. It allows to define a time value either as a number of seconds, milliseconds or microseconds. It also works the other way round\+: you can read a time value as either a number of seconds, milliseconds or microseconds.
+
+By using such a flexible interface, the API doesn\textquotesingle{}t impose any fixed type or resolution for time values, and let the user choose its own favorite representation.
+
+\doxylink{a01933}{Time} values support the usual mathematical operations\+: you can add or subtract two times, multiply or divide a time by a number, compare two times, etc.
+
+Since they represent a time span and not an absolute time value, times can also be negative.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01933}{sf::Time}}\ t1\ =\ sf::seconds(0.1f);}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}\ milli\ =\ t1.\mbox{\hyperlink{a01933_aa16858ca030a07eb18958c321f256e5a}{asMilliseconds}}();\ \textcolor{comment}{//\ 100}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01933}{sf::Time}}\ t2\ =\ sf::milliseconds(30);}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ micro\ =\ t2.\mbox{\hyperlink{a01933_a000c2c64b74658ebd228b9294a464275}{asMicroseconds}}();\ \textcolor{comment}{//\ 30000}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01933}{sf::Time}}\ t3\ =\ sf::microseconds(-\/800000);}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ sec\ =\ t3.\mbox{\hyperlink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();\ \textcolor{comment}{//\ -\/0.8}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ update(\mbox{\hyperlink{a01933}{sf::Time}}\ elapsed)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ position\ +=\ speed\ *\ elapsed.\mbox{\hyperlink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{update(sf::milliseconds(100));}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01873}{sf\+::\+Clock} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01933_acba0cfbc49e3a09a22a8e079eb67a05c}\label{a01933_acba0cfbc49e3a09a22a8e079eb67a05c} 
+\index{sf::Time@{sf::Time}!Time@{Time}}
+\index{Time@{Time}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Time\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Sets the time value to zero. \Hypertarget{a01933_abb009ceaef7f7e234572128cc81ba9b0}\label{a01933_abb009ceaef7f7e234572128cc81ba9b0} 
+\index{sf::Time@{sf::Time}!Time@{Time}}
+\index{Time@{Time}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Time\+::\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{microseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Construct from a number of microseconds. 
+
+This function is internal. To construct time values, use sf\+::seconds, sf\+::milliseconds or sf\+::microseconds instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em microseconds} & Number of microseconds \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01933_a000c2c64b74658ebd228b9294a464275}\label{a01933_a000c2c64b74658ebd228b9294a464275} 
+\index{sf::Time@{sf::Time}!asMicroseconds@{asMicroseconds}}
+\index{asMicroseconds@{asMicroseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{asMicroseconds()}{asMicroseconds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Time\+::as\+Microseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the time value as a number of microseconds. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} in microseconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{as\+Seconds}, \doxylink{a01933_aa16858ca030a07eb18958c321f256e5a}{as\+Milliseconds} 
+\end{DoxySeeAlso}
+\Hypertarget{a01933_aa16858ca030a07eb18958c321f256e5a}\label{a01933_aa16858ca030a07eb18958c321f256e5a} 
+\index{sf::Time@{sf::Time}!asMilliseconds@{asMilliseconds}}
+\index{asMilliseconds@{asMilliseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{asMilliseconds()}{asMilliseconds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} sf\+::\+Time\+::as\+Milliseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the time value as a number of milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} in milliseconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{as\+Seconds}, \doxylink{a01933_a000c2c64b74658ebd228b9294a464275}{as\+Microseconds} 
+\end{DoxySeeAlso}
+\Hypertarget{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}\label{a01933_aa3df2f992d0b0041b4eb02258d43f0e3} 
+\index{sf::Time@{sf::Time}!asSeconds@{asSeconds}}
+\index{asSeconds@{asSeconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{asSeconds()}{asSeconds()}}
+{\footnotesize\ttfamily float sf\+::\+Time\+::as\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the time value as a number of seconds. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} in seconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_aa16858ca030a07eb18958c321f256e5a}{as\+Milliseconds}, \doxylink{a01933_a000c2c64b74658ebd228b9294a464275}{as\+Microseconds} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01933_a951fd7219641f1e8191887f5dfe0dc31}\label{a01933_a951fd7219641f1e8191887f5dfe0dc31} 
+\index{sf::Time@{sf::Time}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{microseconds()}{microseconds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} microseconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Construct a time value from a number of microseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Number of microseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} value constructed from the amount of microseconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_abe757d058fd820b4c84232c1451c1efa}{seconds}, \doxylink{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853}{milliseconds} 
+\end{DoxySeeAlso}
+\Hypertarget{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}\label{a01933_ab4f5b719ece75ebd11593f935fbe3bcb} 
+\index{sf::Time@{sf::Time}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{microseconds}{microseconds}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} microseconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01933_ae379d420bc07170668f51522023957b9}\label{a01933_ae379d420bc07170668f51522023957b9} 
+\index{sf::Time@{sf::Time}!milliseconds@{milliseconds}}
+\index{milliseconds@{milliseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{milliseconds()}{milliseconds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} milliseconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Construct a time value from a number of milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Number of milliseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} value constructed from the amount of milliseconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_abe757d058fd820b4c84232c1451c1efa}{seconds}, \doxylink{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}{microseconds} 
+\end{DoxySeeAlso}
+\Hypertarget{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853}\label{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853} 
+\index{sf::Time@{sf::Time}!milliseconds@{milliseconds}}
+\index{milliseconds@{milliseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{milliseconds}{milliseconds}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} milliseconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01933_ae06b561f6422ec8ca414d400efd2cf4b}\label{a01933_ae06b561f6422ec8ca414d400efd2cf4b} 
+\index{sf::Time@{sf::Time}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of != operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both time values are different 
+\end{DoxyReturn}
+\Hypertarget{a01933_aafb8b12fb0ac0e366d6ea9c9e9f93335}\label{a01933_aafb8b12fb0ac0e366d6ea9c9e9f93335} 
+\index{sf::Time@{sf::Time}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\%()}{operator\%()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator\% (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \% operator to compute remainder of a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} modulo {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_af12dd271f14a17b58c9d737395e776d4}\label{a01933_af12dd271f14a17b58c9d737395e776d4} 
+\index{sf::Time@{sf::Time}!operator\%=@{operator\%=}}
+\index{operator\%=@{operator\%=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\%=()}{operator\%=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator\%= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \%= operator to compute/assign remainder of a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} modulo {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a63723c9e9c5ff6151377ec4350c6f36e}\label{a01933_a63723c9e9c5ff6151377ec4350c6f36e} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a number) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a40a6d0938fb4a43731d54fd90bfc6476}\label{a01933_a40a6d0938fb4a43731d54fd90bfc6476} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a number) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ac1386c6360872d354b9b59eadcd9778d}\label{a01933_ac1386c6360872d354b9b59eadcd9778d} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{float}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_acd021b3ebb108053d7dec56869e27385}\label{a01933_acd021b3ebb108053d7dec56869e27385} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*} operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a8996b6a6fcb8f3854b486b8e43949b50}\label{a01933_a8996b6a6fcb8f3854b486b8e43949b50} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{float}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*}= operator to scale/assign a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a6656a0a1a1802009a72d93fbba61f24a}\label{a01933_a6656a0a1a1802009a72d93fbba61f24a} 
+\index{sf::Time@{sf::Time}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary \texorpdfstring{$\ast$}{*}= operator to scale/assign a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} multiplied by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a7155e965f238f8c32d63649b0189ef47}\label{a01933_a7155e965f238f8c32d63649b0189ef47} 
+\index{sf::Time@{sf::Time}!operator+@{operator+}}
+\index{operator+@{operator+}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary + operator to add two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of the two times values 
+\end{DoxyReturn}
+\Hypertarget{a01933_a831c8df4b7b9b47eaa0c5a52a1be654c}\label{a01933_a831c8df4b7b9b47eaa0c5a52a1be654c} 
+\index{sf::Time@{sf::Time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary += operator to add/assign two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of the two times values 
+\end{DoxyReturn}
+\Hypertarget{a01933_ace92ab9bc7aec80239af7218cd89cc80}\label{a01933_ace92ab9bc7aec80239af7218cd89cc80} 
+\index{sf::Time@{sf::Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary -\/ operator to subtract two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Difference of the two times values 
+\end{DoxyReturn}
+\Hypertarget{a01933_a1b23b91cf367764338c2ff922c65da4e}\label{a01933_a1b23b91cf367764338c2ff922c65da4e} 
+\index{sf::Time@{sf::Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of unary -\/ operator to negate a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Opposite of the time value 
+\end{DoxyReturn}
+\Hypertarget{a01933_aaf7888302cf4847f97cfc26875367b94}\label{a01933_aaf7888302cf4847f97cfc26875367b94} 
+\index{sf::Time@{sf::Time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary -\/= operator to subtract/assign two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Difference of the two times values 
+\end{DoxyReturn}
+\Hypertarget{a01933_a3386c392dbc62e51dfa59730854d1ed2}\label{a01933_a3386c392dbc62e51dfa59730854d1ed2} 
+\index{sf::Time@{sf::Time}!operator/@{operator/}}
+\index{operator/@{operator/}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{float}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary / operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} divided by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ab72f2de3e2bb592b4b4008dc1ac79056}\label{a01933_ab72f2de3e2bb592b4b4008dc1ac79056} 
+\index{sf::Time@{sf::Time}!operator/@{operator/}}
+\index{operator/@{operator/}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary / operator to scale a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} divided by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ac3ae4f4d24a93e088d8e36d68322ea0f}\label{a01933_ac3ae4f4d24a93e088d8e36d68322ea0f} 
+\index{sf::Time@{sf::Time}!operator/@{operator/}}
+\index{operator/@{operator/}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} float operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary / operator to compute the ratio of two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} divided by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a9835490c54cab06492ec3aa9e9275ef9}\label{a01933_a9835490c54cab06492ec3aa9e9275ef9} 
+\index{sf::Time@{sf::Time}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{float}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary /= operator to scale/assign a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} divided by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ad51871e3db77def834ae8688e64504ff}\label{a01933_ad51871e3db77def834ae8688e64504ff} 
+\index{sf::Time@{sf::Time}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} \& operator/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}} \&}]{left,  }\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary /= operator to scale/assign a time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a number)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape left} divided by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ac222933174ddcff5d14c3ac7d1020d54}\label{a01933_ac222933174ddcff5d14c3ac7d1020d54} 
+\index{sf::Time@{sf::Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a2c22369869bf903578635bc6517c44d4}\label{a01933_a2c22369869bf903578635bc6517c44d4} 
+\index{sf::Time@{sf::Time}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<}= operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_a2b8453227f651e9d5db3663fa08c47e2}\label{a01933_a2b8453227f651e9d5db3663fa08c47e2} 
+\index{sf::Time@{sf::Time}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of == operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both time values are equal 
+\end{DoxyReturn}
+\Hypertarget{a01933_a23978402846bf3c7ac54a3f2c6b397a2}\label{a01933_a23978402846bf3c7ac54a3f2c6b397a2} 
+\index{sf::Time@{sf::Time}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>} operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ad69edc80cd01b7a03f5673b4276181eb}\label{a01933_ad69edc80cd01b7a03f5673b4276181eb} 
+\index{sf::Time@{sf::Time}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{left,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>}= operator to compare two time values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a time) \\
+\hline
+{\em right} & Right operand (a time)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater or equal than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01933_ae36b9ef700f0ed0516abf0194ceb546b}\label{a01933_ae36b9ef700f0ed0516abf0194ceb546b} 
+\index{sf::Time@{sf::Time}!seconds@{seconds}}
+\index{seconds@{seconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{seconds()}{seconds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} seconds (\begin{DoxyParamCaption}\item[{float}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Construct a time value from a number of seconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Number of seconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} value constructed from the amount of seconds
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853}{milliseconds}, \doxylink{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}{microseconds} 
+\end{DoxySeeAlso}
+\Hypertarget{a01933_abe757d058fd820b4c84232c1451c1efa}\label{a01933_abe757d058fd820b4c84232c1451c1efa} 
+\index{sf::Time@{sf::Time}!seconds@{seconds}}
+\index{seconds@{seconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{seconds}{seconds}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01933}{Time}} seconds (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01933_a9f00785b8e837350682e056ada05dd51}\label{a01933_a9f00785b8e837350682e056ada05dd51} 
+\index{sf::Time@{sf::Time}!m\_microseconds@{m\_microseconds}}
+\index{m\_microseconds@{m\_microseconds}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{m\_microseconds}{m\_microseconds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Time\+::m\+\_\+microseconds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01933}{Time} value stored as microseconds. 
+
+\Hypertarget{a01933_a8db127b632fa8da21550e7282af11fa0}\label{a01933_a8db127b632fa8da21550e7282af11fa0} 
+\index{sf::Time@{sf::Time}!Zero@{Zero}}
+\index{Zero@{Zero}!sf::Time@{sf::Time}}
+\doxysubsubsection{\texorpdfstring{Zero}{Zero}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01933}{Time}} sf\+::\+Time\+::\+Zero\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Predefined \"{}zero\"{} time value. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00545}{Time.\+hpp}}\end{DoxyCompactItemize}

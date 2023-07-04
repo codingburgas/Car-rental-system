@@ -1,0 +1,31 @@
+\doxysection{timeout.\+h}
+\hypertarget{a00098_source}{}\label{a00098_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/timeout.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/timeout.h}}
+\mbox{\hyperlink{a00098}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_TIMEOUT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_TIMEOUT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00901}{Timeout}}\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a00901_aed876180814f4a2161d6f94b18b8e2a2}{Timeout}}(\textcolor{keyword}{const}\ std::chrono::milliseconds\&\ duration)\ :\ \mbox{\hyperlink{a00901_a511696fb383bfda0c927d37909ff2dfe}{ms}}\{duration\}\ \{\}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a00901_a9fa59925342d8959e88dc191e32e70e4}{Timeout}}(\textcolor{keyword}{const}\ std::int32\_t\&\ milliseconds)\ :\ \mbox{\hyperlink{a00901}{Timeout}}\{\mbox{\hyperlink{a00667}{std}}::chrono::milliseconds(milliseconds)\}\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ No\ way\ around\ since\ curl\ uses\ a\ long\ here.}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/runtime-\/int)}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00901_ab46caf7af713ef5b07bcee45ed2f1404}{Milliseconds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::chrono::milliseconds\ \mbox{\hyperlink{a00901_a511696fb383bfda0c927d37909ff2dfe}{ms}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

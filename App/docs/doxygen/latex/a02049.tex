@@ -1,0 +1,690 @@
+\doxysection{sf\+::Keyboard Class Reference}
+\hypertarget{a02049}{}\label{a02049}\index{sf::Keyboard@{sf::Keyboard}}
+
+
+Give access to the real-\/time state of the keyboard.  
+
+
+
+
+{\ttfamily \#include $<$Keyboard.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142}{Key}} \{ \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a840c43fa8e05ff854f6fe9a86c7c939e}{Unknown}} = -\/1
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a9d06fa7ac9af597034ea724fb08b991e}{A}} = 0
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aca3142235e5c4199f0b8b45d8368ef94}{B}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a0d586c4ec0cd6b537cb6f49180fedecc}{C}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ae778600bd3e878b59df1dbdd5877ba7a}{D}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a0e027c08438a8bf77e2e1e5d5d75bd84}{E}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab8021fbbe5483bc98f124df6f7090002}{F}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aafb9e3d7679d88d86afc608d79c251f7}{G}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142adfa19328304890e17f4a3f4263eed04d}{H}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142abaef09665b4d94ebbed50345cab3981e}{I}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a948c634009beacdab42c3419253a5e85}{J}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a25beb62393ff666a4bec18ea2a66f3f2}{K}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a5ef1839ffe19b7e9c24f2ca017614ff9}{L}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a9718de9940f723c956587dcb90450a0a}{M}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab652ed6b308db95a74dc4ff5229ac9c8}{N}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a7739288cc628dfa8c50ba712be7c03e1}{O}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aaeac1db209a64a0221277a835de986e6}{P}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a27e3d50587c9789d2592d275d22fbada}{Q}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142add852cadaa6fff2d982bbab3551c31d0}{R}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aca13014bf9ed5887d347060a0334ea5a}{S}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a19f59109111fc5271d3581bcd0c43187}{T}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab4f30ae34848ee934dd4f5496a8fb4a1}{U}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aec9074abd2d41628d1ecdc14e1b2cd96}{V}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a258aa89e9c6c9aad1ccbaeb41839c5e0}{W}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a012f5ee9d518e9e24caa087fbddc0594}{X}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a5d877e63d1353e0fc0a0757a87a7bd0e}{Y}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a4e12efd6478a2d174264f29b0b41ab43}{Z}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af026fd133ee93a0bd8c70762cc3be4bc}{Num0}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a506bd962cab80722a8c5a4b178912c59}{Num1}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a2d6eb5118179bb140fdb3485bb08c182}{Num2}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aee78e5ed27d31598fc285400166c0dd5}{Num3}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a5fbd8a089460dc33c22f68b36e1fdc98}{Num4}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a1dc7e87810b8d4b7039e202b0adcc4ee}{Num5}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af86dafb69d922ad2b0f4bd4c37696575}{Num6}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a8fa0056a0a6f5a7d9fcef3402c9c916d}{Num7}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142adb9f2549fd57bfd99d4713ff1845c530}{Num8}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a9bc0d0727958bef97e2b6a58e23743db}{Num9}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a64b7ecb543c5d03bec8383dde123c95d}{Escape}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142acc76c9dec76d8ae806ae9d6515066e53}{LControl}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a270db49f76cb4dbe72da36153d3aa45c}{LShift}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a000ecf5145296d7d52b6871c54e6718d}{LAlt}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a718171426307a0f5f26b4ae82a322b24}{LSystem}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a275d3fd207a9c0b22ce404012c71dc17}{RControl}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a5be69e3b2f25bd5f4eed75d063f42b90}{RShift}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a21dcf098233296462bc7c632b93369cc}{RAlt}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac1b3fd7424feeda242cedbb64f3f5a7f}{RSystem}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a4aac50ce7c4923f96323fe84d592b139}{Menu}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142afbe21cad5f264d685cf7f25060004184}{LBracket}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a578253a70b48e61830aa08292d44680f}{RBracket}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab50635b9c913837d1bd4453eec7cb506}{Semicolon}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab7374f48cc79e3085739160b8e3ef2f9}{Comma}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac72ba959ab1946957e8dfd4f81ea811d}{Period}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af031edb6bcf319734a6664388958c475}{Quote}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a7424bf901434a587a6c202c423e6786c}{Slash}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142adbd7d6f90a1009e91acf7bb1dc068512}{Backslash}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a90be0882086bccb516e3afc5c7fb82eb}{Tilde}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ae55c35f6b6417e1dbbfa351c64dfc743}{Equal}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a5bde2cf47e6182e6f45d0d2197223c35}{Hyphen}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a6fdaa93b6b8d1a2b73bc239e9ada94ef}{Space}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a59e26db0965305492875d7da68f6a990}{Enter}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aa7c1581bac0f20164512572e6c60e98e}{Backspace}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a20c552c39c8356b1078f1cfff7936b4a}{Tab}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aa24fe33bba1c3639c3aeaa317bd89d7e}{Page\+Up}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a21c73323d9a8b6017f3bac0cb8c8ac1a}{Page\+Down}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a4478343b2b7efc310f995fd4251a264d}{End}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af41ae7c3927cc5ea8b43ee2fefe890e8}{Home}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a616c8cae362d229155c5c6e10b969943}{Insert}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab66187002fc7f6695ef3d05237b93a38}{Delete}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a158c586cbe8609031d1a7932e1a8dba2}{Add}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a68983f67bd30d27b27c90d6794c78aa2}{Subtract}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a10623ae71db8a6b5d97189fc21fb91ae}{Multiply}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142afae3dc28752954f0bfe298ac52f58cb6}{Divide}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac3fe5df11d15b57317c053a2ae13d9a9}{Left}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a2aeb083dea103a8e36b6850b51ef3632}{Right}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac4cf6ef2d2632445e9e26c8f2b70e82d}{Up}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a33dd676edbdf0817d7a65b21df3d0dca}{Down}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af0b2af83a7a8c358f7b8f7c403089a4e}{Numpad0}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a03536d369ae55cc18024f7e4a341a5ac}{Numpad1}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a8ad9ccf62631d583f44f06aebd662093}{Numpad2}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ab63ae26e90126b1842bde25d6dedb205}{Numpad3}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a65336d823bd823a0d246a872ff90e08a}{Numpad4}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a8bc5041f12fdfbefba1dbd823c7e1054}{Numpad5}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aaf28fdf0d3da6a18030e685478e3a713}{Numpad6}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a3f9bf9835d65a0df5cce2d3842a40541}{Numpad7}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a25dcd4e4183ceceb3ac06c72995bae49}{Numpad8}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a365eb80f54003670a78e3b850c28df21}{Numpad9}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ae59c7e28858e970c9d4f0e418179b632}{F1}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a6a2faa5f876a1e75f24a596b658ff413}{F2}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a1fb58d66f9c0183db3e70b2b0576074e}{F3}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a71311e21238cf2c0df1bbf096bba68f2}{F4}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a01fd2f93eddf2887186ea91180a789a8}{F5}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac756a19b31eb28cd2c35c29d8e54ea04}{F6}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a060d30d36a3e08208b2bc46d0f549b6c}{F7}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ade468cd27716b9c2a0d0158afa2f8621}{F8}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a3c5c2342003a7191de6636b5ef44e1b9}{F9}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142aec695ecf296e7084a8f7f3ec408e16ac}{F10}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af9a8de90d90a7a7582269bc5c41f5afd}{F11}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142af9d8807117d946de5e403bcbd4d7161d}{F12}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a9e28e971941ca2900c1eea17cda50a04}{F13}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a9a0327a4ef876338d5f3c34c514f190c}{F14}}
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a8949ce79077cc8bf64f4fa42bb6a2808}{F15}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a95daf340fcc3d5c2846f69d184170d9b}{Pause}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a93e6ffa0320fe9b2f29aec14a58be36b}{Key\+Count}}
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a401a183dcfde0a06cb60fe6c91fa1e39}{Dash}} = Hyphen
+, \newline
+\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a33aeaab900abcd01eebf2fcc4f6d97e2}{Back\+Space}} = Backspace
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a536df84e73859aa44e11e192459470b6}{Back\+Slash}} = Backslash
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a460ab09a36f9ed230504b89b9815de88}{Semi\+Colon}} = Semicolon
+, \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac291de81bdee518d636bc359f2ca77de}{Return}} = Enter
+ \}
+\begin{DoxyCompactList}\small\item\em Key codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{a02049_a80a04b2f53005886957f49eee3531599}{is\+Key\+Pressed}} (\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Check if a key is pressed. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a02049_ad61fee7e793242d444a8c5acd662fe5b}{set\+Virtual\+Keyboard\+Visible}} (bool visible)
+\begin{DoxyCompactList}\small\item\em Show or hide the virtual keyboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Give access to the real-\/time state of the keyboard. 
+
+\doxylink{a02049}{sf\+::\+Keyboard} provides an interface to the state of the keyboard. It only contains static functions (a single keyboard is assumed), so it\textquotesingle{}s not meant to be instantiated.
+
+This class allows users to query the keyboard state at any time and directly, without having to deal with a window and its events. Compared to the Key\+Pressed and Key\+Released events, \doxylink{a02049}{sf\+::\+Keyboard} can retrieve the state of a key at any time (you don\textquotesingle{}t need to store and update a boolean on your side in order to know if a key is pressed or released), and you always get the real state of the keyboard, even if keys are pressed or released when your window is out of focus and no event is triggered.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a02049_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142ac3fe5df11d15b57317c053a2ae13d9a9}{sf::Keyboard::Left}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ move\ left...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a02049_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a2aeb083dea103a8e36b6850b51ef3632}{sf::Keyboard::Right}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ move\ right...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a02049_a80a04b2f53005886957f49eee3531599}{sf::Keyboard::isKeyPressed}}(\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142a64b7ecb543c5d03bec8383dde123c95d}{sf::Keyboard::Escape}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ quit...}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a02041}{sf\+::\+Joystick}, \doxylink{a02053}{sf\+::\+Mouse}, \doxylink{a02061}{sf\+::\+Touch} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142}\label{a02049_acb4cacd7cc5802dec45724cf3314a142} 
+\index{sf::Keyboard@{sf::Keyboard}!Key@{Key}}
+\index{Key@{Key}!sf::Keyboard@{sf::Keyboard}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142}{sf\+::\+Keyboard\+::\+Key}}}
+
+
+
+Key codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Unknown@{Unknown}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a840c43fa8e05ff854f6fe9a86c7c939e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a840c43fa8e05ff854f6fe9a86c7c939e} 
+Unknown&Unhandled key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!A@{A}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a9d06fa7ac9af597034ea724fb08b991e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a9d06fa7ac9af597034ea724fb08b991e} 
+A&The A key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!B@{B}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aca3142235e5c4199f0b8b45d8368ef94}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aca3142235e5c4199f0b8b45d8368ef94} 
+B&The B key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!C@{C}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a0d586c4ec0cd6b537cb6f49180fedecc}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a0d586c4ec0cd6b537cb6f49180fedecc} 
+C&The C key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D@{D}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!D@{D}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ae778600bd3e878b59df1dbdd5877ba7a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ae778600bd3e878b59df1dbdd5877ba7a} 
+D&The D key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!E@{E}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a0e027c08438a8bf77e2e1e5d5d75bd84}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a0e027c08438a8bf77e2e1e5d5d75bd84} 
+E&The E key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F@{F}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F@{F}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab8021fbbe5483bc98f124df6f7090002}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab8021fbbe5483bc98f124df6f7090002} 
+F&The F key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G@{G}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!G@{G}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aafb9e3d7679d88d86afc608d79c251f7}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aafb9e3d7679d88d86afc608d79c251f7} 
+G&The G key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H@{H}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!H@{H}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142adfa19328304890e17f4a3f4263eed04d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142adfa19328304890e17f4a3f4263eed04d} 
+H&The H key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I@{I}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!I@{I}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142abaef09665b4d94ebbed50345cab3981e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142abaef09665b4d94ebbed50345cab3981e} 
+I&The I key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J@{J}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!J@{J}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a948c634009beacdab42c3419253a5e85}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a948c634009beacdab42c3419253a5e85} 
+J&The J key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{K@{K}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!K@{K}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a25beb62393ff666a4bec18ea2a66f3f2}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a25beb62393ff666a4bec18ea2a66f3f2} 
+K&The K key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L@{L}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!L@{L}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a5ef1839ffe19b7e9c24f2ca017614ff9}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a5ef1839ffe19b7e9c24f2ca017614ff9} 
+L&The L key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M@{M}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!M@{M}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a9718de9940f723c956587dcb90450a0a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a9718de9940f723c956587dcb90450a0a} 
+M&The M key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N@{N}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!N@{N}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab652ed6b308db95a74dc4ff5229ac9c8}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab652ed6b308db95a74dc4ff5229ac9c8} 
+N&The N key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O@{O}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!O@{O}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a7739288cc628dfa8c50ba712be7c03e1}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a7739288cc628dfa8c50ba712be7c03e1} 
+O&The O key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P@{P}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!P@{P}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aaeac1db209a64a0221277a835de986e6}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aaeac1db209a64a0221277a835de986e6} 
+P&The P key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Q@{Q}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Q@{Q}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a27e3d50587c9789d2592d275d22fbada}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a27e3d50587c9789d2592d275d22fbada} 
+Q&The Q key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R@{R}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!R@{R}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142add852cadaa6fff2d982bbab3551c31d0}\label{a02049_acb4cacd7cc5802dec45724cf3314a142add852cadaa6fff2d982bbab3551c31d0} 
+R&The R key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!S@{S}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aca13014bf9ed5887d347060a0334ea5a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aca13014bf9ed5887d347060a0334ea5a} 
+S&The S key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T@{T}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!T@{T}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a19f59109111fc5271d3581bcd0c43187}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a19f59109111fc5271d3581bcd0c43187} 
+T&The T key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U@{U}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!U@{U}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab4f30ae34848ee934dd4f5496a8fb4a1}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab4f30ae34848ee934dd4f5496a8fb4a1} 
+U&The U key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V@{V}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!V@{V}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aec9074abd2d41628d1ecdc14e1b2cd96}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aec9074abd2d41628d1ecdc14e1b2cd96} 
+V&The V key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W@{W}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!W@{W}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a258aa89e9c6c9aad1ccbaeb41839c5e0}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a258aa89e9c6c9aad1ccbaeb41839c5e0} 
+W&The W key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X@{X}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!X@{X}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a012f5ee9d518e9e24caa087fbddc0594}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a012f5ee9d518e9e24caa087fbddc0594} 
+X&The X key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y@{Y}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Y@{Y}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a5d877e63d1353e0fc0a0757a87a7bd0e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a5d877e63d1353e0fc0a0757a87a7bd0e} 
+Y&The Y key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z@{Z}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Z@{Z}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a4e12efd6478a2d174264f29b0b41ab43}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a4e12efd6478a2d174264f29b0b41ab43} 
+Z&The Z key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num0@{Num0}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num0@{Num0}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af026fd133ee93a0bd8c70762cc3be4bc}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af026fd133ee93a0bd8c70762cc3be4bc} 
+Num0&The 0 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num1@{Num1}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num1@{Num1}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a506bd962cab80722a8c5a4b178912c59}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a506bd962cab80722a8c5a4b178912c59} 
+Num1&The 1 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num2@{Num2}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num2@{Num2}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a2d6eb5118179bb140fdb3485bb08c182}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a2d6eb5118179bb140fdb3485bb08c182} 
+Num2&The 2 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num3@{Num3}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num3@{Num3}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aee78e5ed27d31598fc285400166c0dd5}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aee78e5ed27d31598fc285400166c0dd5} 
+Num3&The 3 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num4@{Num4}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num4@{Num4}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a5fbd8a089460dc33c22f68b36e1fdc98}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a5fbd8a089460dc33c22f68b36e1fdc98} 
+Num4&The 4 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num5@{Num5}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num5@{Num5}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a1dc7e87810b8d4b7039e202b0adcc4ee}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a1dc7e87810b8d4b7039e202b0adcc4ee} 
+Num5&The 5 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num6@{Num6}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num6@{Num6}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af86dafb69d922ad2b0f4bd4c37696575}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af86dafb69d922ad2b0f4bd4c37696575} 
+Num6&The 6 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num7@{Num7}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num7@{Num7}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a8fa0056a0a6f5a7d9fcef3402c9c916d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a8fa0056a0a6f5a7d9fcef3402c9c916d} 
+Num7&The 7 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num8@{Num8}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num8@{Num8}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142adb9f2549fd57bfd99d4713ff1845c530}\label{a02049_acb4cacd7cc5802dec45724cf3314a142adb9f2549fd57bfd99d4713ff1845c530} 
+Num8&The 8 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Num9@{Num9}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Num9@{Num9}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a9bc0d0727958bef97e2b6a58e23743db}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a9bc0d0727958bef97e2b6a58e23743db} 
+Num9&The 9 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Escape@{Escape}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Escape@{Escape}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a64b7ecb543c5d03bec8383dde123c95d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a64b7ecb543c5d03bec8383dde123c95d} 
+Escape&The Escape key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LControl@{LControl}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!LControl@{LControl}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142acc76c9dec76d8ae806ae9d6515066e53}\label{a02049_acb4cacd7cc5802dec45724cf3314a142acc76c9dec76d8ae806ae9d6515066e53} 
+LControl&The left Control key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LShift@{LShift}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!LShift@{LShift}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a270db49f76cb4dbe72da36153d3aa45c}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a270db49f76cb4dbe72da36153d3aa45c} 
+LShift&The left Shift key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAlt@{LAlt}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!LAlt@{LAlt}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a000ecf5145296d7d52b6871c54e6718d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a000ecf5145296d7d52b6871c54e6718d} 
+LAlt&The left Alt key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSystem@{LSystem}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!LSystem@{LSystem}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a718171426307a0f5f26b4ae82a322b24}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a718171426307a0f5f26b4ae82a322b24} 
+LSystem&The left OS specific key\+: window (Windows and Linux), apple (Mac\+OS X), ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RControl@{RControl}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!RControl@{RControl}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a275d3fd207a9c0b22ce404012c71dc17}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a275d3fd207a9c0b22ce404012c71dc17} 
+RControl&The right Control key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RShift@{RShift}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!RShift@{RShift}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a5be69e3b2f25bd5f4eed75d063f42b90}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a5be69e3b2f25bd5f4eed75d063f42b90} 
+RShift&The right Shift key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAlt@{RAlt}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!RAlt@{RAlt}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a21dcf098233296462bc7c632b93369cc}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a21dcf098233296462bc7c632b93369cc} 
+RAlt&The right Alt key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RSystem@{RSystem}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!RSystem@{RSystem}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac1b3fd7424feeda242cedbb64f3f5a7f}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac1b3fd7424feeda242cedbb64f3f5a7f} 
+RSystem&The right OS specific key\+: window (Windows and Linux), apple (Mac\+OS X), ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Menu@{Menu}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Menu@{Menu}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a4aac50ce7c4923f96323fe84d592b139}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a4aac50ce7c4923f96323fe84d592b139} 
+Menu&The Menu key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBracket@{LBracket}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!LBracket@{LBracket}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142afbe21cad5f264d685cf7f25060004184}\label{a02049_acb4cacd7cc5802dec45724cf3314a142afbe21cad5f264d685cf7f25060004184} 
+LBracket&The \mbox{[} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RBracket@{RBracket}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!RBracket@{RBracket}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a578253a70b48e61830aa08292d44680f}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a578253a70b48e61830aa08292d44680f} 
+RBracket&The \mbox{]} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Semicolon@{Semicolon}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Semicolon@{Semicolon}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab50635b9c913837d1bd4453eec7cb506}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab50635b9c913837d1bd4453eec7cb506} 
+Semicolon&The ; key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Comma@{Comma}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Comma@{Comma}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab7374f48cc79e3085739160b8e3ef2f9}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab7374f48cc79e3085739160b8e3ef2f9} 
+Comma&The , key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Period@{Period}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Period@{Period}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac72ba959ab1946957e8dfd4f81ea811d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac72ba959ab1946957e8dfd4f81ea811d} 
+Period&The . key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quote@{Quote}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Quote@{Quote}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af031edb6bcf319734a6664388958c475}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af031edb6bcf319734a6664388958c475} 
+Quote&The \textquotesingle{} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slash@{Slash}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Slash@{Slash}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a7424bf901434a587a6c202c423e6786c}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a7424bf901434a587a6c202c423e6786c} 
+Slash&The / key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Backslash@{Backslash}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Backslash@{Backslash}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142adbd7d6f90a1009e91acf7bb1dc068512}\label{a02049_acb4cacd7cc5802dec45724cf3314a142adbd7d6f90a1009e91acf7bb1dc068512} 
+Backslash&The \textbackslash{} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tilde@{Tilde}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Tilde@{Tilde}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a90be0882086bccb516e3afc5c7fb82eb}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a90be0882086bccb516e3afc5c7fb82eb} 
+Tilde&The \texorpdfstring{$\sim$}{\string~} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Equal@{Equal}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Equal@{Equal}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ae55c35f6b6417e1dbbfa351c64dfc743}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ae55c35f6b6417e1dbbfa351c64dfc743} 
+Equal&The = key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hyphen@{Hyphen}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Hyphen@{Hyphen}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a5bde2cf47e6182e6f45d0d2197223c35}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a5bde2cf47e6182e6f45d0d2197223c35} 
+Hyphen&The -\/ key (hyphen) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Space@{Space}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Space@{Space}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a6fdaa93b6b8d1a2b73bc239e9ada94ef}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a6fdaa93b6b8d1a2b73bc239e9ada94ef} 
+Space&The Space key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enter@{Enter}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Enter@{Enter}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a59e26db0965305492875d7da68f6a990}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a59e26db0965305492875d7da68f6a990} 
+Enter&The Enter/\+Return keys. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Backspace@{Backspace}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Backspace@{Backspace}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aa7c1581bac0f20164512572e6c60e98e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aa7c1581bac0f20164512572e6c60e98e} 
+Backspace&The Backspace key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tab@{Tab}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Tab@{Tab}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a20c552c39c8356b1078f1cfff7936b4a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a20c552c39c8356b1078f1cfff7936b4a} 
+Tab&The Tabulation key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageUp@{PageUp}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!PageUp@{PageUp}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aa24fe33bba1c3639c3aeaa317bd89d7e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aa24fe33bba1c3639c3aeaa317bd89d7e} 
+Page\+Up&The Page up key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageDown@{PageDown}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!PageDown@{PageDown}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a21c73323d9a8b6017f3bac0cb8c8ac1a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a21c73323d9a8b6017f3bac0cb8c8ac1a} 
+Page\+Down&The Page down key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{End@{End}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!End@{End}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a4478343b2b7efc310f995fd4251a264d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a4478343b2b7efc310f995fd4251a264d} 
+End&The End key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Home@{Home}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Home@{Home}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af41ae7c3927cc5ea8b43ee2fefe890e8}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af41ae7c3927cc5ea8b43ee2fefe890e8} 
+Home&The Home key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Insert@{Insert}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Insert@{Insert}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a616c8cae362d229155c5c6e10b969943}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a616c8cae362d229155c5c6e10b969943} 
+Insert&The Insert key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Delete@{Delete}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Delete@{Delete}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab66187002fc7f6695ef3d05237b93a38}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab66187002fc7f6695ef3d05237b93a38} 
+Delete&The Delete key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Add@{Add}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a158c586cbe8609031d1a7932e1a8dba2}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a158c586cbe8609031d1a7932e1a8dba2} 
+Add&The + key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subtract@{Subtract}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Subtract@{Subtract}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a68983f67bd30d27b27c90d6794c78aa2}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a68983f67bd30d27b27c90d6794c78aa2} 
+Subtract&The -\/ key (minus, usually from numpad) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Multiply@{Multiply}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Multiply@{Multiply}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a10623ae71db8a6b5d97189fc21fb91ae}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a10623ae71db8a6b5d97189fc21fb91ae} 
+Multiply&The \texorpdfstring{$\ast$}{*} key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Divide@{Divide}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Divide@{Divide}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142afae3dc28752954f0bfe298ac52f58cb6}\label{a02049_acb4cacd7cc5802dec45724cf3314a142afae3dc28752954f0bfe298ac52f58cb6} 
+Divide&The / key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Left@{Left}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac3fe5df11d15b57317c053a2ae13d9a9}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac3fe5df11d15b57317c053a2ae13d9a9} 
+Left&Left arrow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Right@{Right}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a2aeb083dea103a8e36b6850b51ef3632}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a2aeb083dea103a8e36b6850b51ef3632} 
+Right&Right arrow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Up@{Up}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac4cf6ef2d2632445e9e26c8f2b70e82d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac4cf6ef2d2632445e9e26c8f2b70e82d} 
+Up&Up arrow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Down@{Down}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a33dd676edbdf0817d7a65b21df3d0dca}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a33dd676edbdf0817d7a65b21df3d0dca} 
+Down&Down arrow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad0@{Numpad0}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad0@{Numpad0}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af0b2af83a7a8c358f7b8f7c403089a4e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af0b2af83a7a8c358f7b8f7c403089a4e} 
+Numpad0&The numpad 0 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad1@{Numpad1}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad1@{Numpad1}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a03536d369ae55cc18024f7e4a341a5ac}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a03536d369ae55cc18024f7e4a341a5ac} 
+Numpad1&The numpad 1 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad2@{Numpad2}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad2@{Numpad2}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a8ad9ccf62631d583f44f06aebd662093}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a8ad9ccf62631d583f44f06aebd662093} 
+Numpad2&The numpad 2 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad3@{Numpad3}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad3@{Numpad3}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ab63ae26e90126b1842bde25d6dedb205}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ab63ae26e90126b1842bde25d6dedb205} 
+Numpad3&The numpad 3 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad4@{Numpad4}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad4@{Numpad4}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a65336d823bd823a0d246a872ff90e08a}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a65336d823bd823a0d246a872ff90e08a} 
+Numpad4&The numpad 4 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad5@{Numpad5}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad5@{Numpad5}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a8bc5041f12fdfbefba1dbd823c7e1054}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a8bc5041f12fdfbefba1dbd823c7e1054} 
+Numpad5&The numpad 5 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad6@{Numpad6}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad6@{Numpad6}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aaf28fdf0d3da6a18030e685478e3a713}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aaf28fdf0d3da6a18030e685478e3a713} 
+Numpad6&The numpad 6 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad7@{Numpad7}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad7@{Numpad7}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a3f9bf9835d65a0df5cce2d3842a40541}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a3f9bf9835d65a0df5cce2d3842a40541} 
+Numpad7&The numpad 7 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad8@{Numpad8}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad8@{Numpad8}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a25dcd4e4183ceceb3ac06c72995bae49}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a25dcd4e4183ceceb3ac06c72995bae49} 
+Numpad8&The numpad 8 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Numpad9@{Numpad9}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Numpad9@{Numpad9}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a365eb80f54003670a78e3b850c28df21}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a365eb80f54003670a78e3b850c28df21} 
+Numpad9&The numpad 9 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F1@{F1}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F1@{F1}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ae59c7e28858e970c9d4f0e418179b632}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ae59c7e28858e970c9d4f0e418179b632} 
+F1&The F1 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F2@{F2}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F2@{F2}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a6a2faa5f876a1e75f24a596b658ff413}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a6a2faa5f876a1e75f24a596b658ff413} 
+F2&The F2 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F3@{F3}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F3@{F3}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a1fb58d66f9c0183db3e70b2b0576074e}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a1fb58d66f9c0183db3e70b2b0576074e} 
+F3&The F3 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F4@{F4}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F4@{F4}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a71311e21238cf2c0df1bbf096bba68f2}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a71311e21238cf2c0df1bbf096bba68f2} 
+F4&The F4 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F5@{F5}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F5@{F5}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a01fd2f93eddf2887186ea91180a789a8}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a01fd2f93eddf2887186ea91180a789a8} 
+F5&The F5 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F6@{F6}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F6@{F6}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac756a19b31eb28cd2c35c29d8e54ea04}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac756a19b31eb28cd2c35c29d8e54ea04} 
+F6&The F6 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F7@{F7}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F7@{F7}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a060d30d36a3e08208b2bc46d0f549b6c}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a060d30d36a3e08208b2bc46d0f549b6c} 
+F7&The F7 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F8@{F8}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F8@{F8}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ade468cd27716b9c2a0d0158afa2f8621}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ade468cd27716b9c2a0d0158afa2f8621} 
+F8&The F8 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F9@{F9}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F9@{F9}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a3c5c2342003a7191de6636b5ef44e1b9}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a3c5c2342003a7191de6636b5ef44e1b9} 
+F9&The F9 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F10@{F10}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F10@{F10}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142aec695ecf296e7084a8f7f3ec408e16ac}\label{a02049_acb4cacd7cc5802dec45724cf3314a142aec695ecf296e7084a8f7f3ec408e16ac} 
+F10&The F10 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F11@{F11}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F11@{F11}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af9a8de90d90a7a7582269bc5c41f5afd}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af9a8de90d90a7a7582269bc5c41f5afd} 
+F11&The F11 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F12@{F12}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F12@{F12}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142af9d8807117d946de5e403bcbd4d7161d}\label{a02049_acb4cacd7cc5802dec45724cf3314a142af9d8807117d946de5e403bcbd4d7161d} 
+F12&The F12 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F13@{F13}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F13@{F13}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a9e28e971941ca2900c1eea17cda50a04}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a9e28e971941ca2900c1eea17cda50a04} 
+F13&The F13 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F14@{F14}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F14@{F14}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a9a0327a4ef876338d5f3c34c514f190c}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a9a0327a4ef876338d5f3c34c514f190c} 
+F14&The F14 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F15@{F15}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!F15@{F15}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a8949ce79077cc8bf64f4fa42bb6a2808}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a8949ce79077cc8bf64f4fa42bb6a2808} 
+F15&The F15 key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pause@{Pause}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Pause@{Pause}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a95daf340fcc3d5c2846f69d184170d9b}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a95daf340fcc3d5c2846f69d184170d9b} 
+Pause&The Pause key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KeyCount@{KeyCount}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!KeyCount@{KeyCount}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a93e6ffa0320fe9b2f29aec14a58be36b}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a93e6ffa0320fe9b2f29aec14a58be36b} 
+Key\+Count&Keep last -- the total number of keyboard keys. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dash@{Dash}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Dash@{Dash}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a401a183dcfde0a06cb60fe6c91fa1e39}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a401a183dcfde0a06cb60fe6c91fa1e39} 
+Dash&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000024}{Deprecated}}]Use Hyphen instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BackSpace@{BackSpace}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!BackSpace@{BackSpace}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a33aeaab900abcd01eebf2fcc4f6d97e2}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a33aeaab900abcd01eebf2fcc4f6d97e2} 
+Back\+Space&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000025}{Deprecated}}]Use Backspace instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BackSlash@{BackSlash}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!BackSlash@{BackSlash}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a536df84e73859aa44e11e192459470b6}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a536df84e73859aa44e11e192459470b6} 
+Back\+Slash&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000026}{Deprecated}}]Use Backslash instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SemiColon@{SemiColon}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!SemiColon@{SemiColon}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142a460ab09a36f9ed230504b89b9815de88}\label{a02049_acb4cacd7cc5802dec45724cf3314a142a460ab09a36f9ed230504b89b9815de88} 
+Semi\+Colon&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000027}{Deprecated}}]Use Semicolon instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Return@{Return}!sf::Keyboard@{sf::Keyboard}}\index{sf::Keyboard@{sf::Keyboard}!Return@{Return}}}\Hypertarget{a02049_acb4cacd7cc5802dec45724cf3314a142ac291de81bdee518d636bc359f2ca77de}\label{a02049_acb4cacd7cc5802dec45724cf3314a142ac291de81bdee518d636bc359f2ca77de} 
+Return&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000028}{Deprecated}}]Use Enter instead \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a02049_a80a04b2f53005886957f49eee3531599}\label{a02049_a80a04b2f53005886957f49eee3531599} 
+\index{sf::Keyboard@{sf::Keyboard}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!sf::Keyboard@{sf::Keyboard}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily static bool sf\+::\+Keyboard\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a key is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is pressed, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a02049_ad61fee7e793242d444a8c5acd662fe5b}\label{a02049_ad61fee7e793242d444a8c5acd662fe5b} 
+\index{sf::Keyboard@{sf::Keyboard}!setVirtualKeyboardVisible@{setVirtualKeyboardVisible}}
+\index{setVirtualKeyboardVisible@{setVirtualKeyboardVisible}!sf::Keyboard@{sf::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setVirtualKeyboardVisible()}{setVirtualKeyboardVisible()}}
+{\footnotesize\ttfamily static void sf\+::\+Keyboard\+::set\+Virtual\+Keyboard\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Show or hide the virtual keyboard. 
+
+Warning\+: the virtual keyboard is not supported on all systems. It will typically be implemented on mobile OSes (Android, i\+OS) but not on desktop OSes (Windows, Linux, ...).
+
+If the virtual keyboard is not available, this function does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & True to show, false to hide \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00590}{Keyboard.\+hpp}}\end{DoxyCompactItemize}

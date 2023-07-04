@@ -1,0 +1,213 @@
+\doxysection{sf\+::Http Class Reference}
+\hypertarget{a01829}{}\label{a01829}\index{sf::Http@{sf::Http}}
+
+
+A HTTP client.  
+
+
+
+
+{\ttfamily \#include $<$Http.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Http\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Http\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01833}{Request}}
+\begin{DoxyCompactList}\small\item\em Define a HTTP request. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01837}{Response}}
+\begin{DoxyCompactList}\small\item\em Define a HTTP response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01829_abe2360194f99bdde402c9f97a85cf067}{Http}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01829_a79efd844a735f083fcce0edbf1092385}{Http}} (const std\+::string \&host, unsigned short port=0)
+\begin{DoxyCompactList}\small\item\em Construct the HTTP client with the target host. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01837}{Response}} \mbox{\hyperlink{a01829_aaf09ebfb5e00dcc82e0d494d5c6a9e2a}{send\+Request}} (const \mbox{\hyperlink{a01833}{Request}} \&request, \mbox{\hyperlink{a01933}{Time}} timeout=\mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Send a HTTP request and return the server\textquotesingle{}s response. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01829_a55121d543b61c41cf20b885a97b04e65}{set\+Host}} (const std\+::string \&host, unsigned short port=0)
+\begin{DoxyCompactList}\small\item\em Set the target host. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01861}{Tcp\+Socket}} \mbox{\hyperlink{a01829_aa51e5fe5f6b85b2057906f762241ed4f}{m\+\_\+connection}}
+\begin{DoxyCompactList}\small\item\em Connection to the host. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01841}{Ip\+Address}} \mbox{\hyperlink{a01829_ae4504e74ccaa6afb696f431dc438f794}{m\+\_\+host}}
+\begin{DoxyCompactList}\small\item\em Web host address. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01829_a4a1ab171a8fa06e0428ec80c4a80891a}{m\+\_\+host\+Name}}
+\begin{DoxyCompactList}\small\item\em Web host name. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{a01829_a3adcf3462408aa990c9737425bf320a9}{m\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Port used for connection with host. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A HTTP client. 
+
+\doxylink{a01829}{sf\+::\+Http} is a very simple HTTP client that allows you to communicate with a web server. You can retrieve web pages, send data to an interactive resource, download a remote file, etc. The HTTPS protocol is not supported.
+
+The HTTP client is split into 3 classes\+: \begin{DoxyItemize}
+\item \doxylink{a01833}{sf\+::\+Http\+::\+Request} \item \doxylink{a01837}{sf\+::\+Http\+::\+Response} \item \doxylink{a01829}{sf\+::\+Http}\end{DoxyItemize}
+\doxylink{a01833}{sf\+::\+Http\+::\+Request} builds the request that will be sent to the server. A request is made of\+: \begin{DoxyItemize}
+\item a method (what you want to do) \item a target URI (usually the name of the web page or file) \item one or more header fields (options that you can pass to the server) \item an optional body (for POST requests)\end{DoxyItemize}
+\doxylink{a01837}{sf\+::\+Http\+::\+Response} parse the response from the web server and provides getters to read them. The response contains\+: \begin{DoxyItemize}
+\item a status code \item header fields (that may be answers to the ones that you requested) \item a body, which contains the contents of the requested resource\end{DoxyItemize}
+\doxylink{a01829}{sf\+::\+Http} provides a simple function, Send\+Request, to send a \doxylink{a01833}{sf\+::\+Http\+::\+Request} and return the corresponding \doxylink{a01837}{sf\+::\+Http\+::\+Response} from the server.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ new\ HTTP\ client}}
+\DoxyCodeLine{\mbox{\hyperlink{a01829}{sf::Http}}\ http;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ We'll\ work\ on\ http://www.sfml-\/dev.org}}
+\DoxyCodeLine{http.\mbox{\hyperlink{a01829_a55121d543b61c41cf20b885a97b04e65}{setHost}}(\textcolor{stringliteral}{"{}http://www.sfml-\/dev.org"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Prepare\ a\ request\ to\ get\ the\ 'features.php'\ page}}
+\DoxyCodeLine{\mbox{\hyperlink{a01833}{sf::Http::Request}}\ request(\textcolor{stringliteral}{"{}features.php"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Send\ the\ request}}
+\DoxyCodeLine{\mbox{\hyperlink{a01837}{sf::Http::Response}}\ response\ =\ http.\mbox{\hyperlink{a01829_aaf09ebfb5e00dcc82e0d494d5c6a9e2a}{sendRequest}}(request);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ the\ status\ code\ and\ display\ the\ result}}
+\DoxyCodeLine{\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{sf::Http::Response::Status}}\ status\ =\ response.\mbox{\hyperlink{a01837_a4271651703764fd9a7d2c0315aff20de}{getStatus}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (status\ ==\ \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a0158f932254d3f09647dd1f64bd43832}{sf::Http::Response::Ok}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ response.\mbox{\hyperlink{a01837_ac59e2b11cae4b6232c737547a3ca9850}{getBody}}()\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ "{}}\ <<\ status\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01829_abe2360194f99bdde402c9f97a85cf067}\label{a01829_abe2360194f99bdde402c9f97a85cf067} 
+\index{sf::Http@{sf::Http}!Http@{Http}}
+\index{Http@{Http}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{Http()}{Http()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Http\+::\+Http (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01829_a79efd844a735f083fcce0edbf1092385}\label{a01829_a79efd844a735f083fcce0edbf1092385} 
+\index{sf::Http@{sf::Http}!Http@{Http}}
+\index{Http@{Http}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{Http()}{Http()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Http\+::\+Http (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{unsigned short}]{port = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct the HTTP client with the target host. 
+
+This is equivalent to calling set\+Host(host, port). The port has a default value of 0, which means that the HTTP client will use the right port according to the protocol used (80 for HTTP). You should leave it like this unless you really need a port other than the standard one, or use an unknown protocol.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Web server to connect to \\
+\hline
+{\em port} & Port to use for connection \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01829_aaf09ebfb5e00dcc82e0d494d5c6a9e2a}\label{a01829_aaf09ebfb5e00dcc82e0d494d5c6a9e2a} 
+\index{sf::Http@{sf::Http}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{sendRequest()}{sendRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01837}{Response}} sf\+::\+Http\+::send\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01833}{Request}} \&}]{request,  }\item[{\mbox{\hyperlink{a01933}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero}}} }\end{DoxyParamCaption})}
+
+
+
+Send a HTTP request and return the server\textquotesingle{}s response. 
+
+You must have a valid host before sending a request (see set\+Host). Any missing mandatory header field in the request will be added with an appropriate value. Warning\+: this function waits for the server\textquotesingle{}s response and may not return instantly; use a thread if you don\textquotesingle{}t want to block your application, or use a timeout to limit the time to wait. A value of \doxylink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero} means that the client will use the system default timeout (which is usually pretty long).
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \doxylink{a01833}{Request} to send \\
+\hline
+{\em timeout} & Maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Server\textquotesingle{}s response 
+\end{DoxyReturn}
+\Hypertarget{a01829_a55121d543b61c41cf20b885a97b04e65}\label{a01829_a55121d543b61c41cf20b885a97b04e65} 
+\index{sf::Http@{sf::Http}!setHost@{setHost}}
+\index{setHost@{setHost}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{setHost()}{setHost()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::set\+Host (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{unsigned short}]{port = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Set the target host. 
+
+This function just stores the host address and port, it doesn\textquotesingle{}t actually connect to it until you send a request. The port has a default value of 0, which means that the HTTP client will use the right port according to the protocol used (80 for HTTP). You should leave it like this unless you really need a port other than the standard one, or use an unknown protocol.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Web server to connect to \\
+\hline
+{\em port} & Port to use for connection \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01829_aa51e5fe5f6b85b2057906f762241ed4f}\label{a01829_aa51e5fe5f6b85b2057906f762241ed4f} 
+\index{sf::Http@{sf::Http}!m\_connection@{m\_connection}}
+\index{m\_connection@{m\_connection}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{m\_connection}{m\_connection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01861}{Tcp\+Socket}} sf\+::\+Http\+::m\+\_\+connection\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Connection to the host. 
+
+\Hypertarget{a01829_ae4504e74ccaa6afb696f431dc438f794}\label{a01829_ae4504e74ccaa6afb696f431dc438f794} 
+\index{sf::Http@{sf::Http}!m\_host@{m\_host}}
+\index{m\_host@{m\_host}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{m\_host}{m\_host}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01841}{Ip\+Address}} sf\+::\+Http\+::m\+\_\+host\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Web host address. 
+
+\Hypertarget{a01829_a4a1ab171a8fa06e0428ec80c4a80891a}\label{a01829_a4a1ab171a8fa06e0428ec80c4a80891a} 
+\index{sf::Http@{sf::Http}!m\_hostName@{m\_hostName}}
+\index{m\_hostName@{m\_hostName}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{m\_hostName}{m\_hostName}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Http\+::m\+\_\+host\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Web host name. 
+
+\Hypertarget{a01829_a3adcf3462408aa990c9737425bf320a9}\label{a01829_a3adcf3462408aa990c9737425bf320a9} 
+\index{sf::Http@{sf::Http}!m\_port@{m\_port}}
+\index{m\_port@{m\_port}!sf::Http@{sf::Http}}
+\doxysubsubsection{\texorpdfstring{m\_port}{m\_port}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Http\+::m\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Port used for connection with host. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00461}{Http.\+hpp}}\end{DoxyCompactItemize}

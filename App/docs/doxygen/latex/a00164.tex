@@ -1,0 +1,51 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/input/binary\+\_\+reader.hpp File Reference}
+\hypertarget{a00164}{}\label{a00164}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/binary\_reader.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/binary\_reader.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/exceptions.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/input\+\_\+adapters.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/json\+\_\+sax.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/lexer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/is\+\_\+sax.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for binary\+\_\+reader.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01077}{nlohmann\+::detail\+::binary\+\_\+reader$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$}}
+\begin{DoxyCompactList}\small\item\em deserialization of CBOR, Message\+Pack, and UBJSON values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9ac}{nlohmann\+::detail\+::cbor\+\_\+tag\+\_\+handler\+\_\+t}} \{ \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{nlohmann\+::detail\+::error}}
+, \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca567bc1d268f135496de3d5b946b691f3}{nlohmann\+::detail\+::ignore}}
+, \mbox{\hyperlink{a00662_a58bb1ef1a9ad287a9cfaf1855784d9aca8cd892b7b97ef9489ae4479d3f4ef0fc}{nlohmann\+::detail\+::store}}
+ \}
+\begin{DoxyCompactList}\small\item\em how to treat CBOR tags \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9}{nlohmann\+::detail\+::little\+\_\+endianness}} (int num=1) noexcept
+\begin{DoxyCompactList}\small\item\em determine system byte order \end{DoxyCompactList}\end{DoxyCompactItemize}

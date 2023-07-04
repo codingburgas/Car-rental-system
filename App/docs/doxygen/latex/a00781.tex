@@ -1,0 +1,82 @@
+\doxysection{cpr\+::Buffer Struct Reference}
+\hypertarget{a00781}{}\label{a00781}\index{cpr::Buffer@{cpr::Buffer}}
+
+
+{\ttfamily \#include $<$multipart.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\+\_\+t}} = const unsigned char \texorpdfstring{$\ast$}{*}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\\mbox{\hyperlink{a00781_aaa0ae2c19323b635e34437d71f93af71}{Buffer}} (Iterator begin, Iterator end, std\+::string \&\&p\+\_\+filename)
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ typenamestd\+::iterator\+\_\+traits$<$ Iterator $>$\+::iterator\+\_\+category, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag $>$\+::value $>$\+::type \mbox{\hyperlink{a00781_a0cb4fd0074c304d9ebe702558ba8f4b3}{is\+\_\+random\+\_\+access\+\_\+iterator}} (Iterator, Iterator)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\+\_\+t}} \mbox{\hyperlink{a00781_a44d2b524dfc543480c3fae25bcf55c33}{data}}
+\item 
+long \mbox{\hyperlink{a00781_a49c92d4e3f64843666a5946e0171e249}{datalen}}
+\item 
+const std\+::string \mbox{\hyperlink{a00781_a8754f2b96831c8fc125d7a5821c0e066}{filename}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a00781_ad6ec4a159cd1c5f45db32f27dac92050}\label{a00781_ad6ec4a159cd1c5f45db32f27dac92050} 
+\index{cpr::Buffer@{cpr::Buffer}!data\_t@{data\_t}}
+\index{data\_t@{data\_t}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{data\_t}{data\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{cpr\+::\+Buffer\+::data\+\_\+t}} =  const unsigned char\texorpdfstring{$\ast$}{*}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00781_aaa0ae2c19323b635e34437d71f93af71}\label{a00781_aaa0ae2c19323b635e34437d71f93af71} 
+\index{cpr::Buffer@{cpr::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily template$<$typename Iterator $>$ \\
+cpr\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{Iterator}]{begin,  }\item[{Iterator}]{end,  }\item[{std\+::string \&\&}]{p\+\_\+filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00781_a0cb4fd0074c304d9ebe702558ba8f4b3}\label{a00781_a0cb4fd0074c304d9ebe702558ba8f4b3} 
+\index{cpr::Buffer@{cpr::Buffer}!is\_random\_access\_iterator@{is\_random\_access\_iterator}}
+\index{is\_random\_access\_iterator@{is\_random\_access\_iterator}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{is\_random\_access\_iterator()}{is\_random\_access\_iterator()}}
+{\footnotesize\ttfamily template$<$typename Iterator $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ typenamestd\+::iterator\+\_\+traits$<$ Iterator $>$\+::iterator\+\_\+category, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag $>$\+::value $>$\+::type cpr\+::\+Buffer\+::is\+\_\+random\+\_\+access\+\_\+iterator (\begin{DoxyParamCaption}\item[{Iterator}]{,  }\item[{Iterator}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00781_a44d2b524dfc543480c3fae25bcf55c33}\label{a00781_a44d2b524dfc543480c3fae25bcf55c33} 
+\index{cpr::Buffer@{cpr::Buffer}!data@{data}}
+\index{data@{data}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\+\_\+t}} cpr\+::\+Buffer\+::data}
+
+\Hypertarget{a00781_a49c92d4e3f64843666a5946e0171e249}\label{a00781_a49c92d4e3f64843666a5946e0171e249} 
+\index{cpr::Buffer@{cpr::Buffer}!datalen@{datalen}}
+\index{datalen@{datalen}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{datalen}{datalen}}
+{\footnotesize\ttfamily long cpr\+::\+Buffer\+::datalen}
+
+\Hypertarget{a00781_a8754f2b96831c8fc125d7a5821c0e066}\label{a00781_a8754f2b96831c8fc125d7a5821c0e066} 
+\index{cpr::Buffer@{cpr::Buffer}!filename@{filename}}
+\index{filename@{filename}!cpr::Buffer@{cpr::Buffer}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily const std\+::string cpr\+::\+Buffer\+::filename}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00065}{multipart.\+h}}\end{DoxyCompactItemize}

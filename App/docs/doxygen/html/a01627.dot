@@ -1,0 +1,14 @@
+digraph "sf::SoundBuffer"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="sf::SoundBuffer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Storage for audio samples defining a sound."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="firebrick4",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sf::AlResource",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01601.html",tooltip="Base class for classes that require an OpenAL context."];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" m_duration",fontcolor="grey" ];
+  Node3 [id="Node000003",label="sf::Time",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01933.html",tooltip="Represents a time value."];
+  Node3 -> Node3 [id="edge3_Node000003_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" Zero",fontcolor="grey" ];
+}

@@ -1,0 +1,101 @@
+\doxysection{sf\+::Non\+Copyable Class Reference}
+\hypertarget{a01897}{}\label{a01897}\index{sf::NonCopyable@{sf::NonCopyable}}
+
+
+Utility class that makes any derived class non-\/copyable.  
+
+
+
+
+{\ttfamily \#include $<$Non\+Copyable.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Non\+Copyable\+:
+% FIG 0
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01897_a2110add170580fdb946f887719da6860}{Non\+Copyable}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01897_a8274ffbf46014f5f7f364befb52c7728}{\texorpdfstring{$\sim$}{\string~}\+Non\+Copyable}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01897_a57729c3045ce03f392ae1ba732224ddb}{Non\+Copyable}} (const \mbox{\hyperlink{a01897}{Non\+Copyable}} \&)
+\begin{DoxyCompactList}\small\item\em Disabled copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01897}{Non\+Copyable}} \& \mbox{\hyperlink{a01897_ab5989cb58bcc52f833e649c428958c0d}{operator=}} (const \mbox{\hyperlink{a01897}{Non\+Copyable}} \&)
+\begin{DoxyCompactList}\small\item\em Disabled assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class that makes any derived class non-\/copyable. 
+
+This class makes its instances non-\/copyable, by explicitly disabling its copy constructor and its assignment operator.
+
+To create a non-\/copyable class, simply inherit from \doxylink{a01897}{sf\+::\+Non\+Copyable}.
+
+The type of inheritance (public or private) doesn\textquotesingle{}t matter, the copy constructor and assignment operator are declared private in \doxylink{a01897}{sf\+::\+Non\+Copyable} so they will end up being inaccessible in both cases. Thus you can use a shorter syntax for inheriting from it (see below).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyNonCopyableClass\ :\ \mbox{\hyperlink{a01897}{sf::NonCopyable}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+Deciding whether the instances of a class can be copied or not is a very important design choice. You are strongly encouraged to think about it before writing a class, and to use \doxylink{a01897}{sf\+::\+Non\+Copyable} when necessary to prevent many potential future errors when using it. This is also a very important indication to users of your class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01897_a2110add170580fdb946f887719da6860}\label{a01897_a2110add170580fdb946f887719da6860} 
+\index{sf::NonCopyable@{sf::NonCopyable}!NonCopyable@{NonCopyable}}
+\index{NonCopyable@{NonCopyable}!sf::NonCopyable@{sf::NonCopyable}}
+\doxysubsubsection{\texorpdfstring{NonCopyable()}{NonCopyable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Non\+Copyable\+::\+Non\+Copyable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+Because this class has a copy constructor, the compiler will not automatically generate the default constructor. That\textquotesingle{}s why we must define it explicitly. \Hypertarget{a01897_a8274ffbf46014f5f7f364befb52c7728}\label{a01897_a8274ffbf46014f5f7f364befb52c7728} 
+\index{sf::NonCopyable@{sf::NonCopyable}!````~NonCopyable@{\texorpdfstring{$\sim$}{\string~}NonCopyable}}
+\index{````~NonCopyable@{\texorpdfstring{$\sim$}{\string~}NonCopyable}!sf::NonCopyable@{sf::NonCopyable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NonCopyable()}{\string~NonCopyable()}}
+{\footnotesize\ttfamily sf\+::\+Non\+Copyable\+::\texorpdfstring{$\sim$}{\string~}\+Non\+Copyable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Default destructor. 
+
+By declaring a protected destructor it\textquotesingle{}s impossible to call delete on a pointer of \doxylink{a01897}{sf\+::\+Non\+Copyable}, thus preventing possible resource leaks. \Hypertarget{a01897_a57729c3045ce03f392ae1ba732224ddb}\label{a01897_a57729c3045ce03f392ae1ba732224ddb} 
+\index{sf::NonCopyable@{sf::NonCopyable}!NonCopyable@{NonCopyable}}
+\index{NonCopyable@{NonCopyable}!sf::NonCopyable@{sf::NonCopyable}}
+\doxysubsubsection{\texorpdfstring{NonCopyable()}{NonCopyable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Non\+Copyable\+::\+Non\+Copyable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01897}{Non\+Copyable}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Disabled copy constructor. 
+
+By making the copy constructor private, the compiler will trigger an error if anyone outside tries to use it. To prevent \doxylink{a01897}{Non\+Copyable} or friend classes from using it, we also give no definition, so that the linker will produce an error if the first protection was inefficient. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01897_ab5989cb58bcc52f833e649c428958c0d}\label{a01897_ab5989cb58bcc52f833e649c428958c0d} 
+\index{sf::NonCopyable@{sf::NonCopyable}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::NonCopyable@{sf::NonCopyable}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01897}{Non\+Copyable}} \& sf\+::\+Non\+Copyable\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01897}{Non\+Copyable}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Disabled assignment operator. 
+
+By making the assignment operator private, the compiler will trigger an error if anyone outside tries to use it. To prevent \doxylink{a01897}{Non\+Copyable} or friend classes from using it, we also give no definition, so that the linker will produce an error if the first protection was inefficient. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00518}{Non\+Copyable.\+hpp}}\end{DoxyCompactItemize}

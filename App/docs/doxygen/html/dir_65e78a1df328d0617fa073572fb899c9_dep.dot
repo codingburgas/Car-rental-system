@@ -1,0 +1,15 @@
+digraph "D:/doxygen shitnqta/App/carSystem.BLL/include"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_36914e8fb106436be4ecc9d11583c984 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="carSystem.BLL", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_36914e8fb106436be4ecc9d11583c984.html",tooltip=""]
+  dir_65e78a1df328d0617fa073572fb899c9 [label="include", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_65e78a1df328d0617fa073572fb899c9.html",tooltip=""];
+  }
+  dir_839c80e8553629dd66cd9288e519a8f2 [label="carSystem.DAL", fillcolor="#edf0f7", color="red", style="filled", URL="dir_839c80e8553629dd66cd9288e519a8f2.html",tooltip=""];
+  dir_65e78a1df328d0617fa073572fb899c9->dir_839c80e8553629dd66cd9288e519a8f2 [headlabel="2", labeldistance=1.5 headhref="dir_000011_000003.html" color="steelblue1" fontcolor="steelblue1"];
+}

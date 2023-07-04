@@ -1,0 +1,182 @@
+\doxysection{nlohmann\+::detail\+::parse\+\_\+error Class Reference}
+\hypertarget{a01057}{}\label{a01057}\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+
+
+exception indicating a parse error  
+
+
+
+
+{\ttfamily \#include $<$exceptions.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+::detail\+::parse\+\_\+error\+:
+% FIG 0
+
+
+Collaboration diagram for nlohmann\+::detail\+::parse\+\_\+error\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01053_ad863f4455f8bb2ea006a78e6fcf0b090}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static \mbox{\hyperlink{a01057}{parse\+\_\+error}} \mbox{\hyperlink{a01057_ae77bd584cb9101140790219af7fec1ce}{create}} (int id\+\_\+, const \mbox{\hyperlink{a01161}{position\+\_\+t}} \&pos, const std\+::string \&what\+\_\+arg, const Basic\+Json\+Type \&context)
+\begin{DoxyCompactList}\small\item\em create a parse error exception \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static \mbox{\hyperlink{a01057}{parse\+\_\+error}} \mbox{\hyperlink{a01057_a90fbaaeeb00838e65b8d04885017ef0c}{create}} (int id\+\_\+, std\+::size\+\_\+t byte\+\_\+, const std\+::string \&what\+\_\+arg, const Basic\+Json\+Type \&context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::size\+\_\+t \mbox{\hyperlink{a01057_a9505aaa1ca943be927eec7cc579592ff}{byte}}
+\begin{DoxyCompactList}\small\item\em byte index of the parse error \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{a01053_a0d4589a3fb54e81646d986c05efa3b9a}{id}}
+\begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string \mbox{\hyperlink{a01053_aa353a7dba4fd179f7224b8a2a238a264}{diagnostics}} (const Basic\+Json\+Type \&leaf\+\_\+element)
+\item 
+static std\+::string \mbox{\hyperlink{a01053_abf41a7e9178356314082284e6cfea278}{name}} (const std\+::string \&ename, int id\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01057_a0ea816ea3521d7109407948cb1b850f7}{parse\+\_\+error}} (int id\+\_\+, std\+::size\+\_\+t byte\+\_\+, const char \texorpdfstring{$\ast$}{*}what\+\_\+arg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{a01057_aefe74adeaa48781464ba2fd2ec63d221}{position\+\_\+string}} (const \mbox{\hyperlink{a01161}{position\+\_\+t}} \&pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::runtime\+\_\+error \mbox{\hyperlink{a01053_ad54778dc4f125488cbce8ec276dfdde2}{m}}
+\begin{DoxyCompactList}\small\item\em an exception object as storage for error messages \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+exception indicating a parse error 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/parse_error/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/parse\+\_\+error/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01057_a0ea816ea3521d7109407948cb1b850f7}\label{a01057_a0ea816ea3521d7109407948cb1b850f7} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!parse\_error@{parse\_error}}
+\index{parse\_error@{parse\_error}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{parse\_error()}{parse\_error()}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::parse\+\_\+error\+::parse\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{std\+::size\+\_\+t}]{byte\+\_\+,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01057_ae77bd584cb9101140790219af7fec1ce}\label{a01057_ae77bd584cb9101140790219af7fec1ce} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!create@{create}}
+\index{create@{create}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static \mbox{\hyperlink{a01057}{parse\+\_\+error}} nlohmann\+::detail\+::parse\+\_\+error\+::create (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const \mbox{\hyperlink{a01161}{position\+\_\+t}} \&}]{pos,  }\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{const Basic\+Json\+Type \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+create a parse error exception 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id\+\_\+} & the id of the exception \\
+\hline
+\mbox{\texttt{ in}}  & {\em pos} & the position where the error occurred (or with chars\+\_\+read\+\_\+total=0 if the position cannot be determined) \\
+\hline
+\mbox{\texttt{ in}}  & {\em what\+\_\+arg} & the explanatory string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01057}{parse\+\_\+error} object 
+\end{DoxyReturn}
+\Hypertarget{a01057_a90fbaaeeb00838e65b8d04885017ef0c}\label{a01057_a90fbaaeeb00838e65b8d04885017ef0c} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!create@{create}}
+\index{create@{create}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static \mbox{\hyperlink{a01057}{parse\+\_\+error}} nlohmann\+::detail\+::parse\+\_\+error\+::create (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{std\+::size\+\_\+t}]{byte\+\_\+,  }\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{const Basic\+Json\+Type \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{a01053_aa353a7dba4fd179f7224b8a2a238a264}\label{a01053_aa353a7dba4fd179f7224b8a2a238a264} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static std\+::string nlohmann\+::detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{leaf\+\_\+element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01053_abf41a7e9178356314082284e6cfea278}\label{a01053_abf41a7e9178356314082284e6cfea278} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!name@{name}}
+\index{name@{name}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily static std\+::string nlohmann\+::detail\+::exception\+::name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ename,  }\item[{int}]{id\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01057_aefe74adeaa48781464ba2fd2ec63d221}\label{a01057_aefe74adeaa48781464ba2fd2ec63d221} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!position\_string@{position\_string}}
+\index{position\_string@{position\_string}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{position\_string()}{position\_string()}}
+{\footnotesize\ttfamily static std\+::string nlohmann\+::detail\+::parse\+\_\+error\+::position\+\_\+string (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01161}{position\+\_\+t}} \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{a01053_ad863f4455f8bb2ea006a78e6fcf0b090}\label{a01053_ad863f4455f8bb2ea006a78e6fcf0b090} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!what@{what}}
+\index{what@{what}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} nlohmann\+::detail\+::exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}
+
+
+
+returns the explanatory string 
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01057_a9505aaa1ca943be927eec7cc579592ff}\label{a01057_a9505aaa1ca943be927eec7cc579592ff} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!byte@{byte}}
+\index{byte@{byte}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily const std\+::size\+\_\+t nlohmann\+::detail\+::parse\+\_\+error\+::byte}
+
+
+
+byte index of the parse error 
+
+The byte index of the last read character in the input file.
+
+\begin{DoxyNote}{Note}
+For an input with n bytes, 1 is the index of the first character and n+1 is the index of the terminating null byte or the end of file. This also holds true when reading a byte vector (CBOR or Message\+Pack). 
+\end{DoxyNote}
+\Hypertarget{a01053_a0d4589a3fb54e81646d986c05efa3b9a}\label{a01053_a0d4589a3fb54e81646d986c05efa3b9a} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!id@{id}}
+\index{id@{id}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily const int nlohmann\+::detail\+::exception\+::id\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+the id of the exception 
+
+\Hypertarget{a01053_ad54778dc4f125488cbce8ec276dfdde2}\label{a01053_ad54778dc4f125488cbce8ec276dfdde2} 
+\index{nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}!m@{m}}
+\index{m@{m}!nlohmann::detail::parse\_error@{nlohmann::detail::parse\_error}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily std\+::runtime\+\_\+error nlohmann\+::detail\+::exception\+::m\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+an exception object as storage for error messages 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/\mbox{\hyperlink{a00158}{exceptions.\+hpp}}\end{DoxyCompactItemize}

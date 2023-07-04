@@ -1,0 +1,611 @@
+\doxysection{sf\+::Vertex\+Buffer Class Reference}
+\hypertarget{a01805}{}\label{a01805}\index{sf::VertexBuffer@{sf::VertexBuffer}}
+
+
+\doxylink{a01797}{Vertex} buffer storage for one or more 2D primitives.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+Buffer.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Vertex\+Buffer\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Vertex\+Buffer\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} \{ \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf}{Stream}}
+, \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7a13365282a5933ecd9cc6a3ef39ba58f7}{Dynamic}}
+, \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7a041ab564f6cd1b6775bd0ebff06b6d7e}{Static}}
+ \}
+\begin{DoxyCompactList}\small\item\em Usage specifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01805_aa68e128d59c7f7d5eb0d4d94125439a5}{create}} (std\+::size\+\_\+t vertex\+Count)
+\begin{DoxyCompactList}\small\item\em Create the vertex buffer. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01805_a343fa0a240c91bc4203a6727fcd9b920}{get\+Native\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Get the underlying Open\+GL handle of the vertex buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} \mbox{\hyperlink{a01805_a02061d85472ff69e7ad14dc72f8fcaa4}{get\+Primitive\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Get the type of primitives drawn by the vertex buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} \mbox{\hyperlink{a01805_a5e36f2b3955bb35648c17550a9c096e1}{get\+Usage}} () const
+\begin{DoxyCompactList}\small\item\em Get the usage specifier of this vertex buffer. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01805_a6c534536ed186a2ad65e75484c8abafe}{get\+Vertex\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Return the vertex count. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805}{Vertex\+Buffer}} \& \mbox{\hyperlink{a01805_ae9d19f938e30e1bb1788067e3c134653}{operator=}} (const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01805_a7c429dbef94224a86d605cf4c68aa02d}{set\+Primitive\+Type}} (\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Set the type of primitives to draw. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01805_ace40070db1fccf12a025383b23e81cad}{set\+Usage}} (\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} usage)
+\begin{DoxyCompactList}\small\item\em Set the usage specifier of this vertex buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01805_a3954d696848dc4c921c15a6b4459c8e6}{swap}} (\mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&right)
+\begin{DoxyCompactList}\small\item\em Swap the contents of this vertex buffer with those of another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01805_ad100a5f578a91c49a9009e3c6956c82d}{update}} (const \mbox{\hyperlink{a01797}{Vertex}} \texorpdfstring{$\ast$}{*}vertices)
+\begin{DoxyCompactList}\small\item\em Update the whole buffer from an array of vertices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01805_ae6c8649a64861507010d21e77fbd53fa}{update}} (const \mbox{\hyperlink{a01797}{Vertex}} \texorpdfstring{$\ast$}{*}vertices, std\+::size\+\_\+t vertex\+Count, unsigned int offset)
+\begin{DoxyCompactList}\small\item\em Update a part of the buffer from an array of vertices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01805_a41f8bbcf07f403e7fe29b1b905dc7544}{update}} (const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&vertex\+Buffer)
+\begin{DoxyCompactList}\small\item\em Copy the contents of another buffer into this buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_aba8836c571cef25a0f80e478add1560a}{Vertex\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_a2f2ff1e218cfc749b87f8873e23c016b}{Vertex\+Buffer}} (const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_a3f51dcd61dac52be54ba7b22ebdea7c8}{Vertex\+Buffer}} (\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific Primitive\+Type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_a326a5c89f1ba01b51b323535494434e8}{Vertex\+Buffer}} (\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} type, \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} usage)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific Primitive\+Type and usage specifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_af2dce0a43e061e5f91b97cf7267427e3}{Vertex\+Buffer}} (\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} usage)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific usage specifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_acfbb3b16221bfb9406fcaa18cfcac3e7}{\texorpdfstring{$\sim$}{\string~}\+Vertex\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a01805_a1c623e9701b43125e4b3661bc0d0b65b}{bind}} (const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \texorpdfstring{$\ast$}{*}vertex\+Buffer)
+\begin{DoxyCompactList}\small\item\em Bind a vertex buffer for rendering. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{a01805_a6304bc4134dc0164dc94eff887b08847}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports vertex buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01805_a3591a7fd52f502033b40755af71edc17}{draw}} (\mbox{\hyperlink{a01749}{Render\+Target}} \&target, \mbox{\hyperlink{a01745}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the vertex buffer to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a02033_ab171bdaf5eb36789da14b30a846db471}{register\+Context\+Destroy\+Callback}} (\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}} callback, void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em \doxylink{a01585}{Register} a function to be called when a context is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01805_aab0082f19be0290bcbaf308379e5d60a}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Internal buffer identifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} \mbox{\hyperlink{a01805_a958cf85fc5426b5b5490a201087046ac}{m\+\_\+primitive\+Type}}
+\begin{DoxyCompactList}\small\item\em Type of primitives to draw. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01805_a962780c0687af7aeb1d0555fd1baa445}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size in Vertexes of the currently allocated buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} \mbox{\hyperlink{a01805_ab056efbd5d04372e9054a0e41bd9acfe}{m\+\_\+usage}}
+\begin{DoxyCompactList}\small\item\em How this vertex buffer is to be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{a01797}{Vertex} buffer storage for one or more 2D primitives. 
+
+\doxylink{a01805}{sf\+::\+Vertex\+Buffer} is a simple wrapper around a dynamic buffer of vertices and a primitives type.
+
+Unlike \doxylink{a01801}{sf\+::\+Vertex\+Array}, the vertex data is stored in graphics memory.
+
+In situations where a large amount of vertex data would have to be transferred from system memory to graphics memory every frame, using \doxylink{a01805}{sf\+::\+Vertex\+Buffer} can help. By using a \doxylink{a01805}{sf\+::\+Vertex\+Buffer}, data that has not been changed between frames does not have to be re-\/transferred from system to graphics memory as would be the case with \doxylink{a01801}{sf\+::\+Vertex\+Array}. If data transfer is a bottleneck, this can lead to performance gains.
+
+Using \doxylink{a01805}{sf\+::\+Vertex\+Buffer}, the user also has the ability to only modify a portion of the buffer in graphics memory. This way, a large buffer can be allocated at the start of the application and only the applicable portions of it need to be updated during the course of the application. This allows the user to take full control of data transfers between system and graphics memory if they need to.
+
+In special cases, the user can make use of multiple threads to update vertex data in multiple distinct regions of the buffer simultaneously. This might make sense when e.\+g. the position of multiple objects has to be recalculated very frequently. The computation load can be spread across multiple threads as long as there are no other data dependencies.
+
+Simultaneous updates to the vertex buffer are not guaranteed to be carried out by the driver in any specific order. Updating the same region of the buffer from multiple threads will not cause undefined behaviour, however the final state of the buffer will be unpredictable.
+
+Simultaneous updates of distinct non-\/overlapping regions of the buffer are also not guaranteed to complete in a specific order. However, in this case the user can make sure to synchronize the writer threads at well-\/defined points in their code. The driver will make sure that all pending data transfers complete before the vertex buffer is sourced by the rendering pipeline.
+
+It inherits \doxylink{a01693}{sf\+::\+Drawable}, but unlike other drawables it is not transformable.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01797}{sf::Vertex}}\ vertices[15];}
+\DoxyCodeLine{...}
+\DoxyCodeLine{sf::VertexBuffer\ triangles(\mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}{sf::Triangles}});}
+\DoxyCodeLine{triangles.create(15);}
+\DoxyCodeLine{triangles.update(vertices);}
+\DoxyCodeLine{...}
+\DoxyCodeLine{window.draw(triangles);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01797}{sf\+::\+Vertex}, \doxylink{a01801}{sf\+::\+Vertex\+Array} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01805_a3a531528684e63ecb45edd51282f5cb7}\label{a01805_a3a531528684e63ecb45edd51282f5cb7} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!Usage@{Usage}}
+\index{Usage@{Usage}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{Usage}{Usage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{sf\+::\+Vertex\+Buffer\+::\+Usage}}}
+
+
+
+Usage specifiers. 
+
+If data is going to be updated once or more every frame, set the usage to Stream. If data is going to be set once and used for a long time without being modified, set the usage to Static. For everything else Dynamic should be a good compromise. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stream@{Stream}!sf::VertexBuffer@{sf::VertexBuffer}}\index{sf::VertexBuffer@{sf::VertexBuffer}!Stream@{Stream}}}\Hypertarget{a01805_a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf}\label{a01805_a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf} 
+Stream&Constantly changing data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dynamic@{Dynamic}!sf::VertexBuffer@{sf::VertexBuffer}}\index{sf::VertexBuffer@{sf::VertexBuffer}!Dynamic@{Dynamic}}}\Hypertarget{a01805_a3a531528684e63ecb45edd51282f5cb7a13365282a5933ecd9cc6a3ef39ba58f7}\label{a01805_a3a531528684e63ecb45edd51282f5cb7a13365282a5933ecd9cc6a3ef39ba58f7} 
+Dynamic&Occasionally changing data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Static@{Static}!sf::VertexBuffer@{sf::VertexBuffer}}\index{sf::VertexBuffer@{sf::VertexBuffer}!Static@{Static}}}\Hypertarget{a01805_a3a531528684e63ecb45edd51282f5cb7a041ab564f6cd1b6775bd0ebff06b6d7e}\label{a01805_a3a531528684e63ecb45edd51282f5cb7a041ab564f6cd1b6775bd0ebff06b6d7e} 
+Static&Rarely changing data. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01805_aba8836c571cef25a0f80e478add1560a}\label{a01805_aba8836c571cef25a0f80e478add1560a} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty vertex buffer. \Hypertarget{a01805_a3f51dcd61dac52be54ba7b22ebdea7c8}\label{a01805_a3f51dcd61dac52be54ba7b22ebdea7c8} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific Primitive\+Type. 
+
+Creates an empty vertex buffer and sets its primitive type to {\ttfamily type}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of primitive \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_af2dce0a43e061e5f91b97cf7267427e3}\label{a01805_af2dce0a43e061e5f91b97cf7267427e3} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}}}]{usage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific usage specifier. 
+
+Creates an empty vertex buffer and sets its usage to {\ttfamily usage}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em usage} & Usage specifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_a326a5c89f1ba01b51b323535494434e8}\label{a01805_a326a5c89f1ba01b51b323535494434e8} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}}}]{type,  }\item[{\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}}}]{usage }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{a01805}{Vertex\+Buffer} with a specific Primitive\+Type and usage specifier. 
+
+Creates an empty vertex buffer and sets its primitive type to {\ttfamily type} and usage to {\ttfamily usage}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of primitive \\
+\hline
+{\em usage} & Usage specifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_a2f2ff1e218cfc749b87f8873e23c016b}\label{a01805_a2f2ff1e218cfc749b87f8873e23c016b} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & instance to copy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_acfbb3b16221bfb9406fcaa18cfcac3e7}\label{a01805_acfbb3b16221bfb9406fcaa18cfcac3e7} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!````~VertexBuffer@{\texorpdfstring{$\sim$}{\string~}VertexBuffer}}
+\index{````~VertexBuffer@{\texorpdfstring{$\sim$}{\string~}VertexBuffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VertexBuffer()}{\string~VertexBuffer()}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01805_a1c623e9701b43125e4b3661bc0d0b65b}\label{a01805_a1c623e9701b43125e4b3661bc0d0b65b} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!bind@{bind}}
+\index{bind@{bind}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily static void sf\+::\+Vertex\+Buffer\+::bind (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \texorpdfstring{$\ast$}{*}}]{vertex\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Bind a vertex buffer for rendering. 
+
+This function is not part of the graphics API, it mustn\textquotesingle{}t be used when drawing SFML entities. It must be used only if you mix \doxylink{a01805}{sf\+::\+Vertex\+Buffer} with Open\+GL code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01805}{sf::VertexBuffer}}\ vb1,\ vb2;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{sf::VertexBuffer::bind(\&vb1);}
+\DoxyCodeLine{\textcolor{comment}{//\ draw\ OpenGL\ stuff\ that\ use\ vb1...}}
+\DoxyCodeLine{\mbox{\hyperlink{a01805_a1c623e9701b43125e4b3661bc0d0b65b}{sf::VertexBuffer::bind}}(\&vb2);}
+\DoxyCodeLine{\textcolor{comment}{//\ draw\ OpenGL\ stuff\ that\ use\ vb2...}}
+\DoxyCodeLine{\mbox{\hyperlink{a01805_a1c623e9701b43125e4b3661bc0d0b65b}{sf::VertexBuffer::bind}}(NULL);}
+\DoxyCodeLine{\textcolor{comment}{//\ draw\ OpenGL\ stuff\ that\ use\ no\ vertex\ buffer...}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buffer} & Pointer to the vertex buffer to bind, can be null to use no vertex buffer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_aa68e128d59c7f7d5eb0d4d94125439a5}\label{a01805_aa68e128d59c7f7d5eb0d4d94125439a5} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!create@{create}}
+\index{create@{create}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily bool sf\+::\+Vertex\+Buffer\+::create (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{vertex\+Count }\end{DoxyParamCaption})}
+
+
+
+Create the vertex buffer. 
+
+Creates the vertex buffer and allocates enough graphics memory to hold {\ttfamily vertex\+Count} vertices. Any previously allocated memory is freed in the process.
+
+In order to deallocate previously allocated memory pass 0 as {\ttfamily vertex\+Count}. Don\textquotesingle{}t forget to recreate with a non-\/zero value when graphics memory should be allocated again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Count} & Number of vertices worth of memory to allocate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if creation was successful 
+\end{DoxyReturn}
+\Hypertarget{a01805_a3591a7fd52f502033b40755af71edc17}\label{a01805_a3591a7fd52f502033b40755af71edc17} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!draw@{draw}}
+\index{draw@{draw}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Vertex\+Buffer\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01749}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{a01745}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the vertex buffer to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01693_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\Hypertarget{a01805_a343fa0a240c91bc4203a6727fcd9b920}\label{a01805_a343fa0a240c91bc4203a6727fcd9b920} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!getNativeHandle@{getNativeHandle}}
+\index{getNativeHandle@{getNativeHandle}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{getNativeHandle()}{getNativeHandle()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Vertex\+Buffer\+::get\+Native\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the underlying Open\+GL handle of the vertex buffer. 
+
+You shouldn\textquotesingle{}t need to use this function, unless you have very specific stuff to implement that SFML doesn\textquotesingle{}t support, or implement a temporary workaround until a bug is fixed.
+
+\begin{DoxyReturn}{Returns}
+Open\+GL handle of the vertex buffer or 0 if not yet created 
+\end{DoxyReturn}
+\Hypertarget{a01805_a02061d85472ff69e7ad14dc72f8fcaa4}\label{a01805_a02061d85472ff69e7ad14dc72f8fcaa4} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!getPrimitiveType@{getPrimitiveType}}
+\index{getPrimitiveType@{getPrimitiveType}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{getPrimitiveType()}{getPrimitiveType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} sf\+::\+Vertex\+Buffer\+::get\+Primitive\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the type of primitives drawn by the vertex buffer. 
+
+\begin{DoxyReturn}{Returns}
+Primitive type 
+\end{DoxyReturn}
+\Hypertarget{a01805_a5e36f2b3955bb35648c17550a9c096e1}\label{a01805_a5e36f2b3955bb35648c17550a9c096e1} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!getUsage@{getUsage}}
+\index{getUsage@{getUsage}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{getUsage()}{getUsage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} sf\+::\+Vertex\+Buffer\+::get\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the usage specifier of this vertex buffer. 
+
+\begin{DoxyReturn}{Returns}
+Usage specifier 
+\end{DoxyReturn}
+\Hypertarget{a01805_a6c534536ed186a2ad65e75484c8abafe}\label{a01805_a6c534536ed186a2ad65e75484c8abafe} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!getVertexCount@{getVertexCount}}
+\index{getVertexCount@{getVertexCount}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{getVertexCount()}{getVertexCount()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Vertex\+Buffer\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the vertex count. 
+
+\begin{DoxyReturn}{Returns}
+Number of vertices in the vertex buffer 
+\end{DoxyReturn}
+\Hypertarget{a01805_a6304bc4134dc0164dc94eff887b08847}\label{a01805_a6304bc4134dc0164dc94eff887b08847} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily static bool sf\+::\+Vertex\+Buffer\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tell whether or not the system supports vertex buffers. 
+
+This function should always be called before using the vertex buffer features. If it returns false, then any attempt to use \doxylink{a01805}{sf\+::\+Vertex\+Buffer} will fail.
+
+\begin{DoxyReturn}{Returns}
+True if vertex buffers are supported, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01805_ae9d19f938e30e1bb1788067e3c134653}\label{a01805_ae9d19f938e30e1bb1788067e3c134653} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \& sf\+::\+Vertex\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a02033_ab171bdaf5eb36789da14b30a846db471}\label{a02033_ab171bdaf5eb36789da14b30a846db471} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!registerContextDestroyCallback@{registerContextDestroyCallback}}
+\index{registerContextDestroyCallback@{registerContextDestroyCallback}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{registerContextDestroyCallback()}{registerContextDestroyCallback()}}
+{\footnotesize\ttfamily static void sf\+::\+Gl\+Resource\+::register\+Context\+Destroy\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}}}]{callback,  }\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01585}{Register} a function to be called when a context is destroyed. 
+
+This is used for internal purposes in order to properly clean up Open\+GL resources that cannot be shared between contexts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called when a context is destroyed \\
+\hline
+{\em arg} & Argument to pass when calling the function \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_a7c429dbef94224a86d605cf4c68aa02d}\label{a01805_a7c429dbef94224a86d605cf4c68aa02d} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!setPrimitiveType@{setPrimitiveType}}
+\index{setPrimitiveType@{setPrimitiveType}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{setPrimitiveType()}{setPrimitiveType()}}
+{\footnotesize\ttfamily void sf\+::\+Vertex\+Buffer\+::set\+Primitive\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Set the type of primitives to draw. 
+
+This function defines how the vertices must be interpreted when it\textquotesingle{}s time to draw them.
+
+The default primitive type is \doxylink{a00652_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}{sf\+::\+Points}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of primitive \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_ace40070db1fccf12a025383b23e81cad}\label{a01805_ace40070db1fccf12a025383b23e81cad} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!setUsage@{setUsage}}
+\index{setUsage@{setUsage}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{setUsage()}{setUsage()}}
+{\footnotesize\ttfamily void sf\+::\+Vertex\+Buffer\+::set\+Usage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}}}]{usage }\end{DoxyParamCaption})}
+
+
+
+Set the usage specifier of this vertex buffer. 
+
+This function provides a hint about how this vertex buffer is going to be used in terms of data update frequency.
+
+After changing the usage specifier, the vertex buffer has to be updated with new data for the usage specifier to take effect.
+
+The default primitive type is \doxylink{a01805_a3a531528684e63ecb45edd51282f5cb7aeed06a391698772af58a9cfdff77deaf}{sf\+::\+Vertex\+Buffer\+::\+Stream}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em usage} & Usage specifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_a3954d696848dc4c921c15a6b4459c8e6}\label{a01805_a3954d696848dc4c921c15a6b4459c8e6} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!swap@{swap}}
+\index{swap@{swap}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void sf\+::\+Vertex\+Buffer\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Swap the contents of this vertex buffer with those of another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to swap with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01805_ad100a5f578a91c49a9009e3c6956c82d}\label{a01805_ad100a5f578a91c49a9009e3c6956c82d} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!update@{update}}
+\index{update@{update}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool sf\+::\+Vertex\+Buffer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01797}{Vertex}} \texorpdfstring{$\ast$}{*}}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Update the whole buffer from an array of vertices. 
+
+The {\itshape vertex} array is assumed to have the same size as the {\itshape created} buffer.
+
+No additional check is performed on the size of the vertex array, passing invalid arguments will lead to undefined behavior.
+
+This function does nothing if {\itshape vertices} is null or if the buffer was not previously created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Array of vertices to copy to the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the update was successful 
+\end{DoxyReturn}
+\Hypertarget{a01805_ae6c8649a64861507010d21e77fbd53fa}\label{a01805_ae6c8649a64861507010d21e77fbd53fa} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!update@{update}}
+\index{update@{update}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool sf\+::\+Vertex\+Buffer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01797}{Vertex}} \texorpdfstring{$\ast$}{*}}]{vertices,  }\item[{std\+::size\+\_\+t}]{vertex\+Count,  }\item[{unsigned int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Update a part of the buffer from an array of vertices. 
+
+{\ttfamily offset} is specified as the number of vertices to skip from the beginning of the buffer.
+
+If {\ttfamily offset} is 0 and {\ttfamily vertex\+Count} is equal to the size of the currently created buffer, its whole contents are replaced.
+
+If {\ttfamily offset} is 0 and {\ttfamily vertex\+Count} is greater than the size of the currently created buffer, a new buffer is created containing the vertex data.
+
+If {\ttfamily offset} is 0 and {\ttfamily vertex\+Count} is less than the size of the currently created buffer, only the corresponding region is updated.
+
+If {\ttfamily offset} is not 0 and {\ttfamily offset} + {\ttfamily vertex\+Count} is greater than the size of the currently created buffer, the update fails.
+
+No additional check is performed on the size of the vertex array, passing invalid arguments will lead to undefined behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Array of vertices to copy to the buffer \\
+\hline
+{\em vertex\+Count} & Number of vertices to copy \\
+\hline
+{\em offset} & Offset in the buffer to copy to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the update was successful 
+\end{DoxyReturn}
+\Hypertarget{a01805_a41f8bbcf07f403e7fe29b1b905dc7544}\label{a01805_a41f8bbcf07f403e7fe29b1b905dc7544} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!update@{update}}
+\index{update@{update}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool sf\+::\+Vertex\+Buffer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01805}{Vertex\+Buffer}} \&}]{vertex\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Copy the contents of another buffer into this buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buffer} & \doxylink{a01797}{Vertex} buffer whose contents to copy into this vertex buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the copy was successful 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01805_aab0082f19be0290bcbaf308379e5d60a}\label{a01805_aab0082f19be0290bcbaf308379e5d60a} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Vertex\+Buffer\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal buffer identifier. 
+
+\Hypertarget{a01805_a958cf85fc5426b5b5490a201087046ac}\label{a01805_a958cf85fc5426b5b5490a201087046ac} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_primitiveType@{m\_primitiveType}}
+\index{m\_primitiveType@{m\_primitiveType}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_primitiveType}{m\_primitiveType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{Primitive\+Type}} sf\+::\+Vertex\+Buffer\+::m\+\_\+primitive\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Type of primitives to draw. 
+
+\Hypertarget{a01805_a962780c0687af7aeb1d0555fd1baa445}\label{a01805_a962780c0687af7aeb1d0555fd1baa445} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Vertex\+Buffer\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size in Vertexes of the currently allocated buffer. 
+
+\Hypertarget{a01805_ab056efbd5d04372e9054a0e41bd9acfe}\label{a01805_ab056efbd5d04372e9054a0e41bd9acfe} 
+\index{sf::VertexBuffer@{sf::VertexBuffer}!m\_usage@{m\_usage}}
+\index{m\_usage@{m\_usage}!sf::VertexBuffer@{sf::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_usage}{m\_usage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01805_a3a531528684e63ecb45edd51282f5cb7}{Usage}} sf\+::\+Vertex\+Buffer\+::m\+\_\+usage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+How this vertex buffer is to be used. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00446}{Vertex\+Buffer.\+hpp}}\end{DoxyCompactItemize}

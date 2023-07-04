@@ -1,0 +1,171 @@
+\doxysection{sf\+::Sensor Class Reference}
+\hypertarget{a02057}{}\label{a02057}\index{sf::Sensor@{sf::Sensor}}
+
+
+Give access to the real-\/time state of the sensors.  
+
+
+
+
+{\ttfamily \#include $<$Sensor.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}} \{ \newline
+\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84a11bc58199593e217de23641755ecc867}{Accelerometer}}
+, \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84a1c43984aacd29b1fda5356883fb19656}{Gyroscope}}
+, \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84ae706bb678bde8d3c370e246ffde6a63d}{Magnetometer}}
+, \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92}{Gravity}}
+, \newline
+\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84ad3a399e0025892b7c53e8767cebb9215}{User\+Acceleration}}
+, \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84aa428c5260446555de87c69b65f6edf00}{Orientation}}
+, \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84afcb4a80eb9e3f927c5837207a1b9eb29}{Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{a02057}{Sensor} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \mbox{\hyperlink{a02057_ab9a2710f55ead2f7b4e1b0bead34457e}{get\+Value}} (\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}} sensor)
+\begin{DoxyCompactList}\small\item\em Get the current sensor value. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{a02057_a7b7a2570218221781233bd495323abf0}{is\+Available}} (\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}} sensor)
+\begin{DoxyCompactList}\small\item\em Check if a sensor is available on the underlying platform. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a02057_afb31c5697d2e0a5fec70d702ec1d6cd9}{set\+Enabled}} (\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}} sensor, bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable or disable a sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Give access to the real-\/time state of the sensors. 
+
+\doxylink{a02057}{sf\+::\+Sensor} provides an interface to the state of the various sensors that a device provides. It only contains static functions, so it\textquotesingle{}s not meant to be instantiated.
+
+This class allows users to query the sensors values at any time and directly, without having to deal with a window and its events. Compared to the Sensor\+Changed event, \doxylink{a02057}{sf\+::\+Sensor} can retrieve the state of a sensor at any time (you don\textquotesingle{}t need to store and update its current value on your side).
+
+Depending on the OS and hardware of the device (phone, tablet, ...), some sensor types may not be available. You should always check the availability of a sensor before trying to read it, with the \doxylink{a02057_a7b7a2570218221781233bd495323abf0}{sf\+::\+Sensor\+::is\+Available} function.
+
+You may wonder why some sensor types look so similar, for example Accelerometer and Gravity / User\+Acceleration. The first one is the raw measurement of the acceleration, and takes into account both the earth gravity and the user movement. The others are more precise\+: they provide these components separately, which is usually more useful. In fact they are not direct sensors, they are computed internally based on the raw acceleration and other sensors. This is exactly the same for Gyroscope vs Orientation.
+
+Because sensors consume a non-\/negligible amount of current, they are all disabled by default. You must call \doxylink{a02057_afb31c5697d2e0a5fec70d702ec1d6cd9}{sf\+::\+Sensor\+::set\+Enabled} for each sensor in which you are interested.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a02057_a7b7a2570218221781233bd495323abf0}{sf::Sensor::isAvailable}}(\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92}{sf::Sensor::Gravity}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ gravity\ sensor\ is\ available}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ enable\ the\ gravity\ sensor}}
+\DoxyCodeLine{\mbox{\hyperlink{a02057_afb31c5697d2e0a5fec70d702ec1d6cd9}{sf::Sensor::setEnabled}}(\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92}{sf::Sensor::Gravity}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ get\ the\ current\ value\ of\ gravity}}
+\DoxyCodeLine{\mbox{\hyperlink{a01957}{sf::Vector3f}}\ gravity\ =\ \mbox{\hyperlink{a02057_ab9a2710f55ead2f7b4e1b0bead34457e}{sf::Sensor::getValue}}(\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92}{sf::Sensor::Gravity}});}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84}\label{a02057_a687375af3ab77b818fca73735bcaea84} 
+\index{sf::Sensor@{sf::Sensor}!Type@{Type}}
+\index{Type@{Type}!sf::Sensor@{sf::Sensor}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{sf\+::\+Sensor\+::\+Type}}}
+
+
+
+\doxylink{a02057}{Sensor} type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Accelerometer@{Accelerometer}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Accelerometer@{Accelerometer}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84a11bc58199593e217de23641755ecc867}\label{a02057_a687375af3ab77b818fca73735bcaea84a11bc58199593e217de23641755ecc867} 
+Accelerometer&Measures the raw acceleration (m/s\texorpdfstring{$^\wedge$}{\string^}2) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gyroscope@{Gyroscope}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Gyroscope@{Gyroscope}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84a1c43984aacd29b1fda5356883fb19656}\label{a02057_a687375af3ab77b818fca73735bcaea84a1c43984aacd29b1fda5356883fb19656} 
+Gyroscope&Measures the raw rotation rates (degrees/s) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Magnetometer@{Magnetometer}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Magnetometer@{Magnetometer}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84ae706bb678bde8d3c370e246ffde6a63d}\label{a02057_a687375af3ab77b818fca73735bcaea84ae706bb678bde8d3c370e246ffde6a63d} 
+Magnetometer&Measures the ambient magnetic field (micro-\/teslas) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gravity@{Gravity}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Gravity@{Gravity}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92}\label{a02057_a687375af3ab77b818fca73735bcaea84afab4d098cc64e791a0c4a9ef6b32db92} 
+Gravity&Measures the direction and intensity of gravity, independent of device acceleration (m/s\texorpdfstring{$^\wedge$}{\string^}2) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserAcceleration@{UserAcceleration}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!UserAcceleration@{UserAcceleration}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84ad3a399e0025892b7c53e8767cebb9215}\label{a02057_a687375af3ab77b818fca73735bcaea84ad3a399e0025892b7c53e8767cebb9215} 
+User\+Acceleration&Measures the direction and intensity of device acceleration, independent of the gravity (m/s\texorpdfstring{$^\wedge$}{\string^}2) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Orientation@{Orientation}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Orientation@{Orientation}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84aa428c5260446555de87c69b65f6edf00}\label{a02057_a687375af3ab77b818fca73735bcaea84aa428c5260446555de87c69b65f6edf00} 
+Orientation&Measures the absolute 3D orientation (degrees) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!sf::Sensor@{sf::Sensor}}\index{sf::Sensor@{sf::Sensor}!Count@{Count}}}\Hypertarget{a02057_a687375af3ab77b818fca73735bcaea84afcb4a80eb9e3f927c5837207a1b9eb29}\label{a02057_a687375af3ab77b818fca73735bcaea84afcb4a80eb9e3f927c5837207a1b9eb29} 
+Count&Keep last -- the total number of sensor types. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a02057_ab9a2710f55ead2f7b4e1b0bead34457e}\label{a02057_ab9a2710f55ead2f7b4e1b0bead34457e} 
+\index{sf::Sensor@{sf::Sensor}!getValue@{getValue}}
+\index{getValue@{getValue}!sf::Sensor@{sf::Sensor}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} sf\+::\+Sensor\+::get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}}}]{sensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current sensor value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & \doxylink{a02057}{Sensor} to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current sensor value 
+\end{DoxyReturn}
+\Hypertarget{a02057_a7b7a2570218221781233bd495323abf0}\label{a02057_a7b7a2570218221781233bd495323abf0} 
+\index{sf::Sensor@{sf::Sensor}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!sf::Sensor@{sf::Sensor}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily static bool sf\+::\+Sensor\+::is\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}}}]{sensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a sensor is available on the underlying platform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & \doxylink{a02057}{Sensor} to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sensor is available, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a02057_afb31c5697d2e0a5fec70d702ec1d6cd9}\label{a02057_afb31c5697d2e0a5fec70d702ec1d6cd9} 
+\index{sf::Sensor@{sf::Sensor}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!sf::Sensor@{sf::Sensor}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily static void sf\+::\+Sensor\+::set\+Enabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Type}}}]{sensor,  }\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable or disable a sensor. 
+
+All sensors are disabled by default, to avoid consuming too much battery power. Once a sensor is enabled, it starts sending events of the corresponding type.
+
+This function does nothing if the sensor is unavailable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & \doxylink{a02057}{Sensor} to enable \\
+\hline
+{\em enabled} & True to enable, false to disable \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00596}{Sensor.\+hpp}}\end{DoxyCompactItemize}

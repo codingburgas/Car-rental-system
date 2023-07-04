@@ -1,0 +1,428 @@
+\doxysection{sf\+::Image Class Reference}
+\hypertarget{a01733}{}\label{a01733}\index{sf::Image@{sf::Image}}
+
+
+Class for loading, manipulating and saving images.  
+
+
+
+
+{\ttfamily \#include $<$Image.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Image\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01733_ab2fa337c956f85f93377dcb52153a45a}{copy}} (const \mbox{\hyperlink{a01733}{Image}} \&source, unsigned int destX, unsigned int destY, const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \&source\+Rect=\mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}}(0, 0, 0, 0), bool apply\+Alpha=false)
+\begin{DoxyCompactList}\small\item\em Copy pixels from another image onto this one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a2a67930e2fd9ad97cf004e918cf5832b}{create}} (unsigned int width, unsigned int height, const \mbox{\hyperlink{a01685}{Color}} \&color=\mbox{\hyperlink{a01685}{Color}}(0, 0, 0))
+\begin{DoxyCompactList}\small\item\em Create the image and fill it with a unique color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a1c2b960ea12bdbb29e80934ce5268ebf}{create}} (unsigned int width, unsigned int height, const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*}pixels)
+\begin{DoxyCompactList}\small\item\em Create the image from an array of pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a22f13f8c242a6b38eb73cc176b37ae34}{create\+Mask\+From\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color, \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} alpha=0)
+\begin{DoxyCompactList}\small\item\em Create a transparency mask from a specified color-\/key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a57168e7bc29190e08bbd6c9c19f4bb2c}{flip\+Horizontally}} ()
+\begin{DoxyCompactList}\small\item\em Flip the image horizontally (left \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} right) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a78a702a7e49d1de2dec9894da99d279c}{flip\+Vertically}} ()
+\begin{DoxyCompactList}\small\item\em Flip the image vertically (top \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} bottom) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01733_acf278760458433b2c3626a6980388a95}{get\+Pixel}} (unsigned int x, unsigned int y) const
+\begin{DoxyCompactList}\small\item\em Get the color of a pixel. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01733_a2f49e69b6c6257b19b4d911993075c40}{get\+Pixels\+Ptr}} () const
+\begin{DoxyCompactList}\small\item\em Get a read-\/only pointer to the array of pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} \mbox{\hyperlink{a01733_a85409951b05369813069ed64393391ce}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Return the size (width and height) of the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01733_abb4caf3cb167b613345ebe36fc883f12}{Image}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Load the image from a file on disk. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01733_aaa6c7afa5851a51cec6ab438faa7354c}{load\+From\+Memory}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Load the image from a file in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01733_a21122ded0e8368bb06ed3b9acfbfb501}{load\+From\+Stream}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Load the image from a custom stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01733_a51537fb667f47cbe80395cfd7f9e72a4}{save\+To\+File}} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Save the image to a file on disk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01733_a9fd329b8cd7d4439e07fb5d3bb2d9744}{set\+Pixel}} (unsigned int x, unsigned int y, const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Change the color of a pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01733_a0ba22a38e6c96e3b37dd88198046de83}{\texorpdfstring{$\sim$}{\string~}\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $>$ \mbox{\hyperlink{a01733_af8081b1a84cf6660425a5ca7ea0ab619}{m\+\_\+pixels}}
+\begin{DoxyCompactList}\small\item\em Pixels of the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} \mbox{\hyperlink{a01733_a4cdfbac3fe04c8bc764b8a0082e77a28}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01733}{Image} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for loading, manipulating and saving images. 
+
+\doxylink{a01733}{sf\+::\+Image} is an abstraction to manipulate images as bidimensional arrays of pixels. The class provides functions to load, read, write and save pixels, as well as many other useful functions.
+
+\doxylink{a01733}{sf\+::\+Image} can handle a unique internal representation of pixels, which is RGBA 32 bits. This means that a pixel must be composed of 8 bits red, green, blue and alpha channels -- just like a \doxylink{a01685}{sf\+::\+Color}. All the functions that return an array of pixels follow this rule, and all parameters that you pass to \doxylink{a01733}{sf\+::\+Image} functions (such as load\+From\+Memory) must use this representation as well.
+
+A \doxylink{a01733}{sf\+::\+Image} can be copied, but it is a heavy resource and if possible you should always use \mbox{[}const\mbox{]} references to pass or return them to avoid useless copies.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Load\ an\ image\ file\ from\ a\ file}}
+\DoxyCodeLine{\mbox{\hyperlink{a01733}{sf::Image}}\ background;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!background.\mbox{\hyperlink{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{loadFromFile}}(\textcolor{stringliteral}{"{}background.jpg"{}}))}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ 20x20\ image\ filled\ with\ black\ color}}
+\DoxyCodeLine{\mbox{\hyperlink{a01733}{sf::Image}}\ image;}
+\DoxyCodeLine{image.\mbox{\hyperlink{a01733_a2a67930e2fd9ad97cf004e918cf5832b}{create}}(20,\ 20,\ \mbox{\hyperlink{a01685_a77c688197b981338f0b19dc58bd2facd}{sf::Color::Black}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Copy\ image1\ on\ image2\ at\ position\ (10,\ 10)}}
+\DoxyCodeLine{image.\mbox{\hyperlink{a01733_ab2fa337c956f85f93377dcb52153a45a}{copy}}(background,\ 10,\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Make\ the\ top-\/left\ pixel\ transparent}}
+\DoxyCodeLine{\mbox{\hyperlink{a01685}{sf::Color}}\ color\ =\ image.\mbox{\hyperlink{a01733_acf278760458433b2c3626a6980388a95}{getPixel}}(0,\ 0);}
+\DoxyCodeLine{color.\mbox{\hyperlink{a01685_a56dbdb47d5f040d9b78ac6a0b8b3a831}{a}}\ =\ 0;}
+\DoxyCodeLine{image.\mbox{\hyperlink{a01733_a9fd329b8cd7d4439e07fb5d3bb2d9744}{setPixel}}(0,\ 0,\ color);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Save\ the\ image\ to\ a\ file}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!image.\mbox{\hyperlink{a01733_a51537fb667f47cbe80395cfd7f9e72a4}{saveToFile}}(\textcolor{stringliteral}{"{}result.png"{}}))}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01785}{sf\+::\+Texture} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01733_abb4caf3cb167b613345ebe36fc883f12}\label{a01733_abb4caf3cb167b613345ebe36fc883f12} 
+\index{sf::Image@{sf::Image}!Image@{Image}}
+\index{Image@{Image}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily sf\+::\+Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty image. \Hypertarget{a01733_a0ba22a38e6c96e3b37dd88198046de83}\label{a01733_a0ba22a38e6c96e3b37dd88198046de83} 
+\index{sf::Image@{sf::Image}!````~Image@{\texorpdfstring{$\sim$}{\string~}Image}}
+\index{````~Image@{\texorpdfstring{$\sim$}{\string~}Image}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Image()}{\string~Image()}}
+{\footnotesize\ttfamily sf\+::\+Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01733_ab2fa337c956f85f93377dcb52153a45a}\label{a01733_ab2fa337c956f85f93377dcb52153a45a} 
+\index{sf::Image@{sf::Image}!copy@{copy}}
+\index{copy@{copy}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01733}{Image}} \&}]{source,  }\item[{unsigned int}]{destX,  }\item[{unsigned int}]{destY,  }\item[{const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \&}]{source\+Rect = {\ttfamily \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}}(0,~0,~0,~0)},  }\item[{bool}]{apply\+Alpha = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Copy pixels from another image onto this one. 
+
+This function does a slow pixel copy and should not be used intensively. It can be used to prepare a complex static image from several others, but if you need this kind of feature in real-\/time you\textquotesingle{}d better use \doxylink{a01757}{sf\+::\+Render\+Texture}.
+
+If {\itshape source\+Rect} is empty, the whole image is copied. If {\itshape apply\+Alpha} is set to true, the transparency of source pixels is applied. If it is false, the pixels are copied unchanged with their alpha value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Source image to copy \\
+\hline
+{\em destX} & X coordinate of the destination position \\
+\hline
+{\em destY} & Y coordinate of the destination position \\
+\hline
+{\em source\+Rect} & Sub-\/rectangle of the source image to copy \\
+\hline
+{\em apply\+Alpha} & Should the copy take into account the source transparency? \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01733_a2a67930e2fd9ad97cf004e918cf5832b}\label{a01733_a2a67930e2fd9ad97cf004e918cf5832b} 
+\index{sf::Image@{sf::Image}!create@{create}}
+\index{create@{create}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::create (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color = {\ttfamily \mbox{\hyperlink{a01685}{Color}}(0,~0,~0)} }\end{DoxyParamCaption})}
+
+
+
+Create the image and fill it with a unique color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em color} & Fill color \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01733_a1c2b960ea12bdbb29e80934ce5268ebf}\label{a01733_a1c2b960ea12bdbb29e80934ce5268ebf} 
+\index{sf::Image@{sf::Image}!create@{create}}
+\index{create@{create}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::create (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height,  }\item[{const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*}}]{pixels }\end{DoxyParamCaption})}
+
+
+
+Create the image from an array of pixels. 
+
+The {\itshape pixel} array is assumed to contain 32-\/bits RGBA pixels, and have the given {\itshape width} and {\itshape height}. If not, this is an undefined behavior. If {\itshape pixels} is null, an empty image is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em pixels} & Array of pixels to copy to the image \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01733_a22f13f8c242a6b38eb73cc176b37ae34}\label{a01733_a22f13f8c242a6b38eb73cc176b37ae34} 
+\index{sf::Image@{sf::Image}!createMaskFromColor@{createMaskFromColor}}
+\index{createMaskFromColor@{createMaskFromColor}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{createMaskFromColor()}{createMaskFromColor()}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::create\+Mask\+From\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color,  }\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{alpha = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Create a transparency mask from a specified color-\/key. 
+
+This function sets the alpha value of every pixel matching the given color to {\itshape alpha} (0 by default), so that they become transparent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \doxylink{a01685}{Color} to make transparent \\
+\hline
+{\em alpha} & Alpha value to assign to transparent pixels \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01733_a57168e7bc29190e08bbd6c9c19f4bb2c}\label{a01733_a57168e7bc29190e08bbd6c9c19f4bb2c} 
+\index{sf::Image@{sf::Image}!flipHorizontally@{flipHorizontally}}
+\index{flipHorizontally@{flipHorizontally}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{flipHorizontally()}{flipHorizontally()}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::flip\+Horizontally (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Flip the image horizontally (left \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} right) 
+
+\Hypertarget{a01733_a78a702a7e49d1de2dec9894da99d279c}\label{a01733_a78a702a7e49d1de2dec9894da99d279c} 
+\index{sf::Image@{sf::Image}!flipVertically@{flipVertically}}
+\index{flipVertically@{flipVertically}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{flipVertically()}{flipVertically()}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::flip\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Flip the image vertically (top \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} bottom) 
+
+\Hypertarget{a01733_acf278760458433b2c3626a6980388a95}\label{a01733_acf278760458433b2c3626a6980388a95} 
+\index{sf::Image@{sf::Image}!getPixel@{getPixel}}
+\index{getPixel@{getPixel}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{getPixel()}{getPixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Image\+::get\+Pixel (\begin{DoxyParamCaption}\item[{unsigned int}]{x,  }\item[{unsigned int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of a pixel. 
+
+This function doesn\textquotesingle{}t check the validity of the pixel coordinates, using out-\/of-\/range values will result in an undefined behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of pixel to get \\
+\hline
+{\em y} & Y coordinate of pixel to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01685}{Color} of the pixel at coordinates (x, y)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_a9fd329b8cd7d4439e07fb5d3bb2d9744}{set\+Pixel} 
+\end{DoxySeeAlso}
+\Hypertarget{a01733_a2f49e69b6c6257b19b4d911993075c40}\label{a01733_a2f49e69b6c6257b19b4d911993075c40} 
+\index{sf::Image@{sf::Image}!getPixelsPtr@{getPixelsPtr}}
+\index{getPixelsPtr@{getPixelsPtr}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{getPixelsPtr()}{getPixelsPtr()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \texorpdfstring{$\ast$}{*} sf\+::\+Image\+::get\+Pixels\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a read-\/only pointer to the array of pixels. 
+
+The returned value points to an array of RGBA pixels made of 8 bits integers components. The size of the array is width \texorpdfstring{$\ast$}{*} height \texorpdfstring{$\ast$}{*} 4 (\doxylink{a01733_a85409951b05369813069ed64393391ce}{get\+Size()}.x \texorpdfstring{$\ast$}{*} \doxylink{a01733_a85409951b05369813069ed64393391ce}{get\+Size()}.y \texorpdfstring{$\ast$}{*} 4). Warning\+: the returned pointer may become invalid if you modify the image, so you should never store it for too long. If the image is empty, a null pointer is returned.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only pointer to the array of pixels 
+\end{DoxyReturn}
+\Hypertarget{a01733_a85409951b05369813069ed64393391ce}\label{a01733_a85409951b05369813069ed64393391ce} 
+\index{sf::Image@{sf::Image}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} sf\+::\+Image\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the size (width and height) of the image. 
+
+\begin{DoxyReturn}{Returns}
+Size of the image, in pixels 
+\end{DoxyReturn}
+\Hypertarget{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}\label{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b} 
+\index{sf::Image@{sf::Image}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Image\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Load the image from a file on disk. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the image file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_aaa6c7afa5851a51cec6ab438faa7354c}{load\+From\+Memory}, \doxylink{a01733_a21122ded0e8368bb06ed3b9acfbfb501}{load\+From\+Stream}, \doxylink{a01733_a51537fb667f47cbe80395cfd7f9e72a4}{save\+To\+File} 
+\end{DoxySeeAlso}
+\Hypertarget{a01733_aaa6c7afa5851a51cec6ab438faa7354c}\label{a01733_aaa6c7afa5851a51cec6ab438faa7354c} 
+\index{sf::Image@{sf::Image}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}}
+{\footnotesize\ttfamily bool sf\+::\+Image\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Load the image from a file in memory. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\+From\+File}, \doxylink{a01733_a21122ded0e8368bb06ed3b9acfbfb501}{load\+From\+Stream} 
+\end{DoxySeeAlso}
+\Hypertarget{a01733_a21122ded0e8368bb06ed3b9acfbfb501}\label{a01733_a21122ded0e8368bb06ed3b9acfbfb501} 
+\index{sf::Image@{sf::Image}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}}
+{\footnotesize\ttfamily bool sf\+::\+Image\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Load the image from a custom stream. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\+From\+File}, \doxylink{a01733_aaa6c7afa5851a51cec6ab438faa7354c}{load\+From\+Memory} 
+\end{DoxySeeAlso}
+\Hypertarget{a01733_a51537fb667f47cbe80395cfd7f9e72a4}\label{a01733_a51537fb667f47cbe80395cfd7f9e72a4} 
+\index{sf::Image@{sf::Image}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Image\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+
+
+Save the image to a file on disk. 
+
+The format of the image is automatically deduced from the extension. The supported image formats are bmp, png, tga and jpg. The destination file is overwritten if it already exists. This function fails if the image is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the file to save\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if saving was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_a2a67930e2fd9ad97cf004e918cf5832b}{create}, \doxylink{a01733_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\+From\+File}, \doxylink{a01733_aaa6c7afa5851a51cec6ab438faa7354c}{load\+From\+Memory} 
+\end{DoxySeeAlso}
+\Hypertarget{a01733_a9fd329b8cd7d4439e07fb5d3bb2d9744}\label{a01733_a9fd329b8cd7d4439e07fb5d3bb2d9744} 
+\index{sf::Image@{sf::Image}!setPixel@{setPixel}}
+\index{setPixel@{setPixel}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{setPixel()}{setPixel()}}
+{\footnotesize\ttfamily void sf\+::\+Image\+::set\+Pixel (\begin{DoxyParamCaption}\item[{unsigned int}]{x,  }\item[{unsigned int}]{y,  }\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Change the color of a pixel. 
+
+This function doesn\textquotesingle{}t check the validity of the pixel coordinates, using out-\/of-\/range values will result in an undefined behavior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of pixel to change \\
+\hline
+{\em y} & Y coordinate of pixel to change \\
+\hline
+{\em color} & New color of the pixel\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01733_acf278760458433b2c3626a6980388a95}{get\+Pixel} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01733_af8081b1a84cf6660425a5ca7ea0ab619}\label{a01733_af8081b1a84cf6660425a5ca7ea0ab619} 
+\index{sf::Image@{sf::Image}!m\_pixels@{m\_pixels}}
+\index{m\_pixels@{m\_pixels}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{m\_pixels}{m\_pixels}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}$>$ sf\+::\+Image\+::m\+\_\+pixels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pixels of the image. 
+
+\Hypertarget{a01733_a4cdfbac3fe04c8bc764b8a0082e77a28}\label{a01733_a4cdfbac3fe04c8bc764b8a0082e77a28} 
+\index{sf::Image@{sf::Image}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!sf::Image@{sf::Image}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u}} sf\+::\+Image\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01733}{Image} size. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00392}{Image.\+hpp}}\end{DoxyCompactItemize}

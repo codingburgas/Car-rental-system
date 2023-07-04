@@ -1,0 +1,1481 @@
+\doxysection{lexer.\+hpp}
+\hypertarget{a00173_source}{}\label{a00173_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/lexer.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/lexer.hpp}}
+\mbox{\hyperlink{a00173}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <array>}\ \textcolor{comment}{//\ array}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <clocale>}\ \textcolor{comment}{//\ localeconv}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}\ \textcolor{comment}{//\ size\_t}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdio>}\ \textcolor{comment}{//\ snprintf}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdlib>}\ \textcolor{comment}{//\ strtof,\ strtod,\ strtold,\ strtoll,\ strtoull}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <initializer\_list>}\ \textcolor{comment}{//\ initializer\_list}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}\ \textcolor{comment}{//\ char\_traits,\ string}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}\ \textcolor{comment}{//\ move}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}\ \textcolor{comment}{//\ vector}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00167}{nlohmann/detail/input/input\_adapters.hpp}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00179}{nlohmann/detail/input/position\_t.hpp}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00206}{nlohmann/detail/macro\_scope.hpp}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ lexer\ //}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01149}{lexer\_base}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454}{token\_type}}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a42dd1a73d072bb6bf3f494f22b15db8e}{uninitialized}},\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a85cc1a37b0aaa52de40e72f0ed4e0c0d}{literal\_true}},\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454afab1694b1b3937a079f4625fe0b6108b}{literal\_false}},\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454ab7ae4c0e46d86f884677768160b26e9e}{literal\_null}},\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a2b490e8bf366b4cbe3ebd99b26ce15ce}{value\_string}},\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454aaf1f040fcd2f674d2e5893d7a731078f}{value\_unsigned}},\ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a5064b6655d88a50ae16665cf7751c0ee}{value\_integer}},\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a0d2671a6f81efb91e77f6ac3bdb11443}{value\_float}},\ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01}{begin\_array}},\ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8}{begin\_object}},\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a2f3e68e7f111a1e5c7728742b3ca2b7f}{end\_array}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a7d5b4427866814de4d8f132721d59c87}{end\_object}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454acc3c64f8ae08c00de1b33f19a4d2913a}{name\_separator}},\ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a745373036100d7392ad62c617cab59af}{value\_separator}},\ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a456e19aeafa334241c7ff3f589547f9d}{parse\_error}},\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454aca11f56dd477c09e06583dbdcda0985f}{end\_of\_input}},\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454ad2a8e6f6721cccec0b466301dd9495a5}{literal\_or\_value}}\ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\_HEDLEY\_RETURNS\_NON\_NULL}}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\_HEDLEY\_CONST}}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a01149_a3e49458ca35019e4db8a45629f5be192}{token\_type\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454}{token\_type}}\ t)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (t)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a42dd1a73d072bb6bf3f494f22b15db8e}{token\_type::uninitialized}}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<uninitialized>"{}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a85cc1a37b0aaa52de40e72f0ed4e0c0d}{token\_type::literal\_true}}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}true\ literal"{}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454afab1694b1b3937a079f4625fe0b6108b}{token\_type::literal\_false}}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}false\ literal"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454ab7ae4c0e46d86f884677768160b26e9e}{token\_type::literal\_null}}:}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}null\ literal"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a2b490e8bf366b4cbe3ebd99b26ce15ce}{token\_type::value\_string}}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}string\ literal"{}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454aaf1f040fcd2f674d2e5893d7a731078f}{token\_type::value\_unsigned}}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a5064b6655d88a50ae16665cf7751c0ee}{token\_type::value\_integer}}:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a0d2671a6f81efb91e77f6ac3bdb11443}{token\_type::value\_float}}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}number\ literal"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01}{token\_type::begin\_array}}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'['"{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8}{token\_type::begin\_object}}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'\{'"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a2f3e68e7f111a1e5c7728742b3ca2b7f}{token\_type::end\_array}}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}']'"{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a7d5b4427866814de4d8f132721d59c87}{token\_type::end\_object}}:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'\}'"{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454acc3c64f8ae08c00de1b33f19a4d2913a}{token\_type::name\_separator}}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}':'"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a745373036100d7392ad62c617cab59af}{token\_type::value\_separator}}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}','"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454a456e19aeafa334241c7ff3f589547f9d}{token\_type::parse\_error}}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<parse\ error>"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454aca11f56dd477c09e06583dbdcda0985f}{token\_type::end\_of\_input}}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}end\ of\ input"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454ad2a8e6f6721cccec0b466301dd9495a5}{token\_type::literal\_or\_value}}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}'[',\ '\{',\ or\ a\ literal"{}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_START}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{comment}{//\ catch\ non-\/enum\ values}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}unknown\ token"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00102\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType,\ \textcolor{keyword}{typename}\ InputAdapterType>}
+\DoxyCodeLine{00103\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01153}{lexer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01149}{lexer\_base}}<BasicJsonType>}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\_integer\_t}}\ =\ \textcolor{keyword}{typename}\ BasicJsonType::number\_integer\_t;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\_unsigned\_t}}\ =\ \textcolor{keyword}{typename}\ BasicJsonType::number\_unsigned\_t;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\_float\_t}}\ =\ \textcolor{keyword}{typename}\ BasicJsonType::number\_float\_t;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\_t}}\ =\ \textcolor{keyword}{typename}\ BasicJsonType::string\_t;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\ =\ \textcolor{keyword}{typename}\ InputAdapterType::char\_type;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\ =\ \textcolor{keyword}{typename}\ std::char\_traits<char\_type>::int\_type;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ =\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454}{lexer\_base<BasicJsonType>::token\_type}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01153_a89bbc051da2514a469441a3a30ad63e4}{lexer}}(InputAdapterType\&\&\ adapter,\ \textcolor{keywordtype}{bool}\ ignore\_comments\_\ =\ \textcolor{keyword}{false})\ noexcept}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01153_a526d001dd91ec55b8032ba98466765c0}{ia}}(\mbox{\hyperlink{a00667}{std}}::move(adapter))}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ ,\ \mbox{\hyperlink{a01153_a11528814930243028ac5b8901f4a17d7}{ignore\_comments}}(ignore\_comments\_)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ ,\ \mbox{\hyperlink{a01153_a6f2fd5b4b6b153f11fc8f77213350073}{decimal\_point\_char}}(static\_cast<\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}>(\mbox{\hyperlink{a01153_a48f74c761ce663cd0d92bf428606b535}{get\_decimal\_point}}()))}
+\DoxyCodeLine{00119\ \ \ \ \ \{\}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ delete\ because\ of\ pointer\ members}}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{a01153_ab75d61c4de687717648c7698850ddb9b}{lexer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01153}{lexer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{a01153_ae95416c7ae8b36f0dd0ab349eaa754a2}{lexer}}(\mbox{\hyperlink{a01153}{lexer}}\&\&)\ =\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ NOLINT(hicpp-\/noexcept-\/move,performance-\/noexcept-\/move-\/constructor)}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{a01153}{lexer}}\&\ \mbox{\hyperlink{a01153_aad4020e9be20612197f8d4e049300adc}{operator=}}(\mbox{\hyperlink{a01153}{lexer}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{a01153}{lexer}}\&\ \mbox{\hyperlink{a01153_a5e448bb3dea993ecb9ee92e71d78ca84}{operator=}}(\mbox{\hyperlink{a01153}{lexer}}\&\&)\ =\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ NOLINT(hicpp-\/noexcept-\/move,performance-\/noexcept-\/move-\/constructor)}}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{a01153_ac0557f111d82f7729a93ee9b40b31402}{\string~lexer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ locales}}
+\DoxyCodeLine{00132\ \textcolor{comment}{}}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\_HEDLEY\_PURE}}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{a01153_a48f74c761ce663cd0d92bf428606b535}{get\_decimal\_point}}()\ noexcept}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ loc\ =\ localeconv();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(loc\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (loc-\/>decimal\_point\ ==\ \textcolor{keyword}{nullptr})\ ?\ \textcolor{charliteral}{'.'}\ :\ *(loc-\/>decimal\_point);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ scan\ functions}}
+\DoxyCodeLine{00145\ \textcolor{comment}{}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01153_adcf663a9878f58544790f1b6faad2e42}{get\_codepoint}}()}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ function\ only\ makes\ sense\ after\ reading\ \`{}\(\backslash\)u`}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'u'});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ codepoint\ =\ 0;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ factors\ =\ \{\ 12u,\ 8u,\ 4u,\ 0u\ \};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ factor\ :\ factors)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}();}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codepoint\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})\ -\/\ 0x30u)\ <<\ factor);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ >=\ \textcolor{charliteral}{'A'}\ \&\&\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ <=\ \textcolor{charliteral}{'F'})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codepoint\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})\ -\/\ 0x37u)\ <<\ factor);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ >=\ \textcolor{charliteral}{'a'}\ \&\&\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ <=\ \textcolor{charliteral}{'f'})}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codepoint\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})\ -\/\ 0x57u)\ <<\ factor);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(0x0000\ <=\ codepoint\ \&\&\ codepoint\ <=\ 0xFFFF);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codepoint;}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(std::initializer\_list<char\_int\_type>\ ranges)}
+\DoxyCodeLine{00210\ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(ranges.size()\ ==\ 2\ ||\ ranges.size()\ ==\ 4\ ||\ ranges.size()\ ==\ 6);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ range\ =\ ranges.begin();\ range\ !=\ ranges.end();\ ++range)}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\_HEDLEY\_LIKELY}}(*range\ <=\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ \&\&\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ <=\ *(++range)))}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ ill-\/formed\ UTF-\/8\ byte"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ \mbox{\hyperlink{a01153_ab6352978e03ebcbc3cd618cd17142f26}{scan\_string}}()}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ token\_buffer\ (ignore\ opening\ quote)}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a3bda093837339813916d11fb6e396606}{reset}}();}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ entered\ the\ function\ by\ reading\ an\ open\ quote}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ next\ character}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ end\ of\ file\ while\ parsing\ string}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ std::char\_traits<char\_type>::eof():}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ missing\ closing\ quote"{}};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ closing\ quote}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)"{}'}:}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::value\_string;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ escapes}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ quotation\ mark}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)"{}'}:}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reverse\ solidus}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ solidus}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ backspace}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'b'}:}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)b'});}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ form\ feed}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)f'});}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ line\ feed}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ carriage\ return}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'r'}:}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tab}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unicode\ escapes}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'u'}:}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ codepoint1\ =\ \mbox{\hyperlink{a01153_adcf663a9878f58544790f1b6faad2e42}{get\_codepoint}}();}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ codepoint\ =\ codepoint1;\ \textcolor{comment}{//\ start\ with\ codepoint1}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(codepoint1\ ==\ -\/1))}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ '\(\backslash\)\(\backslash\)u'\ must\ be\ followed\ by\ 4\ hex\ digits"{}};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ code\ point\ is\ a\ high\ surrogate}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0xD800\ <=\ codepoint1\ \&\&\ codepoint1\ <=\ 0xDBFF)}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ expect\ next\ \(\backslash\)uxxxx\ entry}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\_HEDLEY\_LIKELY}}(\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()\ ==\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\ \&\&\ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()\ ==\ \textcolor{charliteral}{'u'}))}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ codepoint2\ =\ \mbox{\hyperlink{a01153_adcf663a9878f58544790f1b6faad2e42}{get\_codepoint}}();}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(codepoint2\ ==\ -\/1))}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ '\(\backslash\)\(\backslash\)u'\ must\ be\ followed\ by\ 4\ hex\ digits"{}};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ codepoint2\ is\ a\ low\ surrogate}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\_HEDLEY\_LIKELY}}(0xDC00\ <=\ codepoint2\ \&\&\ codepoint2\ <=\ 0xDFFF))}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ overwrite\ codepoint}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codepoint\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ high\ surrogate\ occupies\ the\ most\ significant\ 22\ bits}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint1)\ <<\ 10u)}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ low\ surrogate\ occupies\ the\ least\ significant\ 15\ bits}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint2)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ there\ is\ still\ the\ 0xD800,\ 0xDC00\ and\ 0x10000\ noise}}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ the\ result,\ so\ we\ have\ to\ subtract\ with:}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (0xD800\ <<\ 10)\ +\ DC00\ -\/\ 0x10000\ =\ 0x35FDC00}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ 0x35FDC00u);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ surrogate\ U+D800..U+DBFF\ must\ be\ followed\ by\ U+DC00..U+DFFF"{}};}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ surrogate\ U+D800..U+DBFF\ must\ be\ followed\ by\ U+DC00..U+DFFF"{}};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(0xDC00\ <=\ codepoint1\ \&\&\ codepoint1\ <=\ 0xDFFF))}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ surrogate\ U+DC00..U+DFFF\ must\ follow\ U+D800..U+DBFF"{}};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ result\ of\ the\ above\ calculation\ yields\ a\ proper\ codepoint}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(0x00\ <=\ codepoint\ \&\&\ codepoint\ <=\ 0x10FFFF);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ translate\ codepoint\ into\ bytes}}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (codepoint\ <\ 0x80)}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1-\/byte\ characters:\ 0xxxxxxx\ (ASCII)}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(codepoint));}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (codepoint\ <=\ 0x7FF)}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2-\/byte\ characters:\ 110xxxxx\ 10xxxxxx}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0xC0u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 6u)));}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (codepoint\ <=\ 0xFFFF)}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3-\/byte\ characters:\ 1110xxxx\ 10xxxxxx\ 10xxxxxx}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0xE0u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 12u)));}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 6u)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4-\/byte\ characters:\ 11110xxx\ 10xxxxxx\ 10xxxxxx\ 10xxxxxx}}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0xF0u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 18u)));}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 12u)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ ((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ >>\ 6u)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\textcolor{keyword}{>}(0x80u\ |\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(codepoint)\ \&\ 0x3Fu)));}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ other\ characters\ after\ escape}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ forbidden\ character\ after\ backslash"{}};}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ invalid\ control\ characters}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x00:}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0000\ (NUL)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0000"{}};}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x01:}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0001\ (SOH)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0001"{}};}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x02:}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0002\ (STX)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0002"{}};}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x03:}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0003\ (ETX)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0003"{}};}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x04:}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0004\ (EOT)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0004"{}};}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x05:}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0005\ (ENQ)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0005"{}};}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x06:}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0006\ (ACK)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0006"{}};}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x07:}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0007\ (BEL)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0007"{}};}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x08:}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0008\ (BS)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0008\ or\ \(\backslash\)\(\backslash\)b"{}};}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x09:}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0009\ (HT)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0009\ or\ \(\backslash\)\(\backslash\)t"{}};}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0A:}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000A\ (LF)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000A\ or\ \(\backslash\)\(\backslash\)n"{}};}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0B:}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000B\ (VT)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000B"{}};}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0C:}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000C\ (FF)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000C\ or\ \(\backslash\)\(\backslash\)f"{}};}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0D:}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000D\ (CR)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000D\ or\ \(\backslash\)\(\backslash\)r"{}};}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0E:}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000E\ (SO)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000E"{}};}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0F:}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+000F\ (SI)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u000F"{}};}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x10:}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0010\ (DLE)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0010"{}};}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x11:}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0011\ (DC1)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0011"{}};}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x12:}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0012\ (DC2)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0012"{}};}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x13:}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0013\ (DC3)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0013"{}};}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x14:}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0014\ (DC4)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0014"{}};}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x15:}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0015\ (NAK)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0015"{}};}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x16:}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0016\ (SYN)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0016"{}};}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x17:}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0017\ (ETB)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0017"{}};}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x18:}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0018\ (CAN)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0018"{}};}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x19:}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+0019\ (EM)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u0019"{}};}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1A:}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001A\ (SUB)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001A"{}};}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1B:}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001B\ (ESC)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001B"{}};}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1C:}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001C\ (FS)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001C"{}};}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1D:}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001D\ (GS)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001D"{}};}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1E:}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001E\ (RS)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001E"{}};}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x1F:}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ control\ character\ U+001F\ (US)\ must\ be\ escaped\ to\ \(\backslash\)\(\backslash\)u001F"{}};}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+0020..U+007F\ (except\ U+0022\ (quote)\ and\ U+005C\ (backspace))}}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x20:}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x21:}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x23:}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x24:}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x25:}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x26:}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x27:}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x28:}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x29:}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2A:}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2B:}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2C:}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2D:}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2E:}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2F:}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x30:}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x31:}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x32:}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x33:}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x34:}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x35:}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x36:}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x37:}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x38:}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x39:}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3A:}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3B:}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3C:}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3D:}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3E:}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3F:}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x40:}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x41:}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x42:}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x43:}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x44:}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x45:}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x46:}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x47:}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x48:}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x49:}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4A:}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4B:}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4C:}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4D:}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4E:}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x4F:}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x50:}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x51:}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x52:}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x53:}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x54:}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x55:}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x56:}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x57:}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x58:}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x59:}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x5A:}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x5B:}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x5D:}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x5E:}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x5F:}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x60:}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x61:}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x62:}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x63:}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x64:}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x65:}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x66:}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x67:}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x68:}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x69:}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6A:}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6B:}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6C:}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6D:}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6E:}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x6F:}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x70:}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x71:}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x72:}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x73:}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x74:}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x75:}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x76:}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x77:}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x78:}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x79:}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7A:}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7B:}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7C:}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7D:}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7E:}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0x7F:}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+0080..U+07FF:\ bytes\ C2..DF\ 80..BF}}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC2:}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC3:}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC4:}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC5:}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC6:}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC7:}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC8:}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xC9:}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCA:}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCB:}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCC:}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCD:}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCE:}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xCF:}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD0:}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD1:}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD2:}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD3:}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD4:}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD5:}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD6:}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD7:}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD8:}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xD9:}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDA:}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDB:}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDC:}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDD:}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDE:}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xDF:}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x80,\ 0xBF\})))}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+0800..U+0FFF:\ bytes\ E0\ A0..BF\ 80..BF}}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE0:}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0xA0,\ 0xBF,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+1000..U+CFFF:\ bytes\ E1..EC\ 80..BF\ 80..BF}}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+E000..U+FFFF:\ bytes\ EE..EF\ 80..BF\ 80..BF}}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE1:}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE2:}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE3:}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE4:}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE5:}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE6:}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE7:}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE8:}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xE9:}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xEA:}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xEB:}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xEC:}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xEE:}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xEF:}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x80,\ 0xBF,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+D000..U+D7FF:\ bytes\ ED\ 80..9F\ 80..BF}}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xED:}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x80,\ 0x9F,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+10000..U+3FFFF\ F0\ 90..BF\ 80..BF\ 80..BF}}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xF0:}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x90,\ 0xBF,\ 0x80,\ 0xBF,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+40000..U+FFFFF\ F1..F3\ 80..BF\ 80..BF\ 80..BF}}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xF1:}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xF2:}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xF3:}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x80,\ 0xBF,\ 0x80,\ 0xBF,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ U+100000..U+10FFFF\ F4\ 80..8F\ 80..BF\ 80..BF}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0xF4:}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(!(\mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\_byte\_in\_range}}(\{0x80,\ 0x8F,\ 0x80,\ 0xBF,\ 0x80,\ 0xBF\}))))}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remaining\ bytes\ (80..C1\ and\ F5..FF)\ are\ ill-\/formed}}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ string:\ ill-\/formed\ UTF-\/8\ byte"{}};}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00830\ \ \ \ \ \}}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01153_afdc68706ad20be93977cd0f97043ea7f}{scan\_comment}}()}
+\DoxyCodeLine{00837\ \ \ \ \ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ single-\/line\ comments\ skip\ input\ until\ a\ newline\ or\ EOF\ is\ read}}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)n'}:}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)r'}:}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ std::char\_traits<char\_type>::eof():}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)0'}:}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ multi-\/line\ comments\ skip\ input\ until\ */\ is\ read}}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'*'}:}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ std::char\_traits<char\_type>::eof():}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)0'}:}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ comment;\ missing\ closing\ '*/'"{}};}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'*'}:}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ab5811afe1c3efb0b769f7733b8373c6f}{unget}}();}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unexpected\ character\ after\ reading\ '/'}}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ comment;\ expecting\ '/'\ or\ '*'\ after\ '/'"{}};}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00901\ \ \ \ \ \}}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00903\ \ \ \ \ \mbox{\hyperlink{a00260_a5338981b5ad9027c9e54b1c5597f4344}{JSON\_HEDLEY\_NON\_NULL}}(2)}
+\DoxyCodeLine{00904\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}{strtof}}(\textcolor{keywordtype}{float}\&\ f,\ const\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{char}**\ endptr)\ noexcept}
+\DoxyCodeLine{00905\ \ \ \ \ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ f\ =\ std::strtof(str,\ endptr);}
+\DoxyCodeLine{00907\ \ \ \ \ \}}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00909\ \ \ \ \ \mbox{\hyperlink{a00260_a5338981b5ad9027c9e54b1c5597f4344}{JSON\_HEDLEY\_NON\_NULL}}(2)}
+\DoxyCodeLine{00910\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}{strtof}}(\textcolor{keywordtype}{double}\&\ f,\ const\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{char}**\ endptr)\ noexcept}
+\DoxyCodeLine{00911\ \ \ \ \ \{}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ f\ =\ std::strtod(str,\ endptr);}
+\DoxyCodeLine{00913\ \ \ \ \ \}}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00915\ \ \ \ \ \mbox{\hyperlink{a00260_a5338981b5ad9027c9e54b1c5597f4344}{JSON\_HEDLEY\_NON\_NULL}}(2)}
+\DoxyCodeLine{00916\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}{strtof}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\&\ f,\ const\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{char}**\ endptr)\ noexcept}
+\DoxyCodeLine{00917\ \ \ \ \ \{}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ f\ =\ std::strtold(str,\ endptr);}
+\DoxyCodeLine{00919\ \ \ \ \ \}}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00961\ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ \mbox{\hyperlink{a01153_aab51a28e32c1957329141baff8eda1c4}{scan\_number}}()\ \ \textcolor{comment}{//\ lgtm\ [cpp/use-\/of-\/goto]}}
+\DoxyCodeLine{00962\ \ \ \ \ \{}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ token\_buffer\ to\ store\ the\ number's\ bytes}}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a3bda093837339813916d11fb6e396606}{reset}}();}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ type\ of\ the\ parsed\ number;\ initially\ set\ to\ unsigned;\ will\ be}}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ changed\ if\ minus\ sign,\ decimal\ point\ or\ exponent\ is\ read}}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ number\_type\ =\ token\_type::value\_unsigned;}
+\DoxyCodeLine{00969\ }
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state\ (init):\ we\ just\ found\ out\ we\ need\ to\ scan\ a\ number}}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_minus;}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00978\ }
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_zero;}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00984\ }
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any1;}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00998\ }
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ all\ other\ characters\ are\ rejected\ outside\ scan\_number()}}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\textcolor{keyword}{false});\ \textcolor{comment}{//\ NOLINT(cert-\/dcl03-\/c,hicpp-\/static-\/assert,misc-\/static-\/assert)\ LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01003\ }
+\DoxyCodeLine{01004\ scan\_number\_minus:}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state:\ we\ just\ parsed\ a\ leading\ minus\ sign}}
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ number\_type\ =\ token\_type::value\_integer;}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_zero;}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01014\ }
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any1;}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01028\ }
+\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ number;\ expected\ digit\ after\ '-\/'"{}};}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01035\ }
+\DoxyCodeLine{01036\ scan\_number\_zero:}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state:\ we\ just\ parse\ a\ zero\ (maybe\ with\ a\ leading\ minus\ sign)}}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'.'}:}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a6f2fd5b4b6b153f11fc8f77213350073}{decimal\_point\_char}});}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_decimal1;}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01045\ }
+\DoxyCodeLine{01046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'e'}:}
+\DoxyCodeLine{01047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'E'}:}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_exponent;}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01052\ }
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_done;}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01057\ scan\_number\_any1:}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state:\ we\ just\ parsed\ a\ number\ 0-\/9\ (maybe\ with\ a\ leading\ minus\ sign)}}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any1;}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01075\ }
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'.'}:}
+\DoxyCodeLine{01077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a6f2fd5b4b6b153f11fc8f77213350073}{decimal\_point\_char}});}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_decimal1;}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01081\ }
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'e'}:}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'E'}:}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_exponent;}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01088\ }
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_done;}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01092\ }
+\DoxyCodeLine{01093\ scan\_number\_decimal1:}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state:\ we\ just\ parsed\ a\ decimal\ point}}
+\DoxyCodeLine{01095\ \ \ \ \ \ \ \ \ number\_type\ =\ token\_type::value\_float;}
+\DoxyCodeLine{01096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01097\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_decimal2;}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01112\ }
+\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ number;\ expected\ digit\ after\ '.'"{}};}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ scan\_number\_decimal2:}
+\DoxyCodeLine{01121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ just\ parsed\ at\ least\ one\ number\ after\ a\ decimal\ point}}
+\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_decimal2;}
+\DoxyCodeLine{01137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'e'}:}
+\DoxyCodeLine{01140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'E'}:}
+\DoxyCodeLine{01141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_exponent;}
+\DoxyCodeLine{01144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01145\ }
+\DoxyCodeLine{01146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_done;}
+\DoxyCodeLine{01148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01149\ }
+\DoxyCodeLine{01150\ scan\_number\_exponent:}
+\DoxyCodeLine{01151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ just\ parsed\ an\ exponent}}
+\DoxyCodeLine{01152\ \ \ \ \ \ \ \ \ number\_type\ =\ token\_type::value\_float;}
+\DoxyCodeLine{01153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'+'}:}
+\DoxyCodeLine{01156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{01157\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_sign;}
+\DoxyCodeLine{01160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01161\ }
+\DoxyCodeLine{01162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01172\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any2;}
+\DoxyCodeLine{01175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01176\ }
+\DoxyCodeLine{01177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01178\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =}
+\DoxyCodeLine{01180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}invalid\ number;\ expected\ '+',\ '-\/',\ or\ digit\ after\ exponent"{}};}
+\DoxyCodeLine{01181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01182\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01184\ }
+\DoxyCodeLine{01185\ scan\_number\_sign:}
+\DoxyCodeLine{01186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ just\ parsed\ an\ exponent\ sign}}
+\DoxyCodeLine{01187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any2;}
+\DoxyCodeLine{01202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01203\ }
+\DoxyCodeLine{01204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ number;\ expected\ digit\ after\ exponent\ sign"{}};}
+\DoxyCodeLine{01207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01211\ scan\_number\_any2:}
+\DoxyCodeLine{01212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ just\ parsed\ a\ number\ after\ the\ exponent\ or\ exponent\ sign}}
+\DoxyCodeLine{01213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())}
+\DoxyCodeLine{01214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}});}
+\DoxyCodeLine{01227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_any2;}
+\DoxyCodeLine{01228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01229\ }
+\DoxyCodeLine{01230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ scan\_number\_done;}
+\DoxyCodeLine{01232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01233\ }
+\DoxyCodeLine{01234\ scan\_number\_done:}
+\DoxyCodeLine{01235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unget\ the\ character\ after\ the\ number\ (we\ only\ read\ it\ to\ know\ that}}
+\DoxyCodeLine{01236\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ are\ done\ scanning\ a\ number)}}
+\DoxyCodeLine{01237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ab5811afe1c3efb0b769f7733b8373c6f}{unget}}();}
+\DoxyCodeLine{01238\ }
+\DoxyCodeLine{01239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ endptr\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ NOLINT(cppcoreguidelines-\/pro-\/type-\/vararg,hicpp-\/vararg)}}
+\DoxyCodeLine{01240\ \ \ \ \ \ \ \ \ errno\ =\ 0;}
+\DoxyCodeLine{01241\ }
+\DoxyCodeLine{01242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ try\ to\ parse\ integers\ first\ and\ fall\ back\ to\ floats}}
+\DoxyCodeLine{01243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (number\_type\ ==\ token\_type::value\_unsigned)}
+\DoxyCodeLine{01244\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ x\ =\ std::strtoull(\mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data(),\ \&endptr,\ 10);}
+\DoxyCodeLine{01246\ }
+\DoxyCodeLine{01247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ checked\ the\ number\ format\ before}}
+\DoxyCodeLine{01248\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(endptr\ ==\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data()\ +\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.size());}
+\DoxyCodeLine{01249\ }
+\DoxyCodeLine{01250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errno\ ==\ 0)}
+\DoxyCodeLine{01251\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ae84cbf312215c15d79783380b1592f74}{value\_unsigned}}\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\_unsigned\_t}}\textcolor{keyword}{>}(x);}
+\DoxyCodeLine{01253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_ae84cbf312215c15d79783380b1592f74}{value\_unsigned}}\ ==\ x)}
+\DoxyCodeLine{01254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::value\_unsigned;}
+\DoxyCodeLine{01256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (number\_type\ ==\ token\_type::value\_integer)}
+\DoxyCodeLine{01260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ x\ =\ std::strtoll(\mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data(),\ \&endptr,\ 10);}
+\DoxyCodeLine{01262\ }
+\DoxyCodeLine{01263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ checked\ the\ number\ format\ before}}
+\DoxyCodeLine{01264\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(endptr\ ==\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data()\ +\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.size());}
+\DoxyCodeLine{01265\ }
+\DoxyCodeLine{01266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errno\ ==\ 0)}
+\DoxyCodeLine{01267\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a5134de850fab8f41474a36ae07998088}{value\_integer}}\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\_integer\_t}}\textcolor{keyword}{>}(x);}
+\DoxyCodeLine{01269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a5134de850fab8f41474a36ae07998088}{value\_integer}}\ ==\ x)}
+\DoxyCodeLine{01270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::value\_integer;}
+\DoxyCodeLine{01272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01275\ }
+\DoxyCodeLine{01276\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ code\ is\ reached\ if\ we\ parse\ a\ floating-\/point\ number\ or\ if\ an}}
+\DoxyCodeLine{01277\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ integer\ conversion\ above\ failed}}
+\DoxyCodeLine{01278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}{strtof}}(\mbox{\hyperlink{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70}{value\_float}},\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data(),\ \&endptr);}
+\DoxyCodeLine{01279\ }
+\DoxyCodeLine{01280\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ checked\ the\ number\ format\ before}}
+\DoxyCodeLine{01281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(endptr\ ==\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.data()\ +\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.size());}
+\DoxyCodeLine{01282\ }
+\DoxyCodeLine{01283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::value\_float;}
+\DoxyCodeLine{01284\ \ \ \ \ \}}
+\DoxyCodeLine{01285\ }
+\DoxyCodeLine{01291\ \ \ \ \ \mbox{\hyperlink{a00260_a5338981b5ad9027c9e54b1c5597f4344}{JSON\_HEDLEY\_NON\_NULL}}(2)}
+\DoxyCodeLine{01292\ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ \mbox{\hyperlink{a01153_ad89dec0ac0f4e851925a0499e043b18b}{scan\_literal}}(const\ \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}*\ literal\_text,\ const\ \mbox{\hyperlink{a00667}{std}}::\textcolor{keywordtype}{size\_t}\ length,}
+\DoxyCodeLine{01293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ return\_type)}
+\DoxyCodeLine{01294\ \ \ \ \ \{}
+\DoxyCodeLine{01295\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(std::char\_traits<char\_type>::to\_char\_type(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})\ ==\ literal\_text[0]);}
+\DoxyCodeLine{01296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 1;\ i\ <\ length;\ ++i)}
+\DoxyCodeLine{01297\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(std::char\_traits<char\_type>::to\_char\_type(\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}())\ !=\ literal\_text[i]))}
+\DoxyCodeLine{01299\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ literal"{}};}
+\DoxyCodeLine{01301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ return\_type;}
+\DoxyCodeLine{01305\ \ \ \ \ \}}
+\DoxyCodeLine{01306\ }
+\DoxyCodeLine{01308\ \ \ \ \ \textcolor{comment}{//\ input\ management}}
+\DoxyCodeLine{01310\ \textcolor{comment}{}}
+\DoxyCodeLine{01312\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a3bda093837339813916d11fb6e396606}{reset}}()\ noexcept}
+\DoxyCodeLine{01313\ \ \ \ \ \{}
+\DoxyCodeLine{01314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.clear();}
+\DoxyCodeLine{01315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}.clear();}
+\DoxyCodeLine{01316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}.push\_back(std::char\_traits<char\_type>::to\_char\_type(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}));}
+\DoxyCodeLine{01317\ \ \ \ \ \}}
+\DoxyCodeLine{01318\ }
+\DoxyCodeLine{01319\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{01320\ \textcolor{comment}{\ \ \ \ @brief\ get\ next\ character\ from\ the\ input}}
+\DoxyCodeLine{01321\ \textcolor{comment}{}}
+\DoxyCodeLine{01322\ \textcolor{comment}{\ \ \ \ This\ function\ provides\ the\ interface\ to\ the\ used\ input\ adapter.\ It\ does}}
+\DoxyCodeLine{01323\ \textcolor{comment}{\ \ \ \ not\ throw\ in\ case\ the\ input\ reached\ EOF,\ but\ returns\ a}}
+\DoxyCodeLine{01324\ \textcolor{comment}{\ \ \ \ \`{}std::char\_traits<char>::eof()`\ in\ that\ case.\ \ Stores\ the\ scanned\ characters}}
+\DoxyCodeLine{01325\ \textcolor{comment}{\ \ \ \ for\ use\ in\ error\ messages.}}
+\DoxyCodeLine{01326\ \textcolor{comment}{}}
+\DoxyCodeLine{01327\ \textcolor{comment}{\ \ \ \ @return\ character\ read\ from\ the\ input}}
+\DoxyCodeLine{01328\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{01329\ \ \ \ \ \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()}
+\DoxyCodeLine{01330\ \ \ \ \ \{}
+\DoxyCodeLine{01331\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a94cf85cd91d478c20ae143eba906ea1a}{chars\_read\_total}};}
+\DoxyCodeLine{01332\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a74df94563dd32102152ceb8c6d9041d8}{chars\_read\_current\_line}};}
+\DoxyCodeLine{01333\ }
+\DoxyCodeLine{01334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}{next\_unget}})}
+\DoxyCodeLine{01335\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ just\ reset\ the\ next\_unget\ variable\ and\ work\ with\ current}}
+\DoxyCodeLine{01337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}{next\_unget}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ =\ \mbox{\hyperlink{a01153_a526d001dd91ec55b8032ba98466765c0}{ia}}.get\_character();}
+\DoxyCodeLine{01342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01343\ }
+\DoxyCodeLine{01344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\_HEDLEY\_LIKELY}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ !=\ std::char\_traits<char\_type>::eof()))}
+\DoxyCodeLine{01345\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01346\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}.push\_back(std::char\_traits<char\_type>::to\_char\_type(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}));}
+\DoxyCodeLine{01347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01348\ }
+\DoxyCodeLine{01349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{01350\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01351\ \ \ \ \ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a4bbad8bc2c0d17c1b61c3ce729908b71}{lines\_read}};}
+\DoxyCodeLine{01352\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a74df94563dd32102152ceb8c6d9041d8}{chars\_read\_current\_line}}\ =\ 0;}
+\DoxyCodeLine{01353\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01354\ }
+\DoxyCodeLine{01355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}};}
+\DoxyCodeLine{01356\ \ \ \ \ \}}
+\DoxyCodeLine{01357\ }
+\DoxyCodeLine{01366\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_ab5811afe1c3efb0b769f7733b8373c6f}{unget}}()}
+\DoxyCodeLine{01367\ \ \ \ \ \{}
+\DoxyCodeLine{01368\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}{next\_unget}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01369\ }
+\DoxyCodeLine{01370\ \ \ \ \ \ \ \ \ -\/-\/\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a94cf85cd91d478c20ae143eba906ea1a}{chars\_read\_total}};}
+\DoxyCodeLine{01371\ }
+\DoxyCodeLine{01372\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ case\ we\ "{}unget"{}\ a\ newline,\ we\ have\ to\ also\ decrement\ the\ lines\_read}}
+\DoxyCodeLine{01373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a74df94563dd32102152ceb8c6d9041d8}{chars\_read\_current\_line}}\ ==\ 0)}
+\DoxyCodeLine{01374\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a4bbad8bc2c0d17c1b61c3ce729908b71}{lines\_read}}\ >\ 0)}
+\DoxyCodeLine{01376\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a4bbad8bc2c0d17c1b61c3ce729908b71}{lines\_read}};}
+\DoxyCodeLine{01378\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01381\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01382\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a74df94563dd32102152ceb8c6d9041d8}{chars\_read\_current\_line}};}
+\DoxyCodeLine{01383\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01384\ }
+\DoxyCodeLine{01385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\_HEDLEY\_LIKELY}}(\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ !=\ std::char\_traits<char\_type>::eof()))}
+\DoxyCodeLine{01386\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01387\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00206_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(!\mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}.empty());}
+\DoxyCodeLine{01388\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}.pop\_back();}
+\DoxyCodeLine{01389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01390\ \ \ \ \ \}}
+\DoxyCodeLine{01391\ }
+\DoxyCodeLine{01393\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}}(\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\ c)}
+\DoxyCodeLine{01394\ \ \ \ \ \{}
+\DoxyCodeLine{01395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}.push\_back(\textcolor{keyword}{static\_cast<}typename\ string\_t::value\_type\textcolor{keyword}{>}(c));}
+\DoxyCodeLine{01396\ \ \ \ \ \}}
+\DoxyCodeLine{01397\ }
+\DoxyCodeLine{01398\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01400\ \ \ \ \ \textcolor{comment}{//\ value\ getters}}
+\DoxyCodeLine{01402\ \textcolor{comment}{}}
+\DoxyCodeLine{01404\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\_integer\_t}}\ \mbox{\hyperlink{a01153_a9535d0c72adbe9fe149853ebad5faee8}{get\_number\_integer}}()\ const\ noexcept}
+\DoxyCodeLine{01405\ \ \ \ \ \{}
+\DoxyCodeLine{01406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a5134de850fab8f41474a36ae07998088}{value\_integer}};}
+\DoxyCodeLine{01407\ \ \ \ \ \}}
+\DoxyCodeLine{01408\ }
+\DoxyCodeLine{01410\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\_unsigned\_t}}\ \mbox{\hyperlink{a01153_abfc85ff04fcb1a5a8d8ea299a4c479e5}{get\_number\_unsigned}}()\ const\ noexcept}
+\DoxyCodeLine{01411\ \ \ \ \ \{}
+\DoxyCodeLine{01412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ae84cbf312215c15d79783380b1592f74}{value\_unsigned}};}
+\DoxyCodeLine{01413\ \ \ \ \ \}}
+\DoxyCodeLine{01414\ }
+\DoxyCodeLine{01416\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\_float\_t}}\ \mbox{\hyperlink{a01153_adb1a71f6a3e65ed32c452a318967b61e}{get\_number\_float}}()\ const\ noexcept}
+\DoxyCodeLine{01417\ \ \ \ \ \{}
+\DoxyCodeLine{01418\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70}{value\_float}};}
+\DoxyCodeLine{01419\ \ \ \ \ \}}
+\DoxyCodeLine{01420\ }
+\DoxyCodeLine{01422\ \ \ \ \ \mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\_t}}\&\ \mbox{\hyperlink{a01153_a0d4629316aaa5c05a9b8adb0cd76705e}{get\_string}}()}
+\DoxyCodeLine{01423\ \ \ \ \ \{}
+\DoxyCodeLine{01424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}};}
+\DoxyCodeLine{01425\ \ \ \ \ \}}
+\DoxyCodeLine{01426\ }
+\DoxyCodeLine{01428\ \ \ \ \ \textcolor{comment}{//\ diagnostics}}
+\DoxyCodeLine{01430\ \textcolor{comment}{}}
+\DoxyCodeLine{01432\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{a01161}{position\_t}}\ \mbox{\hyperlink{a01153_a948c80b8bd8a3095b544e4655e1ca37e}{get\_position}}()\ const\ noexcept}
+\DoxyCodeLine{01433\ \ \ \ \ \{}
+\DoxyCodeLine{01434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}};}
+\DoxyCodeLine{01435\ \ \ \ \ \}}
+\DoxyCodeLine{01436\ }
+\DoxyCodeLine{01440\ \ \ \ \ std::string\ \mbox{\hyperlink{a01153_ae000b7571480e528dee4b281f63d5b15}{get\_token\_string}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{01441\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{01442\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ escape\ control\ characters}}
+\DoxyCodeLine{01443\ \ \ \ \ \ \ \ \ std::string\ result;}
+\DoxyCodeLine{01444\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ c\ :\ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}})}
+\DoxyCodeLine{01445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(c)\ <=\ \textcolor{stringliteral}{'\(\backslash\)x1F'})}
+\DoxyCodeLine{01447\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ escape\ control\ characters}}
+\DoxyCodeLine{01449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<char,\ 9>\ cs\{\{\}\};}
+\DoxyCodeLine{01450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}((std::snprintf)(cs.data(),\ cs.size(),\ \textcolor{stringliteral}{"{}<U+\%.4X>"{}},\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(c)));\ \textcolor{comment}{//\ NOLINT(cppcoreguidelines-\/pro-\/type-\/vararg,hicpp-\/vararg)}}
+\DoxyCodeLine{01451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ cs.data();}
+\DoxyCodeLine{01452\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01454\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ character\ as\ is}}
+\DoxyCodeLine{01456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(\textcolor{keyword}{static\_cast<}std::string::value\_type\textcolor{keyword}{>}(c));}
+\DoxyCodeLine{01457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01459\ }
+\DoxyCodeLine{01460\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{01461\ \ \ \ \ \}}
+\DoxyCodeLine{01462\ }
+\DoxyCodeLine{01464\ \ \ \ \ \mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\_HEDLEY\_RETURNS\_NON\_NULL}}}
+\DoxyCodeLine{01465\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a01153_afe2f78f0bad1d08f67dc417278a59f29}{get\_error\_message}}()\ const\ noexcept}
+\DoxyCodeLine{01466\ \ \ \ \ \{}
+\DoxyCodeLine{01467\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}};}
+\DoxyCodeLine{01468\ \ \ \ \ \}}
+\DoxyCodeLine{01469\ }
+\DoxyCodeLine{01471\ \ \ \ \ \textcolor{comment}{//\ actual\ scanner}}
+\DoxyCodeLine{01473\ \textcolor{comment}{}}
+\DoxyCodeLine{01478\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01153_a7cd7d55de2cd398660bc243c7229caf9}{skip\_bom}}()}
+\DoxyCodeLine{01479\ \ \ \ \ \{}
+\DoxyCodeLine{01480\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()\ ==\ 0xEF)}
+\DoxyCodeLine{01481\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ we\ completely\ parse\ the\ BOM}}
+\DoxyCodeLine{01483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()\ ==\ 0xBB\ \&\&\ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}()\ ==\ 0xBF;}
+\DoxyCodeLine{01484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01485\ }
+\DoxyCodeLine{01486\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ first\ character\ is\ not\ the\ beginning\ of\ the\ BOM;\ unget\ it\ to}}
+\DoxyCodeLine{01487\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ process\ is\ later}}
+\DoxyCodeLine{01488\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_ab5811afe1c3efb0b769f7733b8373c6f}{unget}}();}
+\DoxyCodeLine{01489\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01490\ \ \ \ \ \}}
+\DoxyCodeLine{01491\ }
+\DoxyCodeLine{01492\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01153_a449f3f3703dfbf8b757e12f002668604}{skip\_whitespace}}()}
+\DoxyCodeLine{01493\ \ \ \ \ \{}
+\DoxyCodeLine{01494\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{01495\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01496\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}}();}
+\DoxyCodeLine{01497\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01498\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\ '}\ ||\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\(\backslash\)t'}\ ||\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\(\backslash\)n'}\ ||\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{01499\ \ \ \ \ \}}
+\DoxyCodeLine{01500\ }
+\DoxyCodeLine{01501\ \ \ \ \ \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\_type}}\ \mbox{\hyperlink{a01153_a40320a8fef5f1f03b60c8b2f2f40af4d}{scan}}()}
+\DoxyCodeLine{01502\ \ \ \ \ \{}
+\DoxyCodeLine{01503\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initially,\ skip\ the\ BOM}}
+\DoxyCodeLine{01504\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}.\mbox{\hyperlink{a01161_a94cf85cd91d478c20ae143eba906ea1a}{chars\_read\_total}}\ ==\ 0\ \&\&\ !\mbox{\hyperlink{a01153_a7cd7d55de2cd398660bc243c7229caf9}{skip\_bom}}())}
+\DoxyCodeLine{01505\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01506\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ BOM;\ must\ be\ 0xEF\ 0xBB\ 0xBF\ if\ given"{}};}
+\DoxyCodeLine{01507\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01508\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01509\ }
+\DoxyCodeLine{01510\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ next\ character\ and\ ignore\ whitespace}}
+\DoxyCodeLine{01511\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a449f3f3703dfbf8b757e12f002668604}{skip\_whitespace}}();}
+\DoxyCodeLine{01512\ }
+\DoxyCodeLine{01513\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ignore\ comments}}
+\DoxyCodeLine{01514\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{a01153_a11528814930243028ac5b8901f4a17d7}{ignore\_comments}}\ \&\&\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ ==\ \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{01515\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{a01153_afdc68706ad20be93977cd0f97043ea7f}{scan\_comment}}())}
+\DoxyCodeLine{01517\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01519\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01520\ }
+\DoxyCodeLine{01521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ following\ whitespace}}
+\DoxyCodeLine{01522\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a449f3f3703dfbf8b757e12f002668604}{skip\_whitespace}}();}
+\DoxyCodeLine{01523\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01524\ }
+\DoxyCodeLine{01525\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}})}
+\DoxyCodeLine{01526\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ structural\ characters}}
+\DoxyCodeLine{01528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'['}:}
+\DoxyCodeLine{01529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::begin\_array;}
+\DoxyCodeLine{01530\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{']'}:}
+\DoxyCodeLine{01531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::end\_array;}
+\DoxyCodeLine{01532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\{'}:}
+\DoxyCodeLine{01533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::begin\_object;}
+\DoxyCodeLine{01534\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\}'}:}
+\DoxyCodeLine{01535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::end\_object;}
+\DoxyCodeLine{01536\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{':'}:}
+\DoxyCodeLine{01537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::name\_separator;}
+\DoxyCodeLine{01538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{','}:}
+\DoxyCodeLine{01539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::value\_separator;}
+\DoxyCodeLine{01540\ }
+\DoxyCodeLine{01541\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ literals}}
+\DoxyCodeLine{01542\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{01543\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<char\_type,\ 4>\ true\_literal\ =\ \{\{\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'t'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'r'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'u'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'e'})\}\};}
+\DoxyCodeLine{01545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ad89dec0ac0f4e851925a0499e043b18b}{scan\_literal}}(true\_literal.data(),\ true\_literal.size(),\ token\_type::literal\_true);}
+\DoxyCodeLine{01546\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{01548\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<char\_type,\ 5>\ false\_literal\ =\ \{\{\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'f'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'a'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'l'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'s'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'e'})\}\};}
+\DoxyCodeLine{01550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ad89dec0ac0f4e851925a0499e043b18b}{scan\_literal}}(false\_literal.data(),\ false\_literal.size(),\ token\_type::literal\_false);}
+\DoxyCodeLine{01551\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01552\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{01553\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<char\_type,\ 4>\ null\_literal\ =\ \{\{\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'n'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'u'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'l'}),\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\_type}}\textcolor{keyword}{>}(\textcolor{charliteral}{'l'})\}\};}
+\DoxyCodeLine{01555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ad89dec0ac0f4e851925a0499e043b18b}{scan\_literal}}(null\_literal.data(),\ null\_literal.size(),\ token\_type::literal\_null);}
+\DoxyCodeLine{01556\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01557\ }
+\DoxyCodeLine{01558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ string}}
+\DoxyCodeLine{01559\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)"{}'}:}
+\DoxyCodeLine{01560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_ab6352978e03ebcbc3cd618cd17142f26}{scan\_string}}();}
+\DoxyCodeLine{01561\ }
+\DoxyCodeLine{01562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ number}}
+\DoxyCodeLine{01563\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{01564\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{01565\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{01566\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{01567\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{01568\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{01569\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{01570\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{01571\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{01572\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{01573\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{01574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01153_aab51a28e32c1957329141baff8eda1c4}{scan\_number}}();}
+\DoxyCodeLine{01575\ }
+\DoxyCodeLine{01576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ end\ of\ input\ (the\ null\ byte\ is\ needed\ when\ parsing\ from}}
+\DoxyCodeLine{01577\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ string\ literals)}}
+\DoxyCodeLine{01578\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)0'}:}
+\DoxyCodeLine{01579\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ std::char\_traits<char\_type>::eof():}
+\DoxyCodeLine{01580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::end\_of\_input;}
+\DoxyCodeLine{01581\ }
+\DoxyCodeLine{01582\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ error}}
+\DoxyCodeLine{01583\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{01584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}invalid\ literal"{}};}
+\DoxyCodeLine{01585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token\_type::parse\_error;}
+\DoxyCodeLine{01586\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01587\ \ \ \ \ \}}
+\DoxyCodeLine{01588\ }
+\DoxyCodeLine{01589\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01591\ \ \ \ \ InputAdapterType\ \mbox{\hyperlink{a01153_a526d001dd91ec55b8032ba98466765c0}{ia}};}
+\DoxyCodeLine{01592\ }
+\DoxyCodeLine{01594\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01153_a11528814930243028ac5b8901f4a17d7}{ignore\_comments}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01595\ }
+\DoxyCodeLine{01597\ \ \ \ \ \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\ \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}}\ =\ std::char\_traits<char\_type>::eof();}
+\DoxyCodeLine{01598\ }
+\DoxyCodeLine{01600\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}{next\_unget}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01601\ }
+\DoxyCodeLine{01603\ \ \ \ \ \mbox{\hyperlink{a01161}{position\_t}}\ \mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}}\ \{\};}
+\DoxyCodeLine{01604\ }
+\DoxyCodeLine{01606\ \ \ \ \ std::vector<char\_type>\ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\_string}}\ \{\};}
+\DoxyCodeLine{01607\ }
+\DoxyCodeLine{01609\ \ \ \ \ \mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\_t}}\ \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\_buffer}}\ \{\};}
+\DoxyCodeLine{01610\ }
+\DoxyCodeLine{01612\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\_message}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{01613\ }
+\DoxyCodeLine{01614\ \ \ \ \ \textcolor{comment}{//\ number\ values}}
+\DoxyCodeLine{01615\ \ \ \ \ \mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\_integer\_t}}\ \mbox{\hyperlink{a01153_a5134de850fab8f41474a36ae07998088}{value\_integer}}\ =\ 0;}
+\DoxyCodeLine{01616\ \ \ \ \ \mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\_unsigned\_t}}\ \mbox{\hyperlink{a01153_ae84cbf312215c15d79783380b1592f74}{value\_unsigned}}\ =\ 0;}
+\DoxyCodeLine{01617\ \ \ \ \ \mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\_float\_t}}\ \mbox{\hyperlink{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70}{value\_float}}\ =\ 0;}
+\DoxyCodeLine{01618\ }
+\DoxyCodeLine{01620\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\_int\_type}}\ \mbox{\hyperlink{a01153_a6f2fd5b4b6b153f11fc8f77213350073}{decimal\_point\_char}}\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{01621\ \};}
+\DoxyCodeLine{01622\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{01623\ \}\ \ \textcolor{comment}{//\ namespace\ nlohmann}}
+
+\end{DoxyCode}

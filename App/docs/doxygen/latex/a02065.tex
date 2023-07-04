@@ -1,0 +1,322 @@
+\doxysection{sf\+::Video\+Mode Class Reference}
+\hypertarget{a02065}{}\label{a02065}\index{sf::VideoMode@{sf::VideoMode}}
+
+
+\doxylink{a02065}{Video\+Mode} defines a video mode (width, height, bpp)  
+
+
+
+
+{\ttfamily \#include $<$Video\+Mode.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a02065_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether or not the video mode is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02065_a04c9417e5c304510bef5f6aeb03f6ce1}{Video\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02065_a46c35ed41de9e115661dcd529d64e9d3}{Video\+Mode}} (unsigned int mode\+Width, unsigned int mode\+Height, unsigned int mode\+Bits\+Per\+Pixel=32)
+\begin{DoxyCompactList}\small\item\em Construct the video mode with its attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a02065}{Video\+Mode}} \mbox{\hyperlink{a02065_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the current desktop video mode. \end{DoxyCompactList}\item 
+static const std\+::vector$<$ \mbox{\hyperlink{a02065}{Video\+Mode}} $>$ \& \mbox{\hyperlink{a02065_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all the video modes supported in fullscreen mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a02065_aa080f1ef96a1008d58b1920eceb189df}{bits\+Per\+Pixel}}
+\begin{DoxyCompactList}\small\item\em Video mode pixel depth, in bits per pixels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a02065_a5a88d44c9470db7474361a42a189342d}{height}}
+\begin{DoxyCompactList}\small\item\em Video mode height, in pixels. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a02065_a9b3b2ad2cac6b9c266823fb5ed506d90}{width}}
+\begin{DoxyCompactList}\small\item\em Video mode width, in pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_abd7bf172d318085ea572b8c10033f7b7}{operator!=}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_a8e3d8fa57fa10dca05edbc34c4e2f1a8}{operator$<$}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_a09b0a83f9135d934e540800bad12f0ca}{operator$<$=}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_a03c51c119811ffd4403c6e2bcbd4ceaf}{operator==}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_ab6e5b2c65a428a4b56de8551b3706a36}{operator$>$}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>} operator to compare video modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool \mbox{\hyperlink{a02065_a7f7983e336203d34c9878c77fff60f1f}{operator$>$=}} (const \mbox{\hyperlink{a02065}{Video\+Mode}} \&left, const \mbox{\hyperlink{a02065}{Video\+Mode}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{a02065}{Video\+Mode} defines a video mode (width, height, bpp) 
+
+A video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel). Video modes are used to setup windows (\doxylink{a02069}{sf\+::\+Window}) at creation time.
+
+The main usage of video modes is for fullscreen mode\+: indeed you must use one of the valid video modes allowed by the OS (which are defined by what the monitor and the graphics card support), otherwise your window creation will just fail.
+
+\doxylink{a02065}{sf\+::\+Video\+Mode} provides a static function for retrieving the list of all the video modes supported by the system\+: \doxylink{a02065_a0f99e67ef2b51fbdc335d9991232609e}{get\+Fullscreen\+Modes()}.
+
+A custom video mode can also be checked directly for fullscreen compatibility with its \doxylink{a02065_ad5e04c044b0925523c75ecb173d2129a}{is\+Valid()} function.
+
+Additionally, \doxylink{a02065}{sf\+::\+Video\+Mode} provides a static function to get the mode currently used by the desktop\+: \doxylink{a02065_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\+Desktop\+Mode()}. This allows to build windows with the same size or pixel depth as the current resolution.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Display\ the\ list\ of\ all\ the\ video\ modes\ available\ for\ fullscreen}}
+\DoxyCodeLine{std::vector<sf::VideoMode>\ modes\ =\ \mbox{\hyperlink{a02065_a0f99e67ef2b51fbdc335d9991232609e}{sf::VideoMode::getFullscreenModes}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ modes.size();\ ++i)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a02065}{sf::VideoMode}}\ mode\ =\ modes[i];}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Mode\ \#"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ mode.\mbox{\hyperlink{a02065_a9b3b2ad2cac6b9c266823fb5ed506d90}{width}}\ <<\ \textcolor{stringliteral}{"{}x"{}}\ <<\ mode.\mbox{\hyperlink{a02065_a5a88d44c9470db7474361a42a189342d}{height}}\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ mode.\mbox{\hyperlink{a02065_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel}}\ <<\ \textcolor{stringliteral}{"{}\ bpp"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ window\ with\ the\ same\ pixel\ depth\ as\ the\ desktop}}
+\DoxyCodeLine{\mbox{\hyperlink{a02065}{sf::VideoMode}}\ desktop\ =\ \mbox{\hyperlink{a02065_ac1be160a4342e6eafb2cb0e8c9b18d44}{sf::VideoMode::getDesktopMode}}();}
+\DoxyCodeLine{window.create(\mbox{\hyperlink{a02065}{sf::VideoMode}}(1024,\ 768,\ desktop.\mbox{\hyperlink{a02065_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel}}),\ \textcolor{stringliteral}{"{}SFML\ window"{}});}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a02065_a04c9417e5c304510bef5f6aeb03f6ce1}\label{a02065_a04c9417e5c304510bef5f6aeb03f6ce1} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructors initializes all members to 0. \Hypertarget{a02065_a46c35ed41de9e115661dcd529d64e9d3}\label{a02065_a46c35ed41de9e115661dcd529d64e9d3} 
+\index{sf::VideoMode@{sf::VideoMode}!VideoMode@{VideoMode}}
+\index{VideoMode@{VideoMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{VideoMode()}{VideoMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Video\+Mode\+::\+Video\+Mode (\begin{DoxyParamCaption}\item[{unsigned int}]{mode\+Width,  }\item[{unsigned int}]{mode\+Height,  }\item[{unsigned int}]{mode\+Bits\+Per\+Pixel = {\ttfamily 32} }\end{DoxyParamCaption})}
+
+
+
+Construct the video mode with its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode\+Width} & Width in pixels \\
+\hline
+{\em mode\+Height} & Height in pixels \\
+\hline
+{\em mode\+Bits\+Per\+Pixel} & Pixel depths in bits per pixel \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a02065_ac1be160a4342e6eafb2cb0e8c9b18d44}\label{a02065_ac1be160a4342e6eafb2cb0e8c9b18d44} 
+\index{sf::VideoMode@{sf::VideoMode}!getDesktopMode@{getDesktopMode}}
+\index{getDesktopMode@{getDesktopMode}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getDesktopMode()}{getDesktopMode()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a02065}{Video\+Mode}} sf\+::\+Video\+Mode\+::get\+Desktop\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current desktop video mode. 
+
+\begin{DoxyReturn}{Returns}
+Current desktop video mode 
+\end{DoxyReturn}
+\Hypertarget{a02065_a0f99e67ef2b51fbdc335d9991232609e}\label{a02065_a0f99e67ef2b51fbdc335d9991232609e} 
+\index{sf::VideoMode@{sf::VideoMode}!getFullscreenModes@{getFullscreenModes}}
+\index{getFullscreenModes@{getFullscreenModes}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{getFullscreenModes()}{getFullscreenModes()}}
+{\footnotesize\ttfamily static const std\+::vector$<$ \mbox{\hyperlink{a02065}{Video\+Mode}} $>$ \& sf\+::\+Video\+Mode\+::get\+Fullscreen\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve all the video modes supported in fullscreen mode. 
+
+When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
+
+\begin{DoxyReturn}{Returns}
+Array containing all the supported fullscreen modes 
+\end{DoxyReturn}
+\Hypertarget{a02065_ad5e04c044b0925523c75ecb173d2129a}\label{a02065_ad5e04c044b0925523c75ecb173d2129a} 
+\index{sf::VideoMode@{sf::VideoMode}!isValid@{isValid}}
+\index{isValid@{isValid}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool sf\+::\+Video\+Mode\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell whether or not the video mode is valid. 
+
+The validity of video modes is only relevant when using fullscreen windows; otherwise any video mode can be used with no restriction.
+
+\begin{DoxyReturn}{Returns}
+True if the video mode is valid for fullscreen mode 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a02065_abd7bf172d318085ea572b8c10033f7b7}\label{a02065_abd7bf172d318085ea572b8c10033f7b7} 
+\index{sf::VideoMode@{sf::VideoMode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of != operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are different 
+\end{DoxyReturn}
+\Hypertarget{a02065_a8e3d8fa57fa10dca05edbc34c4e2f1a8}\label{a02065_a8e3d8fa57fa10dca05edbc34c4e2f1a8} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a02065_a09b0a83f9135d934e540800bad12f0ca}\label{a02065_a09b0a83f9135d934e540800bad12f0ca} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a02065_a03c51c119811ffd4403c6e2bcbd4ceaf}\label{a02065_a03c51c119811ffd4403c6e2bcbd4ceaf} 
+\index{sf::VideoMode@{sf::VideoMode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of == operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are equal 
+\end{DoxyReturn}
+\Hypertarget{a02065_ab6e5b2c65a428a4b56de8551b3706a36}\label{a02065_ab6e5b2c65a428a4b56de8551b3706a36} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>} operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater than {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a02065_a7f7983e336203d34c9878c77fff60f1f}\label{a02065_a7f7983e336203d34c9878c77fff60f1f} 
+\index{sf::VideoMode@{sf::VideoMode}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02215_a1ab885b7907ee088350359516d68be64}{SFML\+\_\+\+WINDOW\+\_\+\+API}} bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{left,  }\item[{const \mbox{\hyperlink{a02065}{Video\+Mode}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>}= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater or equal than {\itshape right} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a02065_aa080f1ef96a1008d58b1920eceb189df}\label{a02065_aa080f1ef96a1008d58b1920eceb189df} 
+\index{sf::VideoMode@{sf::VideoMode}!bitsPerPixel@{bitsPerPixel}}
+\index{bitsPerPixel@{bitsPerPixel}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{bitsPerPixel}{bitsPerPixel}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::bits\+Per\+Pixel}
+
+
+
+Video mode pixel depth, in bits per pixels. 
+
+\Hypertarget{a02065_a5a88d44c9470db7474361a42a189342d}\label{a02065_a5a88d44c9470db7474361a42a189342d} 
+\index{sf::VideoMode@{sf::VideoMode}!height@{height}}
+\index{height@{height}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::height}
+
+
+
+Video mode height, in pixels. 
+
+\Hypertarget{a02065_a9b3b2ad2cac6b9c266823fb5ed506d90}\label{a02065_a9b3b2ad2cac6b9c266823fb5ed506d90} 
+\index{sf::VideoMode@{sf::VideoMode}!width@{width}}
+\index{width@{width}!sf::VideoMode@{sf::VideoMode}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Video\+Mode\+::width}
+
+
+
+Video mode width, in pixels. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00602}{Video\+Mode.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\doxysection{Blend\+Mode.\+hpp}
+\hypertarget{a00365_source}{}\label{a00365_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/BlendMode.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/BlendMode.hpp}}
+\mbox{\hyperlink{a00365}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_BLENDMODE\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_BLENDMODE\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02206}{SFML/Graphics/Export.hpp}}>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01677}{BlendMode}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbafda2d66c3c3da15cd3b42338fbf6d2ba}{Zero}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbaa2d3ba8b8bb2233c9d357cbb94bf4181}{One}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbad679bb0ecaf15c188d7f2e1fab572188}{SrcColor}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbba5971ffdbca63382058ccba76bfce219e}{OneMinusSrcColor}},\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbba3d85281c3eab7153f2bd9faae3e7523a}{DstColor}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbac8198db20d14506a841d1091ced1cae2}{OneMinusDstColor}},\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbaac0ae68df2930b4d616c3e7abeec7d41}{SrcAlpha}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbbaab57e8616bf4c21d8ee923178acdf2c8}{OneMinusSrcAlpha}},\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbba5e3dc9a6f117aaa5f7433e1f4662a5f7}{DstAlpha}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ OneMinusDstAlpha\ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32a50c081d8f36cf7b77632966e15d38966}{Add}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32a14c825be24f8412fc5ed5b49f19bc0d0}{Subtract}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ ReverseSubtract\ }
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{a01677_a7faef75eae1fb47bbe93f45f38e3d345}{BlendMode}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{a01677_a23c7452cc8e9eb943c3aea6234ce4297}{BlendMode}}(\mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ sourceFactor,\ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ destinationFactor,\ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}\ blendEquation\ =\ Add);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{a01677_a69a12c596114e77126616e7e0f7d798b}{BlendMode}}(\mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ colorSourceFactor,\ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ colorDestinationFactor,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}\ colorBlendEquation,\ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ alphaSourceFactor,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ alphaDestinationFactor,\ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}\ alphaBlendEquation);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Member\ Data}}
+\DoxyCodeLine{00115\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ \ \ \mbox{\hyperlink{a01677_a32d1a55dbfada86a06d9b881dc8ccf7b}{colorSrcFactor}};\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ \ \ \mbox{\hyperlink{a01677_adee68ee59e7f1bf71d12db03d251104d}{colorDstFactor}};\ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}\ \mbox{\hyperlink{a01677_aed12f06eb7f50a1b95b892b0964857b1}{colorEquation}};\ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ \ \ \mbox{\hyperlink{a01677_aa94e44f8e1042a7357e8eff78c61a1be}{alphaSrcFactor}};\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{a01677_afb9852caf356b53bb0de460c58a9ebbb}{Factor}}\ \ \ \mbox{\hyperlink{a01677_aaf85b6b7943181cc81745569c4851e4e}{alphaDstFactor}};\ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{a01677_a7bce470e2e384c4f9c8d9595faef7c32}{Equation}}\ \mbox{\hyperlink{a01677_a68f5a305e0912946f39ba6c9265710c4}{alphaEquation}};\ \ }
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00133\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\&\ right);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00145\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\&\ right);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ Commonly\ used\ blending\ modes}}
+\DoxyCodeLine{00150\ \textcolor{comment}{}\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\ \mbox{\hyperlink{a00669_a7747d95d2e1f108142ea7c760c0b266c}{BlendAlpha}};\ \ \ \ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\ \mbox{\hyperlink{a00669_a1be8c314242e6ed161af2aea08be543c}{BlendAdd}};\ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\ \mbox{\hyperlink{a00669_ad8622674d06322d447de6ea0c95c83b4}{BlendMultiply}};\ }
+\DoxyCodeLine{00153\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01677}{BlendMode}}\ \mbox{\hyperlink{a00669_aaa5511bd6fcf3573d61945b6d70a20ab}{BlendNone}};\ \ \ \ \ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_BLENDMODE\_HPP}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+
+\end{DoxyCode}

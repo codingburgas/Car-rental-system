@@ -1,0 +1,557 @@
+\doxysection{sf\+::Udp\+Socket Class Reference}
+\hypertarget{a01869}{}\label{a01869}\index{sf::UdpSocket@{sf::UdpSocket}}
+
+
+Specialized socket using the UDP protocol.  
+
+
+
+
+{\ttfamily \#include $<$Udp\+Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Udp\+Socket\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Udp\+Socket\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19}{Any\+Port}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Some special values used by sockets. \end{DoxyCompactList}\item 
+enum \{ \mbox{\hyperlink{a01869_a11a23cf173498ad731d1344939c32596a728a7d33027bee0d65f70f964dd9c9eb}{Max\+Datagram\+Size}} = 65507
+ \}
+\item 
+enum \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \{ \newline
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}{Done}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09}{Not\+Ready}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706}{Partial}}
+, \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1}{Disconnected}}
+, \newline
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes that may be returned by socket functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind}} (unsigned short port, const \mbox{\hyperlink{a01841}{Ip\+Address}} \&address=\mbox{\hyperlink{a01841_a3dbc10b0dc6804cc69e29342f7406907}{Ip\+Address\+::\+Any}})
+\begin{DoxyCompactList}\small\item\em Bind the socket to a specific port. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{a01869_a5c03644b3da34bb763bce93e758c938e}{get\+Local\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Get the port to which the socket is bound locally. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the socket is in blocking or non-\/blocking mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{a01869_afdd5c655d00c96222d5b477fc057a22b}{receive}} (\mbox{\hyperlink{a01845}{Packet}} \&packet, \mbox{\hyperlink{a01841}{Ip\+Address}} \&remote\+Address, unsigned short \&remote\+Port)
+\begin{DoxyCompactList}\small\item\em Receive a formatted packet of data from a remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive}} (void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size, std\+::size\+\_\+t \&received, \mbox{\hyperlink{a01841}{Ip\+Address}} \&remote\+Address, unsigned short \&remote\+Port)
+\begin{DoxyCompactList}\small\item\em Receive raw data from a remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size, const \mbox{\hyperlink{a01841}{Ip\+Address}} \&remote\+Address, unsigned short remote\+Port)
+\begin{DoxyCompactList}\small\item\em Send raw data to a remote peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} \mbox{\hyperlink{a01869_a48969a62c80d40fd74293a740798e435}{send}} (\mbox{\hyperlink{a01845}{Packet}} \&packet, const \mbox{\hyperlink{a01841}{Ip\+Address}} \&remote\+Address, unsigned short remote\+Port)
+\begin{DoxyCompactList}\small\item\em Send a formatted packet of data to a remote peer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking}} (bool blocking)
+\begin{DoxyCompactList}\small\item\em Set the blocking state of the socket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01869_abb10725e26dee9d3a8165fe87ffb71bb}{Udp\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01869_a2c4abb8102a1bd31f51fcfe7f15427a3}{unbind}} ()
+\begin{DoxyCompactList}\small\item\em Unbind the socket from the local port to which it is bound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \{ \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214}{Tcp}}
+, \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2}{Udp}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of protocols that the socket can use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01849_a71f2f5c2aa99e01cafe824fee4c573be}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the socket gracefully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781}{create}} (\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} handle)
+\begin{DoxyCompactList}\small\item\em Create the internal representation of the socket from a socket handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{a01849_a675457784284ae2f5640bbbe16729393}{get\+Handle}} () const
+\begin{DoxyCompactList}\small\item\em Return the internal handle of the socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{a01869_a251adcf2bc0bed2d4b7c364b3bc65a42}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Temporary buffer holding the received data in Receive(\+Packet) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01849_a0eed7647c471354050aef148bf43081f}{m\+\_\+is\+Blocking}}
+\begin{DoxyCompactList}\small\item\em Current blocking mode of the socket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} \mbox{\hyperlink{a01849_a83b63e07a0cfdb2bb1852990afe7762d}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01849}{Socket} descriptor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} \mbox{\hyperlink{a01849_a0c41f91229069c06859746a458731617}{m\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of the socket (TCP or UDP) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized socket using the UDP protocol. 
+
+A UDP socket is a connectionless socket. Instead of connecting once to a remote host, like TCP sockets, it can send to and receive from any host at any time.
+
+It is a datagram protocol\+: bounded blocks of data (datagrams) are transfered over the network rather than a continuous stream of data (TCP). Therefore, one call to send will always match one call to receive (if the datagram is not lost), with the same data that was sent.
+
+The UDP protocol is lightweight but unreliable. Unreliable means that datagrams may be duplicated, be lost or arrive reordered. However, if a datagram arrives, its data is guaranteed to be valid.
+
+UDP is generally used for real-\/time communication (audio or video streaming, real-\/time games, etc.) where speed is crucial and lost data doesn\textquotesingle{}t matter much.
+
+Sending and receiving data can use either the low-\/level or the high-\/level functions. The low-\/level functions process a raw sequence of bytes, whereas the high-\/level interface uses packets (see \doxylink{a01845}{sf\+::\+Packet}), which are easier to use and provide more safety regarding the data that is exchanged. You can look at the \doxylink{a01845}{sf\+::\+Packet} class to get more details about how they work.
+
+It is important to note that \doxylink{a01869}{Udp\+Socket} is unable to send datagrams bigger than Max\+Datagram\+Size. In this case, it returns an error and doesn\textquotesingle{}t send anything. This applies to both raw data and packets. Indeed, even packets are unable to split and recompose data, due to the unreliability of the protocol (dropped, mixed or duplicated datagrams may lead to a big mess when trying to recompose a packet).
+
+If the socket is bound to a port, it is automatically unbound from it when the socket is destroyed. However, you can unbind the socket explicitly with the Unbind function if necessary, to stop receiving messages or make the port available for other sockets.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/\ The\ client\ -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ socket\ and\ bind\ it\ to\ the\ port\ 55001}}
+\DoxyCodeLine{\mbox{\hyperlink{a01869}{sf::UdpSocket}}\ socket;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind}}(55001);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Send\ a\ message\ to\ 192.168.1.50\ on\ port\ 55002}}
+\DoxyCodeLine{std::string\ message\ =\ \textcolor{stringliteral}{"{}Hi,\ I\ am\ "{}}\ +\ \mbox{\hyperlink{a01841_a4c31622ad87edca48adbb8e8ed00ee4a}{sf::IpAddress::getLocalAddress}}().\mbox{\hyperlink{a01841_a88507954142d7fc2176cce7f36422340}{toString}}();}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send}}(message.c\_str(),\ message.size()\ +\ 1,\ \textcolor{stringliteral}{"{}192.168.1.50"{}},\ 55002);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Receive\ an\ answer\ (most\ likely\ from\ 192.168.1.50,\ but\ could\ be\ anyone\ else)}}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ buffer[1024];}
+\DoxyCodeLine{std::size\_t\ received\ =\ 0;}
+\DoxyCodeLine{\mbox{\hyperlink{a01841}{sf::IpAddress}}\ sender;}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive}}(buffer,\ \textcolor{keyword}{sizeof}(buffer),\ received,\ sender,\ port);}
+\DoxyCodeLine{std::cout\ <<\ sender.ToString()\ <<\ \textcolor{stringliteral}{"{}\ said:\ "{}}\ <<\ buffer\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/\ The\ server\ -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ socket\ and\ bind\ it\ to\ the\ port\ 55002}}
+\DoxyCodeLine{\mbox{\hyperlink{a01869}{sf::UdpSocket}}\ socket;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind}}(55002);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Receive\ a\ message\ from\ anyone}}
+\DoxyCodeLine{\textcolor{keywordtype}{char}\ buffer[1024];}
+\DoxyCodeLine{std::size\_t\ received\ =\ 0;}
+\DoxyCodeLine{\mbox{\hyperlink{a01841}{sf::IpAddress}}\ sender;}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port;}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive}}(buffer,\ \textcolor{keyword}{sizeof}(buffer),\ received,\ sender,\ port);}
+\DoxyCodeLine{std::cout\ <<\ sender.ToString()\ <<\ \textcolor{stringliteral}{"{}\ said:\ "{}}\ <<\ buffer\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Send\ an\ answer}}
+\DoxyCodeLine{std::string\ message\ =\ \textcolor{stringliteral}{"{}Welcome\ "{}}\ +\ sender.\mbox{\hyperlink{a01841_a88507954142d7fc2176cce7f36422340}{toString}}();}
+\DoxyCodeLine{socket.\mbox{\hyperlink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send}}(message.c\_str(),\ message.size()\ +\ 1,\ sender,\ port);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849}{sf\+::\+Socket}, \doxylink{a01861}{sf\+::\+Tcp\+Socket}, \doxylink{a01845}{sf\+::\+Packet} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01849_a618e172642e2628694492e6bfddc6d47}\label{a01849_a618e172642e2628694492e6bfddc6d47} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Some special values used by sockets. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnyPort@{AnyPort}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!AnyPort@{AnyPort}}}\Hypertarget{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19}\label{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19} 
+Any\+Port&Special value that tells the system to pick any available port. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01869_a11a23cf173498ad731d1344939c32596}\label{a01869_a11a23cf173498ad731d1344939c32596} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MaxDatagramSize@{MaxDatagramSize}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!MaxDatagramSize@{MaxDatagramSize}}}\Hypertarget{a01869_a11a23cf173498ad731d1344939c32596a728a7d33027bee0d65f70f964dd9c9eb}\label{a01869_a11a23cf173498ad731d1344939c32596a728a7d33027bee0d65f70f964dd9c9eb} 
+Max\+Datagram\+Size&The maximum number of bytes that can be sent in a single UDP datagram. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dc}\label{a01849_a51bf0fd51057b98a10fbb866246176dc} 
+\index{sf::UdpSocket@{sf::UdpSocket}!Status@{Status}}
+\index{Status@{Status}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{sf\+::\+Socket\+::\+Status}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Status codes that may be returned by socket functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Done@{Done}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}\label{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90} 
+Done&The socket has sent / received the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotReady@{NotReady}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!NotReady@{NotReady}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09}\label{a01849_a51bf0fd51057b98a10fbb866246176dca8554848daae98f996e131bdeed076c09} 
+Not\+Ready&The socket is not ready to send / receive data yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Partial@{Partial}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706}\label{a01849_a51bf0fd51057b98a10fbb866246176dca181c163fad2eaea927185d127c392706} 
+Partial&The socket sent a part of the data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Disconnected@{Disconnected}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1}\label{a01849_a51bf0fd51057b98a10fbb866246176dcab215141f756acdc23c67fad149710eb1} 
+Disconnected&The TCP socket has been disconnected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Error@{Error}}}\Hypertarget{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d}\label{a01849_a51bf0fd51057b98a10fbb866246176dca1dc9854433a28c22e192721179a2df5d} 
+Error&An unexpected error happened. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8} 
+\index{sf::UdpSocket@{sf::UdpSocket}!Type@{Type}}
+\index{Type@{Type}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{sf\+::\+Socket\+::\+Type}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Types of protocols that the socket can use. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tcp@{Tcp}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Tcp@{Tcp}}}\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8acc02e97e90234b957eaad4dff7f22214} 
+Tcp&TCP protocol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udp@{Udp}!sf::UdpSocket@{sf::UdpSocket}}\index{sf::UdpSocket@{sf::UdpSocket}!Udp@{Udp}}}\Hypertarget{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2}\label{a01849_a5d3ff44e56e68f02816bb0fabc34adf8a6ebf3094830db4820191a327f3cc6ce2} 
+Udp&UDP protocol. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01869_abb10725e26dee9d3a8165fe87ffb71bb}\label{a01869_abb10725e26dee9d3a8165fe87ffb71bb} 
+\index{sf::UdpSocket@{sf::UdpSocket}!UdpSocket@{UdpSocket}}
+\index{UdpSocket@{UdpSocket}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{UdpSocket()}{UdpSocket()}}
+{\footnotesize\ttfamily sf\+::\+Udp\+Socket\+::\+Udp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}\label{a01869_ad764c3d06d90b4714dcc97a0d1647bcc} 
+\index{sf::UdpSocket@{sf::UdpSocket}!bind@{bind}}
+\index{bind@{bind}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Udp\+Socket\+::bind (\begin{DoxyParamCaption}\item[{unsigned short}]{port,  }\item[{const \mbox{\hyperlink{a01841}{Ip\+Address}} \&}]{address = {\ttfamily \mbox{\hyperlink{a01841_a3dbc10b0dc6804cc69e29342f7406907}{Ip\+Address\+::\+Any}}} }\end{DoxyParamCaption})}
+
+
+
+Bind the socket to a specific port. 
+
+Binding the socket to a port is necessary for being able to receive data on that port. You can use the special value \doxylink{a01849_a618e172642e2628694492e6bfddc6d47a5a3c30fd128895403afc11076f461b19}{Socket\+::\+Any\+Port} to tell the system to automatically pick an available port, and then call get\+Local\+Port to retrieve the chosen port.
+
+Since the socket can only be bound to a single port at any given moment, if it is already bound when this function is called, it will be unbound from the previous port before being bound to the new one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port to bind the socket to \\
+\hline
+{\em address} & Address of the interface to bind to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_a2c4abb8102a1bd31f51fcfe7f15427a3}{unbind}, \doxylink{a01869_a5c03644b3da34bb763bce93e758c938e}{get\+Local\+Port} 
+\end{DoxySeeAlso}
+\Hypertarget{a01849_a71f2f5c2aa99e01cafe824fee4c573be}\label{a01849_a71f2f5c2aa99e01cafe824fee4c573be} 
+\index{sf::UdpSocket@{sf::UdpSocket}!close@{close}}
+\index{close@{close}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Close the socket gracefully. 
+
+This function can only be accessed by derived classes. \Hypertarget{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc}\label{a01849_aafbe140f4b1921e0d19e88cf7a61dcbc} 
+\index{sf::UdpSocket@{sf::UdpSocket}!create@{create}}
+\index{create@{create}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Create the internal representation of the socket. 
+
+This function can only be accessed by derived classes. \Hypertarget{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781}\label{a01849_af1dd898f7aa3ead7ff7b2d1c20e97781} 
+\index{sf::UdpSocket@{sf::UdpSocket}!create@{create}}
+\index{create@{create}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}}}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Create the internal representation of the socket from a socket handle. 
+
+This function can only be accessed by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & OS-\/specific handle of the socket to wrap \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01849_a675457784284ae2f5640bbbe16729393}\label{a01849_a675457784284ae2f5640bbbe16729393} 
+\index{sf::UdpSocket@{sf::UdpSocket}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Return the internal handle of the socket. 
+
+The returned handle may be invalid if the socket was not created yet (or already destroyed). This function can only be accessed by derived classes.
+
+\begin{DoxyReturn}{Returns}
+The internal (OS-\/specific) handle of the socket 
+\end{DoxyReturn}
+\Hypertarget{a01869_a5c03644b3da34bb763bce93e758c938e}\label{a01869_a5c03644b3da34bb763bce93e758c938e} 
+\index{sf::UdpSocket@{sf::UdpSocket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}}
+{\footnotesize\ttfamily unsigned short sf\+::\+Udp\+Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the port to which the socket is bound locally. 
+
+If the socket is not bound to a port, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Port to which the socket is bound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind} 
+\end{DoxySeeAlso}
+\Hypertarget{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}\label{a01849_ab1ceca9ac114b8baeeda3b34a0aca468} 
+\index{sf::UdpSocket@{sf::UdpSocket}!isBlocking@{isBlocking}}
+\index{isBlocking@{isBlocking}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{isBlocking()}{isBlocking()}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Tell whether the socket is in blocking or non-\/blocking mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the socket is blocking, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849_a165fc1423e281ea2714c70303d3a9782}{set\+Blocking} 
+\end{DoxySeeAlso}
+\Hypertarget{a01869_afdd5c655d00c96222d5b477fc057a22b}\label{a01869_afdd5c655d00c96222d5b477fc057a22b} 
+\index{sf::UdpSocket@{sf::UdpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Udp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01845}{Packet}} \&}]{packet,  }\item[{\mbox{\hyperlink{a01841}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short \&}]{remote\+Port }\end{DoxyParamCaption})}
+
+
+
+Receive a formatted packet of data from a remote peer. 
+
+In blocking mode, this function will wait until the whole packet has been received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \doxylink{a01845}{Packet} to fill with the received data \\
+\hline
+{\em remote\+Address} & Address of the peer that sent the data \\
+\hline
+{\em remote\+Port} & Port of the peer that sent the data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send} 
+\end{DoxySeeAlso}
+\Hypertarget{a01869_ade9ca0f7ed7919136917b0b997a9833a}\label{a01869_ade9ca0f7ed7919136917b0b997a9833a} 
+\index{sf::UdpSocket@{sf::UdpSocket}!receive@{receive}}
+\index{receive@{receive}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Udp\+Socket\+::receive (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{std\+::size\+\_\+t \&}]{received,  }\item[{\mbox{\hyperlink{a01841}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short \&}]{remote\+Port }\end{DoxyParamCaption})}
+
+
+
+Receive raw data from a remote peer. 
+
+In blocking mode, this function will wait until some bytes are actually received. Be careful to use a buffer which is large enough for the data that you intend to receive, if it is too small then an error will be returned and {\itshape all} the data will be lost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array to fill with the received bytes \\
+\hline
+{\em size} & Maximum number of bytes that can be received \\
+\hline
+{\em received} & This variable is filled with the actual number of bytes received \\
+\hline
+{\em remote\+Address} & Address of the peer that sent the data \\
+\hline
+{\em remote\+Port} & Port of the peer that sent the data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send} 
+\end{DoxySeeAlso}
+\Hypertarget{a01869_a664ab8f26f37c21cc4de1b847c2efcca}\label{a01869_a664ab8f26f37c21cc4de1b847c2efcca} 
+\index{sf::UdpSocket@{sf::UdpSocket}!send@{send}}
+\index{send@{send}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Udp\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{const \mbox{\hyperlink{a01841}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short}]{remote\+Port }\end{DoxyParamCaption})}
+
+
+
+Send raw data to a remote peer. 
+
+Make sure that {\itshape size} is not greater than \doxylink{a01869_a11a23cf173498ad731d1344939c32596a728a7d33027bee0d65f70f964dd9c9eb}{Udp\+Socket\+::\+Max\+Datagram\+Size}, otherwise this function will fail and no data will be sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send \\
+\hline
+{\em remote\+Address} & Address of the receiver \\
+\hline
+{\em remote\+Port} & Port of the receiver to send the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive} 
+\end{DoxySeeAlso}
+\Hypertarget{a01869_a48969a62c80d40fd74293a740798e435}\label{a01869_a48969a62c80d40fd74293a740798e435} 
+\index{sf::UdpSocket@{sf::UdpSocket}!send@{send}}
+\index{send@{send}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}} sf\+::\+Udp\+Socket\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01845}{Packet}} \&}]{packet,  }\item[{const \mbox{\hyperlink{a01841}{Ip\+Address}} \&}]{remote\+Address,  }\item[{unsigned short}]{remote\+Port }\end{DoxyParamCaption})}
+
+
+
+Send a formatted packet of data to a remote peer. 
+
+Make sure that the packet size is not greater than \doxylink{a01869_a11a23cf173498ad731d1344939c32596a728a7d33027bee0d65f70f964dd9c9eb}{Udp\+Socket\+::\+Max\+Datagram\+Size}, otherwise this function will fail and no data will be sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \doxylink{a01845}{Packet} to send \\
+\hline
+{\em remote\+Address} & Address of the receiver \\
+\hline
+{\em remote\+Port} & Port of the receiver to send the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive} 
+\end{DoxySeeAlso}
+\Hypertarget{a01849_a165fc1423e281ea2714c70303d3a9782}\label{a01849_a165fc1423e281ea2714c70303d3a9782} 
+\index{sf::UdpSocket@{sf::UdpSocket}!setBlocking@{setBlocking}}
+\index{setBlocking@{setBlocking}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{setBlocking()}{setBlocking()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+::set\+Blocking (\begin{DoxyParamCaption}\item[{bool}]{blocking }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the blocking state of the socket. 
+
+In blocking mode, calls will not return until they have completed their task. For example, a call to Receive in blocking mode won\textquotesingle{}t return until some data was actually received. In non-\/blocking mode, calls will always return immediately, using the return code to signal whether there was data available or not. By default, all sockets are blocking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocking} & True to set the socket as blocking, false for non-\/blocking\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849_ab1ceca9ac114b8baeeda3b34a0aca468}{is\+Blocking} 
+\end{DoxySeeAlso}
+\Hypertarget{a01869_a2c4abb8102a1bd31f51fcfe7f15427a3}\label{a01869_a2c4abb8102a1bd31f51fcfe7f15427a3} 
+\index{sf::UdpSocket@{sf::UdpSocket}!unbind@{unbind}}
+\index{unbind@{unbind}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void sf\+::\+Udp\+Socket\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unbind the socket from the local port to which it is bound. 
+
+The port that the socket was previously bound to is immediately made available to the operating system after this function is called. This means that a subsequent call to \doxylink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind()} will be able to re-\/bind the port if no other process has done so in the mean time. If the socket is not bound to a port, this function has no effect.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01869_a251adcf2bc0bed2d4b7c364b3bc65a42}\label{a01869_a251adcf2bc0bed2d4b7c364b3bc65a42} 
+\index{sf::UdpSocket@{sf::UdpSocket}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$char$>$ sf\+::\+Udp\+Socket\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary buffer holding the received data in Receive(\+Packet) 
+
+\Hypertarget{a01849_a0eed7647c471354050aef148bf43081f}\label{a01849_a0eed7647c471354050aef148bf43081f} 
+\index{sf::UdpSocket@{sf::UdpSocket}!m\_isBlocking@{m\_isBlocking}}
+\index{m\_isBlocking@{m\_isBlocking}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{m\_isBlocking}{m\_isBlocking}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+::m\+\_\+is\+Blocking\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Current blocking mode of the socket. 
+
+\Hypertarget{a01849_a83b63e07a0cfdb2bb1852990afe7762d}\label{a01849_a83b63e07a0cfdb2bb1852990afe7762d} 
+\index{sf::UdpSocket@{sf::UdpSocket}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aefabb521d8f5eec9e6a9b521271d20d1}{Socket\+Handle}} sf\+::\+Socket\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01849}{Socket} descriptor. 
+
+\Hypertarget{a01849_a0c41f91229069c06859746a458731617}\label{a01849_a0c41f91229069c06859746a458731617} 
+\index{sf::UdpSocket@{sf::UdpSocket}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!sf::UdpSocket@{sf::UdpSocket}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01849_a5d3ff44e56e68f02816bb0fabc34adf8}{Type}} sf\+::\+Socket\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Type of the socket (TCP or UDP) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00485}{Udp\+Socket.\+hpp}}\end{DoxyCompactItemize}

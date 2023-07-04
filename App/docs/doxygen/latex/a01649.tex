@@ -1,0 +1,159 @@
+\doxysection{sf\+::Sound\+File\+Reader Class Reference}
+\hypertarget{a01649}{}\label{a01649}\index{sf::SoundFileReader@{sf::SoundFileReader}}
+
+
+Abstract base class for sound file decoding.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+File\+Reader.\+hpp$>$}
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01653}{Info}}
+\begin{DoxyCompactList}\small\item\em Structure holding the audio properties of a sound file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{a01649_aa1d2fee2ba8f359c833ab74590d55935}{open}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream, \mbox{\hyperlink{a01653}{Info}} \&info)=0
+\begin{DoxyCompactList}\small\item\em Open a sound file for reading. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01649_a3b7d86769ea07e24e7b0f0486bed7591}{read}} (\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}samples, \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} max\+Count)=0
+\begin{DoxyCompactList}\small\item\em Read audio samples from the open file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01649_a1e18ade5ffe882bdfa20a2ebe7e2b015}{seek}} (\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sample\+Offset)=0
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given sample offset. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01649_a34163297f302d15818c76b54f815acc8}{\texorpdfstring{$\sim$}{\string~}\+Sound\+File\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for sound file decoding. 
+
+This class allows users to read audio file formats not natively supported by SFML, and thus extend the set of supported readable audio formats.
+
+A valid sound file reader must override the open, seek and write functions, as well as providing a static check function; the latter is used by SFML to find a suitable writer for a given input file.
+
+To register a new reader, use the \doxylink{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}{sf\+::\+Sound\+File\+Factory\+::register\+Reader} template function.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MySoundFileReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01649}{sf::SoundFileReader}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ check(\mbox{\hyperlink{a01881}{sf::InputStream}}\&\ stream)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ typically,\ read\ the\ first\ few\ header\ bytes\ and\ check\ fields\ that\ identify\ the\ format}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ true\ if\ the\ reader\ can\ handle\ the\ format}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ open(\mbox{\hyperlink{a01881}{sf::InputStream}}\&\ stream,\ Info\&\ info)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ the\ sound\ file\ header\ and\ fill\ the\ sound\ attributes}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ (channel\ count,\ sample\ count\ and\ sample\ rate)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ true\ on\ success}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ seek(\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}}\ sampleOffset)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ advance\ to\ the\ sampleOffset-\/th\ sample\ from\ the\ beginning\ of\ the\ sound}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}}\ read(\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}*\ samples,\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}}\ maxCount)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ up\ to\ 'maxCount'\ samples\ into\ the\ 'samples'\ array,}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ them\ (for\ example\ from\ normalized\ float)\ if\ they\ are\ not\ stored}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ as\ 16-\/bits\ signed\ integers\ in\ the\ file}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ actual\ number\ of\ samples\ read}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{sf::SoundFileFactory::registerReader<MySoundFileReader>();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01605}{sf\+::\+Input\+Sound\+File}, \doxylink{a01637}{sf\+::\+Sound\+File\+Factory}, \doxylink{a01657}{sf\+::\+Sound\+File\+Writer} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01649_a34163297f302d15818c76b54f815acc8}\label{a01649_a34163297f302d15818c76b54f815acc8} 
+\index{sf::SoundFileReader@{sf::SoundFileReader}!````~SoundFileReader@{\texorpdfstring{$\sim$}{\string~}SoundFileReader}}
+\index{````~SoundFileReader@{\texorpdfstring{$\sim$}{\string~}SoundFileReader}!sf::SoundFileReader@{sf::SoundFileReader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundFileReader()}{\string~SoundFileReader()}}
+{\footnotesize\ttfamily virtual sf\+::\+Sound\+File\+Reader\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+File\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01649_aa1d2fee2ba8f359c833ab74590d55935}\label{a01649_aa1d2fee2ba8f359c833ab74590d55935} 
+\index{sf::SoundFileReader@{sf::SoundFileReader}!open@{open}}
+\index{open@{open}!sf::SoundFileReader@{sf::SoundFileReader}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual bool sf\+::\+Sound\+File\+Reader\+::open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream,  }\item[{\mbox{\hyperlink{a01653}{Info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a sound file for reading. 
+
+The provided stream reference is valid as long as the \doxylink{a01649}{Sound\+File\+Reader} is alive, so it is safe to use/store it during the whole lifetime of the reader.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from \\
+\hline
+{\em info} & Structure to fill with the properties of the loaded sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\Hypertarget{a01649_a3b7d86769ea07e24e7b0f0486bed7591}\label{a01649_a3b7d86769ea07e24e7b0f0486bed7591} 
+\index{sf::SoundFileReader@{sf::SoundFileReader}!read@{read}}
+\index{read@{read}!sf::SoundFileReader@{sf::SoundFileReader}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Sound\+File\+Reader\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}}]{samples,  }\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{max\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read audio samples from the open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the sample array to fill \\
+\hline
+{\em max\+Count} & Maximum number of samples to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples actually read (may be less than {\itshape max\+Count}) 
+\end{DoxyReturn}
+\Hypertarget{a01649_a1e18ade5ffe882bdfa20a2ebe7e2b015}\label{a01649_a1e18ade5ffe882bdfa20a2ebe7e2b015} 
+\index{sf::SoundFileReader@{sf::SoundFileReader}!seek@{seek}}
+\index{seek@{seek}!sf::SoundFileReader@{sf::SoundFileReader}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+File\+Reader\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{sample\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Change the current read position to the given sample offset. 
+
+The sample offset takes the channels into account. If you have a time offset instead, you can easily find the corresponding sample offset with the following formula\+: {\ttfamily time\+In\+Seconds \texorpdfstring{$\ast$}{*} sample\+Rate \texorpdfstring{$\ast$}{*} channel\+Count} If the given offset exceeds to total number of samples, this function must jump to the end of the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Offset} & Index of the sample to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00341}{Sound\+File\+Reader.\+hpp}}\end{DoxyCompactItemize}

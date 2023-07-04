@@ -1,0 +1,45 @@
+\doxysection{Register.\+hpp}
+\hypertarget{a00296_source}{}\label{a00296_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/Register.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/Register.hpp}}
+\mbox{\hyperlink{a00296}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{precompile.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00302}{Scene.hpp}}"{}}\ \ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00275}{KeyInput.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01585}{Register}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01593}{Scene}}\{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{a01785}{Texture}}\ \mbox{\hyperlink{a01585_ad9bbfc28906670ab7ebcdfbf2292c6c5}{registerBlackTexture}};}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{a01777}{Sprite}}\ \mbox{\hyperlink{a01585_a2b13f182bb5761d85b33d9b6584df93b}{registerBlack}};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{a01785}{Texture}}\ \mbox{\hyperlink{a01585_a3eeba8eee5aacb3ee4b9f54047af1689}{logoTexture}};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a01777}{Sprite}}\ \mbox{\hyperlink{a01585_aa673f1cad30f2f9c987bc55293b60ff7}{logo}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{a01873}{Clock}}\ \mbox{\hyperlink{a01585_a8600fce55ecad566ab9ab4093ded2022}{transitionClock}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01585_aa6dab2e190dced9ec2052377927230e7}{animState}}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01585_a81d30bc43f77de6ca110601a44350c45}{elapsedTime}}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01585_a0066c888181ddde92c7ff4ac2b50c27d}{transitionDuration}}\ =\ 0;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{a01785}{Texture}}\ \mbox{\hyperlink{a01585_ac9d1a5aa9c97ff3f7ed1296a1ea2b4e5}{registerWhiteTexture}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{a01777}{Sprite}}\ \mbox{\hyperlink{a01585_ad682745cfd1d70a9f2f2b36d68b6872f}{registerWhite}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a01757}{RenderTexture}}\ \mbox{\hyperlink{a01585_a3dc65af0ab97dc7c0261902b3d4fa0ce}{renderTexture}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01585_a5dcde3dc659ed6ad66c79fee7e8f08a5}{transformProgress}}[100];}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01585_aa473453b2d950cb8904fd659f5922c5f}{transformSpeed}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{a01585}{Register}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}});}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{a01585_a7da001cf9e9f71d78f3328a6b6a9f7f9}{\string~Register}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_a2f1b8a7db830d53a841e43dc33addcca}{backgroundTransformation}}(\mbox{\hyperlink{a01777}{Sprite}}\ sprite1,\ \mbox{\hyperlink{a01777}{Sprite}}\ sprite2,\ \mbox{\hyperlink{a01785}{Texture}}\ Texture2,\ \textcolor{keywordtype}{float}*\ transformProgess,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_a4a762e080ef1113c7b1f2c2dfbc2980f}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_aa5b117c1bdcdbc3da5abcc3ecb18c205}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \textcolor{keywordtype}{int}\ counter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_a2860e0682b21a22a31107d3e867963e3}{textHandler}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \mbox{\hyperlink{a01977}{Event}}\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01585_aaecaf64854d00415090abf6be3961bdd}{getInputs}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01585_a64736ddd3cef04a8c2a0e1798a79a8e7}{haltInput}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01585_a55a906b422766116e82fdb37040389ba}{getAnimState}}();}
+\DoxyCodeLine{00039\ \};}
+
+\end{DoxyCode}

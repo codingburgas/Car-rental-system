@@ -1,0 +1,32 @@
+\doxysection{Scene\+Manager.\+hpp}
+\hypertarget{a00305_source}{}\label{a00305_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/SceneManager.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/SceneManager.hpp}}
+\mbox{\hyperlink{a00305}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{precompile.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00302}{Scene.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00284}{MainMenu.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01597}{SceneManager}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01597_a44d24a1732e937398e52f8af9d01bf2d}{switchToScene}}(shared\_ptr<Scene>\ newScene)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}}\ =\ move(newScene);}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01597_ad25c8235f6841f866a3a139927530e74}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}}-\/>update(deltaTime);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01597_ae7c04a031e1d5be984fa63f4a4caaef0}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}}-\/>draw(window);}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01597_a20a84f506b122b4088392b7c83ea0003}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \textcolor{keywordtype}{int}\ counter)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}}-\/>draw(window,\ counter);}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ shared\_ptr<Scene>\ \mbox{\hyperlink{a01597_a8ae1bd38d17f3c35600595f2023904e1}{getScene}}()\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ shared\_ptr<Scene>\ \mbox{\hyperlink{a01597_a7e5d622f3213c305607f9d65ecf6e1e5}{currentScene}};}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

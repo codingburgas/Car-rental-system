@@ -1,0 +1,1353 @@
+\doxysection{sf\+::Text Class Reference}
+\hypertarget{a01781}{}\label{a01781}\index{sf::Text@{sf::Text}}
+
+
+Graphical text that can be drawn to a render target.  
+
+
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Text\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Text\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82}{Style}} \{ \newline
+\mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82a2af9ae5e1cda126570f744448e0caa32}{Regular}} = 0
+, \mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171}{Bold}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82aee249eb803848723c542c2062ebe69d8}{Italic}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82a664bd143f92b6e8c709d7f788e8b20df}{Underlined}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \newline
+\mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82a9ed1f5bb154c21269e1190c5aa97d479}{Strike\+Through}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the string drawing styles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01781_a2e252d8dcae3eb61c6c962c0bc674b12}{find\+Character\+Pos}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Return the position of the {\itshape index-\/th} character. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01781_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the character size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00359_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01781_a810cc4aa8eb5998f9eb9d02b1c099660}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01781_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01697}{Font}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01781_ad947a43bddaddf54d008df600699599b}{get\+Font}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01781_ad33ed96ce9fbe99610f7f8b6874a16b4}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01793_ac5e75d724436069d2268791c6b486916}{get\+Inverse\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em get the inverse of the combined transform of the object \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the letter spacing factor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the line spacing factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01781_a3e6b3b298827f853b41165eee2cbbc66}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em get the local origin of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01781_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the text. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the text. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em get the position of the object \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em get the orientation of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em get the current scale of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01901}{String}} \& \mbox{\hyperlink{a01781_ab334881845307db46ccf344191aa819c}{get\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01781_a0da79b0c057f4bb51592465a205c35d7}{get\+Style}} () const
+\begin{DoxyCompactList}\small\item\em Get the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01793_a3e1b4772a451ec66ac7e6af655726154}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em get the combined transform of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_ab9ca691522f6ddc1a40406849b87c469}{move}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&offset)
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}} (float offsetX, float offsetY)
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotate the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_adecaa6c69b1f27dd5194b067d96bb694}{scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factor)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}} (float factorX, float factorY)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size}} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Set the character size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00359_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{a01781_a6ce65272d6d63ed01118366e92c68132}{set\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_a2927805d1ae92d57f15034ea34756b81}{set\+Font}} (const \mbox{\hyperlink{a01697}{Font}} \&font)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the letter spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing}} (float spacing\+Factor)
+\begin{DoxyCompactList}\small\item\em Set the line spacing factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_aa93a835ffbf3bee2098dfbbc695a7f05}{set\+Origin}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&origin)
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a56c67bd80aae8418d13fb96c034d25ec}{set\+Origin}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the text\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_af1a42209ce2b5d3f07b00f917bcd8015}{set\+Position}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&position)
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a32baf2bf1a74699b03bf8c95030a38ed}{set\+Rotation}} (float angle)
+\begin{DoxyCompactList}\small\item\em set the orientation of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a4c48a87f1626047e448f9c1a68ff167e}{set\+Scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factors)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale}} (float factorX, float factorY)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String}} (const \mbox{\hyperlink{a01901}{String}} \&string)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_ad791702bc2d1b6590a1719aa60635edf}{set\+Style}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} style)
+\begin{DoxyCompactList}\small\item\em Set the text\textquotesingle{}s style. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01781_aff7cab6a92e5948c9d1481cb2d87eb84}{Text}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01781_a614019e0b5c0ed39a99d32483a51f2c5}{Text}} (const \mbox{\hyperlink{a01901}{String}} \&string, const \mbox{\hyperlink{a01697}{Font}} \&font, unsigned int character\+Size=30)
+\begin{DoxyCompactList}\small\item\em Construct the text from a string, font and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01781_a42f0cd394f76f4c0998114918cb3f11c}{draw}} (\mbox{\hyperlink{a01749}{Render\+Target}} \&target, \mbox{\hyperlink{a01745}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the text to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01781_a4cd48624a76df98f048eaaee69cfb0ad}{ensure\+Geometry\+Update}} () const
+\begin{DoxyCompactList}\small\item\em Make sure the text\textquotesingle{}s geometry is updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01781_a73d20a8736e2a402859afe77f085a226}{m\+\_\+bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the text (in local coordinates) \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01781_a5a066742cdc44db9f2c871fdb03f2ad6}{m\+\_\+character\+Size}}
+\begin{DoxyCompactList}\small\item\em Base size of characters, in pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01781_a5fdc28e0b845d72204225237f1af6473}{m\+\_\+fill\+Color}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01781}{Text} fill color. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01697}{Font}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01781_a5800e7440e91b8c4ba999afe72e0ac4b}{m\+\_\+font}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01697}{Font} used to display the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01781_a97c0049579b10d545118298b23f78f30}{m\+\_\+font\+Texture\+Id}}
+\begin{DoxyCompactList}\small\item\em The font texture id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01781_a29af9fa585a8fcb7ef3cf53d0a6baf17}{m\+\_\+geometry\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the geometry need to be recomputed? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01793_a6538c7efb49ad3a430d45c8a52368f36}{m\+\_\+inverse\+Transform}}
+\begin{DoxyCompactList}\small\item\em Combined transformation of the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01793_afbb99d25b4ea10943e883d45a7594761}{m\+\_\+inverse\+Transform\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the transform need to be recomputed? \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_afb9a3c69064eaae9a61232f1a3339b27}{m\+\_\+letter\+Spacing\+Factor}}
+\begin{DoxyCompactList}\small\item\em Spacing factor between letters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_a56893f600ec4c6018f35345c39349344}{m\+\_\+line\+Spacing\+Factor}}
+\begin{DoxyCompactList}\small\item\em Spacing factor between lines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_ad52a72593cb43a30a0cac33737a3a60c}{m\+\_\+origin}}
+\begin{DoxyCompactList}\small\item\em Origin of translation/rotation/scaling of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01781_ad50d23c5c38bf11250c28b43e0cc3da2}{m\+\_\+outline\+Color}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01781}{Text} outline color. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01781_abf2a59406720c1a4cff8d0f8d9bfb7a8}{m\+\_\+outline\+Thickness}}
+\begin{DoxyCompactList}\small\item\em Thickness of the text\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01801}{Vertex\+Array}} \mbox{\hyperlink{a01781_a7e58a0f2e2be3c6988cfc7956c7f6c7c}{m\+\_\+outline\+Vertices}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01797}{Vertex} array containing the outline geometry. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_a7081bf508f612cb63e9ce3b149758217}{m\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Position of the object in the 2D world. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01793_a206c593d926ee30a3c79520c2fae448b}{m\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em Orientation of the object, in degrees. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_adf2c5e463aefb41c6d43a140c0ad151f}{m\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em Scale of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01781_a10080b61057e2f76e2c2dc2a61633130}{m\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01901}{String} to display. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01781_aaf9d652e6ea1bb3f1fdedb041b2f85ae}{m\+\_\+style}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01781}{Text} style (see \doxylink{a00673}{Style} enum) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c}{m\+\_\+transform}}
+\begin{DoxyCompactList}\small\item\em Combined transformation of the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01793_a394b22bfe9e9e44c672244e4da0b3c58}{m\+\_\+transform\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the transform need to be recomputed? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01801}{Vertex\+Array}} \mbox{\hyperlink{a01781_aaafa2ed1db18952c9ded3ef1ceeee32e}{m\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01797}{Vertex} array containing the fill geometry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Graphical text that can be drawn to a render target. 
+
+\doxylink{a01781}{sf\+::\+Text} is a drawable class that allows to easily display some text with custom style and color on a render target.
+
+It inherits all the functions from \doxylink{a01793}{sf\+::\+Transformable}\+: position, rotation, scale, origin. It also adds text-\/specific properties such as the font to use, the character size, the font style (bold, italic, underlined and strike through), the text color, the outline thickness, the outline color, the character spacing, the line spacing and the text to display of course. It also provides convenience functions to calculate the graphical size of the text, or to get the global position of a given character.
+
+\doxylink{a01781}{sf\+::\+Text} works in combination with the \doxylink{a01697}{sf\+::\+Font} class, which loads and provides the glyphs (visual characters) of a given font.
+
+The separation of \doxylink{a01697}{sf\+::\+Font} and \doxylink{a01781}{sf\+::\+Text} allows more flexibility and better performances\+: indeed a \doxylink{a01697}{sf\+::\+Font} is a heavy resource, and any operation on it is slow (often too slow for real-\/time applications). On the other side, a \doxylink{a01781}{sf\+::\+Text} is a lightweight object which can combine the glyphs data and metrics of a \doxylink{a01697}{sf\+::\+Font} to display any text on a render target.
+
+It is important to note that the \doxylink{a01781}{sf\+::\+Text} instance doesn\textquotesingle{}t copy the font that it uses, it only keeps a reference to it. Thus, a \doxylink{a01697}{sf\+::\+Font} must not be destructed while it is used by a \doxylink{a01781}{sf\+::\+Text} (i.\+e. never write a function that uses a local \doxylink{a01697}{sf\+::\+Font} instance for creating a text).
+
+See also the note on coordinates and undistorted rendering in \doxylink{a01793}{sf\+::\+Transformable}.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Declare\ and\ load\ a\ font}}
+\DoxyCodeLine{\mbox{\hyperlink{a01697}{sf::Font}}\ font;}
+\DoxyCodeLine{font.\mbox{\hyperlink{a01697_ab020052ef4e01f6c749a85571c0f3fd1}{loadFromFile}}(\textcolor{stringliteral}{"{}arial.ttf"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ text}}
+\DoxyCodeLine{\mbox{\hyperlink{a01781}{sf::Text}}\ text(\textcolor{stringliteral}{"{}hello"{}},\ font);}
+\DoxyCodeLine{text.setCharacterSize(30);}
+\DoxyCodeLine{text.setStyle(\mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171}{sf::Text::Bold}});}
+\DoxyCodeLine{text.setFillColor(\mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Draw\ it}}
+\DoxyCodeLine{window.draw(text);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01697}{sf\+::\+Font}, \doxylink{a01793}{sf\+::\+Transformable} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82}\label{a01781_aa8add4aef484c6e6b20faff07452bd82} 
+\index{sf::Text@{sf::Text}!Style@{Style}}
+\index{Style@{Style}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01781_aa8add4aef484c6e6b20faff07452bd82}{sf\+::\+Text\+::\+Style}}}
+
+
+
+Enumeration of the string drawing styles. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Regular@{Regular}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Regular@{Regular}}}\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82a2af9ae5e1cda126570f744448e0caa32}\label{a01781_aa8add4aef484c6e6b20faff07452bd82a2af9ae5e1cda126570f744448e0caa32} 
+Regular&Regular characters, no style. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bold@{Bold}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Bold@{Bold}}}\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171}\label{a01781_aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171} 
+Bold&Bold characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italic@{Italic}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Italic@{Italic}}}\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82aee249eb803848723c542c2062ebe69d8}\label{a01781_aa8add4aef484c6e6b20faff07452bd82aee249eb803848723c542c2062ebe69d8} 
+Italic&Italic characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Underlined@{Underlined}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!Underlined@{Underlined}}}\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82a664bd143f92b6e8c709d7f788e8b20df}\label{a01781_aa8add4aef484c6e6b20faff07452bd82a664bd143f92b6e8c709d7f788e8b20df} 
+Underlined&Underlined characters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StrikeThrough@{StrikeThrough}!sf::Text@{sf::Text}}\index{sf::Text@{sf::Text}!StrikeThrough@{StrikeThrough}}}\Hypertarget{a01781_aa8add4aef484c6e6b20faff07452bd82a9ed1f5bb154c21269e1190c5aa97d479}\label{a01781_aa8add4aef484c6e6b20faff07452bd82a9ed1f5bb154c21269e1190c5aa97d479} 
+Strike\+Through&Strike through characters. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01781_aff7cab6a92e5948c9d1481cb2d87eb84}\label{a01781_aff7cab6a92e5948c9d1481cb2d87eb84} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty text. \Hypertarget{a01781_a614019e0b5c0ed39a99d32483a51f2c5}\label{a01781_a614019e0b5c0ed39a99d32483a51f2c5} 
+\index{sf::Text@{sf::Text}!Text@{Text}}
+\index{Text@{Text}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{string,  }\item[{const \mbox{\hyperlink{a01697}{Font}} \&}]{font,  }\item[{unsigned int}]{character\+Size = {\ttfamily 30} }\end{DoxyParamCaption})}
+
+
+
+Construct the text from a string, font and size. 
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \doxylink{a01781}{Text} assigned to the string \\
+\hline
+{\em font} & \doxylink{a01697}{Font} used to draw the string \\
+\hline
+{\em character\+Size} & Base size of characters, in pixels \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01781_a42f0cd394f76f4c0998114918cb3f11c}\label{a01781_a42f0cd394f76f4c0998114918cb3f11c} 
+\index{sf::Text@{sf::Text}!draw@{draw}}
+\index{draw@{draw}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Text\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01749}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{a01745}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Draw the text to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01693_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\Hypertarget{a01781_a4cd48624a76df98f048eaaee69cfb0ad}\label{a01781_a4cd48624a76df98f048eaaee69cfb0ad} 
+\index{sf::Text@{sf::Text}!ensureGeometryUpdate@{ensureGeometryUpdate}}
+\index{ensureGeometryUpdate@{ensureGeometryUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{ensureGeometryUpdate()}{ensureGeometryUpdate()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::ensure\+Geometry\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Make sure the text\textquotesingle{}s geometry is updated. 
+
+All the attributes related to rendering are cached, such that the geometry is only updated when necessary. \Hypertarget{a01781_a2e252d8dcae3eb61c6c962c0bc674b12}\label{a01781_a2e252d8dcae3eb61c6c962c0bc674b12} 
+\index{sf::Text@{sf::Text}!findCharacterPos@{findCharacterPos}}
+\index{findCharacterPos@{findCharacterPos}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{findCharacterPos()}{findCharacterPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Text\+::find\+Character\+Pos (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Return the position of the {\itshape index-\/th} character. 
+
+This function computes the visual position of a character from its index in the string. The returned position is in global coordinates (translation, rotation, scale and origin are applied). If {\itshape index} is out of range, the position of the end of the string is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of the character 
+\end{DoxyReturn}
+\Hypertarget{a01781_a46d1d7f1d513bb8d434e985a93ea5224}\label{a01781_a46d1d7f1d513bb8d434e985a93ea5224} 
+\index{sf::Text@{sf::Text}!getCharacterSize@{getCharacterSize}}
+\index{getCharacterSize@{getCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getCharacterSize()}{getCharacterSize()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Text\+::get\+Character\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the character size. 
+
+\begin{DoxyReturn}{Returns}
+Size of the characters, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ae96f835fc1bff858f8a23c5b01eaaf7e}{set\+Character\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a810cc4aa8eb5998f9eb9d02b1c099660}\label{a01781_a810cc4aa8eb5998f9eb9d02b1c099660} 
+\index{sf::Text@{sf::Text}!getColor@{getColor}}
+\index{getColor@{getColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00359_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} const \mbox{\hyperlink{a01685}{Color}} \& sf\+::\+Text\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000022}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \doxylink{a01781_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color()} or \doxylink{a01781_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color()} instead.\end{DoxyRefDesc}
+\Hypertarget{a01781_a10400757492ec7fa97454488314ca39b}\label{a01781_a10400757492ec7fa97454488314ca39b} 
+\index{sf::Text@{sf::Text}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} \& sf\+::\+Text\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the fill color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ad947a43bddaddf54d008df600699599b}\label{a01781_ad947a43bddaddf54d008df600699599b} 
+\index{sf::Text@{sf::Text}!getFont@{getFont}}
+\index{getFont@{getFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01697}{Font}} \texorpdfstring{$\ast$}{*} sf\+::\+Text\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s font. 
+
+If the text has no font attached, a NULL pointer is returned. The returned pointer is const, which means that you cannot modify the font when you get it from this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the text\textquotesingle{}s font
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a2927805d1ae92d57f15034ea34756b81}{set\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ad33ed96ce9fbe99610f7f8b6874a16b4}\label{a01781_ad33ed96ce9fbe99610f7f8b6874a16b4} 
+\index{sf::Text@{sf::Text}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Text\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the text in the global 2D world\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\Hypertarget{a01793_ac5e75d724436069d2268791c6b486916}\label{a01793_ac5e75d724436069d2268791c6b486916} 
+\index{sf::Text@{sf::Text}!getInverseTransform@{getInverseTransform}}
+\index{getInverseTransform@{getInverseTransform}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getInverseTransform()}{getInverseTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transformable\+::get\+Inverse\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the inverse of the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+Inverse of the combined transformations applied to the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3e1b4772a451ec66ac7e6af655726154}{get\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a028fc6e561bd9a0671254419b498b889}\label{a01781_a028fc6e561bd9a0671254419b498b889} 
+\index{sf::Text@{sf::Text}!getLetterSpacing@{getLetterSpacing}}
+\index{getLetterSpacing@{getLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLetterSpacing()}{getLetterSpacing()}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Letter\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the letter spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the letter spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ab516110605edb0191a7873138ac42af2}{set\+Letter\+Spacing} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a670622e1c299dfd6518afe289c7cd248}\label{a01781_a670622e1c299dfd6518afe289c7cd248} 
+\index{sf::Text@{sf::Text}!getLineSpacing@{getLineSpacing}}
+\index{getLineSpacing@{getLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLineSpacing()}{getLineSpacing()}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Line\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the line spacing factor. 
+
+\begin{DoxyReturn}{Returns}
+Size of the line spacing factor
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_af6505688f79e2e2d90bd68f4d767e965}{set\+Line\+Spacing} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a3e6b3b298827f853b41165eee2cbbc66}\label{a01781_a3e6b3b298827f853b41165eee2cbbc66} 
+\index{sf::Text@{sf::Text}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Text\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\Hypertarget{a01793_a898b33eb6513161eb5c747a072364f15}\label{a01793_a898b33eb6513161eb5c747a072364f15} 
+\index{sf::Text@{sf::Text}!getOrigin@{getOrigin}}
+\index{getOrigin@{getOrigin}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the local origin of the object 
+
+\begin{DoxyReturn}{Returns}
+Current origin
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a56c67bd80aae8418d13fb96c034d25ec}{set\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ade9256ff9d43c9481fcf5f4003fe0141}\label{a01781_ade9256ff9d43c9481fcf5f4003fe0141} 
+\index{sf::Text@{sf::Text}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} \& sf\+::\+Text\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline color of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the text
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_af6bf01c23189edf52c8b38708db6f3f6}\label{a01781_af6bf01c23189edf52c8b38708db6f3f6} 
+\index{sf::Text@{sf::Text}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the outline thickness of the text. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the text, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ab0e6be3b40124557bf53737fe6a6ce77}{set\+Outline\+Thickness} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aea8b18e91a7bf7be589851bb9dd11241}\label{a01793_aea8b18e91a7bf7be589851bb9dd11241} 
+\index{sf::Text@{sf::Text}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the position of the object 
+
+\begin{DoxyReturn}{Returns}
+Current position
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}\label{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a} 
+\index{sf::Text@{sf::Text}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float sf\+::\+Transformable\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the orientation of the object 
+
+The rotation is always in the range \mbox{[}0, 360\mbox{]}.
+
+\begin{DoxyReturn}{Returns}
+Current rotation, in degrees
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a32baf2bf1a74699b03bf8c95030a38ed}{set\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a7bcae0e924213f2e89edd8926f2453af}\label{a01793_a7bcae0e924213f2e89edd8926f2453af} 
+\index{sf::Text@{sf::Text}!getScale@{getScale}}
+\index{getScale@{getScale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the current scale of the object 
+
+\begin{DoxyReturn}{Returns}
+Current scale factors
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ab334881845307db46ccf344191aa819c}\label{a01781_ab334881845307db46ccf344191aa819c} 
+\index{sf::Text@{sf::Text}!getString@{getString}}
+\index{getString@{getString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01901}{String}} \& sf\+::\+Text\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s string. 
+
+The returned string is a \doxylink{a01901}{sf\+::\+String}, which can automatically be converted to standard string types. So, the following lines of code are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01901}{sf::String}}\ \ \ s1\ =\ text.getString();}
+\DoxyCodeLine{std::string\ \ s2\ =\ text.getString();}
+\DoxyCodeLine{std::wstring\ s3\ =\ text.getString();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01781}{Text}\textquotesingle{}s string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a7d3b3359f286fd9503d1ced25b7b6c33}{set\+String} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a0da79b0c057f4bb51592465a205c35d7}\label{a01781_a0da79b0c057f4bb51592465a205c35d7} 
+\index{sf::Text@{sf::Text}!getStyle@{getStyle}}
+\index{getStyle@{getStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getStyle()}{getStyle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Text\+::get\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text\textquotesingle{}s style. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01781}{Text}\textquotesingle{}s style
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ad791702bc2d1b6590a1719aa60635edf}{set\+Style} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a3e1b4772a451ec66ac7e6af655726154}\label{a01793_a3e1b4772a451ec66ac7e6af655726154} 
+\index{sf::Text@{sf::Text}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transformable\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01789}{Transform} combining the position/rotation/scale/origin of the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_ac5e75d724436069d2268791c6b486916}{get\+Inverse\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_ab9ca691522f6ddc1a40406849b87c469}\label{a01793_ab9ca691522f6ddc1a40406849b87c469} 
+\index{sf::Text@{sf::Text}!move@{move}}
+\index{move@{move}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\+Position which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setPosition(\textcolor{keywordtype}{object}.\mbox{\hyperlink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}()\ +\ offset);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a86b461d6a941ad390c2ad8b6a4a20391}\label{a01793_a86b461d6a941ad390c2ad8b6a4a20391} 
+\index{sf::Text@{sf::Text}!move@{move}}
+\index{move@{move}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::move (\begin{DoxyParamCaption}\item[{float}]{offsetX,  }\item[{float}]{offsetY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\+Position which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ pos\ =\ \textcolor{keywordtype}{object}.getPosition();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setPosition(pos.\mbox{\hyperlink{a01953_a1e6ad77fa155f3753bfb92699bd28141}{x}}\ +\ offsetX,\ pos.\mbox{\hyperlink{a01953_a420f2481b015f4eb929c75f2af564299}{y}}\ +\ offsetY);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offsetX} & X offset \\
+\hline
+{\em offsetY} & Y offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}\label{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda} 
+\index{sf::Text@{sf::Text}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Rotate the object. 
+
+This function adds to the current rotation of the object, unlike set\+Rotation which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setRotation(\textcolor{keywordtype}{object}.\mbox{\hyperlink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}()\ +\ angle);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle of rotation, in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01793_adecaa6c69b1f27dd5194b067d96bb694}\label{a01793_adecaa6c69b1f27dd5194b067d96bb694} 
+\index{sf::Text@{sf::Text}!scale@{scale}}
+\index{scale@{scale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\+Scale which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}\ =\ \textcolor{keywordtype}{object}.getScale();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setScale(\mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.x\ *\ factor.x,\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.y\ *\ factor.y);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & Scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a3de0c6d8957f3cf318092f3f60656391}\label{a01793_a3de0c6d8957f3cf318092f3f60656391} 
+\index{sf::Text@{sf::Text}!scale@{scale}}
+\index{scale@{scale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::scale (\begin{DoxyParamCaption}\item[{float}]{factorX,  }\item[{float}]{factorY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\+Scale which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}\ =\ \textcolor{keywordtype}{object}.getScale();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setScale(\mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.x\ *\ factorX,\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.y\ *\ factorY);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factorX} & Horizontal scale factor \\
+\hline
+{\em factorY} & Vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ae96f835fc1bff858f8a23c5b01eaaf7e}\label{a01781_ae96f835fc1bff858f8a23c5b01eaaf7e} 
+\index{sf::Text@{sf::Text}!setCharacterSize@{setCharacterSize}}
+\index{setCharacterSize@{setCharacterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setCharacterSize()}{setCharacterSize()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Character\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the character size. 
+
+The default size is 30.
+
+Note that if the used font is a bitmap font, it is not scalable, thus not all requested sizes will be available to use. This needs to be taken into consideration when setting the character size. If you need to display text of a certain size, make sure the corresponding bitmap font that supports that size is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New character size, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a46d1d7f1d513bb8d434e985a93ea5224}{get\+Character\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a6ce65272d6d63ed01118366e92c68132}\label{a01781_a6ce65272d6d63ed01118366e92c68132} 
+\index{sf::Text@{sf::Text}!setColor@{setColor}}
+\index{setColor@{setColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00359_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\+\_\+\+DEPRECATED}} void sf\+::\+Text\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000021}{Deprecated}}]There is now fill and outline colors instead of a single global color. Use \doxylink{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc}{set\+Fill\+Color()} or \doxylink{a01781_aa19ec69c3b894e963602a6804ca68fe4}{set\+Outline\+Color()} instead.\end{DoxyRefDesc}
+\Hypertarget{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc}\label{a01781_ab7bb3babac5a6da1802b2c3e1a3e6dcc} 
+\index{sf::Text@{sf::Text}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the fill color of the text. 
+
+By default, the text\textquotesingle{}s fill color is opaque white. Setting the fill color to a transparent color with an outline will cause the outline to be displayed in the fill area of the text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New fill color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a10400757492ec7fa97454488314ca39b}{get\+Fill\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a2927805d1ae92d57f15034ea34756b81}\label{a01781_a2927805d1ae92d57f15034ea34756b81} 
+\index{sf::Text@{sf::Text}!setFont@{setFont}}
+\index{setFont@{setFont}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01697}{Font}} \&}]{font }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s font. 
+
+The {\itshape font} argument refers to a font that must exist as long as the text uses it. Indeed, the text doesn\textquotesingle{}t store its own copy of the font, but rather keeps a pointer to the one that you passed to this function. If the font is destroyed and the text tries to use it, the behavior is undefined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & New font\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ad947a43bddaddf54d008df600699599b}{get\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ab516110605edb0191a7873138ac42af2}\label{a01781_ab516110605edb0191a7873138ac42af2} 
+\index{sf::Text@{sf::Text}!setLetterSpacing@{setLetterSpacing}}
+\index{setLetterSpacing@{setLetterSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLetterSpacing()}{setLetterSpacing()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Letter\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the letter spacing factor. 
+
+The default spacing between letters is defined by the font. This factor doesn\textquotesingle{}t directly apply to the existing spacing between each character, it rather adds a fixed space between them which is calculated from the font metrics and the character size. Note that factors below 1 (including negative numbers) bring characters closer to each other. By default the letter spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New letter spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a028fc6e561bd9a0671254419b498b889}{get\+Letter\+Spacing} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_af6505688f79e2e2d90bd68f4d767e965}\label{a01781_af6505688f79e2e2d90bd68f4d767e965} 
+\index{sf::Text@{sf::Text}!setLineSpacing@{setLineSpacing}}
+\index{setLineSpacing@{setLineSpacing}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setLineSpacing()}{setLineSpacing()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Line\+Spacing (\begin{DoxyParamCaption}\item[{float}]{spacing\+Factor }\end{DoxyParamCaption})}
+
+
+
+Set the line spacing factor. 
+
+The default spacing between lines is defined by the font. This method enables you to set a factor for the spacing between lines. By default the line spacing factor is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spacing\+Factor} & New line spacing factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a670622e1c299dfd6518afe289c7cd248}{get\+Line\+Spacing} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aa93a835ffbf3bee2098dfbbc695a7f05}\label{a01793_aa93a835ffbf3bee2098dfbbc695a7f05} 
+\index{sf::Text@{sf::Text}!setOrigin@{setOrigin}}
+\index{setOrigin@{setOrigin}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOrigin()}{setOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Origin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & New origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a56c67bd80aae8418d13fb96c034d25ec}\label{a01793_a56c67bd80aae8418d13fb96c034d25ec} 
+\index{sf::Text@{sf::Text}!setOrigin@{setOrigin}}
+\index{setOrigin@{setOrigin}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOrigin()}{setOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Origin (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new origin \\
+\hline
+{\em y} & Y coordinate of the new origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_aa19ec69c3b894e963602a6804ca68fe4}\label{a01781_aa19ec69c3b894e963602a6804ca68fe4} 
+\index{sf::Text@{sf::Text}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the outline color of the text. 
+
+By default, the text\textquotesingle{}s outline color is opaque black.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the text\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ade9256ff9d43c9481fcf5f4003fe0141}{get\+Outline\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ab0e6be3b40124557bf53737fe6a6ce77}\label{a01781_ab0e6be3b40124557bf53737fe6a6ce77} 
+\index{sf::Text@{sf::Text}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})}
+
+
+
+Set the thickness of the text\textquotesingle{}s outline. 
+
+By default, the outline thickness is 0.
+
+Be aware that using a negative value for the outline thickness will cause distorted rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_af6bf01c23189edf52c8b38708db6f3f6}{get\+Outline\+Thickness} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_af1a42209ce2b5d3f07b00f917bcd8015}\label{a01793_af1a42209ce2b5d3f07b00f917bcd8015} 
+\index{sf::Text@{sf::Text}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See the move function to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \doxylink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a4dbfb1a7c80688b0b4c477d706550208}\label{a01793_a4dbfb1a7c80688b0b4c477d706550208} 
+\index{sf::Text@{sf::Text}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See the move function to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new position \\
+\hline
+{\em y} & Y coordinate of the new position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \doxylink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a32baf2bf1a74699b03bf8c95030a38ed}\label{a01793_a32baf2bf1a74699b03bf8c95030a38ed} 
+\index{sf::Text@{sf::Text}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the orientation of the object 
+
+This function completely overwrites the previous rotation. See the rotate function to add an angle based on the previous rotation instead. The default rotation of a transformable object is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & New rotation, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}, \doxylink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{get\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a4c48a87f1626047e448f9c1a68ff167e}\label{a01793_a4c48a87f1626047e448f9c1a68ff167e} 
+\index{sf::Text@{sf::Text}!setScale@{setScale}}
+\index{setScale@{setScale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See the scale function to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & New scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}, \doxylink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aaec50b46b3f41b054763304d1e727471}\label{a01793_aaec50b46b3f41b054763304d1e727471} 
+\index{sf::Text@{sf::Text}!setScale@{setScale}}
+\index{setScale@{setScale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{factorX,  }\item[{float}]{factorY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See the scale function to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factorX} & New horizontal scale factor \\
+\hline
+{\em factorY} & New vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}, \doxylink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_a7d3b3359f286fd9503d1ced25b7b6c33}\label{a01781_a7d3b3359f286fd9503d1ced25b7b6c33} 
+\index{sf::Text@{sf::Text}!setString@{setString}}
+\index{setString@{setString}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setString()}{setString()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{string }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s string. 
+
+The {\itshape string} argument is a \doxylink{a01901}{sf\+::\+String}, which can automatically be constructed from standard string types. So, the following calls are all valid\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{text.setString(\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(L\textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{text.setString(std::string(\textcolor{stringliteral}{"{}hello"{}}));}
+\DoxyCodeLine{text.setString(std::wstring(L\textcolor{stringliteral}{"{}hello"{}}));}
+
+\end{DoxyCode}
+ A text\textquotesingle{}s string is empty by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & New string\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_ab334881845307db46ccf344191aa819c}{get\+String} 
+\end{DoxySeeAlso}
+\Hypertarget{a01781_ad791702bc2d1b6590a1719aa60635edf}\label{a01781_ad791702bc2d1b6590a1719aa60635edf} 
+\index{sf::Text@{sf::Text}!setStyle@{setStyle}}
+\index{setStyle@{setStyle}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{setStyle()}{setStyle()}}
+{\footnotesize\ttfamily void sf\+::\+Text\+::set\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{style }\end{DoxyParamCaption})}
+
+
+
+Set the text\textquotesingle{}s style. 
+
+You can pass a combination of one or more styles, for example \doxylink{a01781_aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171}{sf\+::\+Text\+::\+Bold} \texorpdfstring{$\vert$}{|} \doxylink{a01781_aa8add4aef484c6e6b20faff07452bd82aee249eb803848723c542c2062ebe69d8}{sf\+::\+Text\+::\+Italic}. The default style is \doxylink{a01781_aa8add4aef484c6e6b20faff07452bd82a2af9ae5e1cda126570f744448e0caa32}{sf\+::\+Text\+::\+Regular}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em style} & New style\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01781_a0da79b0c057f4bb51592465a205c35d7}{get\+Style} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01781_a73d20a8736e2a402859afe77f085a226}\label{a01781_a73d20a8736e2a402859afe77f085a226} 
+\index{sf::Text@{sf::Text}!m\_bounds@{m\_bounds}}
+\index{m\_bounds@{m\_bounds}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_bounds}{m\_bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Text\+::m\+\_\+bounds\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Bounding rectangle of the text (in local coordinates) 
+
+\Hypertarget{a01781_a5a066742cdc44db9f2c871fdb03f2ad6}\label{a01781_a5a066742cdc44db9f2c871fdb03f2ad6} 
+\index{sf::Text@{sf::Text}!m\_characterSize@{m\_characterSize}}
+\index{m\_characterSize@{m\_characterSize}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_characterSize}{m\_characterSize}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Text\+::m\+\_\+character\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base size of characters, in pixels. 
+
+\Hypertarget{a01781_a5fdc28e0b845d72204225237f1af6473}\label{a01781_a5fdc28e0b845d72204225237f1af6473} 
+\index{sf::Text@{sf::Text}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_fillColor}{m\_fillColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Text\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01781}{Text} fill color. 
+
+\Hypertarget{a01781_a5800e7440e91b8c4ba999afe72e0ac4b}\label{a01781_a5800e7440e91b8c4ba999afe72e0ac4b} 
+\index{sf::Text@{sf::Text}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01697}{Font}}\texorpdfstring{$\ast$}{*} sf\+::\+Text\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01697}{Font} used to display the string. 
+
+\Hypertarget{a01781_a97c0049579b10d545118298b23f78f30}\label{a01781_a97c0049579b10d545118298b23f78f30} 
+\index{sf::Text@{sf::Text}!m\_fontTextureId@{m\_fontTextureId}}
+\index{m\_fontTextureId@{m\_fontTextureId}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_fontTextureId}{m\_fontTextureId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Text\+::m\+\_\+font\+Texture\+Id\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+The font texture id. 
+
+\Hypertarget{a01781_a29af9fa585a8fcb7ef3cf53d0a6baf17}\label{a01781_a29af9fa585a8fcb7ef3cf53d0a6baf17} 
+\index{sf::Text@{sf::Text}!m\_geometryNeedUpdate@{m\_geometryNeedUpdate}}
+\index{m\_geometryNeedUpdate@{m\_geometryNeedUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_geometryNeedUpdate}{m\_geometryNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Text\+::m\+\_\+geometry\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Does the geometry need to be recomputed? 
+
+\Hypertarget{a01793_a6538c7efb49ad3a430d45c8a52368f36}\label{a01793_a6538c7efb49ad3a430d45c8a52368f36} 
+\index{sf::Text@{sf::Text}!m\_inverseTransform@{m\_inverseTransform}}
+\index{m\_inverseTransform@{m\_inverseTransform}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_inverseTransform}{m\_inverseTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transformable\+::m\+\_\+inverse\+Transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Combined transformation of the object. 
+
+\Hypertarget{a01793_afbb99d25b4ea10943e883d45a7594761}\label{a01793_afbb99d25b4ea10943e883d45a7594761} 
+\index{sf::Text@{sf::Text}!m\_inverseTransformNeedUpdate@{m\_inverseTransformNeedUpdate}}
+\index{m\_inverseTransformNeedUpdate@{m\_inverseTransformNeedUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_inverseTransformNeedUpdate}{m\_inverseTransformNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Transformable\+::m\+\_\+inverse\+Transform\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Does the transform need to be recomputed? 
+
+\Hypertarget{a01781_afb9a3c69064eaae9a61232f1a3339b27}\label{a01781_afb9a3c69064eaae9a61232f1a3339b27} 
+\index{sf::Text@{sf::Text}!m\_letterSpacingFactor@{m\_letterSpacingFactor}}
+\index{m\_letterSpacingFactor@{m\_letterSpacingFactor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_letterSpacingFactor}{m\_letterSpacingFactor}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+letter\+Spacing\+Factor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spacing factor between letters. 
+
+\Hypertarget{a01781_a56893f600ec4c6018f35345c39349344}\label{a01781_a56893f600ec4c6018f35345c39349344} 
+\index{sf::Text@{sf::Text}!m\_lineSpacingFactor@{m\_lineSpacingFactor}}
+\index{m\_lineSpacingFactor@{m\_lineSpacingFactor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_lineSpacingFactor}{m\_lineSpacingFactor}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+line\+Spacing\+Factor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spacing factor between lines. 
+
+\Hypertarget{a01793_ad52a72593cb43a30a0cac33737a3a60c}\label{a01793_ad52a72593cb43a30a0cac33737a3a60c} 
+\index{sf::Text@{sf::Text}!m\_origin@{m\_origin}}
+\index{m\_origin@{m\_origin}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_origin}{m\_origin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+origin\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Origin of translation/rotation/scaling of the object. 
+
+\Hypertarget{a01781_ad50d23c5c38bf11250c28b43e0cc3da2}\label{a01781_ad50d23c5c38bf11250c28b43e0cc3da2} 
+\index{sf::Text@{sf::Text}!m\_outlineColor@{m\_outlineColor}}
+\index{m\_outlineColor@{m\_outlineColor}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineColor}{m\_outlineColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Text\+::m\+\_\+outline\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01781}{Text} outline color. 
+
+\Hypertarget{a01781_abf2a59406720c1a4cff8d0f8d9bfb7a8}\label{a01781_abf2a59406720c1a4cff8d0f8d9bfb7a8} 
+\index{sf::Text@{sf::Text}!m\_outlineThickness@{m\_outlineThickness}}
+\index{m\_outlineThickness@{m\_outlineThickness}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineThickness}{m\_outlineThickness}}
+{\footnotesize\ttfamily float sf\+::\+Text\+::m\+\_\+outline\+Thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thickness of the text\textquotesingle{}s outline. 
+
+\Hypertarget{a01781_a7e58a0f2e2be3c6988cfc7956c7f6c7c}\label{a01781_a7e58a0f2e2be3c6988cfc7956c7f6c7c} 
+\index{sf::Text@{sf::Text}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_outlineVertices}{m\_outlineVertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01801}{Vertex\+Array}} sf\+::\+Text\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+\doxylink{a01797}{Vertex} array containing the outline geometry. 
+
+\Hypertarget{a01793_a7081bf508f612cb63e9ce3b149758217}\label{a01793_a7081bf508f612cb63e9ce3b149758217} 
+\index{sf::Text@{sf::Text}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Position of the object in the 2D world. 
+
+\Hypertarget{a01793_a206c593d926ee30a3c79520c2fae448b}\label{a01793_a206c593d926ee30a3c79520c2fae448b} 
+\index{sf::Text@{sf::Text}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily float sf\+::\+Transformable\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Orientation of the object, in degrees. 
+
+\Hypertarget{a01793_adf2c5e463aefb41c6d43a140c0ad151f}\label{a01793_adf2c5e463aefb41c6d43a140c0ad151f} 
+\index{sf::Text@{sf::Text}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Scale of the object. 
+
+\Hypertarget{a01781_a10080b61057e2f76e2c2dc2a61633130}\label{a01781_a10080b61057e2f76e2c2dc2a61633130} 
+\index{sf::Text@{sf::Text}!m\_string@{m\_string}}
+\index{m\_string@{m\_string}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_string}{m\_string}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901}{String}} sf\+::\+Text\+::m\+\_\+string\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01901}{String} to display. 
+
+\Hypertarget{a01781_aaf9d652e6ea1bb3f1fdedb041b2f85ae}\label{a01781_aaf9d652e6ea1bb3f1fdedb041b2f85ae} 
+\index{sf::Text@{sf::Text}!m\_style@{m\_style}}
+\index{m\_style@{m\_style}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_style}{m\_style}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Text\+::m\+\_\+style\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01781}{Text} style (see \doxylink{a00673}{Style} enum) 
+
+\Hypertarget{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c}\label{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c} 
+\index{sf::Text@{sf::Text}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transformable\+::m\+\_\+transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Combined transformation of the object. 
+
+\Hypertarget{a01793_a394b22bfe9e9e44c672244e4da0b3c58}\label{a01793_a394b22bfe9e9e44c672244e4da0b3c58} 
+\index{sf::Text@{sf::Text}!m\_transformNeedUpdate@{m\_transformNeedUpdate}}
+\index{m\_transformNeedUpdate@{m\_transformNeedUpdate}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_transformNeedUpdate}{m\_transformNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Transformable\+::m\+\_\+transform\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Does the transform need to be recomputed? 
+
+\Hypertarget{a01781_aaafa2ed1db18952c9ded3ef1ceeee32e}\label{a01781_aaafa2ed1db18952c9ded3ef1ceeee32e} 
+\index{sf::Text@{sf::Text}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!sf::Text@{sf::Text}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01801}{Vertex\+Array}} sf\+::\+Text\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+\doxylink{a01797}{Vertex} array containing the fill geometry. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00428}{Text.\+hpp}}\end{DoxyCompactItemize}

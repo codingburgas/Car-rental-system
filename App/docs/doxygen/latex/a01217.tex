@@ -1,0 +1,668 @@
+\doxysection{nlohmann\+::json\+\_\+pointer\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01217}{}\label{a01217}\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+
+
+JSON Pointer defines a string syntax for identifying a specific value within a JSON document.  
+
+
+
+
+{\ttfamily \#include $<$json\+\_\+pointer.\+hpp$>$}
+
+
+
+Collaboration diagram for nlohmann\+::json\+\_\+pointer\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{a01217_a58b4e4cd3551787d9c20c67ed5b1dfb8}{back}} () const
+\begin{DoxyCompactList}\small\item\em return last reference token \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01217_a649252bda4a2e75a0915b11a25d8bcc3}{empty}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return whether pointer points to the root document \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217_a7f32d7c62841f0c4a6784cf741a6e4f8}{json\+\_\+pointer}} (const std\+::string \&s=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em create JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217_ae9015c658f99cf3d48a8563accc79988}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em return a string representation of the JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217_a1e794f796606d9b137b8ea12f2471b6a}{operator/=}} (const \mbox{\hyperlink{a01217}{json\+\_\+pointer}} \&ptr)
+\begin{DoxyCompactList}\small\item\em append another JSON pointer at the end of this JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217_acb02aa1a38d79b5d4b602a4cfd014883}{operator/=}} (std\+::size\+\_\+t array\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em append an array index at the end of this JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217_a0fd4fa3951d134f54622856ccf8f1021}{operator/=}} (std\+::string token)
+\begin{DoxyCompactList}\small\item\em append an unescaped reference token at the end of this JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217_afdaacce1edb7145e0434e014f0e8685a}{parent\+\_\+pointer}} () const
+\begin{DoxyCompactList}\small\item\em returns the parent of this JSON pointer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01217_a4b1ee4d511ca195bed896a3da47e264c}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em remove last reference token \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01217_a697d12b5bd6205f8866691b166b7c7dc}{push\+\_\+back}} (const std\+::string \&token)
+\begin{DoxyCompactList}\small\item\em append an unescaped token at the end of the reference pointer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01217_ac228b13596d3c34185da9fe61b570194}{push\+\_\+back}} (std\+::string \&\&token)
+\begin{DoxyCompactList}\small\item\em append an unescaped token at the end of the reference pointer \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01217_a3d4b15d32d096e3776c5d2c773b524f5}{to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em return a string representation of the JSON pointer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} JSON pointer has no \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} ()))
+\item 
+bool \mbox{\hyperlink{a01217_a90d38e45e2d3add52d824bc55da8f772}{contains}} (const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}ptr) const
+\item 
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217_aa2f86764d08ce1fb82327327e7f9a87d}{get\+\_\+and\+\_\+create}} (\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&j) const
+\begin{DoxyCompactList}\small\item\em create and return a reference to the pointed to value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217_ac97f74aff788336b07bc5ecf85598b14}{get\+\_\+checked}} (\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}ptr) const
+\item 
+const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217_a60fa9e137ab7eba28c5045710fd2b21e}{get\+\_\+checked}} (const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}ptr) const
+\item 
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217_aef65869da8f68d30b30021f3efdc54f8}{get\+\_\+unchecked}} (\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}ptr) const
+\begin{DoxyCompactList}\small\item\em return a reference to the pointed to value \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217_a40d7cc22db09eefce29ecba4c3000470}{get\+\_\+unchecked}} (const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}ptr) const
+\begin{DoxyCompactList}\small\item\em return a const reference to the pointed to value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Basic\+Json\+Type\+::size\+\_\+type \mbox{\hyperlink{a01217_ae28e4b79b9d4fac9e6dca29f47f946fa}{array\+\_\+index}} (const std\+::string \&s)
+\item 
+static void \mbox{\hyperlink{a01217_ab0d7759d0caa6a0c0187916da28e6ee7}{flatten}} (const std\+::string \&reference\+\_\+string, const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&value, \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&\mbox{\hyperlink{a01217_ae3d35f4085faec07b87c88ba0dae457d}{result}})
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a01217_afe76eec98c85eeaf61638b3b40d14575}{split}} (const std\+::string \&reference\+\_\+string)
+\begin{DoxyCompactList}\small\item\em split the string input to reference tokens \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \mbox{\hyperlink{a01217_a920065221e3c81676c3211c100d024a7}{unflatten}} (const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} \+: \mbox{\hyperlink{a01217}{json\+\_\+pointer}} top() const \{ if (\mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\+\_\+\+HEDLEY\+\_\+\+UNLIKELY}}(\mbox{\hyperlink{a01217_a649252bda4a2e75a0915b11a25d8bcc3}{empty}}())) \{ \mbox{\hyperlink{a00206_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\+\_\+\+THROW}}(\mbox{\hyperlink{a01069_a238f1bda3b6c92b5970fbf9187ccd325}{detail\+::out\+\_\+of\+\_\+range\+::create}}(405
+\item 
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} JSON pointer has no \mbox{\hyperlink{a01217_a9d826fc24f7821325e4f24d4393d6adc}{parent}}
+\item 
+\mbox{\hyperlink{a01217_ae3d35f4085faec07b87c88ba0dae457d}{result}} \mbox{\hyperlink{a01217_a468dde132b1384d962c75eca7306f6cb}{reference\+\_\+tokens}} = \{reference\+\_\+tokens\mbox{[}0\mbox{]}\}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a01217_a07a990a6838de4f38ee9d881e7b9fd61}{reference\+\_\+tokens}}
+\begin{DoxyCompactList}\small\item\em the reference tokens \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217_ae3d35f4085faec07b87c88ba0dae457d}{result}} = \texorpdfstring{$\ast$}{*}this
+\item 
+return \mbox{\hyperlink{a01217_a8473b794a810d3fdb46cf985bfa9e2bb}{result}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01217_ada3100cdb8700566051828f1355fa745}{basic\+\_\+json}}
+\item 
+bool \mbox{\hyperlink{a01217_a6779edcf28e6f018a3bbb29c0b4b5e1e}{operator!=}} (\mbox{\hyperlink{a01217}{json\+\_\+pointer}} const \&lhs, \mbox{\hyperlink{a01217}{json\+\_\+pointer}} const \&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em compares two JSON pointers for inequality \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217_a90a11fe6c7f37b1746a3ff9cb24b0d53}{operator/}} (const \mbox{\hyperlink{a01217}{json\+\_\+pointer}} \&lhs, const \mbox{\hyperlink{a01217}{json\+\_\+pointer}} \&rhs)
+\begin{DoxyCompactList}\small\item\em create a new JSON pointer by appending the right JSON pointer at the end of the left JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217_a29f6d4b492e784b9d196b05a4048c289}{operator/}} (const \mbox{\hyperlink{a01217}{json\+\_\+pointer}} \&lhs, std\+::size\+\_\+t array\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em create a new JSON pointer by appending the array-\/index-\/token at the end of the JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217_aa44c0583fb06a018b0cf041302f109fa}{operator/}} (const \mbox{\hyperlink{a01217}{json\+\_\+pointer}} \&lhs, std\+::string token)
+\begin{DoxyCompactList}\small\item\em create a new JSON pointer by appending the unescaped token at the end of the JSON pointer \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01217_a4667ef558c8c3f8a646bfda0c6654653}{operator==}} (\mbox{\hyperlink{a01217}{json\+\_\+pointer}} const \&lhs, \mbox{\hyperlink{a01217}{json\+\_\+pointer}} const \&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em compares two JSON pointers for equality \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}}$>$\newline
+class nlohmann\+::json\+\_\+pointer$<$ Basic\+Json\+Type $>$}
+JSON Pointer defines a string syntax for identifying a specific value within a JSON document. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01217_a7f32d7c62841f0c4a6784cf741a6e4f8}\label{a01217_a7f32d7c62841f0c4a6784cf741a6e4f8} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!json\_pointer@{json\_pointer}}
+\index{json\_pointer@{json\_pointer}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_pointer()}{json\_pointer()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::json\+\_\+pointer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+create JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/json_pointer/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/json\+\_\+pointer/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01217_ae28e4b79b9d4fac9e6dca29f47f946fa}\label{a01217_ae28e4b79b9d4fac9e6dca29f47f946fa} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!array\_index@{array\_index}}
+\index{array\_index@{array\_index}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{array\_index()}{array\_index()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+static Basic\+Json\+Type\+::size\+\_\+type \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::array\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & reference token to be converted into an array index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer representation of {\itshape s} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index begins not with a digit \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+404} & if string {\itshape s} could not be converted to an integer \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+410} & if an array index exceeds size\+\_\+type \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_a58b4e4cd3551787d9c20c67ed5b1dfb8}\label{a01217_a58b4e4cd3551787d9c20c67ed5b1dfb8} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!back@{back}}
+\index{back@{back}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+const std\+::string \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return last reference token 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/back/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/back/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a0f3376aebd6c88555d12f34480f93741}\label{a01217_a0f3376aebd6c88555d12f34480f93741} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!BasicJsonType@{BasicJsonType}}
+\index{BasicJsonType@{BasicJsonType}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{BasicJsonType()}{BasicJsonType()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} JSON pointer has no \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ Basic\+Json\+Type $>$\+::\+Basic\+Json\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01217_a90d38e45e2d3add52d824bc55da8f772}\label{a01217_a90d38e45e2d3add52d824bc55da8f772} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!contains@{contains}}
+\index{contains@{contains}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+bool \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index was not a number \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_a649252bda4a2e75a0915b11a25d8bcc3}\label{a01217_a649252bda4a2e75a0915b11a25d8bcc3} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!empty@{empty}}
+\index{empty@{empty}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+bool \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+return whether pointer points to the root document 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/empty/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/empty/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_ab0d7759d0caa6a0c0187916da28e6ee7}\label{a01217_ab0d7759d0caa6a0c0187916da28e6ee7} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!flatten@{flatten}}
+\index{flatten@{flatten}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+static void \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::flatten (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{reference\+\_\+string,  }\item[{const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&}]{value,  }\item[{\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference\+\_\+string} & the reference string to the current value \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & the value to consider \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em result} & the result object to insert values to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty objects or arrays are flattened to {\ttfamily null}. 
+\end{DoxyNote}
+\Hypertarget{a01217_aa2f86764d08ce1fb82327327e7f9a87d}\label{a01217_aa2f86764d08ce1fb82327327e7f9a87d} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!get\_and\_create@{get\_and\_create}}
+\index{get\_and\_create@{get\_and\_create}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_and\_create()}{get\_and\_create()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::get\+\_\+and\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+create and return a reference to the pointed to value 
+
+@complexity Linear in the number of reference tokens.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+109} & if array index is not a number \\
+\hline
+{\em type\+\_\+error.\+313} & if value cannot be unflattened \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_ac97f74aff788336b07bc5ecf85598b14}\label{a01217_ac97f74aff788336b07bc5ecf85598b14} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!get\_checked@{get\_checked}}
+\index{get\_checked@{get\_checked}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_checked()}{get\_checked()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::get\+\_\+checked (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index was not a number \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+402} & if the array index \textquotesingle{}-\/\textquotesingle{} is used \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+404} & if the JSON pointer can not be resolved \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_a60fa9e137ab7eba28c5045710fd2b21e}\label{a01217_a60fa9e137ab7eba28c5045710fd2b21e} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!get\_checked@{get\_checked}}
+\index{get\_checked@{get\_checked}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_checked()}{get\_checked()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::get\+\_\+checked (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index was not a number \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+402} & if the array index \textquotesingle{}-\/\textquotesingle{} is used \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+404} & if the JSON pointer can not be resolved \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_aef65869da8f68d30b30021f3efdc54f8}\label{a01217_aef65869da8f68d30b30021f3efdc54f8} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!get\_unchecked@{get\_unchecked}}
+\index{get\_unchecked@{get\_unchecked}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_unchecked()}{get\_unchecked()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::get\+\_\+unchecked (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+return a reference to the pointed to value 
+
+\begin{DoxyNote}{Note}
+This version does not throw if a value is not present, but tries to create nested values instead. For instance, calling this function with pointer {\ttfamily \"{}/this/that\"{}} on a null value is equivalent to calling {\ttfamily operator\mbox{[}\mbox{]}(\"{}this\"{}).operator\mbox{[}\mbox{]}(\"{}that\"{})} on that value, effectively changing the null value to an object.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & a JSON value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the JSON value pointed to by the JSON pointer
+\end{DoxyReturn}
+@complexity Linear in the length of the JSON pointer.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index was not a number \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+404} & if the JSON pointer can not be resolved \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_a40d7cc22db09eefce29ecba4c3000470}\label{a01217_a40d7cc22db09eefce29ecba4c3000470} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!get\_unchecked@{get\_unchecked}}
+\index{get\_unchecked@{get\_unchecked}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_unchecked()}{get\_unchecked()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::get\+\_\+unchecked (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \texorpdfstring{$\ast$}{*}}]{ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+return a const reference to the pointed to value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ptr} & a JSON value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to the JSON value pointed to by the JSON pointer
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+106} & if an array index begins with \textquotesingle{}0\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+109} & if an array index was not a number \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+402} & if the array index \textquotesingle{}-\/\textquotesingle{} is used \\
+\hline
+{\em out\+\_\+of\+\_\+range.\+404} & if the JSON pointer can not be resolved \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_ae9015c658f99cf3d48a8563accc79988}\label{a01217_ae9015c658f99cf3d48a8563accc79988} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return a string representation of the JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_string/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+string/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a1e794f796606d9b137b8ea12f2471b6a}\label{a01217_a1e794f796606d9b137b8ea12f2471b6a} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \&}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+append another JSON pointer at the end of this JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slasheq/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slasheq/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_acb02aa1a38d79b5d4b602a4cfd014883}\label{a01217_acb02aa1a38d79b5d4b602a4cfd014883} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{array\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+append an array index at the end of this JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slasheq/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slasheq/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a0fd4fa3951d134f54622856ccf8f1021}\label{a01217_a0fd4fa3951d134f54622856ccf8f1021} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \& \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{std\+::string}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+append an unescaped reference token at the end of this JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slasheq/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slasheq/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_afdaacce1edb7145e0434e014f0e8685a}\label{a01217_afdaacce1edb7145e0434e014f0e8685a} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!parent\_pointer@{parent\_pointer}}
+\index{parent\_pointer@{parent\_pointer}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{parent\_pointer()}{parent\_pointer()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::parent\+\_\+pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the parent of this JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/parent_pointer/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/parent\+\_\+pointer/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a4b1ee4d511ca195bed896a3da47e264c}\label{a01217_a4b1ee4d511ca195bed896a3da47e264c} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+void \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove last reference token 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/pop_back/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/pop\+\_\+back/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a697d12b5bd6205f8866691b166b7c7dc}\label{a01217_a697d12b5bd6205f8866691b166b7c7dc} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+void \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+append an unescaped token at the end of the reference pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/push_back/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/push\+\_\+back/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_ac228b13596d3c34185da9fe61b570194}\label{a01217_ac228b13596d3c34185da9fe61b570194} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+void \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+append an unescaped token at the end of the reference pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/push_back/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/push\+\_\+back/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_afe76eec98c85eeaf61638b3b40d14575}\label{a01217_afe76eec98c85eeaf61638b3b40d14575} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!split@{split}}
+\index{split@{split}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{reference\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+split the string input to reference tokens 
+
+\begin{DoxyNote}{Note}
+This function is only called by the \doxylink{a01217}{json\+\_\+pointer} constructor. All exceptions below are documented there.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+107} & if the pointer is not empty or begins with \textquotesingle{}/\textquotesingle{} \\
+\hline
+{\em parse\+\_\+error.\+108} & if character \textquotesingle{}\texorpdfstring{$\sim$}{\string~}\textquotesingle{} is not followed by \textquotesingle{}0\textquotesingle{} or \textquotesingle{}1\textquotesingle{} \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{a01217_a3d4b15d32d096e3776c5d2c773b524f5}\label{a01217_a3d4b15d32d096e3776c5d2c773b524f5} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+std\+::string \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return a string representation of the JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/to_string/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/to\+\_\+string/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a920065221e3c81676c3211c100d024a7}\label{a01217_a920065221e3c81676c3211c100d024a7} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!unflatten@{unflatten}}
+\index{unflatten@{unflatten}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{unflatten()}{unflatten()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+static \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::unflatten (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & flattened JSON\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unflattened JSON
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em parse\+\_\+error.\+109} & if array index is not a number \\
+\hline
+{\em type\+\_\+error.\+314} & if value is not an object \\
+\hline
+{\em type\+\_\+error.\+315} & if object values are not primitive \\
+\hline
+{\em type\+\_\+error.\+313} & if value cannot be unflattened \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01217_ada3100cdb8700566051828f1355fa745}\label{a01217_ada3100cdb8700566051828f1355fa745} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!basic\_json@{basic\_json}}
+\index{basic\_json@{basic\_json}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_json}{basic\_json}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+friend class \mbox{\hyperlink{a01541}{basic\+\_\+json}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01217_a6779edcf28e6f018a3bbb29c0b4b5e1e}\label{a01217_a6779edcf28e6f018a3bbb29c0b4b5e1e} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ const \&}]{lhs,  }\item[{\mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ const \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+compares two JSON pointers for inequality 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lhs} & JSON pointer to compare \\
+\hline
+\mbox{\texttt{ in}}  & {\em rhs} & JSON pointer to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether {\itshape lhs} is not equal {\itshape rhs} 
+\end{DoxyReturn}
+@complexity Linear in the length of the JSON pointer
+
+@exceptionsafety No-\/throw guarantee\+: this function never throws exceptions. \Hypertarget{a01217_a90a11fe6c7f37b1746a3ff9cb24b0d53}\label{a01217_a90a11fe6c7f37b1746a3ff9cb24b0d53} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+create a new JSON pointer by appending the right JSON pointer at the end of the left JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slash/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slash/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a29f6d4b492e784b9d196b05a4048c289}\label{a01217_a29f6d4b492e784b9d196b05a4048c289} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \&}]{lhs,  }\item[{std\+::size\+\_\+t}]{array\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+create a new JSON pointer by appending the array-\/index-\/token at the end of the JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slash/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slash/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_aa44c0583fb06a018b0cf041302f109fa}\label{a01217_aa44c0583fb06a018b0cf041302f109fa} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \&}]{lhs,  }\item[{std\+::string}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+create a new JSON pointer by appending the unescaped token at the end of the JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/json_pointer/operator_slash/}{\texttt{ https\+://json.\+nlohmann.\+me/api/json\+\_\+pointer/operator\+\_\+slash/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a01217_a4667ef558c8c3f8a646bfda0c6654653}\label{a01217_a4667ef558c8c3f8a646bfda0c6654653} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ const \&}]{lhs,  }\item[{\mbox{\hyperlink{a01217}{json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ const \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+compares two JSON pointers for equality 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lhs} & JSON pointer to compare \\
+\hline
+\mbox{\texttt{ in}}  & {\em rhs} & JSON pointer to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether {\itshape lhs} is equal to {\itshape rhs} 
+\end{DoxyReturn}
+@complexity Linear in the length of the JSON pointer
+
+@exceptionsafety No-\/throw guarantee\+: this function never throws exceptions. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01217_a551777cfe37bf7adb82253482030d992}\label{a01217_a551777cfe37bf7adb82253482030d992} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!\_\_pad0\_\_@{\_\_pad0\_\_}}
+\index{\_\_pad0\_\_@{\_\_pad0\_\_}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{\_\_pad0\_\_}{\_\_pad0\_\_}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::\+\_\+\+\_\+pad0\+\_\+\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01217_a9d826fc24f7821325e4f24d4393d6adc}\label{a01217_a9d826fc24f7821325e4f24d4393d6adc} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!parent@{parent}}
+\index{parent@{parent}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} JSON pointer has no \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::parent\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01217_a468dde132b1384d962c75eca7306f6cb}\label{a01217_a468dde132b1384d962c75eca7306f6cb} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!reference\_tokens@{reference\_tokens}}
+\index{reference\_tokens@{reference\_tokens}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{reference\_tokens}{reference\_tokens}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217_ae3d35f4085faec07b87c88ba0dae457d}{result}} \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::reference\+\_\+tokens = \{reference\+\_\+tokens\mbox{[}0\mbox{]}\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01217_a07a990a6838de4f38ee9d881e7b9fd61}\label{a01217_a07a990a6838de4f38ee9d881e7b9fd61} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!reference\_tokens@{reference\_tokens}}
+\index{reference\_tokens@{reference\_tokens}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{reference\_tokens}{reference\_tokens}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+std\+::vector$<$std\+::string$>$ \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::reference\+\_\+tokens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the reference tokens 
+
+\Hypertarget{a01217_ae3d35f4085faec07b87c88ba0dae457d}\label{a01217_ae3d35f4085faec07b87c88ba0dae457d} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!result@{result}}
+\index{result@{result}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{result}{result}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+\mbox{\hyperlink{a01217}{json\+\_\+pointer}} \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::result = \texorpdfstring{$\ast$}{*}this\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01217_a8473b794a810d3fdb46cf985bfa9e2bb}\label{a01217_a8473b794a810d3fdb46cf985bfa9e2bb} 
+\index{nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}!result@{result}}
+\index{result@{result}!nlohmann::json\_pointer$<$ BasicJsonType $>$@{nlohmann::json\_pointer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{result}{result}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$ \\
+return \mbox{\hyperlink{a01217}{nlohmann\+::json\+\_\+pointer}}$<$ \mbox{\hyperlink{a01217_a0f3376aebd6c88555d12f34480f93741}{Basic\+Json\+Type}} $>$\+::result\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/\mbox{\hyperlink{a00200}{json\+\_\+pointer.\+hpp}}\end{DoxyCompactItemize}

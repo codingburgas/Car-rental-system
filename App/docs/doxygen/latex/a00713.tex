@@ -1,0 +1,119 @@
+\doxysection{cpr\+::Debug\+Callback Class Reference}
+\hypertarget{a00713}{}\label{a00713}\index{cpr::DebugCallback@{cpr::DebugCallback}}
+
+
+{\ttfamily \#include $<$callback.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} \{ \newline
+\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17a61a96ffcb251bb9bf0abf8fec19d0ea8}{TEXT}} = 0
+, \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17a4d90f5b70822ba230bd8d4d261eb2f20}{HEADER\+\_\+\+IN}} = 1
+, \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17abd4c62444dc45d0bf753579a2611c904}{HEADER\+\_\+\+OUT}} = 2
+, \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17ac04f815abbc15df9fe6f0e8be9c0c940}{DATA\+\_\+\+IN}} = 3
+, \newline
+\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17a32883240ac511e24f262caa46199a1ab}{DATA\+\_\+\+OUT}} = 4
+, \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17ac936eb48ffd392cd70185edede4bf0ba}{SSL\+\_\+\+DATA\+\_\+\+IN}} = 5
+, \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17a562474d58979b843ca9df5536992c2fe}{SSL\+\_\+\+DATA\+\_\+\+OUT}} = 6
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00713_ada914e4ead7118939de7636a604c04d0}{Debug\+Callback}} ()=default
+\item 
+\mbox{\hyperlink{a00713_a1a7dce0309f7806f1152c35b6b19d825}{Debug\+Callback}} (std\+::function$<$ void(\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} type, std\+::string data, intptr\+\_\+t \mbox{\hyperlink{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}{userdata}})$>$ p\+\_\+callback, intptr\+\_\+t p\+\_\+userdata=0)
+\item 
+void \mbox{\hyperlink{a00713_afe103504b232ec00bd195c804e789779}{operator()}} (\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} type, std\+::string data) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} type, std\+::string data, intptr\+\_\+t \mbox{\hyperlink{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}{userdata}})$>$ \mbox{\hyperlink{a00713_a2adfe8d965ca77c31e4e682621f63637}{callback}}
+\item 
+intptr\+\_\+t \mbox{\hyperlink{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}{userdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17}\label{a00713_accbf459786192dea1b3a3ff60ef76e17} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!InfoType@{InfoType}}
+\index{InfoType@{InfoType}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{InfoType}{InfoType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{cpr\+::\+Debug\+Callback\+::\+Info\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEXT@{TEXT}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!TEXT@{TEXT}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17a61a96ffcb251bb9bf0abf8fec19d0ea8}\label{a00713_accbf459786192dea1b3a3ff60ef76e17a61a96ffcb251bb9bf0abf8fec19d0ea8} 
+TEXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HEADER\_IN@{HEADER\_IN}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!HEADER\_IN@{HEADER\_IN}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17a4d90f5b70822ba230bd8d4d261eb2f20}\label{a00713_accbf459786192dea1b3a3ff60ef76e17a4d90f5b70822ba230bd8d4d261eb2f20} 
+HEADER\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HEADER\_OUT@{HEADER\_OUT}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!HEADER\_OUT@{HEADER\_OUT}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17abd4c62444dc45d0bf753579a2611c904}\label{a00713_accbf459786192dea1b3a3ff60ef76e17abd4c62444dc45d0bf753579a2611c904} 
+HEADER\+\_\+\+OUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_IN@{DATA\_IN}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!DATA\_IN@{DATA\_IN}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17ac04f815abbc15df9fe6f0e8be9c0c940}\label{a00713_accbf459786192dea1b3a3ff60ef76e17ac04f815abbc15df9fe6f0e8be9c0c940} 
+DATA\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_OUT@{DATA\_OUT}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!DATA\_OUT@{DATA\_OUT}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17a32883240ac511e24f262caa46199a1ab}\label{a00713_accbf459786192dea1b3a3ff60ef76e17a32883240ac511e24f262caa46199a1ab} 
+DATA\+\_\+\+OUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_DATA\_IN@{SSL\_DATA\_IN}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!SSL\_DATA\_IN@{SSL\_DATA\_IN}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17ac936eb48ffd392cd70185edede4bf0ba}\label{a00713_accbf459786192dea1b3a3ff60ef76e17ac936eb48ffd392cd70185edede4bf0ba} 
+SSL\+\_\+\+DATA\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_DATA\_OUT@{SSL\_DATA\_OUT}!cpr::DebugCallback@{cpr::DebugCallback}}\index{cpr::DebugCallback@{cpr::DebugCallback}!SSL\_DATA\_OUT@{SSL\_DATA\_OUT}}}\Hypertarget{a00713_accbf459786192dea1b3a3ff60ef76e17a562474d58979b843ca9df5536992c2fe}\label{a00713_accbf459786192dea1b3a3ff60ef76e17a562474d58979b843ca9df5536992c2fe} 
+SSL\+\_\+\+DATA\+\_\+\+OUT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00713_ada914e4ead7118939de7636a604c04d0}\label{a00713_ada914e4ead7118939de7636a604c04d0} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!DebugCallback@{DebugCallback}}
+\index{DebugCallback@{DebugCallback}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{DebugCallback()}{DebugCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cpr\+::\+Debug\+Callback\+::\+Debug\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00713_a1a7dce0309f7806f1152c35b6b19d825}\label{a00713_a1a7dce0309f7806f1152c35b6b19d825} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!DebugCallback@{DebugCallback}}
+\index{DebugCallback@{DebugCallback}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{DebugCallback()}{DebugCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cpr\+::\+Debug\+Callback\+::\+Debug\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} type, std\+::string data, intptr\+\_\+t \mbox{\hyperlink{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}{userdata}})$>$}]{p\+\_\+callback,  }\item[{intptr\+\_\+t}]{p\+\_\+userdata = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00713_afe103504b232ec00bd195c804e789779}\label{a00713_afe103504b232ec00bd195c804e789779} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily void cpr\+::\+Debug\+Callback\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}}}]{type,  }\item[{std\+::string}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00713_a2adfe8d965ca77c31e4e682621f63637}\label{a00713_a2adfe8d965ca77c31e4e682621f63637} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!callback@{callback}}
+\index{callback@{callback}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily std\+::function$<$void(\mbox{\hyperlink{a00713_accbf459786192dea1b3a3ff60ef76e17}{Info\+Type}} type, std\+::string data, intptr\+\_\+t \mbox{\hyperlink{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}{userdata}})$>$ cpr\+::\+Debug\+Callback\+::callback}
+
+\Hypertarget{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a}\label{a00713_ad2d38ba32ade4f7f5a52fe9e7bc1fa6a} 
+\index{cpr::DebugCallback@{cpr::DebugCallback}!userdata@{userdata}}
+\index{userdata@{userdata}!cpr::DebugCallback@{cpr::DebugCallback}}
+\doxysubsubsection{\texorpdfstring{userdata}{userdata}}
+{\footnotesize\ttfamily intptr\+\_\+t cpr\+::\+Debug\+Callback\+::userdata}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00023}{callback.\+h}}\end{DoxyCompactItemize}

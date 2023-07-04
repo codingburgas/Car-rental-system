@@ -1,0 +1,174 @@
+\doxysection{recepcionist\+Panel Class Reference}
+\hypertarget{a01581}{}\label{a01581}\index{recepcionistPanel@{recepcionistPanel}}
+
+
+{\ttfamily \#include $<$recepcionist\+Panel.\+hpp$>$}
+
+
+
+Inheritance diagram for recepcionist\+Panel\+:
+% FIG 0
+
+
+Collaboration diagram for recepcionist\+Panel\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01581_a78fc3ba1e0502419bf526bf7896671f1}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01581_acf1e254425ea4829343ae618f096f38a}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+void \mbox{\hyperlink{a01581_a80d577433c20201bfbc02b1389166615}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01581_a7e5bb01d8fc7940cd228e97877ce7dbe}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01581_a13c3b44f4bbb22e15c427e9fbabd41c1}{recepcionist\+Panel}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}})
+\item 
+void \mbox{\hyperlink{a01581_a4e391a60b233b6f5cd808cbde32a60ef}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01581_a428d261f53d263272842d1d5817b763b}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01581_af65c7cd6448143b056fd9edc915fab1f}{\texorpdfstring{$\sim$}{\string~}recepcionist\+Panel}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01581_a69035f4d11dee9d0f5f80ffb00c8a6f1}{bg\+Sprite}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01581_a3f580c35301a419fbaabffd98addfdaf}{bg\+Texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01581_a13c3b44f4bbb22e15c427e9fbabd41c1}\label{a01581_a13c3b44f4bbb22e15c427e9fbabd41c1} 
+\index{recepcionistPanel@{recepcionistPanel}!recepcionistPanel@{recepcionistPanel}}
+\index{recepcionistPanel@{recepcionistPanel}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{recepcionistPanel()}{recepcionistPanel()}}
+{\footnotesize\ttfamily recepcionist\+Panel\+::recepcionist\+Panel (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01581_af65c7cd6448143b056fd9edc915fab1f}\label{a01581_af65c7cd6448143b056fd9edc915fab1f} 
+\index{recepcionistPanel@{recepcionistPanel}!````~recepcionistPanel@{\texorpdfstring{$\sim$}{\string~}recepcionistPanel}}
+\index{````~recepcionistPanel@{\texorpdfstring{$\sim$}{\string~}recepcionistPanel}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}recepcionistPanel()}{\string~recepcionistPanel()}}
+{\footnotesize\ttfamily recepcionist\+Panel\+::\texorpdfstring{$\sim$}{\string~}recepcionist\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01581_a78fc3ba1e0502419bf526bf7896671f1}\label{a01581_a78fc3ba1e0502419bf526bf7896671f1} 
+\index{recepcionistPanel@{recepcionistPanel}!draw@{draw}}
+\index{draw@{draw}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void recepcionist\+Panel\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01581_acf1e254425ea4829343ae618f096f38a}\label{a01581_acf1e254425ea4829343ae618f096f38a} 
+\index{recepcionistPanel@{recepcionistPanel}!draw@{draw}}
+\index{draw@{draw}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void recepcionist\+Panel\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01581_a80d577433c20201bfbc02b1389166615}\label{a01581_a80d577433c20201bfbc02b1389166615} 
+\index{recepcionistPanel@{recepcionistPanel}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void recepcionist\+Panel\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01581_a7e5bb01d8fc7940cd228e97877ce7dbe}\label{a01581_a7e5bb01d8fc7940cd228e97877ce7dbe} 
+\index{recepcionistPanel@{recepcionistPanel}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool recepcionist\+Panel\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01581_a4e391a60b233b6f5cd808cbde32a60ef}\label{a01581_a4e391a60b233b6f5cd808cbde32a60ef} 
+\index{recepcionistPanel@{recepcionistPanel}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void recepcionist\+Panel\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01581_a428d261f53d263272842d1d5817b763b}\label{a01581_a428d261f53d263272842d1d5817b763b} 
+\index{recepcionistPanel@{recepcionistPanel}!update@{update}}
+\index{update@{update}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void recepcionist\+Panel\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{recepcionistPanel@{recepcionistPanel}!answers@{answers}}
+\index{answers@{answers}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01581_a69035f4d11dee9d0f5f80ffb00c8a6f1}\label{a01581_a69035f4d11dee9d0f5f80ffb00c8a6f1} 
+\index{recepcionistPanel@{recepcionistPanel}!bgSprite@{bgSprite}}
+\index{bgSprite@{bgSprite}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{bgSprite}{bgSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} recepcionist\+Panel\+::bg\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01581_a3f580c35301a419fbaabffd98addfdaf}\label{a01581_a3f580c35301a419fbaabffd98addfdaf} 
+\index{recepcionistPanel@{recepcionistPanel}!bgTexture@{bgTexture}}
+\index{bgTexture@{bgTexture}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{bgTexture}{bgTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} recepcionist\+Panel\+::bg\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{recepcionistPanel@{recepcionistPanel}!inputs@{inputs}}
+\index{inputs@{inputs}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{recepcionistPanel@{recepcionistPanel}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{recepcionistPanel@{recepcionistPanel}!type@{type}}
+\index{type@{type}!recepcionistPanel@{recepcionistPanel}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00293}{recepcionist\+Panel.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00638}{recepcionist\+Panel.\+cpp}}\end{DoxyCompactItemize}

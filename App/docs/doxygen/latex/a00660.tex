@@ -1,0 +1,104 @@
+\doxysection{cpr\+::util Namespace Reference}
+\hypertarget{a00660}{}\label{a00660}\index{cpr::util@{cpr::util}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a00660_ae5f759ca1efe8fed6560d00a9a4e40ec}{debug\+User\+Function}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}} type, char \texorpdfstring{$\ast$}{*}data, size\+\_\+t size, const \mbox{\hyperlink{a00713}{Debug\+Callback}} \texorpdfstring{$\ast$}{*}debug)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_aa38527e7d4b75c3c1c002dc3c0d53a6b}{header\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, const \mbox{\hyperlink{a00701}{Header\+Callback}} \texorpdfstring{$\ast$}{*}header)
+\item 
+\mbox{\hyperlink{a00721}{Cookies}} \mbox{\hyperlink{a00660_a69d22b4cba46e93b4da44fd3af0bf7bd}{parse\+Cookies}} (\mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}raw\+\_\+cookies)
+\item 
+\mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \mbox{\hyperlink{a00660_a05dbf46877c9eb8a837bf8925808176e}{parse\+Header}} (const std\+::string \&headers, std\+::string \texorpdfstring{$\ast$}{*}status\+\_\+line=nullptr, std\+::string \texorpdfstring{$\ast$}{*}reason=nullptr)
+\item 
+int \mbox{\hyperlink{a00660_a5b91bf5d9aff268b0e908c8796ac0e14}{progress\+User\+Function}} (const \mbox{\hyperlink{a00709}{Progress\+Callback}} \texorpdfstring{$\ast$}{*}progress, double dltotal, double dlnow, double ultotal, double ulnow)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_a5a4fef2e955aa8e7e5d614ca58ebfe7e}{read\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nitems, const \mbox{\hyperlink{a00697}{Read\+Callback}} \texorpdfstring{$\ast$}{*}read)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a00660_ab742437eb9827653e00476d8299cf2b2}{split}} (const std\+::string \&to\+\_\+split, char delimiter)
+\item 
+std\+::string \mbox{\hyperlink{a00660_a5a88cb19e5d6555fdc083e59bf8a8f33}{url\+Decode}} (const std\+::string \&s)
+\item 
+std\+::string \mbox{\hyperlink{a00660_ad7b2cda098b163bfefc274748f4c321a}{url\+Encode}} (const std\+::string \&s)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_ac542f2a0397fa9530cb8719c28f038d6}{write\+File\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, std\+::ofstream \texorpdfstring{$\ast$}{*}file)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_a8ae70d9fc3502fb7d4d142f737abb2b3}{write\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, std\+::string \texorpdfstring{$\ast$}{*}data)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_af02df6d778cb33dca218c63717e4fe4f}{write\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, const \mbox{\hyperlink{a00705}{Write\+Callback}} \texorpdfstring{$\ast$}{*}write)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00660_ae5f759ca1efe8fed6560d00a9a4e40ec}\label{a00660_ae5f759ca1efe8fed6560d00a9a4e40ec} 
+\index{cpr::util@{cpr::util}!debugUserFunction@{debugUserFunction}}
+\index{debugUserFunction@{debugUserFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{debugUserFunction()}{debugUserFunction()}}
+{\footnotesize\ttfamily int cpr\+::util\+::debug\+User\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{handle,  }\item[{\mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}}]{type,  }\item[{char \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{const \mbox{\hyperlink{a00713}{Debug\+Callback}} \texorpdfstring{$\ast$}{*}}]{debug }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_aa38527e7d4b75c3c1c002dc3c0d53a6b}\label{a00660_aa38527e7d4b75c3c1c002dc3c0d53a6b} 
+\index{cpr::util@{cpr::util}!headerUserFunction@{headerUserFunction}}
+\index{headerUserFunction@{headerUserFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{headerUserFunction()}{headerUserFunction()}}
+{\footnotesize\ttfamily size\+\_\+t cpr\+::util\+::header\+User\+Function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{const \mbox{\hyperlink{a00701}{Header\+Callback}} \texorpdfstring{$\ast$}{*}}]{header }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a69d22b4cba46e93b4da44fd3af0bf7bd}\label{a00660_a69d22b4cba46e93b4da44fd3af0bf7bd} 
+\index{cpr::util@{cpr::util}!parseCookies@{parseCookies}}
+\index{parseCookies@{parseCookies}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{parseCookies()}{parseCookies()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721}{Cookies}} cpr\+::util\+::parse\+Cookies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}}]{raw\+\_\+cookies }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a05dbf46877c9eb8a837bf8925808176e}\label{a00660_a05dbf46877c9eb8a837bf8925808176e} 
+\index{cpr::util@{cpr::util}!parseHeader@{parseHeader}}
+\index{parseHeader@{parseHeader}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{parseHeader()}{parseHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} cpr\+::util\+::parse\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{headers,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{status\+\_\+line = {\ttfamily nullptr},  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{reason = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a5b91bf5d9aff268b0e908c8796ac0e14}\label{a00660_a5b91bf5d9aff268b0e908c8796ac0e14} 
+\index{cpr::util@{cpr::util}!progressUserFunction@{progressUserFunction}}
+\index{progressUserFunction@{progressUserFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{progressUserFunction()}{progressUserFunction()}}
+{\footnotesize\ttfamily int cpr\+::util\+::progress\+User\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00709}{Progress\+Callback}} \texorpdfstring{$\ast$}{*}}]{progress,  }\item[{double}]{dltotal,  }\item[{double}]{dlnow,  }\item[{double}]{ultotal,  }\item[{double}]{ulnow }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a5a4fef2e955aa8e7e5d614ca58ebfe7e}\label{a00660_a5a4fef2e955aa8e7e5d614ca58ebfe7e} 
+\index{cpr::util@{cpr::util}!readUserFunction@{readUserFunction}}
+\index{readUserFunction@{readUserFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{readUserFunction()}{readUserFunction()}}
+{\footnotesize\ttfamily size\+\_\+t cpr\+::util\+::read\+User\+Function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nitems,  }\item[{const \mbox{\hyperlink{a00697}{Read\+Callback}} \texorpdfstring{$\ast$}{*}}]{read }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_ab742437eb9827653e00476d8299cf2b2}\label{a00660_ab742437eb9827653e00476d8299cf2b2} 
+\index{cpr::util@{cpr::util}!split@{split}}
+\index{split@{split}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ cpr\+::util\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{to\+\_\+split,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a5a88cb19e5d6555fdc083e59bf8a8f33}\label{a00660_a5a88cb19e5d6555fdc083e59bf8a8f33} 
+\index{cpr::util@{cpr::util}!urlDecode@{urlDecode}}
+\index{urlDecode@{urlDecode}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{urlDecode()}{urlDecode()}}
+{\footnotesize\ttfamily std\+::string cpr\+::util\+::url\+Decode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_ad7b2cda098b163bfefc274748f4c321a}\label{a00660_ad7b2cda098b163bfefc274748f4c321a} 
+\index{cpr::util@{cpr::util}!urlEncode@{urlEncode}}
+\index{urlEncode@{urlEncode}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{urlEncode()}{urlEncode()}}
+{\footnotesize\ttfamily std\+::string cpr\+::util\+::url\+Encode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_ac542f2a0397fa9530cb8719c28f038d6}\label{a00660_ac542f2a0397fa9530cb8719c28f038d6} 
+\index{cpr::util@{cpr::util}!writeFileFunction@{writeFileFunction}}
+\index{writeFileFunction@{writeFileFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{writeFileFunction()}{writeFileFunction()}}
+{\footnotesize\ttfamily size\+\_\+t cpr\+::util\+::write\+File\+Function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{std\+::ofstream \texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_a8ae70d9fc3502fb7d4d142f737abb2b3}\label{a00660_a8ae70d9fc3502fb7d4d142f737abb2b3} 
+\index{cpr::util@{cpr::util}!writeFunction@{writeFunction}}
+\index{writeFunction@{writeFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{writeFunction()}{writeFunction()}}
+{\footnotesize\ttfamily size\+\_\+t cpr\+::util\+::write\+Function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{a00660_af02df6d778cb33dca218c63717e4fe4f}\label{a00660_af02df6d778cb33dca218c63717e4fe4f} 
+\index{cpr::util@{cpr::util}!writeUserFunction@{writeUserFunction}}
+\index{writeUserFunction@{writeUserFunction}!cpr::util@{cpr::util}}
+\doxysubsubsection{\texorpdfstring{writeUserFunction()}{writeUserFunction()}}
+{\footnotesize\ttfamily size\+\_\+t cpr\+::util\+::write\+User\+Function (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{const \mbox{\hyperlink{a00705}{Write\+Callback}} \texorpdfstring{$\ast$}{*}}]{write }\end{DoxyParamCaption})}
+

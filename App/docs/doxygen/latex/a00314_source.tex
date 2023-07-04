@@ -1,0 +1,97 @@
+\doxysection{Input\+Sound\+File.\+hpp}
+\hypertarget{a00314_source}{}\label{a00314_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Audio/InputSoundFile.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Audio/InputSoundFile.hpp}}
+\mbox{\hyperlink{a00314}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_INPUTSOUNDFILE\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_INPUTSOUNDFILE\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02203}{SFML/Audio/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00518}{SFML/System/NonCopyable.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00545}{SFML/System/Time.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }InputStream;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }SoundFileReader;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02203_a4d34c0f253824ac49bdd93545913eb89}{SFML\_AUDIO\_API}}\ \mbox{\hyperlink{a01605}{InputSoundFile}}\ :\ \mbox{\hyperlink{a01897}{NonCopyable}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a01605_a3b95347de25d1d93a3230287cf47a077}{InputSoundFile}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{a01605_a326a1a486587038123de0c187bf5c635}{\string~InputSoundFile}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01605_af68e54bc9bfac19554c84601156fe93f}{openFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01605_a4e034a8e9e69ca3c33a3f11180250400}{openFromMemory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ sizeInBytes);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01605_a32b76497aeb088a2b46dc6efd819b909}{openFromStream}}(\mbox{\hyperlink{a01881}{InputStream}}\&\ stream);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \mbox{\hyperlink{a01605_a665b7fed6cdca3e0c622909e5a6655e4}{getSampleCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01605_a54307c308ba05dea63aba54a29c804a4}{getChannelCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01605_a6b8177e40dd8020752f6d52f96b774c3}{getSampleRate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01605_aa081bd4d9732408d10b48227a360778e}{getDuration}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01605_ad1a2238acb734d8b1144ecd75cccc2e7}{getTimeOffset}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \mbox{\hyperlink{a01605_a73a99f159e8aca6e39478f6cf686d7ad}{getSampleOffset}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01605_aaf97be15020a42e159ff88f76f22af20}{seek}}(\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ sampleOffset);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01605_a8eee7af58ad75ddc61f93ad72e2d66c1}{seek}}(\mbox{\hyperlink{a01933}{Time}}\ timeOffset);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \mbox{\hyperlink{a01605_a83d6f64617456601edeb0daf9d14a17f}{read}}(\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}*\ samples,\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ maxCount);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01605_ad28182aea9dc9f7d0dfc7f78691825b4}{close}}();}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00209\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01649}{SoundFileReader}}*\ \mbox{\hyperlink{a01605_ae3b8b2a9b8a60163cdd87ae4f2e1cf86}{m\_reader}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{a01881}{InputStream}}*\ \ \ \ \ \mbox{\hyperlink{a01605_ae009b2dd3290ab49f6866d5eabbd5b54}{m\_stream}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01605_a6dd8c6ef3876d886a9d4c2df538bd3a4}{m\_streamOwned}};\ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01605_a616395e2cbf4ff2f23aa7f7e4fb731a9}{m\_sampleOffset}};\ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01605_a6cac79628c9ae40da0db0a218304c3b6}{m\_sampleCount}};\ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{a01605_a8139ba49fe8f159bc338766d7c761f2d}{m\_channelCount}};\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{a01605_a7ce1620cc87d165b3ab9c4f623cad57d}{m\_sampleRate}};\ \ \ }
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_INPUTSOUNDFILE\_HPP}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ }
+
+\end{DoxyCode}

@@ -1,0 +1,81 @@
+\doxysection{Udp\+Socket.\+hpp}
+\hypertarget{a00485_source}{}\label{a00485_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/UdpSocket.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/UdpSocket.hpp}}
+\mbox{\hyperlink{a00485}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_UDPSOCKET\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_UDPSOCKET\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02209}{SFML/Network/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00470}{SFML/Network/Socket.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00464}{SFML/Network/IpAddress.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }Packet;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01869}{UdpSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01849}{Socket}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Constants}}
+\DoxyCodeLine{00052\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ MaxDatagramSize\ =\ 65507\ }
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{a01869_abb10725e26dee9d3a8165fe87ffb71bb}{UdpSocket}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a01869_a5c03644b3da34bb763bce93e758c938e}{getLocalPort}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01869_ad764c3d06d90b4714dcc97a0d1647bcc}{bind}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ address\ =\ IpAddress::Any);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01869_a2c4abb8102a1bd31f51fcfe7f15427a3}{unbind}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01869_a664ab8f26f37c21cc4de1b847c2efcca}{send}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ remoteAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ remotePort);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01869_ade9ca0f7ed7919136917b0b997a9833a}{receive}}(\textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size,\ std::size\_t\&\ received,\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ remoteAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\&\ remotePort);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01869_a48969a62c80d40fd74293a740798e435}{send}}(\mbox{\hyperlink{a01845}{Packet}}\&\ packet,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ remoteAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ remotePort);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01869_afdd5c655d00c96222d5b477fc057a22b}{receive}}(\mbox{\hyperlink{a01845}{Packet}}\&\ packet,\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ remoteAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\&\ remotePort);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00196\ \textcolor{comment}{}\ \ \ \ std::vector<char>\ \mbox{\hyperlink{a01869_a251adcf2bc0bed2d4b7c364b3bc65a42}{m\_buffer}};\ }
+\DoxyCodeLine{00197\ \};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_UDPSOCKET\_HPP}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+
+\end{DoxyCode}

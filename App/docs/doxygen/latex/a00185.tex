@@ -1,0 +1,40 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/iterators/iteration\+\_\+proxy.hpp File Reference}
+\hypertarget{a00185}{}\label{a00185}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/iterators/iteration\_proxy.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/iterators/iteration\_proxy.hpp}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for iteration\+\_\+proxy.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01169}{nlohmann\+::detail\+::iteration\+\_\+proxy$<$ Iterator\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em proxy class for the items() function \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01173}{nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value$<$ Iterator\+Type $>$}}
+\item 
+class \mbox{\hyperlink{a01185}{std\+::tuple\+\_\+element$<$ N, \+::nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value$<$ Iterator\+Type $>$ $>$}}
+\item 
+class \mbox{\hyperlink{a01181}{std\+::tuple\+\_\+size$<$\+::nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value$<$ Iterator\+Type $>$ $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00667}{std}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N, typename Iterator\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ N==0, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{nlohmann\+::detail\+::get}} (const \mbox{\hyperlink{a01173}{nlohmann\+::detail\+::iteration\+\_\+proxy\+\_\+value}}$<$ Iterator\+Type $>$ \&i) -\/$>$ decltype(i.\+key())
+\item 
+{\footnotesize template$<$typename string\+\_\+type $>$ }\\void \mbox{\hyperlink{a00662_a3c45286b0a2f15ea0a756cb87a76cf9b}{nlohmann\+::detail\+::int\+\_\+to\+\_\+string}} (string\+\_\+type \&target, std\+::size\+\_\+t \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\end{DoxyCompactItemize}

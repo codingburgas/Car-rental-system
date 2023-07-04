@@ -1,0 +1,341 @@
+\doxysection{sf\+::Thread Class Reference}
+\hypertarget{a01905}{}\label{a01905}\index{sf::Thread@{sf::Thread}}
+
+
+Utility class to manipulate threads.  
+
+
+
+
+{\ttfamily \#include $<$Thread.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Thread\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Thread\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01905_a74f75a9e86e1eb47479496314048b5f6}{launch}} ()
+\begin{DoxyCompactList}\small\item\em Run the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01905_ad6b205d4f1ce38b8d44bba0f5501477c}{terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminate the thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\\mbox{\hyperlink{a01905_a4cc65399bbb111cf8132537783b8e96c}{Thread}} (F function)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a functor with no argument. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F , typename A $>$ }\\\mbox{\hyperlink{a01905_a719b2cc067d92d52c35064a49d850a53}{Thread}} (F function, A argument)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a functor with an argument. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F , typename A $>$ }\\\mbox{\hyperlink{a01905_a719b2cc067d92d52c35064a49d850a53}{Thread}} (F function, A argument)
+\item 
+{\footnotesize template$<$typename F $>$ }\\\mbox{\hyperlink{a01905_a00b88f036de66eb63765f4c12ceb6870}{Thread}} (F functor)
+\item 
+{\footnotesize template$<$typename C $>$ }\\\mbox{\hyperlink{a01905_aa9f473c8cbb078900c62b1fd14a83a34}{Thread}} (void(C\+::\texorpdfstring{$\ast$}{*}function)(), C \texorpdfstring{$\ast$}{*}object)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a member function and an object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename C $>$ }\\\mbox{\hyperlink{a01905_aa9f473c8cbb078900c62b1fd14a83a34}{Thread}} (void(C\+::\texorpdfstring{$\ast$}{*}function)(), C \texorpdfstring{$\ast$}{*}object)
+\item 
+void \mbox{\hyperlink{a01905_a724b1f94c2d54f84280f2f78bde95fa0}{wait}} ()
+\begin{DoxyCompactList}\small\item\em Wait until the thread finishes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01905_af77942fc1730af7c31bc4c3a913a9c1d}{\texorpdfstring{$\sim$}{\string~}\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01905_a593508379bd38e0b42ebf9f5a7e2829c}{run}} ()
+\begin{DoxyCompactList}\small\item\em Internal entry point of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01909}{priv\+::\+Thread\+Func}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01905_a8326ed80dfffb6a0d92560a86a665b4d}{m\+\_\+entry\+Point}}
+\begin{DoxyCompactList}\small\item\em Abstraction of the function to run. \end{DoxyCompactList}\item 
+priv\+::\+Thread\+Impl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01905_ac6d215423182b4e8c18db34ea6ae51fc}{m\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em OS-\/specific implementation of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01905_a5ed4f3acfcb44de47de196437c39f9ef}{priv\+::\+Thread\+Impl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class to manipulate threads. 
+
+Threads provide a way to run multiple parts of the code in parallel. When you launch a new thread, the execution is split and both the new thread and the caller run in parallel.
+
+To use a \doxylink{a01905}{sf\+::\+Thread}, you construct it directly with the function to execute as the entry point of the thread. \doxylink{a01905}{sf\+::\+Thread} has multiple template constructors, which means that you can use several types of entry points\+: \begin{DoxyItemize}
+\item non-\/member functions with no argument \item non-\/member functions with one argument of any type \item functors with no argument (this one is particularly useful for compatibility with boost/std\+::bind) \item functors with one argument of any type \item member functions from any class with no argument\end{DoxyItemize}
+The function argument, if any, is copied in the \doxylink{a01905}{sf\+::\+Thread} instance, as well as the functor (if the corresponding constructor is used). Class instances, however, are passed by pointer so you must make sure that the object won\textquotesingle{}t be destroyed while the thread is still using it.
+
+The thread ends when its function is terminated. If the owner \doxylink{a01905}{sf\+::\+Thread} instance is destroyed before the thread is finished, the destructor will wait (see \doxylink{a01905_a724b1f94c2d54f84280f2f78bde95fa0}{wait()})
+
+Usage examples\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ example\ 1:\ non\ member\ function\ with\ one\ argument}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ threadFunc(\textcolor{keywordtype}{int}\ argument)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01905}{sf::Thread}}\ thread(\&threadFunc,\ 5);}
+\DoxyCodeLine{thread.launch();\ \textcolor{comment}{//\ start\ the\ thread\ (internally\ calls\ threadFunc(5))}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ example\ 2:\ member\ function}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Task}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ run()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{Task\ task;}
+\DoxyCodeLine{\mbox{\hyperlink{a01905}{sf::Thread}}\ thread(\&Task::run,\ \&task);}
+\DoxyCodeLine{thread.launch();\ \textcolor{comment}{//\ start\ the\ thread\ (internally\ calls\ task.run())}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ example\ 3:\ functor}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Task}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ operator()()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01905}{sf::Thread}}\ thread(Task());}
+\DoxyCodeLine{thread.launch();\ \textcolor{comment}{//\ start\ the\ thread\ (internally\ calls\ operator()\ on\ the\ Task\ instance)}}
+
+\end{DoxyCode}
+
+
+Creating parallel threads of execution can be dangerous\+: all threads inside the same process share the same memory space, which means that you may end up accessing the same variable from multiple threads at the same time. To prevent this kind of situations, you can use mutexes (see \doxylink{a01893}{sf\+::\+Mutex}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01893}{sf\+::\+Mutex} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01905_a4cc65399bbb111cf8132537783b8e96c}\label{a01905_a4cc65399bbb111cf8132537783b8e96c} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{F}]{function }\end{DoxyParamCaption})}
+
+
+
+Construct the thread from a functor with no argument. 
+
+This constructor works for function objects, as well as free functions.
+
+Use this constructor for this kind of function\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ function();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/\ or\ -\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Functor}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ operator()();}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ Note\+: this does {\itshape not} run the thread, use \doxylink{a01905_a74f75a9e86e1eb47479496314048b5f6}{launch()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Functor or free function to use as the entry point of the thread \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01905_a719b2cc067d92d52c35064a49d850a53}\label{a01905_a719b2cc067d92d52c35064a49d850a53} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename F , typename A $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{F}]{function,  }\item[{A}]{argument }\end{DoxyParamCaption})}
+
+
+
+Construct the thread from a functor with an argument. 
+
+This constructor works for function objects, as well as free functions. It is a template, which means that the argument can have any type (int, std\+::string, void\texorpdfstring{$\ast$}{*}, Toto, ...).
+
+Use this constructor for this kind of function\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ function(\textcolor{keywordtype}{int}\ arg);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/\ or\ -\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Functor}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ operator()(std::string\ arg);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ Note\+: this does {\itshape not} run the thread, use \doxylink{a01905_a74f75a9e86e1eb47479496314048b5f6}{launch()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Functor or free function to use as the entry point of the thread \\
+\hline
+{\em argument} & argument to forward to the function \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01905_aa9f473c8cbb078900c62b1fd14a83a34}\label{a01905_aa9f473c8cbb078900c62b1fd14a83a34} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{void(C\+::\texorpdfstring{$\ast$}{*})()}]{function,  }\item[{C \texorpdfstring{$\ast$}{*}}]{object }\end{DoxyParamCaption})}
+
+
+
+Construct the thread from a member function and an object. 
+
+This constructor is a template, which means that you can use it with any class. Use this constructor for this kind of function\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyClass}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ function();}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ Note\+: this does {\itshape not} run the thread, use \doxylink{a01905_a74f75a9e86e1eb47479496314048b5f6}{launch()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Entry point of the thread \\
+\hline
+{\em object} & Pointer to the object to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01905_af77942fc1730af7c31bc4c3a913a9c1d}\label{a01905_af77942fc1730af7c31bc4c3a913a9c1d} 
+\index{sf::Thread@{sf::Thread}!````~Thread@{\texorpdfstring{$\sim$}{\string~}Thread}}
+\index{````~Thread@{\texorpdfstring{$\sim$}{\string~}Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Thread()}{\string~Thread()}}
+{\footnotesize\ttfamily sf\+::\+Thread\+::\texorpdfstring{$\sim$}{\string~}\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+This destructor calls \doxylink{a01905_a724b1f94c2d54f84280f2f78bde95fa0}{wait()}, so that the internal thread cannot survive after its \doxylink{a01905}{sf\+::\+Thread} instance is destroyed. \Hypertarget{a01905_a00b88f036de66eb63765f4c12ceb6870}\label{a01905_a00b88f036de66eb63765f4c12ceb6870} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{F}]{functor }\end{DoxyParamCaption})}
+
+\Hypertarget{a01905_a719b2cc067d92d52c35064a49d850a53}\label{a01905_a719b2cc067d92d52c35064a49d850a53} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename F , typename A $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{F}]{function,  }\item[{A}]{argument }\end{DoxyParamCaption})}
+
+\Hypertarget{a01905_aa9f473c8cbb078900c62b1fd14a83a34}\label{a01905_aa9f473c8cbb078900c62b1fd14a83a34} 
+\index{sf::Thread@{sf::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+sf\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{void(C\+::\texorpdfstring{$\ast$}{*})()}]{function,  }\item[{C \texorpdfstring{$\ast$}{*}}]{object }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01905_a74f75a9e86e1eb47479496314048b5f6}\label{a01905_a74f75a9e86e1eb47479496314048b5f6} 
+\index{sf::Thread@{sf::Thread}!launch@{launch}}
+\index{launch@{launch}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{launch()}{launch()}}
+{\footnotesize\ttfamily void sf\+::\+Thread\+::launch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the thread. 
+
+This function starts the entry point passed to the thread\textquotesingle{}s constructor, and returns immediately. After this function returns, the thread\textquotesingle{}s function is running in parallel to the calling code. \Hypertarget{a01905_a593508379bd38e0b42ebf9f5a7e2829c}\label{a01905_a593508379bd38e0b42ebf9f5a7e2829c} 
+\index{sf::Thread@{sf::Thread}!run@{run}}
+\index{run@{run}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void sf\+::\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal entry point of the thread. 
+
+This function is called by the thread implementation. \Hypertarget{a01905_ad6b205d4f1ce38b8d44bba0f5501477c}\label{a01905_ad6b205d4f1ce38b8d44bba0f5501477c} 
+\index{sf::Thread@{sf::Thread}!terminate@{terminate}}
+\index{terminate@{terminate}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily void sf\+::\+Thread\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Terminate the thread. 
+
+This function immediately stops the thread, without waiting for its function to finish. Terminating a thread with this function is not safe, and can lead to local variables not being destroyed on some operating systems. You should rather try to make the thread function terminate by itself. \Hypertarget{a01905_a724b1f94c2d54f84280f2f78bde95fa0}\label{a01905_a724b1f94c2d54f84280f2f78bde95fa0} 
+\index{sf::Thread@{sf::Thread}!wait@{wait}}
+\index{wait@{wait}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void sf\+::\+Thread\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait until the thread finishes. 
+
+This function will block the execution until the thread\textquotesingle{}s function ends. Warning\+: if the thread function never ends, the calling thread will block forever. If this function is called from its owner thread, it returns without doing anything. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01905_a5ed4f3acfcb44de47de196437c39f9ef}\label{a01905_a5ed4f3acfcb44de47de196437c39f9ef} 
+\index{sf::Thread@{sf::Thread}!priv::ThreadImpl@{priv::ThreadImpl}}
+\index{priv::ThreadImpl@{priv::ThreadImpl}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{priv::ThreadImpl}{priv::ThreadImpl}}
+{\footnotesize\ttfamily friend class priv\+::\+Thread\+Impl\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01905_a8326ed80dfffb6a0d92560a86a665b4d}\label{a01905_a8326ed80dfffb6a0d92560a86a665b4d} 
+\index{sf::Thread@{sf::Thread}!m\_entryPoint@{m\_entryPoint}}
+\index{m\_entryPoint@{m\_entryPoint}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{m\_entryPoint}{m\_entryPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01909}{priv\+::\+Thread\+Func}}\texorpdfstring{$\ast$}{*} sf\+::\+Thread\+::m\+\_\+entry\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Abstraction of the function to run. 
+
+\Hypertarget{a01905_ac6d215423182b4e8c18db34ea6ae51fc}\label{a01905_ac6d215423182b4e8c18db34ea6ae51fc} 
+\index{sf::Thread@{sf::Thread}!m\_impl@{m\_impl}}
+\index{m\_impl@{m\_impl}!sf::Thread@{sf::Thread}}
+\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
+{\footnotesize\ttfamily priv\+::\+Thread\+Impl\texorpdfstring{$\ast$}{*} sf\+::\+Thread\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+OS-\/specific implementation of the thread. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00530}{Thread.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00533}{Thread.\+inl}}\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\doxysection{cpr\+::Error Class Reference}
+\hypertarget{a00757}{}\label{a00757}\index{cpr::Error@{cpr::Error}}
+
+
+{\ttfamily \#include $<$error.\+h$>$}
+
+
+
+Collaboration diagram for cpr\+::Error\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00757_a91b5f112014a9f23e5071a344a7c0bc4}{Error}} ()=default
+\item 
+\mbox{\hyperlink{a00757_a22b1407a113d07d66c42378e44229af9}{Error}} (const std\+::int32\+\_\+t \&curl\+\_\+code, std\+::string \&\&p\+\_\+error\+\_\+message)
+\item 
+\mbox{\hyperlink{a00757_adcbaf96c2f3aa098abe04e256129c1d5}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{Error\+Code}} \mbox{\hyperlink{a00757_a02c15e2da471dfd1e472080dcb31a2b8}{code}} = \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae0aa021e21dddbd6d8cecec71e9cf564}{Error\+Code\+::\+OK}}
+\item 
+std\+::string \mbox{\hyperlink{a00757_aaee7ca3bc002437f0e177762082fbc84}{message}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{Error\+Code}} \mbox{\hyperlink{a00757_ab6442a0b1252d94ffde09d3805a75d78}{get\+Error\+Code\+For\+Curl\+Error}} (std\+::int32\+\_\+t curl\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00757_a91b5f112014a9f23e5071a344a7c0bc4}\label{a00757_a91b5f112014a9f23e5071a344a7c0bc4} 
+\index{cpr::Error@{cpr::Error}!Error@{Error}}
+\index{Error@{Error}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cpr\+::\+Error\+::\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00757_a22b1407a113d07d66c42378e44229af9}\label{a00757_a22b1407a113d07d66c42378e44229af9} 
+\index{cpr::Error@{cpr::Error}!Error@{Error}}
+\index{Error@{Error}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cpr\+::\+Error\+::\+Error (\begin{DoxyParamCaption}\item[{const std\+::int32\+\_\+t \&}]{curl\+\_\+code,  }\item[{std\+::string \&\&}]{p\+\_\+error\+\_\+message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00757_ab6442a0b1252d94ffde09d3805a75d78}\label{a00757_ab6442a0b1252d94ffde09d3805a75d78} 
+\index{cpr::Error@{cpr::Error}!getErrorCodeForCurlError@{getErrorCodeForCurlError}}
+\index{getErrorCodeForCurlError@{getErrorCodeForCurlError}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{getErrorCodeForCurlError()}{getErrorCodeForCurlError()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{Error\+Code}} cpr\+::\+Error\+::get\+Error\+Code\+For\+Curl\+Error (\begin{DoxyParamCaption}\item[{std\+::int32\+\_\+t}]{curl\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{a00757_adcbaf96c2f3aa098abe04e256129c1d5}\label{a00757_adcbaf96c2f3aa098abe04e256129c1d5} 
+\index{cpr::Error@{cpr::Error}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily cpr\+::\+Error\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00757_a02c15e2da471dfd1e472080dcb31a2b8}\label{a00757_a02c15e2da471dfd1e472080dcb31a2b8} 
+\index{cpr::Error@{cpr::Error}!code@{code}}
+\index{code@{code}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{Error\+Code}} cpr\+::\+Error\+::code = \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae0aa021e21dddbd6d8cecec71e9cf564}{Error\+Code\+::\+OK}}}
+
+\Hypertarget{a00757_aaee7ca3bc002437f0e177762082fbc84}\label{a00757_aaee7ca3bc002437f0e177762082fbc84} 
+\index{cpr::Error@{cpr::Error}!message@{message}}
+\index{message@{message}!cpr::Error@{cpr::Error}}
+\doxysubsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Error\+::message \{\}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00050}{error.\+h}}\end{DoxyCompactItemize}

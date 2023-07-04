@@ -1,0 +1,1204 @@
+\doxysection{sf\+::Music Class Reference}
+\hypertarget{a01613}{}\label{a01613}\index{sf::Music@{sf::Music}}
+
+
+Streamed music played from an audio file.  
+
+
+
+
+{\ttfamily \#include $<$Music.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Music\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Music\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01617}{Span}}
+\begin{DoxyCompactList}\small\item\em Structure defining a time range using the template type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} \{ \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a}{Stopped}}
+, \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41}{Paused}}
+, \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18}{Playing}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the sound source states. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{a01617}{Span}}$<$ \mbox{\hyperlink{a01933}{Time}} $>$ \mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{Time\+Span}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation}} () const
+\begin{DoxyCompactList}\small\item\em Get the attenuation factor of the sound. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01669_a1f70933912dd9498f4dc99feefed27f3}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Return the number of channels of the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01613_a288ef6f552a136b0e56952dcada3d672}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the total duration of the music. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01669_a49d263f9bbaefec4b019bd05fda59b25}{get\+Loop}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether or not the stream is in loop mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{Time\+Span}} \mbox{\hyperlink{a01613_aae3451cad5c16ee6a6e124e62ed61361}{get\+Loop\+Points}} () const
+\begin{DoxyCompactList}\small\item\em Get the positions of the of the sound\textquotesingle{}s looping sequence. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance}} () const
+\begin{DoxyCompactList}\small\item\em Get the minimum distance of the sound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a4736acc2c802f927544c9ce52a44a9e4}{get\+Pitch}} () const
+\begin{DoxyCompactList}\small\item\em Get the pitch of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01669_ae288f3c72edbad9cc7ee938ce5b907c1}{get\+Playing\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the current playing position of the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \mbox{\hyperlink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01669_a7da448dc40d81a33b8dc555fbf0d3fbf}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the stream sample rate of the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} \mbox{\hyperlink{a01669_a64a8193ed728da37c115c65de015849f}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the current status of the stream (stopped, paused, playing) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01665_a04243fb5edf64561689b1d58953fc4ce}{get\+Volume}} () const
+\begin{DoxyCompactList}\small\item\em Get the volume of the sound. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}{is\+Relative\+To\+Listener}} () const
+\begin{DoxyCompactList}\small\item\em Tell whether the sound\textquotesingle{}s position is relative to the listener or is absolute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01613_a0bc787d8e022b3a9b89cf2c28befd42e}{Music}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01613_ae93b21bcf28ff0b5fec458039111386e}{open\+From\+Memory}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01613_a4e55d1910a26858b44778c26b237d673}{open\+From\+Stream}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file in a custom stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_a932ff181e661503cad288b4bb6fe45ca}{pause}} ()
+\begin{DoxyCompactList}\small\item\em Pause the audio stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_afdc08b69cab5f243d9324940a85a1144}{play}} ()
+\begin{DoxyCompactList}\small\item\em Start or resume playing the audio stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation}} (float attenuation)
+\begin{DoxyCompactList}\small\item\em Set the attenuation factor of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_a43fade018ffba7e4f847a9f00b353f3d}{set\+Loop}} (bool loop)
+\begin{DoxyCompactList}\small\item\em Set whether or not the stream should loop after reaching the end. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01613_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points}} (\mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{Time\+Span}} time\+Points)
+\begin{DoxyCompactList}\small\item\em Sets the beginning and end of the sound\textquotesingle{}s looping sequence using \doxylink{a01933}{sf\+::\+Time}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance}} (float distance)
+\begin{DoxyCompactList}\small\item\em Set the minimum distance of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{set\+Pitch}} (float pitch)
+\begin{DoxyCompactList}\small\item\em Set the pitch of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_af416a5f84c8750d2acb9821d78bc8646}{set\+Playing\+Offset}} (\mbox{\hyperlink{a01933}{Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current playing position of the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a17ba9ed01925395652181a7b2a7d3aef}{set\+Position}} (const \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \&position)
+\begin{DoxyCompactList}\small\item\em Set the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}{set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the 3D position of the sound in the audio scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_ac478a8b813faf7dd575635b102081d0d}{set\+Relative\+To\+Listener}} (bool relative)
+\begin{DoxyCompactList}\small\item\em Make the sound\textquotesingle{}s position relative to the listener or absolute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}{set\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Set the volume of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_a16cc6a0404b32e42c4dce184bb94d0f4}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop playing the audio stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01613_a4c65860fed2f01d0eaa6c4199870414b}{\texorpdfstring{$\sim$}{\string~}\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{a01669_a4972a886632d99a9fe2c3d8037caf261a2f2c638731fdff0d6fe4e3e82b6f6146}{No\+Loop}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01669_a9c351711198ee1aa77c2fefd3ced4d2c}{initialize}} (unsigned int channel\+Count, unsigned int sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Define the audio stream parameters. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{a01613_aca1bcb4e5d56a854133e74bd86374463}{on\+Get\+Data}} (\mbox{\hyperlink{a01673}{Chunk}} \&data)
+\begin{DoxyCompactList}\small\item\em Request a new chunk of audio samples from the stream source. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{a01613_aa68a64bdaf5d16e9ed64f202f5c45e03}{on\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source to the loop offset. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01613_a15119cc0419c16bb334fa0698699c02e}{on\+Seek}} (\mbox{\hyperlink{a01933}{Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01665_a0223cef4b1c587e6e1e17b4c92c4479c}{m\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em Open\+AL source identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}{Buffer\+Count}} = 3
+, \mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a44b14ec3fd6194cf72c8fecef516f98b}{Buffer\+Retries}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01669_ac0fdfe8ec3e5b662f0b7956ba894f5bc}{clear\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Clear all the audio buffers and empty the playing queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01669_ad3e04f1b4df1fbe0ffd474f47ed91f4a}{fill\+And\+Push\+Buffer}} (unsigned int buffer\+Num, bool immediate\+Loop=false)
+\begin{DoxyCompactList}\small\item\em Fill a new buffer with audio samples, and append it to the playing queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01669_abf8cdcc65da5e31c14f9bddccb53fb72}{fill\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Fill the audio buffers and put them all into the playing queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01613_a5da7929d371fda9bb5fdbb0ee0fdce5f}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new music. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01613_aa6e80347f64dde5dcd4a260e42358ac5}{samples\+To\+Time}} (\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} samples) const
+\begin{DoxyCompactList}\small\item\em Helper to convert a sample position to an \doxylink{a01933}{sf\+::\+Time}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01669_a08c54af1f433424ac627d1a30021f5e9}{stream\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Function called as the entry point of the thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01613_a172e5bfd83235c471c96004f93c4bd0d}{time\+To\+Samples}} (\mbox{\hyperlink{a01933}{Time}} position) const
+\begin{DoxyCompactList}\small\item\em Helper to convert an \doxylink{a01933}{sf\+::\+Time} to a sample position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01669_a3a7fbefda7d08527177acd1f6e63487b}{m\+\_\+buffers}} \mbox{[}\mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}{Buffer\+Count}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01625}{Sound} buffers used to store temporary audio data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \mbox{\hyperlink{a01669_aeab61fab14a1e1ac87f7a1c98d3cf73f}{m\+\_\+buffer\+Seeks}} \mbox{[}\mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}{Buffer\+Count}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em If buffer is an \"{}end buffer\"{}, holds next seek position, else No\+Loop. For play offset calculation. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01669_ad7c1a66f24be5e58ed275fd06e24294e}{m\+\_\+channel\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of channels (1 = mono, 2 = stereo, ...) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01605}{Input\+Sound\+File}} \mbox{\hyperlink{a01613_a902ed2518e4597b0d22c47c6ab418b08}{m\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em The streamed music file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01669_a5c91434e0f1c2e4445e01b3de578af49}{m\+\_\+format}}
+\begin{DoxyCompactList}\small\item\em Format of the internal sound buffers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01669_afa20ca6cbb29ee2355d986a3faa7a38f}{m\+\_\+is\+Streaming}}
+\begin{DoxyCompactList}\small\item\em Streaming state (true = playing, false = stopped) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01669_a32ee01b984f74c9e0857d676bc33ad9f}{m\+\_\+loop}}
+\begin{DoxyCompactList}\small\item\em Loop flag (true to loop, false to play once) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01617}{Span}}$<$ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} $>$ \mbox{\hyperlink{a01613_abd4117b6ab142d040ceee626fb15e12f}{m\+\_\+loop\+Span}}
+\begin{DoxyCompactList}\small\item\em Loop Range Specifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01893}{Mutex}} \mbox{\hyperlink{a01613_a47cf4b92edf2f2e936a91b8a5cfa6824}{m\+\_\+mutex}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01893}{Mutex} protecting the data. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01669_ac6cf65793e01b6b5f6bf6b555b1c1dfd}{m\+\_\+sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em Frequency (samples / second) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ \mbox{\hyperlink{a01613_af9a047420c96cf7d3013404b6125c5c3}{m\+\_\+samples}}
+\begin{DoxyCompactList}\small\item\em Temporary buffer of samples. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01669_a7365a2ec97b89cec15577b31461ff4be}{m\+\_\+samples\+Processed}}
+\begin{DoxyCompactList}\small\item\em Number of buffers processed since beginning of the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01905}{Thread}} \mbox{\hyperlink{a01669_a004d1b16c81698be55779efe0f2b5ed3}{m\+\_\+thread}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01905}{Thread} running the background tasks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01893}{Mutex}} \mbox{\hyperlink{a01669_a134d03a5d3075f6a98a85a2edff9ac7d}{m\+\_\+thread\+Mutex}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01905}{Thread} mutex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} \mbox{\hyperlink{a01669_a2e06f2688d7fcf777a9779168067f302}{m\+\_\+thread\+Start\+State}}
+\begin{DoxyCompactList}\small\item\em State the thread starts in (Playing, Paused, Stopped) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Streamed music played from an audio file. 
+
+Musics are sounds that are streamed rather than completely loaded in memory. This is especially useful for compressed musics that usually take hundreds of MB when they are uncompressed\+: by streaming it instead of loading it entirely, you avoid saturating the memory and have almost no loading delay. This implies that the underlying resource (file, stream or memory buffer) must remain valid for the lifetime of the \doxylink{a01613}{sf\+::\+Music} object.
+
+Apart from that, a \doxylink{a01613}{sf\+::\+Music} has almost the same features as the \doxylink{a01629}{sf\+::\+Sound\+Buffer} / \doxylink{a01625}{sf\+::\+Sound} pair\+: you can play/pause/stop it, request its parameters (channels, sample rate), change the way it is played (pitch, volume, 3D position, ...), etc.
+
+As a sound stream, a music is played in its own thread in order not to block the rest of the program. This means that you can leave the music alone after calling \doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play()}, it will manage itself very well.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Declare\ a\ new\ music}}
+\DoxyCodeLine{\mbox{\hyperlink{a01613}{sf::Music}}\ music;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Open\ it\ from\ an\ audio\ file}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!music.\mbox{\hyperlink{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{openFromFile}}(\textcolor{stringliteral}{"{}music.ogg"{}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ error...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Change\ some\ parameters}}
+\DoxyCodeLine{music.\mbox{\hyperlink{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}{setPosition}}(0,\ 1,\ 10);\ \textcolor{comment}{//\ change\ its\ 3D\ position}}
+\DoxyCodeLine{music.\mbox{\hyperlink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{setPitch}}(2);\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ increase\ the\ pitch}}
+\DoxyCodeLine{music.\mbox{\hyperlink{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}}(50);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reduce\ the\ volume}}
+\DoxyCodeLine{music.\mbox{\hyperlink{a01669_a43fade018ffba7e4f847a9f00b353f3d}{setLoop}}(\textcolor{keyword}{true});\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ it\ loop}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Play\ it}}
+\DoxyCodeLine{music.\mbox{\hyperlink{a01669_afdc08b69cab5f243d9324940a85a1144}{play}}();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01625}{sf\+::\+Sound}, \doxylink{a01669}{sf\+::\+Sound\+Stream} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01613_a87625c59543125c81c380aa37aeb93e7}\label{a01613_a87625c59543125c81c380aa37aeb93e7} 
+\index{sf::Music@{sf::Music}!TimeSpan@{TimeSpan}}
+\index{TimeSpan@{TimeSpan}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{TimeSpan}{TimeSpan}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a01617}{Span}}$<$\mbox{\hyperlink{a01933}{Time}}$>$ \mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{sf\+::\+Music\+::\+Time\+Span}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01669_a4972a886632d99a9fe2c3d8037caf261}\label{a01669_a4972a886632d99a9fe2c3d8037caf261} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoLoop@{NoLoop}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!NoLoop@{NoLoop}}}\Hypertarget{a01669_a4972a886632d99a9fe2c3d8037caf261a2f2c638731fdff0d6fe4e3e82b6f6146}\label{a01669_a4972a886632d99a9fe2c3d8037caf261a2f2c638731fdff0d6fe4e3e82b6f6146} 
+No\+Loop&\"{}\+Invalid\"{} end\+Seeks value, telling us to continue uninterrupted \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01669_a33a9cc859686c3ebdb61076669baf386}\label{a01669_a33a9cc859686c3ebdb61076669baf386} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferCount@{BufferCount}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!BufferCount@{BufferCount}}}\Hypertarget{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}\label{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5} 
+Buffer\+Count&Number of audio buffers used by the streaming loop. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BufferRetries@{BufferRetries}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!BufferRetries@{BufferRetries}}}\Hypertarget{a01669_a33a9cc859686c3ebdb61076669baf386a44b14ec3fd6194cf72c8fecef516f98b}\label{a01669_a33a9cc859686c3ebdb61076669baf386a44b14ec3fd6194cf72c8fecef516f98b} 
+Buffer\+Retries&Number of retries (excluding initial try) for \doxylink{a01669_a968ec024a6e45490962c8a1121cb7c5f}{on\+Get\+Data()} \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03}\label{a01665_ac43af72c98c077500b239bc75b812f03} 
+\index{sf::Music@{sf::Music}!Status@{Status}}
+\index{Status@{Status}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{sf\+::\+Sound\+Source\+::\+Status}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Enumeration of the sound source states. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stopped@{Stopped}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!Stopped@{Stopped}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a}\label{a01665_ac43af72c98c077500b239bc75b812f03adabb01e8aa85b2f54b344890addf764a} 
+Stopped&\doxylink{a01625}{Sound} is not playing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paused@{Paused}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!Paused@{Paused}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41}\label{a01665_ac43af72c98c077500b239bc75b812f03ac3ca1fcc0394267c9bdbe3dc0a8a7e41} 
+Paused&\doxylink{a01625}{Sound} is paused. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Playing@{Playing}!sf::Music@{sf::Music}}\index{sf::Music@{sf::Music}!Playing@{Playing}}}\Hypertarget{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18}\label{a01665_ac43af72c98c077500b239bc75b812f03af07bdea9f70ef7606dfc9f955beeee18} 
+Playing&\doxylink{a01625}{Sound} is playing. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01613_a0bc787d8e022b3a9b89cf2c28befd42e}\label{a01613_a0bc787d8e022b3a9b89cf2c28befd42e} 
+\index{sf::Music@{sf::Music}!Music@{Music}}
+\index{Music@{Music}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{Music()}{Music()}}
+{\footnotesize\ttfamily sf\+::\+Music\+::\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01613_a4c65860fed2f01d0eaa6c4199870414b}\label{a01613_a4c65860fed2f01d0eaa6c4199870414b} 
+\index{sf::Music@{sf::Music}!````~Music@{\texorpdfstring{$\sim$}{\string~}Music}}
+\index{````~Music@{\texorpdfstring{$\sim$}{\string~}Music}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Music()}{\string~Music()}}
+{\footnotesize\ttfamily sf\+::\+Music\+::\texorpdfstring{$\sim$}{\string~}\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01669_ac0fdfe8ec3e5b662f0b7956ba894f5bc}\label{a01669_ac0fdfe8ec3e5b662f0b7956ba894f5bc} 
+\index{sf::Music@{sf::Music}!clearQueue@{clearQueue}}
+\index{clearQueue@{clearQueue}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{clearQueue()}{clearQueue()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::clear\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Clear all the audio buffers and empty the playing queue. 
+
+This function is called when the stream is stopped. \Hypertarget{a01669_ad3e04f1b4df1fbe0ffd474f47ed91f4a}\label{a01669_ad3e04f1b4df1fbe0ffd474f47ed91f4a} 
+\index{sf::Music@{sf::Music}!fillAndPushBuffer@{fillAndPushBuffer}}
+\index{fillAndPushBuffer@{fillAndPushBuffer}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{fillAndPushBuffer()}{fillAndPushBuffer()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+And\+Push\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{buffer\+Num,  }\item[{bool}]{immediate\+Loop = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Fill a new buffer with audio samples, and append it to the playing queue. 
+
+This function is called as soon as a buffer has been fully consumed; it fills it again and inserts it back into the playing queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Num} & Number of the buffer to fill (in \mbox{[}0, Buffer\+Count\mbox{]}) \\
+\hline
+{\em immediate\+Loop} & Treat empty buffers as spent, and act on loops immediately\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the stream source has requested to stop, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01669_abf8cdcc65da5e31c14f9bddccb53fb72}\label{a01669_abf8cdcc65da5e31c14f9bddccb53fb72} 
+\index{sf::Music@{sf::Music}!fillQueue@{fillQueue}}
+\index{fillQueue@{fillQueue}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{fillQueue()}{fillQueue()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::fill\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Fill the audio buffers and put them all into the playing queue. 
+
+This function is called when playing starts and the playing queue is empty.
+
+\begin{DoxyReturn}{Returns}
+True if the derived class has requested to stop, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}\label{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9} 
+\index{sf::Music@{sf::Music}!getAttenuation@{getAttenuation}}
+\index{getAttenuation@{getAttenuation}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getAttenuation()}{getAttenuation()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Attenuation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the attenuation factor of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Attenuation factor of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation}, \doxylink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_a1f70933912dd9498f4dc99feefed27f3}\label{a01669_a1f70933912dd9498f4dc99feefed27f3} 
+\index{sf::Music@{sf::Music}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Return the number of channels of the stream. 
+
+1 channel means a mono sound, 2 means stereo, etc.
+
+\begin{DoxyReturn}{Returns}
+Number of channels 
+\end{DoxyReturn}
+\Hypertarget{a01613_a288ef6f552a136b0e56952dcada3d672}\label{a01613_a288ef6f552a136b0e56952dcada3d672} 
+\index{sf::Music@{sf::Music}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Music\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total duration of the music. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01613}{Music} duration 
+\end{DoxyReturn}
+\Hypertarget{a01669_a49d263f9bbaefec4b019bd05fda59b25}\label{a01669_a49d263f9bbaefec4b019bd05fda59b25} 
+\index{sf::Music@{sf::Music}!getLoop@{getLoop}}
+\index{getLoop@{getLoop}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getLoop()}{getLoop()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::get\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Tell whether or not the stream is in loop mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the stream is looping, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_a43fade018ffba7e4f847a9f00b353f3d}{set\+Loop} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_aae3451cad5c16ee6a6e124e62ed61361}\label{a01613_aae3451cad5c16ee6a6e124e62ed61361} 
+\index{sf::Music@{sf::Music}!getLoopPoints@{getLoopPoints}}
+\index{getLoopPoints@{getLoopPoints}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getLoopPoints()}{getLoopPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{Time\+Span}} sf\+::\+Music\+::get\+Loop\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the positions of the of the sound\textquotesingle{}s looping sequence. 
+
+\begin{DoxyReturn}{Returns}
+Loop \doxylink{a01933}{Time} position class.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Since \doxylink{a01613_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points()} performs some adjustments on the provided values and rounds them to internal samples, a call to \doxylink{a01613_aae3451cad5c16ee6a6e124e62ed61361}{get\+Loop\+Points()} is not guaranteed to return the same times passed into a previous call to \doxylink{a01613_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points()}. However, it is guaranteed to return times that will map to the valid internal samples of this \doxylink{a01613}{Music} if they are later passed to \doxylink{a01613_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points()}.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01613_ae7b339f0a957dfad045f3f28083a015e}{set\+Loop\+Points} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a605ca7f359ec1c36fcccdcd4696562ac}\label{a01665_a605ca7f359ec1c36fcccdcd4696562ac} 
+\index{sf::Music@{sf::Music}!getMinDistance@{getMinDistance}}
+\index{getMinDistance@{getMinDistance}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getMinDistance()}{getMinDistance()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Min\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the minimum distance of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Minimum distance of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance}, \doxylink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a4736acc2c802f927544c9ce52a44a9e4}\label{a01665_a4736acc2c802f927544c9ce52a44a9e4} 
+\index{sf::Music@{sf::Music}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the pitch of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Pitch of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{set\+Pitch} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_ae288f3c72edbad9cc7ee938ce5b907c1}\label{a01669_ae288f3c72edbad9cc7ee938ce5b907c1} 
+\index{sf::Music@{sf::Music}!getPlayingOffset@{getPlayingOffset}}
+\index{getPlayingOffset@{getPlayingOffset}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getPlayingOffset()}{getPlayingOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Sound\+Stream\+::get\+Playing\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the current playing position of the stream. 
+
+\begin{DoxyReturn}{Returns}
+Current playing position, from the beginning of the stream
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_af416a5f84c8750d2acb9821d78bc8646}{set\+Playing\+Offset} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a8d199521f55550c7a3b2b0f6950dffa1}\label{a01665_a8d199521f55550c7a3b2b0f6950dffa1} 
+\index{sf::Music@{sf::Music}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} sf\+::\+Sound\+Source\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the 3D position of the sound in the audio scene. 
+
+\begin{DoxyReturn}{Returns}
+Position of the sound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_a7da448dc40d81a33b8dc555fbf0d3fbf}\label{a01669_a7da448dc40d81a33b8dc555fbf0d3fbf} 
+\index{sf::Music@{sf::Music}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the stream sample rate of the stream. 
+
+The sample rate is the number of audio samples played per second. The higher, the better the quality.
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in number of samples per second 
+\end{DoxyReturn}
+\Hypertarget{a01669_a64a8193ed728da37c115c65de015849f}\label{a01669_a64a8193ed728da37c115c65de015849f} 
+\index{sf::Music@{sf::Music}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} sf\+::\+Sound\+Stream\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Get the current status of the stream (stopped, paused, playing) 
+
+\begin{DoxyReturn}{Returns}
+Current status 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{a01665_aa8d313c31b968159582a999aa66e5ed7}{sf\+::\+Sound\+Source}}.
+
+\Hypertarget{a01665_a04243fb5edf64561689b1d58953fc4ce}\label{a01665_a04243fb5edf64561689b1d58953fc4ce} 
+\index{sf::Music@{sf::Music}!getVolume@{getVolume}}
+\index{getVolume@{getVolume}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}}
+{\footnotesize\ttfamily float sf\+::\+Sound\+Source\+::get\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the volume of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Volume of the sound, in the range \mbox{[}0, 100\mbox{]}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}{set\+Volume} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_a5da7929d371fda9bb5fdbb0ee0fdce5f}\label{a01613_a5da7929d371fda9bb5fdbb0ee0fdce5f} 
+\index{sf::Music@{sf::Music}!initialize@{initialize}}
+\index{initialize@{initialize}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Music\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the internal state after loading a new music. 
+
+\Hypertarget{a01669_a9c351711198ee1aa77c2fefd3ced4d2c}\label{a01669_a9c351711198ee1aa77c2fefd3ced4d2c} 
+\index{sf::Music@{sf::Music}!initialize@{initialize}}
+\index{initialize@{initialize}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::initialize (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Count,  }\item[{unsigned int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Define the audio stream parameters. 
+
+This function must be called by derived classes as soon as they know the audio settings of the stream to play. Any attempt to manipulate the stream (\doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play()}, ...) before calling this function will fail. It can be called multiple times if the settings of the audio stream change, but only when the stream is stopped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel\+Count} & Number of channels of the stream \\
+\hline
+{\em sample\+Rate} & Sample rate, in samples per second \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}\label{a01665_adcdb4ef32c2f4481d34aff0b5c31534b} 
+\index{sf::Music@{sf::Music}!isRelativeToListener@{isRelativeToListener}}
+\index{isRelativeToListener@{isRelativeToListener}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{isRelativeToListener()}{isRelativeToListener()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Source\+::is\+Relative\+To\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Tell whether the sound\textquotesingle{}s position is relative to the listener or is absolute. 
+
+\begin{DoxyReturn}{Returns}
+True if the position is relative, false if it\textquotesingle{}s absolute
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_ac478a8b813faf7dd575635b102081d0d}{set\+Relative\+To\+Listener} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_aca1bcb4e5d56a854133e74bd86374463}\label{a01613_aca1bcb4e5d56a854133e74bd86374463} 
+\index{sf::Music@{sf::Music}!onGetData@{onGetData}}
+\index{onGetData@{onGetData}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{onGetData()}{onGetData()}}
+{\footnotesize\ttfamily virtual bool sf\+::\+Music\+::on\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01673}{Chunk}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Request a new chunk of audio samples from the stream source. 
+
+This function fills the chunk from the next samples to read from the audio file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Chunk of data to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue playback, false to stop 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01669_a968ec024a6e45490962c8a1121cb7c5f}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01613_aa68a64bdaf5d16e9ed64f202f5c45e03}\label{a01613_aa68a64bdaf5d16e9ed64f202f5c45e03} 
+\index{sf::Music@{sf::Music}!onLoop@{onLoop}}
+\index{onLoop@{onLoop}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{onLoop()}{onLoop()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Music\+::on\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Change the current playing position in the stream source to the loop offset. 
+
+This is called by the underlying \doxylink{a01669}{Sound\+Stream} whenever it needs us to reset the seek position for a loop. We then determine whether we are looping on a loop point or the end-\/of-\/file, perform the seek, and return the new position.
+
+\begin{DoxyReturn}{Returns}
+The seek position after looping (or -\/1 if there\textquotesingle{}s no loop) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{a01669_a3f717d18846f261fc375d71d6c7e41da}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01613_a15119cc0419c16bb334fa0698699c02e}\label{a01613_a15119cc0419c16bb334fa0698699c02e} 
+\index{sf::Music@{sf::Music}!onSeek@{onSeek}}
+\index{onSeek@{onSeek}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{onSeek()}{onSeek()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Music\+::on\+Seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{time\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Change the current playing position in the stream source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Offset} & New playing position, from the beginning of the music \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01669_a907036dd2ca7d3af5ead316e54b75997}{sf\+::\+Sound\+Stream}}.
+
+\Hypertarget{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0}\label{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0} 
+\index{sf::Music@{sf::Music}!openFromFile@{openFromFile}}
+\index{openFromFile@{openFromFile}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{openFromFile()}{openFromFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Music\+::open\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a music from an audio file. 
+
+This function doesn\textquotesingle{}t start playing the music (call \doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+\begin{DoxyWarning}{Warning}
+Since the music is not loaded at once but rather streamed continuously, the file must remain accessible until the \doxylink{a01613}{sf\+::\+Music} object loads a new music or is destroyed.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the music file to open\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01613_ae93b21bcf28ff0b5fec458039111386e}{open\+From\+Memory}, \doxylink{a01613_a4e55d1910a26858b44778c26b237d673}{open\+From\+Stream} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_ae93b21bcf28ff0b5fec458039111386e}\label{a01613_ae93b21bcf28ff0b5fec458039111386e} 
+\index{sf::Music@{sf::Music}!openFromMemory@{openFromMemory}}
+\index{openFromMemory@{openFromMemory}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{openFromMemory()}{openFromMemory()}}
+{\footnotesize\ttfamily bool sf\+::\+Music\+::open\+From\+Memory (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Open a music from an audio file in memory. 
+
+This function doesn\textquotesingle{}t start playing the music (call \doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+\begin{DoxyWarning}{Warning}
+Since the music is not loaded at once but rather streamed continuously, the {\itshape data} buffer must remain accessible until the \doxylink{a01613}{sf\+::\+Music} object loads a new music or is destroyed. That is, you can\textquotesingle{}t deallocate the buffer right after calling this function.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\+From\+File}, \doxylink{a01613_a4e55d1910a26858b44778c26b237d673}{open\+From\+Stream} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_a4e55d1910a26858b44778c26b237d673}\label{a01613_a4e55d1910a26858b44778c26b237d673} 
+\index{sf::Music@{sf::Music}!openFromStream@{openFromStream}}
+\index{openFromStream@{openFromStream}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{openFromStream()}{openFromStream()}}
+{\footnotesize\ttfamily bool sf\+::\+Music\+::open\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Open a music from an audio file in a custom stream. 
+
+This function doesn\textquotesingle{}t start playing the music (call \doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+\begin{DoxyWarning}{Warning}
+Since the music is not loaded at once but rather streamed continuously, the {\itshape stream} must remain accessible until the \doxylink{a01613}{sf\+::\+Music} object loads a new music or is destroyed.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01613_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\+From\+File}, \doxylink{a01613_ae93b21bcf28ff0b5fec458039111386e}{open\+From\+Memory} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_a932ff181e661503cad288b4bb6fe45ca}\label{a01669_a932ff181e661503cad288b4bb6fe45ca} 
+\index{sf::Music@{sf::Music}!pause@{pause}}
+\index{pause@{pause}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Pause the audio stream. 
+
+This function pauses the stream if it was playing, otherwise (stream already paused or stopped) it has no effect.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play}, \doxylink{a01669_a16cc6a0404b32e42c4dce184bb94d0f4}{stop} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{a01665_a21553d4e8fcf136231dd8c7ad4630aba}{sf\+::\+Sound\+Source}}.
+
+\Hypertarget{a01669_afdc08b69cab5f243d9324940a85a1144}\label{a01669_afdc08b69cab5f243d9324940a85a1144} 
+\index{sf::Music@{sf::Music}!play@{play}}
+\index{play@{play}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Start or resume playing the audio stream. 
+
+This function starts the stream if it was stopped, resumes it if it was paused, and restarts it from the beginning if it was already playing. This function uses its own thread so that it doesn\textquotesingle{}t block the rest of the program while the stream is played.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_a932ff181e661503cad288b4bb6fe45ca}{pause}, \doxylink{a01669_a16cc6a0404b32e42c4dce184bb94d0f4}{stop} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{a01665_a6e1bbb1f247ed8743faf3b1ed6f2bc21}{sf\+::\+Sound\+Source}}.
+
+\Hypertarget{a01613_aa6e80347f64dde5dcd4a260e42358ac5}\label{a01613_aa6e80347f64dde5dcd4a260e42358ac5} 
+\index{sf::Music@{sf::Music}!samplesToTime@{samplesToTime}}
+\index{samplesToTime@{samplesToTime}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{samplesToTime()}{samplesToTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Music\+::samples\+To\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{samples }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper to convert a sample position to an \doxylink{a01933}{sf\+::\+Time}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Sample count to convert to \doxylink{a01933}{Time}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{a01933}{Time} position of the given sample 
+\end{DoxyReturn}
+\Hypertarget{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}\label{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626} 
+\index{sf::Music@{sf::Music}!setAttenuation@{setAttenuation}}
+\index{setAttenuation@{setAttenuation}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setAttenuation()}{setAttenuation()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Attenuation (\begin{DoxyParamCaption}\item[{float}]{attenuation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the attenuation factor of the sound. 
+
+The attenuation is a multiplicative factor which makes the sound more or less loud according to its distance from the listener. An attenuation of 0 will produce a non-\/attenuated sound, i.\+e. its volume will always be the same whether it is heard from near or from far. On the other hand, an attenuation value such as 100 will make the sound fade out very quickly as it gets further from the listener. The default value of the attenuation is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em attenuation} & New attenuation factor of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8ad7dafb4f1b4afbc638cebe24f48cc9}{get\+Attenuation}, \doxylink{a01665_a75bbc2c34addc8b25a14edb908508afe}{set\+Min\+Distance} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_a43fade018ffba7e4f847a9f00b353f3d}\label{a01669_a43fade018ffba7e4f847a9f00b353f3d} 
+\index{sf::Music@{sf::Music}!setLoop@{setLoop}}
+\index{setLoop@{setLoop}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setLoop()}{setLoop()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::set\+Loop (\begin{DoxyParamCaption}\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set whether or not the stream should loop after reaching the end. 
+
+If set, the stream will restart from beginning after reaching the end and so on, until it is stopped or set\+Loop(false) is called. The default looping state for streams is false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & True to play in loop, false to play once\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_a49d263f9bbaefec4b019bd05fda59b25}{get\+Loop} 
+\end{DoxySeeAlso}
+\Hypertarget{a01613_ae7b339f0a957dfad045f3f28083a015e}\label{a01613_ae7b339f0a957dfad045f3f28083a015e} 
+\index{sf::Music@{sf::Music}!setLoopPoints@{setLoopPoints}}
+\index{setLoopPoints@{setLoopPoints}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setLoopPoints()}{setLoopPoints()}}
+{\footnotesize\ttfamily void sf\+::\+Music\+::set\+Loop\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01613_a87625c59543125c81c380aa37aeb93e7}{Time\+Span}}}]{time\+Points }\end{DoxyParamCaption})}
+
+
+
+Sets the beginning and end of the sound\textquotesingle{}s looping sequence using \doxylink{a01933}{sf\+::\+Time}. 
+
+Loop points allow one to specify a pair of positions such that, when the music is enabled for looping, it will seamlessly seek to the beginning whenever it encounters the end. Valid ranges for time\+Points.\+offset and time\+Points.\+length are \mbox{[}0, Dur) and (0, Dur-\/offset\mbox{]} respectively, where Dur is the value returned by \doxylink{a01613_a288ef6f552a136b0e56952dcada3d672}{get\+Duration()}. Note that the EOF \"{}loop point\"{} from the end to the beginning of the stream is still honored, in case the caller seeks to a point after the end of the loop range. This function can be safely called at any point after a stream is opened, and will be applied to a playing sound without affecting the current playing offset.
+
+\begin{DoxyWarning}{Warning}
+Setting the loop points while the stream\textquotesingle{}s status is Paused will set its status to Stopped. The playing offset will be unaffected.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Points} & The definition of the loop. Can be any time points within the sound\textquotesingle{}s length\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01613_aae3451cad5c16ee6a6e124e62ed61361}{get\+Loop\+Points} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a75bbc2c34addc8b25a14edb908508afe}\label{a01665_a75bbc2c34addc8b25a14edb908508afe} 
+\index{sf::Music@{sf::Music}!setMinDistance@{setMinDistance}}
+\index{setMinDistance@{setMinDistance}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setMinDistance()}{setMinDistance()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Min\+Distance (\begin{DoxyParamCaption}\item[{float}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the minimum distance of the sound. 
+
+The \"{}minimum distance\"{} of a sound is the maximum distance at which it is heard at its maximum volume. Further than the minimum distance, it will start to fade out according to its attenuation factor. A value of 0 (\"{}inside the head of the listener\"{}) is an invalid value and is forbidden. The default value of the minimum distance is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & New minimum distance of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a605ca7f359ec1c36fcccdcd4696562ac}{get\+Min\+Distance}, \doxylink{a01665_aa2adff44cd2f8b4e3c7315d7c2a45626}{set\+Attenuation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}\label{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6} 
+\index{sf::Music@{sf::Music}!setPitch@{setPitch}}
+\index{setPitch@{setPitch}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setPitch()}{setPitch()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the pitch of the sound. 
+
+The pitch represents the perceived fundamental frequency of a sound; thus you can make a sound more acute or grave by changing its pitch. A side effect of changing the pitch is to modify the playing speed of the sound as well. The default value for the pitch is 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pitch} & New pitch to apply to the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a4736acc2c802f927544c9ce52a44a9e4}{get\+Pitch} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_af416a5f84c8750d2acb9821d78bc8646}\label{a01669_af416a5f84c8750d2acb9821d78bc8646} 
+\index{sf::Music@{sf::Music}!setPlayingOffset@{setPlayingOffset}}
+\index{setPlayingOffset@{setPlayingOffset}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setPlayingOffset()}{setPlayingOffset()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::set\+Playing\+Offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{time\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Change the current playing position of the stream. 
+
+The playing position can be changed when the stream is either paused or playing. Changing the playing position when the stream is stopped has no effect, since playing the stream would reset its position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Offset} & New playing position, from the beginning of the stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_ae288f3c72edbad9cc7ee938ce5b907c1}{get\+Playing\+Offset} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a17ba9ed01925395652181a7b2a7d3aef}\label{a01665_a17ba9ed01925395652181a7b2a7d3aef} 
+\index{sf::Music@{sf::Music}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the 3D position of the sound in the audio scene. 
+
+Only sounds with one channel (mono sounds) can be spatialized. The default position of a sound is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the sound in the scene\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2}\label{a01665_a0480257ea25d986eba6cc3c1a6f8d7c2} 
+\index{sf::Music@{sf::Music}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the 3D position of the sound in the audio scene. 
+
+Only sounds with one channel (mono sounds) can be spatialized. The default position of a sound is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the position of the sound in the scene \\
+\hline
+{\em y} & Y coordinate of the position of the sound in the scene \\
+\hline
+{\em z} & Z coordinate of the position of the sound in the scene\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a8d199521f55550c7a3b2b0f6950dffa1}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_ac478a8b813faf7dd575635b102081d0d}\label{a01665_ac478a8b813faf7dd575635b102081d0d} 
+\index{sf::Music@{sf::Music}!setRelativeToListener@{setRelativeToListener}}
+\index{setRelativeToListener@{setRelativeToListener}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setRelativeToListener()}{setRelativeToListener()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Relative\+To\+Listener (\begin{DoxyParamCaption}\item[{bool}]{relative }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Make the sound\textquotesingle{}s position relative to the listener or absolute. 
+
+Making a sound relative to the listener will ensure that it will always be played the same way regardless of the position of the listener. This can be useful for non-\/spatialized sounds, sounds that are produced by the listener, or sounds attached to it. The default value is false (position is absolute).
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative} & True to set the position relative, false to set it absolute\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_adcdb4ef32c2f4481d34aff0b5c31534b}{is\+Relative\+To\+Listener} 
+\end{DoxySeeAlso}
+\Hypertarget{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2}\label{a01665_a2f192f2b49fb8e2b82f3498d3663fcc2} 
+\index{sf::Music@{sf::Music}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Source\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the volume of the sound. 
+
+The volume is a value between 0 (mute) and 100 (full volume). The default value for the volume is 100.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Volume of the sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01665_a04243fb5edf64561689b1d58953fc4ce}{get\+Volume} 
+\end{DoxySeeAlso}
+\Hypertarget{a01669_a16cc6a0404b32e42c4dce184bb94d0f4}\label{a01669_a16cc6a0404b32e42c4dce184bb94d0f4} 
+\index{sf::Music@{sf::Music}!stop@{stop}}
+\index{stop@{stop}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Stop playing the audio stream. 
+
+This function stops the stream if it was playing or paused, and does nothing if it was already stopped. It also resets the playing position (unlike \doxylink{a01669_a932ff181e661503cad288b4bb6fe45ca}{pause()}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01669_afdc08b69cab5f243d9324940a85a1144}{play}, \doxylink{a01669_a932ff181e661503cad288b4bb6fe45ca}{pause} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{a01665_a06501a25b12376befcc7ee1ed4865fda}{sf\+::\+Sound\+Source}}.
+
+\Hypertarget{a01669_a08c54af1f433424ac627d1a30021f5e9}\label{a01669_a08c54af1f433424ac627d1a30021f5e9} 
+\index{sf::Music@{sf::Music}!streamData@{streamData}}
+\index{streamData@{streamData}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{streamData()}{streamData()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Stream\+::stream\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Function called as the entry point of the thread. 
+
+This function starts the streaming loop, and returns only when the sound is stopped. \Hypertarget{a01613_a172e5bfd83235c471c96004f93c4bd0d}\label{a01613_a172e5bfd83235c471c96004f93c4bd0d} 
+\index{sf::Music@{sf::Music}!timeToSamples@{timeToSamples}}
+\index{timeToSamples@{timeToSamples}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{timeToSamples()}{timeToSamples()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Music\+::time\+To\+Samples (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper to convert an \doxylink{a01933}{sf\+::\+Time} to a sample position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \doxylink{a01933}{Time} to convert to samples\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples elapsed at the given time 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01669_a3a7fbefda7d08527177acd1f6e63487b}\label{a01669_a3a7fbefda7d08527177acd1f6e63487b} 
+\index{sf::Music@{sf::Music}!m\_buffers@{m\_buffers}}
+\index{m\_buffers@{m\_buffers}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_buffers}{m\_buffers}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+buffers\mbox{[}\mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}{Buffer\+Count}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01625}{Sound} buffers used to store temporary audio data. 
+
+\Hypertarget{a01669_aeab61fab14a1e1ac87f7a1c98d3cf73f}\label{a01669_aeab61fab14a1e1ac87f7a1c98d3cf73f} 
+\index{sf::Music@{sf::Music}!m\_bufferSeeks@{m\_bufferSeeks}}
+\index{m\_bufferSeeks@{m\_bufferSeeks}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_bufferSeeks}{m\_bufferSeeks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} sf\+::\+Sound\+Stream\+::m\+\_\+buffer\+Seeks\mbox{[}\mbox{\hyperlink{a01669_a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5}{Buffer\+Count}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+If buffer is an \"{}end buffer\"{}, holds next seek position, else No\+Loop. For play offset calculation. 
+
+\Hypertarget{a01669_ad7c1a66f24be5e58ed275fd06e24294e}\label{a01669_ad7c1a66f24be5e58ed275fd06e24294e} 
+\index{sf::Music@{sf::Music}!m\_channelCount@{m\_channelCount}}
+\index{m\_channelCount@{m\_channelCount}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_channelCount}{m\_channelCount}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+channel\+Count\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Number of channels (1 = mono, 2 = stereo, ...) 
+
+\Hypertarget{a01613_a902ed2518e4597b0d22c47c6ab418b08}\label{a01613_a902ed2518e4597b0d22c47c6ab418b08} 
+\index{sf::Music@{sf::Music}!m\_file@{m\_file}}
+\index{m\_file@{m\_file}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_file}{m\_file}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01605}{Input\+Sound\+File}} sf\+::\+Music\+::m\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The streamed music file. 
+
+\Hypertarget{a01669_a5c91434e0f1c2e4445e01b3de578af49}\label{a01669_a5c91434e0f1c2e4445e01b3de578af49} 
+\index{sf::Music@{sf::Music}!m\_format@{m\_format}}
+\index{m\_format@{m\_format}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_format}{m\_format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Sound\+Stream\+::m\+\_\+format\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Format of the internal sound buffers. 
+
+\Hypertarget{a01669_afa20ca6cbb29ee2355d986a3faa7a38f}\label{a01669_afa20ca6cbb29ee2355d986a3faa7a38f} 
+\index{sf::Music@{sf::Music}!m\_isStreaming@{m\_isStreaming}}
+\index{m\_isStreaming@{m\_isStreaming}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_isStreaming}{m\_isStreaming}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::m\+\_\+is\+Streaming\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Streaming state (true = playing, false = stopped) 
+
+\Hypertarget{a01669_a32ee01b984f74c9e0857d676bc33ad9f}\label{a01669_a32ee01b984f74c9e0857d676bc33ad9f} 
+\index{sf::Music@{sf::Music}!m\_loop@{m\_loop}}
+\index{m\_loop@{m\_loop}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_loop}{m\_loop}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Stream\+::m\+\_\+loop\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Loop flag (true to loop, false to play once) 
+
+\Hypertarget{a01613_abd4117b6ab142d040ceee626fb15e12f}\label{a01613_abd4117b6ab142d040ceee626fb15e12f} 
+\index{sf::Music@{sf::Music}!m\_loopSpan@{m\_loopSpan}}
+\index{m\_loopSpan@{m\_loopSpan}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_loopSpan}{m\_loopSpan}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01617}{Span}}$<$\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}$>$ sf\+::\+Music\+::m\+\_\+loop\+Span\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loop Range Specifier. 
+
+\Hypertarget{a01613_a47cf4b92edf2f2e936a91b8a5cfa6824}\label{a01613_a47cf4b92edf2f2e936a91b8a5cfa6824} 
+\index{sf::Music@{sf::Music}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01893}{Mutex}} sf\+::\+Music\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01893}{Mutex} protecting the data. 
+
+\Hypertarget{a01669_ac6cf65793e01b6b5f6bf6b555b1c1dfd}\label{a01669_ac6cf65793e01b6b5f6bf6b555b1c1dfd} 
+\index{sf::Music@{sf::Music}!m\_sampleRate@{m\_sampleRate}}
+\index{m\_sampleRate@{m\_sampleRate}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_sampleRate}{m\_sampleRate}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Stream\+::m\+\_\+sample\+Rate\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Frequency (samples / second) 
+
+\Hypertarget{a01613_af9a047420c96cf7d3013404b6125c5c3}\label{a01613_af9a047420c96cf7d3013404b6125c5c3} 
+\index{sf::Music@{sf::Music}!m\_samples@{m\_samples}}
+\index{m\_samples@{m\_samples}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}$>$ sf\+::\+Music\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary buffer of samples. 
+
+\Hypertarget{a01669_a7365a2ec97b89cec15577b31461ff4be}\label{a01669_a7365a2ec97b89cec15577b31461ff4be} 
+\index{sf::Music@{sf::Music}!m\_samplesProcessed@{m\_samplesProcessed}}
+\index{m\_samplesProcessed@{m\_samplesProcessed}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_samplesProcessed}{m\_samplesProcessed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Sound\+Stream\+::m\+\_\+samples\+Processed\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Number of buffers processed since beginning of the stream. 
+
+\Hypertarget{a01665_a0223cef4b1c587e6e1e17b4c92c4479c}\label{a01665_a0223cef4b1c587e6e1e17b4c92c4479c} 
+\index{sf::Music@{sf::Music}!m\_source@{m\_source}}
+\index{m\_source@{m\_source}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_source}{m\_source}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Source\+::m\+\_\+source\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Open\+AL source identifier. 
+
+\Hypertarget{a01669_a004d1b16c81698be55779efe0f2b5ed3}\label{a01669_a004d1b16c81698be55779efe0f2b5ed3} 
+\index{sf::Music@{sf::Music}!m\_thread@{m\_thread}}
+\index{m\_thread@{m\_thread}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_thread}{m\_thread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01905}{Thread}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01905}{Thread} running the background tasks. 
+
+\Hypertarget{a01669_a134d03a5d3075f6a98a85a2edff9ac7d}\label{a01669_a134d03a5d3075f6a98a85a2edff9ac7d} 
+\index{sf::Music@{sf::Music}!m\_threadMutex@{m\_threadMutex}}
+\index{m\_threadMutex@{m\_threadMutex}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_threadMutex}{m\_threadMutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01893}{Mutex}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01905}{Thread} mutex. 
+
+\Hypertarget{a01669_a2e06f2688d7fcf777a9779168067f302}\label{a01669_a2e06f2688d7fcf777a9779168067f302} 
+\index{sf::Music@{sf::Music}!m\_threadStartState@{m\_threadStartState}}
+\index{m\_threadStartState@{m\_threadStartState}!sf::Music@{sf::Music}}
+\doxysubsubsection{\texorpdfstring{m\_threadStartState}{m\_threadStartState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01665_ac43af72c98c077500b239bc75b812f03}{Status}} sf\+::\+Sound\+Stream\+::m\+\_\+thread\+Start\+State\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+State the thread starts in (Playing, Paused, Stopped) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00320}{Music.\+hpp}}\end{DoxyCompactItemize}

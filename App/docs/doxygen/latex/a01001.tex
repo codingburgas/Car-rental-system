@@ -1,0 +1,124 @@
+\doxysection{nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp Struct Reference}
+\hypertarget{a01001}{}\label{a01001}\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+
+
+{\ttfamily \#include $<$to\+\_\+chars.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{a01001_ad8798a8823a49c8412f0fada9892c918}{diyfp}} (std\+::uint64\+\_\+t f\+\_\+, int e\+\_\+) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01001}{diyfp}} \mbox{\hyperlink{a01001_aa5f250d12ce89c81fdb08900c6a823e8}{mul}} (const \mbox{\hyperlink{a01001}{diyfp}} \&x, const \mbox{\hyperlink{a01001}{diyfp}} \&y) noexcept
+\begin{DoxyCompactList}\small\item\em returns x \texorpdfstring{$\ast$}{*} y \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01001}{diyfp}} \mbox{\hyperlink{a01001_a2246b5b40c7c6992153ef174063d6aa6}{normalize}} (\mbox{\hyperlink{a01001}{diyfp}} x) noexcept
+\begin{DoxyCompactList}\small\item\em normalize x such that the significand is \texorpdfstring{$>$}{>}= 2\texorpdfstring{$^\wedge$}{\string^}(q-\/1) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01001}{diyfp}} \mbox{\hyperlink{a01001_a6b6665e467ebabe0c0f7418d3fe4b118}{normalize\+\_\+to}} (const \mbox{\hyperlink{a01001}{diyfp}} \&x, const int target\+\_\+exponent) noexcept
+\begin{DoxyCompactList}\small\item\em normalize x such that the result has the exponent E \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01001}{diyfp}} \mbox{\hyperlink{a01001_aeb26771af54ad73598c1a0430d65d884}{sub}} (const \mbox{\hyperlink{a01001}{diyfp}} \&x, const \mbox{\hyperlink{a01001}{diyfp}} \&y) noexcept
+\begin{DoxyCompactList}\small\item\em returns x -\/ y \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a01001_ae22e170815983961447c429f324c944d}{e}} = 0
+\item 
+std\+::uint64\+\_\+t \mbox{\hyperlink{a01001_aea90459e340a231ca31d46946803ef51}{f}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{a01001_a03682754b06ed4f30b263119eecc2d52}{k\+Precision}} = 64
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01001_ad8798a8823a49c8412f0fada9892c918}\label{a01001_ad8798a8823a49c8412f0fada9892c918} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!diyfp@{diyfp}}
+\index{diyfp@{diyfp}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{diyfp()}{diyfp()}}
+{\footnotesize\ttfamily constexpr nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::diyfp (\begin{DoxyParamCaption}\item[{std\+::uint64\+\_\+t}]{f\+\_\+,  }\item[{int}]{e\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01001_aa5f250d12ce89c81fdb08900c6a823e8}\label{a01001_aa5f250d12ce89c81fdb08900c6a823e8} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!mul@{mul}}
+\index{mul@{mul}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{mul()}{mul()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01001}{diyfp}} nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::mul (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01001}{diyfp}} \&}]{x,  }\item[{const \mbox{\hyperlink{a01001}{diyfp}} \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+returns x \texorpdfstring{$\ast$}{*} y 
+
+\begin{DoxyNote}{Note}
+The result is rounded. (Only the upper q bits are returned.) 
+\end{DoxyNote}
+\Hypertarget{a01001_a2246b5b40c7c6992153ef174063d6aa6}\label{a01001_a2246b5b40c7c6992153ef174063d6aa6} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!normalize@{normalize}}
+\index{normalize@{normalize}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01001}{diyfp}} nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01001}{diyfp}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+normalize x such that the significand is \texorpdfstring{$>$}{>}= 2\texorpdfstring{$^\wedge$}{\string^}(q-\/1) 
+
+\begin{DoxyPrecond}{Precondition}
+x.\+f != 0 
+\end{DoxyPrecond}
+\Hypertarget{a01001_a6b6665e467ebabe0c0f7418d3fe4b118}\label{a01001_a6b6665e467ebabe0c0f7418d3fe4b118} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!normalize\_to@{normalize\_to}}
+\index{normalize\_to@{normalize\_to}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{normalize\_to()}{normalize\_to()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01001}{diyfp}} nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::normalize\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01001}{diyfp}} \&}]{x,  }\item[{const int}]{target\+\_\+exponent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+normalize x such that the result has the exponent E 
+
+\begin{DoxyPrecond}{Precondition}
+e \texorpdfstring{$>$}{>}= x.\+e and the upper e -\/ x.\+e bits of x.\+f must be zero. 
+\end{DoxyPrecond}
+\Hypertarget{a01001_aeb26771af54ad73598c1a0430d65d884}\label{a01001_aeb26771af54ad73598c1a0430d65d884} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!sub@{sub}}
+\index{sub@{sub}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01001}{diyfp}} nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::sub (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01001}{diyfp}} \&}]{x,  }\item[{const \mbox{\hyperlink{a01001}{diyfp}} \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+returns x -\/ y 
+
+\begin{DoxyPrecond}{Precondition}
+x.\+e == y.\+e and x.\+f \texorpdfstring{$>$}{>}= y.\+f 
+\end{DoxyPrecond}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01001_ae22e170815983961447c429f324c944d}\label{a01001_ae22e170815983961447c429f324c944d} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!e@{e}}
+\index{e@{e}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily int nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::e = 0}
+
+\Hypertarget{a01001_aea90459e340a231ca31d46946803ef51}\label{a01001_aea90459e340a231ca31d46946803ef51} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!f@{f}}
+\index{f@{f}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily std\+::uint64\+\_\+t nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::f = 0}
+
+\Hypertarget{a01001_a03682754b06ed4f30b263119eecc2d52}\label{a01001_a03682754b06ed4f30b263119eecc2d52} 
+\index{nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}!kPrecision@{kPrecision}}
+\index{kPrecision@{kPrecision}!nlohmann::detail::dtoa\_impl::diyfp@{nlohmann::detail::dtoa\_impl::diyfp}}
+\doxysubsubsection{\texorpdfstring{kPrecision}{kPrecision}}
+{\footnotesize\ttfamily constexpr int nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp\+::k\+Precision = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/conversions/\mbox{\hyperlink{a00152}{to\+\_\+chars.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\doxysection{http\+\_\+version.\+h}
+\hypertarget{a00053_source}{}\label{a00053_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/http\_version.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/http\_version.h}}
+\mbox{\hyperlink{a00053}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_HTTP\_VERSION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_HTTP\_VERSION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00116}{curl/curlver.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79}{HttpVersionCode}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79a75fb8bdfea8679c27cecfcc04f61c0a9}{VERSION\_NONE}},}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79a67b2ce8a14f27e3af2bc4a027099df6e}{VERSION\_1\_0}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79ab4abd26b93226f8ce368709dd09c1eb7}{VERSION\_1\_1}},}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x072100\ }\textcolor{comment}{//\ 7.33.0}}
+\DoxyCodeLine{00025\ \textcolor{comment}{}\ \ \ \ VERSION\_2\_0,}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x072F00\ }\textcolor{comment}{//\ 7.47.0}}
+\DoxyCodeLine{00033\ \textcolor{comment}{}\ \ \ \ VERSION\_2\_0\_TLS,}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x073100\ }\textcolor{comment}{//\ 7.49.0}}
+\DoxyCodeLine{00041\ \textcolor{comment}{}\ \ \ \ VERSION\_2\_0\_PRIOR\_KNOWLEDGE,}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x074200\ }\textcolor{comment}{//\ 7.66.0}}
+\DoxyCodeLine{00049\ \textcolor{comment}{}\ \ \ \ VERSION\_3\_0}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00761}{HttpVersion}}\ \{}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79}{HttpVersionCode}}\ \mbox{\hyperlink{a00761_ac2922db496e1aee44fa219ef19abdc25}{code}}\ =\ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79a75fb8bdfea8679c27cecfcc04f61c0a9}{HttpVersionCode::VERSION\_NONE}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{a00761_a5c79664e4c065fb6bf3ed912f043c88f}{HttpVersion}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00761_af1733116d9489524c034db3b39d8bc31}{HttpVersion}}(\mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79}{HttpVersionCode}}\ \_code)\ :\ \mbox{\hyperlink{a00761_ac2922db496e1aee44fa219ef19abdc25}{code}}(\_code)\ \{\}}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

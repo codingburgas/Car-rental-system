@@ -1,0 +1,154 @@
+\doxysection{Rect.\+inl}
+\hypertarget{a00401_source}{}\label{a00401_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Rect.inl@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Rect.inl}}
+\mbox{\hyperlink{a00401}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00028\ \mbox{\hyperlink{a01737}{Rect<T>::Rect}}()\ :}
+\DoxyCodeLine{00029\ left\ \ (0),}
+\DoxyCodeLine{00030\ top\ \ \ (0),}
+\DoxyCodeLine{00031\ width\ (0),}
+\DoxyCodeLine{00032\ height(0)}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{a01737_a0f87ebaef9722a6222fd2e04ce8efb37}{Rect<T>::Rect}}(T\ rectLeft,\ T\ rectTop,\ T\ rectWidth,\ T\ rectHeight)\ :}
+\DoxyCodeLine{00041\ left\ \ (rectLeft),}
+\DoxyCodeLine{00042\ top\ \ \ (rectTop),}
+\DoxyCodeLine{00043\ width\ (rectWidth),}
+\DoxyCodeLine{00044\ height(rectHeight)}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00052\ \mbox{\hyperlink{a01737_a0f87ebaef9722a6222fd2e04ce8efb37}{Rect<T>::Rect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ position,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ size)\ :}
+\DoxyCodeLine{00053\ left\ \ (position.x),}
+\DoxyCodeLine{00054\ top\ \ \ (position.y),}
+\DoxyCodeLine{00055\ width\ (size.x),}
+\DoxyCodeLine{00056\ height(size.y)}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00065\ \mbox{\hyperlink{a01737_a0f87ebaef9722a6222fd2e04ce8efb37}{Rect<T>::Rect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<U>}}\&\ rectangle)\ :}
+\DoxyCodeLine{00066\ left\ \ (static\_cast<T>(rectangle.left)),}
+\DoxyCodeLine{00067\ top\ \ \ (static\_cast<T>(rectangle.top)),}
+\DoxyCodeLine{00068\ width\ (static\_cast<T>(rectangle.width)),}
+\DoxyCodeLine{00069\ height(static\_cast<T>(rectangle.height))}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_a1d8a4a3aecec18310f6e3e23db43dfb8}{Rect<T>::contains}}(T\ x,\ T\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Rectangles\ with\ negative\ dimensions\ are\ allowed,\ so\ we\ must\ handle\ them\ correctly}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ real\ min\ and\ max\ of\ the\ rectangle\ on\ both\ axes}}
+\DoxyCodeLine{00081\ \ \ \ \ T\ minX\ =\ std::min(left,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(left\ +\ width));}
+\DoxyCodeLine{00082\ \ \ \ \ T\ maxX\ =\ std::max(left,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(left\ +\ width));}
+\DoxyCodeLine{00083\ \ \ \ \ T\ minY\ =\ std::min(top,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(top\ +\ height));}
+\DoxyCodeLine{00084\ \ \ \ \ T\ maxY\ =\ std::max(top,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(top\ +\ height));}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ >=\ minX)\ \&\&\ (x\ <\ maxX)\ \&\&\ (y\ >=\ minY)\ \&\&\ (y\ <\ maxY);}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_a1d8a4a3aecec18310f6e3e23db43dfb8}{Rect<T>::contains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ point)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ contains(point.\mbox{\hyperlink{a01953_a1e6ad77fa155f3753bfb92699bd28141}{x}},\ point.\mbox{\hyperlink{a01953_a420f2481b015f4eb929c75f2af564299}{y}});}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_ad90321b1135cad31589f2db2f9b772db}{Rect<T>::intersects}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ rectangle)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{a01737}{Rect<T>}}\ intersection;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ intersects(rectangle,\ intersection);}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_ad90321b1135cad31589f2db2f9b772db}{Rect<T>::intersects}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ rectangle,\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ intersection)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Rectangles\ with\ negative\ dimensions\ are\ allowed,\ so\ we\ must\ handle\ them\ correctly}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ min\ and\ max\ of\ the\ first\ rectangle\ on\ both\ axes}}
+\DoxyCodeLine{00114\ \ \ \ \ T\ r1MinX\ =\ std::min(left,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(left\ +\ width));}
+\DoxyCodeLine{00115\ \ \ \ \ T\ r1MaxX\ =\ std::max(left,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(left\ +\ width));}
+\DoxyCodeLine{00116\ \ \ \ \ T\ r1MinY\ =\ std::min(top,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(top\ +\ height));}
+\DoxyCodeLine{00117\ \ \ \ \ T\ r1MaxY\ =\ std::max(top,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(top\ +\ height));}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ min\ and\ max\ of\ the\ second\ rectangle\ on\ both\ axes}}
+\DoxyCodeLine{00120\ \ \ \ \ T\ r2MinX\ =\ std::min(rectangle.\mbox{\hyperlink{a01737_aa49960fa465103d9cb7069ceb25c7c32}{left}},\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(rectangle.\mbox{\hyperlink{a01737_aa49960fa465103d9cb7069ceb25c7c32}{left}}\ +\ rectangle.\mbox{\hyperlink{a01737_a4dd5b9d4333bebbc51bd309298fd500f}{width}}));}
+\DoxyCodeLine{00121\ \ \ \ \ T\ r2MaxX\ =\ std::max(rectangle.\mbox{\hyperlink{a01737_aa49960fa465103d9cb7069ceb25c7c32}{left}},\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(rectangle.\mbox{\hyperlink{a01737_aa49960fa465103d9cb7069ceb25c7c32}{left}}\ +\ rectangle.\mbox{\hyperlink{a01737_a4dd5b9d4333bebbc51bd309298fd500f}{width}}));}
+\DoxyCodeLine{00122\ \ \ \ \ T\ r2MinY\ =\ std::min(rectangle.\mbox{\hyperlink{a01737_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}},\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(rectangle.\mbox{\hyperlink{a01737_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}}\ +\ rectangle.\mbox{\hyperlink{a01737_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}}));}
+\DoxyCodeLine{00123\ \ \ \ \ T\ r2MaxY\ =\ std::max(rectangle.\mbox{\hyperlink{a01737_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}},\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(rectangle.\mbox{\hyperlink{a01737_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}}\ +\ rectangle.\mbox{\hyperlink{a01737_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}}));}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ intersection\ boundaries}}
+\DoxyCodeLine{00126\ \ \ \ \ T\ interLeft\ \ \ =\ std::max(r1MinX,\ r2MinX);}
+\DoxyCodeLine{00127\ \ \ \ \ T\ interTop\ \ \ \ =\ std::max(r1MinY,\ r2MinY);}
+\DoxyCodeLine{00128\ \ \ \ \ T\ interRight\ \ =\ std::min(r1MaxX,\ r2MaxX);}
+\DoxyCodeLine{00129\ \ \ \ \ T\ interBottom\ =\ std::min(r1MaxY,\ r2MaxY);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ If\ the\ intersection\ is\ valid\ (positive\ non\ zero\ area),\ then\ there\ is\ an\ intersection}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{if}\ ((interLeft\ <\ interRight)\ \&\&\ (interTop\ <\ interBottom))}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ intersection\ =\ \mbox{\hyperlink{a01737}{Rect<T>}}(interLeft,\ interTop,\ interRight\ -\/\ interLeft,\ interBottom\ -\/\ interTop);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ intersection\ =\ \mbox{\hyperlink{a01737}{Rect<T>}}(0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00147\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ Rect<T>\&\ left,\ \textcolor{keyword}{const}\ Rect<T>\&\ right)}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{return}\ (left.left\ ==\ right.left)\ \&\&\ (left.width\ ==\ right.width)\ \&\&}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ (left.top\ ==\ right.top)\ \&\&\ (left.height\ ==\ right.height);}
+\DoxyCodeLine{00151\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00156\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ Rect<T>\&\ left,\ \textcolor{keyword}{const}\ Rect<T>\&\ right)}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return}\ !(left\ ==\ right);}
+\DoxyCodeLine{00159\ \}}
+
+\end{DoxyCode}

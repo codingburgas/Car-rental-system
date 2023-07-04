@@ -1,0 +1,473 @@
+\doxysection{rent\+Scene Class Reference}
+\hypertarget{a01589}{}\label{a01589}\index{rentScene@{rentScene}}
+
+
+{\ttfamily \#include $<$rent\+Scene.\+hpp$>$}
+
+
+
+Inheritance diagram for rent\+Scene\+:
+% FIG 0
+
+
+Collaboration diagram for rent\+Scene\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01589_a121fbfaa905ebf606a78d88c9044eff0}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01589_aa4a40b38f087d24504dc6cc0c3a67b47}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+void \mbox{\hyperlink{a01589_a3bb1c3858693e00dafbb8076bb59c8d8}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01589_ae6bfc393d89b38456cade2844ef9a447}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01589_abccfb5ba4e5a0d4cf9a00573c1fff488}{rent\+Scene}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}, string email)
+\item 
+void \mbox{\hyperlink{a01589_afaa4f1ab1decfa012cbd16db4ef55a33}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01589_a51c559227bd077dda792d3d487c76656}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01589_ac40f85026f0b79df8c2b28e7efa10a9c}{\texorpdfstring{$\sim$}{\string~}rent\+Scene}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01569_a396a24606b365ce28bce2af5b87a3d95}{check\+Login\+Register}} (string entered\+Name, string enetered\+Contact\+Number, string email, string password, string is\+Log\+Or\+Reg)
+\item 
+string \mbox{\hyperlink{a01569_a5ebfee89a4826283f106f53121d72793}{get\+Name}} (string entered\+Email)
+\item 
+string \mbox{\hyperlink{a01569_a49a939337ade8008aa3fb8b144cf2ec1}{get\+Role}} (string entered\+Email)
+\item 
+int \mbox{\hyperlink{a01569_aab20c6cc959d5ef048318de89cf0a983}{get\+User\+Id}} (string entered\+Email)
+\item 
+void \mbox{\hyperlink{a01569_a108699573f2614e409b37b4eb3d33870}{get\+Users}} ()
+\item 
+vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ \mbox{\hyperlink{a01569_a14d0e8e584ddf8114f85fdef922d6750}{get\+Vehicle\+Parametres}} ()
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{a01569_a21768834c5cf95e4af16678fabe85b10}{get\+Vehicle\+Prices\+Indexes}} (int budget\+Choice, string car\+Type)
+\item 
+void \mbox{\hyperlink{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}{pass\+Data}} (std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ data)
+\item 
+void \mbox{\hyperlink{a01569_a76295e017aeca3f3e079c28977ddbdaf}{post\+User}} (string entered\+Name, string entered\+Contact\+Number, string entered\+Email, string entered\+Password, string entered\+Role)
+\item 
+void \mbox{\hyperlink{a01569_ab8a12aa600a7ae3bce2387c025df808c}{put\+Vehicle}} (string \mbox{\hyperlink{a01589_a18c2ea95498d546b1b36c4a7f6954bcb}{vehicle\+Type}}, string name, string \mbox{\hyperlink{a01589_a1fb9056c31e5d27f5ba34ca85b5bd522}{manufacturer}}, string \mbox{\hyperlink{a01589_a732811219633009f6e59601f3b4e97c6}{model}}, bool is\+Reserved, string reservation\+Date, string \mbox{\hyperlink{a01589_a96b5d2d5af1d5ff9bc6adee6471fbeb1}{location}}, string price, int reserved\+By\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01589_ad6ca06939525422fddf42c40c10fb18e}{alpha}}
+\item 
+bool \mbox{\hyperlink{a01589_a56a6edfeb3ff894d686f626ae0d68e89}{animate}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01589_aeb5e3deb85e81f975b39d65f2cc0605c}{bg\+Sprite}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01589_abc194eac77ba65aefa7ed90dff4948bf}{bg\+Texture}}
+\item 
+\mbox{\hyperlink{a01873}{Clock}} \mbox{\hyperlink{a01589_a2ad6240392ebafa26ae79a15f0b6add6}{clock\+Ellipse}}
+\item 
+\mbox{\hyperlink{a01873}{Clock}} \mbox{\hyperlink{a01589_a04a74281502ce9b0b5584816e724746d}{clock\+Icon}}
+\item 
+\mbox{\hyperlink{a01873}{Clock}} \mbox{\hyperlink{a01589_a5832ae2441b0118aee56147ae300d178}{clock\+Time\+Begin}}
+\item 
+int \mbox{\hyperlink{a01589_a8f02a82e46c5d88d3a49d785a715430a}{current\+Frame}}
+\item 
+vector$<$ \mbox{\hyperlink{a01777}{Sprite}} $>$ \mbox{\hyperlink{a01589_a3ffd2ce18235b371d403f25b50f9801f}{eclipse\+Sprites}}
+\item 
+vector$<$ \mbox{\hyperlink{a01785}{Texture}} $>$ \mbox{\hyperlink{a01589_a02f59be4964ae223bd265b3ee47e749a}{eclipse\+Textures}}
+\item 
+float \mbox{\hyperlink{a01589_ae7a03b1387b4019eef03958fffbe5349}{elapsed\+Time}}
+\item 
+float \mbox{\hyperlink{a01589_a8cab91cff02cf59941f7e1ce9272dee8}{elapsed\+Time\+Begin}}
+\item 
+float \mbox{\hyperlink{a01589_a4470adf3618bc5ddad8470dadd651ebb}{elapsed\+Time\+Frame}}
+\item 
+float \mbox{\hyperlink{a01589_a6d58a2b02abfe9df3d915cf42a7af397}{fade\+Duration}}
+\item 
+int \mbox{\hyperlink{a01589_aad29f569775e70cbca413104da03750f}{frame\+Duration}}
+\item 
+int \mbox{\hyperlink{a01589_ade7339119f7adee2918e9c12974bbfa9}{frame\+Index}}
+\item 
+\mbox{\hyperlink{a00677}{Handler}} \mbox{\hyperlink{a01569_ad23161563ec0c989b590333fb546840e}{handler}}
+\item 
+bool \mbox{\hyperlink{a01589_a00075d61d51e4689593330e72b2a11a8}{last\+Frame\+Visible}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01589_a96b5d2d5af1d5ff9bc6adee6471fbeb1}{location}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01589_a4606efd79d969304443b94e3127a6aa3}{location\+Sprite}}
+\item 
+\mbox{\hyperlink{a01569}{Login\+Register}} \mbox{\hyperlink{a01589_a28d3d3f18df200f2563802d9e48f0109}{log\+Register}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01589_a1fb9056c31e5d27f5ba34ca85b5bd522}{manufacturer}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01589_ad9b1dca21a4a013676b03e6c5e35cbbb}{manufacturer\+Sprite}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01589_a732811219633009f6e59601f3b4e97c6}{model}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01589_a3b558771da53b5391f3feda5f4923061}{model\+Sprite}}
+\item 
+int \mbox{\hyperlink{a01589_ad274cfe9c6cfd7239282294c49b69e9a}{user\+Id}}
+\item 
+int \mbox{\hyperlink{a01589_a60e82ccec3d6290bb1556977a5ef5d63}{vehicle\+Id}}
+\item 
+\mbox{\hyperlink{a01785}{Texture}} \mbox{\hyperlink{a01589_a18c2ea95498d546b1b36c4a7f6954bcb}{vehicle\+Type}}
+\item 
+\mbox{\hyperlink{a01777}{Sprite}} \mbox{\hyperlink{a01589_a1304eb6fbcd06a061592b46217c08b5b}{vehicle\+Type\+Sprite}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01589_abccfb5ba4e5a0d4cf9a00573c1fff488}\label{a01589_abccfb5ba4e5a0d4cf9a00573c1fff488} 
+\index{rentScene@{rentScene}!rentScene@{rentScene}}
+\index{rentScene@{rentScene}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{rentScene()}{rentScene()}}
+{\footnotesize\ttfamily rent\+Scene\+::rent\+Scene (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{string}]{email }\end{DoxyParamCaption})}
+
+\Hypertarget{a01589_ac40f85026f0b79df8c2b28e7efa10a9c}\label{a01589_ac40f85026f0b79df8c2b28e7efa10a9c} 
+\index{rentScene@{rentScene}!````~rentScene@{\texorpdfstring{$\sim$}{\string~}rentScene}}
+\index{````~rentScene@{\texorpdfstring{$\sim$}{\string~}rentScene}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}rentScene()}{\string~rentScene()}}
+{\footnotesize\ttfamily rent\+Scene\+::\texorpdfstring{$\sim$}{\string~}rent\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01569_a396a24606b365ce28bce2af5b87a3d95}\label{a01569_a396a24606b365ce28bce2af5b87a3d95} 
+\index{rentScene@{rentScene}!checkLoginRegister@{checkLoginRegister}}
+\index{checkLoginRegister@{checkLoginRegister}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{checkLoginRegister()}{checkLoginRegister()}}
+{\footnotesize\ttfamily bool Login\+Register\+::check\+Login\+Register (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{enetered\+Contact\+Number,  }\item[{string}]{email,  }\item[{string}]{password,  }\item[{string}]{is\+Log\+Or\+Reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_a121fbfaa905ebf606a78d88c9044eff0}\label{a01589_a121fbfaa905ebf606a78d88c9044eff0} 
+\index{rentScene@{rentScene}!draw@{draw}}
+\index{draw@{draw}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rent\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01589_aa4a40b38f087d24504dc6cc0c3a67b47}\label{a01589_aa4a40b38f087d24504dc6cc0c3a67b47} 
+\index{rentScene@{rentScene}!draw@{draw}}
+\index{draw@{draw}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void rent\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01589_a3bb1c3858693e00dafbb8076bb59c8d8}\label{a01589_a3bb1c3858693e00dafbb8076bb59c8d8} 
+\index{rentScene@{rentScene}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void rent\+Scene\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01569_a5ebfee89a4826283f106f53121d72793}\label{a01569_a5ebfee89a4826283f106f53121d72793} 
+\index{rentScene@{rentScene}!getName@{getName}}
+\index{getName@{getName}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Name (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a49a939337ade8008aa3fb8b144cf2ec1}\label{a01569_a49a939337ade8008aa3fb8b144cf2ec1} 
+\index{rentScene@{rentScene}!getRole@{getRole}}
+\index{getRole@{getRole}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
+{\footnotesize\ttfamily string Login\+Register\+::get\+Role (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_aab20c6cc959d5ef048318de89cf0a983}\label{a01569_aab20c6cc959d5ef048318de89cf0a983} 
+\index{rentScene@{rentScene}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily int Login\+Register\+::get\+User\+Id (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a108699573f2614e409b37b4eb3d33870}\label{a01569_a108699573f2614e409b37b4eb3d33870} 
+\index{rentScene@{rentScene}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily void Login\+Register\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a14d0e8e584ddf8114f85fdef922d6750}\label{a01569_a14d0e8e584ddf8114f85fdef922d6750} 
+\index{rentScene@{rentScene}!getVehicleParametres@{getVehicleParametres}}
+\index{getVehicleParametres@{getVehicleParametres}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getVehicleParametres()}{getVehicleParametres()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ Login\+Register\+::get\+Vehicle\+Parametres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a21768834c5cf95e4af16678fabe85b10}\label{a01569_a21768834c5cf95e4af16678fabe85b10} 
+\index{rentScene@{rentScene}!getVehiclePricesIndexes@{getVehiclePricesIndexes}}
+\index{getVehiclePricesIndexes@{getVehiclePricesIndexes}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{getVehiclePricesIndexes()}{getVehiclePricesIndexes()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Login\+Register\+::get\+Vehicle\+Prices\+Indexes (\begin{DoxyParamCaption}\item[{int}]{budget\+Choice,  }\item[{string}]{car\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_ae6bfc393d89b38456cade2844ef9a447}\label{a01589_ae6bfc393d89b38456cade2844ef9a447} 
+\index{rentScene@{rentScene}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool rent\+Scene\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}\label{a01569_a22fce4252a4f797af0dbbf2fdc6510a9} 
+\index{rentScene@{rentScene}!passData@{passData}}
+\index{passData@{passData}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{passData()}{passData()}}
+{\footnotesize\ttfamily void Login\+Register\+::pass\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_a76295e017aeca3f3e079c28977ddbdaf}\label{a01569_a76295e017aeca3f3e079c28977ddbdaf} 
+\index{rentScene@{rentScene}!postUser@{postUser}}
+\index{postUser@{postUser}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{postUser()}{postUser()}}
+{\footnotesize\ttfamily void Login\+Register\+::post\+User (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{entered\+Contact\+Number,  }\item[{string}]{entered\+Email,  }\item[{string}]{entered\+Password,  }\item[{string}]{entered\+Role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01569_ab8a12aa600a7ae3bce2387c025df808c}\label{a01569_ab8a12aa600a7ae3bce2387c025df808c} 
+\index{rentScene@{rentScene}!putVehicle@{putVehicle}}
+\index{putVehicle@{putVehicle}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{putVehicle()}{putVehicle()}}
+{\footnotesize\ttfamily void Login\+Register\+::put\+Vehicle (\begin{DoxyParamCaption}\item[{string}]{vehicle\+Type,  }\item[{string}]{name,  }\item[{string}]{manufacturer,  }\item[{string}]{model,  }\item[{bool}]{is\+Reserved,  }\item[{string}]{reservation\+Date,  }\item[{string}]{location,  }\item[{string}]{price,  }\item[{int}]{reserved\+By\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_afaa4f1ab1decfa012cbd16db4ef55a33}\label{a01589_afaa4f1ab1decfa012cbd16db4ef55a33} 
+\index{rentScene@{rentScene}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void rent\+Scene\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01589_a51c559227bd077dda792d3d487c76656}\label{a01589_a51c559227bd077dda792d3d487c76656} 
+\index{rentScene@{rentScene}!update@{update}}
+\index{update@{update}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void rent\+Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01589_ad6ca06939525422fddf42c40c10fb18e}\label{a01589_ad6ca06939525422fddf42c40c10fb18e} 
+\index{rentScene@{rentScene}!alpha@{alpha}}
+\index{alpha@{alpha}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily float rent\+Scene\+::alpha\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a56a6edfeb3ff894d686f626ae0d68e89}\label{a01589_a56a6edfeb3ff894d686f626ae0d68e89} 
+\index{rentScene@{rentScene}!animate@{animate}}
+\index{animate@{animate}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{animate}{animate}}
+{\footnotesize\ttfamily bool rent\+Scene\+::animate\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{rentScene@{rentScene}!answers@{answers}}
+\index{answers@{answers}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_aeb5e3deb85e81f975b39d65f2cc0605c}\label{a01589_aeb5e3deb85e81f975b39d65f2cc0605c} 
+\index{rentScene@{rentScene}!bgSprite@{bgSprite}}
+\index{bgSprite@{bgSprite}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{bgSprite}{bgSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} rent\+Scene\+::bg\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_abc194eac77ba65aefa7ed90dff4948bf}\label{a01589_abc194eac77ba65aefa7ed90dff4948bf} 
+\index{rentScene@{rentScene}!bgTexture@{bgTexture}}
+\index{bgTexture@{bgTexture}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{bgTexture}{bgTexture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} rent\+Scene\+::bg\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a2ad6240392ebafa26ae79a15f0b6add6}\label{a01589_a2ad6240392ebafa26ae79a15f0b6add6} 
+\index{rentScene@{rentScene}!clockEllipse@{clockEllipse}}
+\index{clockEllipse@{clockEllipse}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{clockEllipse}{clockEllipse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01873}{Clock}} rent\+Scene\+::clock\+Ellipse\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a04a74281502ce9b0b5584816e724746d}\label{a01589_a04a74281502ce9b0b5584816e724746d} 
+\index{rentScene@{rentScene}!clockIcon@{clockIcon}}
+\index{clockIcon@{clockIcon}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{clockIcon}{clockIcon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01873}{Clock}} rent\+Scene\+::clock\+Icon\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a5832ae2441b0118aee56147ae300d178}\label{a01589_a5832ae2441b0118aee56147ae300d178} 
+\index{rentScene@{rentScene}!clockTimeBegin@{clockTimeBegin}}
+\index{clockTimeBegin@{clockTimeBegin}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{clockTimeBegin}{clockTimeBegin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01873}{Clock}} rent\+Scene\+::clock\+Time\+Begin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a8f02a82e46c5d88d3a49d785a715430a}\label{a01589_a8f02a82e46c5d88d3a49d785a715430a} 
+\index{rentScene@{rentScene}!currentFrame@{currentFrame}}
+\index{currentFrame@{currentFrame}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{currentFrame}{currentFrame}}
+{\footnotesize\ttfamily int rent\+Scene\+::current\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a3ffd2ce18235b371d403f25b50f9801f}\label{a01589_a3ffd2ce18235b371d403f25b50f9801f} 
+\index{rentScene@{rentScene}!eclipseSprites@{eclipseSprites}}
+\index{eclipseSprites@{eclipseSprites}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{eclipseSprites}{eclipseSprites}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01777}{Sprite}}$>$ rent\+Scene\+::eclipse\+Sprites\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a02f59be4964ae223bd265b3ee47e749a}\label{a01589_a02f59be4964ae223bd265b3ee47e749a} 
+\index{rentScene@{rentScene}!eclipseTextures@{eclipseTextures}}
+\index{eclipseTextures@{eclipseTextures}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{eclipseTextures}{eclipseTextures}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01785}{Texture}}$>$ rent\+Scene\+::eclipse\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_ae7a03b1387b4019eef03958fffbe5349}\label{a01589_ae7a03b1387b4019eef03958fffbe5349} 
+\index{rentScene@{rentScene}!elapsedTime@{elapsedTime}}
+\index{elapsedTime@{elapsedTime}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{elapsedTime}{elapsedTime}}
+{\footnotesize\ttfamily float rent\+Scene\+::elapsed\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a8cab91cff02cf59941f7e1ce9272dee8}\label{a01589_a8cab91cff02cf59941f7e1ce9272dee8} 
+\index{rentScene@{rentScene}!elapsedTimeBegin@{elapsedTimeBegin}}
+\index{elapsedTimeBegin@{elapsedTimeBegin}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{elapsedTimeBegin}{elapsedTimeBegin}}
+{\footnotesize\ttfamily float rent\+Scene\+::elapsed\+Time\+Begin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a4470adf3618bc5ddad8470dadd651ebb}\label{a01589_a4470adf3618bc5ddad8470dadd651ebb} 
+\index{rentScene@{rentScene}!elapsedTimeFrame@{elapsedTimeFrame}}
+\index{elapsedTimeFrame@{elapsedTimeFrame}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{elapsedTimeFrame}{elapsedTimeFrame}}
+{\footnotesize\ttfamily float rent\+Scene\+::elapsed\+Time\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a6d58a2b02abfe9df3d915cf42a7af397}\label{a01589_a6d58a2b02abfe9df3d915cf42a7af397} 
+\index{rentScene@{rentScene}!fadeDuration@{fadeDuration}}
+\index{fadeDuration@{fadeDuration}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{fadeDuration}{fadeDuration}}
+{\footnotesize\ttfamily float rent\+Scene\+::fade\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_aad29f569775e70cbca413104da03750f}\label{a01589_aad29f569775e70cbca413104da03750f} 
+\index{rentScene@{rentScene}!frameDuration@{frameDuration}}
+\index{frameDuration@{frameDuration}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{frameDuration}{frameDuration}}
+{\footnotesize\ttfamily int rent\+Scene\+::frame\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_ade7339119f7adee2918e9c12974bbfa9}\label{a01589_ade7339119f7adee2918e9c12974bbfa9} 
+\index{rentScene@{rentScene}!frameIndex@{frameIndex}}
+\index{frameIndex@{frameIndex}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{frameIndex}{frameIndex}}
+{\footnotesize\ttfamily int rent\+Scene\+::frame\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01569_ad23161563ec0c989b590333fb546840e}\label{a01569_ad23161563ec0c989b590333fb546840e} 
+\index{rentScene@{rentScene}!handler@{handler}}
+\index{handler@{handler}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00677}{Handler}} Login\+Register\+::handler\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{rentScene@{rentScene}!inputs@{inputs}}
+\index{inputs@{inputs}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_a00075d61d51e4689593330e72b2a11a8}\label{a01589_a00075d61d51e4689593330e72b2a11a8} 
+\index{rentScene@{rentScene}!lastFrameVisible@{lastFrameVisible}}
+\index{lastFrameVisible@{lastFrameVisible}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{lastFrameVisible}{lastFrameVisible}}
+{\footnotesize\ttfamily bool rent\+Scene\+::last\+Frame\+Visible\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a96b5d2d5af1d5ff9bc6adee6471fbeb1}\label{a01589_a96b5d2d5af1d5ff9bc6adee6471fbeb1} 
+\index{rentScene@{rentScene}!location@{location}}
+\index{location@{location}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} rent\+Scene\+::location\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a4606efd79d969304443b94e3127a6aa3}\label{a01589_a4606efd79d969304443b94e3127a6aa3} 
+\index{rentScene@{rentScene}!locationSprite@{locationSprite}}
+\index{locationSprite@{locationSprite}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{locationSprite}{locationSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} rent\+Scene\+::location\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{rentScene@{rentScene}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_a28d3d3f18df200f2563802d9e48f0109}\label{a01589_a28d3d3f18df200f2563802d9e48f0109} 
+\index{rentScene@{rentScene}!logRegister@{logRegister}}
+\index{logRegister@{logRegister}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{logRegister}{logRegister}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01569}{Login\+Register}} rent\+Scene\+::log\+Register\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a1fb9056c31e5d27f5ba34ca85b5bd522}\label{a01589_a1fb9056c31e5d27f5ba34ca85b5bd522} 
+\index{rentScene@{rentScene}!manufacturer@{manufacturer}}
+\index{manufacturer@{manufacturer}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{manufacturer}{manufacturer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} rent\+Scene\+::manufacturer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_ad9b1dca21a4a013676b03e6c5e35cbbb}\label{a01589_ad9b1dca21a4a013676b03e6c5e35cbbb} 
+\index{rentScene@{rentScene}!manufacturerSprite@{manufacturerSprite}}
+\index{manufacturerSprite@{manufacturerSprite}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{manufacturerSprite}{manufacturerSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} rent\+Scene\+::manufacturer\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a732811219633009f6e59601f3b4e97c6}\label{a01589_a732811219633009f6e59601f3b4e97c6} 
+\index{rentScene@{rentScene}!model@{model}}
+\index{model@{model}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} rent\+Scene\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a3b558771da53b5391f3feda5f4923061}\label{a01589_a3b558771da53b5391f3feda5f4923061} 
+\index{rentScene@{rentScene}!modelSprite@{modelSprite}}
+\index{modelSprite@{modelSprite}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{modelSprite}{modelSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} rent\+Scene\+::model\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{rentScene@{rentScene}!type@{type}}
+\index{type@{type}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01589_ad274cfe9c6cfd7239282294c49b69e9a}\label{a01589_ad274cfe9c6cfd7239282294c49b69e9a} 
+\index{rentScene@{rentScene}!userId@{userId}}
+\index{userId@{userId}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{userId}{userId}}
+{\footnotesize\ttfamily int rent\+Scene\+::user\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a60e82ccec3d6290bb1556977a5ef5d63}\label{a01589_a60e82ccec3d6290bb1556977a5ef5d63} 
+\index{rentScene@{rentScene}!vehicleId@{vehicleId}}
+\index{vehicleId@{vehicleId}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{vehicleId}{vehicleId}}
+{\footnotesize\ttfamily int rent\+Scene\+::vehicle\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a18c2ea95498d546b1b36c4a7f6954bcb}\label{a01589_a18c2ea95498d546b1b36c4a7f6954bcb} 
+\index{rentScene@{rentScene}!vehicleType@{vehicleType}}
+\index{vehicleType@{vehicleType}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{vehicleType}{vehicleType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01785}{Texture}} rent\+Scene\+::vehicle\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01589_a1304eb6fbcd06a061592b46217c08b5b}\label{a01589_a1304eb6fbcd06a061592b46217c08b5b} 
+\index{rentScene@{rentScene}!vehicleTypeSprite@{vehicleTypeSprite}}
+\index{vehicleTypeSprite@{vehicleTypeSprite}!rentScene@{rentScene}}
+\doxysubsubsection{\texorpdfstring{vehicleTypeSprite}{vehicleTypeSprite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01777}{Sprite}} rent\+Scene\+::vehicle\+Type\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00299}{rent\+Scene.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00644}{rent\+Scene.\+cpp}}\end{DoxyCompactItemize}

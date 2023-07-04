@@ -1,0 +1,87 @@
+\doxysection{sf\+::Gl\+Resource Class Reference}
+\hypertarget{a02033}{}\label{a02033}\index{sf::GlResource@{sf::GlResource}}
+
+
+Base class for classes that require an Open\+GL context.  
+
+
+
+
+{\ttfamily \#include $<$Gl\+Resource.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Gl\+Resource\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a02037}{Transient\+Context\+Lock}}
+\begin{DoxyCompactList}\small\item\em RAII helper class to temporarily lock an available context for use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02033_ad8fb7a0674f0f77e530dacc2a3b0dc6a}{Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02033_ab99035b67052331d1e8cf67abd93de98}{\texorpdfstring{$\sim$}{\string~}\+Gl\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a02033_ab171bdaf5eb36789da14b30a846db471}{register\+Context\+Destroy\+Callback}} (\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}} callback, void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em \doxylink{a01585}{Register} a function to be called when a context is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for classes that require an Open\+GL context. 
+
+This class is for internal use only, it must be the base of every class that requires a valid Open\+GL context in order to work.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a02033_ad8fb7a0674f0f77e530dacc2a3b0dc6a}\label{a02033_ad8fb7a0674f0f77e530dacc2a3b0dc6a} 
+\index{sf::GlResource@{sf::GlResource}!GlResource@{GlResource}}
+\index{GlResource@{GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{GlResource()}{GlResource()}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{a02033_ab99035b67052331d1e8cf67abd93de98}\label{a02033_ab99035b67052331d1e8cf67abd93de98} 
+\index{sf::GlResource@{sf::GlResource}!````~GlResource@{\texorpdfstring{$\sim$}{\string~}GlResource}}
+\index{````~GlResource@{\texorpdfstring{$\sim$}{\string~}GlResource}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GlResource()}{\string~GlResource()}}
+{\footnotesize\ttfamily sf\+::\+Gl\+Resource\+::\texorpdfstring{$\sim$}{\string~}\+Gl\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a02033_ab171bdaf5eb36789da14b30a846db471}\label{a02033_ab171bdaf5eb36789da14b30a846db471} 
+\index{sf::GlResource@{sf::GlResource}!registerContextDestroyCallback@{registerContextDestroyCallback}}
+\index{registerContextDestroyCallback@{registerContextDestroyCallback}!sf::GlResource@{sf::GlResource}}
+\doxysubsubsection{\texorpdfstring{registerContextDestroyCallback()}{registerContextDestroyCallback()}}
+{\footnotesize\ttfamily static void sf\+::\+Gl\+Resource\+::register\+Context\+Destroy\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}}}]{callback,  }\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\doxylink{a01585}{Register} a function to be called when a context is destroyed. 
+
+This is used for internal purposes in order to properly clean up Open\+GL resources that cannot be shared between contexts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called when a context is destroyed \\
+\hline
+{\em arg} & Argument to pass when calling the function \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00584}{Gl\+Resource.\+hpp}}\end{DoxyCompactItemize}

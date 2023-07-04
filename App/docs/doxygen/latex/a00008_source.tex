@@ -1,0 +1,70 @@
+\doxysection{APIHandler.\+hpp}
+\hypertarget{a00008_source}{}\label{a00008_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/APIHandler.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/APIHandler.hpp}}
+\mbox{\hyperlink{a00008}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{Precompile.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00269}{Vehicle.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00681}{APIHandler}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::fstream\ \mbox{\hyperlink{a00681_ae8fd1d38684e2f81ec77e56ad6d49c0e}{authenticationToken}};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00681_a15233285ecd3e3190fc6fd60bd747c1e}{adminName}},\ \mbox{\hyperlink{a00681_afc4d48a0e6eebb1b523d2d2109ab33ce}{adminPassword}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a01541}{json}}\ \mbox{\hyperlink{a00681_af447608744e61055ae0e6f208599bd07}{JSONRes}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00685}{verification}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::vector<string>\ \mbox{\hyperlink{a00685_abb5e3989345d05ec3d5aa39de5924cbc}{names}},\ \mbox{\hyperlink{a00685_add1b7ec45f3c9ac78db87389638216a5}{contactNumbers}},\ \mbox{\hyperlink{a00685_a712a2d3af60dbd2aac6f4f3e7c9d74b8}{emails}},\ \mbox{\hyperlink{a00685_a93290be216cd1da77c5e26fb7fe4fe8e}{passwords}};}
+\DoxyCodeLine{00016\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a00685}{verification}}\ \mbox{\hyperlink{a00681_a8c14f6fddcb1d439bff8234123367ce5}{verify}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//convert\ to\ int\ because\ of\ NULL\ casting\ error}}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{a00681_a9faa14c1a4610bc6661283aa156c4530}{reserveIds}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//vehicle\ sorting\ by\ price}}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{a00681_ae42d90d0deb8c5fabf8f18a415a1bd3d}{vehiclePrices}};}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<string>\ \mbox{\hyperlink{a00681_a642e47aabaaae8c86efe492833016f9c}{vehicleTypes}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00681_a0f88beecf58ef75397a0c21238b12d61}{loggedUserId}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{a01541}{json}}\ \mbox{\hyperlink{a00681_a73df48baeb6342134a00ccaa60dbdb54}{obj}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{a00681_a597d7c222cb628a353ebbbb676d453e6}{objectIndex}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{a01557}{vehicles}}\ \mbox{\hyperlink{a00681_ae0295ca3b81238cb3f07825f4f0f5839}{vehicle}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<vehicles>\ \mbox{\hyperlink{a00681_a203502f580a1db2ea0cca74b9190cf46}{data}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a00681_ac33916a544c830ab1248410cb855bf59}{APIHandler}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a00681_ade3aafb04614deedd9fcf88e7fd3280b}{\string~APIHandler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//User\ methods}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_aa6deec607ed8cdc3190f391aa68864a3}{postUser}}(\textcolor{keywordtype}{string}\ enteredName,\ \textcolor{keywordtype}{string}\ enteredContactNumber,\ \textcolor{keywordtype}{string}\ enteredEmail,\ \textcolor{keywordtype}{string}\ enteredPassword,\ \textcolor{keywordtype}{string}\ enteredRole);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_a79c27beab1247e54d56de63739416aef}{getUsers}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00681_a53deb7058f5b7c8657f06d1e76ee4d07}{checkLoginRegister}}(\textcolor{keywordtype}{string}\ enteredName,\ \textcolor{keywordtype}{string}\ eneteredContactNumber,\ \textcolor{keywordtype}{string}\ email,\ \textcolor{keywordtype}{string}\ password,\ \textcolor{keywordtype}{string}\ isLogOrReg);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00681_a7d49da64f1541ce9c2207b77f8a35e98}{getName}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00681_ae5264be9090cd624ae7e588af330239a}{getRole}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00681_aa11f859ec149927693ea5a26a391649b}{getUserId}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//Log\ methods}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_aeedd07990ecf772039d0c02b560be11a}{postLog}}(\textcolor{keywordtype}{int}\ userId,\ \textcolor{keywordtype}{int}\ vehicleId);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_a77bbcf77259d1fe6de8f37cc76fa8900}{getLogs}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//Vehicle\ methods}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_aec2be789061c5ed56c90b85b442d5740}{putVehicle}}(\textcolor{keywordtype}{string}\ vehicleType,\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ manufacturer,\ \textcolor{keywordtype}{string}\ model,\ \textcolor{keywordtype}{bool}\ isReserved,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ reservationDate,\ \textcolor{keywordtype}{string}\ location,\ \textcolor{keywordtype}{string}\ price,\ \textcolor{keywordtype}{int}\ reservedById);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_ab366a1a56ac7e82bd2bdcc44df5c313b}{getVehicles}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_ade477aad17c12348fd87acbd46d810bd}{getVehicleParametres}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00681_a2147423011b14c011c2e6e15f9fa829c}{passData}}(std::vector<vehicles>\&\ dataVector);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//choice\ can\ be\ 1\ -\/>\ budget,\ 2\ -\/>\ mid,\ 3\ -\/>\ expensive}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//carType\ choice\ 1\ -\/>\ all\ types,\ 2\ -\/>\ car,\ 3\ -\/>\ van,\ 4\ -\/>\ motor,\ 5\ -\/>\ truck,\ 6\ -\/>\ suv,\ ;}}
+\DoxyCodeLine{00063\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{a00681_a9011b9d3fe167aa0e1f2c5716663a6c3}{getVehiclePricesIndexes}}(\textcolor{keywordtype}{int}\ budgetChoice,\ \textcolor{keywordtype}{string}\ carType);}
+\DoxyCodeLine{00064\ \};}
+
+\end{DoxyCode}

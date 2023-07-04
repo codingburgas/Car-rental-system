@@ -1,0 +1,414 @@
+\doxysection{sf\+::Http\+::Response Class Reference}
+\hypertarget{a01837}{}\label{a01837}\index{sf::Http::Response@{sf::Http::Response}}
+
+
+Define a HTTP response.  
+
+
+
+
+{\ttfamily \#include $<$Http.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Http\+::Response\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{Status}} \{ \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a0158f932254d3f09647dd1f64bd43832}{Ok}} = 200
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a0a6e8bafa9365a0ed10b8a9cbfd0649b}{Created}} = 201
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8ad328945457bd2f0d65107ba6b5ccd443}{Accepted}} = 202
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8aefde9e4abf5682dcd314d63143be42e0}{No\+Content}} = 204
+, \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a77327cc2a5e34cc64030b322e61d12a8}{Reset\+Content}} = 205
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a0cfae3ab0469b73dfddc54312a5e6a8a}{Partial\+Content}} = 206
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8add95cbd8fa27516821f763488557f96b}{Multiple\+Choices}} = 300
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a2f91651db3a09628faf68cbcefa0810a}{Moved\+Permanently}} = 301
+, \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a05c50d7b17c844e0b909e5802d5f1587}{Moved\+Temporarily}} = 302
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a060ebc3af266e6bfe045b89e298e2545}{Not\+Modified}} = 304
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a3f88a714cf5483ee22f9051e5a3c080a}{Bad\+Request}} = 400
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8ab7a79b7bff50fb1902c19eecbb4e2a2d}{Unauthorized}} = 401
+, \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a64492842e823ebe12a85539b6b454986}{Forbidden}} = 403
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8affca8a8319a62d98bd3ef90ff5cfc030}{Not\+Found}} = 404
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a12533d00093b190e6d4c0076577e2239}{Range\+Not\+Satisfiable}} = 407
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8adae2b2a936414349d55b4ed8c583fed1}{Internal\+Server\+Error}} = 500
+, \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a6920ba06d7e2bcf0b325da23ee95ef68}{Not\+Implemented}} = 501
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8aad0cbad4cdaf448beb763e86bc1f747c}{Bad\+Gateway}} = 502
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8ac4fffba9d5ad4c14171a1bbe4f6adf87}{Service\+Not\+Available}} = 503
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a215935d823ab44694709a184a71353b0}{Gateway\+Timeout}} = 504
+, \newline
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8aeb32a1a087d5fcf1a42663eb40c3c305}{Version\+Not\+Supported}} = 505
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a0af0090420e60bf54da4860749345c95}{Invalid\+Response}} = 1000
+, \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8a7f307376f13bdc06b24fc274ecd2aa60}{Connection\+Failed}} = 1001
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerate all the valid status codes for a response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{a01837_ac59e2b11cae4b6232c737547a3ca9850}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Get the body of the response. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{a01837_ae16458c4e969206381b78587aa47c8dc}{get\+Field}} (const std\+::string \&field) const
+\begin{DoxyCompactList}\small\item\em Get the value of a field. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01837_ab1c6948f6444fad34d0537e206e398b8}{get\+Major\+Http\+Version}} () const
+\begin{DoxyCompactList}\small\item\em Get the major HTTP version number of the response. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01837_af3c649568d2e291e71c3a7da546bb392}{get\+Minor\+Http\+Version}} () const
+\begin{DoxyCompactList}\small\item\em Get the minor HTTP version number of the response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{Status}} \mbox{\hyperlink{a01837_a4271651703764fd9a7d2c0315aff20de}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the response status code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01837_a2e51c89356fe6a007c448a841a9ec08c}{Response}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{a01837_af5d44ad22fb2e643522c7057bc1b55ee}{Field\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01837_aeba90e07eedc362c460590f5e11b9fb2}{parse}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Construct the header from a response string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01837_a545515d6e68a5ce179e522aad427c7ef}{parse\+Fields}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read values passed in the answer header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a01837_a16a7f803d919b49584c603f19588a8c4}{m\+\_\+body}}
+\begin{DoxyCompactList}\small\item\em Body of the response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01837_af5d44ad22fb2e643522c7057bc1b55ee}{Field\+Table}} \mbox{\hyperlink{a01837_a2b0e1335e9fcc5b5393c58b9dc1a58a7}{m\+\_\+fields}}
+\begin{DoxyCompactList}\small\item\em Fields of the header. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01837_a4c560f422ab1e85ba658df940f43be8f}{m\+\_\+major\+Version}}
+\begin{DoxyCompactList}\small\item\em Major HTTP version. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01837_af513722f2cdad00823ff3adb84616afa}{m\+\_\+minor\+Version}}
+\begin{DoxyCompactList}\small\item\em Minor HTTP version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{Status}} \mbox{\hyperlink{a01837_a977aa5c93dcee966dbb6f39d49092503}{m\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em Status code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01837_aba95e2a7762bb5df986048b05d03a22e}{Http}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define a HTTP response. 
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01837_af5d44ad22fb2e643522c7057bc1b55ee}\label{a01837_af5d44ad22fb2e643522c7057bc1b55ee} 
+\index{sf::Http::Response@{sf::Http::Response}!FieldTable@{FieldTable}}
+\index{FieldTable@{FieldTable}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{FieldTable}{FieldTable}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, std\+::string$>$ \mbox{\hyperlink{a01837_af5d44ad22fb2e643522c7057bc1b55ee}{sf\+::\+Http\+::\+Response\+::\+Field\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8}\label{a01837_a663e071978e30fbbeb20ed045be874d8} 
+\index{sf::Http::Response@{sf::Http::Response}!Status@{Status}}
+\index{Status@{Status}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{sf\+::\+Http\+::\+Response\+::\+Status}}}
+
+
+
+Enumerate all the valid status codes for a response. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!Ok@{Ok}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a0158f932254d3f09647dd1f64bd43832}\label{a01837_a663e071978e30fbbeb20ed045be874d8a0158f932254d3f09647dd1f64bd43832} 
+Ok&Most common code returned when operation was successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Created@{Created}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!Created@{Created}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a0a6e8bafa9365a0ed10b8a9cbfd0649b}\label{a01837_a663e071978e30fbbeb20ed045be874d8a0a6e8bafa9365a0ed10b8a9cbfd0649b} 
+Created&The resource has successfully been created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Accepted@{Accepted}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!Accepted@{Accepted}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8ad328945457bd2f0d65107ba6b5ccd443}\label{a01837_a663e071978e30fbbeb20ed045be874d8ad328945457bd2f0d65107ba6b5ccd443} 
+Accepted&The request has been accepted, but will be processed later by the server. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoContent@{NoContent}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!NoContent@{NoContent}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8aefde9e4abf5682dcd314d63143be42e0}\label{a01837_a663e071978e30fbbeb20ed045be874d8aefde9e4abf5682dcd314d63143be42e0} 
+No\+Content&The server didn\textquotesingle{}t send any data in return. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ResetContent@{ResetContent}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!ResetContent@{ResetContent}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a77327cc2a5e34cc64030b322e61d12a8}\label{a01837_a663e071978e30fbbeb20ed045be874d8a77327cc2a5e34cc64030b322e61d12a8} 
+Reset\+Content&The server informs the client that it should clear the view (form) that caused the request to be sent. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PartialContent@{PartialContent}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!PartialContent@{PartialContent}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a0cfae3ab0469b73dfddc54312a5e6a8a}\label{a01837_a663e071978e30fbbeb20ed045be874d8a0cfae3ab0469b73dfddc54312a5e6a8a} 
+Partial\+Content&The server has sent a part of the resource, as a response to a partial GET request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MultipleChoices@{MultipleChoices}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!MultipleChoices@{MultipleChoices}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8add95cbd8fa27516821f763488557f96b}\label{a01837_a663e071978e30fbbeb20ed045be874d8add95cbd8fa27516821f763488557f96b} 
+Multiple\+Choices&The requested page can be accessed from several locations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MovedPermanently@{MovedPermanently}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!MovedPermanently@{MovedPermanently}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a2f91651db3a09628faf68cbcefa0810a}\label{a01837_a663e071978e30fbbeb20ed045be874d8a2f91651db3a09628faf68cbcefa0810a} 
+Moved\+Permanently&The requested page has permanently moved to a new location. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MovedTemporarily@{MovedTemporarily}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!MovedTemporarily@{MovedTemporarily}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a05c50d7b17c844e0b909e5802d5f1587}\label{a01837_a663e071978e30fbbeb20ed045be874d8a05c50d7b17c844e0b909e5802d5f1587} 
+Moved\+Temporarily&The requested page has temporarily moved to a new location. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotModified@{NotModified}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!NotModified@{NotModified}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a060ebc3af266e6bfe045b89e298e2545}\label{a01837_a663e071978e30fbbeb20ed045be874d8a060ebc3af266e6bfe045b89e298e2545} 
+Not\+Modified&For conditional requests, means the requested page hasn\textquotesingle{}t changed and doesn\textquotesingle{}t need to be refreshed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadRequest@{BadRequest}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!BadRequest@{BadRequest}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a3f88a714cf5483ee22f9051e5a3c080a}\label{a01837_a663e071978e30fbbeb20ed045be874d8a3f88a714cf5483ee22f9051e5a3c080a} 
+Bad\+Request&The server couldn\textquotesingle{}t understand the request (syntax error) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unauthorized@{Unauthorized}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!Unauthorized@{Unauthorized}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8ab7a79b7bff50fb1902c19eecbb4e2a2d}\label{a01837_a663e071978e30fbbeb20ed045be874d8ab7a79b7bff50fb1902c19eecbb4e2a2d} 
+Unauthorized&The requested page needs an authentication to be accessed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Forbidden@{Forbidden}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!Forbidden@{Forbidden}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a64492842e823ebe12a85539b6b454986}\label{a01837_a663e071978e30fbbeb20ed045be874d8a64492842e823ebe12a85539b6b454986} 
+Forbidden&The requested page cannot be accessed at all, even with authentication. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotFound@{NotFound}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!NotFound@{NotFound}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8affca8a8319a62d98bd3ef90ff5cfc030}\label{a01837_a663e071978e30fbbeb20ed045be874d8affca8a8319a62d98bd3ef90ff5cfc030} 
+Not\+Found&The requested page doesn\textquotesingle{}t exist. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RangeNotSatisfiable@{RangeNotSatisfiable}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!RangeNotSatisfiable@{RangeNotSatisfiable}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a12533d00093b190e6d4c0076577e2239}\label{a01837_a663e071978e30fbbeb20ed045be874d8a12533d00093b190e6d4c0076577e2239} 
+Range\+Not\+Satisfiable&The server can\textquotesingle{}t satisfy the partial GET request (with a \"{}\+Range\"{} header field) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InternalServerError@{InternalServerError}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!InternalServerError@{InternalServerError}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8adae2b2a936414349d55b4ed8c583fed1}\label{a01837_a663e071978e30fbbeb20ed045be874d8adae2b2a936414349d55b4ed8c583fed1} 
+Internal\+Server\+Error&The server encountered an unexpected error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotImplemented@{NotImplemented}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!NotImplemented@{NotImplemented}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a6920ba06d7e2bcf0b325da23ee95ef68}\label{a01837_a663e071978e30fbbeb20ed045be874d8a6920ba06d7e2bcf0b325da23ee95ef68} 
+Not\+Implemented&The server doesn\textquotesingle{}t implement a requested feature. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadGateway@{BadGateway}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!BadGateway@{BadGateway}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8aad0cbad4cdaf448beb763e86bc1f747c}\label{a01837_a663e071978e30fbbeb20ed045be874d8aad0cbad4cdaf448beb763e86bc1f747c} 
+Bad\+Gateway&The gateway server has received an error from the source server. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceNotAvailable@{ServiceNotAvailable}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!ServiceNotAvailable@{ServiceNotAvailable}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8ac4fffba9d5ad4c14171a1bbe4f6adf87}\label{a01837_a663e071978e30fbbeb20ed045be874d8ac4fffba9d5ad4c14171a1bbe4f6adf87} 
+Service\+Not\+Available&The server is temporarily unavailable (overloaded, in maintenance, ...) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GatewayTimeout@{GatewayTimeout}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!GatewayTimeout@{GatewayTimeout}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a215935d823ab44694709a184a71353b0}\label{a01837_a663e071978e30fbbeb20ed045be874d8a215935d823ab44694709a184a71353b0} 
+Gateway\+Timeout&The gateway server couldn\textquotesingle{}t receive a response from the source server. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VersionNotSupported@{VersionNotSupported}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!VersionNotSupported@{VersionNotSupported}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8aeb32a1a087d5fcf1a42663eb40c3c305}\label{a01837_a663e071978e30fbbeb20ed045be874d8aeb32a1a087d5fcf1a42663eb40c3c305} 
+Version\+Not\+Supported&The server doesn\textquotesingle{}t support the requested HTTP version. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!InvalidResponse@{InvalidResponse}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a0af0090420e60bf54da4860749345c95}\label{a01837_a663e071978e30fbbeb20ed045be874d8a0af0090420e60bf54da4860749345c95} 
+Invalid\+Response&\doxylink{a01837}{Response} is not a valid HTTP one. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Http::Response@{sf::Http::Response}}\index{sf::Http::Response@{sf::Http::Response}!ConnectionFailed@{ConnectionFailed}}}\Hypertarget{a01837_a663e071978e30fbbeb20ed045be874d8a7f307376f13bdc06b24fc274ecd2aa60}\label{a01837_a663e071978e30fbbeb20ed045be874d8a7f307376f13bdc06b24fc274ecd2aa60} 
+Connection\+Failed&Connection with server failed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01837_a2e51c89356fe6a007c448a841a9ec08c}\label{a01837_a2e51c89356fe6a007c448a841a9ec08c} 
+\index{sf::Http::Response@{sf::Http::Response}!Response@{Response}}
+\index{Response@{Response}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}}
+{\footnotesize\ttfamily sf\+::\+Http\+::\+Response\+::\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructs an empty response. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01837_ac59e2b11cae4b6232c737547a3ca9850}\label{a01837_ac59e2b11cae4b6232c737547a3ca9850} 
+\index{sf::Http::Response@{sf::Http::Response}!getBody@{getBody}}
+\index{getBody@{getBody}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Http\+::\+Response\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the body of the response. 
+
+The body of a response may contain\+: \begin{DoxyItemize}
+\item the requested page (for GET requests) \item a response from the server (for POST requests) \item nothing (for HEAD requests) \item an error message (in case of an error)\end{DoxyItemize}
+\begin{DoxyReturn}{Returns}
+The response body 
+\end{DoxyReturn}
+\Hypertarget{a01837_ae16458c4e969206381b78587aa47c8dc}\label{a01837_ae16458c4e969206381b78587aa47c8dc} 
+\index{sf::Http::Response@{sf::Http::Response}!getField@{getField}}
+\index{getField@{getField}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{getField()}{getField()}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Http\+::\+Response\+::get\+Field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of a field. 
+
+If the field {\itshape field} is not found in the response header, the empty string is returned. This function uses case-\/insensitive comparisons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Name of the field to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the field, or empty string if not found 
+\end{DoxyReturn}
+\Hypertarget{a01837_ab1c6948f6444fad34d0537e206e398b8}\label{a01837_ab1c6948f6444fad34d0537e206e398b8} 
+\index{sf::Http::Response@{sf::Http::Response}!getMajorHttpVersion@{getMajorHttpVersion}}
+\index{getMajorHttpVersion@{getMajorHttpVersion}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{getMajorHttpVersion()}{getMajorHttpVersion()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Response\+::get\+Major\+Http\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the major HTTP version number of the response. 
+
+\begin{DoxyReturn}{Returns}
+Major HTTP version number
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01837_af3c649568d2e291e71c3a7da546bb392}{get\+Minor\+Http\+Version} 
+\end{DoxySeeAlso}
+\Hypertarget{a01837_af3c649568d2e291e71c3a7da546bb392}\label{a01837_af3c649568d2e291e71c3a7da546bb392} 
+\index{sf::Http::Response@{sf::Http::Response}!getMinorHttpVersion@{getMinorHttpVersion}}
+\index{getMinorHttpVersion@{getMinorHttpVersion}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{getMinorHttpVersion()}{getMinorHttpVersion()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Response\+::get\+Minor\+Http\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the minor HTTP version number of the response. 
+
+\begin{DoxyReturn}{Returns}
+Minor HTTP version number
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01837_ab1c6948f6444fad34d0537e206e398b8}{get\+Major\+Http\+Version} 
+\end{DoxySeeAlso}
+\Hypertarget{a01837_a4271651703764fd9a7d2c0315aff20de}\label{a01837_a4271651703764fd9a7d2c0315aff20de} 
+\index{sf::Http::Response@{sf::Http::Response}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{Status}} sf\+::\+Http\+::\+Response\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the response status code. 
+
+The status code should be the first thing to be checked after receiving a response, it defines whether it is a success, a failure or anything else (see the Status enumeration).
+
+\begin{DoxyReturn}{Returns}
+Status code of the response 
+\end{DoxyReturn}
+\Hypertarget{a01837_aeba90e07eedc362c460590f5e11b9fb2}\label{a01837_aeba90e07eedc362c460590f5e11b9fb2} 
+\index{sf::Http::Response@{sf::Http::Response}!parse@{parse}}
+\index{parse@{parse}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Response\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Construct the header from a response string. 
+
+This function is used by \doxylink{a01829}{Http} to build the response of a request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Content of the response to parse \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01837_a545515d6e68a5ce179e522aad427c7ef}\label{a01837_a545515d6e68a5ce179e522aad427c7ef} 
+\index{sf::Http::Response@{sf::Http::Response}!parseFields@{parseFields}}
+\index{parseFields@{parseFields}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{parseFields()}{parseFields()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Response\+::parse\+Fields (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Read values passed in the answer header. 
+
+This function is used by \doxylink{a01829}{Http} to extract values passed in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \doxylink{a01901}{String} stream containing the header values \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01837_aba95e2a7762bb5df986048b05d03a22e}\label{a01837_aba95e2a7762bb5df986048b05d03a22e} 
+\index{sf::Http::Response@{sf::Http::Response}!Http@{Http}}
+\index{Http@{Http}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{Http}{Http}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01829}{Http}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01837_a16a7f803d919b49584c603f19588a8c4}\label{a01837_a16a7f803d919b49584c603f19588a8c4} 
+\index{sf::Http::Response@{sf::Http::Response}!m\_body@{m\_body}}
+\index{m\_body@{m\_body}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{m\_body}{m\_body}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Http\+::\+Response\+::m\+\_\+body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Body of the response. 
+
+\Hypertarget{a01837_a2b0e1335e9fcc5b5393c58b9dc1a58a7}\label{a01837_a2b0e1335e9fcc5b5393c58b9dc1a58a7} 
+\index{sf::Http::Response@{sf::Http::Response}!m\_fields@{m\_fields}}
+\index{m\_fields@{m\_fields}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{m\_fields}{m\_fields}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01837_af5d44ad22fb2e643522c7057bc1b55ee}{Field\+Table}} sf\+::\+Http\+::\+Response\+::m\+\_\+fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fields of the header. 
+
+\Hypertarget{a01837_a4c560f422ab1e85ba658df940f43be8f}\label{a01837_a4c560f422ab1e85ba658df940f43be8f} 
+\index{sf::Http::Response@{sf::Http::Response}!m\_majorVersion@{m\_majorVersion}}
+\index{m\_majorVersion@{m\_majorVersion}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{m\_majorVersion}{m\_majorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Response\+::m\+\_\+major\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Major HTTP version. 
+
+\Hypertarget{a01837_af513722f2cdad00823ff3adb84616afa}\label{a01837_af513722f2cdad00823ff3adb84616afa} 
+\index{sf::Http::Response@{sf::Http::Response}!m\_minorVersion@{m\_minorVersion}}
+\index{m\_minorVersion@{m\_minorVersion}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{m\_minorVersion}{m\_minorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Response\+::m\+\_\+minor\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minor HTTP version. 
+
+\Hypertarget{a01837_a977aa5c93dcee966dbb6f39d49092503}\label{a01837_a977aa5c93dcee966dbb6f39d49092503} 
+\index{sf::Http::Response@{sf::Http::Response}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!sf::Http::Response@{sf::Http::Response}}
+\doxysubsubsection{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01837_a663e071978e30fbbeb20ed045be874d8}{Status}} sf\+::\+Http\+::\+Response\+::m\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status code. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00461}{Http.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\doxysection{Matrix\texorpdfstring{$<$}{<} Columns, Rows \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01721}{}\label{a01721}\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+
+
+\doxylink{a01721}{Matrix} type, used to set uniforms in GLSL.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01721_ad40da72f526bcd6854d83496d2f62e01}{Matrix}} (const float \texorpdfstring{$\ast$}{*}pointer)
+\begin{DoxyCompactList}\small\item\em Construct from raw data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01721_acc8ec3ddfe33a01f9ae7970d8fed9855}{Matrix}} (const Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Construct implicitly from SFML transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01721_a494cc3a7a34398ec21992ba83018d9f4}{array}} \mbox{[}Columns \texorpdfstring{$\ast$}{*}Rows\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array holding matrix data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$\newline
+struct Matrix$<$ Columns, Rows $>$}
+\doxylink{a01721}{Matrix} type, used to set uniforms in GLSL. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01721_ad40da72f526bcd6854d83496d2f62e01}\label{a01721_ad40da72f526bcd6854d83496d2f62e01} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{a01721}{Matrix}}$<$ Columns, Rows $>$\mbox{\hyperlink{a01721}{\+::\+Matrix}} (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from raw data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & Points to the beginning of an array that has the size of the matrix. The elements are copied to the instance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01721_acc8ec3ddfe33a01f9ae7970d8fed9855}\label{a01721_acc8ec3ddfe33a01f9ae7970d8fed9855} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+\mbox{\hyperlink{a01721}{Matrix}}$<$ Columns, Rows $>$\mbox{\hyperlink{a01721}{\+::\+Matrix}} (\begin{DoxyParamCaption}\item[{const Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct implicitly from SFML transform. 
+
+This constructor is only supported for 3x3 and 4x4 matrices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & Object containing a transform. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01721_a494cc3a7a34398ec21992ba83018d9f4}\label{a01721_a494cc3a7a34398ec21992ba83018d9f4} 
+\index{Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}!array@{array}}
+\index{array@{array}!Matrix$<$ Columns, Rows $>$@{Matrix$<$ Columns, Rows $>$}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Columns, std\+::size\+\_\+t Rows$>$ \\
+float \mbox{\hyperlink{a01721}{Matrix}}$<$ Columns, Rows $>$\+::array\mbox{[}Columns \texorpdfstring{$\ast$}{*}Rows\mbox{]}}
+
+
+
+Array holding matrix data. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00386}{Glsl.\+inl}}\end{DoxyCompactItemize}

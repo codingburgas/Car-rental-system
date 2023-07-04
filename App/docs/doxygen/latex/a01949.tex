@@ -1,0 +1,478 @@
+\doxysection{sf\+::Utf\texorpdfstring{$<$}{<} 32 \texorpdfstring{$>$}{>} Class Reference}
+\hypertarget{a01949}{}\label{a01949}\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+
+
+Specialization of the \doxylink{a01937}{Utf} template for UTF-\/32.  
+
+
+
+
+{\ttfamily \#include $<$Utf.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename In $>$ }\\static std\+::size\+\_\+t \mbox{\hyperlink{a01949_a9b18c32b9e6d4b3126e9b4af45988b55}{count}} (In begin, In end)
+\begin{DoxyCompactList}\small\item\em Count the number of characters of a UTF-\/32 sequence. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In $>$ }\\static In \mbox{\hyperlink{a01949_ad754ce8476f7b80563890dec12cefd46}{decode}} (In begin, In end, \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \&output, \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} replacement=0)
+\begin{DoxyCompactList}\small\item\em Decode a single UTF-\/32 character. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In $>$ }\\static \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01949_a68346ea833f88267a7c739d4d96fb86f}{decode\+Ansi}} (In input, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Decode a single ANSI character to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In $>$ }\\static \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01949_a043fe25f5f4dbc205e78e6f1d99840dc}{decode\+Wide}} (In input)
+\begin{DoxyCompactList}\small\item\em Decode a single wide character to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a27b9d3f3fc49a8c88d91966889fcfca1}{encode}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} input, Out output, \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} replacement=0)
+\begin{DoxyCompactList}\small\item\em Encode a single UTF-\/32 character. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_af6590226a071076ca22d818573a16ded}{encode\+Ansi}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} codepoint, Out output, char replacement=0, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Encode a single UTF-\/32 character to ANSI. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a52e511e74ddc5df1bbf18f910193bc47}{encode\+Wide}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} codepoint, Out output, wchar\+\_\+t replacement=0)
+\begin{DoxyCompactList}\small\item\em Encode a single UTF-\/32 character to wide. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a384a4169287af15876783ad477cac4e3}{from\+Ansi}} (In begin, In end, Out output, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Convert an ANSI characters range to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a05741b76b5a26267a72735e40ca61c55}{from\+Latin1}} (In begin, In end, Out output)
+\begin{DoxyCompactList}\small\item\em Convert a latin-\/1 (ISO-\/5589-\/1) characters range to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_abdf0d41e0c8814a68326688e3b8d187f}{from\+Wide}} (In begin, In end, Out output)
+\begin{DoxyCompactList}\small\item\em Convert a wide characters range to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In $>$ }\\static In \mbox{\hyperlink{a01949_a788b4ebc728dde2aaba38f3605d4867c}{next}} (In begin, In end)
+\begin{DoxyCompactList}\small\item\em Advance to the next UTF-\/32 character. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a768cb205f7f1d20cd900e34fb48f9316}{to\+Ansi}} (In begin, In end, Out output, char replacement=0, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Convert an UTF-\/32 characters range to ANSI characters. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a064ce0ad81768d0d99b6b3e2e980e3ce}{to\+Latin1}} (In begin, In end, Out output, char replacement=0)
+\begin{DoxyCompactList}\small\item\em Convert an UTF-\/16 characters range to latin-\/1 (ISO-\/5589-\/1) characters. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a3f97efb599ad237af06f076f3fcfa354}{to\+Utf16}} (In begin, In end, Out output)
+\begin{DoxyCompactList}\small\item\em Convert a UTF-\/32 characters range to UTF-\/16. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_abd7c1e80791c80c4d78257440de96140}{to\+Utf32}} (In begin, In end, Out output)
+\begin{DoxyCompactList}\small\item\em Convert a UTF-\/32 characters range to UTF-\/32. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a193e155964b073c8ba838434f41d5e97}{to\+Utf8}} (In begin, In end, Out output)
+\begin{DoxyCompactList}\small\item\em Convert a UTF-\/32 characters range to UTF-\/8. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename In , typename Out $>$ }\\static Out \mbox{\hyperlink{a01949_a0d5bf45a9732beb935592da6bed1242c}{to\+Wide}} (In begin, In end, Out output, wchar\+\_\+t replacement=0)
+\begin{DoxyCompactList}\small\item\em Convert an UTF-\/32 characters range to wide characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialization of the \doxylink{a01937}{Utf} template for UTF-\/32. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01949_a9b18c32b9e6d4b3126e9b4af45988b55}\label{a01949_a9b18c32b9e6d4b3126e9b4af45988b55} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!count@{count}}
+\index{count@{count}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily template$<$typename In $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::count (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Count the number of characters of a UTF-\/32 sequence. 
+
+This function is trivial for UTF-\/32, which can store every character in a single storage element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator pointing to one past the last read element of the input sequence 
+\end{DoxyReturn}
+\Hypertarget{a01949_ad754ce8476f7b80563890dec12cefd46}\label{a01949_ad754ce8476f7b80563890dec12cefd46} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!decode@{decode}}
+\index{decode@{decode}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily template$<$typename In $>$ \\
+static In \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::decode (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \&}]{output,  }\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{replacement = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decode a single UTF-\/32 character. 
+
+Decoding a character means finding its unique 32-\/bits code (called the codepoint) in the Unicode standard. For UTF-\/32, the character value is the same as the codepoint.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Codepoint of the decoded UTF-\/32 character \\
+\hline
+{\em replacement} & Replacement character to use in case the UTF-\/8 sequence is invalid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator pointing to one past the last read element of the input sequence 
+\end{DoxyReturn}
+\Hypertarget{a01949_a68346ea833f88267a7c739d4d96fb86f}\label{a01949_a68346ea833f88267a7c739d4d96fb86f} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!decodeAnsi@{decodeAnsi}}
+\index{decodeAnsi@{decodeAnsi}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{decodeAnsi()}{decodeAnsi()}}
+{\footnotesize\ttfamily template$<$typename In $>$ \\
+static \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::decode\+Ansi (\begin{DoxyParamCaption}\item[{In}]{input,  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decode a single ANSI character to UTF-\/32. 
+
+This function does not exist in other specializations of sf\+::\+Utf$<$$>$, it is defined for convenience (it is used by several other conversion functions).
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input ANSI character \\
+\hline
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted character 
+\end{DoxyReturn}
+\Hypertarget{a01949_a043fe25f5f4dbc205e78e6f1d99840dc}\label{a01949_a043fe25f5f4dbc205e78e6f1d99840dc} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!decodeWide@{decodeWide}}
+\index{decodeWide@{decodeWide}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{decodeWide()}{decodeWide()}}
+{\footnotesize\ttfamily template$<$typename In $>$ \\
+static \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::decode\+Wide (\begin{DoxyParamCaption}\item[{In}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decode a single wide character to UTF-\/32. 
+
+This function does not exist in other specializations of sf\+::\+Utf$<$$>$, it is defined for convenience (it is used by several other conversion functions).
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input wide character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted character 
+\end{DoxyReturn}
+\Hypertarget{a01949_a27b9d3f3fc49a8c88d91966889fcfca1}\label{a01949_a27b9d3f3fc49a8c88d91966889fcfca1} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!encode@{encode}}
+\index{encode@{encode}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily template$<$typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{input,  }\item[{Out}]{output,  }\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{replacement = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode a single UTF-\/32 character. 
+
+Encoding a character means converting a unique 32-\/bits code (called the codepoint) in the target encoding, UTF-\/32. For UTF-\/32, the codepoint is the same as the character value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Codepoint to encode as UTF-\/32 \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement for characters not convertible to UTF-\/32 (use 0 to skip them)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_af6590226a071076ca22d818573a16ded}\label{a01949_af6590226a071076ca22d818573a16ded} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!encodeAnsi@{encodeAnsi}}
+\index{encodeAnsi@{encodeAnsi}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{encodeAnsi()}{encodeAnsi()}}
+{\footnotesize\ttfamily template$<$typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::encode\+Ansi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{codepoint,  }\item[{Out}]{output,  }\item[{char}]{replacement = {\ttfamily 0},  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode a single UTF-\/32 character to ANSI. 
+
+This function does not exist in other specializations of sf\+::\+Utf$<$$>$, it is defined for convenience (it is used by several other conversion functions).
+
+
+\begin{DoxyParams}{Parameters}
+{\em codepoint} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement if the input character is not convertible to ANSI (use 0 to skip it) \\
+\hline
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a52e511e74ddc5df1bbf18f910193bc47}\label{a01949_a52e511e74ddc5df1bbf18f910193bc47} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!encodeWide@{encodeWide}}
+\index{encodeWide@{encodeWide}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{encodeWide()}{encodeWide()}}
+{\footnotesize\ttfamily template$<$typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::encode\+Wide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{codepoint,  }\item[{Out}]{output,  }\item[{wchar\+\_\+t}]{replacement = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode a single UTF-\/32 character to wide. 
+
+This function does not exist in other specializations of sf\+::\+Utf$<$$>$, it is defined for convenience (it is used by several other conversion functions).
+
+
+\begin{DoxyParams}{Parameters}
+{\em codepoint} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement if the input character is not convertible to wide (use 0 to skip it)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a384a4169287af15876783ad477cac4e3}\label{a01949_a384a4169287af15876783ad477cac4e3} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!fromAnsi@{fromAnsi}}
+\index{fromAnsi@{fromAnsi}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{fromAnsi()}{fromAnsi()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::from\+Ansi (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output,  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert an ANSI characters range to UTF-\/32. 
+
+The current global locale will be used by default, unless you pass a custom one in the {\itshape locale} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a05741b76b5a26267a72735e40ca61c55}\label{a01949_a05741b76b5a26267a72735e40ca61c55} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!fromLatin1@{fromLatin1}}
+\index{fromLatin1@{fromLatin1}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{fromLatin1()}{fromLatin1()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::from\+Latin1 (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a latin-\/1 (ISO-\/5589-\/1) characters range to UTF-\/32. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_abdf0d41e0c8814a68326688e3b8d187f}\label{a01949_abdf0d41e0c8814a68326688e3b8d187f} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!fromWide@{fromWide}}
+\index{fromWide@{fromWide}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{fromWide()}{fromWide()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::from\+Wide (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a wide characters range to UTF-\/32. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a788b4ebc728dde2aaba38f3605d4867c}\label{a01949_a788b4ebc728dde2aaba38f3605d4867c} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!next@{next}}
+\index{next@{next}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily template$<$typename In $>$ \\
+static In \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::next (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Advance to the next UTF-\/32 character. 
+
+This function is trivial for UTF-\/32, which can store every character in a single storage element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator pointing to one past the last read element of the input sequence 
+\end{DoxyReturn}
+\Hypertarget{a01949_a768cb205f7f1d20cd900e34fb48f9316}\label{a01949_a768cb205f7f1d20cd900e34fb48f9316} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toAnsi@{toAnsi}}
+\index{toAnsi@{toAnsi}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toAnsi()}{toAnsi()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Ansi (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output,  }\item[{char}]{replacement = {\ttfamily 0},  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert an UTF-\/32 characters range to ANSI characters. 
+
+The current global locale will be used by default, unless you pass a custom one in the {\itshape locale} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement for characters not convertible to ANSI (use 0 to skip them) \\
+\hline
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a064ce0ad81768d0d99b6b3e2e980e3ce}\label{a01949_a064ce0ad81768d0d99b6b3e2e980e3ce} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toLatin1@{toLatin1}}
+\index{toLatin1@{toLatin1}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toLatin1()}{toLatin1()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Latin1 (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output,  }\item[{char}]{replacement = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert an UTF-\/16 characters range to latin-\/1 (ISO-\/5589-\/1) characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement for characters not convertible to wide (use 0 to skip them)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a3f97efb599ad237af06f076f3fcfa354}\label{a01949_a3f97efb599ad237af06f076f3fcfa354} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toUtf16@{toUtf16}}
+\index{toUtf16@{toUtf16}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toUtf16()}{toUtf16()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Utf16 (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a UTF-\/32 characters range to UTF-\/16. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_abd7c1e80791c80c4d78257440de96140}\label{a01949_abd7c1e80791c80c4d78257440de96140} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toUtf32@{toUtf32}}
+\index{toUtf32@{toUtf32}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toUtf32()}{toUtf32()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Utf32 (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a UTF-\/32 characters range to UTF-\/32. 
+
+This functions does nothing more than a direct copy; it is defined only to provide the same interface as other specializations of the sf\+::\+Utf$<$$>$ template, and allow generic code to be written on top of it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a193e155964b073c8ba838434f41d5e97}\label{a01949_a193e155964b073c8ba838434f41d5e97} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toUtf8@{toUtf8}}
+\index{toUtf8@{toUtf8}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toUtf8()}{toUtf8()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Utf8 (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a UTF-\/32 characters range to UTF-\/8. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+\Hypertarget{a01949_a0d5bf45a9732beb935592da6bed1242c}\label{a01949_a0d5bf45a9732beb935592da6bed1242c} 
+\index{sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}!toWide@{toWide}}
+\index{toWide@{toWide}!sf::Utf$<$ 32 $>$@{sf::Utf$<$ 32 $>$}}
+\doxysubsubsection{\texorpdfstring{toWide()}{toWide()}}
+{\footnotesize\ttfamily template$<$typename In , typename Out $>$ \\
+static Out \mbox{\hyperlink{a01937}{sf\+::\+Utf}}$<$ 32 $>$\+::to\+Wide (\begin{DoxyParamCaption}\item[{In}]{begin,  }\item[{In}]{end,  }\item[{Out}]{output,  }\item[{wchar\+\_\+t}]{replacement = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert an UTF-\/32 characters range to wide characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Iterator pointing to the beginning of the input sequence \\
+\hline
+{\em end} & Iterator pointing to the end of the input sequence \\
+\hline
+{\em output} & Iterator pointing to the beginning of the output sequence \\
+\hline
+{\em replacement} & Replacement for characters not convertible to wide (use 0 to skip them)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator to the end of the output sequence which has been written 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00548}{Utf.\+hpp}}\end{DoxyCompactItemize}

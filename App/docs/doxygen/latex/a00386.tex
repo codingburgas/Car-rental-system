@@ -1,0 +1,69 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.PL/\+SFML/include/\+SFML/\+Graphics/\+Glsl.inl File Reference}
+\hypertarget{a00386}{}\label{a00386}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Glsl.inl@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Glsl.inl}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01721}{Matrix$<$ Columns, Rows $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01721}{Matrix} type, used to set uniforms in GLSL. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01725}{Vector4$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em 4D vector type, used to set uniforms in GLSL \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00386_ad7522005ab0c281c82e885693abe1ee4}{copy\+Matrix}} (const float \texorpdfstring{$\ast$}{*}source, std\+::size\+\_\+t elements, float \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Copy array-\/based matrix with given number of elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00386_aad1baaf4188242e642326ce2230aaa74}{copy\+Matrix}} (const Transform \&source, \mbox{\hyperlink{a01721}{Matrix}}$<$ 3, 3 $>$ \&dest)
+\begin{DoxyCompactList}\small\item\em Helper functions to copy \doxylink{a01789}{sf\+::\+Transform} to \doxylink{a00671_a1bf4595b60b08c79473a882e2c1dbff8}{sf\+::\+Glsl\+::\+Mat3}/4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00386_a6b1fb08aee1f3eb5f03b9305ac86b315}{copy\+Matrix}} (const Transform \&source, \mbox{\hyperlink{a01721}{Matrix}}$<$ 4, 4 $>$ \&dest)
+\item 
+void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00386_ab1bc299570e63d80e79c69e572cda030}{copy\+Vector}} (const Color \&source, \mbox{\hyperlink{a01725}{Vector4}}$<$ float $>$ \&dest)
+\begin{DoxyCompactList}\small\item\em Helper functions to copy \doxylink{a01685}{sf\+::\+Color} to \doxylink{a00671_a862f8df4771d2403de28653328fac5d0}{sf\+::\+Glsl\+::\+Vec4}/\+Ivec4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} \mbox{\hyperlink{a00386_ac6b9cce1ecf6143f69b4417bf73f2883}{copy\+Vector}} (const Color \&source, \mbox{\hyperlink{a01725}{Vector4}}$<$ int $>$ \&dest)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00386_ad7522005ab0c281c82e885693abe1ee4}\label{a00386_ad7522005ab0c281c82e885693abe1ee4} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{source,  }\item[{std\+::size\+\_\+t}]{elements,  }\item[{float \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Copy array-\/based matrix with given number of elements. 
+
+Indirection to std\+::copy() to avoid inclusion of $<$algorithm$>$ and MSVC\textquotesingle{}s annoying 4996 warning in header \Hypertarget{a00386_aad1baaf4188242e642326ce2230aaa74}\label{a00386_aad1baaf4188242e642326ce2230aaa74} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const Transform \&}]{source,  }\item[{\mbox{\hyperlink{a01721}{Matrix}}$<$ 3, 3 $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Helper functions to copy \doxylink{a01789}{sf\+::\+Transform} to \doxylink{a00671_a1bf4595b60b08c79473a882e2c1dbff8}{sf\+::\+Glsl\+::\+Mat3}/4. 
+
+\Hypertarget{a00386_a6b1fb08aee1f3eb5f03b9305ac86b315}\label{a00386_a6b1fb08aee1f3eb5f03b9305ac86b315} 
+\index{Glsl.inl@{Glsl.inl}!copyMatrix@{copyMatrix}}
+\index{copyMatrix@{copyMatrix}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyMatrix()}{copyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Matrix (\begin{DoxyParamCaption}\item[{const Transform \&}]{source,  }\item[{\mbox{\hyperlink{a01721}{Matrix}}$<$ 4, 4 $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+\Hypertarget{a00386_ab1bc299570e63d80e79c69e572cda030}\label{a00386_ab1bc299570e63d80e79c69e572cda030} 
+\index{Glsl.inl@{Glsl.inl}!copyVector@{copyVector}}
+\index{copyVector@{copyVector}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyVector()}{copyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Vector (\begin{DoxyParamCaption}\item[{const Color \&}]{source,  }\item[{\mbox{\hyperlink{a01725}{Vector4}}$<$ float $>$ \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Helper functions to copy \doxylink{a01685}{sf\+::\+Color} to \doxylink{a00671_a862f8df4771d2403de28653328fac5d0}{sf\+::\+Glsl\+::\+Vec4}/\+Ivec4. 
+
+\Hypertarget{a00386_ac6b9cce1ecf6143f69b4417bf73f2883}\label{a00386_ac6b9cce1ecf6143f69b4417bf73f2883} 
+\index{Glsl.inl@{Glsl.inl}!copyVector@{copyVector}}
+\index{copyVector@{copyVector}!Glsl.inl@{Glsl.inl}}
+\doxysubsubsection{\texorpdfstring{copyVector()}{copyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\+\_\+\+GRAPHICS\+\_\+\+API}} copy\+Vector (\begin{DoxyParamCaption}\item[{const Color \&}]{source,  }\item[{\mbox{\hyperlink{a01725}{Vector4}}$<$ int $>$ \&}]{dest }\end{DoxyParamCaption})}
+

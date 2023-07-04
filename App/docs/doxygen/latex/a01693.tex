@@ -1,0 +1,130 @@
+\doxysection{sf\+::Drawable Class Reference}
+\hypertarget{a01693}{}\label{a01693}\index{sf::Drawable@{sf::Drawable}}
+
+
+Abstract base class for objects that can be drawn to a render target.  
+
+
+
+
+{\ttfamily \#include $<$Drawable.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Drawable\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{a01693_a906002f2df7beb5edbddf5bbef96f120}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01693_a90d2c88bba9b035a0844eccb380ef631}{draw}} (\mbox{\hyperlink{a01749}{Render\+Target}} \&target, \mbox{\hyperlink{a01745}{Render\+States}} states) const =0
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01693_aa5afc6f82b7b587ed5ada4d227ce32aa}{Render\+Target}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for objects that can be drawn to a render target. 
+
+\doxylink{a01693}{sf\+::\+Drawable} is a very simple base class that allows objects of derived classes to be drawn to a \doxylink{a01749}{sf\+::\+Render\+Target}.
+
+All you have to do in your derived class is to override the draw virtual function.
+
+Note that inheriting from \doxylink{a01693}{sf\+::\+Drawable} is not mandatory, but it allows this nice syntax \"{}window.\+draw(object)\"{} rather than \"{}object.\+draw(window)\"{}, which is more consistent with other SFML classes.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyDrawable\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01693}{sf::Drawable}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{a01749}{sf::RenderTarget}}\&\ target,\ \mbox{\hyperlink{a01745}{sf::RenderStates}}\ states)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ You\ can\ draw\ other\ high-\/level\ objects}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ target.\mbox{\hyperlink{a01749_a12417a3bcc245c41d957b29583556f39}{draw}}(m\_sprite,\ states);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...\ or\ use\ the\ low-\/level\ API}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ states.\mbox{\hyperlink{a01745_a457fc5a41731889de9cf39cf9b3436c3}{texture}}\ =\ \&m\_texture;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ target.\mbox{\hyperlink{a01749_a12417a3bcc245c41d957b29583556f39}{draw}}(m\_vertices,\ states);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...\ or\ draw\ with\ OpenGL\ directly}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glBegin(GL\_QUADS);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glEnd();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01777}{sf::Sprite}}\ m\_sprite;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01785}{sf::Texture}}\ m\_texture;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01801}{sf::VertexArray}}\ m\_vertices;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01749}{sf\+::\+Render\+Target} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01693_a906002f2df7beb5edbddf5bbef96f120}\label{a01693_a906002f2df7beb5edbddf5bbef96f120} 
+\index{sf::Drawable@{sf::Drawable}!````~Drawable@{\texorpdfstring{$\sim$}{\string~}Drawable}}
+\index{````~Drawable@{\texorpdfstring{$\sim$}{\string~}Drawable}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Drawable()}{\string~Drawable()}}
+{\footnotesize\ttfamily virtual sf\+::\+Drawable\+::\texorpdfstring{$\sim$}{\string~}\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01693_a90d2c88bba9b035a0844eccb380ef631}\label{a01693_a90d2c88bba9b035a0844eccb380ef631} 
+\index{sf::Drawable@{sf::Drawable}!draw@{draw}}
+\index{draw@{draw}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Drawable\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01749}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{a01745}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{a01773_af335b88097f1db83afdfafa0cd66d04d}{sf\+::\+Shape}}, \mbox{\hyperlink{a01777_ad6ab20148c4ba6d6fc33a4aaf5eb838b}{sf\+::\+Sprite}}, \mbox{\hyperlink{a01781_a42f0cd394f76f4c0998114918cb3f11c}{sf\+::\+Text}}, \mbox{\hyperlink{a01801_aa461f084e4a65fabfa4992885dabbea6}{sf\+::\+Vertex\+Array}}, and \mbox{\hyperlink{a01805_a3591a7fd52f502033b40755af71edc17}{sf\+::\+Vertex\+Buffer}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01693_aa5afc6f82b7b587ed5ada4d227ce32aa}\label{a01693_aa5afc6f82b7b587ed5ada4d227ce32aa} 
+\index{sf::Drawable@{sf::Drawable}!RenderTarget@{RenderTarget}}
+\index{RenderTarget@{RenderTarget}!sf::Drawable@{sf::Drawable}}
+\doxysubsubsection{\texorpdfstring{RenderTarget}{RenderTarget}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01749}{Render\+Target}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00377}{Drawable.\+hpp}}\end{DoxyCompactItemize}

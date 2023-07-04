@@ -1,0 +1,131 @@
+\doxysection{sf\+::Lock Class Reference}
+\hypertarget{a01885}{}\label{a01885}\index{sf::Lock@{sf::Lock}}
+
+
+Automatic wrapper for locking and unlocking mutexes.  
+
+
+
+
+{\ttfamily \#include $<$Lock.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Lock\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Lock\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01885_a1a4c5d7a15da61103d85c9aa7f118920}{Lock}} (\mbox{\hyperlink{a01893}{Mutex}} \&mutex)
+\begin{DoxyCompactList}\small\item\em Construct the lock with a target mutex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01885_a8168b36323a18ccf5b6bc531d964aec5}{\texorpdfstring{$\sim$}{\string~}\+Lock}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01893}{Mutex}} \& \mbox{\hyperlink{a01885_a09ac17cbb8c83d6094d3935164742967}{m\+\_\+mutex}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01893}{Mutex} to lock / unlock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Automatic wrapper for locking and unlocking mutexes. 
+
+\doxylink{a01885}{sf\+::\+Lock} is a RAII wrapper for \doxylink{a01893}{sf\+::\+Mutex}. By unlocking it in its destructor, it ensures that the mutex will always be released when the current scope (most likely a function) ends. This is even more important when an exception or an early return statement can interrupt the execution flow of the function.
+
+For maximum robustness, \doxylink{a01885}{sf\+::\+Lock} should always be used to lock/unlock a mutex.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01893}{sf::Mutex}}\ mutex;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ function()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01885}{sf::Lock}}\ lock(mutex);\ \textcolor{comment}{//\ mutex\ is\ now\ locked}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ functionThatMayThrowAnException();\ \textcolor{comment}{//\ mutex\ is\ unlocked\ if\ this\ function\ throws}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (someCondition)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ mutex\ is\ unlocked}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}\ \textcolor{comment}{//\ mutex\ is\ unlocked}}
+
+\end{DoxyCode}
+
+
+Because the mutex is not explicitly unlocked in the code, it may remain locked longer than needed. If the region of the code that needs to be protected by the mutex is not the entire function, a good practice is to create a smaller, inner scope so that the lock is limited to this part of the code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01893}{sf::Mutex}}\ mutex;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ function()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{a01885}{sf::Lock}}\ lock(mutex);}
+\DoxyCodeLine{\ \ \ \ \ \ codeThatRequiresProtection();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{comment}{//\ mutex\ is\ unlocked\ here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ codeThatDoesntCareAboutTheMutex();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Having a mutex locked longer than required is a bad practice which can lead to bad performances. Don\textquotesingle{}t forget that when a mutex is locked, other threads may be waiting doing nothing until it is released.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01893}{sf\+::\+Mutex} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01885_a1a4c5d7a15da61103d85c9aa7f118920}\label{a01885_a1a4c5d7a15da61103d85c9aa7f118920} 
+\index{sf::Lock@{sf::Lock}!Lock@{Lock}}
+\index{Lock@{Lock}!sf::Lock@{sf::Lock}}
+\doxysubsubsection{\texorpdfstring{Lock()}{Lock()}}
+{\footnotesize\ttfamily sf\+::\+Lock\+::\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01893}{Mutex}} \&}]{mutex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the lock with a target mutex. 
+
+The mutex passed to \doxylink{a01885}{sf\+::\+Lock} is automatically locked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & \doxylink{a01893}{Mutex} to lock \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01885_a8168b36323a18ccf5b6bc531d964aec5}\label{a01885_a8168b36323a18ccf5b6bc531d964aec5} 
+\index{sf::Lock@{sf::Lock}!````~Lock@{\texorpdfstring{$\sim$}{\string~}Lock}}
+\index{````~Lock@{\texorpdfstring{$\sim$}{\string~}Lock}!sf::Lock@{sf::Lock}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Lock()}{\string~Lock()}}
+{\footnotesize\ttfamily sf\+::\+Lock\+::\texorpdfstring{$\sim$}{\string~}\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+The destructor of \doxylink{a01885}{sf\+::\+Lock} automatically unlocks its mutex. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01885_a09ac17cbb8c83d6094d3935164742967}\label{a01885_a09ac17cbb8c83d6094d3935164742967} 
+\index{sf::Lock@{sf::Lock}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!sf::Lock@{sf::Lock}}
+\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01893}{Mutex}}\& sf\+::\+Lock\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01893}{Mutex} to lock / unlock. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00506}{Lock.\+hpp}}\end{DoxyCompactItemize}

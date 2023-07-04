@@ -1,0 +1,49 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/input/parser.hpp File Reference}
+\hypertarget{a00176}{}\label{a00176}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/parser.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/parser.hpp}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/exceptions.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/input\+\_\+adapters.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/json\+\_\+sax.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/lexer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/is\+\_\+sax.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for parser.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01157}{nlohmann\+::detail\+::parser$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em syntax analysis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\using \mbox{\hyperlink{a00662_a2ac1bb00523b2502c10c97d70359ffc8}{nlohmann\+::detail\+::parser\+\_\+callback\+\_\+t}} = std\+::function$<$ bool(int, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{parse\+\_\+event\+\_\+t}}, Basic\+Json\+Type \&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042}{nlohmann\+::detail\+::parse\+\_\+event\+\_\+t}} \+: std\+::uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042ae73f17027cb0acbb537f29d0a6944b26}{nlohmann\+::detail\+::object\+\_\+start}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042af63e2a2468a37aa4f394fcc3bcb8249c}{nlohmann\+::detail\+::object\+\_\+end}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042aa4388a3d92419edbb1c6efd4d52461f3}{nlohmann\+::detail\+::array\+\_\+start}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a49642fb732aa2e112188fba1f9d3ef7f}{nlohmann\+::detail\+::array\+\_\+end}}
+, \newline
+\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{nlohmann\+::detail\+::key}}
+, \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{nlohmann\+::detail\+::value}}
+ \}
+\end{DoxyCompactItemize}

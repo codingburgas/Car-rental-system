@@ -1,0 +1,72 @@
+\doxysection{nlohmann\+::detail\+::output\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, String\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01533}{}\label{a01533}\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+
+
+{\ttfamily \#include $<$output\+\_\+adapters.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01533_aa5aed6c70d27ddaf6c56fd8bfd989e80}{operator output\+\_\+adapter\+\_\+t}} ()
+\item 
+\mbox{\hyperlink{a01533_a43b3ba852e6a2c3f4d312543bb04c00d}{output\+\_\+adapter}} (std\+::basic\+\_\+ostream$<$ Char\+Type $>$ \&s)
+\item 
+{\footnotesize template$<$typename Allocator\+Type  = std\+::allocator$<$\+Char\+Type$>$$>$ }\\\mbox{\hyperlink{a01533_a671937dda80f9ad3dadc8c4970652bc1}{output\+\_\+adapter}} (std\+::vector$<$ Char\+Type, Allocator\+Type $>$ \&vec)
+\item 
+\mbox{\hyperlink{a01533_a6ad59d1ec534383b430cd7ef8a518539}{output\+\_\+adapter}} (String\+Type \&s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ \mbox{\hyperlink{a01533_a323c18d74d6680faafec6dc3ace825e2}{oa}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01533_a671937dda80f9ad3dadc8c4970652bc1}\label{a01533_a671937dda80f9ad3dadc8c4970652bc1} 
+\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}!output\_adapter@{output\_adapter}}
+\index{output\_adapter@{output\_adapter}!nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{output\_adapter()}{output\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+template$<$typename Allocator\+Type  = std\+::allocator$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a01533}{nlohmann\+::detail\+::output\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::output\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Char\+Type, Allocator\+Type $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01533_a43b3ba852e6a2c3f4d312543bb04c00d}\label{a01533_a43b3ba852e6a2c3f4d312543bb04c00d} 
+\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}!output\_adapter@{output\_adapter}}
+\index{output\_adapter@{output\_adapter}!nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{output\_adapter()}{output\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a01533}{nlohmann\+::detail\+::output\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::output\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ Char\+Type $>$ \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01533_a6ad59d1ec534383b430cd7ef8a518539}\label{a01533_a6ad59d1ec534383b430cd7ef8a518539} 
+\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}!output\_adapter@{output\_adapter}}
+\index{output\_adapter@{output\_adapter}!nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{output\_adapter()}{output\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a01533}{nlohmann\+::detail\+::output\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::output\+\_\+adapter (\begin{DoxyParamCaption}\item[{String\+Type \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01533_aa5aed6c70d27ddaf6c56fd8bfd989e80}\label{a01533_aa5aed6c70d27ddaf6c56fd8bfd989e80} 
+\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}!operator output\_adapter\_t@{operator output\_adapter\_t}}
+\index{operator output\_adapter\_t@{operator output\_adapter\_t}!nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{operator output\_adapter\_t()}{operator output\_adapter\_t()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a01533}{nlohmann\+::detail\+::output\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::operator \mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01533_a323c18d74d6680faafec6dc3ace825e2}\label{a01533_a323c18d74d6680faafec6dc3ace825e2} 
+\index{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}!oa@{oa}}
+\index{oa@{oa}!nlohmann::detail::output\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{oa}{oa}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$Char\+Type$>$ \mbox{\hyperlink{a01533}{nlohmann\+::detail\+::output\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::oa = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/output/\mbox{\hyperlink{a00239}{output\+\_\+adapters.\+hpp}}\end{DoxyCompactItemize}

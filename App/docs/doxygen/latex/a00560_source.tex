@@ -1,0 +1,101 @@
+\doxysection{Vector3.\+hpp}
+\hypertarget{a00560_source}{}\label{a00560_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Vector3.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Vector3.hpp}}
+\mbox{\hyperlink{a00560}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_VECTOR3\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_VECTOR3\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01957}{Vector3}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a01957_aee8be1985c6e45e381ad4071265636f9}{Vector3}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{a01957_a99ed75b68f58adfa3e9fa0561b424bf6}{Vector3}}(T\ X,\ T\ Y,\ T\ Z);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01957_adb2b2e150025e97ccfa96219bbed59d1}{Vector3}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<U>}}\&\ vector);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00076\ \textcolor{comment}{}\ \ \ \ T\ \mbox{\hyperlink{a01957_a3cb0c769390bc37c346bb1a69e510d16}{x}};\ }
+\DoxyCodeLine{00077\ \ \ \ \ T\ \mbox{\hyperlink{a01957_a6590d50ccb862c5efc5512e974e9b794}{y}};\ }
+\DoxyCodeLine{00078\ \ \ \ \ T\ \mbox{\hyperlink{a01957_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}};\ }
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a3885c2e66dc427cec7eaa178d59d8e8b}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ \mbox{\hyperlink{a00557_ad4b7a9d355d57790bfc7df0ade8bb628}{operator\ +=}}(\mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00123\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ \mbox{\hyperlink{a00557_a30a5a12ad03c9a3a982a0a313bf84e6f}{operator\ -\/=}}(\mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a72421239823c38a6b780c86a710ead07}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a3885c2e66dc427cec7eaa178d59d8e8b}{operator\ -\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00162\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ T\ right);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00174\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00175\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(T\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00191\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ \mbox{\hyperlink{a00557_abea24cb28c0d6e2957e259ba4e65d70e}{operator\ *=}}(\mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ T\ right);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00204\ \mbox{\hyperlink{a01957}{Vector3<T>}}\ \mbox{\hyperlink{a00557_a7409dd89cb3aad6c3bc6622311107311}{operator\ /}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ T\ right);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00219\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00220\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ \mbox{\hyperlink{a00557_ac4d293c9dc7954ccfd5e373972f38b03}{operator\ /=}}(\mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ T\ right);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00235\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01957}{Vector3<T>}}\&\ right);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00563}{SFML/System/Vector3.inl}}>}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{comment}{//\ Define\ the\ most\ common\ types}}
+\DoxyCodeLine{00255\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a01957}{Vector3<int>}}\ \ \ \mbox{\hyperlink{a00669_ad066a8774efaf7b623df8909ba219dc7}{Vector3i}};}
+\DoxyCodeLine{00256\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a01957}{Vector3<float>}}\ \mbox{\hyperlink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f}};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_VECTOR3\_HPP}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ }
+
+\end{DoxyCode}

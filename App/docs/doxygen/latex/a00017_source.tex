@@ -1,0 +1,42 @@
+\doxysection{bearer.\+h}
+\hypertarget{a00017_source}{}\label{a00017_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/bearer.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/bearer.h}}
+\mbox{\hyperlink{a00017}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_BEARER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_BEARER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00116}{curl/curlver.h}}>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Only\ supported\ with\ libcurl\ >=\ 7.61.0.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ As\ an\ alternative\ use\ SetHeader\ and\ add\ the\ token\ manually.}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ >=\ 0x073D00}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }Bearer\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00017\ \ \ \ \ Bearer(\textcolor{keyword}{const}\ std::string\&\ token)\ :\ token\_string\_\{token\}\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00019\ \ \ \ \ Bearer(std::string\&\&\ token)\ :\ token\_string\_\{\mbox{\hyperlink{a00667}{std}}::move(token)\}\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ Bearer(\textcolor{keyword}{const}\ Bearer\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ Bearer(Bearer\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Bearer()\ noexcept\ =\ default;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ Bearer\&\ operator=(Bearer\&\&\ old)\ noexcept\ =\ default;}
+\DoxyCodeLine{00025\ \ \ \ \ Bearer\&\ operator=(const\ Bearer\&\ other)\ =\ default;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ virtual\ const\ \textcolor{keywordtype}{char}*\ GetToken()\ const\ noexcept;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ protected:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{a00667}{std}}::\textcolor{keywordtype}{string}\ token\_string\_;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

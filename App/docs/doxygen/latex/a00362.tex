@@ -1,0 +1,38 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.PL/\+SFML/include/\+SFML/\+Gpu\+Preference.hpp File Reference}
+\hypertarget{a00362}{}\label{a00362}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/GpuPreference.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/GpuPreference.hpp}}
+
+
+Headers.  
+
+
+{\ttfamily \#include $<$SFML/\+Config.\+hpp$>$}\newline
+Include dependency graph for Gpu\+Preference.\+hpp\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00362_ab0233c2d867cbd561036ed2440a4fec0}{SFML\+\_\+\+DEFINE\+\_\+\+DISCRETE\+\_\+\+GPU\+\_\+\+PREFERENCE}}
+\begin{DoxyCompactList}\small\item\em A macro to encourage usage of the discrete GPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Headers. 
+
+File containing SFML\+\_\+\+DEFINE\+\_\+\+DISCRETE\+\_\+\+GPU\+\_\+\+PREFERENCE 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00362_ab0233c2d867cbd561036ed2440a4fec0}\label{a00362_ab0233c2d867cbd561036ed2440a4fec0} 
+\index{GpuPreference.hpp@{GpuPreference.hpp}!SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE@{SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE}}
+\index{SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE@{SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE}!GpuPreference.hpp@{GpuPreference.hpp}}
+\doxysubsubsection{\texorpdfstring{SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE}{SFML\_DEFINE\_DISCRETE\_GPU\_PREFERENCE}}
+{\footnotesize\ttfamily \#define SFML\+\_\+\+DEFINE\+\_\+\+DISCRETE\+\_\+\+GPU\+\_\+\+PREFERENCE}
+
+
+
+A macro to encourage usage of the discrete GPU. 
+
+In order to inform the Nvidia/\+AMD driver that an SFML application could benefit from using the more powerful discrete GPU, special symbols have to be publicly exported from the final executable.
+
+SFML defines a helper macro to easily do this.
+
+Place SFML\+\_\+\+DEFINE\+\_\+\+DISCRETE\+\_\+\+GPU\+\_\+\+PREFERENCE in the global scope of a source file that will be linked into the final executable. Typically it is best to place it where the main function is also defined. 

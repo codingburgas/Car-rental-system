@@ -1,0 +1,66 @@
+\doxysection{cpr\+::Progress\+Callback Class Reference}
+\hypertarget{a00709}{}\label{a00709}\index{cpr::ProgressCallback@{cpr::ProgressCallback}}
+
+
+{\ttfamily \#include $<$callback.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00709_a97f67b630dd9e6563263338c7c9ef0d2}{operator()}} (\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Now, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Now) const
+\item 
+\mbox{\hyperlink{a00709_a9d2dd399c99fcf0d88bc346812838599}{Progress\+Callback}} ()=default
+\item 
+\mbox{\hyperlink{a00709_a2b8b8c6cf3d8d93f98ede480f746cbf3}{Progress\+Callback}} (std\+::function$<$ bool(\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Now, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Now, intptr\+\_\+t \mbox{\hyperlink{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}{userdata}})$>$ p\+\_\+callback, intptr\+\_\+t p\+\_\+userdata=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Now, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Now, intptr\+\_\+t \mbox{\hyperlink{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}{userdata}})$>$ \mbox{\hyperlink{a00709_aece22632f59702eb82d3eee838f37f9a}{callback}}
+\item 
+intptr\+\_\+t \mbox{\hyperlink{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}{userdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00709_a9d2dd399c99fcf0d88bc346812838599}\label{a00709_a9d2dd399c99fcf0d88bc346812838599} 
+\index{cpr::ProgressCallback@{cpr::ProgressCallback}!ProgressCallback@{ProgressCallback}}
+\index{ProgressCallback@{ProgressCallback}!cpr::ProgressCallback@{cpr::ProgressCallback}}
+\doxysubsubsection{\texorpdfstring{ProgressCallback()}{ProgressCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cpr\+::\+Progress\+Callback\+::\+Progress\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00709_a2b8b8c6cf3d8d93f98ede480f746cbf3}\label{a00709_a2b8b8c6cf3d8d93f98ede480f746cbf3} 
+\index{cpr::ProgressCallback@{cpr::ProgressCallback}!ProgressCallback@{ProgressCallback}}
+\index{ProgressCallback@{ProgressCallback}!cpr::ProgressCallback@{cpr::ProgressCallback}}
+\doxysubsubsection{\texorpdfstring{ProgressCallback()}{ProgressCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cpr\+::\+Progress\+Callback\+::\+Progress\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Now, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Now, intptr\+\_\+t \mbox{\hyperlink{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}{userdata}})$>$}]{p\+\_\+callback,  }\item[{intptr\+\_\+t}]{p\+\_\+userdata = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00709_a97f67b630dd9e6563263338c7c9ef0d2}\label{a00709_a97f67b630dd9e6563263338c7c9ef0d2} 
+\index{cpr::ProgressCallback@{cpr::ProgressCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!cpr::ProgressCallback@{cpr::ProgressCallback}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool cpr\+::\+Progress\+Callback\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}}}]{download\+Total,  }\item[{\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}}}]{download\+Now,  }\item[{\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}}}]{upload\+Total,  }\item[{\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}}}]{upload\+Now }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00709_aece22632f59702eb82d3eee838f37f9a}\label{a00709_aece22632f59702eb82d3eee838f37f9a} 
+\index{cpr::ProgressCallback@{cpr::ProgressCallback}!callback@{callback}}
+\index{callback@{callback}!cpr::ProgressCallback@{cpr::ProgressCallback}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} download\+Now, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Total, \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} upload\+Now, intptr\+\_\+t \mbox{\hyperlink{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}{userdata}})$>$ cpr\+::\+Progress\+Callback\+::callback}
+
+\Hypertarget{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5}\label{a00709_ad2aab0d0faa66afc4dd48a4806c7e6c5} 
+\index{cpr::ProgressCallback@{cpr::ProgressCallback}!userdata@{userdata}}
+\index{userdata@{userdata}!cpr::ProgressCallback@{cpr::ProgressCallback}}
+\doxysubsubsection{\texorpdfstring{userdata}{userdata}}
+{\footnotesize\ttfamily intptr\+\_\+t cpr\+::\+Progress\+Callback\+::userdata}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00023}{callback.\+h}}\end{DoxyCompactItemize}

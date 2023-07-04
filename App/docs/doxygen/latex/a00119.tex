@@ -1,0 +1,117 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/curl/easy.h File Reference}
+\hypertarget{a00119}{}\label{a00119}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/easy.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/easy.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00969}{curl\+\_\+blob}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00119_a866616ff7597b1db75c3e57bff313db1}{CURL\+\_\+\+BLOB\+\_\+\+COPY}}~1 /\texorpdfstring{$\ast$}{*} tell libcurl to copy the data \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00119_acb9e861d8432047982f4ae243bab2055}{CURL\+\_\+\+BLOB\+\_\+\+NOCOPY}}~0 /\texorpdfstring{$\ast$}{*} tell libcurl to NOT copy the data \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void \mbox{\hyperlink{a00119_a7acd7812b672df9e378050fab7c732aa}{curl\+\_\+easy\+\_\+cleanup}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00119_a5342ab19de5ce56835f8267c4661ebfd}{curl\+\_\+easy\+\_\+duphandle}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_ae395d1ab3a14e03800b6aa89744aec4c}{curl\+\_\+easy\+\_\+getinfo}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl, \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7b}{CURLINFO}} info,...)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00119_ac535922c83d0818303047eaf850fe19b}{curl\+\_\+easy\+\_\+init}} (void)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_a8126b918a6e44facb451ce6c78658506}{curl\+\_\+easy\+\_\+perform}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_afbdb739f49de1f5dd83355389e322a10}{curl\+\_\+easy\+\_\+recv}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl, void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buflen, size\+\_\+t \texorpdfstring{$\ast$}{*}n)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void \mbox{\hyperlink{a00119_a6b1b6c47c16c29c6c2ca1799fcbebccb}{curl\+\_\+easy\+\_\+reset}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_ad736e9ab7def9c7fa57a7bedefe77f42}{curl\+\_\+easy\+\_\+send}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl, const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buflen, size\+\_\+t \texorpdfstring{$\ast$}{*}n)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_a7b171739b7bb728b3b58b2e6ec454aa0}{curl\+\_\+easy\+\_\+setopt}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl, \mbox{\hyperlink{a00113_a683f408ac299e0409f0c8b3f73c36610}{CURLoption}} option,...)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} \mbox{\hyperlink{a00119_a3998841097059d0bb9df9aa11d885fb9}{curl\+\_\+easy\+\_\+upkeep}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}curl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00119_a866616ff7597b1db75c3e57bff313db1}\label{a00119_a866616ff7597b1db75c3e57bff313db1} 
+\index{easy.h@{easy.h}!CURL\_BLOB\_COPY@{CURL\_BLOB\_COPY}}
+\index{CURL\_BLOB\_COPY@{CURL\_BLOB\_COPY}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{CURL\_BLOB\_COPY}{CURL\_BLOB\_COPY}}
+{\footnotesize\ttfamily \#define CURL\+\_\+\+BLOB\+\_\+\+COPY~1 /\texorpdfstring{$\ast$}{*} tell libcurl to copy the data \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00119_acb9e861d8432047982f4ae243bab2055}\label{a00119_acb9e861d8432047982f4ae243bab2055} 
+\index{easy.h@{easy.h}!CURL\_BLOB\_NOCOPY@{CURL\_BLOB\_NOCOPY}}
+\index{CURL\_BLOB\_NOCOPY@{CURL\_BLOB\_NOCOPY}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{CURL\_BLOB\_NOCOPY}{CURL\_BLOB\_NOCOPY}}
+{\footnotesize\ttfamily \#define CURL\+\_\+\+BLOB\+\_\+\+NOCOPY~0 /\texorpdfstring{$\ast$}{*} tell libcurl to NOT copy the data \texorpdfstring{$\ast$}{*}/}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00119_a7acd7812b672df9e378050fab7c732aa}\label{a00119_a7acd7812b672df9e378050fab7c732aa} 
+\index{easy.h@{easy.h}!curl\_easy\_cleanup@{curl\_easy\_cleanup}}
+\index{curl\_easy\_cleanup@{curl\_easy\_cleanup}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_cleanup()}{curl\_easy\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void curl\+\_\+easy\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_a5342ab19de5ce56835f8267c4661ebfd}\label{a00119_a5342ab19de5ce56835f8267c4661ebfd} 
+\index{easy.h@{easy.h}!curl\_easy\_duphandle@{curl\_easy\_duphandle}}
+\index{curl\_easy\_duphandle@{curl\_easy\_duphandle}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_duphandle()}{curl\_easy\_duphandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*} curl\+\_\+easy\+\_\+duphandle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_ae395d1ab3a14e03800b6aa89744aec4c}\label{a00119_ae395d1ab3a14e03800b6aa89744aec4c} 
+\index{easy.h@{easy.h}!curl\_easy\_getinfo@{curl\_easy\_getinfo}}
+\index{curl\_easy\_getinfo@{curl\_easy\_getinfo}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_getinfo()}{curl\_easy\_getinfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+getinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl,  }\item[{\mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7b}{CURLINFO}}}]{info,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_ac535922c83d0818303047eaf850fe19b}\label{a00119_ac535922c83d0818303047eaf850fe19b} 
+\index{easy.h@{easy.h}!curl\_easy\_init@{curl\_easy\_init}}
+\index{curl\_easy\_init@{curl\_easy\_init}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_init()}{curl\_easy\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*} curl\+\_\+easy\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_a8126b918a6e44facb451ce6c78658506}\label{a00119_a8126b918a6e44facb451ce6c78658506} 
+\index{easy.h@{easy.h}!curl\_easy\_perform@{curl\_easy\_perform}}
+\index{curl\_easy\_perform@{curl\_easy\_perform}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_perform()}{curl\_easy\_perform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+perform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_afbdb739f49de1f5dd83355389e322a10}\label{a00119_afbdb739f49de1f5dd83355389e322a10} 
+\index{easy.h@{easy.h}!curl\_easy\_recv@{curl\_easy\_recv}}
+\index{curl\_easy\_recv@{curl\_easy\_recv}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_recv()}{curl\_easy\_recv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+recv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl,  }\item[{void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{buflen,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_a6b1b6c47c16c29c6c2ca1799fcbebccb}\label{a00119_a6b1b6c47c16c29c6c2ca1799fcbebccb} 
+\index{easy.h@{easy.h}!curl\_easy\_reset@{curl\_easy\_reset}}
+\index{curl\_easy\_reset@{curl\_easy\_reset}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_reset()}{curl\_easy\_reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void curl\+\_\+easy\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_ad736e9ab7def9c7fa57a7bedefe77f42}\label{a00119_ad736e9ab7def9c7fa57a7bedefe77f42} 
+\index{easy.h@{easy.h}!curl\_easy\_send@{curl\_easy\_send}}
+\index{curl\_easy\_send@{curl\_easy\_send}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_send()}{curl\_easy\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{buflen,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_a7b171739b7bb728b3b58b2e6ec454aa0}\label{a00119_a7b171739b7bb728b3b58b2e6ec454aa0} 
+\index{easy.h@{easy.h}!curl\_easy\_setopt@{curl\_easy\_setopt}}
+\index{curl\_easy\_setopt@{curl\_easy\_setopt}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_setopt()}{curl\_easy\_setopt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+setopt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl,  }\item[{\mbox{\hyperlink{a00113_a683f408ac299e0409f0c8b3f73c36610}{CURLoption}}}]{option,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{a00119_a3998841097059d0bb9df9aa11d885fb9}\label{a00119_a3998841097059d0bb9df9aa11d885fb9} 
+\index{easy.h@{easy.h}!curl\_easy\_upkeep@{curl\_easy\_upkeep}}
+\index{curl\_easy\_upkeep@{curl\_easy\_upkeep}!easy.h@{easy.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_upkeep()}{curl\_easy\_upkeep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}} curl\+\_\+easy\+\_\+upkeep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}}]{curl }\end{DoxyParamCaption})}
+

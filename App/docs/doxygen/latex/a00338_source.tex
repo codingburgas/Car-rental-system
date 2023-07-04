@@ -1,0 +1,99 @@
+\doxysection{Sound\+File\+Factory.\+inl}
+\hypertarget{a00338_source}{}\label{a00338_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Audio/SoundFileFactory.inl@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Audio/SoundFileFactory.inl}}
+\mbox{\hyperlink{a00338}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00028\ \textcolor{comment}{}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00672}{priv}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \mbox{\hyperlink{a01649}{SoundFileReader}}*\ \mbox{\hyperlink{a00670_aca30ad5e6ee22353d72145af1af53b78}{createReader}}()\ \{\textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T;\}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \mbox{\hyperlink{a01657}{SoundFileWriter}}*\ \mbox{\hyperlink{a00670_aaa8b548de29fc4570064f372b4df8df0}{createWriter}}()\ \{\textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T;\}}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}{SoundFileFactory::registerReader}}()}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ the\ same\ class\ won't\ be\ registered\ twice}}
+\DoxyCodeLine{00043\ \ \ \ \ unregisterReader<T>();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ factory\ with\ the\ functions\ provided\ by\ the\ class}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a01641}{ReaderFactory}}\ factory;}
+\DoxyCodeLine{00047\ \ \ \ \ factory.\mbox{\hyperlink{a01641_afbbfef9680e3bb0532408927957c732a}{check}}\ =\ \&T::check;}
+\DoxyCodeLine{00048\ \ \ \ \ factory.\mbox{\hyperlink{a01641_a28ea81ee972d0cf530f85a4e9172dd4b}{create}}\ =\ \&priv::createReader<T>;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Add\ it}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{a01637_a823e083321d592370ce4b258d0da10aa}{s\_readers}}.push\_back(factory);}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01637_a9e6765c41e2784bc755388afb4a2f432}{SoundFileFactory::unregisterReader}}()}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ instance(s)\ of\ the\ reader\ from\ the\ array\ of\ factories}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (ReaderFactoryArray::iterator\ it\ =\ \mbox{\hyperlink{a01637_a823e083321d592370ce4b258d0da10aa}{s\_readers}}.begin();\ it\ !=\ \mbox{\hyperlink{a01637_a823e083321d592370ce4b258d0da10aa}{s\_readers}}.end();\ )}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>create\ ==\ \&priv::createReader<T>)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \mbox{\hyperlink{a01637_a823e083321d592370ce4b258d0da10aa}{s\_readers}}.erase(it);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01637_a3a59140e6ccf1f252f721b790eddd661}{SoundFileFactory::registerWriter}}()}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ the\ same\ class\ won't\ be\ registered\ twice}}
+\DoxyCodeLine{00074\ \ \ \ \ unregisterWriter<T>();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ new\ factory\ with\ the\ functions\ provided\ by\ the\ class}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{a01645}{WriterFactory}}\ factory;}
+\DoxyCodeLine{00078\ \ \ \ \ factory.\mbox{\hyperlink{a01645_a72754501f3081c9a68a9b6f0c648f89c}{check}}\ =\ \&T::check;}
+\DoxyCodeLine{00079\ \ \ \ \ factory.\mbox{\hyperlink{a01645_a2d5e995031f372f78f9d77406f91528f}{create}}\ =\ \&priv::createWriter<T>;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Add\ it}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{a01637_ad9e5d855ef07f5895bcb91eb3431f088}{s\_writers}}.push\_back(factory);}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01637_a2306f90d1f72e474732e4bcceeb34215}{SoundFileFactory::unregisterWriter}}()}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ instance(s)\ of\ the\ writer\ from\ the\ array\ of\ factories}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (WriterFactoryArray::iterator\ it\ =\ \mbox{\hyperlink{a01637_ad9e5d855ef07f5895bcb91eb3431f088}{s\_writers}}.begin();\ it\ !=\ \mbox{\hyperlink{a01637_ad9e5d855ef07f5895bcb91eb3431f088}{s\_writers}}.end();\ )}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>create\ ==\ \&priv::createWriter<T>)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \mbox{\hyperlink{a01637_ad9e5d855ef07f5895bcb91eb3431f088}{s\_writers}}.erase(it);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+
+\end{DoxyCode}

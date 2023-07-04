@@ -1,0 +1,477 @@
+\doxysection{sf\+::Vector3\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01957}{}\label{a01957}\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+
+
+Utility template class for manipulating 3-\/dimensional vectors.  
+
+
+
+
+{\ttfamily \#include $<$Vector3.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01957_aee8be1985c6e45e381ad4071265636f9}{Vector3}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957_a49536881e57dd6f1bec692bb85b39413}{Vector3}} ()
+\item 
+{\footnotesize template$<$typename U $>$ }\\\mbox{\hyperlink{a01957_adb2b2e150025e97ccfa96219bbed59d1}{Vector3}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ U $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Construct the vector from another type of vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U $>$ }\\\mbox{\hyperlink{a01957_adb2b2e150025e97ccfa96219bbed59d1}{Vector3}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ U $>$ \&vector)
+\item 
+\mbox{\hyperlink{a01957_a99ed75b68f58adfa3e9fa0561b424bf6}{Vector3}} (T X, T Y, T Z)
+\begin{DoxyCompactList}\small\item\em Construct the vector from its coordinates. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957_a6d71676baa113af029006c01620fd4ca}{Vector3}} (T X, T Y, T Z)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{a01957_a3cb0c769390bc37c346bb1a69e510d16}{x}}
+\begin{DoxyCompactList}\small\item\em X coordinate of the vector. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{a01957_a6590d50ccb862c5efc5512e974e9b794}{y}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of the vector. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{a01957_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}}
+\begin{DoxyCompactList}\small\item\em Z coordinate of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{a01957_a608500d1ad3b78082cb5bb4356742bd4}{operator!=}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator !=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_a44ec312b31c1a85dcff4863795f98329}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_aa6f2b0d9f79c1b9774759b7087affbb1}{operator\texorpdfstring{$\ast$}{*}}} (T left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& \mbox{\hyperlink{a01957_ad5fb972775ce8ab58cd9670789e806a7}{operator\texorpdfstring{$\ast$}{*}=}} (\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator \texorpdfstring{$\ast$}{*}=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_a6500a0cb00e07801e9e9d7e96852ddd3}{operator+}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator +. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& \mbox{\hyperlink{a01957_abc28859af163c63318ea2723b81c5ad9}{operator+=}} (\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator +=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_a9b75d2fb9b0f2fd9fe33f8f06f9dda75}{operator-\/}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left)
+\begin{DoxyCompactList}\small\item\em Overload of unary operator -\/. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_abe0b9411c00cf807bf8a5f835874bd2a}{operator-\/}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator -\/. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& \mbox{\hyperlink{a01957_aa465672d2a4ee5fd354e585cf08d2ab9}{operator-\/=}} (\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator -\/=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \mbox{\hyperlink{a01957_ad4ba4a83de236ddeb92a7b759187e90d}{operator/}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator /. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& \mbox{\hyperlink{a01957_a8995a700f9dffccc6dddb3696ae17b64}{operator/=}} (\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator /=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{a01957_a388d72db973306a35ba467016b3dee30}{operator==}} (const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&left, const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator ==. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class sf\+::\+Vector3$<$ T $>$}
+Utility template class for manipulating 3-\/dimensional vectors. 
+
+\doxylink{a01957}{sf\+::\+Vector3} is a simple class that defines a mathematical vector with three coordinates (x, y and z). It can be used to represent anything that has three dimensions\+: a size, a point, a velocity, etc.
+
+The template parameter T is the type of the coordinates. It can be any type that supports arithmetic operations (+, -\/, /, \texorpdfstring{$\ast$}{*}) and comparisons (==, !=), for example int or float.
+
+You generally don\textquotesingle{}t have to care about the templated form (sf\+::\+Vector3$<$\+T$>$), the most common specializations have special typedefs\+: \begin{DoxyItemize}
+\item sf\+::\+Vector3$<$float$>$ is \doxylink{a00669_af97357d7d32e7d6a700d03be2f3b4811}{sf\+::\+Vector3f} \item sf\+::\+Vector3$<$int$>$ is \doxylink{a00669_ad066a8774efaf7b623df8909ba219dc7}{sf\+::\+Vector3i}\end{DoxyItemize}
+The \doxylink{a01957}{sf\+::\+Vector3} class has a small and simple interface, its x and y members can be accessed directly (there are no accessors like set\+X(), get\+X()) and it contains no mathematical function like dot product, cross product, length, etc.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01957}{sf::Vector3f}}\ v1(16.5f,\ 24.f,\ -\/8.2f);}
+\DoxyCodeLine{v1.x\ =\ 18.2f;}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01957_a6590d50ccb862c5efc5512e974e9b794}{y}}\ =\ v1.y;}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01957_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}}\ =\ v1.z;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01957}{sf::Vector3f}}\ v2\ =\ v1\ *\ 5.f;}
+\DoxyCodeLine{\mbox{\hyperlink{a01957}{sf::Vector3f}}\ v3;}
+\DoxyCodeLine{v3\ =\ v1\ +\ v2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ different\ =\ (v2\ !=\ v3);}
+
+\end{DoxyCode}
+
+
+Note\+: for 2-\/dimensional vectors, see \doxylink{a01953}{sf\+::\+Vector2}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01957_aee8be1985c6e45e381ad4071265636f9}\label{a01957_aee8be1985c6e45e381ad4071265636f9} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates a Vector3(0, 0, 0). \Hypertarget{a01957_a99ed75b68f58adfa3e9fa0561b424bf6}\label{a01957_a99ed75b68f58adfa3e9fa0561b424bf6} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}\item[{T}]{X,  }\item[{T}]{Y,  }\item[{T}]{Z }\end{DoxyParamCaption})}
+
+
+
+Construct the vector from its coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & X coordinate \\
+\hline
+{\em Y} & Y coordinate \\
+\hline
+{\em Z} & Z coordinate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01957_adb2b2e150025e97ccfa96219bbed59d1}\label{a01957_adb2b2e150025e97ccfa96219bbed59d1} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ U $>$ \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the vector from another type of vector. 
+
+This constructor doesn\textquotesingle{}t replace the copy constructor, it\textquotesingle{}s called only when U != T. A call to this constructor will fail to compile if U is not convertible to T.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01957_a49536881e57dd6f1bec692bb85b39413}\label{a01957_a49536881e57dd6f1bec692bb85b39413} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01957_a6d71676baa113af029006c01620fd4ca}\label{a01957_a6d71676baa113af029006c01620fd4ca} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}\item[{T}]{X,  }\item[{T}]{Y,  }\item[{T}]{Z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01957_adb2b2e150025e97ccfa96219bbed59d1}\label{a01957_adb2b2e150025e97ccfa96219bbed59d1} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+\mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::\+Vector3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ U $>$ \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01957_a608500d1ad3b78082cb5bb4356742bd4}\label{a01957_a608500d1ad3b78082cb5bb4356742bd4} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator !=. 
+
+This operator compares strict difference between two vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is not equal to {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01957_a44ec312b31c1a85dcff4863795f98329}\label{a01957_a44ec312b31c1a85dcff4863795f98329} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{T}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise multiplication by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01957_aa6f2b0d9f79c1b9774759b7087affbb1}\label{a01957_aa6f2b0d9f79c1b9774759b7087affbb1} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a scalar value) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise multiplication by {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01957_ad5fb972775ce8ab58cd9670789e806a7}\label{a01957_ad5fb972775ce8ab58cd9670789e806a7} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{T}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator \texorpdfstring{$\ast$}{*}=. 
+
+This operator performs a memberwise multiplication by {\itshape right}, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01957_a6500a0cb00e07801e9e9d7e96852ddd3}\label{a01957_a6500a0cb00e07801e9e9d7e96852ddd3} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator +. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise addition of both vectors 
+\end{DoxyReturn}
+\Hypertarget{a01957_abc28859af163c63318ea2723b81c5ad9}\label{a01957_abc28859af163c63318ea2723b81c5ad9} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator +=. 
+
+This operator performs a memberwise addition of both vectors, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01957_a9b75d2fb9b0f2fd9fe33f8f06f9dda75}\label{a01957_a9b75d2fb9b0f2fd9fe33f8f06f9dda75} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of unary operator -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Vector to negate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise opposite of the vector 
+\end{DoxyReturn}
+\Hypertarget{a01957_abe0b9411c00cf807bf8a5f835874bd2a}\label{a01957_abe0b9411c00cf807bf8a5f835874bd2a} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise subtraction of both vectors 
+\end{DoxyReturn}
+\Hypertarget{a01957_aa465672d2a4ee5fd354e585cf08d2ab9}\label{a01957_aa465672d2a4ee5fd354e585cf08d2ab9} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator -\/=. 
+
+This operator performs a memberwise subtraction of both vectors, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01957_ad4ba4a83de236ddeb92a7b759187e90d}\label{a01957_ad4ba4a83de236ddeb92a7b759187e90d} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{T}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator /. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise division by {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01957_a8995a700f9dffccc6dddb3696ae17b64}\label{a01957_a8995a700f9dffccc6dddb3696ae17b64} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \& operator/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{T}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator /=. 
+
+This operator performs a memberwise division by {\itshape right}, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+\Hypertarget{a01957_a388d72db973306a35ba467016b3dee30}\label{a01957_a388d72db973306a35ba467016b3dee30} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{left,  }\item[{const \mbox{\hyperlink{a01957}{Vector3}}$<$ T $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary operator ==. 
+
+This operator compares strict equality between two vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is equal to {\itshape right} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01957_a3cb0c769390bc37c346bb1a69e510d16}\label{a01957_a3cb0c769390bc37c346bb1a69e510d16} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!x@{x}}
+\index{x@{x}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::x}
+
+
+
+X coordinate of the vector. 
+
+\Hypertarget{a01957_a6590d50ccb862c5efc5512e974e9b794}\label{a01957_a6590d50ccb862c5efc5512e974e9b794} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!y@{y}}
+\index{y@{y}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::y}
+
+
+
+Y coordinate of the vector. 
+
+\Hypertarget{a01957_a2f36ab4b552c028e3a9734c1ad4df7d1}\label{a01957_a2f36ab4b552c028e3a9734c1ad4df7d1} 
+\index{sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}!z@{z}}
+\index{z@{z}!sf::Vector3$<$ T $>$@{sf::Vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{a01957}{sf\+::\+Vector3}}$<$ T $>$\+::z}
+
+
+
+Z coordinate of the vector. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00560}{Vector3.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00563}{Vector3.\+inl}}\end{DoxyCompactItemize}

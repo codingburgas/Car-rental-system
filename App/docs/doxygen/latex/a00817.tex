@@ -1,0 +1,119 @@
+\doxysection{cpr\+::Redirect Class Reference}
+\hypertarget{a00817}{}\label{a00817}\index{cpr::Redirect@{cpr::Redirect}}
+
+
+{\ttfamily \#include $<$redirect.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00817_a95cd07c2d04d70e17374e8500707371b}{Redirect}} ()=default
+\item 
+\mbox{\hyperlink{a00817_aa44713f5048b76e26ca6dbd560b5be44}{Redirect}} (bool p\+\_\+follow)
+\item 
+\mbox{\hyperlink{a00817_ad05c8f3d6987132aac4b1d5ab2a6123b}{Redirect}} (bool p\+\_\+follow, bool p\+\_\+cont\+\_\+send\+\_\+cred)
+\item 
+\mbox{\hyperlink{a00817_a77945bceeae71311bf87f6413637b23a}{Redirect}} (long p\+\_\+maximum)
+\item 
+\mbox{\hyperlink{a00817_ae2b0bc7ce7e500919f66a6f29525659d}{Redirect}} (long p\+\_\+maximum, bool p\+\_\+follow, bool p\+\_\+cont\+\_\+send\+\_\+cred, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} p\+\_\+post\+\_\+flags)
+\item 
+\mbox{\hyperlink{a00817_a9dcbdd29be81a1684603ce0934733899}{Redirect}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} p\+\_\+post\+\_\+flags)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00817_af7e48da58181594e5847edc3ac3fab15}{cont\+\_\+send\+\_\+cred}} \{false\}
+\begin{DoxyCompactList}\small\item\em Continue to send authentication (user+password) credentials when following locations, even when hostname changed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}{follow}} \{true\}
+\begin{DoxyCompactList}\small\item\em Follow 3xx redirects. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{a00817_a4dac151d8c3b3cfcedbff97db7494f67}{maximum}} \{50L\}
+\begin{DoxyCompactList}\small\item\em The maximum number of redirects to follow. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \mbox{\hyperlink{a00817_a6337024269fd4d3d145b4d6f299b718a}{post\+\_\+flags}} \{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}{Post\+Redirect\+Flags\+::\+POST\+\_\+\+ALL}}\}
+\begin{DoxyCompactList}\small\item\em Flags to control how to act after a redirect for a post request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00817_a95cd07c2d04d70e17374e8500707371b}\label{a00817_a95cd07c2d04d70e17374e8500707371b} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00817_ae2b0bc7ce7e500919f66a6f29525659d}\label{a00817_ae2b0bc7ce7e500919f66a6f29525659d} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}\item[{long}]{p\+\_\+maximum,  }\item[{bool}]{p\+\_\+follow,  }\item[{bool}]{p\+\_\+cont\+\_\+send\+\_\+cred,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{p\+\_\+post\+\_\+flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00817_a77945bceeae71311bf87f6413637b23a}\label{a00817_a77945bceeae71311bf87f6413637b23a} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}\item[{long}]{p\+\_\+maximum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00817_aa44713f5048b76e26ca6dbd560b5be44}\label{a00817_aa44713f5048b76e26ca6dbd560b5be44} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}\item[{bool}]{p\+\_\+follow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00817_ad05c8f3d6987132aac4b1d5ab2a6123b}\label{a00817_ad05c8f3d6987132aac4b1d5ab2a6123b} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}\item[{bool}]{p\+\_\+follow,  }\item[{bool}]{p\+\_\+cont\+\_\+send\+\_\+cred }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00817_a9dcbdd29be81a1684603ce0934733899}\label{a00817_a9dcbdd29be81a1684603ce0934733899} 
+\index{cpr::Redirect@{cpr::Redirect}!Redirect@{Redirect}}
+\index{Redirect@{Redirect}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{Redirect()}{Redirect()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily cpr\+::\+Redirect\+::\+Redirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{p\+\_\+post\+\_\+flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00817_af7e48da58181594e5847edc3ac3fab15}\label{a00817_af7e48da58181594e5847edc3ac3fab15} 
+\index{cpr::Redirect@{cpr::Redirect}!cont\_send\_cred@{cont\_send\_cred}}
+\index{cont\_send\_cred@{cont\_send\_cred}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{cont\_send\_cred}{cont\_send\_cred}}
+{\footnotesize\ttfamily bool cpr\+::\+Redirect\+::cont\+\_\+send\+\_\+cred \{false\}}
+
+
+
+Continue to send authentication (user+password) credentials when following locations, even when hostname changed. 
+
+Default\+: false \href{https://curl.se/libcurl/c/CURLOPT_UNRESTRICTED_AUTH.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+UNRESTRICTED\+\_\+\+AUTH.\+html}} \Hypertarget{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}\label{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f} 
+\index{cpr::Redirect@{cpr::Redirect}!follow@{follow}}
+\index{follow@{follow}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{follow}{follow}}
+{\footnotesize\ttfamily bool cpr\+::\+Redirect\+::follow \{true\}}
+
+
+
+Follow 3xx redirects. 
+
+Default\+: true \href{https://curl.se/libcurl/c/CURLOPT_FOLLOWLOCATION.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+FOLLOWLOCATION.\+html}} \Hypertarget{a00817_a4dac151d8c3b3cfcedbff97db7494f67}\label{a00817_a4dac151d8c3b3cfcedbff97db7494f67} 
+\index{cpr::Redirect@{cpr::Redirect}!maximum@{maximum}}
+\index{maximum@{maximum}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{maximum}{maximum}}
+{\footnotesize\ttfamily long cpr\+::\+Redirect\+::maximum \{50L\}}
+
+
+
+The maximum number of redirects to follow. 
+
+0\+: Refuse any redirects. -\/1\+: Infinite number of redirects. Default\+: 50 \href{https://curl.se/libcurl/c/CURLOPT_MAXREDIRS.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+MAXREDIRS.\+html}} \Hypertarget{a00817_a6337024269fd4d3d145b4d6f299b718a}\label{a00817_a6337024269fd4d3d145b4d6f299b718a} 
+\index{cpr::Redirect@{cpr::Redirect}!post\_flags@{post\_flags}}
+\index{post\_flags@{post\_flags}!cpr::Redirect@{cpr::Redirect}}
+\doxysubsubsection{\texorpdfstring{post\_flags}{post\_flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} cpr\+::\+Redirect\+::post\+\_\+flags \{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}{Post\+Redirect\+Flags\+::\+POST\+\_\+\+ALL}}\}}
+
+
+
+Flags to control how to act after a redirect for a post request. 
+
+Default\+: POST\+\_\+\+ALL 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00083}{redirect.\+h}}\end{DoxyCompactItemize}

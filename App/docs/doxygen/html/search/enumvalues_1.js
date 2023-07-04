@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['b_0',['B',['../a02049.html#acb4cacd7cc5802dec45724cf3314a142aca3142235e5c4199f0b8b45d8368ef94',1,'sf::Keyboard']]],
+  ['backslash_1',['Backslash',['../a02049.html#acb4cacd7cc5802dec45724cf3314a142adbd7d6f90a1009e91acf7bb1dc068512',1,'sf::Keyboard']]],
+  ['backslash_2',['BackSlash',['../a02049.html#acb4cacd7cc5802dec45724cf3314a142a536df84e73859aa44e11e192459470b6',1,'sf::Keyboard']]],
+  ['backspace_3',['BackSpace',['../a02049.html#acb4cacd7cc5802dec45724cf3314a142a33aeaab900abcd01eebf2fcc4f6d97e2',1,'sf::Keyboard']]],
+  ['backspace_4',['Backspace',['../a02049.html#acb4cacd7cc5802dec45724cf3314a142aa7c1581bac0f20164512572e6c60e98e',1,'sf::Keyboard']]],
+  ['badcommandsequence_5',['BadCommandSequence',['../a01817.html#af81738f06b6f571761696291276acb3bad0c7ab07f01c1f7af16a1852650d7c47',1,'sf::Ftp::Response']]],
+  ['badgateway_6',['BadGateway',['../a01837.html#a663e071978e30fbbeb20ed045be874d8aad0cbad4cdaf448beb763e86bc1f747c',1,'sf::Http::Response']]],
+  ['badrequest_7',['BadRequest',['../a01837.html#a663e071978e30fbbeb20ed045be874d8a3f88a714cf5483ee22f9051e5a3c080a',1,'sf::Http::Response']]],
+  ['begin_5farray_8',['begin_array',['../a01149.html#aa3538cce439a2de6c7893e627b38c454a16c226b4425b68560fea322b46dabe01',1,'nlohmann::detail::lexer_base']]],
+  ['begin_5fobject_9',['begin_object',['../a01149.html#aa3538cce439a2de6c7893e627b38c454a9a9ffd53b6869d4eca271b1ed5b57fe8',1,'nlohmann::detail::lexer_base']]],
+  ['binary_10',['Binary',['../a01813.html#a1cd6b89ad23253f6d97e6d4ca4d558cba6f253b362639fb5e059dc292762a21ee',1,'sf::Ftp']]],
+  ['binary_11',['binary',['../a00662.html#a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20',1,'nlohmann::detail']]],
+  ['bold_12',['Bold',['../a01781.html#aa8add4aef484c6e6b20faff07452bd82af1b47f98fb1e10509ba930a596987171',1,'sf::Text']]],
+  ['boolean_13',['boolean',['../a00662.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27',1,'nlohmann::detail']]],
+  ['bson_14',['bson',['../a00662.html#aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4',1,'nlohmann::detail']]],
+  ['buffercount_15',['BufferCount',['../a01669.html#a33a9cc859686c3ebdb61076669baf386a3adf3b6cd18edb6121fda81e569dbbf5',1,'sf::SoundStream']]],
+  ['bufferretries_16',['BufferRetries',['../a01669.html#a33a9cc859686c3ebdb61076669baf386a44b14ec3fd6194cf72c8fecef516f98b',1,'sf::SoundStream']]],
+  ['buttoncount_17',['ButtonCount',['../a02041.html#a88156a1cef8a89e1df87a52caf648d6fa2f1b8a0a59f2c12a4775c0e1e69e1816',1,'sf::Joystick::ButtonCount'],['../a02053.html#a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402',1,'sf::Mouse::ButtonCount']]]
+];

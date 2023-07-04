@@ -1,0 +1,37 @@
+\doxysection{Login\+Register.\+hpp}
+\hypertarget{a00281_source}{}\label{a00281_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/LoginRegister.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/LoginRegister.hpp}}
+\mbox{\hyperlink{a00281}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00002}{Handler.hpp}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00269}{Vehicle.hpp}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01569}{LoginRegister}}\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{a00677}{Handler}}\ \mbox{\hyperlink{a01569_ad23161563ec0c989b590333fb546840e}{handler}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{a01569_a9c24371ea5aa3f387ee0d7fd4d34ba1c}{LoginRegister}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a01569_abf397af0b3de607db31f6904c081ce15}{\string~LoginRegister}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01569_a76295e017aeca3f3e079c28977ddbdaf}{postUser}}(\textcolor{keywordtype}{string}\ enteredName,\ \textcolor{keywordtype}{string}\ enteredContactNumber,\ \textcolor{keywordtype}{string}\ enteredEmail,\ \textcolor{keywordtype}{string}\ enteredPassword,\ \textcolor{keywordtype}{string}\ enteredRole);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01569_a108699573f2614e409b37b4eb3d33870}{getUsers}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01569_a396a24606b365ce28bce2af5b87a3d95}{checkLoginRegister}}(\textcolor{keywordtype}{string}\ enteredName,\ \textcolor{keywordtype}{string}\ eneteredContactNumber,\ \textcolor{keywordtype}{string}\ email,\ \textcolor{keywordtype}{string}\ password,\ \textcolor{keywordtype}{string}\ isLogOrReg);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01569_a5ebfee89a4826283f106f53121d72793}{getName}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01569_a49a939337ade8008aa3fb8b144cf2ec1}{getRole}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01569_aab20c6cc959d5ef048318de89cf0a983}{getUserId}}(\textcolor{keywordtype}{string}\ enteredEmail);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01569_ab8a12aa600a7ae3bce2387c025df808c}{putVehicle}}(\textcolor{keywordtype}{string}\ vehicleType,\ \textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{string}\ manufacturer,\ \textcolor{keywordtype}{string}\ model,\ \textcolor{keywordtype}{bool}\ isReserved,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ reservationDate,\ \textcolor{keywordtype}{string}\ location,\ \textcolor{keywordtype}{string}\ price,\ \textcolor{keywordtype}{int}\ reservedById);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ vector<vehicles>\ \mbox{\hyperlink{a01569_a14d0e8e584ddf8114f85fdef922d6750}{getVehicleParametres}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01569_a22fce4252a4f797af0dbbf2fdc6510a9}{passData}}(std::vector<vehicles>\ data);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ vector<int>\ \mbox{\hyperlink{a01569_a21768834c5cf95e4af16678fabe85b10}{getVehiclePricesIndexes}}(\textcolor{keywordtype}{int}\ budgetChoice,\ \textcolor{keywordtype}{string}\ carType);}
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

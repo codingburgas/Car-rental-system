@@ -1,0 +1,560 @@
+\doxysection{ssl\+\_\+options.\+h}
+\hypertarget{a00092_source}{}\label{a00092_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/ssl\_options.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/ssl\_options.h}}
+\mbox{\hyperlink{a00092}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_SSLOPTIONS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_SSLOPTIONS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00113}{curl/curl.h}}>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ \_\_LIBCURL\_VERSION\_GTE(major,\ minor)\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ ((LIBCURL\_VERSION\_MAJOR\ >\ (major))\ ||\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ ((LIBCURL\_VERSION\_MAJOR\ ==\ (major))\ \&\&\ (LIBCURL\_VERSION\_MINOR\ >=\ (minor))))}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_LIBCURL\_VERSION\_LT(major,\ minor)\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ ((LIBCURL\_VERSION\_MAJOR\ <\ (major))\ ||\ \ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \ ((LIBCURL\_VERSION\_MAJOR\ ==\ (major))\ \&\&\ (LIBCURL\_VERSION\_MINOR\ <\ (minor))))}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ SUPPORT\_ALPN\ \_\_LIBCURL\_VERSION\_GTE(7,\ 36)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_NPN}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ SUPPORT\_NPN\ \_\_LIBCURL\_VERSION\_GTE(7,\ 36)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_SSLv2}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ SUPPORT\_SSLv2\ \_\_LIBCURL\_VERSION\_LT(7,\ 19)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_SSLv3}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SUPPORT\_SSLv3\ \_\_LIBCURL\_VERSION\_LT(7,\ 39)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_TLSv1\_0}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SUPPORT\_TLSv1\_0\ \_\_LIBCURL\_VERSION\_GTE(7,\ 34)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_TLSv1\_1}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SUPPORT\_TLSv1\_1\ \_\_LIBCURL\_VERSION\_GTE(7,\ 34)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_TLSv1\_2}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SUPPORT\_TLSv1\_2\ \_\_LIBCURL\_VERSION\_GTE(7,\ 34)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_TLSv1\_3}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SUPPORT\_TLSv1\_3\ \_\_LIBCURL\_VERSION\_GTE(7,\ 52)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_MAX\_TLS\_VERSION}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SUPPORT\_MAX\_TLS\_VERSION\ \_\_LIBCURL\_VERSION\_GTE(7,\ 54)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_MAX\_TLSv1\_1}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SUPPORT\_MAX\_TLSv1\_1\ \_\_LIBCURL\_VERSION\_GTE(7,\ 54)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_MAX\_TLSv1\_2}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SUPPORT\_MAX\_TLSv1\_2\ \_\_LIBCURL\_VERSION\_GTE(7,\ 54)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_MAX\_TLSv1\_3}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SUPPORT\_MAX\_TLSv1\_3\ \_\_LIBCURL\_VERSION\_GTE(7,\ 54)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_TLSv13\_CIPHERS}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SUPPORT\_TLSv13\_CIPHERS\ \_\_LIBCURL\_VERSION\_GTE(7,\ 61)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_SESSIONID\_CACHE}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SUPPORT\_SESSIONID\_CACHE\ \_\_LIBCURL\_VERSION\_GTE(7,\ 16)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_SSL\_FALSESTART}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ SUPPORT\_SSL\_FALSESTART\ \_\_LIBCURL\_VERSION\_GTE(7,\ 42)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#ifndef\ SUPPORT\_SSL\_NO\_REVOKE}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ SUPPORT\_SSL\_NO\_REVOKE\ \_\_LIBCURL\_VERSION\_GTE(7,\ 44)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00829}{VerifySsl}}\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{a00829_a7e85e10578f9d079b7d80e2931e180c8}{VerifySsl}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{a00829_a9ebc45d203c0fdaa6dc392719dd10c73}{VerifySsl}}(\textcolor{keywordtype}{bool}\ p\_verify)\ :\ \mbox{\hyperlink{a00829_a44e7bd2143e050991a4d2a4e8916ae3e}{verify}}(p\_verify)\ \{\}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00829_a44e7bd2143e050991a4d2a4e8916ae3e}{verify}};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00829_a44e7bd2143e050991a4d2a4e8916ae3e}{verify}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{namespace\ }ssl\ \{}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ set\ SSL\ client\ certificate}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00833}{CertFile}}\ \{}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{a00833_a9f676f06a8fd49d26cdef2eceed0e0eb}{CertFile}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00833_acacf6fdbff38fca688cb3da4b266262e}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00833_a57cddac45cb72f388ff1fc256b2b6da5}{\string~CertFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{a00833_acacf6fdbff38fca688cb3da4b266262e}{filename}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00833_ad3684f5e052585424f5ebbac43d15874}{GetCertType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}PEM"{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00833}{PemCert}}\ =\ \mbox{\hyperlink{a00833}{CertFile}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00837}{DerCert}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a00833}{CertFile}}\ \{}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{a00837_a039176489728caebf334709509a819ce}{DerCert}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00833}{CertFile}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00837_a129657760834d7ac3c1e94ab9c154ae9}{\string~DerCert}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00837_a3c6766cf8dd785d92909b94c278c8d1f}{GetCertType}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DER"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ specify\ private\ keyfile\ for\ TLS\ and\ SSL\ client\ cert}}
+\DoxyCodeLine{00114\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00841}{KeyFile}}\ \{}
+\DoxyCodeLine{00115\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{a00841_a7a7a543cba0ea7ef1e0b53dcaae04187}{KeyFile}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FileType,\ \textcolor{keyword}{typename}\ PassType>}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{a00841_a1da570b721b62ddaf9312cae292458a2}{KeyFile}}(FileType\&\&\ p\_filename,\ PassType\ p\_password)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}{filename}}(\mbox{\hyperlink{a00667}{std}}::forward<FileType>(p\_filename)),\ \mbox{\hyperlink{a00841_a56690047750c7239297d31ebe84cdc79}{password}}(\mbox{\hyperlink{a00667}{std}}::move(p\_password))\ \{\}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00841_a0b85fba3226bc0f31e97101ad662f4bd}{\string~KeyFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ \mbox{\hyperlink{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}{filename}};}
+\DoxyCodeLine{00126\ \ \ \ \ std::string\ \mbox{\hyperlink{a00841_a56690047750c7239297d31ebe84cdc79}{password}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00841_afc8371185cfecf5b200ac05cb5635c57}{GetKeyType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}PEM"{}};}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00841}{PemKey}}\ =\ \mbox{\hyperlink{a00841}{KeyFile}};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00845}{DerKey}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a00841}{KeyFile}}\ \{}
+\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{a00845_a2eda765bce5f254f462626396d58f66a}{DerKey}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00841}{KeyFile}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FileType,\ \textcolor{keyword}{typename}\ PassType>}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{a00845_a9efc53027ded31636bac48310d0724ef}{DerKey}}(FileType\&\&\ p\_filename,\ PassType\ p\_password)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00841}{KeyFile}}(\mbox{\hyperlink{a00667}{std}}::forward<FileType>(p\_filename),\ \mbox{\hyperlink{a00667}{std}}::move(p\_password))\ \{\}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00845_a4301b30d5f5a9b21324e55b2f540a858}{\string~DerKey}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00845_a43524606ccda7befd06e1292cff68453}{GetKeyType}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DER"{}};}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00849}{PinnedPublicKey}}\ \{}
+\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{a00849_a6fe1a79b6891bcf0fd7316003b1539c3}{PinnedPublicKey}}(std::string\&\&\ p\_pinned\_public\_key)\ :\ \mbox{\hyperlink{a00849_ac72a1d2a5b3cd3963a9d374e2993f86d}{pinned\_public\_key}}(\mbox{\hyperlink{a00667}{std}}::move(p\_pinned\_public\_key))\ \{\}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{a00849_ac72a1d2a5b3cd3963a9d374e2993f86d}{pinned\_public\_key}};}
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#if\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ This\ option\ enables/disables\ ALPN\ in\ the\ SSL\ handshake\ (if\ the\ SSL\ backend\ libcurl\ is\ built\ to}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ use\ supports\ it),\ which\ can\ be\ used\ to\ negotiate\ http2.}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{class\ }ALPN\ \{}
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00164\ \ \ \ \ ALPN()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00166\ \ \ \ \ ALPN(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ enabled(p\_enabled)\ \{\}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ enabled;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#if\ SUPPORT\_NPN}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//\ \ This\ option\ enables/disables\ NPN\ in\ the\ SSL\ handshake\ (if\ the\ SSL\ backend\ libcurl\ is\ built\ to}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ \ use\ supports\ it),\ which\ can\ be\ used\ to\ negotiate\ http2.}}
+\DoxyCodeLine{00179\ \textcolor{keyword}{class\ }NPN\ \{}
+\DoxyCodeLine{00180\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00181\ \ \ \ \ NPN()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00183\ \ \ \ \ NPN(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ enabled(p\_enabled)\ \{\}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ enabled;}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00190\ \};}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_NPN}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ This\ option\ determines\ whether\ libcurl\ verifies\ that\ the\ server\ cert\ is\ for\ the\ server\ it\ is}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ known\ as.}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00853}{VerifyHost}}\ \{}
+\DoxyCodeLine{00196\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{a00853_aa80544c07cbb1575a44d0179c1f312ba}{VerifyHost}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{a00853_a2f60f61d3524cb15a25a8538536bbb61}{VerifyHost}}(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ \mbox{\hyperlink{a00853_adb22a027e29a83e5126d07155154aedf}{enabled}}(p\_enabled)\ \{\}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00853_adb22a027e29a83e5126d07155154aedf}{enabled}};}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00853_adb22a027e29a83e5126d07155154aedf}{enabled}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00206\ \};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ This\ option\ determines\ whether\ libcurl\ verifies\ the\ authenticity\ of\ the\ peer's\ certificate.}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00857}{VerifyPeer}}\ \{}
+\DoxyCodeLine{00210\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{a00857_afd1b0cb3068c7b9311200445e2138e79}{VerifyPeer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{a00857_af2c624c6b2d14a257fa21d1256271ae6}{VerifyPeer}}(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ \mbox{\hyperlink{a00857_a73cadea88c505a2ceb504ce7155dc1dd}{enabled}}(p\_enabled)\ \{\}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00857_a73cadea88c505a2ceb504ce7155dc1dd}{enabled}};}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00857_a73cadea88c505a2ceb504ce7155dc1dd}{enabled}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00220\ \};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{comment}{//\ This\ option\ determines\ whether\ libcurl\ verifies\ the\ status\ of\ the\ server\ cert\ using\ the}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ "{}Certificate\ Status\ Request"{}\ TLS\ extension\ (aka.\ OCSP\ stapling).}}
+\DoxyCodeLine{00224\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00861}{VerifyStatus}}\ \{}
+\DoxyCodeLine{00225\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{a00861_a83f51732950c61302bdfd7cfde9b5aa0}{VerifyStatus}}(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ \mbox{\hyperlink{a00861_a4e9e9883bf2815f7a4671daccc01bb7d}{enabled}}(p\_enabled)\ \{\}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00861_a4e9e9883bf2815f7a4671daccc01bb7d}{enabled}};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00861_a4e9e9883bf2815f7a4671daccc01bb7d}{enabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00234\ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{comment}{//\ TLS\ v1.0\ or\ later}}
+\DoxyCodeLine{00237\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00865}{TLSv1}}\ \{\};}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSLv2}}
+\DoxyCodeLine{00239\ \textcolor{comment}{//\ SSL\ v2\ (but\ not\ SSLv3)}}
+\DoxyCodeLine{00240\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00869}{SSLv2}}\ \{\};}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSLv3}}
+\DoxyCodeLine{00243\ \textcolor{comment}{//\ SSL\ v3\ (but\ not\ SSLv2)}}
+\DoxyCodeLine{00244\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00873}{SSLv3}}\ \{\};}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_0}}
+\DoxyCodeLine{00247\ \textcolor{comment}{//\ TLS\ v1.0\ or\ later\ (Added\ in\ 7.34.0)}}
+\DoxyCodeLine{00248\ \textcolor{keyword}{struct\ }TLSv1\_0\ \{\};}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_1}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//\ TLS\ v1.1\ or\ later\ (Added\ in\ 7.34.0)}}
+\DoxyCodeLine{00252\ \textcolor{keyword}{struct\ }TLSv1\_1\ \{\};}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_2}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ TLS\ v1.2\ or\ later\ (Added\ in\ 7.34.0)}}
+\DoxyCodeLine{00256\ \textcolor{keyword}{struct\ }TLSv1\_2\ \{\};}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_3}}
+\DoxyCodeLine{00259\ \textcolor{comment}{//\ TLS\ v1.3\ or\ later\ (Added\ in\ 7.52.0)}}
+\DoxyCodeLine{00260\ \textcolor{keyword}{struct\ }TLSv1\_3\ \{\};}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLS\_VERSION}}
+\DoxyCodeLine{00263\ \textcolor{comment}{//\ The\ flag\ defines\ the\ maximum\ supported\ TLS\ version\ by\ libcurl,\ or\ the\ default\ value\ from\ the\ SSL}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//\ library\ is\ used.}}
+\DoxyCodeLine{00265\ \textcolor{keyword}{struct\ }MaxTLSVersion\ \{\};}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_0}}
+\DoxyCodeLine{00268\ \textcolor{comment}{//\ The\ flag\ defines\ maximum\ supported\ TLS\ version\ as\ TLSv1.0.\ (Added\ in\ 7.54.0)}}
+\DoxyCodeLine{00269\ \textcolor{keyword}{struct\ }MaxTLSv1\_0\ \{\};}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_1}}
+\DoxyCodeLine{00272\ \textcolor{comment}{//\ The\ flag\ defines\ maximum\ supported\ TLS\ version\ as\ TLSv1.1.\ (Added\ in\ 7.54.0)}}
+\DoxyCodeLine{00273\ \textcolor{keyword}{struct\ }MaxTLSv1\_1\ \{\};}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_2}}
+\DoxyCodeLine{00276\ \textcolor{comment}{//\ The\ flag\ defines\ maximum\ supported\ TLS\ version\ as\ TLSv1.2.\ (Added\ in\ 7.54.0)}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{struct\ }MaxTLSv1\_2\ \{\};}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_3}}
+\DoxyCodeLine{00280\ \textcolor{comment}{//\ The\ flag\ defines\ maximum\ supported\ TLS\ version\ as\ TLSv1.3.\ (Added\ in\ 7.54.0)}}
+\DoxyCodeLine{00281\ \textcolor{keyword}{struct\ }MaxTLSv1\_3\ \{\};}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{comment}{//\ path\ to\ Certificate\ Authority\ (CA)\ bundle}}
+\DoxyCodeLine{00285\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00877}{CaInfo}}\ \{}
+\DoxyCodeLine{00286\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{a00877_a2b7d671bf955731d6f32a87ee7bd409c}{CaInfo}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00877_aa2b8118059dcd398567d72c7739ff27e}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ std::string\ \mbox{\hyperlink{a00877_aa2b8118059dcd398567d72c7739ff27e}{filename}};}
+\DoxyCodeLine{00291\ \};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \textcolor{comment}{//\ specify\ directory\ holding\ CA\ certificates}}
+\DoxyCodeLine{00294\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00881}{CaPath}}\ \{}
+\DoxyCodeLine{00295\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{a00881_a06234c7b25fc5c8aa6a2818ffbb0fd57}{CaPath}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00881_af765f328545c2492629908cdb1a45ed3}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ std::string\ \mbox{\hyperlink{a00881_af765f328545c2492629908cdb1a45ed3}{filename}};}
+\DoxyCodeLine{00300\ \};}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \textcolor{comment}{//\ specify\ a\ Certificate\ Revocation\ List\ file}}
+\DoxyCodeLine{00303\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00885}{Crl}}\ \{}
+\DoxyCodeLine{00304\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{a00885_a557256b2ad5bb246082ce28bed8f746b}{Crl}}(std::string\&\&\ p\_filename)\ :\ \mbox{\hyperlink{a00885_a1e0d8ace74a1c390315296b61370dc07}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{\}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ std::string\ \mbox{\hyperlink{a00885_a1e0d8ace74a1c390315296b61370dc07}{filename}};}
+\DoxyCodeLine{00309\ \};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{comment}{//\ specify\ ciphers\ to\ use\ for\ TLS}}
+\DoxyCodeLine{00312\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00889}{Ciphers}}\ \{}
+\DoxyCodeLine{00313\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{a00889_a3e14ce911f21bb30be5acc2cf2cf24c3}{Ciphers}}(std::string\&\&\ p\_ciphers)\ :\ \mbox{\hyperlink{a00889_a0dfedb5fd7d5d1d042510ba196044e2b}{ciphers}}(\mbox{\hyperlink{a00667}{std}}::move(p\_ciphers))\ \{\}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ std::string\ \mbox{\hyperlink{a00889_a0dfedb5fd7d5d1d042510ba196044e2b}{ciphers}};}
+\DoxyCodeLine{00318\ \};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv13\_CIPHERS}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//\ specify\ ciphers\ suites\ to\ use\ for\ TLS\ 1.3}}
+\DoxyCodeLine{00322\ \textcolor{keyword}{class\ }TLS13\_Ciphers\ \{}
+\DoxyCodeLine{00323\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00325\ \ \ \ \ TLS13\_Ciphers(std::string\&\&\ p\_ciphers)\ :\ ciphers(std::move(p\_ciphers))\ \{\}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ std::string\ ciphers;}
+\DoxyCodeLine{00328\ \};}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#if\ SUPPORT\_SESSIONID\_CACHE}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//\ enable/disable\ use\ of\ the\ SSL\ session-\/ID\ cache}}
+\DoxyCodeLine{00333\ \textcolor{keyword}{class\ }SessionIdCache\ \{}
+\DoxyCodeLine{00334\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00335\ \ \ \ \ SessionIdCache()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00337\ \ \ \ \ SessionIdCache(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ enabled(p\_enabled)\ \{\}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ enabled;}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00344\ \};}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSL\_FALSESTART}}
+\DoxyCodeLine{00348\ \textcolor{keyword}{class\ }SslFastStart\ \{}
+\DoxyCodeLine{00349\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00350\ \ \ \ \ SslFastStart()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00352\ \ \ \ \ SslFastStart(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ enabled(p\_enabled)\ \{\}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ enabled;}
+\DoxyCodeLine{00356\ \ \ \ \ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00359\ \};}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00893}{NoRevoke}}\ \{}
+\DoxyCodeLine{00363\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{a00893_a3ec2c2c846f679ab484b927b3e51b42a}{NoRevoke}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{a00893_a47293219a730461b9ed9d6f009d9789f}{NoRevoke}}(\textcolor{keywordtype}{bool}\ p\_enabled)\ :\ \mbox{\hyperlink{a00893_a91595705b90125989fa517e192cd98c1}{enabled}}(p\_enabled)\ \{\}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00893_a91595705b90125989fa517e192cd98c1}{enabled}};}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00893_a91595705b90125989fa517e192cd98c1}{enabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00373\ \};}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \}\ \textcolor{comment}{//\ namespace\ ssl}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00897}{SslOptions}}\ \{}
+\DoxyCodeLine{00378\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_a15096603072c82c73fff315c7fa08ba4}{cert\_file}};}
+\DoxyCodeLine{00379\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_acfaca3ec4046967aa18041e9ac5f68c3}{cert\_type}};}
+\DoxyCodeLine{00380\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_a19dbccf0e4c34fc469d6144a7987de77}{key\_file}};}
+\DoxyCodeLine{00381\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_ab2b277d9559f8b8844f159f1c48549e2}{key\_type}};}
+\DoxyCodeLine{00382\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_acb390c397bae8866e4aa6702993209a5}{key\_pass}};}
+\DoxyCodeLine{00383\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_a4592781b7dc1e90165ea82e1961070b8}{pinned\_public\_key}};}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#if\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordtype}{bool}\ enable\_alpn\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#if\ SUPPORT\_NPN}}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordtype}{bool}\ enable\_npn\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00897_a8a641c7c718756ef24eb662a6916b754}{verify\_host}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00897_a6fff8d556eb4d744e7b0b747d42c3a0e}{verify\_peer}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00897_aec439be919b082fd8b37ebb62baa341e}{verify\_status}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a0227d3edc8c1ee5f0bb41831912ce756}{CURL\_SSLVERSION\_DEFAULT}};}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSL\_NO\_REVOKE}}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordtype}{bool}\ ssl\_no\_revoke\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLS\_VERSION}}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_version\ =\ \mbox{\hyperlink{a00113_abc6126af1d45847bc59afa0aa3216b04a724f1960f9dd1cfe462c0eca7f4e7da0}{CURL\_SSLVERSION\_MAX\_DEFAULT}};}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00400\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_ae8575f9437b7a7994660dfe7912f1bb1}{ca\_info}};}
+\DoxyCodeLine{00401\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_a21eca68693dcee51859dee88b633f689}{ca\_path}};}
+\DoxyCodeLine{00402\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_a2cc56a9a9f55f4763d6d32d948becda7}{crl\_file}};}
+\DoxyCodeLine{00403\ \ \ \ \ std::string\ \mbox{\hyperlink{a00897_adb01e032f9c99f83e42ae6830bc8f947}{ciphers}};}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv13\_CIPHERS}}
+\DoxyCodeLine{00405\ \ \ \ \ std::string\ tls13\_ciphers;}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#if\ SUPPORT\_SESSIONID\_CACHE}}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordtype}{bool}\ session\_id\_cache\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00833}{ssl::CertFile}}\&\ opt)\ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a15096603072c82c73fff315c7fa08ba4}{cert\_file}}\ =\ opt.\mbox{\hyperlink{a00833_acacf6fdbff38fca688cb3da4b266262e}{filename}};}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_acfaca3ec4046967aa18041e9ac5f68c3}{cert\_type}}\ =\ opt.\mbox{\hyperlink{a00833_ad3684f5e052585424f5ebbac43d15874}{GetCertType}}();}
+\DoxyCodeLine{00414\ \ \ \ \ \}}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_ac627ff06c5f70316c73f60978d5d65df}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00841}{ssl::KeyFile}}\&\ opt)\ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a19dbccf0e4c34fc469d6144a7987de77}{key\_file}}\ =\ opt.\mbox{\hyperlink{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}{filename}};}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_ab2b277d9559f8b8844f159f1c48549e2}{key\_type}}\ =\ opt.\mbox{\hyperlink{a00841_afc8371185cfecf5b200ac05cb5635c57}{GetKeyType}}();}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_acb390c397bae8866e4aa6702993209a5}{key\_pass}}\ =\ opt.\mbox{\hyperlink{a00841_a56690047750c7239297d31ebe84cdc79}{password}};}
+\DoxyCodeLine{00419\ \ \ \ \ \}}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a6c66d67ed5fcd4d4cf78a661af91f06b}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00849}{ssl::PinnedPublicKey}}\&\ opt)\ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a4592781b7dc1e90165ea82e1961070b8}{pinned\_public\_key}}\ =\ opt.\mbox{\hyperlink{a00849_ac72a1d2a5b3cd3963a9d374e2993f86d}{pinned\_public\_key}};}
+\DoxyCodeLine{00422\ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#if\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::ALPN\&\ opt)\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ enable\_alpn\ =\ opt.enabled;}
+\DoxyCodeLine{00427\ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_ALPN}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#if\ SUPPORT\_NPN}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::NPN\&\ opt)\ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ enable\_npn\ =\ opt.enabled;}
+\DoxyCodeLine{00432\ \ \ \ \ \}}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUPPORT\_NPN}}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_acd8ddbcee9652d38788cd99bc5714288}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00853}{ssl::VerifyHost}}\&\ opt)\ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a8a641c7c718756ef24eb662a6916b754}{verify\_host}}\ =\ opt.\mbox{\hyperlink{a00853_adb22a027e29a83e5126d07155154aedf}{enabled}};}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_ab0601cb8212eb24863ec11d8848b344e}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00857}{ssl::VerifyPeer}}\&\ opt)\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a6fff8d556eb4d744e7b0b747d42c3a0e}{verify\_peer}}\ =\ opt.\mbox{\hyperlink{a00857_a73cadea88c505a2ceb504ce7155dc1dd}{enabled}};}
+\DoxyCodeLine{00439\ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a698f81d1dccd40066fb651060514715a}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00861}{ssl::VerifyStatus}}\&\ opt)\ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_aec439be919b082fd8b37ebb62baa341e}{verify\_status}}\ =\ opt.\mbox{\hyperlink{a00861_a4e9e9883bf2815f7a4671daccc01bb7d}{enabled}};}
+\DoxyCodeLine{00442\ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a91bf5ff81e09a2c7eb5cc788cff03cc3}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00865}{ssl::TLSv1}}\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5af516898239e1f4a335ab3c0d019de40e}{CURL\_SSLVERSION\_TLSv1}};}
+\DoxyCodeLine{00445\ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSL\_NO\_REVOKE}}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00893}{ssl::NoRevoke}}\&\ opt)\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ ssl\_no\_revoke\ =\ opt.\mbox{\hyperlink{a00893_a91595705b90125989fa517e192cd98c1}{enabled}};}
+\DoxyCodeLine{00449\ \ \ \ \ \}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSLv2}}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9228b79272fe49a524244877374f53e5}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00869}{ssl::SSLv2}}\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a0f8174e66c2e7084ab2aa414509110ce}{CURL\_SSLVERSION\_SSLv2}};}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#if\ SUPPORT\_SSLv3}}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a91c733d599649aa8e4ad39e7b89174e0}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00873}{ssl::SSLv3}}\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a196e49e6628c0360cbe00852964fa906}{CURL\_SSLVERSION\_SSLv3}};}
+\DoxyCodeLine{00459\ \ \ \ \ \}}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_0}}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::TLSv1\_0\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a769044d53450fd19575f12b2838f54d0}{CURL\_SSLVERSION\_TLSv1\_0}};}
+\DoxyCodeLine{00464\ \ \ \ \ \}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_1}}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::TLSv1\_1\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a3659f18972112848e04fec39daf19985}{CURL\_SSLVERSION\_TLSv1\_1}};}
+\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_2}}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::TLSv1\_2\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5ae9b72f6323430c824c44182b7649d0d8}{CURL\_SSLVERSION\_TLSv1\_2}};}
+\DoxyCodeLine{00474\ \ \ \ \ \}}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv1\_3}}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::TLSv1\_3\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a9d08f789656681e5703c023538b4b0df}{ssl\_version}}\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a3a20a62139a18a0577154835dc642c0d}{CURL\_SSLVERSION\_TLSv1\_3}};}
+\DoxyCodeLine{00479\ \ \ \ \ \}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLS\_VERSION}}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::MaxTLSVersion\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ max\_version\ =\ \mbox{\hyperlink{a00113_a99fb83031ce9923c84392b4e92f956b5a0227d3edc8c1ee5f0bb41831912ce756}{CURL\_SSLVERSION\_DEFAULT}};}
+\DoxyCodeLine{00484\ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_0}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::MaxTLSv1\_0\&\ opt)\ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ max\_version\ =\ \mbox{\hyperlink{a00113_abc6126af1d45847bc59afa0aa3216b04a74aee28bba157392e07b797d710900e1}{CURL\_SSLVERSION\_MAX\_TLSv1\_0}};}
+\DoxyCodeLine{00489\ \ \ \ \ \}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_1}}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::MaxTLSv1\_1\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ max\_version\ =\ \mbox{\hyperlink{a00113_abc6126af1d45847bc59afa0aa3216b04aa94fe5edaa7282176fa95c61bcbc91e3}{CURL\_SSLVERSION\_MAX\_TLSv1\_1}};}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_2}}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::MaxTLSv1\_2\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ max\_version\ =\ \mbox{\hyperlink{a00113_abc6126af1d45847bc59afa0aa3216b04acc7128741e309e08d2f9894cef9c76b5}{CURL\_SSLVERSION\_MAX\_TLSv1\_2}};}
+\DoxyCodeLine{00499\ \ \ \ \ \}}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#if\ SUPPORT\_MAX\_TLSv1\_3}}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::MaxTLSv1\_3\&\ \textcolor{comment}{/*opt*/})\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ max\_version\ =\ \mbox{\hyperlink{a00113_abc6126af1d45847bc59afa0aa3216b04a87b97a94af49ac063d21e1818c865468}{CURL\_SSLVERSION\_MAX\_TLSv1\_3}};}
+\DoxyCodeLine{00504\ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_afb23cd30d1dc8454a4b01d6e4efcd15d}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00877}{ssl::CaInfo}}\&\ opt)\ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_ae8575f9437b7a7994660dfe7912f1bb1}{ca\_info}}\ =\ opt.\mbox{\hyperlink{a00877_aa2b8118059dcd398567d72c7739ff27e}{filename}};}
+\DoxyCodeLine{00508\ \ \ \ \ \}}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a907a1c92fcc561a0692063408aa96b22}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00881}{ssl::CaPath}}\&\ opt)\ \{}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a21eca68693dcee51859dee88b633f689}{ca\_path}}\ =\ opt.\mbox{\hyperlink{a00881_af765f328545c2492629908cdb1a45ed3}{filename}};}
+\DoxyCodeLine{00511\ \ \ \ \ \}}
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a4697ef1ac3d34ca2e3170ee1990e14c3}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00885}{ssl::Crl}}\&\ opt)\ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_a2cc56a9a9f55f4763d6d32d948becda7}{crl\_file}}\ =\ opt.\mbox{\hyperlink{a00885_a1e0d8ace74a1c390315296b61370dc07}{filename}};}
+\DoxyCodeLine{00514\ \ \ \ \ \}}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9ecaa7b7bf6f690b03ee1e85651f2ba2}{SetOption}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00889}{ssl::Ciphers}}\&\ opt)\ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00897_adb01e032f9c99f83e42ae6830bc8f947}{ciphers}}\ =\ opt.\mbox{\hyperlink{a00889_a0dfedb5fd7d5d1d042510ba196044e2b}{ciphers}};}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#if\ SUPPORT\_TLSv13\_CIPHERS}}
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::TLS13\_Ciphers\&\ opt)\ \{}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ tls13\_ciphers\ =\ opt.ciphers;}
+\DoxyCodeLine{00521\ \ \ \ \ \}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#if\ SUPPORT\_SESSIONID\_CACHE}}
+\DoxyCodeLine{00524\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(\textcolor{keyword}{const}\ ssl::SessionIdCache\&\ opt)\ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ session\_id\_cache\ =\ opt.enabled;}
+\DoxyCodeLine{00526\ \ \ \ \ \}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00528\ \};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00672}{priv}}\ \{}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00533\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{set\_ssl\_option}}(\mbox{\hyperlink{a00897}{SslOptions}}\&\ opts,\ T\&\&\ t)\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ opts.\mbox{\hyperlink{a00897_a9339ab2a0472f9127c7061aec7bd0058}{SetOption}}(std::forward<T>(t));}
+\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00538\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{set\_ssl\_option}}(\mbox{\hyperlink{a00897}{SslOptions}}\&\ opts,\ T\&\&\ t,\ Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{set\_ssl\_option}}(opts,\ std::forward<T>(t));}
+\DoxyCodeLine{00540\ \ \ \ \ \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{set\_ssl\_option}}(opts,\ std::move(ts)...);}
+\DoxyCodeLine{00541\ \}}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \}\ \textcolor{comment}{//\ namespace\ priv}}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00546\ \mbox{\hyperlink{a00897}{SslOptions}}\ \mbox{\hyperlink{a00656_ab6ba1be905e3cd62c1968ea5d4578ccd}{Ssl}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \mbox{\hyperlink{a00897}{SslOptions}}\ opts;}
+\DoxyCodeLine{00548\ \ \ \ \ \mbox{\hyperlink{a00657_a14892b0ae6735cda3cd3ae2e98e18c26}{priv::set\_ssl\_option}}(opts,\ std::move(ts)...);}
+\DoxyCodeLine{00549\ \ \ \ \ \textcolor{keywordflow}{return}\ opts;}
+\DoxyCodeLine{00550\ \}}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

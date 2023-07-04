@@ -1,0 +1,131 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/json.hpp File Reference}
+\hypertarget{a00251}{}\label{a00251}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/json.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/json.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$iosfwd$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$nlohmann/adl\+\_\+serializer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/byte\+\_\+container\+\_\+with\+\_\+subtype.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/conversions/from\+\_\+json.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/conversions/to\+\_\+json.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/exceptions.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/hash.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/binary\+\_\+reader.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/input\+\_\+adapters.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/lexer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/input/parser.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/internal\+\_\+iterator.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/iter\+\_\+impl.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/iteration\+\_\+proxy.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/json\+\_\+reverse\+\_\+iterator.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/primitive\+\_\+iterator.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/json\+\_\+pointer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/json\+\_\+ref.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/string\+\_\+escape.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/cpp\+\_\+future.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/output/binary\+\_\+writer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/output/output\+\_\+adapters.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/output/serializer.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/json\+\_\+fwd.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/ordered\+\_\+map.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+unscope.\+hpp$>$}\newline
+Include dependency graph for json.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01541}{nlohmann\+::basic\+\_\+json$<$ Object\+Type, Array\+Type, String\+Type, Boolean\+Type, Number\+Integer\+Type, Number\+Unsigned\+Type, Number\+Float\+Type, Allocator\+Type, JSONSerializer, Binary\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em a class to store JSON values \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01545}{std\+::hash$<$ nlohmann\+::\+NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL $>$}}
+\begin{DoxyCompactList}\small\item\em hash value for JSON objects \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a01549}{std\+::less$<$ \+::nlohmann\+::detail\+::value\+\_\+t $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00667}{std}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00251_a7c94253db90041af11dd946a49f0f8a4}{NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+MAJOR}}~3
+\item 
+\#define \mbox{\hyperlink{a00251_ab5ca1e164894d78d3276d2e5fe58c5e3}{NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+MINOR}}~10
+\item 
+\#define \mbox{\hyperlink{a00251_a307e0238ebc35e99ea45c68823eb83eb}{NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+PATCH}}~5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00661_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}} \mbox{\hyperlink{a00251_ae90d59ab420a183cd5fb8588bdc95e06}{operator\"{}\"{}\+\_\+json}} (const char \texorpdfstring{$\ast$}{*}s, std\+::size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em user-\/defined string literal for JSON values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01541_aa8f1f93b32da01b42413643be32b2c27}{nlohmann\+::json\+::json\+\_\+pointer}} \mbox{\hyperlink{a00251_a3e528a99a7882f8d0b97375bb6081d10}{operator\"{}\"{}\+\_\+json\+\_\+pointer}} (const char \texorpdfstring{$\ast$}{*}s, std\+::size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em user-\/defined string literal for JSON pointer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00206_a0643bd74c2dc6f0e4e420b8190ea8f0f}{NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL\+\_\+\+DECLARATION}} void \mbox{\hyperlink{a00667_a3ece115a1c8ed9020a20f1d0b70efda8}{std\+::swap}} (nlohmann\+::\+NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL \&j1, nlohmann\+::\+NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL \&j2) noexcept(//NOLINT(readability-\/inconsistent-\/declaration-\/parameter-\/name) is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ nlohmann\+::\+NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL $>$\+::value \&\&//NOLINT(misc-\/redundant-\/expression) is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ nlohmann\+::\+NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL $>$\+::value)
+\begin{DoxyCompactList}\small\item\em exchanges the values of two JSON objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00206_a0643bd74c2dc6f0e4e420b8190ea8f0f}{NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL\+\_\+\+DECLARATION}} std\+::string \mbox{\hyperlink{a00661_a6ce645a0b8717757e096a5b5773b7a16}{nlohmann\+::to\+\_\+string}} (const \mbox{\hyperlink{a00206_a80b7254e63f199a1f656f07ae551f632}{NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL}} \&j)
+\begin{DoxyCompactList}\small\item\em user-\/defined to\+\_\+string function for JSON values \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00251_a7c94253db90041af11dd946a49f0f8a4}\label{a00251_a7c94253db90041af11dd946a49f0f8a4} 
+\index{json.hpp@{json.hpp}!NLOHMANN\_JSON\_VERSION\_MAJOR@{NLOHMANN\_JSON\_VERSION\_MAJOR}}
+\index{NLOHMANN\_JSON\_VERSION\_MAJOR@{NLOHMANN\_JSON\_VERSION\_MAJOR}!json.hpp@{json.hpp}}
+\doxysubsubsection{\texorpdfstring{NLOHMANN\_JSON\_VERSION\_MAJOR}{NLOHMANN\_JSON\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+MAJOR~3}
+
+\Hypertarget{a00251_ab5ca1e164894d78d3276d2e5fe58c5e3}\label{a00251_ab5ca1e164894d78d3276d2e5fe58c5e3} 
+\index{json.hpp@{json.hpp}!NLOHMANN\_JSON\_VERSION\_MINOR@{NLOHMANN\_JSON\_VERSION\_MINOR}}
+\index{NLOHMANN\_JSON\_VERSION\_MINOR@{NLOHMANN\_JSON\_VERSION\_MINOR}!json.hpp@{json.hpp}}
+\doxysubsubsection{\texorpdfstring{NLOHMANN\_JSON\_VERSION\_MINOR}{NLOHMANN\_JSON\_VERSION\_MINOR}}
+{\footnotesize\ttfamily \#define NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+MINOR~10}
+
+\Hypertarget{a00251_a307e0238ebc35e99ea45c68823eb83eb}\label{a00251_a307e0238ebc35e99ea45c68823eb83eb} 
+\index{json.hpp@{json.hpp}!NLOHMANN\_JSON\_VERSION\_PATCH@{NLOHMANN\_JSON\_VERSION\_PATCH}}
+\index{NLOHMANN\_JSON\_VERSION\_PATCH@{NLOHMANN\_JSON\_VERSION\_PATCH}!json.hpp@{json.hpp}}
+\doxysubsubsection{\texorpdfstring{NLOHMANN\_JSON\_VERSION\_PATCH}{NLOHMANN\_JSON\_VERSION\_PATCH}}
+{\footnotesize\ttfamily \#define NLOHMANN\+\_\+\+JSON\+\_\+\+VERSION\+\_\+\+PATCH~5}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00251_ae90d59ab420a183cd5fb8588bdc95e06}\label{a00251_ae90d59ab420a183cd5fb8588bdc95e06} 
+\index{json.hpp@{json.hpp}!operator\"{}\"{}\_json@{operator""""\_json}}
+\index{operator\"{}\"{}\_json@{operator""""\_json}!json.hpp@{json.hpp}}
+\doxysubsubsection{\texorpdfstring{operator""""\_json()}{operator""\_json()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00661_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}} operator\"{}\"{}\+\_\+json (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+user-\/defined string literal for JSON values 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/operator_literal_json/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/operator\+\_\+literal\+\_\+json/}} 
+\end{DoxySeeAlso}
+\Hypertarget{a00251_a3e528a99a7882f8d0b97375bb6081d10}\label{a00251_a3e528a99a7882f8d0b97375bb6081d10} 
+\index{json.hpp@{json.hpp}!operator\"{}\"{}\_json\_pointer@{operator""""\_json\_pointer}}
+\index{operator\"{}\"{}\_json\_pointer@{operator""""\_json\_pointer}!json.hpp@{json.hpp}}
+\doxysubsubsection{\texorpdfstring{operator""""\_json\_pointer()}{operator""\_json\_pointer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01541_aa8f1f93b32da01b42413643be32b2c27}{nlohmann\+::json\+::json\+\_\+pointer}} operator\"{}\"{}\+\_\+json\+\_\+pointer (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+user-\/defined string literal for JSON pointer 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/operator_literal_json_pointer/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/operator\+\_\+literal\+\_\+json\+\_\+pointer/}} 
+\end{DoxySeeAlso}

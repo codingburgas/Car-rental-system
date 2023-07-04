@@ -1,0 +1,110 @@
+\doxysection{cpr\+::Encoded\+Authentication Class Reference}
+\hypertarget{a00809}{}\label{a00809}\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+
+
+{\ttfamily \#include $<$proxyauth.\+h$>$}
+
+
+
+Collaboration diagram for cpr\+::Encoded\+Authentication\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00809_a1fea1f83e5b5acf818e2e96029d799d3}{Encoded\+Authentication}} ()
+\item 
+\mbox{\hyperlink{a00809_a27ce4a0df8bf6e8234b45650d3c9d982}{Encoded\+Authentication}} (const \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&other)=default
+\item 
+\mbox{\hyperlink{a00809_a40795e69b8b5b1a9de48f69aeb6997a7}{Encoded\+Authentication}} (const std\+::string \&username, const std\+::string \&password)
+\item 
+\mbox{\hyperlink{a00809_ab7a6bd4a050dad0b615f19cd17e29a6a}{Encoded\+Authentication}} (\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&\&old) noexcept=default
+\item 
+\mbox{\hyperlink{a00809_a15e56f3a9118685b5765ff220616ca89}{Encoded\+Authentication}} (std\+::string \&\&username, std\+::string \&\&password)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00809_ab3fd978f21caa054abcb195982aecc15}{Get\+Auth\+String}} () const noexcept
+\item 
+\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \& \mbox{\hyperlink{a00809_a7874d0fe32495718007118cd8819debd}{operator=}} (const \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&other)=default
+\item 
+\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \& \mbox{\hyperlink{a00809_aa256c1edf7af566b30d26515e7bc5021}{operator=}} (\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&\&old) noexcept=default
+\item 
+virtual \mbox{\hyperlink{a00809_a937555d7cb6b6e4bec2baaeebafae870}{\texorpdfstring{$\sim$}{\string~}\+Encoded\+Authentication}} () noexcept=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}{auth\+\_\+string\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00809_a1fea1f83e5b5acf818e2e96029d799d3}\label{a00809_a1fea1f83e5b5acf818e2e96029d799d3} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!EncodedAuthentication@{EncodedAuthentication}}
+\index{EncodedAuthentication@{EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{EncodedAuthentication()}{EncodedAuthentication()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily cpr\+::\+Encoded\+Authentication\+::\+Encoded\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00809_a40795e69b8b5b1a9de48f69aeb6997a7}\label{a00809_a40795e69b8b5b1a9de48f69aeb6997a7} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!EncodedAuthentication@{EncodedAuthentication}}
+\index{EncodedAuthentication@{EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{EncodedAuthentication()}{EncodedAuthentication()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily cpr\+::\+Encoded\+Authentication\+::\+Encoded\+Authentication (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00809_a15e56f3a9118685b5765ff220616ca89}\label{a00809_a15e56f3a9118685b5765ff220616ca89} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!EncodedAuthentication@{EncodedAuthentication}}
+\index{EncodedAuthentication@{EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{EncodedAuthentication()}{EncodedAuthentication()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily cpr\+::\+Encoded\+Authentication\+::\+Encoded\+Authentication (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{username,  }\item[{std\+::string \&\&}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00809_a27ce4a0df8bf6e8234b45650d3c9d982}\label{a00809_a27ce4a0df8bf6e8234b45650d3c9d982} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!EncodedAuthentication@{EncodedAuthentication}}
+\index{EncodedAuthentication@{EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{EncodedAuthentication()}{EncodedAuthentication()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily cpr\+::\+Encoded\+Authentication\+::\+Encoded\+Authentication (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00809_ab7a6bd4a050dad0b615f19cd17e29a6a}\label{a00809_ab7a6bd4a050dad0b615f19cd17e29a6a} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!EncodedAuthentication@{EncodedAuthentication}}
+\index{EncodedAuthentication@{EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{EncodedAuthentication()}{EncodedAuthentication()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily cpr\+::\+Encoded\+Authentication\+::\+Encoded\+Authentication (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00809_a937555d7cb6b6e4bec2baaeebafae870}\label{a00809_a937555d7cb6b6e4bec2baaeebafae870} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!````~EncodedAuthentication@{\texorpdfstring{$\sim$}{\string~}EncodedAuthentication}}
+\index{````~EncodedAuthentication@{\texorpdfstring{$\sim$}{\string~}EncodedAuthentication}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EncodedAuthentication()}{\string~EncodedAuthentication()}}
+{\footnotesize\ttfamily virtual cpr\+::\+Encoded\+Authentication\+::\texorpdfstring{$\sim$}{\string~}\+Encoded\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00809_ab3fd978f21caa054abcb195982aecc15}\label{a00809_ab3fd978f21caa054abcb195982aecc15} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!GetAuthString@{GetAuthString}}
+\index{GetAuthString@{GetAuthString}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{GetAuthString()}{GetAuthString()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} cpr\+::\+Encoded\+Authentication\+::\+Get\+Auth\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{a00809_a7874d0fe32495718007118cd8819debd}\label{a00809_a7874d0fe32495718007118cd8819debd} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \& cpr\+::\+Encoded\+Authentication\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00809_aa256c1edf7af566b30d26515e7bc5021}\label{a00809_aa256c1edf7af566b30d26515e7bc5021} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00809}{Encoded\+Authentication}} \& cpr\+::\+Encoded\+Authentication\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00809}{Encoded\+Authentication}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}\label{a00809_a0b158bdf3ed9e79980d1e6119c73f3be} 
+\index{cpr::EncodedAuthentication@{cpr::EncodedAuthentication}!auth\_string\_@{auth\_string\_}}
+\index{auth\_string\_@{auth\_string\_}!cpr::EncodedAuthentication@{cpr::EncodedAuthentication}}
+\doxysubsubsection{\texorpdfstring{auth\_string\_}{auth\_string\_}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Encoded\+Authentication\+::auth\+\_\+string\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00080}{proxyauth.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+\doxysection{interface.\+h}
+\hypertarget{a00056_source}{}\label{a00056_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/interface.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/interface.h}}
+\mbox{\hyperlink{a00056}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_INTERFACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_INTERFACE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00035}{cpr/cprtypes.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00765}{Interface}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a00725}{StringHolder}}<Interface>\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{a00765_a7e307b62010e1e38d1c7723e9cbdbc9d}{Interface}}()\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>()\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{a00765_ae6926d15e31bbc49886c752c363f08a0}{Interface}}(\textcolor{keyword}{const}\ std::string\&\ iface)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>(iface)\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a00765_aa345a3daf70d4c10d962ea8da370dd53}{Interface}}(std::string\&\&\ iface)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>(\mbox{\hyperlink{a00667}{std}}::move(iface))\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{a00765_a00f546f1a4856162c947ada6e688e709}{Interface}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ iface)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>(iface)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{a00765_a146b494f72bab0903e21420f5d5d0fb4}{Interface}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}},\ \textcolor{keywordtype}{size\_t}\ len)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>(\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}},\ len)\ \{\}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a00765_adc931c4f92aa0c3ed9b8fbc1c228fbb0}{Interface}}(\textcolor{keyword}{const}\ std::initializer\_list<std::string>\ args)\ :\ \mbox{\hyperlink{a00725}{StringHolder}}<\mbox{\hyperlink{a00765}{Interface}}>(args)\ \{\}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{a00765_ad7ceae00d5e961443a686d5b6880965d}{Interface}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00765}{Interface}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{a00765_aa50e2136501bf3e81813588052fe97f1}{Interface}}(\mbox{\hyperlink{a00765}{Interface}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{a00765_a05011bb178655fa5d27524d10453172e}{\string~Interface}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a00765}{Interface}}\&\ \mbox{\hyperlink{a00765_a2694b243b72258b14b53cd42935937f0}{operator=}}(\mbox{\hyperlink{a00765}{Interface}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{a00765}{Interface}}\&\ \mbox{\hyperlink{a00765_aee167eaef22351860cad3134d3969ca7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00765}{Interface}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

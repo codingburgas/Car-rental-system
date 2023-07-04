@@ -1,0 +1,229 @@
+\doxysection{Config.\+hpp}
+\hypertarget{a00359_source}{}\label{a00359_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Config.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Config.hpp}}
+\mbox{\hyperlink{a00359}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_CONFIG\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_CONFIG\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Define\ the\ SFML\ version}}
+\DoxyCodeLine{00032\ \textcolor{comment}{}\textcolor{preprocessor}{\#define\ SFML\_VERSION\_MAJOR\ 2}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ SFML\_VERSION\_MINOR\ 5}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SFML\_VERSION\_PATCH\ 1}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ Identify\ the\ operating\ system}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ see\ http://nadeausoftware.com/articles/2012/01/c\_c\_tip\_how\_use\_compiler\_predefined\_macros\_detect\_operating\_system}}
+\DoxyCodeLine{00041\ \textcolor{comment}{}\textcolor{preprocessor}{\#if\ defined(\_WIN32)}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Windows}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_SYSTEM\_WINDOWS}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ NOMINMAX}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ NOMINMAX}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#elif\ defined(\_\_APPLE\_\_)\ \&\&\ defined(\_\_MACH\_\_)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Apple\ platform,\ see\ which\ one\ it\ is}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}TargetConditionals.h"{}}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \#if\ TARGET\_OS\_IPHONE\ ||\ TARGET\_IPHONE\_SIMULATOR}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iOS}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_IOS}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \#elif\ TARGET\_OS\_MAC}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MacOS}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_MACOS}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unsupported\ Apple\ system}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#error\ This\ Apple\ operating\ system\ is\ not\ supported\ by\ SFML\ library}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#elif\ defined(\_\_unix\_\_)}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ UNIX\ system,\ see\ which\ one\ it\ is}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Android}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_ANDROID}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Linux}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_LINUX}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_\_FreeBSD\_\_)\ ||\ defined(\_\_FreeBSD\_kernel\_\_)}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FreeBSD}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_FREEBSD}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_\_OpenBSD\_\_)}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ OpenBSD}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_SYSTEM\_OPENBSD}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unsupported\ UNIX\ system}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#error\ This\ UNIX\ operating\ system\ is\ not\ supported\ by\ SFML\ library}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Unsupported\ system}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \#error\ This\ operating\ system\ is\ not\ supported\ by\ SFML\ library}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ Define\ a\ portable\ debug\ macro}}
+\DoxyCodeLine{00112\ \textcolor{comment}{}\textcolor{preprocessor}{\#if\ !defined(NDEBUG)}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_DEBUG}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ Define\ helpers\ to\ create\ portable\ import\ /\ export\ macros\ for\ each\ module}}
+\DoxyCodeLine{00122\ \textcolor{comment}{}\textcolor{preprocessor}{\#if\ !defined(SFML\_STATIC)}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(SFML\_SYSTEM\_WINDOWS)}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Windows\ compilers\ need\ specific\ (and\ different)\ keywords\ for\ export\ and\ import}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_API\_EXPORT\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ SFML\_API\_IMPORT\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ Visual\ C++\ compilers,\ we\ also\ need\ to\ turn\ off\ this\ annoying\ C4251\ warning}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#pragma\ warning(disable:\ 4251)}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \#else\ }\textcolor{comment}{//\ Linux,\ FreeBSD,\ Mac\ OS\ X}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ \_\_GNUC\_\_\ >=\ 4}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GCC\ 4\ has\ special\ keywords\ for\ showing/hidding\ symbols,}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ same\ keyword\ is\ used\ for\ both\ importing\ and\ exporting}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ SFML\_API\_EXPORT\ \_\_attribute\_\_\ ((\_\_visibility\_\_\ ("{}default"{}})))}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ SFML\_API\_IMPORT\ \_\_attribute\_\_\ ((\_\_visibility\_\_\ ("{}default"{}})))}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GCC\ <\ 4\ has\ no\ mechanism\ to\ explicitely\ hide\ symbols,\ everything's\ exported}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ SFML\_API\_EXPORT}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ SFML\_API\_IMPORT}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{//\ Static\ build\ doesn't\ need\ import/export\ macros}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_API\_EXPORT}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_API\_IMPORT}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ Cross-\/platform\ warning\ for\ deprecated\ functions\ and\ classes}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ Usage:}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ class\ SFML\_DEPRECATED\ MyClass}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ \ \ \ \ SFML\_DEPRECATED\ void\ memberFunc();}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ SFML\_DEPRECATED\ void\ globalFunc();}}
+\DoxyCodeLine{00176\ \textcolor{comment}{}\textcolor{preprocessor}{\#if\ defined(SFML\_NO\_DEPRECATED\_WARNINGS)}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ User\ explicitly\ requests\ to\ disable\ deprecation\ warnings}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_DEPRECATED}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#elif\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{//\ Microsoft\ C++\ compiler}}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{comment}{//\ Note:\ On\ newer\ MSVC\ versions,\ using\ deprecated\ functions\ causes\ a\ compiler\ error.\ In\ order\ to}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ trigger\ a\ warning\ instead\ of\ an\ error,\ the\ compiler\ flag\ /sdl-\/\ (instead\ of\ /sdl)\ must\ be\ specified.}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_DEPRECATED\ \_\_declspec(deprecated)}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ g++\ and\ Clang}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_DEPRECATED\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ Other\ compilers\ are\ not\ supported,\ leave\ class\ or\ function\ as-\/is.}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//\ With\ a\ bit\ of\ luck,\ the\ \#pragma\ directive\ works,\ otherwise\ users\ get\ a\ warning\ (no\ error!)\ for\ unrecognized\ \#pragma.}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ message("{}SFML\_DEPRECATED\ is\ not\ supported\ for\ your\ compiler,\ please\ contact\ the\ SFML\ team"{}})}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ \#define\ SFML\_DEPRECATED}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ Define\ portable\ fixed-\/size\ types}}
+\DoxyCodeLine{00206\ \textcolor{comment}{}\textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//\ All\ "{}common"{}\ platforms\ use\ the\ same\ size\ for\ char,\ short\ and\ int}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//\ (basically\ there\ are\ 3\ types\ for\ 3\ sizes,\ so\ no\ other\ match\ is\ possible),}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ we\ can\ use\ them\ without\ doing\ any\ kind\ of\ check}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ 8\ bits\ integer\ types}}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}};}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{comment}{//\ 16\ bits\ integer\ types}}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}};}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{comment}{//\ 32\ bits\ integer\ types}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}};}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ 64\ bits\ integer\ types}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \_\_int64\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}};}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \_\_int64\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}};}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}};}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_CONFIG\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,93 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/conversions/to\+\_\+json.hpp File Reference}
+\hypertarget{a00155}{}\label{a00155}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/to\_json.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/to\_json.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/iteration\+\_\+proxy.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/cpp\+\_\+future.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for to\+\_\+json.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01041}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::array $>$}}
+\item 
+struct \mbox{\hyperlink{a01025}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::binary $>$}}
+\item 
+struct \mbox{\hyperlink{a01017}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::boolean $>$}}
+\item 
+struct \mbox{\hyperlink{a01029}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+float $>$}}
+\item 
+struct \mbox{\hyperlink{a01037}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+integer $>$}}
+\item 
+struct \mbox{\hyperlink{a01033}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::number\+\_\+unsigned $>$}}
+\item 
+struct \mbox{\hyperlink{a01045}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::object $>$}}
+\item 
+struct \mbox{\hyperlink{a01021}{nlohmann\+::detail\+::external\+\_\+constructor$<$ value\+\_\+t\+::string $>$}}
+\item 
+struct \mbox{\hyperlink{a01049}{nlohmann\+::detail\+::to\+\_\+json\+\_\+fn}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00665}{nlohmann\+::anonymous\+\_\+namespace\{to\+\_\+json.\+hpp\}}}
+\begin{DoxyCompactList}\small\item\em namespace to hold default {\ttfamily to\+\_\+json} function to see why this is required\+: \href{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4381.html}{\texttt{ http\+://www.\+open-\/std.\+org/jtc1/sc22/wg21/docs/papers/2015/n4381.\+html}} \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Integer\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t, Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a91fe576be579c8c2fdd14610605c6dd2}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, Compatible\+Number\+Integer\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Number\+Unsigned\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01477}{is\+\_\+compatible\+\_\+integer\+\_\+type}}$<$ typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t, Compatible\+Number\+Unsigned\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_ae5fd66b5517b3b5a6c6b9fd9f29ba8dc}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, Compatible\+Number\+Unsigned\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01449}{is\+\_\+compatible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01433}{is\+\_\+compatible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::binary\+\_\+t, Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3afebc132c5ff83f9cd160e52030fdfd}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+Array\+Type \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01417}{is\+\_\+compatible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Compatible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a24c9c12f3839c94e09532f08de85e949}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+Object\+Type \&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+String , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Compatible\+String $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a7356ed05cdbbb080cee80e1211e1c6c9}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const Compatible\+String \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T1 , typename T2 , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T1 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+constructible$<$ Basic\+Json\+Type, T2 $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_ab64eeb55b44db44eb8e9070229eb97df}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::pair$<$ T1, T2 $>$ \&p)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a7f7c7b9760161b774cdc0b4b838fae64}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::valarray$<$ T $>$ \&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aeca6fb5fede5ed1e12a4420d98a5692b}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const std\+::vector$<$ bool $>$ \&e)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, \mbox{\hyperlink{a01173}{iteration\+\_\+proxy\+\_\+value}}$<$ typename Basic\+Json\+Type\+::iterator $>$ $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_aaa77b0c9745130b77733a92a1a2e82ec}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const T \&b)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+constructible$<$ typename Basic\+Json\+Type\+::string\+\_\+t, const T(\&)\mbox{[}N\mbox{]}$>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a20ea5175c8999fc8b673e46b892f71f6}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const T(\&arr)\mbox{[}N\mbox{]})
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a22191081208b226e3875e1118107c281}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, const typename Basic\+Json\+Type\+::binary\+\_\+t \&bin)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a0c8b159dba71981d6c555d284cf6e2bf}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, Enum\+Type e) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Float\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+floating\+\_\+point$<$ Float\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a22bffdc8bc7e43af380ba2050696b230}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, Float\+Type val) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+same$<$ T, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a1a804b98cbe89b7e44b698f2ca860490}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, T b) noexcept
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aa0fd1b5788e9ba37e31da43dda738cb5}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::array\+\_\+t \&\&arr)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ac9f7a5542851c61d93740148eaec509f}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::object\+\_\+t \&\&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a4aa1ca6b7c61bf19d1f30ea5b669f68e}{nlohmann\+::detail\+::to\+\_\+json}} (Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::string\+\_\+t \&\&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Tuple , std\+::size\+\_\+t... Idx$>$ }\\void \mbox{\hyperlink{a00662_a510dfa15b01e9a8afe31600a27b28199}{nlohmann\+::detail\+::to\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&j, const Tuple \&t, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const auto \& \mbox{\hyperlink{a00665_a3cf8d817622a3ecdd3dcce222deb7535}{nlohmann\+::anonymous\+\_\+namespace\{to\+\_\+json.\+hpp\}\+::to\+\_\+json}} = \mbox{\hyperlink{a01257}{detail\+::static\+\_\+const}}$<$\mbox{\hyperlink{a01049}{detail\+::to\+\_\+json\+\_\+fn}}$>$\+::value
+\end{DoxyCompactItemize}

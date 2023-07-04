@@ -1,0 +1,1135 @@
+\doxysection{sf\+::Convex\+Shape Class Reference}
+\hypertarget{a01689}{}\label{a01689}\index{sf::ConvexShape@{sf::ConvexShape}}
+
+
+Specialized shape representing a convex polygon.  
+
+
+
+
+{\ttfamily \#include $<$Convex\+Shape.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Convex\+Shape\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Convex\+Shape\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01689_af9981b8909569b381b3fccf32fc69856}{Convex\+Shape}} (std\+::size\+\_\+t point\+Count=0)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01773_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the fill color of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01773_ac0e29425d908d5442060cc44790fe4da}{get\+Global\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the global (non-\/minimal) bounding rectangle of the entity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01793_ac5e75d724436069d2268791c6b486916}{get\+Inverse\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em get the inverse of the combined transform of the object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01773_ae3294bcdf8713d33a862242ecf706443}{get\+Local\+Bounds}} () const
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em get the local origin of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01685}{Color}} \& \mbox{\hyperlink{a01773_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline color of the shape. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01773_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness}} () const
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the shape. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01689_a72a97bc426d8daf4d682a20fcb7f3fe7}{get\+Point}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get the position of a point. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3}{get\+Point\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of points of the polygon. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em get the position of the object \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em get the orientation of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& \mbox{\hyperlink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em get the current scale of the object \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01773_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}} () const
+\begin{DoxyCompactList}\small\item\em Get the source texture of the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \& \mbox{\hyperlink{a01773_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}} () const
+\begin{DoxyCompactList}\small\item\em Get the sub-\/rectangle of the texture displayed by the shape. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01789}{Transform}} \& \mbox{\hyperlink{a01793_a3e1b4772a451ec66ac7e6af655726154}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em get the combined transform of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_ab9ca691522f6ddc1a40406849b87c469}{move}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&offset)
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}} (float offsetX, float offsetY)
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotate the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_adecaa6c69b1f27dd5194b067d96bb694}{scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factor)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}} (float factorX, float factorY)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the fill color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_aa93a835ffbf3bee2098dfbbc695a7f05}{set\+Origin}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&origin)
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a56c67bd80aae8418d13fb96c034d25ec}{set\+Origin}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color}} (const \mbox{\hyperlink{a01685}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the outline color of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness}} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}{set\+Point}} (std\+::size\+\_\+t index, const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&point)
+\begin{DoxyCompactList}\small\item\em Set the position of a point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01689_a56e6e79ade6dd651cc1a0e39cb68deae}{set\+Point\+Count}} (std\+::size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Set the number of points of the polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_af1a42209ce2b5d3f07b00f917bcd8015}{set\+Position}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&position)
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a32baf2bf1a74699b03bf8c95030a38ed}{set\+Rotation}} (float angle)
+\begin{DoxyCompactList}\small\item\em set the orientation of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_a4c48a87f1626047e448f9c1a68ff167e}{set\+Scale}} (const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&factors)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale}} (float factorX, float factorY)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_af8fb22bab1956325be5d62282711e3b6}{set\+Texture}} (const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}texture, bool reset\+Rect=false)
+\begin{DoxyCompactList}\small\item\em Change the source texture of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect}} (const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Set the sub-\/rectangle of the texture that the shape will display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01773_adfb2bd966c8edbc5d6c92ebc375e4ac1}{update}} ()
+\begin{DoxyCompactList}\small\item\em Recompute the internal geometry of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01773_af335b88097f1db83afdfafa0cd66d04d}{draw}} (\mbox{\hyperlink{a01749}{Render\+Target}} \&target, \mbox{\hyperlink{a01745}{Render\+States}} states) const
+\begin{DoxyCompactList}\small\item\em Draw the shape to a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a371b37d672f96660dcf70aa06b2fab77}{update\+Fill\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a1364b357a1041ff38c872871a5c28623}{update\+Outline}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a55d37129600d23db54d5b6cacb2d6d67}{update\+Outline\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Update the outline vertices\textquotesingle{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01773_a4a7ea7b0254b26ac36c27a5ff545f4b3}{update\+Tex\+Coords}} ()
+\begin{DoxyCompactList}\small\item\em Update the fill vertices\textquotesingle{} texture coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01773_ad1d06d0e65b363f6b62f6794454a1d2b}{m\+\_\+bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the whole shape (outline + fill) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01773_afdd52ef012f4a4843fd89793d01bcfdc}{m\+\_\+fill\+Color}}
+\begin{DoxyCompactList}\small\item\em Fill color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01773_a4bf719be26d465b86024232097d34494}{m\+\_\+inside\+Bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the inside (fill) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01793_a6538c7efb49ad3a430d45c8a52368f36}{m\+\_\+inverse\+Transform}}
+\begin{DoxyCompactList}\small\item\em Combined transformation of the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01793_afbb99d25b4ea10943e883d45a7594761}{m\+\_\+inverse\+Transform\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the transform need to be recomputed? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_ad52a72593cb43a30a0cac33737a3a60c}{m\+\_\+origin}}
+\begin{DoxyCompactList}\small\item\em Origin of translation/rotation/scaling of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01773_a65c07a005b8e9b8a335a24f678e4dea4}{m\+\_\+outline\+Color}}
+\begin{DoxyCompactList}\small\item\em Outline color. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01773_a0c11dc8ff170665c01c96a667807925f}{m\+\_\+outline\+Thickness}}
+\begin{DoxyCompactList}\small\item\em Thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01801}{Vertex\+Array}} \mbox{\hyperlink{a01773_a822af4e3f583a069e2de6482edfacd4a}{m\+\_\+outline\+Vertices}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01797}{Vertex} array containing the outline geometry. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01689_aaef41d63013c3978518a95125cca9cdd}{m\+\_\+points}}
+\begin{DoxyCompactList}\small\item\em Points composing the convex polygon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_a7081bf508f612cb63e9ce3b149758217}{m\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Position of the object in the 2D world. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{a01793_a206c593d926ee30a3c79520c2fae448b}{m\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em Orientation of the object, in degrees. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \mbox{\hyperlink{a01793_adf2c5e463aefb41c6d43a140c0ad151f}{m\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em Scale of the object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01773_ab9b472ae590101afeb5a8e00e2487550}{m\+\_\+texture}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01785}{Texture} of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \mbox{\hyperlink{a01773_a45b33e918d0f061e81de4fb1746c8e28}{m\+\_\+texture\+Rect}}
+\begin{DoxyCompactList}\small\item\em Rectangle defining the area of the source texture to display. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01789}{Transform}} \mbox{\hyperlink{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c}{m\+\_\+transform}}
+\begin{DoxyCompactList}\small\item\em Combined transformation of the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01793_a394b22bfe9e9e44c672244e4da0b3c58}{m\+\_\+transform\+Need\+Update}}
+\begin{DoxyCompactList}\small\item\em Does the transform need to be recomputed? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01801}{Vertex\+Array}} \mbox{\hyperlink{a01773_a51ef27e5e9dc2419354fd036cf581201}{m\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01797}{Vertex} array containing the fill geometry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized shape representing a convex polygon. 
+
+This class inherits all the functions of \doxylink{a01793}{sf\+::\+Transformable} (position, rotation, scale, bounds, ...) as well as the functions of \doxylink{a01773}{sf\+::\+Shape} (outline, color, texture, ...).
+
+It is important to keep in mind that a convex shape must always be... convex, otherwise it may not be drawn correctly. Moreover, the points must be defined in order; using a random order would result in an incorrect shape.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01689}{sf::ConvexShape}}\ polygon;}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01689_a56e6e79ade6dd651cc1a0e39cb68deae}{setPointCount}}(3);}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}{setPoint}}(0,\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(0,\ 0));}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}{setPoint}}(1,\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(0,\ 10));}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}{setPoint}}(2,\ \mbox{\hyperlink{a01953}{sf::Vector2f}}(25,\ 5));}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01773_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}}(\mbox{\hyperlink{a01685_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red}});}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01773_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}}(5);}
+\DoxyCodeLine{polygon.\mbox{\hyperlink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(10,\ 20);}
+\DoxyCodeLine{...}
+\DoxyCodeLine{window.draw(polygon);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773}{sf\+::\+Shape}, \doxylink{a01741}{sf\+::\+Rectangle\+Shape}, \doxylink{a01681}{sf\+::\+Circle\+Shape} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01689_af9981b8909569b381b3fccf32fc69856}\label{a01689_af9981b8909569b381b3fccf32fc69856} 
+\index{sf::ConvexShape@{sf::ConvexShape}!ConvexShape@{ConvexShape}}
+\index{ConvexShape@{ConvexShape}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{ConvexShape()}{ConvexShape()}}
+{\footnotesize\ttfamily sf\+::\+Convex\+Shape\+::\+Convex\+Shape (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{point\+Count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+Count} & Number of points of the polygon \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01773_af335b88097f1db83afdfafa0cd66d04d}\label{a01773_af335b88097f1db83afdfafa0cd66d04d} 
+\index{sf::ConvexShape@{sf::ConvexShape}!draw@{draw}}
+\index{draw@{draw}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Shape\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01749}{Render\+Target}} \&}]{target,  }\item[{\mbox{\hyperlink{a01745}{Render\+States}}}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Draw the shape to a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{a01693_a90d2c88bba9b035a0844eccb380ef631}{sf\+::\+Drawable}}.
+
+\Hypertarget{a01773_aa5da23e522d2dd11e3e7661c26164c78}\label{a01773_aa5da23e522d2dd11e3e7661c26164c78} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} \& sf\+::\+Shape\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the fill color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_ac0e29425d908d5442060cc44790fe4da}\label{a01773_ac0e29425d908d5442060cc44790fe4da} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getGlobalBounds@{getGlobalBounds}}
+\index{getGlobalBounds@{getGlobalBounds}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getGlobalBounds()}{getGlobalBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Shape\+::get\+Global\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the global (non-\/minimal) bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes into account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the shape in the global 2D world\textquotesingle{}s coordinate system.
+
+This function does not necessarily return the {\itshape minimal} bounding rectangle. It merely ensures that the returned rectangle covers all the vertices (but possibly more). This allows for a fast approximation of the bounds as a first check; you may want to use more precise checks on top of that.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\Hypertarget{a01793_ac5e75d724436069d2268791c6b486916}\label{a01793_ac5e75d724436069d2268791c6b486916} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getInverseTransform@{getInverseTransform}}
+\index{getInverseTransform@{getInverseTransform}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getInverseTransform()}{getInverseTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transformable\+::get\+Inverse\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the inverse of the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+Inverse of the combined transformations applied to the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3e1b4772a451ec66ac7e6af655726154}{get\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_ae3294bcdf8713d33a862242ecf706443}\label{a01773_ae3294bcdf8713d33a862242ecf706443} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getLocalBounds@{getLocalBounds}}
+\index{getLocalBounds@{getLocalBounds}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getLocalBounds()}{getLocalBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Shape\+::get\+Local\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity\textquotesingle{}s coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\Hypertarget{a01793_a898b33eb6513161eb5c747a072364f15}\label{a01793_a898b33eb6513161eb5c747a072364f15} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getOrigin@{getOrigin}}
+\index{getOrigin@{getOrigin}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the local origin of the object 
+
+\begin{DoxyReturn}{Returns}
+Current origin
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a56c67bd80aae8418d13fb96c034d25ec}{set\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a4aa05b59851468e948ac9682b9c71abb}\label{a01773_a4aa05b59851468e948ac9682b9c71abb} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getOutlineColor@{getOutlineColor}}
+\index{getOutlineColor@{getOutlineColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getOutlineColor()}{getOutlineColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01685}{Color}} \& sf\+::\+Shape\+::get\+Outline\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the outline color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a1d4d5299c573a905e5833fc4dce783a7}\label{a01773_a1d4d5299c573a905e5833fc4dce783a7} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getOutlineThickness@{getOutlineThickness}}
+\index{getOutlineThickness@{getOutlineThickness}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getOutlineThickness()}{getOutlineThickness()}}
+{\footnotesize\ttfamily float sf\+::\+Shape\+::get\+Outline\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the outline thickness of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\+Outline\+Thickness} 
+\end{DoxySeeAlso}
+\Hypertarget{a01689_a72a97bc426d8daf4d682a20fcb7f3fe7}\label{a01689_a72a97bc426d8daf4d682a20fcb7f3fe7} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Convex\+Shape\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the position of a point. 
+
+The returned point is in local coordinates, that is, the shape\textquotesingle{}s transforms (position, rotation, scale) are not taken into account. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. \doxylink{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3}{get\+Point\+Count()} -\/ 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of the index-\/th point of the polygon
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}{set\+Point} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{a01773_a40e5d83713eb9f0c999944cf96458085}{sf\+::\+Shape}}.
+
+\Hypertarget{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3}\label{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t sf\+::\+Convex\+Shape\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of points of the polygon. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the polygon
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01689_a56e6e79ade6dd651cc1a0e39cb68deae}{set\+Point\+Count} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{a01773_af988dd61a29803fc04d02198e44b5643}{sf\+::\+Shape}}.
+
+\Hypertarget{a01793_aea8b18e91a7bf7be589851bb9dd11241}\label{a01793_aea8b18e91a7bf7be589851bb9dd11241} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the position of the object 
+
+\begin{DoxyReturn}{Returns}
+Current position
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}\label{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float sf\+::\+Transformable\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the orientation of the object 
+
+The rotation is always in the range \mbox{[}0, 360\mbox{]}.
+
+\begin{DoxyReturn}{Returns}
+Current rotation, in degrees
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a32baf2bf1a74699b03bf8c95030a38ed}{set\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a7bcae0e924213f2e89edd8926f2453af}\label{a01793_a7bcae0e924213f2e89edd8926f2453af} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getScale@{getScale}}
+\index{getScale@{getScale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \& sf\+::\+Transformable\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the current scale of the object 
+
+\begin{DoxyReturn}{Returns}
+Current scale factors
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_af4c345931cd651ffb8f7a177446e28f7}\label{a01773_af4c345931cd651ffb8f7a177446e28f7} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*} sf\+::\+Shape\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the source texture of the shape. 
+
+If the shape has no source texture, a NULL pointer is returned. The returned pointer is const, which means that you can\textquotesingle{}t modify the texture when you retrieve it with this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the shape\textquotesingle{}s texture
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_af8fb22bab1956325be5d62282711e3b6}{set\+Texture} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_ad8adbb54823c8eff1830a938e164daa4}\label{a01773_ad8adbb54823c8eff1830a938e164daa4} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getTextureRect@{getTextureRect}}
+\index{getTextureRect@{getTextureRect}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getTextureRect()}{getTextureRect()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \& sf\+::\+Shape\+::get\+Texture\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the sub-\/rectangle of the texture displayed by the shape. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01785}{Texture} rectangle of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a3e1b4772a451ec66ac7e6af655726154}\label{a01793_a3e1b4772a451ec66ac7e6af655726154} 
+\index{sf::ConvexShape@{sf::ConvexShape}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01789}{Transform}} \& sf\+::\+Transformable\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+get the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01789}{Transform} combining the position/rotation/scale/origin of the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_ac5e75d724436069d2268791c6b486916}{get\+Inverse\+Transform} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_ab9ca691522f6ddc1a40406849b87c469}\label{a01793_ab9ca691522f6ddc1a40406849b87c469} 
+\index{sf::ConvexShape@{sf::ConvexShape}!move@{move}}
+\index{move@{move}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\+Position which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setPosition(\textcolor{keywordtype}{object}.\mbox{\hyperlink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}()\ +\ offset);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a86b461d6a941ad390c2ad8b6a4a20391}\label{a01793_a86b461d6a941ad390c2ad8b6a4a20391} 
+\index{sf::ConvexShape@{sf::ConvexShape}!move@{move}}
+\index{move@{move}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::move (\begin{DoxyParamCaption}\item[{float}]{offsetX,  }\item[{float}]{offsetY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\+Position which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ pos\ =\ \textcolor{keywordtype}{object}.getPosition();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setPosition(pos.\mbox{\hyperlink{a01953_a1e6ad77fa155f3753bfb92699bd28141}{x}}\ +\ offsetX,\ pos.\mbox{\hyperlink{a01953_a420f2481b015f4eb929c75f2af564299}{y}}\ +\ offsetY);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offsetX} & X offset \\
+\hline
+{\em offsetY} & Y offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{set\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}\label{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda} 
+\index{sf::ConvexShape@{sf::ConvexShape}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Rotate the object. 
+
+This function adds to the current rotation of the object, unlike set\+Rotation which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setRotation(\textcolor{keywordtype}{object}.\mbox{\hyperlink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}()\ +\ angle);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle of rotation, in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01793_adecaa6c69b1f27dd5194b067d96bb694}\label{a01793_adecaa6c69b1f27dd5194b067d96bb694} 
+\index{sf::ConvexShape@{sf::ConvexShape}!scale@{scale}}
+\index{scale@{scale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\+Scale which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}\ =\ \textcolor{keywordtype}{object}.getScale();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setScale(\mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.x\ *\ factor.x,\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.y\ *\ factor.y);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & Scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a3de0c6d8957f3cf318092f3f60656391}\label{a01793_a3de0c6d8957f3cf318092f3f60656391} 
+\index{sf::ConvexShape@{sf::ConvexShape}!scale@{scale}}
+\index{scale@{scale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::scale (\begin{DoxyParamCaption}\item[{float}]{factorX,  }\item[{float}]{factorY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\+Scale which overwrites it. Thus, it is equivalent to the following code\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2f}}\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}\ =\ \textcolor{keywordtype}{object}.getScale();}
+\DoxyCodeLine{\textcolor{keywordtype}{object}.setScale(\mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.x\ *\ factorX,\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}.y\ *\ factorY);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factorX} & Horizontal scale factor \\
+\hline
+{\em factorY} & Vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_aaec50b46b3f41b054763304d1e727471}{set\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a3506f9b5d916fec14d583d16f23c2485}\label{a01773_a3506f9b5d916fec14d583d16f23c2485} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the fill color of the shape. 
+
+This color is modulated (multiplied) with the shape\textquotesingle{}s texture if any. It can be used to colorize the shape, or change its global opacity. You can use \doxylink{a01685_a569b45471737f770656f50ae7bbac292}{sf\+::\+Color\+::\+Transparent} to make the inside of the shape transparent, and have the outline alone. By default, the shape\textquotesingle{}s fill color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_aa5da23e522d2dd11e3e7661c26164c78}{get\+Fill\+Color}, \doxylink{a01773_a5978f41ee349ac3c52942996dcb184f7}{set\+Outline\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aa93a835ffbf3bee2098dfbbc695a7f05}\label{a01793_aa93a835ffbf3bee2098dfbbc695a7f05} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setOrigin@{setOrigin}}
+\index{setOrigin@{setOrigin}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setOrigin()}{setOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Origin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & New origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a56c67bd80aae8418d13fb96c034d25ec}\label{a01793_a56c67bd80aae8418d13fb96c034d25ec} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setOrigin@{setOrigin}}
+\index{setOrigin@{setOrigin}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setOrigin()}{setOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Origin (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new origin \\
+\hline
+{\em y} & Y coordinate of the new origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a898b33eb6513161eb5c747a072364f15}{get\+Origin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a5978f41ee349ac3c52942996dcb184f7}\label{a01773_a5978f41ee349ac3c52942996dcb184f7} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setOutlineColor()}{setOutlineColor()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01685}{Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the outline color of the shape. 
+
+By default, the shape\textquotesingle{}s outline color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a4aa05b59851468e948ac9682b9c71abb}{get\+Outline\+Color}, \doxylink{a01773_a3506f9b5d916fec14d583d16f23c2485}{set\+Fill\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a5ad336ad74fc1f567fce3b7e44cf87dc}\label{a01773_a5ad336ad74fc1f567fce3b7e44cf87dc} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setOutlineThickness@{setOutlineThickness}}
+\index{setOutlineThickness@{setOutlineThickness}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setOutlineThickness()}{setOutlineThickness()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{thickness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the thickness of the shape\textquotesingle{}s outline. 
+
+Note that negative values are allowed (so that the outline expands towards the center of the shape), and using zero disables the outline. By default, the outline thickness is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_a1d4d5299c573a905e5833fc4dce783a7}{get\+Outline\+Thickness} 
+\end{DoxySeeAlso}
+\Hypertarget{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d}\label{a01689_a5929e0ab0ba5ca1f102b40c234a8e92d} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setPoint@{setPoint}}
+\index{setPoint@{setPoint}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setPoint()}{setPoint()}}
+{\footnotesize\ttfamily void sf\+::\+Convex\+Shape\+::set\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index,  }\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+Set the position of a point. 
+
+Don\textquotesingle{}t forget that the polygon must remain convex, and the points need to stay ordered! set\+Point\+Count must be called first in order to set the total number of points. The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to change, in range \mbox{[}0 .. \doxylink{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3}{get\+Point\+Count()} -\/ 1\mbox{]} \\
+\hline
+{\em point} & New position of the point\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01689_a72a97bc426d8daf4d682a20fcb7f3fe7}{get\+Point} 
+\end{DoxySeeAlso}
+\Hypertarget{a01689_a56e6e79ade6dd651cc1a0e39cb68deae}\label{a01689_a56e6e79ade6dd651cc1a0e39cb68deae} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setPointCount@{setPointCount}}
+\index{setPointCount@{setPointCount}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setPointCount()}{setPointCount()}}
+{\footnotesize\ttfamily void sf\+::\+Convex\+Shape\+::set\+Point\+Count (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Set the number of points of the polygon. 
+
+{\itshape count} must be greater than 2 to define a valid shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & New number of points of the polygon\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01689_a0c54b8d48fe4e13414f6e667dbfc22a3}{get\+Point\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_af1a42209ce2b5d3f07b00f917bcd8015}\label{a01793_af1a42209ce2b5d3f07b00f917bcd8015} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See the move function to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \doxylink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a4dbfb1a7c80688b0b4c477d706550208}\label{a01793_a4dbfb1a7c80688b0b4c477d706550208} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See the move function to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new position \\
+\hline
+{\em y} & Y coordinate of the new position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \doxylink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{get\+Position} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a32baf2bf1a74699b03bf8c95030a38ed}\label{a01793_a32baf2bf1a74699b03bf8c95030a38ed} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the orientation of the object 
+
+This function completely overwrites the previous rotation. See the rotate function to add an angle based on the previous rotation instead. The default rotation of a transformable object is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & New rotation, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}, \doxylink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{get\+Rotation} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_a4c48a87f1626047e448f9c1a68ff167e}\label{a01793_a4c48a87f1626047e448f9c1a68ff167e} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setScale@{setScale}}
+\index{setScale@{setScale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \&}]{factors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See the scale function to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & New scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}, \doxylink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01793_aaec50b46b3f41b054763304d1e727471}\label{a01793_aaec50b46b3f41b054763304d1e727471} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setScale@{setScale}}
+\index{setScale@{setScale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Transformable\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{factorX,  }\item[{float}]{factorY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See the scale function to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factorX} & New horizontal scale factor \\
+\hline
+{\em factorY} & New vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}, \doxylink{a01793_a7bcae0e924213f2e89edd8926f2453af}{get\+Scale} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_af8fb22bab1956325be5d62282711e3b6}\label{a01773_af8fb22bab1956325be5d62282711e3b6} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01785}{Texture}} \texorpdfstring{$\ast$}{*}}]{texture,  }\item[{bool}]{reset\+Rect = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Change the source texture of the shape. 
+
+The {\itshape texture} argument refers to a texture that must exist as long as the shape uses it. Indeed, the shape doesn\textquotesingle{}t store its own copy of the texture, but rather keeps a pointer to the one that you passed to this function. If the source texture is destroyed and the shape tries to use it, the behavior is undefined. {\itshape texture} can be NULL to disable texturing. If {\itshape reset\+Rect} is true, the Texture\+Rect property of the shape is automatically adjusted to the size of the new texture. If it is false, the texture rect is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & New texture \\
+\hline
+{\em reset\+Rect} & Should the texture rect be reset to the size of the new texture?\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_af4c345931cd651ffb8f7a177446e28f7}{get\+Texture}, \doxylink{a01773_a2029cc820d1740d14ac794b82525e157}{set\+Texture\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_a2029cc820d1740d14ac794b82525e157}\label{a01773_a2029cc820d1740d14ac794b82525e157} 
+\index{sf::ConvexShape@{sf::ConvexShape}!setTextureRect@{setTextureRect}}
+\index{setTextureRect@{setTextureRect}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{setTextureRect()}{setTextureRect()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::set\+Texture\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the sub-\/rectangle of the texture that the shape will display. 
+
+The texture rect is useful when you don\textquotesingle{}t want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & Rectangle defining the region of the texture to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01773_ad8adbb54823c8eff1830a938e164daa4}{get\+Texture\+Rect}, \doxylink{a01773_af8fb22bab1956325be5d62282711e3b6}{set\+Texture} 
+\end{DoxySeeAlso}
+\Hypertarget{a01773_adfb2bd966c8edbc5d6c92ebc375e4ac1}\label{a01773_adfb2bd966c8edbc5d6c92ebc375e4ac1} 
+\index{sf::ConvexShape@{sf::ConvexShape}!update@{update}}
+\index{update@{update}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Recompute the internal geometry of the shape. 
+
+This function must be called by the derived class everytime the shape\textquotesingle{}s points change (i.\+e. the result of either get\+Point\+Count or get\+Point is different). \Hypertarget{a01773_a371b37d672f96660dcf70aa06b2fab77}\label{a01773_a371b37d672f96660dcf70aa06b2fab77} 
+\index{sf::ConvexShape@{sf::ConvexShape}!updateFillColors@{updateFillColors}}
+\index{updateFillColors@{updateFillColors}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{updateFillColors()}{updateFillColors()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Fill\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Update the fill vertices\textquotesingle{} color. 
+
+\Hypertarget{a01773_a1364b357a1041ff38c872871a5c28623}\label{a01773_a1364b357a1041ff38c872871a5c28623} 
+\index{sf::ConvexShape@{sf::ConvexShape}!updateOutline@{updateOutline}}
+\index{updateOutline@{updateOutline}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{updateOutline()}{updateOutline()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Update the outline vertices\textquotesingle{} position. 
+
+\Hypertarget{a01773_a55d37129600d23db54d5b6cacb2d6d67}\label{a01773_a55d37129600d23db54d5b6cacb2d6d67} 
+\index{sf::ConvexShape@{sf::ConvexShape}!updateOutlineColors@{updateOutlineColors}}
+\index{updateOutlineColors@{updateOutlineColors}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{updateOutlineColors()}{updateOutlineColors()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Outline\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Update the outline vertices\textquotesingle{} color. 
+
+\Hypertarget{a01773_a4a7ea7b0254b26ac36c27a5ff545f4b3}\label{a01773_a4a7ea7b0254b26ac36c27a5ff545f4b3} 
+\index{sf::ConvexShape@{sf::ConvexShape}!updateTexCoords@{updateTexCoords}}
+\index{updateTexCoords@{updateTexCoords}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{updateTexCoords()}{updateTexCoords()}}
+{\footnotesize\ttfamily void sf\+::\+Shape\+::update\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Update the fill vertices\textquotesingle{} texture coordinates. 
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01773_ad1d06d0e65b363f6b62f6794454a1d2b}\label{a01773_ad1d06d0e65b363f6b62f6794454a1d2b} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_bounds@{m\_bounds}}
+\index{m\_bounds@{m\_bounds}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_bounds}{m\_bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Shape\+::m\+\_\+bounds\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Bounding rectangle of the whole shape (outline + fill) 
+
+\Hypertarget{a01773_afdd52ef012f4a4843fd89793d01bcfdc}\label{a01773_afdd52ef012f4a4843fd89793d01bcfdc} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_fillColor}{m\_fillColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Shape\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Fill color. 
+
+\Hypertarget{a01773_a4bf719be26d465b86024232097d34494}\label{a01773_a4bf719be26d465b86024232097d34494} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_insideBounds@{m\_insideBounds}}
+\index{m\_insideBounds@{m\_insideBounds}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_insideBounds}{m\_insideBounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Shape\+::m\+\_\+inside\+Bounds\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Bounding rectangle of the inside (fill) 
+
+\Hypertarget{a01793_a6538c7efb49ad3a430d45c8a52368f36}\label{a01793_a6538c7efb49ad3a430d45c8a52368f36} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_inverseTransform@{m\_inverseTransform}}
+\index{m\_inverseTransform@{m\_inverseTransform}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_inverseTransform}{m\_inverseTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transformable\+::m\+\_\+inverse\+Transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Combined transformation of the object. 
+
+\Hypertarget{a01793_afbb99d25b4ea10943e883d45a7594761}\label{a01793_afbb99d25b4ea10943e883d45a7594761} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_inverseTransformNeedUpdate@{m\_inverseTransformNeedUpdate}}
+\index{m\_inverseTransformNeedUpdate@{m\_inverseTransformNeedUpdate}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_inverseTransformNeedUpdate}{m\_inverseTransformNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Transformable\+::m\+\_\+inverse\+Transform\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Does the transform need to be recomputed? 
+
+\Hypertarget{a01793_ad52a72593cb43a30a0cac33737a3a60c}\label{a01793_ad52a72593cb43a30a0cac33737a3a60c} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_origin@{m\_origin}}
+\index{m\_origin@{m\_origin}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_origin}{m\_origin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+origin\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Origin of translation/rotation/scaling of the object. 
+
+\Hypertarget{a01773_a65c07a005b8e9b8a335a24f678e4dea4}\label{a01773_a65c07a005b8e9b8a335a24f678e4dea4} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_outlineColor@{m\_outlineColor}}
+\index{m\_outlineColor@{m\_outlineColor}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineColor}{m\_outlineColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} sf\+::\+Shape\+::m\+\_\+outline\+Color\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Outline color. 
+
+\Hypertarget{a01773_a0c11dc8ff170665c01c96a667807925f}\label{a01773_a0c11dc8ff170665c01c96a667807925f} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_outlineThickness@{m\_outlineThickness}}
+\index{m\_outlineThickness@{m\_outlineThickness}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineThickness}{m\_outlineThickness}}
+{\footnotesize\ttfamily float sf\+::\+Shape\+::m\+\_\+outline\+Thickness\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Thickness of the shape\textquotesingle{}s outline. 
+
+\Hypertarget{a01773_a822af4e3f583a069e2de6482edfacd4a}\label{a01773_a822af4e3f583a069e2de6482edfacd4a} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_outlineVertices}{m\_outlineVertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01801}{Vertex\+Array}} sf\+::\+Shape\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01797}{Vertex} array containing the outline geometry. 
+
+\Hypertarget{a01689_aaef41d63013c3978518a95125cca9cdd}\label{a01689_aaef41d63013c3978518a95125cca9cdd} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_points@{m\_points}}
+\index{m\_points@{m\_points}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_points}{m\_points}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ sf\+::\+Convex\+Shape\+::m\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Points composing the convex polygon. 
+
+\Hypertarget{a01793_a7081bf508f612cb63e9ce3b149758217}\label{a01793_a7081bf508f612cb63e9ce3b149758217} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Position of the object in the 2D world. 
+
+\Hypertarget{a01793_a206c593d926ee30a3c79520c2fae448b}\label{a01793_a206c593d926ee30a3c79520c2fae448b} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily float sf\+::\+Transformable\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Orientation of the object, in degrees. 
+
+\Hypertarget{a01793_adf2c5e463aefb41c6d43a140c0ad151f}\label{a01793_adf2c5e463aefb41c6d43a140c0ad151f} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} sf\+::\+Transformable\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Scale of the object. 
+
+\Hypertarget{a01773_ab9b472ae590101afeb5a8e00e2487550}\label{a01773_ab9b472ae590101afeb5a8e00e2487550} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01785}{Texture}}\texorpdfstring{$\ast$}{*} sf\+::\+Shape\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01785}{Texture} of the shape. 
+
+\Hypertarget{a01773_a45b33e918d0f061e81de4fb1746c8e28}\label{a01773_a45b33e918d0f061e81de4fb1746c8e28} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_textureRect@{m\_textureRect}}
+\index{m\_textureRect@{m\_textureRect}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_textureRect}{m\_textureRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} sf\+::\+Shape\+::m\+\_\+texture\+Rect\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Rectangle defining the area of the source texture to display. 
+
+\Hypertarget{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c}\label{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01789}{Transform}} sf\+::\+Transformable\+::m\+\_\+transform\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Combined transformation of the object. 
+
+\Hypertarget{a01793_a394b22bfe9e9e44c672244e4da0b3c58}\label{a01793_a394b22bfe9e9e44c672244e4da0b3c58} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_transformNeedUpdate@{m\_transformNeedUpdate}}
+\index{m\_transformNeedUpdate@{m\_transformNeedUpdate}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_transformNeedUpdate}{m\_transformNeedUpdate}}
+{\footnotesize\ttfamily bool sf\+::\+Transformable\+::m\+\_\+transform\+Need\+Update\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Does the transform need to be recomputed? 
+
+\Hypertarget{a01773_a51ef27e5e9dc2419354fd036cf581201}\label{a01773_a51ef27e5e9dc2419354fd036cf581201} 
+\index{sf::ConvexShape@{sf::ConvexShape}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!sf::ConvexShape@{sf::ConvexShape}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01801}{Vertex\+Array}} sf\+::\+Shape\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01797}{Vertex} array containing the fill geometry. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00374}{Convex\+Shape.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\doxysection{Key\+Input.\+hpp}
+\hypertarget{a00275_source}{}\label{a00275_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/KeyInput.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/KeyInput.hpp}}
+\mbox{\hyperlink{a00275}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{precompile.hpp}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01561}{InputField}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//\ Variables}}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{a01685}{Color}}\ \mbox{\hyperlink{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3}{textColor}};\ \textcolor{comment}{//\ Color\ of\ the\ text}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{a01741}{RectangleShape}}\ \mbox{\hyperlink{a01561_a87bea496d9fd100677aea56828fccceb}{field}};\ \textcolor{comment}{//\ Position\ of\ the\ input\ field}}
+\DoxyCodeLine{00011\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01561_aa0623c4b95426713ecf3d2dc28ea40bb}{type}};\ \textcolor{comment}{//\ Type\ of\ the\ input\ (text,\ email,\ password,\ numbers)}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01561_af1b3125c601978e6989f049991b33780}{result}}\ =\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ Result\ from\ the\ fields}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01561_a9dbf8b11b7792727d072282c08a44fb8}{input}}\ =\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ The\ text\ from\ the\ field}}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01561_a613d2baa3a4510eb8828401d23e84c3c}{maxChars}};\ \textcolor{comment}{//\ Maximum\ characters\ in\ the\ field}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01561_af4aca6c7fa5032c4651d9dabff565c9e}{charCount}}\ =\ 0;\ \textcolor{comment}{//\ Counts\ the\ inputed\ symbols}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01561_a80594bd4ef6c3f5807bc2a7e5574e688}{fontSize}};\ \textcolor{comment}{//\ Size\ of\ the\ text}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01561_abd8021d2116f1aa3498a36cbb96e408f}{animationCounter}};\ \textcolor{comment}{//\ counts\ frames\ for\ the\ animation}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01561_af320123aba6b008153c2ddd330eb815c}{isSelected}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Fonts}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{a01697}{Font}}\ \mbox{\hyperlink{a01561_ad1acf40c4b778765f2e90d77b990f4fc}{font}};\ \textcolor{comment}{//\ Font\ to\ use/display\ when\ typing}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{a01561}{InputField}}(\mbox{\hyperlink{a01741}{RectangleShape}}\ \_mfield,\ \mbox{\hyperlink{a01953}{Vector2f}}\ \_mposition,\ \mbox{\hyperlink{a01953}{Vector2f}}\ \_msize,\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01561_aa0623c4b95426713ecf3d2dc28ea40bb}{type}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01561_a80594bd4ef6c3f5807bc2a7e5574e688}{fontSize}},\ \mbox{\hyperlink{a01685}{Color}}\ \mbox{\hyperlink{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3}{textColor}});}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{a01561_ab751ada93706e5cb03d000a36d111245}{\string~InputField}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Public\ Methods}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ field}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_a7bf91af62dba2653d6321df3ee5fc19e}{updateField}}(\mbox{\hyperlink{a01953}{Vector2f}}\ mousePos,\ \mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \mbox{\hyperlink{a01977}{Event}}\&\ event);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Resets\ the\ input\ when\ you\ exit\ the\ scene}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_a610c9f95969344cc3f425d1d6399cd1c}{resetField}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Changes\ the\ field\ position}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_aadf7575672b6b1c355c978e8948724c1}{changePos}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Displays\ the\ text\ from\ input}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_a9460e34b9a82b68ee94e6f76eaae9de0}{printInput}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ checks\ if\ the\ field\ is\ selected}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_a802c1493ca242faeaa2cf2fb227f0224}{selectField}}(\mbox{\hyperlink{a01953}{Vector2f}}\ mousePos);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Handles\ special\ symbols\ and\ other\ input}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01561_a951b741b2a6186af1251fdf97e389bc3}{handleInput}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \mbox{\hyperlink{a01977}{Event}}\&\ event);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ input\ from\ the\ field}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01561_a87f0f6e6c9d0e265e893421953f5e815}{getInput}}();}
+\DoxyCodeLine{00060\ \};}
+
+\end{DoxyCode}

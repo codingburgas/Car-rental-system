@@ -1,0 +1,206 @@
+\doxysection{Map Class Reference}
+\hypertarget{a01577}{}\label{a01577}\index{Map@{Map}}
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+
+
+Inheritance diagram for Map\+:
+% FIG 0
+
+
+Collaboration diagram for Map\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01577_a51aa616935222f799c14ed4a5084a067}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window) override
+\item 
+void \mbox{\hyperlink{a01577_a540b1c76368adca56622102ea683d4c5}{draw}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, int counter) override
+\item 
+string \mbox{\hyperlink{a01577_a6cc0a03fc59118f2c938abf05229cb88}{geocode\+Address}} (double latitude, double longitude)
+\item 
+void \mbox{\hyperlink{a01577_a6db239da3075fb93d51e18a83bf7e0d6}{get\+Inputs}} () override
+\item 
+bool \mbox{\hyperlink{a01577_aa85322516788968183877971ddcbac94}{halt\+Input}} () override
+\item 
+\mbox{\hyperlink{a01577_a6c1b987c1500f956f9341483faeccd0b}{Map}} (string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}})
+\item 
+void \mbox{\hyperlink{a01577_a60f6cddb8674ebbe96d457c68e818ccb}{text\+Handler}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event) override
+\item 
+void \mbox{\hyperlink{a01577_aa47b2935f4bc9af5b045f05bfebe0f2f}{update}} (float delta\+Time) override
+\item 
+\mbox{\hyperlink{a01577_ac994171254714ad2e8161f995b70e499}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}}
+\item 
+vector$<$ \mbox{\hyperlink{a01561}{Input\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}}
+\item 
+vector$<$ \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} $>$ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{login\+Reg\+Button}}
+\item 
+string \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{a01577_a8846f129d72d7af630170e8821f48e48}{API\+\_\+\+KEY}}
+\item 
+fstream \mbox{\hyperlink{a01577_a3057c0bc5bd80fed77c5d4606916b8a8}{authentication\+Token}}
+\item 
+string \mbox{\hyperlink{a01577_a7ab79a88cf94eef85805f062ee6dc031}{html\+Path}}
+\item 
+\mbox{\hyperlink{a01857}{Tcp\+Listener}} \mbox{\hyperlink{a01577_a641e36f58b3afe7d49b538adb2a2b24b}{listener}}
+\item 
+\mbox{\hyperlink{a01861}{Tcp\+Socket}} \mbox{\hyperlink{a01577_ab06cdb666766b66ebf6791d58e6415b3}{socket}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01577_a6c1b987c1500f956f9341483faeccd0b}\label{a01577_a6c1b987c1500f956f9341483faeccd0b} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{a01577_ac994171254714ad2e8161f995b70e499}\label{a01577_ac994171254714ad2e8161f995b70e499} 
+\index{Map@{Map}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
+\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
+{\footnotesize\ttfamily Map\+::\texorpdfstring{$\sim$}{\string~}\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01577_a51aa616935222f799c14ed4a5084a067}\label{a01577_a51aa616935222f799c14ed4a5084a067} 
+\index{Map@{Map}!draw@{draw}}
+\index{draw@{draw}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Map\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{Scene}}.
+
+\Hypertarget{a01577_a540b1c76368adca56622102ea683d4c5}\label{a01577_a540b1c76368adca56622102ea683d4c5} 
+\index{Map@{Map}!draw@{draw}}
+\index{draw@{draw}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Map\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{int}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{Scene}}.
+
+\Hypertarget{a01577_a6cc0a03fc59118f2c938abf05229cb88}\label{a01577_a6cc0a03fc59118f2c938abf05229cb88} 
+\index{Map@{Map}!geocodeAddress@{geocodeAddress}}
+\index{geocodeAddress@{geocodeAddress}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{geocodeAddress()}{geocodeAddress()}}
+{\footnotesize\ttfamily string Map\+::geocode\+Address (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})}
+
+\Hypertarget{a01577_a6db239da3075fb93d51e18a83bf7e0d6}\label{a01577_a6db239da3075fb93d51e18a83bf7e0d6} 
+\index{Map@{Map}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily void Map\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{Scene}}.
+
+\Hypertarget{a01577_aa85322516788968183877971ddcbac94}\label{a01577_aa85322516788968183877971ddcbac94} 
+\index{Map@{Map}!haltInput@{haltInput}}
+\index{haltInput@{haltInput}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{haltInput()}{haltInput()}}
+{\footnotesize\ttfamily bool Map\+::halt\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{Scene}}.
+
+\Hypertarget{a01577_a60f6cddb8674ebbe96d457c68e818ccb}\label{a01577_a60f6cddb8674ebbe96d457c68e818ccb} 
+\index{Map@{Map}!textHandler@{textHandler}}
+\index{textHandler@{textHandler}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{textHandler()}{textHandler()}}
+{\footnotesize\ttfamily void Map\+::text\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{Scene}}.
+
+\Hypertarget{a01577_aa47b2935f4bc9af5b045f05bfebe0f2f}\label{a01577_aa47b2935f4bc9af5b045f05bfebe0f2f} 
+\index{Map@{Map}!update@{update}}
+\index{update@{update}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Map\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{Scene}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01593_aff7fc38fcf4e2bea5310224748caac3a}\label{a01593_aff7fc38fcf4e2bea5310224748caac3a} 
+\index{Map@{Map}!answers@{answers}}
+\index{answers@{answers}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{answers}{answers}}
+{\footnotesize\ttfamily vector$<$string$>$ Scene\+::answers\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01577_a8846f129d72d7af630170e8821f48e48}\label{a01577_a8846f129d72d7af630170e8821f48e48} 
+\index{Map@{Map}!API\_KEY@{API\_KEY}}
+\index{API\_KEY@{API\_KEY}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{API\_KEY}{API\_KEY}}
+{\footnotesize\ttfamily string Map\+::\+API\+\_\+\+KEY\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01577_a3057c0bc5bd80fed77c5d4606916b8a8}\label{a01577_a3057c0bc5bd80fed77c5d4606916b8a8} 
+\index{Map@{Map}!authenticationToken@{authenticationToken}}
+\index{authenticationToken@{authenticationToken}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{authenticationToken}{authenticationToken}}
+{\footnotesize\ttfamily fstream Map\+::authentication\+Token\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01577_a7ab79a88cf94eef85805f062ee6dc031}\label{a01577_a7ab79a88cf94eef85805f062ee6dc031} 
+\index{Map@{Map}!htmlPath@{htmlPath}}
+\index{htmlPath@{htmlPath}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{htmlPath}{htmlPath}}
+{\footnotesize\ttfamily string Map\+::html\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a932f17f65402993340d8355e6cb249a9}\label{a01593_a932f17f65402993340d8355e6cb249a9} 
+\index{Map@{Map}!inputs@{inputs}}
+\index{inputs@{inputs}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a01561}{Input\+Field}}\texorpdfstring{$\ast$}{*}$>$ Scene\+::inputs\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01577_a641e36f58b3afe7d49b538adb2a2b24b}\label{a01577_a641e36f58b3afe7d49b538adb2a2b24b} 
+\index{Map@{Map}!listener@{listener}}
+\index{listener@{listener}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{listener}{listener}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01857}{Tcp\+Listener}} Map\+::listener\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a736b445d86477efc09bccb0537cca871}\label{a01593_a736b445d86477efc09bccb0537cca871} 
+\index{Map@{Map}!loginRegButton@{loginRegButton}}
+\index{loginRegButton@{loginRegButton}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{loginRegButton}{loginRegButton}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}$>$ Scene\+::login\+Reg\+Button\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\Hypertarget{a01577_ab06cdb666766b66ebf6791d58e6415b3}\label{a01577_ab06cdb666766b66ebf6791d58e6415b3} 
+\index{Map@{Map}!socket@{socket}}
+\index{socket@{socket}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{socket}{socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01861}{Tcp\+Socket}} Map\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}\label{a01593_a1ed9404c0b2198c5dc6b7df2e8740994} 
+\index{Map@{Map}!type@{type}}
+\index{type@{type}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Scene\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00287}{Map.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00635}{Map.\+cpp}}\end{DoxyCompactItemize}

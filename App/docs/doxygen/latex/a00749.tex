@@ -1,0 +1,149 @@
+\doxysection{cpr\+::Curl\+Holder Struct Reference}
+\hypertarget{a00749}{}\label{a00749}\index{cpr::CurlHolder@{cpr::CurlHolder}}
+
+
+{\ttfamily \#include $<$curlholder.\+h$>$}
+
+
+
+Collaboration diagram for cpr\+::Curl\+Holder\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00749_a2aeb8cf309e46dbf85f793d7a745e975}{Curl\+Holder}} ()
+\item 
+\mbox{\hyperlink{a00749_a4241aac98b70c2bf6bdafd5d73e430a9}{Curl\+Holder}} (const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&other)=default
+\item 
+\mbox{\hyperlink{a00749_a0979ce08aa5ec2cc39ec847fefb9aada}{Curl\+Holder}} (\mbox{\hyperlink{a00749}{Curl\+Holder}} \&\&old) noexcept=default
+\item 
+\mbox{\hyperlink{a00749}{Curl\+Holder}} \& \mbox{\hyperlink{a00749_a8fa7ae3d659d04b87f052d1b40a28d2e}{operator=}} (const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&other)=default
+\item 
+\mbox{\hyperlink{a00749}{Curl\+Holder}} \& \mbox{\hyperlink{a00749_a48af508c2477bdb975688b9b91b687f2}{operator=}} (\mbox{\hyperlink{a00749}{Curl\+Holder}} \&\&old) noexcept=default
+\item 
+std\+::string \mbox{\hyperlink{a00749_a933c684249c29a8620b22785050458af}{url\+Decode}} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Uses curl\+\_\+easy\+\_\+unescape(...) for unescaping the given string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a00749_aa37d6bce3799080931d325d7707fc573}{url\+Encode}} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Uses curl\+\_\+easy\+\_\+escape(...) for escaping the given string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00749_a2b6481daffc7528f25ba8a8c25ee4931}{\texorpdfstring{$\sim$}{\string~}\+Curl\+Holder}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00749_a7f63438690f1805b1dfab6739f539f8b}{chunk}} \{nullptr\}
+\item 
+std\+::array$<$ char, \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} $>$ \mbox{\hyperlink{a00749_ac24bac69e9cc384ebcb84905fb5a5357}{error}} \{\}
+\item 
+struct \mbox{\hyperlink{a00917}{curl\+\_\+httppost}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00749_ac5f453c13093fcdde303a477c95c5cad}{formpost}} \{nullptr\}
+\item 
+\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00749_ae239c4424fca4b55b84f30f985b865a8}{handle}} \{nullptr\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::mutex \mbox{\hyperlink{a00749_ad3d145b96b82e82d7deef575e74627d7}{curl\+\_\+easy\+\_\+init\+\_\+mutex\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Mutex for \doxylink{a00119_ac535922c83d0818303047eaf850fe19b}{curl\+\_\+easy\+\_\+init()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00749_a2aeb8cf309e46dbf85f793d7a745e975}\label{a00749_a2aeb8cf309e46dbf85f793d7a745e975} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!CurlHolder@{CurlHolder}}
+\index{CurlHolder@{CurlHolder}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{CurlHolder()}{CurlHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily cpr\+::\+Curl\+Holder\+::\+Curl\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00749_a4241aac98b70c2bf6bdafd5d73e430a9}\label{a00749_a4241aac98b70c2bf6bdafd5d73e430a9} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!CurlHolder@{CurlHolder}}
+\index{CurlHolder@{CurlHolder}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{CurlHolder()}{CurlHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily cpr\+::\+Curl\+Holder\+::\+Curl\+Holder (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00749_a0979ce08aa5ec2cc39ec847fefb9aada}\label{a00749_a0979ce08aa5ec2cc39ec847fefb9aada} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!CurlHolder@{CurlHolder}}
+\index{CurlHolder@{CurlHolder}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{CurlHolder()}{CurlHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily cpr\+::\+Curl\+Holder\+::\+Curl\+Holder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00749}{Curl\+Holder}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00749_a2b6481daffc7528f25ba8a8c25ee4931}\label{a00749_a2b6481daffc7528f25ba8a8c25ee4931} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!````~CurlHolder@{\texorpdfstring{$\sim$}{\string~}CurlHolder}}
+\index{````~CurlHolder@{\texorpdfstring{$\sim$}{\string~}CurlHolder}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CurlHolder()}{\string~CurlHolder()}}
+{\footnotesize\ttfamily cpr\+::\+Curl\+Holder\+::\texorpdfstring{$\sim$}{\string~}\+Curl\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00749_a8fa7ae3d659d04b87f052d1b40a28d2e}\label{a00749_a8fa7ae3d659d04b87f052d1b40a28d2e} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00749}{Curl\+Holder}} \& cpr\+::\+Curl\+Holder\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00749}{Curl\+Holder}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00749_a48af508c2477bdb975688b9b91b687f2}\label{a00749_a48af508c2477bdb975688b9b91b687f2} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00749}{Curl\+Holder}} \& cpr\+::\+Curl\+Holder\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00749}{Curl\+Holder}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00749_a933c684249c29a8620b22785050458af}\label{a00749_a933c684249c29a8620b22785050458af} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!urlDecode@{urlDecode}}
+\index{urlDecode@{urlDecode}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{urlDecode()}{urlDecode()}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Curl\+Holder\+::url\+Decode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Uses curl\+\_\+easy\+\_\+unescape(...) for unescaping the given string. 
+
+\Hypertarget{a00749_aa37d6bce3799080931d325d7707fc573}\label{a00749_aa37d6bce3799080931d325d7707fc573} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!urlEncode@{urlEncode}}
+\index{urlEncode@{urlEncode}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{urlEncode()}{urlEncode()}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Curl\+Holder\+::url\+Encode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Uses curl\+\_\+easy\+\_\+escape(...) for escaping the given string. 
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00749_a7f63438690f1805b1dfab6739f539f8b}\label{a00749_a7f63438690f1805b1dfab6739f539f8b} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!chunk@{chunk}}
+\index{chunk@{chunk}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{chunk}{chunk}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}}\texorpdfstring{$\ast$}{*} cpr\+::\+Curl\+Holder\+::chunk \{nullptr\}}
+
+\Hypertarget{a00749_ad3d145b96b82e82d7deef575e74627d7}\label{a00749_ad3d145b96b82e82d7deef575e74627d7} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!curl\_easy\_init\_mutex\_@{curl\_easy\_init\_mutex\_}}
+\index{curl\_easy\_init\_mutex\_@{curl\_easy\_init\_mutex\_}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_init\_mutex\_}{curl\_easy\_init\_mutex\_}}
+{\footnotesize\ttfamily std\+::mutex cpr\+::\+Curl\+Holder\+::curl\+\_\+easy\+\_\+init\+\_\+mutex\+\_\+\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Mutex for \doxylink{a00119_ac535922c83d0818303047eaf850fe19b}{curl\+\_\+easy\+\_\+init()}. 
+
+\doxylink{a00119_ac535922c83d0818303047eaf850fe19b}{curl\+\_\+easy\+\_\+init()} is not thread save. References\+: \href{https://curl.haxx.se/libcurl/c/curl_easy_init.html}{\texttt{ https\+://curl.\+haxx.\+se/libcurl/c/curl\+\_\+easy\+\_\+init.\+html}} \href{https://curl.haxx.se/libcurl/c/threadsafe.html}{\texttt{ https\+://curl.\+haxx.\+se/libcurl/c/threadsafe.\+html}} \Hypertarget{a00749_ac24bac69e9cc384ebcb84905fb5a5357}\label{a00749_ac24bac69e9cc384ebcb84905fb5a5357} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!error@{error}}
+\index{error@{error}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily std\+::array$<$char, \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}}$>$ cpr\+::\+Curl\+Holder\+::error \{\}}
+
+\Hypertarget{a00749_ac5f453c13093fcdde303a477c95c5cad}\label{a00749_ac5f453c13093fcdde303a477c95c5cad} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!formpost@{formpost}}
+\index{formpost@{formpost}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{formpost}{formpost}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{a00917}{curl\+\_\+httppost}}\texorpdfstring{$\ast$}{*} cpr\+::\+Curl\+Holder\+::formpost \{nullptr\}}
+
+\Hypertarget{a00749_ae239c4424fca4b55b84f30f985b865a8}\label{a00749_ae239c4424fca4b55b84f30f985b865a8} 
+\index{cpr::CurlHolder@{cpr::CurlHolder}!handle@{handle}}
+\index{handle@{handle}!cpr::CurlHolder@{cpr::CurlHolder}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\texorpdfstring{$\ast$}{*} cpr\+::\+Curl\+Holder\+::handle \{nullptr\}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00041}{curlholder.\+h}}\end{DoxyCompactItemize}

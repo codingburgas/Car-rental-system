@@ -1,0 +1,105 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/conversions/from\+\_\+json.hpp File Reference}
+\hypertarget{a00149}{}\label{a00149}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/from\_json.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/from\_json.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$forward\+\_\+list$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/exceptions.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/cpp\+\_\+future.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/identity\+\_\+tag.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/value\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for from\+\_\+json.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00997}{nlohmann\+::detail\+::from\+\_\+json\+\_\+fn}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00663}{nlohmann\+::anonymous\+\_\+namespace\{from\+\_\+json.\+hpp\}}}
+\begin{DoxyCompactList}\small\item\em namespace to hold default {\ttfamily from\+\_\+json} function to see why this is required\+: \href{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4381.html}{\texttt{ http\+://www.\+open-\/std.\+org/jtc1/sc22/wg21/docs/papers/2015/n4381.\+html}} \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a2fc11f4d69598863c9f0fdfbc278f4d5}{nlohmann\+::detail\+::from\+\_\+json}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, N $>$ $>$ tag) -\/$>$ decltype(\mbox{\hyperlink{a00662_ab9b6b026d31c13ee70b197b464654967}{from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl}}(std\+::forward$<$ Basic\+Json\+Type $>$(j), tag, \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$ N $>$ \{\}))
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Tuple\+Related $>$ }\\auto \mbox{\hyperlink{a00662_a3e111e6cef3aa52f1d36fd7b85991ffb}{nlohmann\+::detail\+::from\+\_\+json}} (Basic\+Json\+Type \&\&j, Tuple\+Related \&\&t) -\/$>$ decltype(\mbox{\hyperlink{a00662_a816851affc091e8a6bef26d759ff266f}{from\+\_\+json\+\_\+tuple\+\_\+impl}}(std\+::forward$<$ Basic\+Json\+Type $>$(j), std\+::forward$<$ Tuple\+Related $>$(t), \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$ \{\}))
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a839b0ab50d2c9bce669068f56bc41202}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, Arithmetic\+Type \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01465}{is\+\_\+constructible\+\_\+array\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::binary\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!\mbox{\hyperlink{a01289}{is\+\_\+basic\+\_\+json}}$<$ Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_aaa047a3e6a297a70e41fab254a3ea8b3}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr) -\/$>$ decltype(\mbox{\hyperlink{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}{from\+\_\+json\+\_\+array\+\_\+impl}}(j, arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$ \{\}), j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ typename Constructible\+Array\+Type\+::value\+\_\+type $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Object\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01429}{is\+\_\+constructible\+\_\+object\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+Object\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5b24896e5f5db6af06d939dde4b63fe1}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+Object\+Type \&obj)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+String\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01437}{is\+\_\+constructible\+\_\+string\+\_\+type}}$<$ Basic\+Json\+Type, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ typename Basic\+Json\+Type\+::string\+\_\+t, Constructible\+String\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a2932f2bc2943dac6d51669312f4fc0f5}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, Constructible\+String\+Type \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Enum\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+enum$<$ Enum\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5440d650150d01e8015133521351b459}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, Enum\+Type \&e)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , typename Allocator , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a5cfb765aad92795abd7fda29d017272a}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::forward\+\_\+list$<$ T, Allocator $>$ \&l)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Compare , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ }\\void \mbox{\hyperlink{a00662_ae93147a54d2740228ef16a5e6210ca3e}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::map$<$ Key, Value, Compare, Allocator $>$ \&m)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Key , typename Value , typename Hash , typename Key\+Equal , typename Allocator , typename  = enable\+\_\+if\+\_\+t $<$ !std\+::is\+\_\+constructible $<$                                        typename Basic\+Json\+Type\+::string\+\_\+t, Key $>$\+::value $>$$>$ }\\void \mbox{\hyperlink{a00662_aef5c8ea108f4d2b03fb4a635617510de}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::unordered\+\_\+map$<$ Key, Value, Hash, Key\+Equal, Allocator $>$ \&m)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01309}{is\+\_\+getable}}$<$ Basic\+Json\+Type, T $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3df497b1d3977f071b488ecac1401517}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, std\+::valarray$<$ T $>$ \&l)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a7deb2db8eed6f1762373dde7a6595760}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, T(\&arr)\mbox{[}N\mbox{]}) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ T $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_aeabc1adfeb8bcfbdf24c533380d1e773}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::binary\+\_\+t \&bin)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a58117f225f43d03e3a0a4a6f3d77c9d9}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::boolean\+\_\+t \&b)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a7cb5dd7d46a60e65f9a8e0873b3f7dd8}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a047d881e611fcac709dc318f730a1732}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ace4d5680ba413d9fd897ccb5d9c61a1c}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t \&val)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_ad74d89f77ada7a57eff38b43d4bf2335}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::string\+\_\+t \&s)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a1f0395aad0fe853a4539288749d3a603}{nlohmann\+::detail\+::from\+\_\+json}} (const Basic\+Json\+Type \&j, typename std\+::nullptr\+\_\+t \&n)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a3b306ea5f5176f748572ca5b1c9a4dda}{nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Constructible\+Array\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+assignable$<$ Constructible\+Array\+Type \&, Constructible\+Array\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\auto \mbox{\hyperlink{a00662_a7c06b590679604ecb0ea2a3b62bd254b}{nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, Constructible\+Array\+Type \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$) -\/$>$ decltype(arr.\+reserve(std\+::declval$<$ typename Constructible\+Array\+Type\+::size\+\_\+type $>$()), j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ typename Constructible\+Array\+Type\+::value\+\_\+type $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_aba0ce45ebb69fd2c7132a00f9a56b503}{nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, std\+::array$<$ T, N $>$ \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$) -\/$>$ decltype(j.\+template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ T $>$(), void())
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \mbox{\hyperlink{a00662_a40f7bb070a60e8ba14fffb9c117fcbd8}{nlohmann\+::detail\+::from\+\_\+json\+\_\+array\+\_\+impl}} (const Basic\+Json\+Type \&j, typename Basic\+Json\+Type\+::array\+\_\+t \&arr, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename T , std\+::size\+\_\+t... Idx$>$ }\\std\+::array$<$ T, sizeof...(Idx)$>$ \mbox{\hyperlink{a00662_ab9b6b026d31c13ee70b197b464654967}{nlohmann\+::detail\+::from\+\_\+json\+\_\+inplace\+\_\+array\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::array$<$ T, sizeof...(Idx)$>$ $>$, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , class A1 , class A2 $>$ }\\std\+::pair$<$ A1, A2 $>$ \mbox{\hyperlink{a00662_a816851affc091e8a6bef26d759ff266f}{nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::pair$<$ A1, A2 $>$ $>$, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 0 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args$>$ }\\std\+::tuple$<$ Args... $>$ \mbox{\hyperlink{a00662_a0b548bd52fe1aa3ff5e264a21be9c5e4}{nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a01277}{identity\+\_\+tag}}$<$ std\+::tuple$<$ Args... $>$ $>$, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 2 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename A1 , typename A2 $>$ }\\void \mbox{\hyperlink{a00662_af1bc20d589bcfe61a23974cb17a34d6f}{nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, std\+::pair$<$ A1, A2 $>$ \&p, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 1 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args$>$ }\\void \mbox{\hyperlink{a00662_a31838a6c7a461d3a889e6fc40b3a19e6}{nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl}} (Basic\+Json\+Type \&\&j, std\+::tuple$<$ Args... $>$ \&t, \mbox{\hyperlink{a01249}{priority\+\_\+tag}}$<$ 3 $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename... Args, std\+::size\+\_\+t... Idx$>$ }\\std\+::tuple$<$ Args... $>$ \mbox{\hyperlink{a00662_ab329a20f4ae849584a2e71f527637f87}{nlohmann\+::detail\+::from\+\_\+json\+\_\+tuple\+\_\+impl\+\_\+base}} (Basic\+Json\+Type \&\&j, \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{index\+\_\+sequence}}$<$ Idx... $>$)
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Arithmetic\+Type , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+arithmetic$<$ Arithmetic\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+same$<$ Arithmetic\+Type, typename Basic\+Json\+Type\+::boolean\+\_\+t $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\void \mbox{\hyperlink{a00662_a85955b9c6dd31846e4b8e891f78614b6}{nlohmann\+::detail\+::get\+\_\+arithmetic\+\_\+value}} (const Basic\+Json\+Type \&j, Arithmetic\+Type \&val)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const auto \& \mbox{\hyperlink{a00663_a8da2cbc27f4ff99aff5c20428fbcce4c}{nlohmann\+::anonymous\+\_\+namespace\{from\+\_\+json.\+hpp\}\+::from\+\_\+json}} = \mbox{\hyperlink{a01257}{detail\+::static\+\_\+const}}$<$\mbox{\hyperlink{a00997}{detail\+::from\+\_\+json\+\_\+fn}}$>$\+::value
+\end{DoxyCompactItemize}

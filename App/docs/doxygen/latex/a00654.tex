@@ -1,0 +1,87 @@
+\doxysection{System module}
+\hypertarget{a00654}{}\label{a00654}\index{System module@{System module}}
+
+
+Base module of SFML, defining various utilities. It provides vector classes, Unicode strings and conversion functions, threads and mutexes, timing classes.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01873}{sf\+::\+Clock}}
+\begin{DoxyCompactList}\small\item\em Utility class that measures the elapsed time. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01877}{sf\+::\+File\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Implementation of input stream based on a file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01881}{sf\+::\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Abstract class for custom file input streams. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01885}{sf\+::\+Lock}}
+\begin{DoxyCompactList}\small\item\em Automatic wrapper for locking and unlocking mutexes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01889}{sf\+::\+Memory\+Input\+Stream}}
+\begin{DoxyCompactList}\small\item\em Implementation of input stream based on a memory chunk. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01893}{sf\+::\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Blocks concurrent access to shared resources from multiple threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01897}{sf\+::\+Non\+Copyable}}
+\begin{DoxyCompactList}\small\item\em Utility class that makes any derived class non-\/copyable. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01901}{sf\+::\+String}}
+\begin{DoxyCompactList}\small\item\em Utility string class that automatically handles conversions between types and encodings. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01905}{sf\+::\+Thread}}
+\begin{DoxyCompactList}\small\item\em Utility class to manipulate threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01925}{sf\+::\+Thread\+Local}}
+\begin{DoxyCompactList}\small\item\em Defines variables with thread-\/local storage. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01929}{sf\+::\+Thread\+Local\+Ptr$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Pointer to a thread-\/local variable. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01933}{sf\+::\+Time}}
+\begin{DoxyCompactList}\small\item\em Represents a time value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01937}{sf\+::\+Utf$<$ N $>$}}
+\begin{DoxyCompactList}\small\item\em Utility class providing generic functions for UTF conversions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01953}{sf\+::\+Vector2$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 2-\/dimensional vectors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01957}{sf\+::\+Vector3$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 3-\/dimensional vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} ANative\+Activity \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00654_gabdf6d6135fca64627093a9906183c8e3}{sf\+::get\+Native\+Activity}} ()
+\begin{DoxyCompactList}\small\item\em Return a pointer to the Android native activity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a00654_ga2f2620831533dee0ed432ed982342e09}{sf\+::sleep}} (\mbox{\hyperlink{a01933}{Time}} duration)
+\begin{DoxyCompactList}\small\item\em Make the current thread sleep for a given duration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base module of SFML, defining various utilities. It provides vector classes, Unicode strings and conversion functions, threads and mutexes, timing classes. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00654_gabdf6d6135fca64627093a9906183c8e3}\label{a00654_gabdf6d6135fca64627093a9906183c8e3} 
+\index{System module@{System module}!getNativeActivity@{getNativeActivity}}
+\index{getNativeActivity@{getNativeActivity}!System module@{System module}}
+\doxysubsubsection{\texorpdfstring{getNativeActivity()}{getNativeActivity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} ANative\+Activity \texorpdfstring{$\ast$}{*} sf\+::get\+Native\+Activity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return a pointer to the Android native activity. 
+
+You shouldn\textquotesingle{}t have to use this function, unless you want to implement very specific details, that SFML doesn\textquotesingle{}t support, or to use a workaround for a known issue.
+
+\begin{DoxyReturn}{Returns}
+Pointer to Android native activity structure
+\end{DoxyReturn}
+\textbackslash{}sfplatform\{Android,\doxylink{a00515}{SFML/\+System/\+Native\+Activity.\+hpp}\} \Hypertarget{a00654_ga2f2620831533dee0ed432ed982342e09}\label{a00654_ga2f2620831533dee0ed432ed982342e09} 
+\index{System module@{System module}!sleep@{sleep}}
+\index{sleep@{sleep}!System module@{System module}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} sf\+::sleep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Make the current thread sleep for a given duration. 
+
+\doxylink{a00654_ga2f2620831533dee0ed432ed982342e09}{sf\+::sleep} is the best way to block a program or one of its threads, as it doesn\textquotesingle{}t consume any CPU power.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & \doxylink{a01933}{Time} to sleep \\
+\hline
+\end{DoxyParams}

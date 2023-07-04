@@ -1,0 +1,47 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/cpr/util.h File Reference}
+\hypertarget{a00107}{}\label{a00107}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/util.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/util.h}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}cpr/callback.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/cookies.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/cprtypes.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/curlholder.\+h\"{}}\newline
+Include dependency graph for util.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00656}{cpr}}
+\item 
+namespace \mbox{\hyperlink{a00660}{cpr\+::util}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a00660_ae5f759ca1efe8fed6560d00a9a4e40ec}{cpr\+::util\+::debug\+User\+Function}} (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}} type, char \texorpdfstring{$\ast$}{*}data, size\+\_\+t size, const \mbox{\hyperlink{a00713}{Debug\+Callback}} \texorpdfstring{$\ast$}{*}debug)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_aa38527e7d4b75c3c1c002dc3c0d53a6b}{cpr\+::util\+::header\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, const \mbox{\hyperlink{a00701}{Header\+Callback}} \texorpdfstring{$\ast$}{*}header)
+\item 
+\mbox{\hyperlink{a00721}{Cookies}} \mbox{\hyperlink{a00660_a69d22b4cba46e93b4da44fd3af0bf7bd}{cpr\+::util\+::parse\+Cookies}} (\mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}raw\+\_\+cookies)
+\item 
+\mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \mbox{\hyperlink{a00660_a05dbf46877c9eb8a837bf8925808176e}{cpr\+::util\+::parse\+Header}} (const std\+::string \&headers, std\+::string \texorpdfstring{$\ast$}{*}status\+\_\+line=nullptr, std\+::string \texorpdfstring{$\ast$}{*}reason=nullptr)
+\item 
+int \mbox{\hyperlink{a00660_a5b91bf5d9aff268b0e908c8796ac0e14}{cpr\+::util\+::progress\+User\+Function}} (const \mbox{\hyperlink{a00709}{Progress\+Callback}} \texorpdfstring{$\ast$}{*}progress, double dltotal, double dlnow, double ultotal, double ulnow)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_a5a4fef2e955aa8e7e5d614ca58ebfe7e}{cpr\+::util\+::read\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nitems, const \mbox{\hyperlink{a00697}{Read\+Callback}} \texorpdfstring{$\ast$}{*}read)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a00660_ab742437eb9827653e00476d8299cf2b2}{cpr\+::util\+::split}} (const std\+::string \&to\+\_\+split, char delimiter)
+\item 
+std\+::string \mbox{\hyperlink{a00660_a5a88cb19e5d6555fdc083e59bf8a8f33}{cpr\+::util\+::url\+Decode}} (const std\+::string \&s)
+\item 
+std\+::string \mbox{\hyperlink{a00660_ad7b2cda098b163bfefc274748f4c321a}{cpr\+::util\+::url\+Encode}} (const std\+::string \&s)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_ac542f2a0397fa9530cb8719c28f038d6}{cpr\+::util\+::write\+File\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, std\+::ofstream \texorpdfstring{$\ast$}{*}file)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_a8ae70d9fc3502fb7d4d142f737abb2b3}{cpr\+::util\+::write\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, std\+::string \texorpdfstring{$\ast$}{*}data)
+\item 
+size\+\_\+t \mbox{\hyperlink{a00660_af02df6d778cb33dca218c63717e4fe4f}{cpr\+::util\+::write\+User\+Function}} (char \texorpdfstring{$\ast$}{*}ptr, size\+\_\+t size, size\+\_\+t nmemb, const \mbox{\hyperlink{a00705}{Write\+Callback}} \texorpdfstring{$\ast$}{*}write)
+\end{DoxyCompactItemize}

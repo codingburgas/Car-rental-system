@@ -1,0 +1,92 @@
+\doxysection{Thread.\+inl}
+\hypertarget{a00533_source}{}\label{a00533_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Thread.inl@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Thread.inl}}
+\mbox{\hyperlink{a00533}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00672}{priv}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Base\ class\ for\ abstract\ thread\ functions}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01909}{ThreadFunc}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a01909_a085d7741b00ad5c8610cc26739d423cb}{\string~ThreadFunc}}()\ \{\}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01909_ab5465e714ca4aa92a09bf5e24410a5c3}{run}}()\ =\ 0;}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ Specialization\ using\ a\ functor\ (including\ free\ functions)\ with\ no\ argument}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01913}{ThreadFunctor}}\ :\ \mbox{\hyperlink{a01909}{ThreadFunc}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{a01913_a2df57df5cd6f7396b033512bb0e01848}{ThreadFunctor}}(T\ functor)\ :\ \mbox{\hyperlink{a01913_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}}(functor)\ \{\}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01913_a8bb44b4b46d08d844d070ae3fdb251d7}{run}}()\ \{\mbox{\hyperlink{a01913_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}}();\}}
+\DoxyCodeLine{00040\ \ \ \ \ T\ \mbox{\hyperlink{a01913_a73254bbde4d3452de1aeda531ca632b2}{m\_functor}};}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Specialization\ using\ a\ functor\ (including\ free\ functions)\ with\ one\ argument}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ F,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01917}{ThreadFunctorWithArg}}\ :\ \mbox{\hyperlink{a01909}{ThreadFunc}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a01917_ae3745753b77880cdfda6f10d72748efa}{ThreadFunctorWithArg}}(F\ function,\ A\ arg)\ :\ \mbox{\hyperlink{a01917_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}}(function),\ \mbox{\hyperlink{a01917_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}}(arg)\ \{\}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01917_a0f8bb6ba36819e80016528bab8b0bd4f}{run}}()\ \{\mbox{\hyperlink{a01917_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}}(\mbox{\hyperlink{a01917_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}});\}}
+\DoxyCodeLine{00049\ \ \ \ \ F\ \mbox{\hyperlink{a01917_ab12992af3112f15df4b6f0dbce3137b9}{m\_function}};}
+\DoxyCodeLine{00050\ \ \ \ \ A\ \mbox{\hyperlink{a01917_ac598f7701f976320bc3964733b9ae9ae}{m\_arg}};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Specialization\ using\ a\ member\ function}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>}
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01921}{ThreadMemberFunc}}\ :\ \mbox{\hyperlink{a01909}{ThreadFunc}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{a01921_ae44619c4cf6d886da6f32a1de37d652e}{ThreadMemberFunc}}(\textcolor{keywordtype}{void}(C::*function)(),\ C*\ object)\ :\ \mbox{\hyperlink{a01921_a2b3e753f87b70ae3ad1c4ff54a995fe8}{m\_function}}(function),\ \mbox{\hyperlink{a01921_a849dd2e31c95e699fb316065d9d75116}{m\_object}}(object)\ \{\}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01921_abbd440e93edf2747cf9cdde579bc5de0}{run}}()\ \{(\mbox{\hyperlink{a01921_a849dd2e31c95e699fb316065d9d75116}{m\_object}}-\/>*\mbox{\hyperlink{a01921_a2b3e753f87b70ae3ad1c4ff54a995fe8}{m\_function}})();\}}
+\DoxyCodeLine{00059\ \ \ \ \ void(C::*\mbox{\hyperlink{a01921_a2b3e753f87b70ae3ad1c4ff54a995fe8}{m\_function}})();}
+\DoxyCodeLine{00060\ \ \ \ \ C*\ \mbox{\hyperlink{a01921_a849dd2e31c95e699fb316065d9d75116}{m\_object}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}\ \textcolor{comment}{//\ namespace\ priv}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{00068\ Thread::Thread(F\ functor)\ :}
+\DoxyCodeLine{00069\ m\_impl\ \ \ \ \ \ (NULL),}
+\DoxyCodeLine{00070\ m\_entryPoint(new\ \mbox{\hyperlink{a00672}{priv}}::ThreadFunctor<F>(functor))}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ F,\ \textcolor{keyword}{typename}\ A>}
+\DoxyCodeLine{00077\ \mbox{\hyperlink{a01905_a4cc65399bbb111cf8132537783b8e96c}{Thread::Thread}}(F\ function,\ A\ argument)\ :}
+\DoxyCodeLine{00078\ m\_impl\ \ \ \ \ \ (NULL),}
+\DoxyCodeLine{00079\ m\_entryPoint(new\ \mbox{\hyperlink{a00672}{priv}}::ThreadFunctorWithArg<F,\ A>(function,\ argument))}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{a01905_a4cc65399bbb111cf8132537783b8e96c}{Thread::Thread}}(\textcolor{keywordtype}{void}(C::*function)(),\ C*\ object)\ :}
+\DoxyCodeLine{00087\ m\_impl\ \ \ \ \ \ (NULL),}
+\DoxyCodeLine{00088\ m\_entryPoint(new\ \mbox{\hyperlink{a00672}{priv}}::ThreadMemberFunc<C>(function,\ object))}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}

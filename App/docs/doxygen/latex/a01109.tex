@@ -1,0 +1,59 @@
+\doxysection{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory\texorpdfstring{$<$}{<} Iterator\+Type, Enable \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01109}{}\label{a01109}\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}}
+
+
+{\ttfamily \#include $<$input\+\_\+adapters.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01109_a264935c57ca29dfb5153ade55266d1fa}{adapter\+\_\+type}} = \mbox{\hyperlink{a01089}{iterator\+\_\+input\+\_\+adapter}}$<$ \mbox{\hyperlink{a01109_a37663ca283012236415d53145da1a0f9}{iterator\+\_\+type}} $>$
+\item 
+using \mbox{\hyperlink{a01109_a1439c0eda85f5f67199374d3254b8f2a}{char\+\_\+type}} = typename std\+::iterator\+\_\+traits$<$ \mbox{\hyperlink{a01109_a37663ca283012236415d53145da1a0f9}{iterator\+\_\+type}} $>$\+::value\+\_\+type
+\item 
+using \mbox{\hyperlink{a01109_a37663ca283012236415d53145da1a0f9}{iterator\+\_\+type}} = Iterator\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01109_a264935c57ca29dfb5153ade55266d1fa}{adapter\+\_\+type}} \mbox{\hyperlink{a01109_a1d3a80249cf837448966319310be9ec4}{create}} (Iterator\+Type first, Iterator\+Type last)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01109_a264935c57ca29dfb5153ade55266d1fa}\label{a01109_a264935c57ca29dfb5153ade55266d1fa} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}!adapter\_type@{adapter\_type}}
+\index{adapter\_type@{adapter\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}}
+\doxysubsubsection{\texorpdfstring{adapter\_type}{adapter\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type , typename Enable  = void$>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, Enable $>$\+::adapter\+\_\+type =  \mbox{\hyperlink{a01089}{iterator\+\_\+input\+\_\+adapter}}$<$\mbox{\hyperlink{a01109_a37663ca283012236415d53145da1a0f9}{iterator\+\_\+type}}$>$}
+
+\Hypertarget{a01109_a1439c0eda85f5f67199374d3254b8f2a}\label{a01109_a1439c0eda85f5f67199374d3254b8f2a} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type , typename Enable  = void$>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, Enable $>$\+::char\+\_\+type =  typename std\+::iterator\+\_\+traits$<$\mbox{\hyperlink{a01109_a37663ca283012236415d53145da1a0f9}{iterator\+\_\+type}}$>$\+::value\+\_\+type}
+
+\Hypertarget{a01109_a37663ca283012236415d53145da1a0f9}\label{a01109_a37663ca283012236415d53145da1a0f9} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}!iterator\_type@{iterator\_type}}
+\index{iterator\_type@{iterator\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_type}{iterator\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type , typename Enable  = void$>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, Enable $>$\+::iterator\+\_\+type =  Iterator\+Type}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01109_a1d3a80249cf837448966319310be9ec4}\label{a01109_a1d3a80249cf837448966319310be9ec4} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}!create@{create}}
+\index{create@{create}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, Enable $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type , typename Enable  = void$>$ \\
+static \mbox{\hyperlink{a01109_a264935c57ca29dfb5153ade55266d1fa}{adapter\+\_\+type}} \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, Enable $>$\+::create (\begin{DoxyParamCaption}\item[{Iterator\+Type}]{first,  }\item[{Iterator\+Type}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/input/\mbox{\hyperlink{a00167}{input\+\_\+adapters.\+hpp}}\end{DoxyCompactItemize}

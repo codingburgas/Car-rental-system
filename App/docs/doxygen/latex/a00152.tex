@@ -1,0 +1,63 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/conversions/to\+\_\+chars.hpp File Reference}
+\hypertarget{a00152}{}\label{a00152}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/to\_chars.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/conversions/to\_chars.hpp}}
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+Include dependency graph for to\+\_\+chars.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01005}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::boundaries}}
+\item 
+struct \mbox{\hyperlink{a01009}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::cached\+\_\+power}}
+\item 
+struct \mbox{\hyperlink{a01001}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::diyfp}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00664}{nlohmann\+::detail\+::dtoa\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em implements the Grisu2 algorithm for binary to decimal floating-\/point conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00664_a78ad745d14b79fc65714c9938981faf6}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::append\+\_\+exponent}} (char \texorpdfstring{$\ast$}{*}buf, int e)
+\begin{DoxyCompactList}\small\item\em appends a decimal representation of e to buf \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\\mbox{\hyperlink{a01005}{boundaries}} \mbox{\hyperlink{a00664_a22b6e37654ac93c6d0d9c06ec1bf5ded}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::compute\+\_\+boundaries}} (Float\+Type \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+int \mbox{\hyperlink{a00664_a36ded358763b5dbcea9867660fbe4e28}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::find\+\_\+largest\+\_\+pow10}} (const std\+::uint32\+\_\+t n, std\+::uint32\+\_\+t \&pow10)
+\item 
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00664_a0986c3e015db045df89506436f19e07c}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::format\+\_\+buffer}} (char \texorpdfstring{$\ast$}{*}buf, int len, int decimal\+\_\+exponent, int min\+\_\+exp, int max\+\_\+exp)
+\begin{DoxyCompactList}\small\item\em prettify v = buf \texorpdfstring{$\ast$}{*} 10\texorpdfstring{$^\wedge$}{\string^}decimal\+\_\+exponent \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01009}{cached\+\_\+power}} \mbox{\hyperlink{a00664_adbf329a18c5cf854a3477327afd2200b}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::get\+\_\+cached\+\_\+power\+\_\+for\+\_\+binary\+\_\+exponent}} (int e)
+\item 
+void \mbox{\hyperlink{a00664_a05b681dcb8569b9784c6dccfadb01633}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::grisu2}} (char \texorpdfstring{$\ast$}{*}buf, int \&len, int \&decimal\+\_\+exponent, \mbox{\hyperlink{a01001}{diyfp}} m\+\_\+minus, \mbox{\hyperlink{a01001}{diyfp}} v, \mbox{\hyperlink{a01001}{diyfp}} m\+\_\+plus)
+\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\void \mbox{\hyperlink{a00664_aab7a9670a4f4704a5d0347ad7588576b}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::grisu2}} (char \texorpdfstring{$\ast$}{*}buf, int \&len, int \&decimal\+\_\+exponent, Float\+Type \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+void \mbox{\hyperlink{a00664_a9b899c72b0e1e3dd46d75c2b4e6bcdfb}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::grisu2\+\_\+digit\+\_\+gen}} (char \texorpdfstring{$\ast$}{*}buffer, int \&length, int \&decimal\+\_\+exponent, \mbox{\hyperlink{a01001}{diyfp}} M\+\_\+minus, \mbox{\hyperlink{a01001}{diyfp}} w, \mbox{\hyperlink{a01001}{diyfp}} M\+\_\+plus)
+\item 
+void \mbox{\hyperlink{a00664_a5bc841e0bee12fd6489d49cf7bd07bb4}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::grisu2\+\_\+round}} (char \texorpdfstring{$\ast$}{*}buf, int len, std\+::uint64\+\_\+t dist, std\+::uint64\+\_\+t delta, std\+::uint64\+\_\+t rest, std\+::uint64\+\_\+t ten\+\_\+k)
+\item 
+{\footnotesize template$<$typename Target , typename Source $>$ }\\Target \mbox{\hyperlink{a00664_a1c5d30eb51e5e994a3f48bde104d2ce8}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::reinterpret\+\_\+bits}} (const Source source)
+\item 
+{\footnotesize template$<$typename Float\+Type $>$ }\\\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00662_a4ceeb4ec7f2cd493dd9cf328044c1e3c}{nlohmann\+::detail\+::to\+\_\+chars}} (char \texorpdfstring{$\ast$}{*}first, const char \texorpdfstring{$\ast$}{*}last, Float\+Type \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em generates a decimal representation of the floating-\/point number value in \mbox{[}first, last). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{a00664_ac1ea1316de0b4a219f707c76b1db1966}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::k\+Alpha}} = -\/60
+\item 
+constexpr int \mbox{\hyperlink{a00664_a4a750fcc38da1ce68b7e25ab3a230e20}{nlohmann\+::detail\+::dtoa\+\_\+impl\+::k\+Gamma}} = -\/32
+\end{DoxyCompactItemize}

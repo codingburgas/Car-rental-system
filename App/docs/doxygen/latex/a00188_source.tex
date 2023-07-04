@@ -1,0 +1,57 @@
+\doxysection{iterator\+\_\+traits.\+hpp}
+\hypertarget{a00188_source}{}\label{a00188_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/iterators/iterator\_traits.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/iterators/iterator\_traits.hpp}}
+\mbox{\hyperlink{a00188}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iterator>}\ \textcolor{comment}{//\ random\_access\_iterator\_tag}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00233}{nlohmann/detail/meta/void\_t.hpp}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00218}{nlohmann/detail/meta/cpp\_future.hpp}}>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ It,\ \textcolor{keyword}{typename}\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01189}{iterator\_types}}\ \{\};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ It>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01189}{iterator\_types}}\ <}
+\DoxyCodeLine{00017\ \ \ \ \ It,}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{a00662_a92a167c49c6697b6ffe4f79492c705e5}{void\_t}}<typename\ It::\mbox{\hyperlink{a01193_a1ce16c1c8c1d6a195f5a3d3ad31820f0}{difference\_type}},\ typename\ It::value\_type,\ typename\ It::pointer,}
+\DoxyCodeLine{00019\ \ \ \ \ typename\ It::reference,\ typename\ It::iterator\_category\ >>}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01193_a1ce16c1c8c1d6a195f5a3d3ad31820f0}{difference\_type}}\ =\ \textcolor{keyword}{typename}\ It::difference\_type;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01193_ac70fcab4cacd8b386c3f2b056885e15e}{value\_type}}\ =\ \textcolor{keyword}{typename}\ It::value\_type;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01193_aacaf73dc959b7c2119c15e53b5ce00a3}{pointer}}\ =\ \textcolor{keyword}{typename}\ It::pointer;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01193_a5e82d2d8dabd022b8ff916f2e83a82f2}{reference}}\ =\ \textcolor{keyword}{typename}\ It::reference;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01193_aaaafbcd0573ec9cfc5d19411950dc1ac}{iterator\_category}}\ =\ \textcolor{keyword}{typename}\ It::iterator\_category;}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ This\ is\ required\ as\ some\ compilers\ implement\ std::iterator\_traits\ in\ a\ way\ that}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ doesn't\ work\ with\ SFINAE.\ See\ https://github.com/nlohmann/json/issues/1341.}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01197}{iterator\_traits}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01197}{iterator\_traits}}\ <\ T,\ \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\_if\_t}}\ <\ !\mbox{\hyperlink{a00667}{std}}::is\_pointer<T>\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{::value}}\ >>}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a01189}{iterator\_types}}<T>}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01197}{iterator\_traits}}<T*,\ \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\_if\_t<std::is\_object<T>::value}}>>}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01205_a9b043cfe0fdfb3e9665428fb2be9cea1}{iterator\_category}}\ =\ std::random\_access\_iterator\_tag;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01205_a443e6a62f5fb2c545fc71c751b98ca8d}{value\_type}}\ =\ T;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01205_ae7be99eb434f5b5f34692874c272b759}{difference\_type}}\ =\ ptrdiff\_t;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01205_a33ee9a1beb8ee099f989fd4af15178a5}{pointer}}\ =\ T*;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01205_a0809c5949d22f08a993231d2fdf285f0}{reference}}\ =\ T\&;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ \}\ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00051\ \}\ \textcolor{comment}{//\ namespace\ nlohmann}}
+
+\end{DoxyCode}

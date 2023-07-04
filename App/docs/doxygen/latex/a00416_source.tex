@@ -1,0 +1,73 @@
+\doxysection{Render\+Window.\+hpp}
+\hypertarget{a00416_source}{}\label{a00416_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/RenderWindow.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/RenderWindow.hpp}}
+\mbox{\hyperlink{a00416}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_RENDERWINDOW\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_RENDERWINDOW\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02206}{SFML/Graphics/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00410}{SFML/Graphics/RenderTarget.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00392}{SFML/Graphics/Image.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02218}{SFML/Window/Window.hpp}}>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01761}{RenderWindow}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a02069}{Window}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01749}{RenderTarget}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a01761_a839bbf336bdcafb084dafc3076fc9021}{RenderWindow}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{a01761_aebef983e01f677bf5a66cefc4d547647}{RenderWindow}}(\mbox{\hyperlink{a02065}{VideoMode}}\ mode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ title,\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ style\ =\ Style::Default,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01969}{ContextSettings}}\&\ settings\ =\ \mbox{\hyperlink{a01969}{ContextSettings}}());}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01761_a25c0af7d515e710b6eebc9c6be952aa5}{RenderWindow}}(WindowHandle\ handle,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01969}{ContextSettings}}\&\ settings\ =\ \mbox{\hyperlink{a01969}{ContextSettings}}());}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a01761_a3407e36bfc1752d723140438a825365c}{\string~RenderWindow}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a01953}{Vector2u}}\ \mbox{\hyperlink{a01761_ae3eacf93661c8068fca7a78d57dc7e14}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01761_aee6c53eced675e885931eb3e91f11155}{setActive}}(\textcolor{keywordtype}{bool}\ active\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{a00359_a9d22ae32bba2961ae9abc7e40f035fc7}{SFML\_DEPRECATED}}\ \mbox{\hyperlink{a01733}{Image}}\ \mbox{\hyperlink{a01761_a370137abe81f6b7d62b600ceeccd54d3}{capture}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01761_a5bef0040b0fa87bed9fbd459c980d53a}{onCreate}}();}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01761_a5c85fe482313562d33ffd24a194b6fef}{onResize}}();}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_RENDERWINDOW\_HPP}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+
+\end{DoxyCode}

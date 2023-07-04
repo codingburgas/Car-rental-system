@@ -1,0 +1,168 @@
+\doxysection{nlohmann\+::detail\+::json\+\_\+ref\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01221}{}\label{a01221}\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+
+
+{\ttfamily \#include $<$json\+\_\+ref.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} = Basic\+Json\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class... Args, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ \mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}}, Args... $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\\mbox{\hyperlink{a01221_a8a31d6c588d6c3c06b62008fd5d36c6c}{json\+\_\+ref}} (Args \&\&... args)
+\item 
+\mbox{\hyperlink{a01221_a4c68db46934e03588bbd73b00147c0dd}{json\+\_\+ref}} (const \mbox{\hyperlink{a01221}{json\+\_\+ref}} \&)=delete
+\item 
+\mbox{\hyperlink{a01221_a8c3eb3c6e952ed0cd7eece586ab4047c}{json\+\_\+ref}} (const \mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+\mbox{\hyperlink{a01221_a4ec90f097b33e7ea8ea7473b6b6c4015}{json\+\_\+ref}} (\mbox{\hyperlink{a01221}{json\+\_\+ref}} \&\&) noexcept=default
+\item 
+\mbox{\hyperlink{a01221_adfba2db547283a7c6a5df9a32e72efc5}{json\+\_\+ref}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{a01221}{json\+\_\+ref}} $>$ init)
+\item 
+\mbox{\hyperlink{a01221_ae1adf5bcee8b6fa0c358710604fb1938}{json\+\_\+ref}} (\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \&\&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \mbox{\hyperlink{a01221_ae39e523218bf05cac3fb5b5b1cd5efb6}{moved\+\_\+or\+\_\+copied}} () const
+\item 
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const \& \mbox{\hyperlink{a01221_a660e373deab1b74e03952dce889cb33d}{operator\texorpdfstring{$\ast$}{*}}} () const
+\item 
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01221_ab4991f0e0f33cb906267b8dccbf2406b}{operator-\/$>$}} () const
+\item 
+\mbox{\hyperlink{a01221}{json\+\_\+ref}} \& \mbox{\hyperlink{a01221_a1b22795281e9894e68b927801a69f1ab}{operator=}} (const \mbox{\hyperlink{a01221}{json\+\_\+ref}} \&)=delete
+\item 
+\mbox{\hyperlink{a01221}{json\+\_\+ref}} \& \mbox{\hyperlink{a01221_ab6fb80bb6a10e626ff58bdd98af7dc52}{operator=}} (\mbox{\hyperlink{a01221}{json\+\_\+ref}} \&\&)=delete
+\item 
+\mbox{\hyperlink{a01221_a8bcd4cfcafe952ce5140f8cb35ebe2f6}{\texorpdfstring{$\sim$}{\string~}json\+\_\+ref}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \mbox{\hyperlink{a01221_a5d7bd67a5ab713d9be1e248cf9d509cd}{owned\+\_\+value}} = nullptr
+\item 
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const  \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01221_a45391e581543480fc02007de08d95705}{value\+\_\+ref}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01221_a78d76cf288141049568c0d670ed670ef}\label{a01221_a78d76cf288141049568c0d670ed670ef} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+using \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::value\+\_\+type =  Basic\+Json\+Type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01221_ae1adf5bcee8b6fa0c358710604fb1938}\label{a01221_ae1adf5bcee8b6fa0c358710604fb1938} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_a8c3eb3c6e952ed0cd7eece586ab4047c}\label{a01221_a8c3eb3c6e952ed0cd7eece586ab4047c} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_adfba2db547283a7c6a5df9a32e72efc5}\label{a01221_adfba2db547283a7c6a5df9a32e72efc5} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{a01221}{json\+\_\+ref}}$<$ Basic\+Json\+Type $>$ $>$}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_a8a31d6c588d6c3c06b62008fd5d36c6c}\label{a01221_a8a31d6c588d6c3c06b62008fd5d36c6c} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+template$<$class... Args, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+constructible$<$ \mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}}, Args... $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_a4ec90f097b33e7ea8ea7473b6b6c4015}\label{a01221_a4ec90f097b33e7ea8ea7473b6b6c4015} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01221}{json\+\_\+ref}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01221_a4c68db46934e03588bbd73b00147c0dd}\label{a01221_a4c68db46934e03588bbd73b00147c0dd} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!json\_ref@{json\_ref}}
+\index{json\_ref@{json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{json\_ref()}{json\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::json\+\_\+ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01221}{json\+\_\+ref}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01221_a8bcd4cfcafe952ce5140f8cb35ebe2f6}\label{a01221_a8bcd4cfcafe952ce5140f8cb35ebe2f6} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!````~json\_ref@{\texorpdfstring{$\sim$}{\string~}json\_ref}}
+\index{````~json\_ref@{\texorpdfstring{$\sim$}{\string~}json\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}json\_ref()}{\string~json\_ref()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{a01221}{json\+\_\+ref}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01221_ae39e523218bf05cac3fb5b5b1cd5efb6}\label{a01221_ae39e523218bf05cac3fb5b5b1cd5efb6} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!moved\_or\_copied@{moved\_or\_copied}}
+\index{moved\_or\_copied@{moved\_or\_copied}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{moved\_or\_copied()}{moved\_or\_copied()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::moved\+\_\+or\+\_\+copied (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_a660e373deab1b74e03952dce889cb33d}\label{a01221_a660e373deab1b74e03952dce889cb33d} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const  \& \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_ab4991f0e0f33cb906267b8dccbf2406b}\label{a01221_ab4991f0e0f33cb906267b8dccbf2406b} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const  \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01221_a1b22795281e9894e68b927801a69f1ab}\label{a01221_a1b22795281e9894e68b927801a69f1ab} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{json\+\_\+ref}} \& \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01221}{json\+\_\+ref}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01221_ab6fb80bb6a10e626ff58bdd98af7dc52}\label{a01221_ab6fb80bb6a10e626ff58bdd98af7dc52} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221}{json\+\_\+ref}} \& \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01221}{json\+\_\+ref}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01221_a5d7bd67a5ab713d9be1e248cf9d509cd}\label{a01221_a5d7bd67a5ab713d9be1e248cf9d509cd} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!owned\_value@{owned\_value}}
+\index{owned\_value@{owned\_value}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{owned\_value}{owned\_value}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::owned\+\_\+value = nullptr\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\Hypertarget{a01221_a45391e581543480fc02007de08d95705}\label{a01221_a45391e581543480fc02007de08d95705} 
+\index{nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}!value\_ref@{value\_ref}}
+\index{value\_ref@{value\_ref}!nlohmann::detail::json\_ref$<$ BasicJsonType $>$@{nlohmann::detail::json\_ref$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{value\_ref}{value\_ref}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01221_a78d76cf288141049568c0d670ed670ef}{value\+\_\+type}} const\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01221}{nlohmann\+::detail\+::json\+\_\+ref}}$<$ Basic\+Json\+Type $>$\+::value\+\_\+ref = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/\mbox{\hyperlink{a00203}{json\+\_\+ref.\+hpp}}\end{DoxyCompactItemize}

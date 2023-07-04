@@ -1,0 +1,11 @@
+# Configuration for Dependabot
+
+version: 2
+updates:
+  # Enable package managers and repositories for which you want to receive dependency updates
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"  # Update frequency (e.g., daily, weekly)
+
+# Additional configuration options can be added as needed

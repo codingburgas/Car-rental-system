@@ -1,0 +1,68 @@
+\doxysection{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory\texorpdfstring{$<$}{<} Iterator\+Type, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} is\+\_\+iterator\+\_\+of\+\_\+multibyte\texorpdfstring{$<$}{<} Iterator\+Type \texorpdfstring{$>$}{>}\+::value \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01117}{}\label{a01117}\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+
+
+{\ttfamily \#include $<$input\+\_\+adapters.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01117_ae9fc94b1b95c5d4afd1ab3f9ccb93c1a}{adapter\+\_\+type}} = \mbox{\hyperlink{a01105}{wide\+\_\+string\+\_\+input\+\_\+adapter}}$<$ \mbox{\hyperlink{a01117_afd0218fc0657b5e04ab81ccc9dcda03d}{base\+\_\+adapter\+\_\+type}}, \mbox{\hyperlink{a01117_aff521be1855964b6ec371eed2ca2590f}{char\+\_\+type}} $>$
+\item 
+using \mbox{\hyperlink{a01117_afd0218fc0657b5e04ab81ccc9dcda03d}{base\+\_\+adapter\+\_\+type}} = \mbox{\hyperlink{a01089}{iterator\+\_\+input\+\_\+adapter}}$<$ \mbox{\hyperlink{a01117_a1c42a47cd6cd71146cf2851d76165610}{iterator\+\_\+type}} $>$
+\item 
+using \mbox{\hyperlink{a01117_aff521be1855964b6ec371eed2ca2590f}{char\+\_\+type}} = typename std\+::iterator\+\_\+traits$<$ \mbox{\hyperlink{a01117_a1c42a47cd6cd71146cf2851d76165610}{iterator\+\_\+type}} $>$\+::value\+\_\+type
+\item 
+using \mbox{\hyperlink{a01117_a1c42a47cd6cd71146cf2851d76165610}{iterator\+\_\+type}} = Iterator\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01117_ae9fc94b1b95c5d4afd1ab3f9ccb93c1a}{adapter\+\_\+type}} \mbox{\hyperlink{a01117_aae2354d80ae95214a9da99c495003f6c}{create}} (Iterator\+Type first, Iterator\+Type last)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01117_ae9fc94b1b95c5d4afd1ab3f9ccb93c1a}\label{a01117_ae9fc94b1b95c5d4afd1ab3f9ccb93c1a} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}!adapter\_type@{adapter\_type}}
+\index{adapter\_type@{adapter\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{adapter\_type}{adapter\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}$<$ Iterator\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ $>$\+::adapter\+\_\+type =  \mbox{\hyperlink{a01105}{wide\+\_\+string\+\_\+input\+\_\+adapter}}$<$\mbox{\hyperlink{a01117_afd0218fc0657b5e04ab81ccc9dcda03d}{base\+\_\+adapter\+\_\+type}}, \mbox{\hyperlink{a01117_aff521be1855964b6ec371eed2ca2590f}{char\+\_\+type}}$>$}
+
+\Hypertarget{a01117_afd0218fc0657b5e04ab81ccc9dcda03d}\label{a01117_afd0218fc0657b5e04ab81ccc9dcda03d} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}!base\_adapter\_type@{base\_adapter\_type}}
+\index{base\_adapter\_type@{base\_adapter\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{base\_adapter\_type}{base\_adapter\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}$<$ Iterator\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ $>$\+::base\+\_\+adapter\+\_\+type =  \mbox{\hyperlink{a01089}{iterator\+\_\+input\+\_\+adapter}}$<$\mbox{\hyperlink{a01117_a1c42a47cd6cd71146cf2851d76165610}{iterator\+\_\+type}}$>$}
+
+\Hypertarget{a01117_aff521be1855964b6ec371eed2ca2590f}\label{a01117_aff521be1855964b6ec371eed2ca2590f} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}$<$ Iterator\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ $>$\+::char\+\_\+type =  typename std\+::iterator\+\_\+traits$<$\mbox{\hyperlink{a01117_a1c42a47cd6cd71146cf2851d76165610}{iterator\+\_\+type}}$>$\+::value\+\_\+type}
+
+\Hypertarget{a01117_a1c42a47cd6cd71146cf2851d76165610}\label{a01117_a1c42a47cd6cd71146cf2851d76165610} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}!iterator\_type@{iterator\_type}}
+\index{iterator\_type@{iterator\_type}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_type}{iterator\_type}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+using \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}$<$ Iterator\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ $>$\+::iterator\+\_\+type =  Iterator\+Type}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01117_aae2354d80ae95214a9da99c495003f6c}\label{a01117_aae2354d80ae95214a9da99c495003f6c} 
+\index{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}!create@{create}}
+\index{create@{create}!nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$@{nlohmann::detail::iterator\_input\_adapter\_factory$<$ IteratorType, enable\_if\_t$<$ is\_iterator\_of\_multibyte$<$ IteratorType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$typename Iterator\+Type $>$ \\
+static \mbox{\hyperlink{a01117_ae9fc94b1b95c5d4afd1ab3f9ccb93c1a}{adapter\+\_\+type}} \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01113}{is\+\_\+iterator\+\_\+of\+\_\+multibyte}}$<$ Iterator\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ $>$\+::create (\begin{DoxyParamCaption}\item[{Iterator\+Type}]{first,  }\item[{Iterator\+Type}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/input/\mbox{\hyperlink{a00167}{input\+\_\+adapters.\+hpp}}\end{DoxyCompactItemize}

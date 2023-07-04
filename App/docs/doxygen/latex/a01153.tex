@@ -1,0 +1,701 @@
+\doxysection{nlohmann\+::detail\+::lexer\texorpdfstring{$<$}{<} Basic\+Json\+Type, Input\+Adapter\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01153}{}\label{a01153}\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+
+
+lexical analysis  
+
+
+
+
+{\ttfamily \#include $<$lexer.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+::detail\+::lexer\texorpdfstring{$<$}{<} Basic\+Json\+Type, Input\+Adapter\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for nlohmann\+::detail\+::lexer\texorpdfstring{$<$}{<} Basic\+Json\+Type, Input\+Adapter\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} = typename \mbox{\hyperlink{a01149}{lexer\+\_\+base}}$<$ Basic\+Json\+Type $>$\+::token\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01153_afe2f78f0bad1d08f67dc417278a59f29}{get\+\_\+error\+\_\+message}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return syntax error message \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\+\_\+float\+\_\+t}} \mbox{\hyperlink{a01153_adb1a71f6a3e65ed32c452a318967b61e}{get\+\_\+number\+\_\+float}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return floating-\/point value \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\+\_\+integer\+\_\+t}} \mbox{\hyperlink{a01153_a9535d0c72adbe9fe149853ebad5faee8}{get\+\_\+number\+\_\+integer}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return integer value \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\+\_\+unsigned\+\_\+t}} \mbox{\hyperlink{a01153_abfc85ff04fcb1a5a8d8ea299a4c479e5}{get\+\_\+number\+\_\+unsigned}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return unsigned integer value \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{a01161}{position\+\_\+t}} \mbox{\hyperlink{a01153_a948c80b8bd8a3095b544e4655e1ca37e}{get\+\_\+position}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return position of last read token \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\+\_\+t}} \& \mbox{\hyperlink{a01153_a0d4629316aaa5c05a9b8adb0cd76705e}{get\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em return current string value (implicitly resets the token; useful only once) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01153_ae000b7571480e528dee4b281f63d5b15}{get\+\_\+token\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em return the last read token (for errors only). Will never contain EOF (an arbitrary value that is not a valid char value, often -\/1), because 255 may legitimately occur. May contain NUL, which should be escaped. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_ab75d61c4de687717648c7698850ddb9b}{lexer}} (const \mbox{\hyperlink{a01153}{lexer}} \&)=delete
+\item 
+\mbox{\hyperlink{a01153_a89bbc051da2514a469441a3a30ad63e4}{lexer}} (Input\+Adapter\+Type \&\&adapter, bool ignore\+\_\+comments\+\_\+=false) noexcept
+\item 
+\mbox{\hyperlink{a01153_ae95416c7ae8b36f0dd0ab349eaa754a2}{lexer}} (\mbox{\hyperlink{a01153}{lexer}} \&\&)=default
+\item 
+\mbox{\hyperlink{a01153}{lexer}} \& \mbox{\hyperlink{a01153_a5e448bb3dea993ecb9ee92e71d78ca84}{operator=}} (\mbox{\hyperlink{a01153}{lexer}} \&\&)=default
+\item 
+\mbox{\hyperlink{a01153}{lexer}} \& \mbox{\hyperlink{a01153_aad4020e9be20612197f8d4e049300adc}{operator=}} (\mbox{\hyperlink{a01153}{lexer}} \&)=delete
+\item 
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153_a40320a8fef5f1f03b60c8b2f2f40af4d}{scan}} ()
+\item 
+bool \mbox{\hyperlink{a01153_a7cd7d55de2cd398660bc243c7229caf9}{skip\+\_\+bom}} ()
+\begin{DoxyCompactList}\small\item\em skip the UTF-\/8 byte order mark \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01153_a449f3f3703dfbf8b757e12f002668604}{skip\+\_\+whitespace}} ()
+\item 
+\mbox{\hyperlink{a01153_ac0557f111d82f7729a93ee9b40b31402}{\texorpdfstring{$\sim$}{\string~}lexer}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01149_a3e49458ca35019e4db8a45629f5be192}{token\+\_\+type\+\_\+name}} (const \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} t) noexcept
+\begin{DoxyCompactList}\small\item\em return name of values of type token\+\_\+type (only used for errors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} = typename std\+::char\+\_\+traits$<$ \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}} $>$\+::int\+\_\+type
+\item 
+using \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}} = typename Input\+Adapter\+Type\+::char\+\_\+type
+\item 
+using \mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\+\_\+float\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t
+\item 
+using \mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\+\_\+integer\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t
+\item 
+using \mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\+\_\+unsigned\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t
+\item 
+using \mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\+\_\+t}} = typename Basic\+Json\+Type\+::string\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}{add}} (\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} c)
+\begin{DoxyCompactList}\small\item\em add a character to token\+\_\+buffer \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get}} ()
+\item 
+int \mbox{\hyperlink{a01153_adcf663a9878f58544790f1b6faad2e42}{get\+\_\+codepoint}} ()
+\begin{DoxyCompactList}\small\item\em get codepoint from 4 hex characters following {\ttfamily \textbackslash{}u} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}{next\+\_\+byte\+\_\+in\+\_\+range}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} $>$ ranges)
+\begin{DoxyCompactList}\small\item\em check if the next byte(s) are inside a given range \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01153_a3bda093837339813916d11fb6e396606}{reset}} () noexcept
+\begin{DoxyCompactList}\small\item\em reset token\+\_\+buffer; current character is beginning of token \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01153_afdc68706ad20be93977cd0f97043ea7f}{scan\+\_\+comment}} ()
+\begin{DoxyCompactList}\small\item\em scan a comment \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153_ad89dec0ac0f4e851925a0499e043b18b}{scan\+\_\+literal}} (const \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}} \texorpdfstring{$\ast$}{*}literal\+\_\+text, const std\+::size\+\_\+t length, \mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} return\+\_\+type)
+\item 
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153_aab51a28e32c1957329141baff8eda1c4}{scan\+\_\+number}} ()
+\begin{DoxyCompactList}\small\item\em scan a number literal \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153_ab6352978e03ebcbc3cd618cd17142f26}{scan\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em scan a string literal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01153_ab5811afe1c3efb0b769f7733b8373c6f}{unget}} ()
+\begin{DoxyCompactList}\small\item\em unget current character (read it again on next get) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\+\_\+\+HEDLEY\+\_\+\+PURE}} char \mbox{\hyperlink{a01153_a48f74c761ce663cd0d92bf428606b535}{get\+\_\+decimal\+\_\+point}} () noexcept
+\begin{DoxyCompactList}\small\item\em return the locale-\/dependent decimal point \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a01153_ac8455259d8a06acd2a284a5dd7221aea}{strtof}} (double \&f, const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endptr) noexcept
+\item 
+static void \mbox{\hyperlink{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}{strtof}} (float \&f, const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endptr) noexcept
+\item 
+static void \mbox{\hyperlink{a01153_ae01f87db7819a05d0ed17bcb665442e1}{strtof}} (long double \&f, const char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endptr) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153_a40bd85d91d377ade9ccb910e35776c22}{current}} = std\+::char\+\_\+traits$<$\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}}$>$\+::eof()
+\begin{DoxyCompactList}\small\item\em the current character \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153_a6f2fd5b4b6b153f11fc8f77213350073}{decimal\+\_\+point\+\_\+char}} = \textquotesingle{}.\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the decimal point \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}{error\+\_\+message}} = \"{}\"{}
+\begin{DoxyCompactList}\small\item\em a description of occurred lexer errors \end{DoxyCompactList}\item 
+Input\+Adapter\+Type \mbox{\hyperlink{a01153_a526d001dd91ec55b8032ba98466765c0}{ia}}
+\begin{DoxyCompactList}\small\item\em input adapter \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{a01153_a11528814930243028ac5b8901f4a17d7}{ignore\+\_\+comments}} = false
+\begin{DoxyCompactList}\small\item\em whether comments should be ignored (true) or signaled as errors (false) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}{next\+\_\+unget}} = false
+\begin{DoxyCompactList}\small\item\em whether the next \doxylink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get()} call should just return current \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01161}{position\+\_\+t}} \mbox{\hyperlink{a01153_a8a1bda107ce1622c0cb3174fa12155ea}{position}} \{\}
+\begin{DoxyCompactList}\small\item\em the start position of the current token \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\+\_\+t}} \mbox{\hyperlink{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}{token\+\_\+buffer}} \{\}
+\begin{DoxyCompactList}\small\item\em buffer for variable-\/length tokens (numbers, strings) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}} $>$ \mbox{\hyperlink{a01153_a94aec416b883f742ba7f20bd16adb3c3}{token\+\_\+string}} \{\}
+\begin{DoxyCompactList}\small\item\em raw input token string (for error messages) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\+\_\+float\+\_\+t}} \mbox{\hyperlink{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70}{value\+\_\+float}} = 0
+\item 
+\mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\+\_\+integer\+\_\+t}} \mbox{\hyperlink{a01153_a5134de850fab8f41474a36ae07998088}{value\+\_\+integer}} = 0
+\item 
+\mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\+\_\+unsigned\+\_\+t}} \mbox{\hyperlink{a01153_ae84cbf312215c15d79783380b1592f74}{value\+\_\+unsigned}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Input\+Adapter\+Type$>$\newline
+class nlohmann\+::detail\+::lexer$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$}
+lexical analysis 
+
+This class organizes the lexical analysis during JSON deserialization. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01153_a46612a81a07dbbc6daef870ca4f959e4}\label{a01153_a46612a81a07dbbc6daef870ca4f959e4} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!char\_int\_type@{char\_int\_type}}
+\index{char\_int\_type@{char\_int\_type}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{char\_int\_type}{char\_int\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::char\+\_\+int\+\_\+type =  typename std\+::char\+\_\+traits$<$\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}}$>$\+::int\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_a98c69ad433d971104288baef813b2c68}\label{a01153_a98c69ad433d971104288baef813b2c68} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::char\+\_\+type =  typename Input\+Adapter\+Type\+::char\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_a438a78e53120fd2c3ea049161d4798cb}\label{a01153_a438a78e53120fd2c3ea049161d4798cb} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!number\_float\_t@{number\_float\_t}}
+\index{number\_float\_t@{number\_float\_t}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_float\_t}{number\_float\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::number\+\_\+float\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_a594e61f96c87b4464beeab681111ac0c}\label{a01153_a594e61f96c87b4464beeab681111ac0c} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!number\_integer\_t@{number\_integer\_t}}
+\index{number\_integer\_t@{number\_integer\_t}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_integer\_t}{number\_integer\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::number\+\_\+integer\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}\label{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!number\_unsigned\_t@{number\_unsigned\_t}}
+\index{number\_unsigned\_t@{number\_unsigned\_t}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_unsigned\_t}{number\_unsigned\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::number\+\_\+unsigned\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_af85c01fd669d529ab93a9e1d80b62015}\label{a01153_af85c01fd669d529ab93a9e1d80b62015} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!string\_t@{string\_t}}
+\index{string\_t@{string\_t}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{string\_t}{string\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::string\+\_\+t =  typename Basic\+Json\+Type\+::string\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_a986907dff5ceb4fa06aa8ff301822726}\label{a01153_a986907dff5ceb4fa06aa8ff301822726} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!token\_type@{token\_type}}
+\index{token\_type@{token\_type}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type}{token\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+using \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::token\+\_\+type =  typename \mbox{\hyperlink{a01149}{lexer\+\_\+base}}$<$Basic\+Json\+Type$>$\+::token\+\_\+type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01153_a89bbc051da2514a469441a3a30ad63e4}\label{a01153_a89bbc051da2514a469441a3a30ad63e4} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::lexer (\begin{DoxyParamCaption}\item[{Input\+Adapter\+Type \&\&}]{adapter,  }\item[{bool}]{ignore\+\_\+comments\+\_\+ = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01153_ab75d61c4de687717648c7698850ddb9b}\label{a01153_ab75d61c4de687717648c7698850ddb9b} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::lexer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01153}{lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01153_ae95416c7ae8b36f0dd0ab349eaa754a2}\label{a01153_ae95416c7ae8b36f0dd0ab349eaa754a2} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::lexer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01153}{lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a01153_ac0557f111d82f7729a93ee9b40b31402}\label{a01153_ac0557f111d82f7729a93ee9b40b31402} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!````~lexer@{\texorpdfstring{$\sim$}{\string~}lexer}}
+\index{````~lexer@{\texorpdfstring{$\sim$}{\string~}lexer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}lexer()}{\string~lexer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{a01153}{lexer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6}\label{a01153_a36ffc3c33c3aea18291ead7a30fa7cc6} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!add@{add}}
+\index{add@{add}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+add a character to token\+\_\+buffer 
+
+\Hypertarget{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}\label{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get@{get}}
+\index{get@{get}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01153_adcf663a9878f58544790f1b6faad2e42}\label{a01153_adcf663a9878f58544790f1b6faad2e42} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_codepoint@{get\_codepoint}}
+\index{get\_codepoint@{get\_codepoint}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_codepoint()}{get\_codepoint()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+int \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+codepoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+get codepoint from 4 hex characters following {\ttfamily \textbackslash{}u} 
+
+For input \"{}\textbackslash{}u c1 c2 c3 c4\"{} the codepoint is\+: (c1 \texorpdfstring{$\ast$}{*} 0x1000) + (c2 \texorpdfstring{$\ast$}{*} 0x0100) + (c3 \texorpdfstring{$\ast$}{*} 0x0010) + c4 = (c1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 12) + (c2 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8) + (c3 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4) + (c4 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+
+Furthermore, the possible characters \textquotesingle{}0\textquotesingle{}..\textquotesingle{}9\textquotesingle{}, \textquotesingle{}A\textquotesingle{}..\textquotesingle{}F\textquotesingle{}, and \textquotesingle{}a\textquotesingle{}..\textquotesingle{}f\textquotesingle{} must be converted to the integers 0x0..0x9, 0xA..0xF, 0xA..0xF, resp. The conversion is done by subtracting the offset (0x30, 0x37, and 0x57) between the ASCII value of the character and the desired integer value.
+
+\begin{DoxyReturn}{Returns}
+codepoint (0x0000..0x\+FFFF) or -\/1 in case of an error (e.\+g. EOF or non-\/hex character) 
+\end{DoxyReturn}
+\Hypertarget{a01153_a48f74c761ce663cd0d92bf428606b535}\label{a01153_a48f74c761ce663cd0d92bf428606b535} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_decimal\_point@{get\_decimal\_point}}
+\index{get\_decimal\_point@{get\_decimal\_point}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_decimal\_point()}{get\_decimal\_point()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+static \mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\+\_\+\+HEDLEY\+\_\+\+PURE}} char \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+decimal\+\_\+point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+return the locale-\/dependent decimal point 
+
+\Hypertarget{a01153_afe2f78f0bad1d08f67dc417278a59f29}\label{a01153_afe2f78f0bad1d08f67dc417278a59f29} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_error\_message@{get\_error\_message}}
+\index{get\_error\_message@{get\_error\_message}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_error\_message()}{get\_error\_message()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+error\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return syntax error message 
+
+\Hypertarget{a01153_adb1a71f6a3e65ed32c452a318967b61e}\label{a01153_adb1a71f6a3e65ed32c452a318967b61e} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_number\_float@{get\_number\_float}}
+\index{get\_number\_float@{get\_number\_float}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_float()}{get\_number\_float()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+constexpr \mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\+\_\+float\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+number\+\_\+float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return floating-\/point value 
+
+\Hypertarget{a01153_a9535d0c72adbe9fe149853ebad5faee8}\label{a01153_a9535d0c72adbe9fe149853ebad5faee8} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_number\_integer@{get\_number\_integer}}
+\index{get\_number\_integer@{get\_number\_integer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_integer()}{get\_number\_integer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+constexpr \mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\+\_\+integer\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+number\+\_\+integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return integer value 
+
+\Hypertarget{a01153_abfc85ff04fcb1a5a8d8ea299a4c479e5}\label{a01153_abfc85ff04fcb1a5a8d8ea299a4c479e5} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_number\_unsigned@{get\_number\_unsigned}}
+\index{get\_number\_unsigned@{get\_number\_unsigned}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_unsigned()}{get\_number\_unsigned()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+constexpr \mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\+\_\+unsigned\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+number\+\_\+unsigned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return unsigned integer value 
+
+\Hypertarget{a01153_a948c80b8bd8a3095b544e4655e1ca37e}\label{a01153_a948c80b8bd8a3095b544e4655e1ca37e} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+constexpr \mbox{\hyperlink{a01161}{position\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return position of last read token 
+
+\Hypertarget{a01153_a0d4629316aaa5c05a9b8adb0cd76705e}\label{a01153_a0d4629316aaa5c05a9b8adb0cd76705e} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_string@{get\_string}}
+\index{get\_string@{get\_string}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_string()}{get\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\+\_\+t}} \& \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return current string value (implicitly resets the token; useful only once) 
+
+\Hypertarget{a01153_ae000b7571480e528dee4b281f63d5b15}\label{a01153_ae000b7571480e528dee4b281f63d5b15} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!get\_token\_string@{get\_token\_string}}
+\index{get\_token\_string@{get\_token\_string}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_token\_string()}{get\_token\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+std\+::string \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::get\+\_\+token\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the last read token (for errors only). Will never contain EOF (an arbitrary value that is not a valid char value, often -\/1), because 255 may legitimately occur. May contain NUL, which should be escaped. 
+
+\Hypertarget{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87}\label{a01153_af6fe701b8b3ca5f4a1b58db4658bdf87} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!next\_byte\_in\_range@{next\_byte\_in\_range}}
+\index{next\_byte\_in\_range@{next\_byte\_in\_range}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{next\_byte\_in\_range()}{next\_byte\_in\_range()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::next\+\_\+byte\+\_\+in\+\_\+range (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} $>$}]{ranges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+check if the next byte(s) are inside a given range 
+
+Adds the current byte and, for each passed range, reads a new byte and checks if it is inside the range. If a violation was detected, set up an error message and return false. Otherwise, return true.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ranges} & list of integers; interpreted as list of pairs of inclusive lower and upper bound, respectively\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The passed list {\itshape ranges} must have 2, 4, or 6 elements; that is, 1, 2, or 3 pairs. This precondition is enforced by an assertion.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+true if and only if no range violation was detected 
+\end{DoxyReturn}
+\Hypertarget{a01153_a5e448bb3dea993ecb9ee92e71d78ca84}\label{a01153_a5e448bb3dea993ecb9ee92e71d78ca84} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{lexer}} \& \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01153}{lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a01153_aad4020e9be20612197f8d4e049300adc}\label{a01153_aad4020e9be20612197f8d4e049300adc} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153}{lexer}} \& \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01153}{lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{a01153_a3bda093837339813916d11fb6e396606}\label{a01153_a3bda093837339813916d11fb6e396606} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!reset@{reset}}
+\index{reset@{reset}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+reset token\+\_\+buffer; current character is beginning of token 
+
+\Hypertarget{a01153_a40320a8fef5f1f03b60c8b2f2f40af4d}\label{a01153_a40320a8fef5f1f03b60c8b2f2f40af4d} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!scan@{scan}}
+\index{scan@{scan}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01153_afdc68706ad20be93977cd0f97043ea7f}\label{a01153_afdc68706ad20be93977cd0f97043ea7f} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!scan\_comment@{scan\_comment}}
+\index{scan\_comment@{scan\_comment}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{scan\_comment()}{scan\_comment()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::scan\+\_\+comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+scan a comment 
+
+\begin{DoxyReturn}{Returns}
+whether comment could be scanned successfully 
+\end{DoxyReturn}
+\Hypertarget{a01153_ad89dec0ac0f4e851925a0499e043b18b}\label{a01153_ad89dec0ac0f4e851925a0499e043b18b} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!scan\_literal@{scan\_literal}}
+\index{scan\_literal@{scan\_literal}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{scan\_literal()}{scan\_literal()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::scan\+\_\+literal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}} \texorpdfstring{$\ast$}{*}}]{literal\+\_\+text,  }\item[{const std\+::size\+\_\+t}]{length,  }\item[{\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}}}]{return\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em literal\+\_\+text} & the literal text to expect \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & the length of the passed literal text \\
+\hline
+\mbox{\texttt{ in}}  & {\em return\+\_\+type} & the token type to return on success \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01153_aab51a28e32c1957329141baff8eda1c4}\label{a01153_aab51a28e32c1957329141baff8eda1c4} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!scan\_number@{scan\_number}}
+\index{scan\_number@{scan\_number}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{scan\_number()}{scan\_number()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::scan\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+scan a number literal 
+
+This function scans a string according to Sect. 6 of RFC 8259.
+
+The function is realized with a deterministic finite state machine derived from the grammar described in RFC 8259. Starting in state \"{}init\"{}, the input is read and used to determined the next state. Only state \"{}done\"{} accepts the number. State \"{}error\"{} is a trap state to model errors. In the table below, \"{}anything\"{} means any character but the ones listed before.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{8}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ state   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 0   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1-\/9   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e E   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ +   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ .   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ anything    }\\\cline{1-8}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ state   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 0   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1-\/9   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e E   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ +   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ .   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ anything    }\\\cline{1-8}
+\endhead
+init   &zero   &any1   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &minus   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}    \\\cline{1-8}
+minus   &zero   &any1   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}    \\\cline{1-8}
+zero   &done   &done   &exponent   &done   &done   &decimal1   &done    \\\cline{1-8}
+any1   &any1   &any1   &exponent   &done   &done   &decimal1   &done    \\\cline{1-8}
+decimal1   &decimal2   &decimal2   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}    \\\cline{1-8}
+decimal2   &decimal2   &decimal2   &exponent   &done   &done   &done   &done    \\\cline{1-8}
+exponent   &any2   &any2   &\mbox{[}error\mbox{]}   &sign   &sign   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}    \\\cline{1-8}
+sign   &any2   &any2   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}   &\mbox{[}error\mbox{]}    \\\cline{1-8}
+any2   &any2   &any2   &done   &done   &done   &done   &done   \\\cline{1-8}
+\end{longtabu}
+
+
+The state machine is realized with one label per state (prefixed with \"{}scan\+\_\+number\+\_\+\"{}) and {\ttfamily goto} statements between them. The state machine contains cycles, but any cycle can be left when EOF is read. Therefore, the function is guaranteed to terminate.
+
+During scanning, the read bytes are stored in token\+\_\+buffer. This string is then converted to a signed integer, an unsigned integer, or a floating-\/point number.
+
+\begin{DoxyReturn}{Returns}
+token\+\_\+type\+::value\+\_\+unsigned, token\+\_\+type\+::value\+\_\+integer, or token\+\_\+type\+::value\+\_\+float if number could be successfully scanned, token\+\_\+type\+::parse\+\_\+error otherwise
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The scanner is independent of the current locale. Internally, the locale\textquotesingle{}s decimal point is used instead of {\ttfamily .} to work with the locale-\/dependent converters. 
+\end{DoxyNote}
+\Hypertarget{a01153_ab6352978e03ebcbc3cd618cd17142f26}\label{a01153_ab6352978e03ebcbc3cd618cd17142f26} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!scan\_string@{scan\_string}}
+\index{scan\_string@{scan\_string}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{scan\_string()}{scan\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a986907dff5ceb4fa06aa8ff301822726}{token\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::scan\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+scan a string literal 
+
+This function scans a string according to Sect. 7 of RFC 8259. While scanning, bytes are escaped and copied into buffer token\+\_\+buffer. Then the function returns successfully, token\+\_\+buffer is {\itshape not} null-\/terminated (as it may contain \textbackslash{}0 bytes), and token\+\_\+buffer.\+size() is the number of bytes in the string.
+
+\begin{DoxyReturn}{Returns}
+token\+\_\+type\+::value\+\_\+string if string could be successfully scanned, token\+\_\+type\+::parse\+\_\+error otherwise
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In case of errors, variable error\+\_\+message contains a textual description. 
+\end{DoxyNote}
+\Hypertarget{a01153_a7cd7d55de2cd398660bc243c7229caf9}\label{a01153_a7cd7d55de2cd398660bc243c7229caf9} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!skip\_bom@{skip\_bom}}
+\index{skip\_bom@{skip\_bom}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{skip\_bom()}{skip\_bom()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::skip\+\_\+bom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+skip the UTF-\/8 byte order mark 
+
+\begin{DoxyReturn}{Returns}
+true iff there is no BOM or the correct BOM has been skipped 
+\end{DoxyReturn}
+\Hypertarget{a01153_a449f3f3703dfbf8b757e12f002668604}\label{a01153_a449f3f3703dfbf8b757e12f002668604} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!skip\_whitespace@{skip\_whitespace}}
+\index{skip\_whitespace@{skip\_whitespace}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{skip\_whitespace()}{skip\_whitespace()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::skip\+\_\+whitespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a01153_ac8455259d8a06acd2a284a5dd7221aea}\label{a01153_ac8455259d8a06acd2a284a5dd7221aea} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!strtof@{strtof}}
+\index{strtof@{strtof}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{strtof()}{strtof()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+static void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::strtof (\begin{DoxyParamCaption}\item[{double \&}]{f,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{endptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8}\label{a01153_a6d3dffb7bb247a7fd7276d49d3a00dc8} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!strtof@{strtof}}
+\index{strtof@{strtof}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{strtof()}{strtof()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+static void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::strtof (\begin{DoxyParamCaption}\item[{float \&}]{f,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{endptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01153_ae01f87db7819a05d0ed17bcb665442e1}\label{a01153_ae01f87db7819a05d0ed17bcb665442e1} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!strtof@{strtof}}
+\index{strtof@{strtof}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{strtof()}{strtof()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+static void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::strtof (\begin{DoxyParamCaption}\item[{long double \&}]{f,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{endptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01149_a3e49458ca35019e4db8a45629f5be192}\label{a01149_a3e49458ca35019e4db8a45629f5be192} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!token\_type\_name@{token\_type\_name}}
+\index{token\_type\_name@{token\_type\_name}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type\_name()}{token\_type\_name()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01149}{nlohmann\+::detail\+::lexer\+\_\+base}}$<$ Basic\+Json\+Type $>$\+::token\+\_\+type\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01149_aa3538cce439a2de6c7893e627b38c454}{token\+\_\+type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}
+
+
+
+return name of values of type token\+\_\+type (only used for errors) 
+
+\Hypertarget{a01153_ab5811afe1c3efb0b769f7733b8373c6f}\label{a01153_ab5811afe1c3efb0b769f7733b8373c6f} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!unget@{unget}}
+\index{unget@{unget}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{unget()}{unget()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+void \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::unget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+unget current character (read it again on next get) 
+
+We implement unget by setting variable next\+\_\+unget to true. The input is not changed -\/ we just simulate ungetting by modifying chars\+\_\+read\+\_\+total, chars\+\_\+read\+\_\+current\+\_\+line, and token\+\_\+string. The next call to \doxylink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get()} will behave as if the unget character is read again. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01153_a40bd85d91d377ade9ccb910e35776c22}\label{a01153_a40bd85d91d377ade9ccb910e35776c22} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!current@{current}}
+\index{current@{current}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::current = std\+::char\+\_\+traits$<$\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}}$>$\+::eof()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the current character 
+
+\Hypertarget{a01153_a6f2fd5b4b6b153f11fc8f77213350073}\label{a01153_a6f2fd5b4b6b153f11fc8f77213350073} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!decimal\_point\_char@{decimal\_point\_char}}
+\index{decimal\_point\_char@{decimal\_point\_char}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{decimal\_point\_char}{decimal\_point\_char}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+const \mbox{\hyperlink{a01153_a46612a81a07dbbc6daef870ca4f959e4}{char\+\_\+int\+\_\+type}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::decimal\+\_\+point\+\_\+char = \textquotesingle{}.\textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the decimal point 
+
+\Hypertarget{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc}\label{a01153_a84cbcd8c897c98c2ce04d29a29bf84cc} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!error\_message@{error\_message}}
+\index{error\_message@{error\_message}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{error\_message}{error\_message}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+const char\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::error\+\_\+message = \"{}\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a description of occurred lexer errors 
+
+\Hypertarget{a01153_a526d001dd91ec55b8032ba98466765c0}\label{a01153_a526d001dd91ec55b8032ba98466765c0} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!ia@{ia}}
+\index{ia@{ia}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{ia}{ia}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+Input\+Adapter\+Type \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::ia\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+input adapter 
+
+\Hypertarget{a01153_a11528814930243028ac5b8901f4a17d7}\label{a01153_a11528814930243028ac5b8901f4a17d7} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!ignore\_comments@{ignore\_comments}}
+\index{ignore\_comments@{ignore\_comments}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{ignore\_comments}{ignore\_comments}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+const bool \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::ignore\+\_\+comments = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+whether comments should be ignored (true) or signaled as errors (false) 
+
+\Hypertarget{a01153_a40b108a0e45a7253f6ad85fbdaa6a262}\label{a01153_a40b108a0e45a7253f6ad85fbdaa6a262} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!next\_unget@{next\_unget}}
+\index{next\_unget@{next\_unget}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{next\_unget}{next\_unget}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+bool \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::next\+\_\+unget = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+whether the next \doxylink{a01153_a9cd3e4cf04d19be521beb8868c1a2fc9}{get()} call should just return current 
+
+\Hypertarget{a01153_a8a1bda107ce1622c0cb3174fa12155ea}\label{a01153_a8a1bda107ce1622c0cb3174fa12155ea} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!position@{position}}
+\index{position@{position}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01161}{position\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::position \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the start position of the current token 
+
+\Hypertarget{a01153_ac4eaf39567bd5f0750e5d7e913fb474d}\label{a01153_ac4eaf39567bd5f0750e5d7e913fb474d} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!token\_buffer@{token\_buffer}}
+\index{token\_buffer@{token\_buffer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_buffer}{token\_buffer}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_af85c01fd669d529ab93a9e1d80b62015}{string\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::token\+\_\+buffer \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+buffer for variable-\/length tokens (numbers, strings) 
+
+\Hypertarget{a01153_a94aec416b883f742ba7f20bd16adb3c3}\label{a01153_a94aec416b883f742ba7f20bd16adb3c3} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!token\_string@{token\_string}}
+\index{token\_string@{token\_string}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_string}{token\_string}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+std\+::vector$<$\mbox{\hyperlink{a01153_a98c69ad433d971104288baef813b2c68}{char\+\_\+type}}$>$ \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::token\+\_\+string \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+raw input token string (for error messages) 
+
+\Hypertarget{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70}\label{a01153_a0d74bb18ba7d32ea7e7c9d9a7d6c2e70} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!value\_float@{value\_float}}
+\index{value\_float@{value\_float}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{value\_float}{value\_float}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a438a78e53120fd2c3ea049161d4798cb}{number\+\_\+float\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::value\+\_\+float = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_a5134de850fab8f41474a36ae07998088}\label{a01153_a5134de850fab8f41474a36ae07998088} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!value\_integer@{value\_integer}}
+\index{value\_integer@{value\_integer}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{value\_integer}{value\_integer}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_a594e61f96c87b4464beeab681111ac0c}{number\+\_\+integer\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::value\+\_\+integer = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01153_ae84cbf312215c15d79783380b1592f74}\label{a01153_ae84cbf312215c15d79783380b1592f74} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}!value\_unsigned@{value\_unsigned}}
+\index{value\_unsigned@{value\_unsigned}!nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$@{nlohmann::detail::lexer$<$ BasicJsonType, InputAdapterType $>$}}
+\doxysubsubsection{\texorpdfstring{value\_unsigned}{value\_unsigned}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type $>$ \\
+\mbox{\hyperlink{a01153_af6b19ef34b2e9ee2321cfaf62ee066cb}{number\+\_\+unsigned\+\_\+t}} \mbox{\hyperlink{a01153}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type $>$\+::value\+\_\+unsigned = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/input/\mbox{\hyperlink{a00173}{lexer.\+hpp}}\end{DoxyCompactItemize}

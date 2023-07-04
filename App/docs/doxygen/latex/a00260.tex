@@ -1,0 +1,1018 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/thirdparty/hedley/hedley.hpp File Reference}
+\hypertarget{a00260}{}\label{a00260}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/thirdparty/hedley/hedley.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/thirdparty/hedley/hedley.hpp}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00260_aa8811aa2a21030baad33c103cb04d322}{JSON\+\_\+\+HEDLEY\+\_\+\+ALWAYS\+\_\+\+INLINE}}~\mbox{\hyperlink{a00260_af943d68414c7fe0fdfab7e772fa628a8}{JSON\+\_\+\+HEDLEY\+\_\+\+INLINE}}
+\item 
+\#define \mbox{\hyperlink{a00260_aec1d1b1e286d1610ff11dbb29bf3e8cf}{JSON\+\_\+\+HEDLEY\+\_\+\+ARM\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a81c7e3b5b6811abfd89146ad33a93d8f}{JSON\+\_\+\+HEDLEY\+\_\+\+ARRAY\+\_\+\+PARAM}}(name)
+\item 
+\#define \mbox{\hyperlink{a00260_a70d7244eea52c8bb5716545e54050bb5}{JSON\+\_\+\+HEDLEY\+\_\+\+ASSUME}}(expr)~\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(void, expr)
+\item 
+\#define \mbox{\hyperlink{a00260_ad43f9ae10083194afdfe88516ad876e7}{JSON\+\_\+\+HEDLEY\+\_\+\+BEGIN\+\_\+\+C\+\_\+\+DECLS}}
+\item 
+\#define \mbox{\hyperlink{a00260_a378be9b66feb11153979c282c669b12e}{JSON\+\_\+\+HEDLEY\+\_\+\+C\+\_\+\+DECL}}
+\item 
+\#define \mbox{\hyperlink{a00260_a940783ca9410ed9dbe4f7abf44a29394}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute)~\mbox{\hyperlink{a00260_af41dc3300eaa6e5e6a976730d160a268}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute)
+\item 
+\#define \mbox{\hyperlink{a00260_a4500e349152e53a3a6f0ab95c6a4a840}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin)~\mbox{\hyperlink{a00260_acf8ab10ce06ffe6f54840b555b15121c}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin)
+\item 
+\#define \mbox{\hyperlink{a00260_a3ce7b30717e453922113c4f62e645e13}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute)~\mbox{\hyperlink{a00260_a2c4e6a04293aaf333a31698dea661b3b}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute)
+\item 
+\#define \mbox{\hyperlink{a00260_afb4bf1280cd8738877e1f0f681a5d96d}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute)~\mbox{\hyperlink{a00260_ac256365345e803d24cbd9651d3cb0274}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute)
+\item 
+\#define \mbox{\hyperlink{a00260_a8fcc2d27e828fbd8d5ef88ba341e56c0}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension)~\mbox{\hyperlink{a00260_a320bfe79028a67cd5873f917bc5418dd}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension)
+\item 
+\#define \mbox{\hyperlink{a00260_a096be2083232d3a3ea9f3aeb25885f60}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+FEATURE}}(feature)~\mbox{\hyperlink{a00260_a752eb648bbfc7bcd8a4624c43f520412}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+FEATURE}}(feature)
+\item 
+\#define \mbox{\hyperlink{a00260_a6125ffd318b2d6698faad4175a6e7c56}{JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+WARNING}}(warning)~\mbox{\hyperlink{a00260_a472922971d1cd7308a4402042bdafe34}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+WARNING}}(warning)
+\item 
+\#define \mbox{\hyperlink{a00260_ad8f9aee7d709155d6745cb3f77c6ff0c}{JSON\+\_\+\+HEDLEY\+\_\+\+COMPCERT\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a4ec16c2642fdc5876d8dbeab3445b313}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT}}(a,  b)~\mbox{\hyperlink{a00260_aee52531ff30270c04958309efa66a5da}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT\+\_\+\+EX}}(a,b)
+\item 
+\#define \mbox{\hyperlink{a00260_ad10e2ad45ace3771e4d2a3807d33f64f}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3}}(a,  b,  c)~\mbox{\hyperlink{a00260_a29b325cc7fac302f2488259237d30953}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3\+\_\+\+EX}}(a,b,c)
+\item 
+\#define \mbox{\hyperlink{a00260_a29b325cc7fac302f2488259237d30953}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3\+\_\+\+EX}}(a,  b,  c)~a\#\#b\#\#c
+\item 
+\#define \mbox{\hyperlink{a00260_aee52531ff30270c04958309efa66a5da}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT\+\_\+\+EX}}(a,  b)~a\#\#b
+\item 
+\#define \mbox{\hyperlink{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}}~\mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\+\_\+\+HEDLEY\+\_\+\+PURE}}
+\item 
+\#define \mbox{\hyperlink{a00260_ab849ba88a6f410da5a46a86f8565b381}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST\+\_\+\+CAST}}(T,  expr)~((T) (expr))
+\item 
+\#define \mbox{\hyperlink{a00260_ac317a48664e4099c22d33d8132bef97e}{JSON\+\_\+\+HEDLEY\+\_\+\+CONSTEXPR}}
+\item 
+\#define \mbox{\hyperlink{a00260_a8c790866b16f58cbe0b3286a7a6238c3}{JSON\+\_\+\+HEDLEY\+\_\+\+CPP\+\_\+\+CAST}}(T,  expr)~(expr)
+\item 
+\#define \mbox{\hyperlink{a00260_a5d9ed879aa65e4db12a81ee95529c3e4}{JSON\+\_\+\+HEDLEY\+\_\+\+CRAY\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a0f2cbf281fa983a844b9279c697b7a0c}{JSON\+\_\+\+HEDLEY\+\_\+\+DEPRECATED}}(since)
+\item 
+\#define \mbox{\hyperlink{a00260_af0469b867b0ec3a1c4b229ce9d087620}{JSON\+\_\+\+HEDLEY\+\_\+\+DEPRECATED\+\_\+\+FOR}}(since,  replacement)
+\item 
+\#define \mbox{\hyperlink{a00260_a8d412aa5d441b533afa439a89aa4a754}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+CAST\+\_\+\+QUAL}}
+\item 
+\#define \mbox{\hyperlink{a00260_a543a78d9931a92663e3b3fc552a390a4}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+CPP98\+\_\+\+COMPAT\+\_\+\+WRAP\+\_\+}}(x)~x
+\item 
+\#define \mbox{\hyperlink{a00260_afe5855242129fa5d1adf55227669a337}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+DEPRECATED}}
+\item 
+\#define \mbox{\hyperlink{a00260_ab6e5abd7e400c9a725278206ece33e16}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNKNOWN\+\_\+\+CPP\+\_\+\+ATTRIBUTES}}
+\item 
+\#define \mbox{\hyperlink{a00260_ab67745ae0065d536d8e67969db68d564}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNKNOWN\+\_\+\+PRAGMAS}}
+\item 
+\#define \mbox{\hyperlink{a00260_a5306714f979551cab30546a0e0e7e9f9}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNUSED\+\_\+\+FUNCTION}}
+\item 
+\#define \mbox{\hyperlink{a00260_aeedd50a52e1ea565ceab84bb596ec07f}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+POP}}
+\item 
+\#define \mbox{\hyperlink{a00260_a1850f57fcda72becebc7033a2e10e77b}{JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+PUSH}}
+\item 
+\#define \mbox{\hyperlink{a00260_af21c5dbd9df3b2e245ae547e2d940adc}{JSON\+\_\+\+HEDLEY\+\_\+\+DMC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_ae7a983344e78f37697c2688f1885f9e1}{JSON\+\_\+\+HEDLEY\+\_\+\+EMPTY\+\_\+\+BASES}}
+\item 
+\#define \mbox{\hyperlink{a00260_a472a0656b154bb30cf6e8fb8a31b9209}{JSON\+\_\+\+HEDLEY\+\_\+\+EMSCRIPTEN\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_aca2fc4b765ac5739d680153895b673fb}{JSON\+\_\+\+HEDLEY\+\_\+\+END\+\_\+\+C\+\_\+\+DECLS}}
+\item 
+\#define \mbox{\hyperlink{a00260_a7056c44a5787e78720407fc97aefbd0f}{JSON\+\_\+\+HEDLEY\+\_\+\+FALL\+\_\+\+THROUGH}}
+\item 
+\#define \mbox{\hyperlink{a00260_a4bdece2f00bf96988662186d7f23ca0f}{JSON\+\_\+\+HEDLEY\+\_\+\+FLAGS}}
+\item 
+\#define \mbox{\hyperlink{a00260_a701eddd8e14dbe617a9ca81b095e88fb}{JSON\+\_\+\+HEDLEY\+\_\+\+FLAGS\+\_\+\+CAST}}(T,  expr)~\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(T, expr)
+\item 
+\#define \mbox{\hyperlink{a00260_af33c67f65300eb91494f25bf583f5bd7}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_aa210655ec7cc8387bef8ade74c3af647}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_aaa3c748298e83bf6a67b583b83233c11}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a164e098f308804c3bada63613ad75dab}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_af488159969a8b7154820cffe04bb4917}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_ae9f353e2ea047111e419855144b06ab7}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+FEATURE}}(feature,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_ab45544391bc41507efde58d48331dfc2}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+WARNING}}(warning,  major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_af3737b675cbb70bcdfdaca78c2bc7d4a}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+NOT\+\_\+\+CLANG\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_afdf01f41465021815bb6fc4d8c1839fd}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a92764b738f44272e1b18c3ef1403c894}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a938dadb6cadaaaccf72990d09be5dc0a}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a005d6f0dbab6f7152e43fb85fc4f4990}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a2417cc05952936574c0a6ed96d73d8e2}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_ad5dab327c783036962c7d921a4144676}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+FEATURE}}(feature,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a8afa30449fac8b5069e62f26421d4148}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+WARNING}}(warning,  major,  minor,  patch)~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)
+\item 
+\#define \mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_af41dc3300eaa6e5e6a976730d160a268}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_acf8ab10ce06ffe6f54840b555b15121c}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a2c4e6a04293aaf333a31698dea661b3b}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_ad5b94be3095ea0549561c1bc951c5998}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE\+\_\+\+NS}}(ns,  attribute)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_ac256365345e803d24cbd9651d3cb0274}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a320bfe79028a67cd5873f917bc5418dd}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a752eb648bbfc7bcd8a4624c43f520412}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+FEATURE}}(feature)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a472922971d1cd7308a4402042bdafe34}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+WARNING}}(warning)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a8788394855e9b5a1cc32327db5a613cb}{JSON\+\_\+\+HEDLEY\+\_\+\+IAR\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a66ec7d7c320280d6e75cb3634048cd49}{JSON\+\_\+\+HEDLEY\+\_\+\+IBM\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a29c62e19dfa10fb48bf3aa877c4af21c}{JSON\+\_\+\+HEDLEY\+\_\+\+IMPORT}}~extern
+\item 
+\#define \mbox{\hyperlink{a00260_af943d68414c7fe0fdfab7e772fa628a8}{JSON\+\_\+\+HEDLEY\+\_\+\+INLINE}}
+\item 
+\#define \mbox{\hyperlink{a00260_a598b8238661e5ae448d5680ae35c4d2f}{JSON\+\_\+\+HEDLEY\+\_\+\+INTEL\+\_\+\+CL\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_ae51b1abb6876168df25d3f36fa335c94}{JSON\+\_\+\+HEDLEY\+\_\+\+INTEL\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a37617841d58aa4d88d0efee4db57ee18}{JSON\+\_\+\+HEDLEY\+\_\+\+IS\+\_\+\+CONSTANT}}(expr)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}{JSON\+\_\+\+HEDLEY\+\_\+\+LIKELY}}(expr)~(!!(expr))
+\item 
+\#define \mbox{\hyperlink{a00260_a521367b4e81907450a7ea0bf28028b01}{JSON\+\_\+\+HEDLEY\+\_\+\+MALLOC}}
+\item 
+\#define \mbox{\hyperlink{a00260_a6b0ee37cd596951acd0a951a68e0ac21}{JSON\+\_\+\+HEDLEY\+\_\+\+MCST\+\_\+\+LCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a8419c2b65d28686932087c587eb19157}{JSON\+\_\+\+HEDLEY\+\_\+\+MESSAGE}}(msg)
+\item 
+\#define \mbox{\hyperlink{a00260_ac3dc0b5b04f307fc875f9470c0cc841f}{JSON\+\_\+\+HEDLEY\+\_\+\+MSVC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_aa400dd54d50fd20d7e931e2f08ee6374}{JSON\+\_\+\+HEDLEY\+\_\+\+NEVER\+\_\+\+INLINE}}
+\item 
+\#define \mbox{\hyperlink{a00260_a9a8fe3009f53d14ac4b48600a2606fc1}{JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+ESCAPE}}
+\item 
+\#define \mbox{\hyperlink{a00260_a82747e7a15c5cecf1223dbc4eb7a1c6b}{JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+RETURN}}
+\item 
+\#define \mbox{\hyperlink{a00260_a99bb53bea18285e3d2ae4385c6c75434}{JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+THROW}}
+\item 
+\#define \mbox{\hyperlink{a00260_a5338981b5ad9027c9e54b1c5597f4344}{JSON\+\_\+\+HEDLEY\+\_\+\+NON\+\_\+\+NULL}}(...)
+\item 
+\#define \mbox{\hyperlink{a00260_a06449cfb74f25f075a8ea334542f1c65}{JSON\+\_\+\+HEDLEY\+\_\+\+NULL}}~((void\texorpdfstring{$\ast$}{*}) 0)
+\item 
+\#define \mbox{\hyperlink{a00260_a21937c8e7c79a1bef6695691c733e29f}{JSON\+\_\+\+HEDLEY\+\_\+\+PELLES\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a009a77cb8a9fd33aafff173bb945128d}{JSON\+\_\+\+HEDLEY\+\_\+\+PGI\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_aeb6e382f24fc5453621ae258b72e8775}{JSON\+\_\+\+HEDLEY\+\_\+\+PRAGMA}}(value)
+\item 
+\#define \mbox{\hyperlink{a00260_a34846d0797b38c1971baee08736dae69}{JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT}}(expr,  expected,  probability)~(\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(void, expected), (expr))
+\item 
+\#define \mbox{\hyperlink{a00260_aec5597506417346f8f1c4d1f08c7719f}{JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT\+\_\+\+FALSE}}(expr,  probability)~(!!(expr))
+\item 
+\#define \mbox{\hyperlink{a00260_adb569cea2c5a17c33734f27e8fef2473}{JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT\+\_\+\+TRUE}}(expr,  probability)~(!!(expr))
+\item 
+\#define \mbox{\hyperlink{a00260_a2e17831d69746d3ee8ad4796e96975a2}{JSON\+\_\+\+HEDLEY\+\_\+\+PRINTF\+\_\+\+FORMAT}}(string\+\_\+idx,  first\+\_\+to\+\_\+check)
+\item 
+\#define \mbox{\hyperlink{a00260_a034c879888858092ec101e8d02be67c2}{JSON\+\_\+\+HEDLEY\+\_\+\+PRIVATE}}
+\item 
+\#define \mbox{\hyperlink{a00260_aa1588f4ea4e7819b5b6e66f07865737f}{JSON\+\_\+\+HEDLEY\+\_\+\+PUBLIC}}
+\item 
+\#define \mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\+\_\+\+HEDLEY\+\_\+\+PURE}}
+\item 
+\#define \mbox{\hyperlink{a00260_a86dd11af75e3f25f5be26cf3c779ba79}{JSON\+\_\+\+HEDLEY\+\_\+\+REINTERPRET\+\_\+\+CAST}}(T,  expr)~((T) (expr))
+\item 
+\#define \mbox{\hyperlink{a00260_acbc72fa9390d5e8b7592a81384dfabf3}{JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00260_a1136ab0d872379bb18d0839893bede67}{JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE\+\_\+\+CONSTEXPR}}(expr)~(expr)
+\item 
+\#define \mbox{\hyperlink{a00260_a7106fb230747163b5b16121eb6a42b23}{JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE\+\_\+\+MSG}}(expr,  msg)
+\item 
+\#define \mbox{\hyperlink{a00260_ad4979e5bc2f252ff6e367fc254ab4e85}{JSON\+\_\+\+HEDLEY\+\_\+\+RESTRICT}}
+\item 
+\#define \mbox{\hyperlink{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}}
+\item 
+\#define \mbox{\hyperlink{a00260_afe58497d56cda5e4cbf2d33be1bdd91e}{JSON\+\_\+\+HEDLEY\+\_\+\+SENTINEL}}(position)
+\item 
+\#define \mbox{\hyperlink{a00260_a04269935c66fe5a9b6c33fa36037d215}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+ASSERT}}(expr,  message)
+\item 
+\#define \mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(T,  expr)~((T) (expr))
+\item 
+\#define \mbox{\hyperlink{a00260_a9b2aefadecfe77306599a08b0d8147ca}{JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY}}(x)~\mbox{\hyperlink{a00260_a8b50e69690eed3a7e11797b1122b4302}{JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY\+\_\+\+EX}}(x)
+\item 
+\#define \mbox{\hyperlink{a00260_a8b50e69690eed3a7e11797b1122b4302}{JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY\+\_\+\+EX}}(x)~\#x
+\item 
+\#define \mbox{\hyperlink{a00260_a4b6d318de76d6d23850ec1a588bdeffa}{JSON\+\_\+\+HEDLEY\+\_\+\+SUNPRO\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_abbff24b90b5e9f8b586ee0b334baa636}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+ARMCL\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a1ff3757a45a2cb0c54f78722fd7dc47c}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL2000\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a0c4b607b1dda665174dcd4c6cfe6ce95}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL430\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a138095ac760d2964c84f562b23332101}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL6\+X\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a6198db3ff6fc72b1fa798229fd025229}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL7\+X\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_aab50c0bc1673dde3c1cf4e3b131e97ad}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CLPRU\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a3d620ef5f95be933b3d8e24d4fc5b6d5}{JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a38192f48e8c6ee0018a988d54e97cacf}{JSON\+\_\+\+HEDLEY\+\_\+\+TINYC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,  minor,  patch)~(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a681fd0533fbc24394f3322b6f4a60c4f}{JSON\+\_\+\+HEDLEY\+\_\+\+UNAVAILABLE}}(available\+\_\+since)
+\item 
+\#define \mbox{\hyperlink{a00260_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\+\_\+\+HEDLEY\+\_\+\+UNLIKELY}}(expr)~(!!(expr))
+\item 
+\#define \mbox{\hyperlink{a00260_a26967eb7395562701e450cec045dda15}{JSON\+\_\+\+HEDLEY\+\_\+\+UNPREDICTABLE}}(expr)~\mbox{\hyperlink{a00260_a34846d0797b38c1971baee08736dae69}{JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT}}(expr, 1, 0.\+5)
+\item 
+\#define \mbox{\hyperlink{a00260_a2d5705bd7bd14855c3ef5b98305c5fb4}{JSON\+\_\+\+HEDLEY\+\_\+\+UNREACHABLE}}()~\mbox{\hyperlink{a00260_a70d7244eea52c8bb5716545e54050bb5}{JSON\+\_\+\+HEDLEY\+\_\+\+ASSUME}}(0)
+\item 
+\#define \mbox{\hyperlink{a00260_a06401b258ef03263f2aec48029dc8b03}{JSON\+\_\+\+HEDLEY\+\_\+\+UNREACHABLE\+\_\+\+RETURN}}(value)~return (value)
+\item 
+\#define \mbox{\hyperlink{a00260_ae4654024695783bdf7cbd900f0e0634a}{JSON\+\_\+\+HEDLEY\+\_\+\+VERSION}}~15
+\item 
+\#define \mbox{\hyperlink{a00260_a50f81c80525d6fbce743d5d28b53ff73}{JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+MAJOR}}(version)~((version) / 1000000)
+\item 
+\#define \mbox{\hyperlink{a00260_ae55f01749c4cc564b20b0f2650f10519}{JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+MINOR}}(version)~(((version) \% 1000000) / 1000)
+\item 
+\#define \mbox{\hyperlink{a00260_a2d04cc47c899e9addd019e0e7d1ebdbb}{JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+REVISION}}(version)~((version) \% 1000)
+\item 
+\#define \mbox{\hyperlink{a00260_aa1da535c59b21f70e5967b66473543f0}{JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+ENCODE}}(major,  minor,  revision)~(((major) \texorpdfstring{$\ast$}{*} 1000000) + ((minor) \texorpdfstring{$\ast$}{*} 1000) + (revision))
+\item 
+\#define \mbox{\hyperlink{a00260_a28d7e3b2d26bd5b8a3806da3db7dea03}{JSON\+\_\+\+HEDLEY\+\_\+\+WARN\+\_\+\+UNUSED\+\_\+\+RESULT}}
+\item 
+\#define \mbox{\hyperlink{a00260_adfb98ffe9adf238a5ba1670738c0f387}{JSON\+\_\+\+HEDLEY\+\_\+\+WARN\+\_\+\+UNUSED\+\_\+\+RESULT\+\_\+\+MSG}}(msg)
+\item 
+\#define \mbox{\hyperlink{a00260_a5563e5b0fbc2a9b525830081404d9208}{JSON\+\_\+\+HEDLEY\+\_\+\+WARNING}}(msg)~\mbox{\hyperlink{a00260_a8419c2b65d28686932087c587eb19157}{JSON\+\_\+\+HEDLEY\+\_\+\+MESSAGE}}(msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00260_aa8811aa2a21030baad33c103cb04d322}\label{a00260_aa8811aa2a21030baad33c103cb04d322} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_ALWAYS\_INLINE@{JSON\_HEDLEY\_ALWAYS\_INLINE}}
+\index{JSON\_HEDLEY\_ALWAYS\_INLINE@{JSON\_HEDLEY\_ALWAYS\_INLINE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_ALWAYS\_INLINE}{JSON\_HEDLEY\_ALWAYS\_INLINE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+ALWAYS\+\_\+\+INLINE~\mbox{\hyperlink{a00260_af943d68414c7fe0fdfab7e772fa628a8}{JSON\+\_\+\+HEDLEY\+\_\+\+INLINE}}}
+
+\Hypertarget{a00260_aec1d1b1e286d1610ff11dbb29bf3e8cf}\label{a00260_aec1d1b1e286d1610ff11dbb29bf3e8cf} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_ARM\_VERSION\_CHECK@{JSON\_HEDLEY\_ARM\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_ARM\_VERSION\_CHECK@{JSON\_HEDLEY\_ARM\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_ARM\_VERSION\_CHECK}{JSON\_HEDLEY\_ARM\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+ARM\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a81c7e3b5b6811abfd89146ad33a93d8f}\label{a00260_a81c7e3b5b6811abfd89146ad33a93d8f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_ARRAY\_PARAM@{JSON\_HEDLEY\_ARRAY\_PARAM}}
+\index{JSON\_HEDLEY\_ARRAY\_PARAM@{JSON\_HEDLEY\_ARRAY\_PARAM}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_ARRAY\_PARAM}{JSON\_HEDLEY\_ARRAY\_PARAM}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+ARRAY\+\_\+\+PARAM(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a70d7244eea52c8bb5716545e54050bb5}\label{a00260_a70d7244eea52c8bb5716545e54050bb5} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_ASSUME@{JSON\_HEDLEY\_ASSUME}}
+\index{JSON\_HEDLEY\_ASSUME@{JSON\_HEDLEY\_ASSUME}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_ASSUME}{JSON\_HEDLEY\_ASSUME}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+ASSUME(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(void, expr)}
+
+\Hypertarget{a00260_ad43f9ae10083194afdfe88516ad876e7}\label{a00260_ad43f9ae10083194afdfe88516ad876e7} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_BEGIN\_C\_DECLS@{JSON\_HEDLEY\_BEGIN\_C\_DECLS}}
+\index{JSON\_HEDLEY\_BEGIN\_C\_DECLS@{JSON\_HEDLEY\_BEGIN\_C\_DECLS}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_BEGIN\_C\_DECLS}{JSON\_HEDLEY\_BEGIN\_C\_DECLS}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+BEGIN\+\_\+\+C\+\_\+\+DECLS}
+
+\Hypertarget{a00260_a378be9b66feb11153979c282c669b12e}\label{a00260_a378be9b66feb11153979c282c669b12e} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_C\_DECL@{JSON\_HEDLEY\_C\_DECL}}
+\index{JSON\_HEDLEY\_C\_DECL@{JSON\_HEDLEY\_C\_DECL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_C\_DECL}{JSON\_HEDLEY\_C\_DECL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+C\+\_\+\+DECL}
+
+\Hypertarget{a00260_a940783ca9410ed9dbe4f7abf44a29394}\label{a00260_a940783ca9410ed9dbe4f7abf44a29394} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE}{JSON\_HEDLEY\_CLANG\_HAS\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_af41dc3300eaa6e5e6a976730d160a268}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+ATTRIBUTE}}(attribute)}
+
+\Hypertarget{a00260_a4500e349152e53a3a6f0ab95c6a4a840}\label{a00260_a4500e349152e53a3a6f0ab95c6a4a840} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN@{JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN@{JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN}{JSON\_HEDLEY\_CLANG\_HAS\_BUILTIN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+BUILTIN(\begin{DoxyParamCaption}\item[{}]{builtin }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_acf8ab10ce06ffe6f54840b555b15121c}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+BUILTIN}}(builtin)}
+
+\Hypertarget{a00260_a3ce7b30717e453922113c4f62e645e13}\label{a00260_a3ce7b30717e453922113c4f62e645e13} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE}{JSON\_HEDLEY\_CLANG\_HAS\_CPP\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a2c4e6a04293aaf333a31698dea661b3b}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(attribute)}
+
+\Hypertarget{a00260_afb4bf1280cd8738877e1f0f681a5d96d}\label{a00260_afb4bf1280cd8738877e1f0f681a5d96d} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE}{JSON\_HEDLEY\_CLANG\_HAS\_DECLSPEC\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_ac256365345e803d24cbd9651d3cb0274}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE}}(attribute)}
+
+\Hypertarget{a00260_a8fcc2d27e828fbd8d5ef88ba341e56c0}\label{a00260_a8fcc2d27e828fbd8d5ef88ba341e56c0} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION@{JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION@{JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION}{JSON\_HEDLEY\_CLANG\_HAS\_EXTENSION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+EXTENSION(\begin{DoxyParamCaption}\item[{}]{extension }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a320bfe79028a67cd5873f917bc5418dd}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+EXTENSION}}(extension)}
+
+\Hypertarget{a00260_a096be2083232d3a3ea9f3aeb25885f60}\label{a00260_a096be2083232d3a3ea9f3aeb25885f60} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_FEATURE@{JSON\_HEDLEY\_CLANG\_HAS\_FEATURE}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_FEATURE@{JSON\_HEDLEY\_CLANG\_HAS\_FEATURE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_FEATURE}{JSON\_HEDLEY\_CLANG\_HAS\_FEATURE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+FEATURE(\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a752eb648bbfc7bcd8a4624c43f520412}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+FEATURE}}(feature)}
+
+\Hypertarget{a00260_a6125ffd318b2d6698faad4175a6e7c56}\label{a00260_a6125ffd318b2d6698faad4175a6e7c56} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CLANG\_HAS\_WARNING@{JSON\_HEDLEY\_CLANG\_HAS\_WARNING}}
+\index{JSON\_HEDLEY\_CLANG\_HAS\_WARNING@{JSON\_HEDLEY\_CLANG\_HAS\_WARNING}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CLANG\_HAS\_WARNING}{JSON\_HEDLEY\_CLANG\_HAS\_WARNING}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CLANG\+\_\+\+HAS\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{warning }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a472922971d1cd7308a4402042bdafe34}{JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+WARNING}}(warning)}
+
+\Hypertarget{a00260_ad8f9aee7d709155d6745cb3f77c6ff0c}\label{a00260_ad8f9aee7d709155d6745cb3f77c6ff0c} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK@{JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK@{JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK}{JSON\_HEDLEY\_COMPCERT\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+COMPCERT\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a4ec16c2642fdc5876d8dbeab3445b313}\label{a00260_a4ec16c2642fdc5876d8dbeab3445b313} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONCAT@{JSON\_HEDLEY\_CONCAT}}
+\index{JSON\_HEDLEY\_CONCAT@{JSON\_HEDLEY\_CONCAT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONCAT}{JSON\_HEDLEY\_CONCAT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aee52531ff30270c04958309efa66a5da}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT\+\_\+\+EX}}(a,b)}
+
+\Hypertarget{a00260_ad10e2ad45ace3771e4d2a3807d33f64f}\label{a00260_ad10e2ad45ace3771e4d2a3807d33f64f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONCAT3@{JSON\_HEDLEY\_CONCAT3}}
+\index{JSON\_HEDLEY\_CONCAT3@{JSON\_HEDLEY\_CONCAT3}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONCAT3}{JSON\_HEDLEY\_CONCAT3}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{c }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a29b325cc7fac302f2488259237d30953}{JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3\+\_\+\+EX}}(a,b,c)}
+
+\Hypertarget{a00260_a29b325cc7fac302f2488259237d30953}\label{a00260_a29b325cc7fac302f2488259237d30953} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONCAT3\_EX@{JSON\_HEDLEY\_CONCAT3\_EX}}
+\index{JSON\_HEDLEY\_CONCAT3\_EX@{JSON\_HEDLEY\_CONCAT3\_EX}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONCAT3\_EX}{JSON\_HEDLEY\_CONCAT3\_EX}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT3\+\_\+\+EX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{c }\end{DoxyParamCaption})~a\#\#b\#\#c}
+
+\Hypertarget{a00260_aee52531ff30270c04958309efa66a5da}\label{a00260_aee52531ff30270c04958309efa66a5da} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONCAT\_EX@{JSON\_HEDLEY\_CONCAT\_EX}}
+\index{JSON\_HEDLEY\_CONCAT\_EX@{JSON\_HEDLEY\_CONCAT\_EX}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONCAT\_EX}{JSON\_HEDLEY\_CONCAT\_EX}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONCAT\+\_\+\+EX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~a\#\#b}
+
+\Hypertarget{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3}\label{a00260_a0d17bf1a54fc45a04ced6d3aa86a96e3} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONST@{JSON\_HEDLEY\_CONST}}
+\index{JSON\_HEDLEY\_CONST@{JSON\_HEDLEY\_CONST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONST}{JSON\_HEDLEY\_CONST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONST~\mbox{\hyperlink{a00260_af5c84b7d1a43361bdc14cc6941078000}{JSON\+\_\+\+HEDLEY\+\_\+\+PURE}}}
+
+\Hypertarget{a00260_ab849ba88a6f410da5a46a86f8565b381}\label{a00260_ab849ba88a6f410da5a46a86f8565b381} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONST\_CAST@{JSON\_HEDLEY\_CONST\_CAST}}
+\index{JSON\_HEDLEY\_CONST\_CAST@{JSON\_HEDLEY\_CONST\_CAST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONST\_CAST}{JSON\_HEDLEY\_CONST\_CAST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONST\+\_\+\+CAST(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{expr }\end{DoxyParamCaption})~((T) (expr))}
+
+\Hypertarget{a00260_ac317a48664e4099c22d33d8132bef97e}\label{a00260_ac317a48664e4099c22d33d8132bef97e} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CONSTEXPR@{JSON\_HEDLEY\_CONSTEXPR}}
+\index{JSON\_HEDLEY\_CONSTEXPR@{JSON\_HEDLEY\_CONSTEXPR}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CONSTEXPR}{JSON\_HEDLEY\_CONSTEXPR}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CONSTEXPR}
+
+\Hypertarget{a00260_a8c790866b16f58cbe0b3286a7a6238c3}\label{a00260_a8c790866b16f58cbe0b3286a7a6238c3} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CPP\_CAST@{JSON\_HEDLEY\_CPP\_CAST}}
+\index{JSON\_HEDLEY\_CPP\_CAST@{JSON\_HEDLEY\_CPP\_CAST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CPP\_CAST}{JSON\_HEDLEY\_CPP\_CAST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CPP\+\_\+\+CAST(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{expr }\end{DoxyParamCaption})~(expr)}
+
+\Hypertarget{a00260_a5d9ed879aa65e4db12a81ee95529c3e4}\label{a00260_a5d9ed879aa65e4db12a81ee95529c3e4} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_CRAY\_VERSION\_CHECK@{JSON\_HEDLEY\_CRAY\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_CRAY\_VERSION\_CHECK@{JSON\_HEDLEY\_CRAY\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_CRAY\_VERSION\_CHECK}{JSON\_HEDLEY\_CRAY\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+CRAY\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a0f2cbf281fa983a844b9279c697b7a0c}\label{a00260_a0f2cbf281fa983a844b9279c697b7a0c} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DEPRECATED@{JSON\_HEDLEY\_DEPRECATED}}
+\index{JSON\_HEDLEY\_DEPRECATED@{JSON\_HEDLEY\_DEPRECATED}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DEPRECATED}{JSON\_HEDLEY\_DEPRECATED}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DEPRECATED(\begin{DoxyParamCaption}\item[{}]{since }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_af0469b867b0ec3a1c4b229ce9d087620}\label{a00260_af0469b867b0ec3a1c4b229ce9d087620} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DEPRECATED\_FOR@{JSON\_HEDLEY\_DEPRECATED\_FOR}}
+\index{JSON\_HEDLEY\_DEPRECATED\_FOR@{JSON\_HEDLEY\_DEPRECATED\_FOR}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DEPRECATED\_FOR}{JSON\_HEDLEY\_DEPRECATED\_FOR}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DEPRECATED\+\_\+\+FOR(\begin{DoxyParamCaption}\item[{}]{since,  }\item[{}]{replacement }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a8d412aa5d441b533afa439a89aa4a754}\label{a00260_a8d412aa5d441b533afa439a89aa4a754} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CAST\_QUAL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+CAST\+\_\+\+QUAL}
+
+\Hypertarget{a00260_a543a78d9931a92663e3b3fc552a390a4}\label{a00260_a543a78d9931a92663e3b3fc552a390a4} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_CPP98\_COMPAT\_WRAP\_}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+CPP98\+\_\+\+COMPAT\+\_\+\+WRAP\+\_\+(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+\Hypertarget{a00260_afe5855242129fa5d1adf55227669a337}\label{a00260_afe5855242129fa5d1adf55227669a337} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_DEPRECATED}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+DEPRECATED}
+
+\Hypertarget{a00260_ab6e5abd7e400c9a725278206ece33e16}\label{a00260_ab6e5abd7e400c9a725278206ece33e16} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_CPP\_ATTRIBUTES}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNKNOWN\+\_\+\+CPP\+\_\+\+ATTRIBUTES}
+
+\Hypertarget{a00260_ab67745ae0065d536d8e67969db68d564}\label{a00260_ab67745ae0065d536d8e67969db68d564} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNKNOWN\_PRAGMAS}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNKNOWN\+\_\+\+PRAGMAS}
+
+\Hypertarget{a00260_a5306714f979551cab30546a0e0e7e9f9}\label{a00260_a5306714f979551cab30546a0e0e7e9f9} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION@{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION}{JSON\_HEDLEY\_DIAGNOSTIC\_DISABLE\_UNUSED\_FUNCTION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+DISABLE\+\_\+\+UNUSED\+\_\+\+FUNCTION}
+
+\Hypertarget{a00260_aeedd50a52e1ea565ceab84bb596ec07f}\label{a00260_aeedd50a52e1ea565ceab84bb596ec07f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_POP@{JSON\_HEDLEY\_DIAGNOSTIC\_POP}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_POP@{JSON\_HEDLEY\_DIAGNOSTIC\_POP}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_POP}{JSON\_HEDLEY\_DIAGNOSTIC\_POP}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+POP}
+
+\Hypertarget{a00260_a1850f57fcda72becebc7033a2e10e77b}\label{a00260_a1850f57fcda72becebc7033a2e10e77b} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DIAGNOSTIC\_PUSH@{JSON\_HEDLEY\_DIAGNOSTIC\_PUSH}}
+\index{JSON\_HEDLEY\_DIAGNOSTIC\_PUSH@{JSON\_HEDLEY\_DIAGNOSTIC\_PUSH}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DIAGNOSTIC\_PUSH}{JSON\_HEDLEY\_DIAGNOSTIC\_PUSH}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DIAGNOSTIC\+\_\+\+PUSH}
+
+\Hypertarget{a00260_af21c5dbd9df3b2e245ae547e2d940adc}\label{a00260_af21c5dbd9df3b2e245ae547e2d940adc} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_DMC\_VERSION\_CHECK@{JSON\_HEDLEY\_DMC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_DMC\_VERSION\_CHECK@{JSON\_HEDLEY\_DMC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_DMC\_VERSION\_CHECK}{JSON\_HEDLEY\_DMC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+DMC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_ae7a983344e78f37697c2688f1885f9e1}\label{a00260_ae7a983344e78f37697c2688f1885f9e1} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_EMPTY\_BASES@{JSON\_HEDLEY\_EMPTY\_BASES}}
+\index{JSON\_HEDLEY\_EMPTY\_BASES@{JSON\_HEDLEY\_EMPTY\_BASES}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_EMPTY\_BASES}{JSON\_HEDLEY\_EMPTY\_BASES}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+EMPTY\+\_\+\+BASES}
+
+\Hypertarget{a00260_a472a0656b154bb30cf6e8fb8a31b9209}\label{a00260_a472a0656b154bb30cf6e8fb8a31b9209} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK@{JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK@{JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK}{JSON\_HEDLEY\_EMSCRIPTEN\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+EMSCRIPTEN\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_aca2fc4b765ac5739d680153895b673fb}\label{a00260_aca2fc4b765ac5739d680153895b673fb} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_END\_C\_DECLS@{JSON\_HEDLEY\_END\_C\_DECLS}}
+\index{JSON\_HEDLEY\_END\_C\_DECLS@{JSON\_HEDLEY\_END\_C\_DECLS}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_END\_C\_DECLS}{JSON\_HEDLEY\_END\_C\_DECLS}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+END\+\_\+\+C\+\_\+\+DECLS}
+
+\Hypertarget{a00260_a7056c44a5787e78720407fc97aefbd0f}\label{a00260_a7056c44a5787e78720407fc97aefbd0f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_FALL\_THROUGH@{JSON\_HEDLEY\_FALL\_THROUGH}}
+\index{JSON\_HEDLEY\_FALL\_THROUGH@{JSON\_HEDLEY\_FALL\_THROUGH}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_FALL\_THROUGH}{JSON\_HEDLEY\_FALL\_THROUGH}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+FALL\+\_\+\+THROUGH}
+
+\Hypertarget{a00260_a4bdece2f00bf96988662186d7f23ca0f}\label{a00260_a4bdece2f00bf96988662186d7f23ca0f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_FLAGS@{JSON\_HEDLEY\_FLAGS}}
+\index{JSON\_HEDLEY\_FLAGS@{JSON\_HEDLEY\_FLAGS}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_FLAGS}{JSON\_HEDLEY\_FLAGS}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+FLAGS}
+
+\Hypertarget{a00260_a701eddd8e14dbe617a9ca81b095e88fb}\label{a00260_a701eddd8e14dbe617a9ca81b095e88fb} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_FLAGS\_CAST@{JSON\_HEDLEY\_FLAGS\_CAST}}
+\index{JSON\_HEDLEY\_FLAGS\_CAST@{JSON\_HEDLEY\_FLAGS\_CAST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_FLAGS\_CAST}{JSON\_HEDLEY\_FLAGS\_CAST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+FLAGS\+\_\+\+CAST(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{expr }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(T, expr)}
+
+\Hypertarget{a00260_af33c67f65300eb91494f25bf583f5bd7}\label{a00260_af33c67f65300eb91494f25bf583f5bd7} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE}{JSON\_HEDLEY\_GCC\_HAS\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_aa210655ec7cc8387bef8ade74c3af647}\label{a00260_aa210655ec7cc8387bef8ade74c3af647} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_BUILTIN@{JSON\_HEDLEY\_GCC\_HAS\_BUILTIN}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_BUILTIN@{JSON\_HEDLEY\_GCC\_HAS\_BUILTIN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_BUILTIN}{JSON\_HEDLEY\_GCC\_HAS\_BUILTIN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+BUILTIN(\begin{DoxyParamCaption}\item[{}]{builtin,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_aaa3c748298e83bf6a67b583b83233c11}\label{a00260_aaa3c748298e83bf6a67b583b83233c11} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE}{JSON\_HEDLEY\_GCC\_HAS\_CPP\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a164e098f308804c3bada63613ad75dab}\label{a00260_a164e098f308804c3bada63613ad75dab} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE}{JSON\_HEDLEY\_GCC\_HAS\_DECLSPEC\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_af488159969a8b7154820cffe04bb4917}\label{a00260_af488159969a8b7154820cffe04bb4917} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_EXTENSION@{JSON\_HEDLEY\_GCC\_HAS\_EXTENSION}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_EXTENSION@{JSON\_HEDLEY\_GCC\_HAS\_EXTENSION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_EXTENSION}{JSON\_HEDLEY\_GCC\_HAS\_EXTENSION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+EXTENSION(\begin{DoxyParamCaption}\item[{}]{extension,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_ae9f353e2ea047111e419855144b06ab7}\label{a00260_ae9f353e2ea047111e419855144b06ab7} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_FEATURE@{JSON\_HEDLEY\_GCC\_HAS\_FEATURE}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_FEATURE@{JSON\_HEDLEY\_GCC\_HAS\_FEATURE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_FEATURE}{JSON\_HEDLEY\_GCC\_HAS\_FEATURE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+FEATURE(\begin{DoxyParamCaption}\item[{}]{feature,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_ab45544391bc41507efde58d48331dfc2}\label{a00260_ab45544391bc41507efde58d48331dfc2} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_HAS\_WARNING@{JSON\_HEDLEY\_GCC\_HAS\_WARNING}}
+\index{JSON\_HEDLEY\_GCC\_HAS\_WARNING@{JSON\_HEDLEY\_GCC\_HAS\_WARNING}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_HAS\_WARNING}{JSON\_HEDLEY\_GCC\_HAS\_WARNING}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+HAS\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{warning,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_af3737b675cbb70bcdfdaca78c2bc7d4a}\label{a00260_af3737b675cbb70bcdfdaca78c2bc7d4a} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK@{JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK@{JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK}{JSON\_HEDLEY\_GCC\_NOT\_CLANG\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+NOT\+\_\+\+CLANG\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_aaf82a065634719d57994ef5876e208ff}{JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_aaf82a065634719d57994ef5876e208ff}\label{a00260_aaf82a065634719d57994ef5876e208ff} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GCC\_VERSION\_CHECK@{JSON\_HEDLEY\_GCC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_GCC\_VERSION\_CHECK@{JSON\_HEDLEY\_GCC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GCC\_VERSION\_CHECK}{JSON\_HEDLEY\_GCC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GCC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_afdf01f41465021815bb6fc4d8c1839fd}\label{a00260_afdf01f41465021815bb6fc4d8c1839fd} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE}{JSON\_HEDLEY\_GNUC\_HAS\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a92764b738f44272e1b18c3ef1403c894}\label{a00260_a92764b738f44272e1b18c3ef1403c894} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN@{JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN@{JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN}{JSON\_HEDLEY\_GNUC\_HAS\_BUILTIN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+BUILTIN(\begin{DoxyParamCaption}\item[{}]{builtin,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a938dadb6cadaaaccf72990d09be5dc0a}\label{a00260_a938dadb6cadaaaccf72990d09be5dc0a} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE}{JSON\_HEDLEY\_GNUC\_HAS\_CPP\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a005d6f0dbab6f7152e43fb85fc4f4990}\label{a00260_a005d6f0dbab6f7152e43fb85fc4f4990} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE}{JSON\_HEDLEY\_GNUC\_HAS\_DECLSPEC\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a2417cc05952936574c0a6ed96d73d8e2}\label{a00260_a2417cc05952936574c0a6ed96d73d8e2} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION@{JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION@{JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION}{JSON\_HEDLEY\_GNUC\_HAS\_EXTENSION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+EXTENSION(\begin{DoxyParamCaption}\item[{}]{extension,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_ad5dab327c783036962c7d921a4144676}\label{a00260_ad5dab327c783036962c7d921a4144676} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_FEATURE@{JSON\_HEDLEY\_GNUC\_HAS\_FEATURE}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_FEATURE@{JSON\_HEDLEY\_GNUC\_HAS\_FEATURE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_FEATURE}{JSON\_HEDLEY\_GNUC\_HAS\_FEATURE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+FEATURE(\begin{DoxyParamCaption}\item[{}]{feature,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a8afa30449fac8b5069e62f26421d4148}\label{a00260_a8afa30449fac8b5069e62f26421d4148} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_HAS\_WARNING@{JSON\_HEDLEY\_GNUC\_HAS\_WARNING}}
+\index{JSON\_HEDLEY\_GNUC\_HAS\_WARNING@{JSON\_HEDLEY\_GNUC\_HAS\_WARNING}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_HAS\_WARNING}{JSON\_HEDLEY\_GNUC\_HAS\_WARNING}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+HAS\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{warning,  }\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a074e795380699252f28c9526ca83e586}{JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK}}(major,minor,patch)}
+
+\Hypertarget{a00260_a074e795380699252f28c9526ca83e586}\label{a00260_a074e795380699252f28c9526ca83e586} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_GNUC\_VERSION\_CHECK@{JSON\_HEDLEY\_GNUC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_GNUC\_VERSION\_CHECK@{JSON\_HEDLEY\_GNUC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_GNUC\_VERSION\_CHECK}{JSON\_HEDLEY\_GNUC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+GNUC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_af41dc3300eaa6e5e6a976730d160a268}\label{a00260_af41dc3300eaa6e5e6a976730d160a268} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_HAS\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_ATTRIBUTE}{JSON\_HEDLEY\_HAS\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_acf8ab10ce06ffe6f54840b555b15121c}\label{a00260_acf8ab10ce06ffe6f54840b555b15121c} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_BUILTIN@{JSON\_HEDLEY\_HAS\_BUILTIN}}
+\index{JSON\_HEDLEY\_HAS\_BUILTIN@{JSON\_HEDLEY\_HAS\_BUILTIN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_BUILTIN}{JSON\_HEDLEY\_HAS\_BUILTIN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+BUILTIN(\begin{DoxyParamCaption}\item[{}]{builtin }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a2c4e6a04293aaf333a31698dea661b3b}\label{a00260_a2c4e6a04293aaf333a31698dea661b3b} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE}{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_ad5b94be3095ea0549561c1bc951c5998}\label{a00260_ad5b94be3095ea0549561c1bc951c5998} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS@{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS}}
+\index{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS@{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS}{JSON\_HEDLEY\_HAS\_CPP\_ATTRIBUTE\_NS}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE\+\_\+\+NS(\begin{DoxyParamCaption}\item[{}]{ns,  }\item[{}]{attribute }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_ac256365345e803d24cbd9651d3cb0274}\label{a00260_ac256365345e803d24cbd9651d3cb0274} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE}}
+\index{JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE@{JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE}{JSON\_HEDLEY\_HAS\_DECLSPEC\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+DECLSPEC\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{attribute }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a320bfe79028a67cd5873f917bc5418dd}\label{a00260_a320bfe79028a67cd5873f917bc5418dd} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_EXTENSION@{JSON\_HEDLEY\_HAS\_EXTENSION}}
+\index{JSON\_HEDLEY\_HAS\_EXTENSION@{JSON\_HEDLEY\_HAS\_EXTENSION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_EXTENSION}{JSON\_HEDLEY\_HAS\_EXTENSION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+EXTENSION(\begin{DoxyParamCaption}\item[{}]{extension }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a752eb648bbfc7bcd8a4624c43f520412}\label{a00260_a752eb648bbfc7bcd8a4624c43f520412} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_FEATURE@{JSON\_HEDLEY\_HAS\_FEATURE}}
+\index{JSON\_HEDLEY\_HAS\_FEATURE@{JSON\_HEDLEY\_HAS\_FEATURE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_FEATURE}{JSON\_HEDLEY\_HAS\_FEATURE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+FEATURE(\begin{DoxyParamCaption}\item[{}]{feature }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a472922971d1cd7308a4402042bdafe34}\label{a00260_a472922971d1cd7308a4402042bdafe34} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_HAS\_WARNING@{JSON\_HEDLEY\_HAS\_WARNING}}
+\index{JSON\_HEDLEY\_HAS\_WARNING@{JSON\_HEDLEY\_HAS\_WARNING}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_HAS\_WARNING}{JSON\_HEDLEY\_HAS\_WARNING}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+HAS\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{warning }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a8788394855e9b5a1cc32327db5a613cb}\label{a00260_a8788394855e9b5a1cc32327db5a613cb} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_IAR\_VERSION\_CHECK@{JSON\_HEDLEY\_IAR\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_IAR\_VERSION\_CHECK@{JSON\_HEDLEY\_IAR\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_IAR\_VERSION\_CHECK}{JSON\_HEDLEY\_IAR\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+IAR\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a66ec7d7c320280d6e75cb3634048cd49}\label{a00260_a66ec7d7c320280d6e75cb3634048cd49} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_IBM\_VERSION\_CHECK@{JSON\_HEDLEY\_IBM\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_IBM\_VERSION\_CHECK@{JSON\_HEDLEY\_IBM\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_IBM\_VERSION\_CHECK}{JSON\_HEDLEY\_IBM\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+IBM\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a29c62e19dfa10fb48bf3aa877c4af21c}\label{a00260_a29c62e19dfa10fb48bf3aa877c4af21c} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_IMPORT@{JSON\_HEDLEY\_IMPORT}}
+\index{JSON\_HEDLEY\_IMPORT@{JSON\_HEDLEY\_IMPORT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_IMPORT}{JSON\_HEDLEY\_IMPORT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+IMPORT~extern}
+
+\Hypertarget{a00260_af943d68414c7fe0fdfab7e772fa628a8}\label{a00260_af943d68414c7fe0fdfab7e772fa628a8} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_INLINE@{JSON\_HEDLEY\_INLINE}}
+\index{JSON\_HEDLEY\_INLINE@{JSON\_HEDLEY\_INLINE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_INLINE}{JSON\_HEDLEY\_INLINE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+INLINE}
+
+\Hypertarget{a00260_a598b8238661e5ae448d5680ae35c4d2f}\label{a00260_a598b8238661e5ae448d5680ae35c4d2f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK@{JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK@{JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK}{JSON\_HEDLEY\_INTEL\_CL\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+INTEL\+\_\+\+CL\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_ae51b1abb6876168df25d3f36fa335c94}\label{a00260_ae51b1abb6876168df25d3f36fa335c94} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_INTEL\_VERSION\_CHECK@{JSON\_HEDLEY\_INTEL\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_INTEL\_VERSION\_CHECK@{JSON\_HEDLEY\_INTEL\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_INTEL\_VERSION\_CHECK}{JSON\_HEDLEY\_INTEL\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+INTEL\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a37617841d58aa4d88d0efee4db57ee18}\label{a00260_a37617841d58aa4d88d0efee4db57ee18} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_IS\_CONSTANT@{JSON\_HEDLEY\_IS\_CONSTANT}}
+\index{JSON\_HEDLEY\_IS\_CONSTANT@{JSON\_HEDLEY\_IS\_CONSTANT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_IS\_CONSTANT}{JSON\_HEDLEY\_IS\_CONSTANT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+IS\+\_\+\+CONSTANT(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a355f2770653ff7bdd5c74b204b5a3ad0}\label{a00260_a355f2770653ff7bdd5c74b204b5a3ad0} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_LIKELY@{JSON\_HEDLEY\_LIKELY}}
+\index{JSON\_HEDLEY\_LIKELY@{JSON\_HEDLEY\_LIKELY}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_LIKELY}{JSON\_HEDLEY\_LIKELY}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+LIKELY(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~(!!(expr))}
+
+\Hypertarget{a00260_a521367b4e81907450a7ea0bf28028b01}\label{a00260_a521367b4e81907450a7ea0bf28028b01} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_MALLOC@{JSON\_HEDLEY\_MALLOC}}
+\index{JSON\_HEDLEY\_MALLOC@{JSON\_HEDLEY\_MALLOC}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_MALLOC}{JSON\_HEDLEY\_MALLOC}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+MALLOC}
+
+\Hypertarget{a00260_a6b0ee37cd596951acd0a951a68e0ac21}\label{a00260_a6b0ee37cd596951acd0a951a68e0ac21} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK@{JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK@{JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK}{JSON\_HEDLEY\_MCST\_LCC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+MCST\+\_\+\+LCC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a8419c2b65d28686932087c587eb19157}\label{a00260_a8419c2b65d28686932087c587eb19157} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_MESSAGE@{JSON\_HEDLEY\_MESSAGE}}
+\index{JSON\_HEDLEY\_MESSAGE@{JSON\_HEDLEY\_MESSAGE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_MESSAGE}{JSON\_HEDLEY\_MESSAGE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+MESSAGE(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_ac3dc0b5b04f307fc875f9470c0cc841f}\label{a00260_ac3dc0b5b04f307fc875f9470c0cc841f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_MSVC\_VERSION\_CHECK@{JSON\_HEDLEY\_MSVC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_MSVC\_VERSION\_CHECK@{JSON\_HEDLEY\_MSVC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_MSVC\_VERSION\_CHECK}{JSON\_HEDLEY\_MSVC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+MSVC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_aa400dd54d50fd20d7e931e2f08ee6374}\label{a00260_aa400dd54d50fd20d7e931e2f08ee6374} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NEVER\_INLINE@{JSON\_HEDLEY\_NEVER\_INLINE}}
+\index{JSON\_HEDLEY\_NEVER\_INLINE@{JSON\_HEDLEY\_NEVER\_INLINE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NEVER\_INLINE}{JSON\_HEDLEY\_NEVER\_INLINE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NEVER\+\_\+\+INLINE}
+
+\Hypertarget{a00260_a9a8fe3009f53d14ac4b48600a2606fc1}\label{a00260_a9a8fe3009f53d14ac4b48600a2606fc1} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NO\_ESCAPE@{JSON\_HEDLEY\_NO\_ESCAPE}}
+\index{JSON\_HEDLEY\_NO\_ESCAPE@{JSON\_HEDLEY\_NO\_ESCAPE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NO\_ESCAPE}{JSON\_HEDLEY\_NO\_ESCAPE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+ESCAPE}
+
+\Hypertarget{a00260_a82747e7a15c5cecf1223dbc4eb7a1c6b}\label{a00260_a82747e7a15c5cecf1223dbc4eb7a1c6b} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NO\_RETURN@{JSON\_HEDLEY\_NO\_RETURN}}
+\index{JSON\_HEDLEY\_NO\_RETURN@{JSON\_HEDLEY\_NO\_RETURN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NO\_RETURN}{JSON\_HEDLEY\_NO\_RETURN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+RETURN}
+
+\Hypertarget{a00260_a99bb53bea18285e3d2ae4385c6c75434}\label{a00260_a99bb53bea18285e3d2ae4385c6c75434} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NO\_THROW@{JSON\_HEDLEY\_NO\_THROW}}
+\index{JSON\_HEDLEY\_NO\_THROW@{JSON\_HEDLEY\_NO\_THROW}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NO\_THROW}{JSON\_HEDLEY\_NO\_THROW}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NO\+\_\+\+THROW}
+
+\Hypertarget{a00260_a5338981b5ad9027c9e54b1c5597f4344}\label{a00260_a5338981b5ad9027c9e54b1c5597f4344} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NON\_NULL@{JSON\_HEDLEY\_NON\_NULL}}
+\index{JSON\_HEDLEY\_NON\_NULL@{JSON\_HEDLEY\_NON\_NULL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NON\_NULL}{JSON\_HEDLEY\_NON\_NULL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NON\+\_\+\+NULL(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a06449cfb74f25f075a8ea334542f1c65}\label{a00260_a06449cfb74f25f075a8ea334542f1c65} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_NULL@{JSON\_HEDLEY\_NULL}}
+\index{JSON\_HEDLEY\_NULL@{JSON\_HEDLEY\_NULL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_NULL}{JSON\_HEDLEY\_NULL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+NULL~((void\texorpdfstring{$\ast$}{*}) 0)}
+
+\Hypertarget{a00260_a21937c8e7c79a1bef6695691c733e29f}\label{a00260_a21937c8e7c79a1bef6695691c733e29f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PELLES\_VERSION\_CHECK@{JSON\_HEDLEY\_PELLES\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_PELLES\_VERSION\_CHECK@{JSON\_HEDLEY\_PELLES\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PELLES\_VERSION\_CHECK}{JSON\_HEDLEY\_PELLES\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PELLES\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a009a77cb8a9fd33aafff173bb945128d}\label{a00260_a009a77cb8a9fd33aafff173bb945128d} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PGI\_VERSION\_CHECK@{JSON\_HEDLEY\_PGI\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_PGI\_VERSION\_CHECK@{JSON\_HEDLEY\_PGI\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PGI\_VERSION\_CHECK}{JSON\_HEDLEY\_PGI\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PGI\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_aeb6e382f24fc5453621ae258b72e8775}\label{a00260_aeb6e382f24fc5453621ae258b72e8775} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PRAGMA@{JSON\_HEDLEY\_PRAGMA}}
+\index{JSON\_HEDLEY\_PRAGMA@{JSON\_HEDLEY\_PRAGMA}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PRAGMA}{JSON\_HEDLEY\_PRAGMA}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PRAGMA(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a34846d0797b38c1971baee08736dae69}\label{a00260_a34846d0797b38c1971baee08736dae69} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PREDICT@{JSON\_HEDLEY\_PREDICT}}
+\index{JSON\_HEDLEY\_PREDICT@{JSON\_HEDLEY\_PREDICT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PREDICT}{JSON\_HEDLEY\_PREDICT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{expected,  }\item[{}]{probability }\end{DoxyParamCaption})~(\mbox{\hyperlink{a00260_a2edb8d037ad5cbac818c86aca317226a}{JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST}}(void, expected), (expr))}
+
+\Hypertarget{a00260_aec5597506417346f8f1c4d1f08c7719f}\label{a00260_aec5597506417346f8f1c4d1f08c7719f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PREDICT\_FALSE@{JSON\_HEDLEY\_PREDICT\_FALSE}}
+\index{JSON\_HEDLEY\_PREDICT\_FALSE@{JSON\_HEDLEY\_PREDICT\_FALSE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PREDICT\_FALSE}{JSON\_HEDLEY\_PREDICT\_FALSE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT\+\_\+\+FALSE(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{probability }\end{DoxyParamCaption})~(!!(expr))}
+
+\Hypertarget{a00260_adb569cea2c5a17c33734f27e8fef2473}\label{a00260_adb569cea2c5a17c33734f27e8fef2473} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PREDICT\_TRUE@{JSON\_HEDLEY\_PREDICT\_TRUE}}
+\index{JSON\_HEDLEY\_PREDICT\_TRUE@{JSON\_HEDLEY\_PREDICT\_TRUE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PREDICT\_TRUE}{JSON\_HEDLEY\_PREDICT\_TRUE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT\+\_\+\+TRUE(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{probability }\end{DoxyParamCaption})~(!!(expr))}
+
+\Hypertarget{a00260_a2e17831d69746d3ee8ad4796e96975a2}\label{a00260_a2e17831d69746d3ee8ad4796e96975a2} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PRINTF\_FORMAT@{JSON\_HEDLEY\_PRINTF\_FORMAT}}
+\index{JSON\_HEDLEY\_PRINTF\_FORMAT@{JSON\_HEDLEY\_PRINTF\_FORMAT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PRINTF\_FORMAT}{JSON\_HEDLEY\_PRINTF\_FORMAT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PRINTF\+\_\+\+FORMAT(\begin{DoxyParamCaption}\item[{}]{string\+\_\+idx,  }\item[{}]{first\+\_\+to\+\_\+check }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a034c879888858092ec101e8d02be67c2}\label{a00260_a034c879888858092ec101e8d02be67c2} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PRIVATE@{JSON\_HEDLEY\_PRIVATE}}
+\index{JSON\_HEDLEY\_PRIVATE@{JSON\_HEDLEY\_PRIVATE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PRIVATE}{JSON\_HEDLEY\_PRIVATE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PRIVATE}
+
+\Hypertarget{a00260_aa1588f4ea4e7819b5b6e66f07865737f}\label{a00260_aa1588f4ea4e7819b5b6e66f07865737f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PUBLIC@{JSON\_HEDLEY\_PUBLIC}}
+\index{JSON\_HEDLEY\_PUBLIC@{JSON\_HEDLEY\_PUBLIC}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PUBLIC}{JSON\_HEDLEY\_PUBLIC}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PUBLIC}
+
+\Hypertarget{a00260_af5c84b7d1a43361bdc14cc6941078000}\label{a00260_af5c84b7d1a43361bdc14cc6941078000} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_PURE@{JSON\_HEDLEY\_PURE}}
+\index{JSON\_HEDLEY\_PURE@{JSON\_HEDLEY\_PURE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_PURE}{JSON\_HEDLEY\_PURE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+PURE}
+
+\Hypertarget{a00260_a86dd11af75e3f25f5be26cf3c779ba79}\label{a00260_a86dd11af75e3f25f5be26cf3c779ba79} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_REINTERPRET\_CAST@{JSON\_HEDLEY\_REINTERPRET\_CAST}}
+\index{JSON\_HEDLEY\_REINTERPRET\_CAST@{JSON\_HEDLEY\_REINTERPRET\_CAST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_REINTERPRET\_CAST}{JSON\_HEDLEY\_REINTERPRET\_CAST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+REINTERPRET\+\_\+\+CAST(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{expr }\end{DoxyParamCaption})~((T) (expr))}
+
+\Hypertarget{a00260_acbc72fa9390d5e8b7592a81384dfabf3}\label{a00260_acbc72fa9390d5e8b7592a81384dfabf3} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_REQUIRE@{JSON\_HEDLEY\_REQUIRE}}
+\index{JSON\_HEDLEY\_REQUIRE@{JSON\_HEDLEY\_REQUIRE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_REQUIRE}{JSON\_HEDLEY\_REQUIRE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a1136ab0d872379bb18d0839893bede67}\label{a00260_a1136ab0d872379bb18d0839893bede67} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_REQUIRE\_CONSTEXPR@{JSON\_HEDLEY\_REQUIRE\_CONSTEXPR}}
+\index{JSON\_HEDLEY\_REQUIRE\_CONSTEXPR@{JSON\_HEDLEY\_REQUIRE\_CONSTEXPR}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_REQUIRE\_CONSTEXPR}{JSON\_HEDLEY\_REQUIRE\_CONSTEXPR}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE\+\_\+\+CONSTEXPR(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~(expr)}
+
+\Hypertarget{a00260_a7106fb230747163b5b16121eb6a42b23}\label{a00260_a7106fb230747163b5b16121eb6a42b23} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_REQUIRE\_MSG@{JSON\_HEDLEY\_REQUIRE\_MSG}}
+\index{JSON\_HEDLEY\_REQUIRE\_MSG@{JSON\_HEDLEY\_REQUIRE\_MSG}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_REQUIRE\_MSG}{JSON\_HEDLEY\_REQUIRE\_MSG}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+REQUIRE\+\_\+\+MSG(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{msg }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_ad4979e5bc2f252ff6e367fc254ab4e85}\label{a00260_ad4979e5bc2f252ff6e367fc254ab4e85} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_RESTRICT@{JSON\_HEDLEY\_RESTRICT}}
+\index{JSON\_HEDLEY\_RESTRICT@{JSON\_HEDLEY\_RESTRICT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_RESTRICT}{JSON\_HEDLEY\_RESTRICT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+RESTRICT}
+
+\Hypertarget{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1}\label{a00260_a5f2aaec3b681d0a72f7d6e90b70cdcd1} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_RETURNS\_NON\_NULL@{JSON\_HEDLEY\_RETURNS\_NON\_NULL}}
+\index{JSON\_HEDLEY\_RETURNS\_NON\_NULL@{JSON\_HEDLEY\_RETURNS\_NON\_NULL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_RETURNS\_NON\_NULL}{JSON\_HEDLEY\_RETURNS\_NON\_NULL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}
+
+\Hypertarget{a00260_afe58497d56cda5e4cbf2d33be1bdd91e}\label{a00260_afe58497d56cda5e4cbf2d33be1bdd91e} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_SENTINEL@{JSON\_HEDLEY\_SENTINEL}}
+\index{JSON\_HEDLEY\_SENTINEL@{JSON\_HEDLEY\_SENTINEL}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_SENTINEL}{JSON\_HEDLEY\_SENTINEL}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+SENTINEL(\begin{DoxyParamCaption}\item[{}]{position }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a04269935c66fe5a9b6c33fa36037d215}\label{a00260_a04269935c66fe5a9b6c33fa36037d215} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_STATIC\_ASSERT@{JSON\_HEDLEY\_STATIC\_ASSERT}}
+\index{JSON\_HEDLEY\_STATIC\_ASSERT@{JSON\_HEDLEY\_STATIC\_ASSERT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_STATIC\_ASSERT}{JSON\_HEDLEY\_STATIC\_ASSERT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a2edb8d037ad5cbac818c86aca317226a}\label{a00260_a2edb8d037ad5cbac818c86aca317226a} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_STATIC\_CAST@{JSON\_HEDLEY\_STATIC\_CAST}}
+\index{JSON\_HEDLEY\_STATIC\_CAST@{JSON\_HEDLEY\_STATIC\_CAST}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_STATIC\_CAST}{JSON\_HEDLEY\_STATIC\_CAST}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+STATIC\+\_\+\+CAST(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{expr }\end{DoxyParamCaption})~((T) (expr))}
+
+\Hypertarget{a00260_a9b2aefadecfe77306599a08b0d8147ca}\label{a00260_a9b2aefadecfe77306599a08b0d8147ca} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_STRINGIFY@{JSON\_HEDLEY\_STRINGIFY}}
+\index{JSON\_HEDLEY\_STRINGIFY@{JSON\_HEDLEY\_STRINGIFY}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_STRINGIFY}{JSON\_HEDLEY\_STRINGIFY}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a8b50e69690eed3a7e11797b1122b4302}{JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY\+\_\+\+EX}}(x)}
+
+\Hypertarget{a00260_a8b50e69690eed3a7e11797b1122b4302}\label{a00260_a8b50e69690eed3a7e11797b1122b4302} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_STRINGIFY\_EX@{JSON\_HEDLEY\_STRINGIFY\_EX}}
+\index{JSON\_HEDLEY\_STRINGIFY\_EX@{JSON\_HEDLEY\_STRINGIFY\_EX}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_STRINGIFY\_EX}{JSON\_HEDLEY\_STRINGIFY\_EX}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+STRINGIFY\+\_\+\+EX(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\#x}
+
+\Hypertarget{a00260_a4b6d318de76d6d23850ec1a588bdeffa}\label{a00260_a4b6d318de76d6d23850ec1a588bdeffa} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK@{JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK@{JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK}{JSON\_HEDLEY\_SUNPRO\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+SUNPRO\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_abbff24b90b5e9f8b586ee0b334baa636}\label{a00260_abbff24b90b5e9f8b586ee0b334baa636} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_ARMCL\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+ARMCL\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a1ff3757a45a2cb0c54f78722fd7dc47c}\label{a00260_a1ff3757a45a2cb0c54f78722fd7dc47c} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_CL2000\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL2000\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a0c4b607b1dda665174dcd4c6cfe6ce95}\label{a00260_a0c4b607b1dda665174dcd4c6cfe6ce95} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_CL430\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL430\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a138095ac760d2964c84f562b23332101}\label{a00260_a138095ac760d2964c84f562b23332101} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_CL6X\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL6\+X\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a6198db3ff6fc72b1fa798229fd025229}\label{a00260_a6198db3ff6fc72b1fa798229fd025229} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_CL7X\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CL7\+X\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_aab50c0bc1673dde3c1cf4e3b131e97ad}\label{a00260_aab50c0bc1673dde3c1cf4e3b131e97ad} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_CLPRU\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+CLPRU\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a3d620ef5f95be933b3d8e24d4fc5b6d5}\label{a00260_a3d620ef5f95be933b3d8e24d4fc5b6d5} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TI\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TI\_VERSION\_CHECK@{JSON\_HEDLEY\_TI\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TI\_VERSION\_CHECK}{JSON\_HEDLEY\_TI\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TI\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a38192f48e8c6ee0018a988d54e97cacf}\label{a00260_a38192f48e8c6ee0018a988d54e97cacf} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_TINYC\_VERSION\_CHECK@{JSON\_HEDLEY\_TINYC\_VERSION\_CHECK}}
+\index{JSON\_HEDLEY\_TINYC\_VERSION\_CHECK@{JSON\_HEDLEY\_TINYC\_VERSION\_CHECK}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_TINYC\_VERSION\_CHECK}{JSON\_HEDLEY\_TINYC\_VERSION\_CHECK}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+TINYC\+\_\+\+VERSION\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{patch }\end{DoxyParamCaption})~(0)}
+
+\Hypertarget{a00260_a681fd0533fbc24394f3322b6f4a60c4f}\label{a00260_a681fd0533fbc24394f3322b6f4a60c4f} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_UNAVAILABLE@{JSON\_HEDLEY\_UNAVAILABLE}}
+\index{JSON\_HEDLEY\_UNAVAILABLE@{JSON\_HEDLEY\_UNAVAILABLE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_UNAVAILABLE}{JSON\_HEDLEY\_UNAVAILABLE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+UNAVAILABLE(\begin{DoxyParamCaption}\item[{}]{available\+\_\+since }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a8df7de76ab3c9445f46f6994ec205bcd}\label{a00260_a8df7de76ab3c9445f46f6994ec205bcd} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_UNLIKELY@{JSON\_HEDLEY\_UNLIKELY}}
+\index{JSON\_HEDLEY\_UNLIKELY@{JSON\_HEDLEY\_UNLIKELY}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_UNLIKELY}{JSON\_HEDLEY\_UNLIKELY}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+UNLIKELY(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~(!!(expr))}
+
+\Hypertarget{a00260_a26967eb7395562701e450cec045dda15}\label{a00260_a26967eb7395562701e450cec045dda15} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_UNPREDICTABLE@{JSON\_HEDLEY\_UNPREDICTABLE}}
+\index{JSON\_HEDLEY\_UNPREDICTABLE@{JSON\_HEDLEY\_UNPREDICTABLE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_UNPREDICTABLE}{JSON\_HEDLEY\_UNPREDICTABLE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+UNPREDICTABLE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a34846d0797b38c1971baee08736dae69}{JSON\+\_\+\+HEDLEY\+\_\+\+PREDICT}}(expr, 1, 0.\+5)}
+
+\Hypertarget{a00260_a2d5705bd7bd14855c3ef5b98305c5fb4}\label{a00260_a2d5705bd7bd14855c3ef5b98305c5fb4} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_UNREACHABLE@{JSON\_HEDLEY\_UNREACHABLE}}
+\index{JSON\_HEDLEY\_UNREACHABLE@{JSON\_HEDLEY\_UNREACHABLE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_UNREACHABLE}{JSON\_HEDLEY\_UNREACHABLE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+UNREACHABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a70d7244eea52c8bb5716545e54050bb5}{JSON\+\_\+\+HEDLEY\+\_\+\+ASSUME}}(0)}
+
+\Hypertarget{a00260_a06401b258ef03263f2aec48029dc8b03}\label{a00260_a06401b258ef03263f2aec48029dc8b03} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_UNREACHABLE\_RETURN@{JSON\_HEDLEY\_UNREACHABLE\_RETURN}}
+\index{JSON\_HEDLEY\_UNREACHABLE\_RETURN@{JSON\_HEDLEY\_UNREACHABLE\_RETURN}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_UNREACHABLE\_RETURN}{JSON\_HEDLEY\_UNREACHABLE\_RETURN}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+UNREACHABLE\+\_\+\+RETURN(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~return (value)}
+
+\Hypertarget{a00260_ae4654024695783bdf7cbd900f0e0634a}\label{a00260_ae4654024695783bdf7cbd900f0e0634a} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_VERSION@{JSON\_HEDLEY\_VERSION}}
+\index{JSON\_HEDLEY\_VERSION@{JSON\_HEDLEY\_VERSION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_VERSION}{JSON\_HEDLEY\_VERSION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+VERSION~15}
+
+\Hypertarget{a00260_a50f81c80525d6fbce743d5d28b53ff73}\label{a00260_a50f81c80525d6fbce743d5d28b53ff73} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR@{JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR}}
+\index{JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR@{JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR}{JSON\_HEDLEY\_VERSION\_DECODE\_MAJOR}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+MAJOR(\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})~((version) / 1000000)}
+
+\Hypertarget{a00260_ae55f01749c4cc564b20b0f2650f10519}\label{a00260_ae55f01749c4cc564b20b0f2650f10519} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_VERSION\_DECODE\_MINOR@{JSON\_HEDLEY\_VERSION\_DECODE\_MINOR}}
+\index{JSON\_HEDLEY\_VERSION\_DECODE\_MINOR@{JSON\_HEDLEY\_VERSION\_DECODE\_MINOR}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_VERSION\_DECODE\_MINOR}{JSON\_HEDLEY\_VERSION\_DECODE\_MINOR}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+MINOR(\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})~(((version) \% 1000000) / 1000)}
+
+\Hypertarget{a00260_a2d04cc47c899e9addd019e0e7d1ebdbb}\label{a00260_a2d04cc47c899e9addd019e0e7d1ebdbb} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_VERSION\_DECODE\_REVISION@{JSON\_HEDLEY\_VERSION\_DECODE\_REVISION}}
+\index{JSON\_HEDLEY\_VERSION\_DECODE\_REVISION@{JSON\_HEDLEY\_VERSION\_DECODE\_REVISION}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_VERSION\_DECODE\_REVISION}{JSON\_HEDLEY\_VERSION\_DECODE\_REVISION}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+DECODE\+\_\+\+REVISION(\begin{DoxyParamCaption}\item[{}]{version }\end{DoxyParamCaption})~((version) \% 1000)}
+
+\Hypertarget{a00260_aa1da535c59b21f70e5967b66473543f0}\label{a00260_aa1da535c59b21f70e5967b66473543f0} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_VERSION\_ENCODE@{JSON\_HEDLEY\_VERSION\_ENCODE}}
+\index{JSON\_HEDLEY\_VERSION\_ENCODE@{JSON\_HEDLEY\_VERSION\_ENCODE}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_VERSION\_ENCODE}{JSON\_HEDLEY\_VERSION\_ENCODE}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+VERSION\+\_\+\+ENCODE(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{revision }\end{DoxyParamCaption})~(((major) \texorpdfstring{$\ast$}{*} 1000000) + ((minor) \texorpdfstring{$\ast$}{*} 1000) + (revision))}
+
+\Hypertarget{a00260_a28d7e3b2d26bd5b8a3806da3db7dea03}\label{a00260_a28d7e3b2d26bd5b8a3806da3db7dea03} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_WARN\_UNUSED\_RESULT@{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT}}
+\index{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT@{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT}{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+WARN\+\_\+\+UNUSED\+\_\+\+RESULT}
+
+\Hypertarget{a00260_adfb98ffe9adf238a5ba1670738c0f387}\label{a00260_adfb98ffe9adf238a5ba1670738c0f387} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG@{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG}}
+\index{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG@{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG}{JSON\_HEDLEY\_WARN\_UNUSED\_RESULT\_MSG}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+WARN\+\_\+\+UNUSED\+\_\+\+RESULT\+\_\+\+MSG(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\Hypertarget{a00260_a5563e5b0fbc2a9b525830081404d9208}\label{a00260_a5563e5b0fbc2a9b525830081404d9208} 
+\index{hedley.hpp@{hedley.hpp}!JSON\_HEDLEY\_WARNING@{JSON\_HEDLEY\_WARNING}}
+\index{JSON\_HEDLEY\_WARNING@{JSON\_HEDLEY\_WARNING}!hedley.hpp@{hedley.hpp}}
+\doxysubsubsection{\texorpdfstring{JSON\_HEDLEY\_WARNING}{JSON\_HEDLEY\_WARNING}}
+{\footnotesize\ttfamily \#define JSON\+\_\+\+HEDLEY\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})~\mbox{\hyperlink{a00260_a8419c2b65d28686932087c587eb19157}{JSON\+\_\+\+HEDLEY\+\_\+\+MESSAGE}}(msg)}
+

@@ -1,0 +1,106 @@
+\doxysection{status\+\_\+codes.\+h}
+\hypertarget{a00095_source}{}\label{a00095_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/status\_codes.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/status\_codes.h}}
+\mbox{\hyperlink{a00095}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_CPR\_STATUS\_CODES}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_CPR\_STATUS\_CODES}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }status\ \{}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Information\ responses}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_aee5f72ec9f1513244f7f1499042a7a96}{HTTP\_CONTINUE}}\ =\ 100;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a5294c707429f6b001196b0608d6a50f8}{HTTP\_SWITCHING\_PROTOCOL}}\ =\ 101;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a05a0760a3901503d8d0380d7e0eef1de}{HTTP\_PROCESSING}}\ =\ 102;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a0ef93f64b209bc7a15878600283c4f1f}{HTTP\_EARLY\_HINTS}}\ =\ 103;}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Successful\ responses}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a291d7ff45ce0982f9d6265b801378a28}{HTTP\_OK}}\ =\ 200;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a8a9a8b099ccbb7759f4a3ca2f80ed5fd}{HTTP\_CREATED}}\ =\ 201;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_adb565193845faf4e81986146649a9287}{HTTP\_ACCEPTED}}\ =\ 202;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a8f7ba0063b642fb57aac03b5d71a73a4}{HTTP\_NON\_AUTHORITATIVE\_INFORMATION}}\ =\ 203;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ada7158b80176f943df600ec0365df710}{HTTP\_NO\_CONTENT}}\ =\ 204;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a8bccbb218597807078552e2bd04ac046}{HTTP\_RESET\_CONTENT}}\ =\ 205;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a9f2cdc36ecd0bef1d3618a447d21bf7e}{HTTP\_PARTIAL\_CONTENT}}\ =\ 206;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a15313bf70d002c6b8e9ea5fc33ed47e7}{HTTP\_MULTI\_STATUS}}\ =\ 207;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a63de72451d022c7800320e6a8f4dcb3f}{HTTP\_ALREADY\_REPORTED}}\ =\ 208;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a629bc30a429565262f56ab35c37cef2f}{HTTP\_IM\_USED}}\ =\ 226;}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Redirection\ messages}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a0db56de26f5640959dab0f578dd69cf6}{HTTP\_MULTIPLE\_CHOICE}}\ =\ 300;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a08a0e8fbf629cdf90c1c54c6151d023a}{HTTP\_MOVED\_PERMANENTLY}}\ =\ 301;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ae0c0eea3a6e5944008fb0387a656367f}{HTTP\_FOUND}}\ =\ 302;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_af2a6b687232f358112056d93d720e6dc}{HTTP\_SEE\_OTHER}}\ =\ 303;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a00b6bc6c018ab45b8e6ee075a4c89136}{HTTP\_NOT\_MODIFIED}}\ =\ 304;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a21f2302bcb1d251b78dba7cffab9c2af}{HTTP\_USE\_PROXY}}\ =\ 305;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a473d1c92785d54049ed4f2e50d4cb2ae}{HTTP\_UNUSED}}\ =\ 306;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a206526b08fca8a486ce3103d4122894b}{HTTP\_TEMPORARY\_REDIRECT}}\ =\ 307;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_abffa01f6eea778ec7a7acbcfe6752836}{HTTP\_PERMANENT\_REDIRECT}}\ =\ 308;}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Client\ error\ responses}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a7615de4d150ca8581565db14ea66c2a1}{HTTP\_BAD\_REQUEST}}\ =\ 400;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a9f46731a263e4e7c42a5d771a01884cd}{HTTP\_UNAUTHORIZED}}\ =\ 401;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ad50b86d7cae51d7fad6322908eb92aad}{HTTP\_PAYMENT\_REQUIRED}}\ =\ 402;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_af0edba3ea49a6390ec7bb78457e4477e}{HTTP\_FORBIDDEN}}\ =\ 403;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a7ba7c107ccfe4c3aea259dd954604518}{HTTP\_NOT\_FOUND}}\ =\ 404;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a6a0a6f3b00a8d9b7440127cd489b76df}{HTTP\_METHOD\_NOT\_ALLOWED}}\ =\ 405;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a89f33c62ecbd45a604e530cdda526b4c}{HTTP\_NOT\_ACCEPTABLE}}\ =\ 406;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a97ea944a4486345d5b9604fc795024f3}{HTTP\_PROXY\_AUTHENTICATION\_REQUIRED}}\ =\ 407;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a3fd676c9a54819b810eb1930dfcb0d0a}{HTTP\_REQUEST\_TIMEOUT}}\ =\ 408;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ab61a2ca7431879e1f06cd21811a58385}{HTTP\_CONFLICT}}\ =\ 409;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a72e98026a43b78bbc8f10aadcd7a7fc0}{HTTP\_GONE}}\ =\ 410;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a397d804af4fe3785dfab7362b3012aca}{HTTP\_LENGTH\_REQUIRED}}\ =\ 411;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a095fec15d06f62fdfd6c90ae8e41df31}{HTTP\_PRECONDITION\_FAILED}}\ =\ 412;}
+\DoxyCodeLine{00046\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a720f215d71f403c2e15dbcc3e4cd54bf}{HTTP\_PAYLOAD\_TOO\_LARGE}}\ =\ 413;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a4ef33e50947888b6a323e365aa8f0042}{HTTP\_URI\_TOO\_LONG}}\ =\ 414;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_aad46c60ed1977f9a6adbb3e957fab72f}{HTTP\_UNSUPPORTED\_MEDIA\_TYPE}}\ =\ 415;}
+\DoxyCodeLine{00049\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_abb08529ef4b05d8dd6849c6af00e67c7}{HTTP\_REQUESTED\_RANGE\_NOT\_SATISFIABLE}}\ =\ 416;}
+\DoxyCodeLine{00050\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a83982dadbcf0394c0d67ea960e9592a2}{HTTP\_EXPECTATION\_FAILED}}\ =\ 417;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a83d116ff63bf140552fe0a1101f661c4}{HTTP\_IM\_A\_TEAPOT}}\ =\ 418;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a4186bb4c443fcc1e83f9b1185da3667b}{HTTP\_MISDIRECTED\_REQUEST}}\ =\ 421;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a69394264c9e2f2754aa13b227c6394d5}{HTTP\_UNPROCESSABLE\_ENTITY}}\ =\ 422;}
+\DoxyCodeLine{00054\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a293aedaa8df249fae3534bcafa343fb2}{HTTP\_LOCKED}}\ =\ 423;}
+\DoxyCodeLine{00055\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ac8c97d85ae4fb396624bcd600115d950}{HTTP\_FAILED\_DEPENDENCY}}\ =\ 424;}
+\DoxyCodeLine{00056\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_adc2619c628dfd762378e0e2559d299bc}{HTTP\_TOO\_EARLY}}\ =\ 425;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a3bef5a851974357b747ed0bdd17476b6}{HTTP\_UPGRADE\_REQUIRED}}\ =\ 426;}
+\DoxyCodeLine{00058\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a656773603b9c158ca47044309359c6a5}{HTTP\_PRECONDITION\_REQUIRED}}\ =\ 428;}
+\DoxyCodeLine{00059\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ac1d4e89f383ec82b1870410aa723a499}{HTTP\_TOO\_MANY\_REQUESTS}}\ =\ 429;}
+\DoxyCodeLine{00060\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ad6f8db4112cc14bcc3fbe1ae0c9a3579}{HTTP\_REQUEST\_HEADER\_FIELDS\_TOO\_LARGE}}\ =\ 431;}
+\DoxyCodeLine{00061\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a2fc19093b7460f0dac8317440225bced}{HTTP\_UNAVAILABLE\_FOR\_LEGAL\_REASONS}}\ =\ 451;}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Server\ response\ errors}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a17261db64fc3ab1249e4461b87afbcb8}{HTTP\_INTERNAL\_SERVER\_ERROR}}\ =\ 500;}
+\DoxyCodeLine{00064\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a7a91021161f74c6cf246f4c240e85aee}{HTTP\_NOT\_IMPLEMENTED}}\ =\ 501;}
+\DoxyCodeLine{00065\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a3a951fc935bc6f6139a7f58268aa2853}{HTTP\_BAD\_GATEWAY}}\ =\ 502;}
+\DoxyCodeLine{00066\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_aa008a5de7ba1e457165409077ca55024}{HTTP\_SERVICE\_UNAVAILABLE}}\ =\ 503;}
+\DoxyCodeLine{00067\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a512a537ad79016ccc897fb9d1e0e8dbe}{HTTP\_GATEWAY\_TIMEOUT}}\ =\ 504;}
+\DoxyCodeLine{00068\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_ad62c184cd71b3e01e47fcd9bc35434ca}{HTTP\_HTTP\_VERSION\_NOT\_SUPPORTED}}\ =\ 505;}
+\DoxyCodeLine{00069\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a81343072ed0ef4595bff7c6e019e6082}{HTTP\_VARIANT\_ALSO\_NEGOTIATES}}\ =\ 506;}
+\DoxyCodeLine{00070\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a2a00e1987ee393bc764859202947a823}{HTTP\_INSUFFICIENT\_STORAGE}}\ =\ 507;}
+\DoxyCodeLine{00071\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a2d680a737f1bf92a426487fcf422b098}{HTTP\_LOOP\_DETECTED}}\ =\ 508;}
+\DoxyCodeLine{00072\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_abe8fd68aa938448ac4cb2f004d306a74}{HTTP\_NOT\_EXTENDED}}\ =\ 510;}
+\DoxyCodeLine{00073\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a2a090e5b080bbf4a93d5b44ec159a3c5}{HTTP\_NETWORK\_AUTHENTICATION\_REQUIRED}}\ =\ 511;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a9be866f9e7d89d0fef2d623c94271760}{INFO\_CODE\_OFFSET}}\ =\ 100;}
+\DoxyCodeLine{00076\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_aecfa3e0eaf97b27565e13b095bc7dcdd}{SUCCESS\_CODE\_OFFSET}}\ =\ 200;}
+\DoxyCodeLine{00077\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a5dcc2eb629e68ef4ff427dab876b3053}{REDIRECT\_CODE\_OFFSET}}\ =\ 300;}
+\DoxyCodeLine{00078\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a49b262ae85a19ca9dd6a5cd435cd94d8}{CLIENT\_ERROR\_CODE\_OFFSET}}\ =\ 400;}
+\DoxyCodeLine{00079\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a4454ba84287e51dbe997eecd693bfbb1}{SERVER\_ERROR\_CODE\_OFFSET}}\ =\ 500;}
+\DoxyCodeLine{00080\ \textcolor{keyword}{constexpr}\ std::int32\_t\ \mbox{\hyperlink{a00659_a25eb68adf3322799d47b6427669d5b31}{MISC\_CODE\_OFFSET}}\ =\ 600;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00659_aeb868041fc21954f6835ecc3beca3316}{is\_informational}}(\textcolor{keyword}{const}\ std::int32\_t\ code)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ (code\ >=\ \mbox{\hyperlink{a00659_a9be866f9e7d89d0fef2d623c94271760}{INFO\_CODE\_OFFSET}}\ \&\&\ code\ <\ \mbox{\hyperlink{a00659_aecfa3e0eaf97b27565e13b095bc7dcdd}{SUCCESS\_CODE\_OFFSET}});}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00659_acc155122a0258a55dfd0a6d53d4ff3c5}{is\_success}}(\textcolor{keyword}{const}\ std::int32\_t\ code)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ (code\ >=\ \mbox{\hyperlink{a00659_aecfa3e0eaf97b27565e13b095bc7dcdd}{SUCCESS\_CODE\_OFFSET}}\ \&\&\ code\ <\ \mbox{\hyperlink{a00659_a5dcc2eb629e68ef4ff427dab876b3053}{REDIRECT\_CODE\_OFFSET}});}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00659_a8f41b504881478a7135678f01af14539}{is\_redirect}}(\textcolor{keyword}{const}\ std::int32\_t\ code)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ (code\ >=\ \mbox{\hyperlink{a00659_a5dcc2eb629e68ef4ff427dab876b3053}{REDIRECT\_CODE\_OFFSET}}\ \&\&\ code\ <\ \mbox{\hyperlink{a00659_a49b262ae85a19ca9dd6a5cd435cd94d8}{CLIENT\_ERROR\_CODE\_OFFSET}});}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00659_a3eebb9b638af4081b6ea790e52db829f}{is\_client\_error}}(\textcolor{keyword}{const}\ std::int32\_t\ code)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ (code\ >=\ \mbox{\hyperlink{a00659_a49b262ae85a19ca9dd6a5cd435cd94d8}{CLIENT\_ERROR\_CODE\_OFFSET}}\ \&\&\ code\ <\ \mbox{\hyperlink{a00659_a4454ba84287e51dbe997eecd693bfbb1}{SERVER\_ERROR\_CODE\_OFFSET}});}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00659_a4f29394a9cb2df01b170497cec1fc812}{is\_server\_error}}(\textcolor{keyword}{const}\ std::int32\_t\ code)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ (code\ >=\ \mbox{\hyperlink{a00659_a4454ba84287e51dbe997eecd693bfbb1}{SERVER\_ERROR\_CODE\_OFFSET}}\ \&\&\ code\ <\ \mbox{\hyperlink{a00659_a25eb68adf3322799d47b6427669d5b31}{MISC\_CODE\_OFFSET}});}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}\ \textcolor{comment}{//\ namespace\ status}}
+\DoxyCodeLine{00099\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

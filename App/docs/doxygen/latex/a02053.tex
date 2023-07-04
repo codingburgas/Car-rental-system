@@ -1,0 +1,227 @@
+\doxysection{sf\+::Mouse Class Reference}
+\hypertarget{a02053}{}\label{a02053}\index{sf::Mouse@{sf::Mouse}}
+
+
+Give access to the real-\/time state of the mouse.  
+
+
+
+
+{\ttfamily \#include $<$Mouse.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90}{Button}} \{ \newline
+\mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}{Left}}
+, \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4}{Right}}
+, \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d}{Middle}}
+, \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7}{XButton1}}
+, \newline
+\mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a}{XButton2}}
+, \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402}{Button\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{a02053}{Mouse} buttons. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a02053_a60dd479a43f26f200e7957aa11803ff4}{Wheel}} \{ \mbox{\hyperlink{a02053_a60dd479a43f26f200e7957aa11803ff4abd571de908d2b2c4b9f165f29c678496}{Vertical\+Wheel}}
+, \mbox{\hyperlink{a02053_a60dd479a43f26f200e7957aa11803ff4a785768d5e33c77de9fdcfdd02219f4e2}{Horizontal\+Wheel}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{a02053}{Mouse} wheels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \mbox{\hyperlink{a02053_ac368680f797b7f6e4f50b5b7928c1387}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \mbox{\hyperlink{a02053_a93b4d2ebef728e77a0ec9d83c1e0b0c8}{get\+Position}} (const \mbox{\hyperlink{a02069}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in window coordinates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{a02053_ab647159eb88e369a0332a9c5a7ba6687}{is\+Button\+Pressed}} (\mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90}{Button}} button)
+\begin{DoxyCompactList}\small\item\em Check if a mouse button is pressed. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a02053_a1222e16c583be9e3d176d86e0b7817d7}{set\+Position}} (const \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \&position)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a02053_ad9b16ec7041531315f06b26b413dfea8}{set\+Position}} (const \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \&position, const \mbox{\hyperlink{a02069}{Window}} \&relative\+To)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in window coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Give access to the real-\/time state of the mouse. 
+
+\doxylink{a02053}{sf\+::\+Mouse} provides an interface to the state of the mouse. It only contains static functions (a single mouse is assumed), so it\textquotesingle{}s not meant to be instantiated.
+
+This class allows users to query the mouse state at any time and directly, without having to deal with a window and its events. Compared to the Mouse\+Moved, Mouse\+Button\+Pressed and Mouse\+Button\+Released events, \doxylink{a02053}{sf\+::\+Mouse} can retrieve the state of the cursor and the buttons at any time (you don\textquotesingle{}t need to store and update a boolean on your side in order to know if a button is pressed or released), and you always get the real state of the mouse, even if it is moved, pressed or released when your window is out of focus and no event is triggered.
+
+The set\+Position and get\+Position functions can be used to change or retrieve the current position of the mouse pointer. There are two versions\+: one that operates in global coordinates (relative to the desktop) and one that operates in window coordinates (relative to a specific window).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a02053_ab647159eb88e369a0332a9c5a7ba6687}{sf::Mouse::isButtonPressed}}(\mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}{sf::Mouse::Left}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ left\ click...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ get\ global\ mouse\ position}}
+\DoxyCodeLine{\mbox{\hyperlink{a01953}{sf::Vector2i}}\ position\ =\ \mbox{\hyperlink{a02053_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ set\ mouse\ position\ relative\ to\ a\ window}}
+\DoxyCodeLine{\mbox{\hyperlink{a02053_a1222e16c583be9e3d176d86e0b7817d7}{sf::Mouse::setPosition}}(\mbox{\hyperlink{a01953}{sf::Vector2i}}(100,\ 200),\ window);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a02041}{sf\+::\+Joystick}, \doxylink{a02049}{sf\+::\+Keyboard}, \doxylink{a02061}{sf\+::\+Touch} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90} 
+\index{sf::Mouse@{sf::Mouse}!Button@{Button}}
+\index{Button@{Button}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Button}{Button}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90}{sf\+::\+Mouse\+::\+Button}}}
+
+
+
+\doxylink{a02053}{Mouse} buttons. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Left@{Left}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8} 
+Left&The left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Right@{Right}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4} 
+Right&The right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!Middle@{Middle}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d} 
+Middle&The middle (wheel) mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton1@{XButton1}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton1@{XButton1}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7} 
+XButton1&The first extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XButton2@{XButton2}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!XButton2@{XButton2}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a} 
+XButton2&The second extra mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ButtonCount@{ButtonCount}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!ButtonCount@{ButtonCount}}}\Hypertarget{a02053_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402}\label{a02053_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402} 
+Button\+Count&Keep last -- the total number of mouse buttons. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a02053_a60dd479a43f26f200e7957aa11803ff4}\label{a02053_a60dd479a43f26f200e7957aa11803ff4} 
+\index{sf::Mouse@{sf::Mouse}!Wheel@{Wheel}}
+\index{Wheel@{Wheel}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{Wheel}{Wheel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a02053_a60dd479a43f26f200e7957aa11803ff4}{sf\+::\+Mouse\+::\+Wheel}}}
+
+
+
+\doxylink{a02053}{Mouse} wheels. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalWheel@{VerticalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!VerticalWheel@{VerticalWheel}}}\Hypertarget{a02053_a60dd479a43f26f200e7957aa11803ff4abd571de908d2b2c4b9f165f29c678496}\label{a02053_a60dd479a43f26f200e7957aa11803ff4abd571de908d2b2c4b9f165f29c678496} 
+Vertical\+Wheel&The vertical mouse wheel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalWheel@{HorizontalWheel}!sf::Mouse@{sf::Mouse}}\index{sf::Mouse@{sf::Mouse}!HorizontalWheel@{HorizontalWheel}}}\Hypertarget{a02053_a60dd479a43f26f200e7957aa11803ff4a785768d5e33c77de9fdcfdd02219f4e2}\label{a02053_a60dd479a43f26f200e7957aa11803ff4a785768d5e33c77de9fdcfdd02219f4e2} 
+Horizontal\+Wheel&The horizontal mouse wheel. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a02053_ac368680f797b7f6e4f50b5b7928c1387}\label{a02053_ac368680f797b7f6e4f50b5b7928c1387} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in desktop coordinates. 
+
+This function returns the global position of the mouse cursor on the desktop.
+
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\Hypertarget{a02053_a93b4d2ebef728e77a0ec9d83c1e0b0c8}\label{a02053_a93b4d2ebef728e77a0ec9d83c1e0b0c8} 
+\index{sf::Mouse@{sf::Mouse}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} sf\+::\+Mouse\+::get\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a02069}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the current position of the mouse in window coordinates. 
+
+This function returns the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+To} & Reference window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\Hypertarget{a02053_ab647159eb88e369a0332a9c5a7ba6687}\label{a02053_ab647159eb88e369a0332a9c5a7ba6687} 
+\index{sf::Mouse@{sf::Mouse}!isButtonPressed@{isButtonPressed}}
+\index{isButtonPressed@{isButtonPressed}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{isButtonPressed()}{isButtonPressed()}}
+{\footnotesize\ttfamily static bool sf\+::\+Mouse\+::is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90}{Button}}}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a mouse button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a02053_a1222e16c583be9e3d176d86e0b7817d7}\label{a02053_a1222e16c583be9e3d176d86e0b7817d7} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in desktop coordinates. 
+
+This function sets the global position of the mouse cursor on the desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a02053_ad9b16ec7041531315f06b26b413dfea8}\label{a02053_ad9b16ec7041531315f06b26b413dfea8} 
+\index{sf::Mouse@{sf::Mouse}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sf::Mouse@{sf::Mouse}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void sf\+::\+Mouse\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i}} \&}]{position,  }\item[{const \mbox{\hyperlink{a02069}{Window}} \&}]{relative\+To }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the current position of the mouse in window coordinates. 
+
+This function sets the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+{\em relative\+To} & Reference window \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00593}{Mouse.\+hpp}}\end{DoxyCompactItemize}

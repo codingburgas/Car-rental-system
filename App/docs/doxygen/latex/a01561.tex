@@ -1,0 +1,191 @@
+\doxysection{Input\+Field Class Reference}
+\hypertarget{a01561}{}\label{a01561}\index{InputField@{InputField}}
+
+
+{\ttfamily \#include $<$Key\+Input.\+hpp$>$}
+
+
+
+Collaboration diagram for Input\+Field\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01561_aadf7575672b6b1c355c978e8948724c1}{change\+Pos}} (float x, float y)
+\item 
+string \mbox{\hyperlink{a01561_a87f0f6e6c9d0e265e893421953f5e815}{get\+Input}} ()
+\item 
+void \mbox{\hyperlink{a01561_a951b741b2a6186af1251fdf97e389bc3}{handle\+Input}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event)
+\item 
+\mbox{\hyperlink{a01561_ae43bf5547a4e34d03cc9043017c4901d}{Input\+Field}} (\mbox{\hyperlink{a01741}{Rectangle\+Shape}} \+\_\+mfield, \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \+\_\+mposition, \mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} \+\_\+msize, string \mbox{\hyperlink{a01561_aa0623c4b95426713ecf3d2dc28ea40bb}{type}}, float \mbox{\hyperlink{a01561_a80594bd4ef6c3f5807bc2a7e5574e688}{font\+Size}}, \mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3}{text\+Color}})
+\item 
+void \mbox{\hyperlink{a01561_a9460e34b9a82b68ee94e6f76eaae9de0}{print\+Input}} (\mbox{\hyperlink{a01761}{Render\+Window}} \&window)
+\item 
+void \mbox{\hyperlink{a01561_a610c9f95969344cc3f425d1d6399cd1c}{reset\+Field}} ()
+\item 
+void \mbox{\hyperlink{a01561_a802c1493ca242faeaa2cf2fb227f0224}{select\+Field}} (\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} mouse\+Pos)
+\item 
+void \mbox{\hyperlink{a01561_a7bf91af62dba2653d6321df3ee5fc19e}{update\+Field}} (\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}} mouse\+Pos, \mbox{\hyperlink{a01761}{Render\+Window}} \&window, \mbox{\hyperlink{a01977}{Event}} \&event)
+\item 
+\mbox{\hyperlink{a01561_ab751ada93706e5cb03d000a36d111245}{\texorpdfstring{$\sim$}{\string~}\+Input\+Field}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01561_abd8021d2116f1aa3498a36cbb96e408f}{animation\+Counter}}
+\item 
+int \mbox{\hyperlink{a01561_af4aca6c7fa5032c4651d9dabff565c9e}{char\+Count}} = 0
+\item 
+\mbox{\hyperlink{a01741}{Rectangle\+Shape}} \mbox{\hyperlink{a01561_a87bea496d9fd100677aea56828fccceb}{field}}
+\item 
+\mbox{\hyperlink{a01697}{Font}} \mbox{\hyperlink{a01561_ad1acf40c4b778765f2e90d77b990f4fc}{font}}
+\item 
+float \mbox{\hyperlink{a01561_a80594bd4ef6c3f5807bc2a7e5574e688}{font\+Size}}
+\item 
+string \mbox{\hyperlink{a01561_a9dbf8b11b7792727d072282c08a44fb8}{input}} = \"{}\"{}
+\item 
+bool \mbox{\hyperlink{a01561_af320123aba6b008153c2ddd330eb815c}{is\+Selected}} = false
+\item 
+int \mbox{\hyperlink{a01561_a613d2baa3a4510eb8828401d23e84c3c}{max\+Chars}}
+\item 
+string \mbox{\hyperlink{a01561_af1b3125c601978e6989f049991b33780}{result}} = \"{}\"{}
+\item 
+\mbox{\hyperlink{a01685}{Color}} \mbox{\hyperlink{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3}{text\+Color}}
+\item 
+string \mbox{\hyperlink{a01561_aa0623c4b95426713ecf3d2dc28ea40bb}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01561_ae43bf5547a4e34d03cc9043017c4901d}\label{a01561_ae43bf5547a4e34d03cc9043017c4901d} 
+\index{InputField@{InputField}!InputField@{InputField}}
+\index{InputField@{InputField}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{InputField()}{InputField()}}
+{\footnotesize\ttfamily Input\+Field\+::\+Input\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01741}{Rectangle\+Shape}}}]{\+\_\+mfield,  }\item[{\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}}]{\+\_\+mposition,  }\item[{\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}}]{\+\_\+msize,  }\item[{string}]{type,  }\item[{float}]{font\+Size,  }\item[{\mbox{\hyperlink{a01685}{Color}}}]{text\+Color }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_ab751ada93706e5cb03d000a36d111245}\label{a01561_ab751ada93706e5cb03d000a36d111245} 
+\index{InputField@{InputField}!````~InputField@{\texorpdfstring{$\sim$}{\string~}InputField}}
+\index{````~InputField@{\texorpdfstring{$\sim$}{\string~}InputField}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InputField()}{\string~InputField()}}
+{\footnotesize\ttfamily Input\+Field\+::\texorpdfstring{$\sim$}{\string~}\+Input\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01561_aadf7575672b6b1c355c978e8948724c1}\label{a01561_aadf7575672b6b1c355c978e8948724c1} 
+\index{InputField@{InputField}!changePos@{changePos}}
+\index{changePos@{changePos}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{changePos()}{changePos()}}
+{\footnotesize\ttfamily void Input\+Field\+::change\+Pos (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a87f0f6e6c9d0e265e893421953f5e815}\label{a01561_a87f0f6e6c9d0e265e893421953f5e815} 
+\index{InputField@{InputField}!getInput@{getInput}}
+\index{getInput@{getInput}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily string Input\+Field\+::get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a951b741b2a6186af1251fdf97e389bc3}\label{a01561_a951b741b2a6186af1251fdf97e389bc3} 
+\index{InputField@{InputField}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Input\+Field\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a9460e34b9a82b68ee94e6f76eaae9de0}\label{a01561_a9460e34b9a82b68ee94e6f76eaae9de0} 
+\index{InputField@{InputField}!printInput@{printInput}}
+\index{printInput@{printInput}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{printInput()}{printInput()}}
+{\footnotesize\ttfamily void Input\+Field\+::print\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a610c9f95969344cc3f425d1d6399cd1c}\label{a01561_a610c9f95969344cc3f425d1d6399cd1c} 
+\index{InputField@{InputField}!resetField@{resetField}}
+\index{resetField@{resetField}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{resetField()}{resetField()}}
+{\footnotesize\ttfamily void Input\+Field\+::reset\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a802c1493ca242faeaa2cf2fb227f0224}\label{a01561_a802c1493ca242faeaa2cf2fb227f0224} 
+\index{InputField@{InputField}!selectField@{selectField}}
+\index{selectField@{selectField}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{selectField()}{selectField()}}
+{\footnotesize\ttfamily void Input\+Field\+::select\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+\Hypertarget{a01561_a7bf91af62dba2653d6321df3ee5fc19e}\label{a01561_a7bf91af62dba2653d6321df3ee5fc19e} 
+\index{InputField@{InputField}!updateField@{updateField}}
+\index{updateField@{updateField}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{updateField()}{updateField()}}
+{\footnotesize\ttfamily void Input\+Field\+::update\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}}}]{mouse\+Pos,  }\item[{\mbox{\hyperlink{a01761}{Render\+Window}} \&}]{window,  }\item[{\mbox{\hyperlink{a01977}{Event}} \&}]{event }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01561_abd8021d2116f1aa3498a36cbb96e408f}\label{a01561_abd8021d2116f1aa3498a36cbb96e408f} 
+\index{InputField@{InputField}!animationCounter@{animationCounter}}
+\index{animationCounter@{animationCounter}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{animationCounter}{animationCounter}}
+{\footnotesize\ttfamily unsigned int Input\+Field\+::animation\+Counter\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_af4aca6c7fa5032c4651d9dabff565c9e}\label{a01561_af4aca6c7fa5032c4651d9dabff565c9e} 
+\index{InputField@{InputField}!charCount@{charCount}}
+\index{charCount@{charCount}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{charCount}{charCount}}
+{\footnotesize\ttfamily int Input\+Field\+::char\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_a87bea496d9fd100677aea56828fccceb}\label{a01561_a87bea496d9fd100677aea56828fccceb} 
+\index{InputField@{InputField}!field@{field}}
+\index{field@{field}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{field}{field}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01741}{Rectangle\+Shape}} Input\+Field\+::field\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_ad1acf40c4b778765f2e90d77b990f4fc}\label{a01561_ad1acf40c4b778765f2e90d77b990f4fc} 
+\index{InputField@{InputField}!font@{font}}
+\index{font@{font}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01697}{Font}} Input\+Field\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_a80594bd4ef6c3f5807bc2a7e5574e688}\label{a01561_a80594bd4ef6c3f5807bc2a7e5574e688} 
+\index{InputField@{InputField}!fontSize@{fontSize}}
+\index{fontSize@{fontSize}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{fontSize}{fontSize}}
+{\footnotesize\ttfamily float Input\+Field\+::font\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_a9dbf8b11b7792727d072282c08a44fb8}\label{a01561_a9dbf8b11b7792727d072282c08a44fb8} 
+\index{InputField@{InputField}!input@{input}}
+\index{input@{input}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily string Input\+Field\+::input = \"{}\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_af320123aba6b008153c2ddd330eb815c}\label{a01561_af320123aba6b008153c2ddd330eb815c} 
+\index{InputField@{InputField}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily bool Input\+Field\+::is\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_a613d2baa3a4510eb8828401d23e84c3c}\label{a01561_a613d2baa3a4510eb8828401d23e84c3c} 
+\index{InputField@{InputField}!maxChars@{maxChars}}
+\index{maxChars@{maxChars}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{maxChars}{maxChars}}
+{\footnotesize\ttfamily int Input\+Field\+::max\+Chars\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_af1b3125c601978e6989f049991b33780}\label{a01561_af1b3125c601978e6989f049991b33780} 
+\index{InputField@{InputField}!result@{result}}
+\index{result@{result}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily string Input\+Field\+::result = \"{}\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3}\label{a01561_aebd2805d3a2dd75ddb5df5e1d42e6be3} 
+\index{InputField@{InputField}!textColor@{textColor}}
+\index{textColor@{textColor}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{textColor}{textColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01685}{Color}} Input\+Field\+::text\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01561_aa0623c4b95426713ecf3d2dc28ea40bb}\label{a01561_aa0623c4b95426713ecf3d2dc28ea40bb} 
+\index{InputField@{InputField}!type@{type}}
+\index{type@{type}!InputField@{InputField}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily string Input\+Field\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/include/\mbox{\hyperlink{a00275}{Key\+Input.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/src/\mbox{\hyperlink{a00620}{Key\+Input.\+cpp}}\end{DoxyCompactItemize}

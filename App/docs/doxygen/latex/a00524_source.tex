@@ -1,0 +1,165 @@
+\doxysection{String.\+hpp}
+\hypertarget{a00524_source}{}\label{a00524_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/String.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/String.hpp}}
+\mbox{\hyperlink{a00524}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_STRING\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_STRING\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02212}{SFML/System/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00548}{SFML/System/Utf.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01901}{String}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Types}}
+\DoxyCodeLine{00052\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{typedef}\ std::basic\_string<Uint32>::iterator\ \ \ \ \ \ \ \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}};\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{typedef}\ std::basic\_string<Uint32>::const\_iterator\ \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{ConstIterator}};\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Static\ member\ data}}
+\DoxyCodeLine{00058\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::size\_t\ \mbox{\hyperlink{a01901_abaadecaf12a6b41c54d725c75fd28527}{InvalidPos}};\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{a01901_a9563a4e93f692e0c8e8702b374ef8692}{String}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{a01901_ac9df7f7696cff164794e338f3c89ccc5}{String}}(\textcolor{keywordtype}{char}\ ansiChar,\ \textcolor{keyword}{const}\ std::locale\&\ locale\ =\ std::locale());}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{a01901_aefaa202d2aa5ff85b4f75a5983367e86}{String}}(\textcolor{keywordtype}{wchar\_t}\ wideChar);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{a01901_a8e1a5027416d121187908e2ed77079ff}{String}}(\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ utf32Char);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{a01901_a57d2b8c289f9894f859564cad034bfc7}{String}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ansiString,\ \textcolor{keyword}{const}\ std::locale\&\ locale\ =\ std::locale());}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{a01901_a0aa41dcbd17b0c36c74d03d3b0147f1e}{String}}(\textcolor{keyword}{const}\ std::string\&\ ansiString,\ \textcolor{keyword}{const}\ std::locale\&\ locale\ =\ std::locale());}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{a01901_a5742d0a9b0c754f711820c2b5c40fa55}{String}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ wideString);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a01901_a5e38151340af4f9a5f74ad24c0664074}{String}}(\textcolor{keyword}{const}\ std::wstring\&\ wideString);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{a01901_aea3629adf19f9fe713d4946f6c75b214}{String}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}*\ utf32String);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{a01901_a6eee86dbe75d16bbcc26e97416c2e1ca}{String}}(\textcolor{keyword}{const}\ std::basic\_string<Uint32>\&\ utf32String);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{a01901_af862594d3c4070d8ddbf08cf8dce4f59}{String}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ copy);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a01901}{String}}\ \mbox{\hyperlink{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b}{fromUtf8}}(T\ begin,\ T\ end);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a01901}{String}}\ \mbox{\hyperlink{a01901_a81f70eecad0000a4f2e4d66f97b80300}{fromUtf16}}(T\ begin,\ T\ end);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{a01901}{String}}\ \mbox{\hyperlink{a01901_ab023a4900dce37ee71ab9e29b30a23cb}{fromUtf32}}(T\ begin,\ T\ end);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{operator}\ std::wstring()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00253\ \ \ \ \ std::string\ \mbox{\hyperlink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{toAnsiString}}(\textcolor{keyword}{const}\ std::locale\&\ locale\ =\ std::locale())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00266\ \ \ \ \ std::wstring\ \mbox{\hyperlink{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}{toWideString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00276\ \ \ \ \ std::basic\_string<Uint8>\ \mbox{\hyperlink{a01901_a2a4f366d5db833ae818881507b46e13a}{toUtf8}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00286\ \ \ \ \ std::basic\_string<Uint16>\ \mbox{\hyperlink{a01901_ab805f230a0b2e972f9f32ac4cf11d912}{toUtf16}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00299\ \ \ \ \ std::basic\_string<Uint32>\ \mbox{\hyperlink{a01901_aef4f51ebe43465c665c78692d0262e43}{toUtf32}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00309\ \ \ \ \ \mbox{\hyperlink{a01901}{String}}\&\ operator\ =(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{a01901}{String}}\&\ \mbox{\hyperlink{a00557_ad4b7a9d355d57790bfc7df0ade8bb628}{operator\ +=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00332\ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ operator\ [](std::size\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00345\ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\&\ operator\ [](std::size\_t\ index);}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01901_a391c1b4950cbf3d3f8040cea73af2969}{clear}}();}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00365\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{a01901_ae7aff54e178f5d3e399953adff5cad20}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01901_a2ba26cb6945d2bbb210b822f222aa7f6}{isEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01901_aaa78a0a46b3fbe200a4ccdedc326eb93}{erase}}(std::size\_t\ position,\ std::size\_t\ count\ =\ 1);}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01901_ad0b1455deabf07af13ee79812e05fa02}{insert}}(std::size\_t\ position,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ str);}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00413\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{a01901_aa189ec8656854106ab8d2e935fd9cbcc}{find}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ str,\ std::size\_t\ start\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01901_ad460e628c287b0fa88deba2eb0b6744b}{replace}}(std::size\_t\ position,\ std::size\_t\ length,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ replaceWith);}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01901_a82bbfee2bf23c641e5361ad505c07921}{replace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ searchFor,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ replaceWith);}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00456\ \ \ \ \ \mbox{\hyperlink{a01901}{String}}\ \mbox{\hyperlink{a01901_a492645e00032455e6d92ff0e992654ce}{substring}}(std::size\_t\ position,\ std::size\_t\ length\ =\ InvalidPos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}*\ \mbox{\hyperlink{a01901_a3ed7f3ad41659a2b31a8d8e99a7b8199}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00479\ \ \ \ \ \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}}\ \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}();}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00489\ \ \ \ \ \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{ConstIterator}}\ \mbox{\hyperlink{a01901_a0e4755d6b4d51de7c3dc2e984b79f95d}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00503\ \ \ \ \ \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}}\ \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}}();}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00517\ \ \ \ \ \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{ConstIterator}}\ \mbox{\hyperlink{a01901_af1ab4c82ff2bdfb6903b4b1bb78a8e5c}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00401_ab3488b5dbd0e587c4d7cb80605affc46}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ operator\ <(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00527\ \textcolor{comment}{}\ \ \ \ std::basic\_string<Uint32>\ \mbox{\hyperlink{a01901_ac31f912a1ff7315ed52ddab1b8ac0c98}{m\_string}};\ }
+\DoxyCodeLine{00528\ \};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00540\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00552\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00564\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a62e90a478e790defc429ecd94ad67ab3}{operator\ <}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00576\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a7344fe65b9ee438bab496c9889a34202}{operator\ >}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00588\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_aeb411e03dd15af718fe95ed4626190ad}{operator\ <=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00600\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a457fb40b390861abae4234f6059d1c48}{operator\ >=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00612\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01901}{String}}\ \mbox{\hyperlink{a00557_a72421239823c38a6b780c86a710ead07}{operator\ +}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ right);}
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00527}{SFML/System/String.inl}}>}}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_STRING\_HPP}}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ }
+
+\end{DoxyCode}

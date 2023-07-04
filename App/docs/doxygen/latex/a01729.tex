@@ -1,0 +1,92 @@
+\doxysection{sf\+::Glyph Class Reference}
+\hypertarget{a01729}{}\label{a01729}\index{sf::Glyph@{sf::Glyph}}
+
+
+Structure describing a glyph.  
+
+
+
+
+{\ttfamily \#include $<$Glyph.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Glyph\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01729_ab15cfc37eb7b40a94b3b3aedf934010b}{Glyph}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{a01729_aeac19b97ec11409147191606b784deda}{advance}}
+\begin{DoxyCompactList}\small\item\em Offset to move horizontally to the next character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} \mbox{\hyperlink{a01729_a6f3c892093167914adc31e52e5923f4b}{bounds}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the glyph, in coordinates relative to the baseline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} \mbox{\hyperlink{a01729_a0d502d326449f8c49011ed91d2805f5b}{texture\+Rect}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01785}{Texture} coordinates of the glyph inside the font\textquotesingle{}s texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure describing a glyph. 
+
+A glyph is the visual representation of a character.
+
+The \doxylink{a01729}{sf\+::\+Glyph} structure provides the information needed to handle the glyph\+: \begin{DoxyItemize}
+\item its coordinates in the font\textquotesingle{}s texture \item its bounding rectangle \item the offset to apply to get the starting position of the next glyph\end{DoxyItemize}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01697}{sf\+::\+Font} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01729_ab15cfc37eb7b40a94b3b3aedf934010b}\label{a01729_ab15cfc37eb7b40a94b3b3aedf934010b} 
+\index{sf::Glyph@{sf::Glyph}!Glyph@{Glyph}}
+\index{Glyph@{Glyph}!sf::Glyph@{sf::Glyph}}
+\doxysubsubsection{\texorpdfstring{Glyph()}{Glyph()}}
+{\footnotesize\ttfamily sf\+::\+Glyph\+::\+Glyph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01729_aeac19b97ec11409147191606b784deda}\label{a01729_aeac19b97ec11409147191606b784deda} 
+\index{sf::Glyph@{sf::Glyph}!advance@{advance}}
+\index{advance@{advance}!sf::Glyph@{sf::Glyph}}
+\doxysubsubsection{\texorpdfstring{advance}{advance}}
+{\footnotesize\ttfamily float sf\+::\+Glyph\+::advance}
+
+
+
+Offset to move horizontally to the next character. 
+
+\Hypertarget{a01729_a6f3c892093167914adc31e52e5923f4b}\label{a01729_a6f3c892093167914adc31e52e5923f4b} 
+\index{sf::Glyph@{sf::Glyph}!bounds@{bounds}}
+\index{bounds@{bounds}!sf::Glyph@{sf::Glyph}}
+\doxysubsubsection{\texorpdfstring{bounds}{bounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{Float\+Rect}} sf\+::\+Glyph\+::bounds}
+
+
+
+Bounding rectangle of the glyph, in coordinates relative to the baseline. 
+
+\Hypertarget{a01729_a0d502d326449f8c49011ed91d2805f5b}\label{a01729_a0d502d326449f8c49011ed91d2805f5b} 
+\index{sf::Glyph@{sf::Glyph}!textureRect@{textureRect}}
+\index{textureRect@{textureRect}!sf::Glyph@{sf::Glyph}}
+\doxysubsubsection{\texorpdfstring{textureRect}{textureRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{Int\+Rect}} sf\+::\+Glyph\+::texture\+Rect}
+
+
+
+\doxylink{a01785}{Texture} coordinates of the glyph inside the font\textquotesingle{}s texture. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Graphics/\mbox{\hyperlink{a00389}{Glyph.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\doxysection{proxyauth.\+h}
+\hypertarget{a00080_source}{}\label{a00080_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/proxyauth.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/proxyauth.h}}
+\mbox{\hyperlink{a00080}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_PROXYAUTH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_PROXYAUTH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00014}{cpr/auth.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00107}{cpr/util.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00809}{EncodedAuthentication}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{a00809_a1fea1f83e5b5acf818e2e96029d799d3}{EncodedAuthentication}}()\ :\ \mbox{\hyperlink{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}{auth\_string\_}}\{\textcolor{stringliteral}{"{}"{}}\}\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{a00809_a40795e69b8b5b1a9de48f69aeb6997a7}{EncodedAuthentication}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password)\ :\ \mbox{\hyperlink{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}{auth\_string\_}}\{\mbox{\hyperlink{a00656}{cpr}}::util::urlEncode(username)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ \mbox{\hyperlink{a00656}{cpr}}::util::urlEncode(password)\}\ \{\}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{a00809_a15e56f3a9118685b5765ff220616ca89}{EncodedAuthentication}}(std::string\&\&\ username,\ std::string\&\&\ password)\ :\ \mbox{\hyperlink{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}{auth\_string\_}}\{\mbox{\hyperlink{a00656}{cpr}}::util::urlEncode(\mbox{\hyperlink{a00667}{std}}::move(username))\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ \mbox{\hyperlink{a00656}{cpr}}::util::urlEncode(\mbox{\hyperlink{a00667}{std}}::move(password))\}\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{a00809_a27ce4a0df8bf6e8234b45650d3c9d982}{EncodedAuthentication}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a00809_ab7a6bd4a050dad0b615f19cd17e29a6a}{EncodedAuthentication}}(\mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\&\ old)\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a00809_a937555d7cb6b6e4bec2baaeebafae870}{\string~EncodedAuthentication}}()\ noexcept\ =\ default;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\ operator=(\mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\&\ old)\ noexcept\ =\ default;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\ operator=(const\ \mbox{\hyperlink{a00809}{EncodedAuthentication}}\&\ other)\ =\ default;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ const\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00809_ab3fd978f21caa054abcb195982aecc15}{GetAuthString}}()\ const\ noexcept;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ protected:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a00667}{std}}::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00809_a0b158bdf3ed9e79980d1e6119c73f3be}{auth\_string\_}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ class\ \mbox{\hyperlink{a00813}{ProxyAuthentication}}\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{a00813_a7636e379ac8a12b1fd1c0a2241edad24}{ProxyAuthentication}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{a00813_a74dd73d222bbdb48a08d3fee791e6235}{ProxyAuthentication}}(\textcolor{keyword}{const}\ std::initializer\_list<std::pair<const\ std::string,\ EncodedAuthentication>>\&\ auths)\ :\ proxyAuth\_\{auths\}\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00813_a976ef509fcba1b285e5aba995c03c9dd}{has}}(\textcolor{keyword}{const}\ std::string\&\ protocol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00813_ad2800c36c27f62fd7deaaff9eb332a1f}{operator[]}}(\textcolor{keyword}{const}\ std::string\&\ protocol);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ std::map<std::string,\ EncodedAuthentication>\ \mbox{\hyperlink{a00813_a1a96011405de606dda9705b27ce23bf2}{proxyAuth\_}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

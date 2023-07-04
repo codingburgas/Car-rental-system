@@ -1,0 +1,405 @@
+\doxysection{sf\+::Ftp\+::Listing\+Response Class Reference}
+\hypertarget{a01825}{}\label{a01825}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+
+
+Specialization of FTP response returning a filename listing.  
+
+
+
+
+{\ttfamily \#include $<$Ftp.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Ftp\+::Listing\+Response\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Ftp\+::Listing\+Response\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}} \{ \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba07e06d3326ba2d078583bef93930d909}{Restart\+Marker\+Reply}} = 110
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba22413357ade6b586f6ceb0d704f35075}{Service\+Ready\+Soon}} = 120
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bafa52d19bc813d69055f4cc390d4a76ca}{Data\+Connection\+Already\+Opened}} = 125
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba794ebe743688be611447638bf9e49d86}{Opening\+Data\+Connection}} = 150
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baa956e229ba6c0cdf0d88b0e05b286210}{Ok}} = 200
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba38adc424f1adcd332745de8cd3b7737a}{Pointless\+Command}} = 202
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba9bdd02ae119b8be639e778859ee74060}{System\+Status}} = 211
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba8729460a695013cc96330e2fced0ae1f}{Directory\+Status}} = 212
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baebddfc7997dca289c83068dff3f47dce}{File\+Status}} = 213
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba840fd2a1872fd4310b046541f57fdeb7}{Help\+Message}} = 214
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba78391f73aa11f07f1514c7d070b93c08}{System\+Type}} = 215
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baea2ee2007d7843c21108bb686ef03757}{Service\+Ready}} = 220
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bab23931490fc2d1df3081d651fe0f4d6e}{Closing\+Connection}} = 221
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3badc78ed87d5bddb174fa3c16707ac2f2d}{Data\+Connection\+Opened}} = 225
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bac723ebc8a38913bbf0d9504556cbaaa6}{Closing\+Data\+Connection}} = 226
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba48314fc47a72ad0aacdea93b91756f6e}{Entering\+Passive\+Mode}} = 227
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba54a88210386cb72e35d737813a221754}{Logged\+In}} = 230
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baf988b69b0a5f55f8122da5ba001932e0}{File\+Action\+Ok}} = 250
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba06d26e95a170fc422af13def415e0437}{Directory\+Ok}} = 257
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba9249e3fe9818eb93f181fbbf3ae3bc56}{Need\+Password}} = 331
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba9e048185f253f6eb6f5ff9e063b712fa}{Need\+Account\+To\+Log\+In}} = 332
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba02e6f05964ecb829e9b6fb6020d6528a}{Need\+Information}} = 350
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba43022ddf49b68a4f5aff0bea7e09e89f}{Service\+Unavailable}} = 421
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba757b89ff1f236941f7759b0ed0c28b88}{Data\+Connection\+Unavailable}} = 425
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba7cfefcc586c12ba70f752353fde7126e}{Transfer\+Aborted}} = 426
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baf822d1b0abf3e9ae7dd44684549d512d}{File\+Action\+Aborted}} = 450
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bae54e84baaca95a7b36271ca3f3fdb900}{Local\+Error}} = 451
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba5d9f3666222c808553c27e4e099c7c6d}{Insufficient\+Storage\+Space}} = 452
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba75bdf0b6844fa9c07b3c25647d22c269}{Command\+Unknown}} = 500
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baf4c7c88815981bbb7c3a3461f9f48b67}{Parameters\+Unknown}} = 501
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba2ca4834c756c81b924ebed696fcba0a8}{Command\+Not\+Implemented}} = 502
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bad0c7ab07f01c1f7af16a1852650d7c47}{Bad\+Command\+Sequence}} = 503
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba8807473b8590e1debfb3740b7a3d081c}{Parameter\+Not\+Implemented}} = 504
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bafcfbaff2c6fed941b6bcbc0999db764e}{Not\+Logged\+In}} = 530
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba1af0f173062a471739b50d8e0f40d5f7}{Need\+Account\+To\+Store}} = 532
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba3f8f931e499936fde6b750d81f5ecfef}{File\+Unavailable}} = 550
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bad220bc12dc45593af6e5079ea6c532c3}{Page\+Type\+Unknown}} = 551
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baf418e54753e0b8f9cb0325dd618acd14}{Not\+Enough\+Memory}} = 552
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba03254aba823298179a98056e15568c5b}{Filename\+Not\+Allowed}} = 553
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba59e041e4ef186e8ae8d6035973fc46bd}{Invalid\+Response}} = 1000
+, \newline
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3ba51aa367cc1e85a45ea3c7be48730e990}{Connection\+Failed}} = 1001
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3bad1e5dcf298ce30c528261435f1a2eb53}{Connection\+Closed}} = 1002
+, \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3baed2c74a9f335dee1463ca1a4f41c6478}{Invalid\+File}} = 1003
+ \}
+\begin{DoxyCompactList}\small\item\em Status codes possibly returned by a FTP response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{a01825_a0d0579db7e0531761992dbbae1174bf2}{get\+Listing}} () const
+\begin{DoxyCompactList}\small\item\em Return the array of directory/file names. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{a01817_adc2890c93c9f8ee997b828fcbef82c97}{get\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Get the full message contained in the response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}} \mbox{\hyperlink{a01817_a52bbca9fbf5451157bc055e3d8430c25}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the status code of the response. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01817_a5102552955a2652c1a39e9046e617b36}{is\+Ok}} () const
+\begin{DoxyCompactList}\small\item\em Check if the status code means a success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01825_a7e98d0aed70105c71adb52e5b6ce0bb8}{Listing\+Response}} (const \mbox{\hyperlink{a01817}{Response}} \&response, const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a01825_a65ca6597417d650fe73efc856ca551d6}{m\+\_\+listing}}
+\begin{DoxyCompactList}\small\item\em Directory/file names extracted from the data. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01817_aaf692d0df6066d4a1f4d0677869b8f7b}{m\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Last message received from the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}} \mbox{\hyperlink{a01817_af3a8918ddd408ff8fbcce5c0beda11d4}{m\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em Status code returned from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialization of FTP response returning a filename listing. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01817_af81738f06b6f571761696291276acb3b}\label{a01817_af81738f06b6f571761696291276acb3b} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!Status@{Status}}
+\index{Status@{Status}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{sf\+::\+Ftp\+::\+Response\+::\+Status}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Status codes possibly returned by a FTP response. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RestartMarkerReply@{RestartMarkerReply}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!RestartMarkerReply@{RestartMarkerReply}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba07e06d3326ba2d078583bef93930d909}\label{a01817_af81738f06b6f571761696291276acb3ba07e06d3326ba2d078583bef93930d909} 
+Restart\+Marker\+Reply&Restart marker reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReadySoon@{ServiceReadySoon}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ServiceReadySoon@{ServiceReadySoon}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba22413357ade6b586f6ceb0d704f35075}\label{a01817_af81738f06b6f571761696291276acb3ba22413357ade6b586f6ceb0d704f35075} 
+Service\+Ready\+Soon&Service ready in N minutes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!DataConnectionAlreadyOpened@{DataConnectionAlreadyOpened}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bafa52d19bc813d69055f4cc390d4a76ca}\label{a01817_af81738f06b6f571761696291276acb3bafa52d19bc813d69055f4cc390d4a76ca} 
+Data\+Connection\+Already\+Opened&Data connection already opened, transfer starting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpeningDataConnection@{OpeningDataConnection}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!OpeningDataConnection@{OpeningDataConnection}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba794ebe743688be611447638bf9e49d86}\label{a01817_af81738f06b6f571761696291276acb3ba794ebe743688be611447638bf9e49d86} 
+Opening\+Data\+Connection&File status ok, about to open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ok@{Ok}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!Ok@{Ok}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baa956e229ba6c0cdf0d88b0e05b286210}\label{a01817_af81738f06b6f571761696291276acb3baa956e229ba6c0cdf0d88b0e05b286210} 
+Ok&Command ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointlessCommand@{PointlessCommand}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!PointlessCommand@{PointlessCommand}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba38adc424f1adcd332745de8cd3b7737a}\label{a01817_af81738f06b6f571761696291276acb3ba38adc424f1adcd332745de8cd3b7737a} 
+Pointless\+Command&Command not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemStatus@{SystemStatus}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!SystemStatus@{SystemStatus}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba9bdd02ae119b8be639e778859ee74060}\label{a01817_af81738f06b6f571761696291276acb3ba9bdd02ae119b8be639e778859ee74060} 
+System\+Status&System status, or system help reply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryStatus@{DirectoryStatus}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!DirectoryStatus@{DirectoryStatus}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba8729460a695013cc96330e2fced0ae1f}\label{a01817_af81738f06b6f571761696291276acb3ba8729460a695013cc96330e2fced0ae1f} 
+Directory\+Status&Directory status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileStatus@{FileStatus}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!FileStatus@{FileStatus}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baebddfc7997dca289c83068dff3f47dce}\label{a01817_af81738f06b6f571761696291276acb3baebddfc7997dca289c83068dff3f47dce} 
+File\+Status&File status. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HelpMessage@{HelpMessage}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!HelpMessage@{HelpMessage}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba840fd2a1872fd4310b046541f57fdeb7}\label{a01817_af81738f06b6f571761696291276acb3ba840fd2a1872fd4310b046541f57fdeb7} 
+Help\+Message&Help message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemType@{SystemType}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!SystemType@{SystemType}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba78391f73aa11f07f1514c7d070b93c08}\label{a01817_af81738f06b6f571761696291276acb3ba78391f73aa11f07f1514c7d070b93c08} 
+System\+Type&NAME system type, where NAME is an official system name from the list in the Assigned Numbers document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceReady@{ServiceReady}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ServiceReady@{ServiceReady}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baea2ee2007d7843c21108bb686ef03757}\label{a01817_af81738f06b6f571761696291276acb3baea2ee2007d7843c21108bb686ef03757} 
+Service\+Ready&Service ready for new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingConnection@{ClosingConnection}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ClosingConnection@{ClosingConnection}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bab23931490fc2d1df3081d651fe0f4d6e}\label{a01817_af81738f06b6f571761696291276acb3bab23931490fc2d1df3081d651fe0f4d6e} 
+Closing\+Connection&Service closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionOpened@{DataConnectionOpened}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!DataConnectionOpened@{DataConnectionOpened}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3badc78ed87d5bddb174fa3c16707ac2f2d}\label{a01817_af81738f06b6f571761696291276acb3badc78ed87d5bddb174fa3c16707ac2f2d} 
+Data\+Connection\+Opened&Data connection open, no transfer in progress. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosingDataConnection@{ClosingDataConnection}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ClosingDataConnection@{ClosingDataConnection}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bac723ebc8a38913bbf0d9504556cbaaa6}\label{a01817_af81738f06b6f571761696291276acb3bac723ebc8a38913bbf0d9504556cbaaa6} 
+Closing\+Data\+Connection&Closing data connection, requested file action successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnteringPassiveMode@{EnteringPassiveMode}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!EnteringPassiveMode@{EnteringPassiveMode}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba48314fc47a72ad0aacdea93b91756f6e}\label{a01817_af81738f06b6f571761696291276acb3ba48314fc47a72ad0aacdea93b91756f6e} 
+Entering\+Passive\+Mode&Entering passive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoggedIn@{LoggedIn}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!LoggedIn@{LoggedIn}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba54a88210386cb72e35d737813a221754}\label{a01817_af81738f06b6f571761696291276acb3ba54a88210386cb72e35d737813a221754} 
+Logged\+In&User logged in, proceed. Logged out if appropriate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionOk@{FileActionOk}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!FileActionOk@{FileActionOk}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baf988b69b0a5f55f8122da5ba001932e0}\label{a01817_af81738f06b6f571761696291276acb3baf988b69b0a5f55f8122da5ba001932e0} 
+File\+Action\+Ok&Requested file action ok. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DirectoryOk@{DirectoryOk}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!DirectoryOk@{DirectoryOk}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba06d26e95a170fc422af13def415e0437}\label{a01817_af81738f06b6f571761696291276acb3ba06d26e95a170fc422af13def415e0437} 
+Directory\+Ok&PATHNAME created. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedPassword@{NeedPassword}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NeedPassword@{NeedPassword}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba9249e3fe9818eb93f181fbbf3ae3bc56}\label{a01817_af81738f06b6f571761696291276acb3ba9249e3fe9818eb93f181fbbf3ae3bc56} 
+Need\+Password&User name ok, need password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToLogIn@{NeedAccountToLogIn}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NeedAccountToLogIn@{NeedAccountToLogIn}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba9e048185f253f6eb6f5ff9e063b712fa}\label{a01817_af81738f06b6f571761696291276acb3ba9e048185f253f6eb6f5ff9e063b712fa} 
+Need\+Account\+To\+Log\+In&Need account for login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedInformation@{NeedInformation}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NeedInformation@{NeedInformation}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba02e6f05964ecb829e9b6fb6020d6528a}\label{a01817_af81738f06b6f571761696291276acb3ba02e6f05964ecb829e9b6fb6020d6528a} 
+Need\+Information&Requested file action pending further information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceUnavailable@{ServiceUnavailable}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ServiceUnavailable@{ServiceUnavailable}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba43022ddf49b68a4f5aff0bea7e09e89f}\label{a01817_af81738f06b6f571761696291276acb3ba43022ddf49b68a4f5aff0bea7e09e89f} 
+Service\+Unavailable&Service not available, closing control connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DataConnectionUnavailable@{DataConnectionUnavailable}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!DataConnectionUnavailable@{DataConnectionUnavailable}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba757b89ff1f236941f7759b0ed0c28b88}\label{a01817_af81738f06b6f571761696291276acb3ba757b89ff1f236941f7759b0ed0c28b88} 
+Data\+Connection\+Unavailable&Can\textquotesingle{}t open data connection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAborted@{TransferAborted}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!TransferAborted@{TransferAborted}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba7cfefcc586c12ba70f752353fde7126e}\label{a01817_af81738f06b6f571761696291276acb3ba7cfefcc586c12ba70f752353fde7126e} 
+Transfer\+Aborted&Connection closed, transfer aborted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileActionAborted@{FileActionAborted}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!FileActionAborted@{FileActionAborted}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baf822d1b0abf3e9ae7dd44684549d512d}\label{a01817_af81738f06b6f571761696291276acb3baf822d1b0abf3e9ae7dd44684549d512d} 
+File\+Action\+Aborted&Requested file action not taken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LocalError@{LocalError}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!LocalError@{LocalError}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bae54e84baaca95a7b36271ca3f3fdb900}\label{a01817_af81738f06b6f571761696291276acb3bae54e84baaca95a7b36271ca3f3fdb900} 
+Local\+Error&Requested action aborted, local error in processing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsufficientStorageSpace@{InsufficientStorageSpace}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!InsufficientStorageSpace@{InsufficientStorageSpace}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba5d9f3666222c808553c27e4e099c7c6d}\label{a01817_af81738f06b6f571761696291276acb3ba5d9f3666222c808553c27e4e099c7c6d} 
+Insufficient\+Storage\+Space&Requested action not taken; insufficient storage space in system, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandUnknown@{CommandUnknown}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!CommandUnknown@{CommandUnknown}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba75bdf0b6844fa9c07b3c25647d22c269}\label{a01817_af81738f06b6f571761696291276acb3ba75bdf0b6844fa9c07b3c25647d22c269} 
+Command\+Unknown&Syntax error, command unrecognized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersUnknown@{ParametersUnknown}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ParametersUnknown@{ParametersUnknown}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baf4c7c88815981bbb7c3a3461f9f48b67}\label{a01817_af81738f06b6f571761696291276acb3baf4c7c88815981bbb7c3a3461f9f48b67} 
+Parameters\+Unknown&Syntax error in parameters or arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CommandNotImplemented@{CommandNotImplemented}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!CommandNotImplemented@{CommandNotImplemented}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba2ca4834c756c81b924ebed696fcba0a8}\label{a01817_af81738f06b6f571761696291276acb3ba2ca4834c756c81b924ebed696fcba0a8} 
+Command\+Not\+Implemented&Command not implemented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BadCommandSequence@{BadCommandSequence}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!BadCommandSequence@{BadCommandSequence}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bad0c7ab07f01c1f7af16a1852650d7c47}\label{a01817_af81738f06b6f571761696291276acb3bad0c7ab07f01c1f7af16a1852650d7c47} 
+Bad\+Command\+Sequence&Bad sequence of commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParameterNotImplemented@{ParameterNotImplemented}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ParameterNotImplemented@{ParameterNotImplemented}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba8807473b8590e1debfb3740b7a3d081c}\label{a01817_af81738f06b6f571761696291276acb3ba8807473b8590e1debfb3740b7a3d081c} 
+Parameter\+Not\+Implemented&Command not implemented for that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotLoggedIn@{NotLoggedIn}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NotLoggedIn@{NotLoggedIn}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bafcfbaff2c6fed941b6bcbc0999db764e}\label{a01817_af81738f06b6f571761696291276acb3bafcfbaff2c6fed941b6bcbc0999db764e} 
+Not\+Logged\+In&Not logged in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NeedAccountToStore@{NeedAccountToStore}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NeedAccountToStore@{NeedAccountToStore}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba1af0f173062a471739b50d8e0f40d5f7}\label{a01817_af81738f06b6f571761696291276acb3ba1af0f173062a471739b50d8e0f40d5f7} 
+Need\+Account\+To\+Store&Need account for storing files. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileUnavailable@{FileUnavailable}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!FileUnavailable@{FileUnavailable}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba3f8f931e499936fde6b750d81f5ecfef}\label{a01817_af81738f06b6f571761696291276acb3ba3f8f931e499936fde6b750d81f5ecfef} 
+File\+Unavailable&Requested action not taken, file unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PageTypeUnknown@{PageTypeUnknown}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!PageTypeUnknown@{PageTypeUnknown}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bad220bc12dc45593af6e5079ea6c532c3}\label{a01817_af81738f06b6f571761696291276acb3bad220bc12dc45593af6e5079ea6c532c3} 
+Page\+Type\+Unknown&Requested action aborted, page type unknown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEnoughMemory@{NotEnoughMemory}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!NotEnoughMemory@{NotEnoughMemory}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baf418e54753e0b8f9cb0325dd618acd14}\label{a01817_af81738f06b6f571761696291276acb3baf418e54753e0b8f9cb0325dd618acd14} 
+Not\+Enough\+Memory&Requested file action aborted, exceeded storage allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilenameNotAllowed@{FilenameNotAllowed}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!FilenameNotAllowed@{FilenameNotAllowed}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba03254aba823298179a98056e15568c5b}\label{a01817_af81738f06b6f571761696291276acb3ba03254aba823298179a98056e15568c5b} 
+Filename\+Not\+Allowed&Requested action not taken, file name not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidResponse@{InvalidResponse}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!InvalidResponse@{InvalidResponse}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba59e041e4ef186e8ae8d6035973fc46bd}\label{a01817_af81738f06b6f571761696291276acb3ba59e041e4ef186e8ae8d6035973fc46bd} 
+Invalid\+Response&Not part of the FTP standard, generated by SFML when a received response cannot be parsed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionFailed@{ConnectionFailed}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ConnectionFailed@{ConnectionFailed}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3ba51aa367cc1e85a45ea3c7be48730e990}\label{a01817_af81738f06b6f571761696291276acb3ba51aa367cc1e85a45ea3c7be48730e990} 
+Connection\+Failed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection with the server fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionClosed@{ConnectionClosed}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ConnectionClosed@{ConnectionClosed}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3bad1e5dcf298ce30c528261435f1a2eb53}\label{a01817_af81738f06b6f571761696291276acb3bad1e5dcf298ce30c528261435f1a2eb53} 
+Connection\+Closed&Not part of the FTP standard, generated by SFML when the low-\/level socket connection is unexpectedly closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvalidFile@{InvalidFile}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!InvalidFile@{InvalidFile}}}\Hypertarget{a01817_af81738f06b6f571761696291276acb3baed2c74a9f335dee1463ca1a4f41c6478}\label{a01817_af81738f06b6f571761696291276acb3baed2c74a9f335dee1463ca1a4f41c6478} 
+Invalid\+File&Not part of the FTP standard, generated by SFML when a local file cannot be read or written. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01825_a7e98d0aed70105c71adb52e5b6ce0bb8}\label{a01825_a7e98d0aed70105c71adb52e5b6ce0bb8} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!ListingResponse@{ListingResponse}}
+\index{ListingResponse@{ListingResponse}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{ListingResponse()}{ListingResponse()}}
+{\footnotesize\ttfamily sf\+::\+Ftp\+::\+Listing\+Response\+::\+Listing\+Response (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01817}{Response}} \&}]{response,  }\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & Source response \\
+\hline
+{\em data} & Data containing the raw listing \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01825_a0d0579db7e0531761992dbbae1174bf2}\label{a01825_a0d0579db7e0531761992dbbae1174bf2} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!getListing@{getListing}}
+\index{getListing@{getListing}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{getListing()}{getListing()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ \& sf\+::\+Ftp\+::\+Listing\+Response\+::get\+Listing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the array of directory/file names. 
+
+\begin{DoxyReturn}{Returns}
+Array containing the requested listing 
+\end{DoxyReturn}
+\Hypertarget{a01817_adc2890c93c9f8ee997b828fcbef82c97}\label{a01817_adc2890c93c9f8ee997b828fcbef82c97} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Ftp\+::\+Response\+::get\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the full message contained in the response. 
+
+\begin{DoxyReturn}{Returns}
+The response message 
+\end{DoxyReturn}
+\Hypertarget{a01817_a52bbca9fbf5451157bc055e3d8430c25}\label{a01817_a52bbca9fbf5451157bc055e3d8430c25} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}} sf\+::\+Ftp\+::\+Response\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the status code of the response. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+\Hypertarget{a01817_a5102552955a2652c1a39e9046e617b36}\label{a01817_a5102552955a2652c1a39e9046e617b36} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!isOk@{isOk}}
+\index{isOk@{isOk}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{isOk()}{isOk()}}
+{\footnotesize\ttfamily bool sf\+::\+Ftp\+::\+Response\+::is\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Check if the status code means a success. 
+
+This function is defined for convenience, it is equivalent to testing if the status code is \texorpdfstring{$<$}{<} 400.
+
+\begin{DoxyReturn}{Returns}
+True if the status is a success, false if it is a failure 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01825_a65ca6597417d650fe73efc856ca551d6}\label{a01825_a65ca6597417d650fe73efc856ca551d6} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!m\_listing@{m\_listing}}
+\index{m\_listing@{m\_listing}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{m\_listing}{m\_listing}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ sf\+::\+Ftp\+::\+Listing\+Response\+::m\+\_\+listing\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Directory/file names extracted from the data. 
+
+\Hypertarget{a01817_aaf692d0df6066d4a1f4d0677869b8f7b}\label{a01817_aaf692d0df6066d4a1f4d0677869b8f7b} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!m\_message@{m\_message}}
+\index{m\_message@{m\_message}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{m\_message}{m\_message}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Ftp\+::\+Response\+::m\+\_\+message\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Last message received from the server. 
+
+\Hypertarget{a01817_af3a8918ddd408ff8fbcce5c0beda11d4}\label{a01817_af3a8918ddd408ff8fbcce5c0beda11d4} 
+\index{sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!sf::Ftp::ListingResponse@{sf::Ftp::ListingResponse}}
+\doxysubsubsection{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}} sf\+::\+Ftp\+::\+Response\+::m\+\_\+status\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Status code returned from the server. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00458}{Ftp.\+hpp}}\end{DoxyCompactItemize}

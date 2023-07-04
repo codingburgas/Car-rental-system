@@ -1,0 +1,77 @@
+\doxysection{nlohmann\+::detail\+::is\+\_\+range\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01397}{}\label{a01397}\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+
+
+{\ttfamily \#include $<$type\+\_\+traits.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \mbox{\hyperlink{a01397_af7cd9fa19ca24709795adaae999e8ce9}{value}} = !std\+::is\+\_\+same$<$\mbox{\hyperlink{a01397_a3d8ea602c1dae108207b6d8bb7c01fbd}{iterator}}, \mbox{\hyperlink{a01261}{nonesuch}}$>$\+::value \&\& !std\+::is\+\_\+same$<$\mbox{\hyperlink{a01397_a06db7efae07453ba8d435e2f73fef092}{sentinel}}, \mbox{\hyperlink{a01261}{nonesuch}}$>$\+::value \&\& \mbox{\hyperlink{a01397_aa035c8ee74dce948ae5b6aa6cc221e91}{is\+\_\+iterator\+\_\+begin}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01397_a3d8ea602c1dae108207b6d8bb7c01fbd}{iterator}} = \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ result\+\_\+of\+\_\+begin, \mbox{\hyperlink{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}{t\+\_\+ref}} $>$
+\item 
+using \mbox{\hyperlink{a01397_a06db7efae07453ba8d435e2f73fef092}{sentinel}} = \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ result\+\_\+of\+\_\+end, \mbox{\hyperlink{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}{t\+\_\+ref}} $>$
+\item 
+using \mbox{\hyperlink{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}{t\+\_\+ref}} = typename std\+::add\+\_\+lvalue\+\_\+reference$<$ T $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{a01397_aa035c8ee74dce948ae5b6aa6cc221e91}{is\+\_\+iterator\+\_\+begin}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01397_a3d8ea602c1dae108207b6d8bb7c01fbd}\label{a01397_a3d8ea602c1dae108207b6d8bb7c01fbd} 
+\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range}}$<$ T $>$\+::iterator =  \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$result\+\_\+of\+\_\+begin, \mbox{\hyperlink{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}{t\+\_\+ref}}$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01397_a06db7efae07453ba8d435e2f73fef092}\label{a01397_a06db7efae07453ba8d435e2f73fef092} 
+\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}!sentinel@{sentinel}}
+\index{sentinel@{sentinel}!nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sentinel}{sentinel}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range}}$<$ T $>$\+::sentinel =  \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$result\+\_\+of\+\_\+end, \mbox{\hyperlink{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}{t\+\_\+ref}}$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e}\label{a01397_ab5fa77fe4dd3f81f39773b0cd26b479e} 
+\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}!t\_ref@{t\_ref}}
+\index{t\_ref@{t\_ref}!nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{t\_ref}{t\_ref}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range}}$<$ T $>$\+::t\+\_\+ref =  typename std\+::add\+\_\+lvalue\+\_\+reference$<$T$>$\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01397_aa035c8ee74dce948ae5b6aa6cc221e91}\label{a01397_aa035c8ee74dce948ae5b6aa6cc221e91} 
+\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}!is\_iterator\_begin@{is\_iterator\_begin}}
+\index{is\_iterator\_begin@{is\_iterator\_begin}!nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_iterator\_begin}{is\_iterator\_begin}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr auto \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range}}$<$ T $>$\+::is\+\_\+iterator\+\_\+begin\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_iterator\_traits<iterator\_traits<iterator>>\mbox{\hyperlink{a01397_af7cd9fa19ca24709795adaae999e8ce9}{::value}}}
+
+\end{DoxyCode}
+\Hypertarget{a01397_af7cd9fa19ca24709795adaae999e8ce9}\label{a01397_af7cd9fa19ca24709795adaae999e8ce9} 
+\index{nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}!value@{value}}
+\index{value@{value}!nlohmann::detail::is\_range$<$ T $>$@{nlohmann::detail::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr bool \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range}}$<$ T $>$\+::value = !std\+::is\+\_\+same$<$\mbox{\hyperlink{a01397_a3d8ea602c1dae108207b6d8bb7c01fbd}{iterator}}, \mbox{\hyperlink{a01261}{nonesuch}}$>$\+::value \&\& !std\+::is\+\_\+same$<$\mbox{\hyperlink{a01397_a06db7efae07453ba8d435e2f73fef092}{sentinel}}, \mbox{\hyperlink{a01261}{nonesuch}}$>$\+::value \&\& \mbox{\hyperlink{a01397_aa035c8ee74dce948ae5b6aa6cc221e91}{is\+\_\+iterator\+\_\+begin}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/meta/\mbox{\hyperlink{a00230}{type\+\_\+traits.\+hpp}}\end{DoxyCompactItemize}

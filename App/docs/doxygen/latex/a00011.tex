@@ -1,0 +1,83 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/cpr/api.h File Reference}
+\hypertarget{a00011}{}\label{a00011}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/api.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/api.h}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \"{}cpr/auth.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/bearer.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/cprtypes.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/digest.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/multipart.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/ntlm.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/payload.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/response.\+h\"{}}\newline
+{\ttfamily \#include \"{}cpr/session.\+h\"{}}\newline
+Include dependency graph for api.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00656}{cpr}}
+\item 
+namespace \mbox{\hyperlink{a00657}{cpr\+::priv}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{cpr\+::\+Async\+Response}} = std\+::future$<$ \mbox{\hyperlink{a00821}{Response}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{cpr\+::\+Delete}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a79e60b6d3b51c2a11777581e83c24078}{cpr\+::\+Delete\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a31bec11dd3a04f49cf0ef4a17b7ad5a9}{cpr\+::\+Delete\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_af9bc75f8995c6c0d1415c9a595997b4b}{cpr\+::\+Download}} (const \mbox{\hyperlink{a00705}{Write\+Callback}} \&write, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_aa19a54b99d723129c9f01521bfadc95d}{cpr\+::\+Download}} (std\+::ofstream \&file, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{cpr\+::\+Get}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a6ddc78599d4070f14593e9a8e1e2ca55}{cpr\+::\+Get\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a888bb911c71f356fb3837dc4253b093c}{cpr\+::\+Get\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{cpr\+::\+Head}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a30c20f83989805f7e9192c33e85129a3}{cpr\+::\+Head\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a0411865dc73bcd1cdd903787ca7bdf9e}{cpr\+::\+Head\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{cpr\+::\+Options}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_aaaa20103315f42e5d1862823d2a93a14}{cpr\+::\+Options\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_ae1080defc6d3c26c884b691024c85e4f}{cpr\+::\+Options\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{cpr\+::\+Patch}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_accbc3d2d8edfe66ab4947e61d06f2178}{cpr\+::\+Patch\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a8ac4bf6e25311eb7f2a4383ccf3d84b8}{cpr\+::\+Patch\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{cpr\+::\+Post}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a12f500a94e602da952eef6af080db046}{cpr\+::\+Post\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a7ffd75668a6d9d780c1974f775ef14bc}{cpr\+::\+Post\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{cpr\+::\+Put}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a173d01d70c4d1e1b7f62ea1bce858ff8}{cpr\+::\+Put\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a2899a20ce3fdf2721a9c922d7a8b8a42}{cpr\+::\+Put\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\void \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{cpr\+::priv\+::set\+\_\+option}} (\mbox{\hyperlink{a00825}{Session}} \&session, Ts \&\&... ts)
+\end{DoxyCompactItemize}

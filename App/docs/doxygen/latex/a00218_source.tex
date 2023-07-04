@@ -1,0 +1,158 @@
+\doxysection{cpp\+\_\+future.\+hpp}
+\hypertarget{a00218_source}{}\label{a00218_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/cpp\_future.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/cpp\_future.hpp}}
+\mbox{\hyperlink{a00218}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstddef>}\ \textcolor{comment}{//\ size\_t}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}\ \textcolor{comment}{//\ conditional,\ enable\_if,\ false\_type,\ integral\_constant,\ is\_constructible,\ is\_integral,\ is\_same,\ remove\_cv,\ remove\_reference,\ true\_type}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <utility>}\ \textcolor{comment}{//\ index\_sequence,\ make\_index\_sequence,\ index\_sequence\_for}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00206}{nlohmann/detail/macro\_scope.hpp}}>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00662_a53a082eedad9f4729fcd8fed552a21f7}{uncvref\_t}}\ =\ \textcolor{keyword}{typename}\ std::remove\_cv<typename\ std::remove\_reference<T>::type>::type;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ JSON\_HAS\_CPP\_14}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ the\ following\ utilities\ are\ natively\ available\ in\ C++14}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }std::enable\_if\_t;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }std::index\_sequence;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }std::make\_index\_sequence;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }std::index\_sequence\_for;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ alias\ templates\ to\ reduce\ boilerplate}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ B,\ \textcolor{keyword}{typename}\ T\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\_if\_t}}\ =\ \textcolor{keyword}{typename}\ std::enable\_if<B,\ T>::type;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ The\ following\ code\ is\ taken\ from\ https://github.com/abseil/abseil-\/cpp/blob/10cb35e459f5ecca5b2ff107635da0bfa41011b4/absl/utility/utility.h}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ which\ is\ part\ of\ Google\ Abseil\ (https://github.com/abseil/abseil-\/cpp),\ licensed\ under\ the\ Apache\ License\ 2.0.}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ integer\_sequence}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ Class\ template\ representing\ a\ compile-\/time\ integer\ sequence.\ An\ instantiation}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ of\ \`{}integer\_sequence<T,\ Ints...>`\ has\ a\ sequence\ of\ integers\ encoded\ in\ its}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ type\ through\ its\ template\ arguments\ (which\ is\ a\ common\ need\ when}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ working\ with\ C++11\ variadic\ templates).\ \`{}absl::integer\_sequence`\ is\ designed}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ to\ be\ a\ drop-\/in\ replacement\ for\ C++14's\ \`{}std::integer\_sequence`.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ Example:}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ template<\ class\ T,\ T...\ Ints\ >}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ void\ user\_function(integer\_sequence<T,\ Ints...>);}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ int\ main()}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ \ \ //\ user\_function's\ \`{}T`\ will\ be\ deduced\ to\ \`{}int`\ and\ \`{}Ints...`}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ \ //\ will\ be\ deduced\ to\ \`{}0,\ 1,\ 2,\ 3,\ 4`.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \ \ \ \ user\_function(make\_integer\_sequence<int,\ 5>());}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ T...\ Ints>}
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01225}{integer\_sequence}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01225_a0220e7e5f85f91c6b7a930e469cda5c5}{value\_type}}\ =\ T;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::size\_t\ \mbox{\hyperlink{a01225_a6024bae596d01193397a7396af3aa19a}{size}}()\ noexcept}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}...(Ints);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ index\_sequence}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ A\ helper\ template\ for\ an\ \`{}integer\_sequence`\ of\ \`{}size\_t`,}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \`{}absl::index\_sequence`\ is\ designed\ to\ be\ a\ drop-\/in\ replacement\ for\ C++14's}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ \`{}std::index\_sequence`.}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{size\_t}...\ Ints>}
+\DoxyCodeLine{00071\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01225}{index\_sequence}}\ =\ \mbox{\hyperlink{a01225}{integer\_sequence}}<size\_t,\ Ints...>;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{namespace\ }utility\_internal}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Seq,\ \textcolor{keywordtype}{size\_t}\ SeqSize,\ \textcolor{keywordtype}{size\_t}\ Rem>}
+\DoxyCodeLine{00077\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01229}{Extend}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ Note\ that\ SeqSize\ ==\ sizeof...(Ints).\ It's\ passed\ explicitly\ for\ efficiency.}}
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ T...\ Ints,\ \textcolor{keywordtype}{size\_t}\ SeqSize>}
+\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01229}{Extend}}<\mbox{\hyperlink{a01225}{integer\_sequence}}<T,\ Ints...>,\ SeqSize,\ 0>}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01225}{type}}\ =\ \mbox{\hyperlink{a01225}{integer\_sequence}}\ <\ T,\ Ints...,\ (Ints\ +\ SeqSize)...\ >;}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ T...\ Ints,\ \textcolor{keywordtype}{size\_t}\ SeqSize>}
+\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01229}{Extend}}<\mbox{\hyperlink{a01225}{integer\_sequence}}<T,\ Ints...>,\ SeqSize,\ 1>}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01225}{type}}\ =\ \mbox{\hyperlink{a01225}{integer\_sequence}}\ <\ T,\ Ints...,\ (Ints\ +\ SeqSize)...,\ 2\ *\ SeqSize\ >;}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ Recursion\ helper\ for\ 'make\_integer\_sequence<T,\ N>'.}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ 'Gen<T,\ N>::type'\ is\ an\ alias\ for\ 'integer\_sequence<T,\ 0,\ 1,\ ...\ N-\/1>'.}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00095\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01241}{Gen}}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01241_a1d6f2c7fb3fa065bf8cf6e6e3544dcef}{type}}\ =}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ \mbox{\hyperlink{a01229}{Extend}}\ <\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{a01241}{Gen}}\ <\ T,\ N\ /\ 2\ >\mbox{\hyperlink{a01241_a1d6f2c7fb3fa065bf8cf6e6e3544dcef}{::type}},\ N\ /\ 2,\ N\ \%\ 2\ >\mbox{\hyperlink{a01241_a1d6f2c7fb3fa065bf8cf6e6e3544dcef}{::type}};}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00102\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01241}{Gen}}<T,\ 0>}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01225}{type}}\ =\ \mbox{\hyperlink{a01225}{integer\_sequence<T>}};}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \}\ \ \textcolor{comment}{//\ namespace\ utility\_internal}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ Compile-\/time\ sequences\ of\ integers}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ make\_integer\_sequence}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ This\ template\ alias\ is\ equivalent\ to}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ \`{}integer\_sequence<int,\ 0,\ 1,\ ...,\ N-\/1>`,\ and\ is\ designed\ to\ be\ a\ drop-\/in}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ replacement\ for\ C++14's\ \`{}std::make\_integer\_sequence`.}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ T\ N>}
+\DoxyCodeLine{00117\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\_integer\_sequence}}\ =\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{a01241_a1d6f2c7fb3fa065bf8cf6e6e3544dcef}{utility\_internal::Gen<T,\ N>::type}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ make\_index\_sequence}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ This\ template\ alias\ is\ equivalent\ to\ \`{}index\_sequence<0,\ 1,\ ...,\ N-\/1>`,}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ and\ is\ designed\ to\ be\ a\ drop-\/in\ replacement\ for\ C++14's}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ \`{}std::make\_index\_sequence`.}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00125\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\_index\_sequence}}\ =\ \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\_integer\_sequence<size\_t,\ N>}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ index\_sequence\_for}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ Converts\ a\ typename\ pack\ into\ an\ index\ sequence\ of\ the\ same\ length,\ and}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ is\ designed\ to\ be\ a\ drop-\/in\ replacement\ for\ C++14's}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ \`{}std::index\_sequence\_for()`}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00133\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00662_a24800493c6ec02ce033dcbb47b7fd28e}{index\_sequence\_for}}\ =\ \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\_index\_sequence}}<\textcolor{keyword}{sizeof}...(Ts)>;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ dispatch\ utility\ (taken\ from\ ranges-\/v3)}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}<\textcolor{keywordtype}{unsigned}\ N>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01249}{priority\_tag}}\ :\ \mbox{\hyperlink{a01249}{priority\_tag}}\ <\ N\ -\/\ 1\ >\ \{\};}
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01249}{priority\_tag}}<0>\ \{\};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ taken\ from\ ranges-\/v3}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00145\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01257}{static\_const}}}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ T\ \mbox{\hyperlink{a01257_a6bb7ab2ddd6abc41fb4ffb7c6dfa237e}{value}}\{\};}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00151\ \textcolor{keyword}{constexpr}\ T\ \mbox{\hyperlink{a01257_a6bb7ab2ddd6abc41fb4ffb7c6dfa237e}{static\_const<T>::value}};\ \textcolor{comment}{//\ NOLINT(readability-\/redundant-\/declaration)}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00154\ \}\ \ \textcolor{comment}{//\ namespace\ nlohmann}}
+
+\end{DoxyCode}

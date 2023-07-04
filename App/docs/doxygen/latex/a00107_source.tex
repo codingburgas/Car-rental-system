@@ -1,0 +1,46 @@
+\doxysection{util.\+h}
+\hypertarget{a00107_source}{}\label{a00107_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/util.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/util.h}}
+\mbox{\hyperlink{a00107}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_UTIL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_UTIL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00023}{cpr/callback.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00029}{cpr/cookies.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00035}{cpr/cprtypes.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00041}{cpr/curlholder.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }util\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}}\ \mbox{\hyperlink{a00660_a05dbf46877c9eb8a837bf8925808176e}{parseHeader}}(\textcolor{keyword}{const}\ std::string\&\ headers,\ std::string*\ status\_line\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string*\ reason\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \mbox{\hyperlink{a00721}{Cookies}}\ \mbox{\hyperlink{a00660_a69d22b4cba46e93b4da44fd3af0bf7bd}{parseCookies}}(\mbox{\hyperlink{a00949}{curl\_slist}}*\ raw\_cookies);}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{a00660_a5a4fef2e955aa8e7e5d614ca58ebfe7e}{readUserFunction}}(\textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nitems,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00697}{ReadCallback}}*\ read);}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{a00660_aa38527e7d4b75c3c1c002dc3c0d53a6b}{headerUserFunction}}(\textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00701}{HeaderCallback}}*\ header);}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{a00660_a8ae70d9fc3502fb7d4d142f737abb2b3}{writeFunction}}(\textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ std::string*\ data);}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{a00660_ac542f2a0397fa9530cb8719c28f038d6}{writeFileFunction}}(\textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ std::ofstream*\ file);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{a00660_af02df6d778cb33dca218c63717e4fe4f}{writeUserFunction}}(\textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00705}{WriteCallback}}*\ write);}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#if\ LIBCURL\_VERSION\_NUM\ <\ 0x072000}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00660_a5b91bf5d9aff268b0e908c8796ac0e14}{progressUserFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00709}{ProgressCallback}}*\ progress,\ \textcolor{keywordtype}{double}\ dltotal,\ \textcolor{keywordtype}{double}\ dlnow,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ultotal,\ \textcolor{keywordtype}{double}\ ulnow);}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00660_a5b91bf5d9aff268b0e908c8796ac0e14}{progressUserFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00709}{ProgressCallback}}*\ progress,\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ dltotal,\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ dlnow,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ ultotal,\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}\ ulnow);}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a00660_ae5f759ca1efe8fed6560d00a9a4e40ec}{debugUserFunction}}(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}*\ handle,\ \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\_infotype}}\ type,\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00713}{DebugCallback}}*\ debug);}
+\DoxyCodeLine{00033\ std::vector<std::string>\ \mbox{\hyperlink{a00660_ab742437eb9827653e00476d8299cf2b2}{split}}(\textcolor{keyword}{const}\ std::string\&\ to\_split,\ \textcolor{keywordtype}{char}\ delimiter);}
+\DoxyCodeLine{00034\ std::string\ \mbox{\hyperlink{a00660_ad7b2cda098b163bfefc274748f4c321a}{urlEncode}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00035\ std::string\ \mbox{\hyperlink{a00660_a5a88cb19e5d6555fdc083e59bf8a8f33}{urlDecode}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \}\ \textcolor{comment}{//\ namespace\ util}}
+\DoxyCodeLine{00038\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

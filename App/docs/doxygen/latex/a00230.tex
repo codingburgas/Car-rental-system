@@ -1,0 +1,169 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/meta/type\+\_\+traits.hpp File Reference}
+\hypertarget{a00230}{}\label{a00230}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/type\_traits.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/type\_traits.hpp}}
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/iterator\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/call\+\_\+std/begin.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/call\+\_\+std/end.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/cpp\+\_\+future.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/detected.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/json\+\_\+fwd.\+hpp$>$}\newline
+Include dependency graph for type\+\_\+traits.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01333}{nlohmann\+::detail\+::conjunction$<$... $>$}}
+\item 
+struct \mbox{\hyperlink{a01337}{nlohmann\+::detail\+::conjunction$<$ B1 $>$}}
+\item 
+struct \mbox{\hyperlink{a01341}{nlohmann\+::detail\+::conjunction$<$ B1, Bn... $>$}}
+\item 
+struct \mbox{\hyperlink{a01305}{nlohmann\+::detail\+::has\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01313}{nlohmann\+::detail\+::has\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01317}{nlohmann\+::detail\+::has\+\_\+non\+\_\+default\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01321}{nlohmann\+::detail\+::has\+\_\+non\+\_\+default\+\_\+from\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01325}{nlohmann\+::detail\+::has\+\_\+to\+\_\+json$<$ Basic\+Json\+Type, T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01329}{nlohmann\+::detail\+::has\+\_\+to\+\_\+json$<$ Basic\+Json\+Type, T, enable\+\_\+if\+\_\+t$<$ !is\+\_\+basic\+\_\+json$<$ T $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01289}{nlohmann\+::detail\+::is\+\_\+basic\+\_\+json$<$ typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01293}{nlohmann\+::detail\+::is\+\_\+basic\+\_\+json$<$ NLOHMANN\+\_\+\+BASIC\+\_\+\+JSON\+\_\+\+TPL $>$}}
+\item 
+struct \mbox{\hyperlink{a01449}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+array\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01441}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Array\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01445}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ iterator\+\_\+t, Compatible\+Array\+Type $>$\+::value \&\&is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ detected\+\_\+t$<$ iterator\+\_\+t, Compatible\+Array\+Type $>$ $>$ $>$\+::value \&\&!std\+::is\+\_\+same$<$ Compatible\+Array\+Type, detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Compatible\+Array\+Type $>$ $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01477}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01469}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01473}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$ Real\+Integer\+Type $>$\+::value \&\&std\+::is\+\_\+integral$<$ Compatible\+Number\+Integer\+Type $>$\+::value \&\&!std\+::is\+\_\+same$<$ bool, Compatible\+Number\+Integer\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01417}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+object\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Object\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01409}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Object\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01413}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Object\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ mapped\+\_\+type\+\_\+t, Compatible\+Object\+Type $>$\+::value \&\&is\+\_\+detected$<$ key\+\_\+type\+\_\+t, Compatible\+Object\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01433}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Compatible\+String\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01489}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01481}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01485}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Compatible\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+complete\+\_\+type$<$ Compatible\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01401}{nlohmann\+::detail\+::is\+\_\+complete\+\_\+type$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01405}{nlohmann\+::detail\+::is\+\_\+complete\+\_\+type$<$ T, decltype(void(sizeof(\+T)))$>$}}
+\item 
+struct \mbox{\hyperlink{a01369}{nlohmann\+::detail\+::is\+\_\+constructible$<$ T, Args $>$}}
+\item 
+struct \mbox{\hyperlink{a01377}{nlohmann\+::detail\+::is\+\_\+constructible$<$ const std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01385}{nlohmann\+::detail\+::is\+\_\+constructible$<$ const std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01373}{nlohmann\+::detail\+::is\+\_\+constructible$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01381}{nlohmann\+::detail\+::is\+\_\+constructible$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01465}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+array\+\_\+type$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01453}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Array\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01461}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ !std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::value\+\_\+type $>$\+::value \&\&!is\+\_\+compatible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Constructible\+Array\+Type $>$\+::value \&\&is\+\_\+default\+\_\+constructible$<$ Constructible\+Array\+Type $>$\+::value \&\&(std\+::is\+\_\+move\+\_\+assignable$<$ Constructible\+Array\+Type $>$\+::value\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+copy\+\_\+assignable$<$ Constructible\+Array\+Type $>$\+::value)\&\&is\+\_\+detected$<$ iterator\+\_\+t, Constructible\+Array\+Type $>$\+::value \&\&is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ detected\+\_\+t$<$ iterator\+\_\+t, Constructible\+Array\+Type $>$ $>$ $>$\+::value \&\&is\+\_\+detected$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$\+::value \&\&!std\+::is\+\_\+same$<$ Constructible\+Array\+Type, detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$ $>$\+::value \&\&is\+\_\+complete\+\_\+type$<$ detected\+\_\+t$<$ range\+\_\+value\+\_\+t, Constructible\+Array\+Type $>$ $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01457}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+array\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Array\+Type, enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Constructible\+Array\+Type, typename Basic\+Json\+Type\+::value\+\_\+type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01429}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+object\+\_\+type$<$ Basic\+Json\+Type, Constructible\+Object\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01421}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Object\+Type, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01425}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+object\+\_\+type\+\_\+impl$<$ Basic\+Json\+Type, Constructible\+Object\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+detected$<$ mapped\+\_\+type\+\_\+t, Constructible\+Object\+Type $>$\+::value \&\&is\+\_\+detected$<$ key\+\_\+type\+\_\+t, Constructible\+Object\+Type $>$\+::value $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01437}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Constructible\+String\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01493}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+tuple$<$ T1, T2 $>$}}
+\item 
+struct \mbox{\hyperlink{a01497}{nlohmann\+::detail\+::is\+\_\+constructible\+\_\+tuple$<$ T1, std\+::tuple$<$ Args... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01349}{nlohmann\+::detail\+::is\+\_\+default\+\_\+constructible$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{a01357}{nlohmann\+::detail\+::is\+\_\+default\+\_\+constructible$<$ const std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01365}{nlohmann\+::detail\+::is\+\_\+default\+\_\+constructible$<$ const std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01353}{nlohmann\+::detail\+::is\+\_\+default\+\_\+constructible$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01361}{nlohmann\+::detail\+::is\+\_\+default\+\_\+constructible$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01309}{nlohmann\+::detail\+::is\+\_\+getable$<$ Basic\+Json\+Type, T $>$}}
+\item 
+struct \mbox{\hyperlink{a01389}{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+traits$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01393}{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+traits$<$ iterator\+\_\+traits$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01297}{nlohmann\+::detail\+::is\+\_\+json\+\_\+ref$<$ typename $>$}}
+\item 
+struct \mbox{\hyperlink{a01301}{nlohmann\+::detail\+::is\+\_\+json\+\_\+ref$<$ json\+\_\+ref$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{a01501}{nlohmann\+::detail\+::is\+\_\+ordered\+\_\+map$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{a01397}{nlohmann\+::detail\+::is\+\_\+range$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{a01345}{nlohmann\+::detail\+::negation$<$ B $>$}}
+\item 
+struct \mbox{\hyperlink{a01505}{nlohmann\+::detail\+::is\+\_\+ordered\+\_\+map$<$ T $>$\+::two}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a3603b59a17d1c5e15050743b847992f2}{nlohmann\+::detail\+::difference\+\_\+type\+\_\+t}} = typename T\+::difference\+\_\+type
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{a00662_a1711ee5cef66a0523055c8d9f024f322}{nlohmann\+::detail\+::from\+\_\+json\+\_\+function}} = decltype(T\+::from\+\_\+json(std\+::declval$<$ Args $>$()...))
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{a00662_ab4d22cdb6521ee3508db496dea66711e}{nlohmann\+::detail\+::get\+\_\+template\+\_\+function}} = decltype(std\+::declval$<$ T $>$().template \mbox{\hyperlink{a00662_acc422c11342b31368f610b6f96fcedc6}{get}}$<$ U $>$())
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_ad22d2aa3aab018050ae519f6754366e1}{nlohmann\+::detail\+::iterator\+\_\+category\+\_\+t}} = typename T\+::iterator\+\_\+category
+\item 
+{\footnotesize template$<$typename R $>$ }\\using \mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{nlohmann\+::detail\+::iterator\+\_\+t}} = \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ \mbox{\hyperlink{a01397}{is\+\_\+range}}$<$ R $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, result\+\_\+of\+\_\+begin$<$ decltype(std\+::declval$<$ R \& $>$())$>$ $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a66dfe39f03b05d6b7265a0ff748d64ef}{nlohmann\+::detail\+::key\+\_\+type\+\_\+t}} = typename T\+::key\+\_\+type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a9c1795c148875722f8482d39e0eb9364}{nlohmann\+::detail\+::mapped\+\_\+type\+\_\+t}} = typename T\+::mapped\+\_\+type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a26dc71e2dd9336587e56062178f9abce}{nlohmann\+::detail\+::pointer\+\_\+t}} = typename T\+::pointer
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a1eb075b086024e7c18e3a56db93a6688}{nlohmann\+::detail\+::range\+\_\+value\+\_\+t}} = \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{value\+\_\+type\+\_\+t}}$<$ \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$ \mbox{\hyperlink{a00662_a520ea901ba1560b9bc3e274b61497afe}{iterator\+\_\+t}}$<$ T $>$ $>$ $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a082bdafd3b4c61d9d1e92b35b8f75ee3}{nlohmann\+::detail\+::reference\+\_\+t}} = typename T\+::reference
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{a00662_af846b6cf2f926009ff3a7a61495ca383}{nlohmann\+::detail\+::to\+\_\+json\+\_\+function}} = decltype(T\+::to\+\_\+json(std\+::declval$<$ Args $>$()...))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_af91beae90c2fb0f931079b3d50a343bc}{nlohmann\+::detail\+::value\+\_\+type\+\_\+t}} = typename T\+::value\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename U , \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ !std\+::is\+\_\+same$<$ T, U $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$  = 0$>$ }\\T \mbox{\hyperlink{a00662_af6c76d47b35f0493b1072b9323e98ca8}{nlohmann\+::detail\+::conditional\+\_\+static\+\_\+cast}} (U \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\end{DoxyCompactItemize}

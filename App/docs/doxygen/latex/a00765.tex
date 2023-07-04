@@ -1,0 +1,266 @@
+\doxysection{cpr\+::Interface Class Reference}
+\hypertarget{a00765}{}\label{a00765}\index{cpr::Interface@{cpr::Interface}}
+
+
+{\ttfamily \#include $<$interface.\+h$>$}
+
+
+
+Inheritance diagram for cpr\+::Interface\+:
+% FIG 0
+
+
+Collaboration diagram for cpr\+::Interface\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725_a727c61b36da764619317de7b3ebfa8ad}{c\+\_\+str}} () const
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725_a72c0acc4b7f55cb5c693cc27fcb56915}{data}} () const
+\item 
+\mbox{\hyperlink{a00765_a7e307b62010e1e38d1c7723e9cbdbc9d}{Interface}} ()
+\item 
+\mbox{\hyperlink{a00765_a00f546f1a4856162c947ada6e688e709}{Interface}} (const char \texorpdfstring{$\ast$}{*}iface)
+\item 
+\mbox{\hyperlink{a00765_a146b494f72bab0903e21420f5d5d0fb4}{Interface}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}}, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{a00765_ad7ceae00d5e961443a686d5b6880965d}{Interface}} (const \mbox{\hyperlink{a00765}{Interface}} \&other)=default
+\item 
+\mbox{\hyperlink{a00765_adc931c4f92aa0c3ed9b8fbc1c228fbb0}{Interface}} (const std\+::initializer\+\_\+list$<$ std\+::string $>$ args)
+\item 
+\mbox{\hyperlink{a00765_ae6926d15e31bbc49886c752c363f08a0}{Interface}} (const std\+::string \&iface)
+\item 
+\mbox{\hyperlink{a00765_aa50e2136501bf3e81813588052fe97f1}{Interface}} (\mbox{\hyperlink{a00765}{Interface}} \&\&old) noexcept=default
+\item 
+\mbox{\hyperlink{a00765_aa345a3daf70d4c10d962ea8da370dd53}{Interface}} (std\+::string \&\&iface)
+\item 
+\mbox{\hyperlink{a00725_aeb41249828c81f6c3783f7f86345a35f}{operator std\+::string}} () const
+\item 
+bool \mbox{\hyperlink{a00725_a9701e498aa8572c28eeff5caafffa763}{operator!=}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a2dd122ee639850b79634e3c7d4fe7f2a}{operator!=}} (const std\+::string \&rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a96c7ef876c513b56f038ecfb7d346a2e}{operator!=}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}} $>$ \&rhs) const
+\item 
+\mbox{\hyperlink{a00765}{Interface}} \mbox{\hyperlink{a00725_a9272d8be0343b9b75e5e5640bbae7a38}{operator+}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+\mbox{\hyperlink{a00765}{Interface}} \mbox{\hyperlink{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53}{operator+}} (const std\+::string \&rhs) const
+\item 
+\mbox{\hyperlink{a00765}{Interface}} \mbox{\hyperlink{a00725_af43737e127104c855dd3c666ad433008}{operator+}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}} $>$ \&rhs) const
+\item 
+void \mbox{\hyperlink{a00725_aae920cdb69e03c90567d719c3ca43ed8}{operator+=}} (const char \texorpdfstring{$\ast$}{*}rhs)
+\item 
+void \mbox{\hyperlink{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95}{operator+=}} (const std\+::string \&rhs)
+\item 
+void \mbox{\hyperlink{a00725_a0e5a3862ef488508a5b9082425009768}{operator+=}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}} $>$ \&rhs)
+\item 
+\mbox{\hyperlink{a00765}{Interface}} \& \mbox{\hyperlink{a00765_aee167eaef22351860cad3134d3969ca7}{operator=}} (const \mbox{\hyperlink{a00765}{Interface}} \&other)=default
+\item 
+\mbox{\hyperlink{a00765}{Interface}} \& \mbox{\hyperlink{a00765_a2694b243b72258b14b53cd42935937f0}{operator=}} (\mbox{\hyperlink{a00765}{Interface}} \&\&old) noexcept=default
+\item 
+bool \mbox{\hyperlink{a00725_ae720e1f1ed52614908fea9d84bbd5dde}{operator==}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a823e98c9d8e60cf066da254363deedf2}{operator==}} (const std\+::string \&rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_ae5a35462c8f42418eb82863f07a97b40}{operator==}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}} $>$ \&rhs) const
+\item 
+const std\+::string \& \mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{a00725_ad24a9739eab461fb6ae444775912f7bc}{str}} () const
+\item 
+\mbox{\hyperlink{a00765_a05011bb178655fa5d27524d10453172e}{\texorpdfstring{$\sim$}{\string~}\+Interface}} () override=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a00725_a179907e27e38541a85460a8b193b37de}{str\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00765_a7e307b62010e1e38d1c7723e9cbdbc9d}\label{a00765_a7e307b62010e1e38d1c7723e9cbdbc9d} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_ae6926d15e31bbc49886c752c363f08a0}\label{a00765_ae6926d15e31bbc49886c752c363f08a0} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{iface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_aa345a3daf70d4c10d962ea8da370dd53}\label{a00765_aa345a3daf70d4c10d962ea8da370dd53} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{iface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_a00f546f1a4856162c947ada6e688e709}\label{a00765_a00f546f1a4856162c947ada6e688e709} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{iface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_a146b494f72bab0903e21420f5d5d0fb4}\label{a00765_a146b494f72bab0903e21420f5d5d0fb4} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_adc931c4f92aa0c3ed9b8fbc1c228fbb0}\label{a00765_adc931c4f92aa0c3ed9b8fbc1c228fbb0} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ std\+::string $>$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00765_ad7ceae00d5e961443a686d5b6880965d}\label{a00765_ad7ceae00d5e961443a686d5b6880965d} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00765}{Interface}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00765_aa50e2136501bf3e81813588052fe97f1}\label{a00765_aa50e2136501bf3e81813588052fe97f1} 
+\index{cpr::Interface@{cpr::Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{Interface()}{Interface()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00765}{Interface}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00765_a05011bb178655fa5d27524d10453172e}\label{a00765_a05011bb178655fa5d27524d10453172e} 
+\index{cpr::Interface@{cpr::Interface}!````~Interface@{\texorpdfstring{$\sim$}{\string~}Interface}}
+\index{````~Interface@{\texorpdfstring{$\sim$}{\string~}Interface}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Interface()}{\string~Interface()}}
+{\footnotesize\ttfamily cpr\+::\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00725_a727c61b36da764619317de7b3ebfa8ad}\label{a00725_a727c61b36da764619317de7b3ebfa8ad} 
+\index{cpr::Interface@{cpr::Interface}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{c\_str()}{c\_str()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a72c0acc4b7f55cb5c693cc27fcb56915}\label{a00725_a72c0acc4b7f55cb5c693cc27fcb56915} 
+\index{cpr::Interface@{cpr::Interface}!data@{data}}
+\index{data@{data}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_aeb41249828c81f6c3783f7f86345a35f}\label{a00725_aeb41249828c81f6c3783f7f86345a35f} 
+\index{cpr::Interface@{cpr::Interface}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a9701e498aa8572c28eeff5caafffa763}\label{a00725_a9701e498aa8572c28eeff5caafffa763} 
+\index{cpr::Interface@{cpr::Interface}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a2dd122ee639850b79634e3c7d4fe7f2a}\label{a00725_a2dd122ee639850b79634e3c7d4fe7f2a} 
+\index{cpr::Interface@{cpr::Interface}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a96c7ef876c513b56f038ecfb7d346a2e}\label{a00725_a96c7ef876c513b56f038ecfb7d346a2e} 
+\index{cpr::Interface@{cpr::Interface}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a9272d8be0343b9b75e5e5640bbae7a38}\label{a00725_a9272d8be0343b9b75e5e5640bbae7a38} 
+\index{cpr::Interface@{cpr::Interface}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00765}{Interface}}  \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53}\label{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53} 
+\index{cpr::Interface@{cpr::Interface}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00765}{Interface}}  \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_af43737e127104c855dd3c666ad433008}\label{a00725_af43737e127104c855dd3c666ad433008} 
+\index{cpr::Interface@{cpr::Interface}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00765}{Interface}}  \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_aae920cdb69e03c90567d719c3ca43ed8}\label{a00725_aae920cdb69e03c90567d719c3ca43ed8} 
+\index{cpr::Interface@{cpr::Interface}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95}\label{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95} 
+\index{cpr::Interface@{cpr::Interface}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a0e5a3862ef488508a5b9082425009768}\label{a00725_a0e5a3862ef488508a5b9082425009768} 
+\index{cpr::Interface@{cpr::Interface}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00765_aee167eaef22351860cad3134d3969ca7}\label{a00765_aee167eaef22351860cad3134d3969ca7} 
+\index{cpr::Interface@{cpr::Interface}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00765}{Interface}} \& cpr\+::\+Interface\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00765}{Interface}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00765_a2694b243b72258b14b53cd42935937f0}\label{a00765_a2694b243b72258b14b53cd42935937f0} 
+\index{cpr::Interface@{cpr::Interface}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00765}{Interface}} \& cpr\+::\+Interface\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00765}{Interface}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00725_ae720e1f1ed52614908fea9d84bbd5dde}\label{a00725_ae720e1f1ed52614908fea9d84bbd5dde} 
+\index{cpr::Interface@{cpr::Interface}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator== (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a823e98c9d8e60cf066da254363deedf2}\label{a00725_a823e98c9d8e60cf066da254363deedf2} 
+\index{cpr::Interface@{cpr::Interface}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator== (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_ae5a35462c8f42418eb82863f07a97b40}\label{a00725_ae5a35462c8f42418eb82863f07a97b40} 
+\index{cpr::Interface@{cpr::Interface}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}\label{a00725_a50a014af2ca84fbf4bd05d65a96d05bd} 
+\index{cpr::Interface@{cpr::Interface}!str@{str}}
+\index{str@{str}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::string \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a00725_ad24a9739eab461fb6ae444775912f7bc}\label{a00725_ad24a9739eab461fb6ae444775912f7bc} 
+\index{cpr::Interface@{cpr::Interface}!str@{str}}
+\index{str@{str}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00725_a179907e27e38541a85460a8b193b37de}\label{a00725_a179907e27e38541a85460a8b193b37de} 
+\index{cpr::Interface@{cpr::Interface}!str\_@{str\_}}
+\index{str\_@{str\_}!cpr::Interface@{cpr::Interface}}
+\doxysubsubsection{\texorpdfstring{str\_}{str\_}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ \mbox{\hyperlink{a00765}{Interface}}  $>$\+::str\+\_\+\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00056}{interface.\+h}}\end{DoxyCompactItemize}

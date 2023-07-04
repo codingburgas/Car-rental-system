@@ -1,0 +1,149 @@
+\doxysection{Graphics module}
+\hypertarget{a00652}{}\label{a00652}\index{Graphics module@{Graphics module}}
+
+
+2D graphics module\+: sprites, text, shapes, ...  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00671}{sf\+::\+Glsl}}
+\begin{DoxyCompactList}\small\item\em Namespace with GLSL types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01677}{sf\+::\+Blend\+Mode}}
+\begin{DoxyCompactList}\small\item\em Blending modes for drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01681}{sf\+::\+Circle\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a circle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01685}{sf\+::\+Color}}
+\begin{DoxyCompactList}\small\item\em Utility class for manipulating RGBA colors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01689}{sf\+::\+Convex\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a convex polygon. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01693}{sf\+::\+Drawable}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for objects that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01697}{sf\+::\+Font}}
+\begin{DoxyCompactList}\small\item\em Class for loading and manipulating character fonts. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01729}{sf\+::\+Glyph}}
+\begin{DoxyCompactList}\small\item\em Structure describing a glyph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01733}{sf\+::\+Image}}
+\begin{DoxyCompactList}\small\item\em Class for loading, manipulating and saving images. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01737}{sf\+::\+Rect$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Utility class for manipulating 2D axis aligned rectangles. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01741}{sf\+::\+Rectangle\+Shape}}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a rectangle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01745}{sf\+::\+Render\+States}}
+\begin{DoxyCompactList}\small\item\em Define the states used for drawing to a \doxylink{a01749}{Render\+Target}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01749}{sf\+::\+Render\+Target}}
+\begin{DoxyCompactList}\small\item\em Base class for all render targets (window, texture, ...) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01757}{sf\+::\+Render\+Texture}}
+\begin{DoxyCompactList}\small\item\em Target for off-\/screen 2D rendering into a texture. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01761}{sf\+::\+Render\+Window}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a02069}{Window} that can serve as a target for 2D drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01765}{sf\+::\+Shader}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01765}{Shader} class (vertex, geometry and fragment) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01773}{sf\+::\+Shape}}
+\begin{DoxyCompactList}\small\item\em Base class for textured shapes with outline. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01777}{sf\+::\+Sprite}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01693}{Drawable} representation of a texture, with its own transformations, color, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01781}{sf\+::\+Text}}
+\begin{DoxyCompactList}\small\item\em Graphical text that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01785}{sf\+::\+Texture}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01733}{Image} living on the graphics card that can be used for drawing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01789}{sf\+::\+Transform}}
+\begin{DoxyCompactList}\small\item\em Define a 3x3 transform matrix. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01793}{sf\+::\+Transformable}}
+\begin{DoxyCompactList}\small\item\em Decomposed transform defined by a position, a rotation and a scale. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01797}{sf\+::\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Define a point with color and texture coordinates. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01801}{sf\+::\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Define a set of one or more 2D primitives. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01805}{sf\+::\+Vertex\+Buffer}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01797}{Vertex} buffer storage for one or more 2D primitives. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{a01809}{sf\+::\+View}}
+\begin{DoxyCompactList}\small\item\em 2D camera that defines what region is shown on screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}} \{ \newline
+\mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}{sf\+::\+Points}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e}{sf\+::\+Lines}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba14d9eeec2c7c314f239a57bde35949fa}{sf\+::\+Line\+Strip}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}{sf\+::\+Triangles}}
+, \newline
+\mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba05e55fec6d32c2fc8328f94d07f91184}{sf\+::\+Triangle\+Strip}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba363f7762b33706c805c6a451ad554f5e}{sf\+::\+Triangle\+Fan}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}{sf\+::\+Quads}}
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}{sf\+::\+Lines\+Strip}} = Line\+Strip
+, \newline
+\mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0}{sf\+::\+Triangles\+Strip}} = Triangle\+Strip
+, \mbox{\hyperlink{a00652_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20}{sf\+::\+Triangles\+Fan}} = Triangle\+Fan
+ \}
+\begin{DoxyCompactList}\small\item\em Types of primitives that a \doxylink{a01801}{sf\+::\+Vertex\+Array} can render. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D graphics module\+: sprites, text, shapes, ... 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00652_ga5ee56ac1339984909610713096283b1b}\label{a00652_ga5ee56ac1339984909610713096283b1b} 
+\index{Graphics module@{Graphics module}!PrimitiveType@{PrimitiveType}}
+\index{PrimitiveType@{PrimitiveType}!Graphics module@{Graphics module}}
+\doxysubsubsection{\texorpdfstring{PrimitiveType}{PrimitiveType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00652_ga5ee56ac1339984909610713096283b1b}{sf\+::\+Primitive\+Type}}}
+
+
+
+Types of primitives that a \doxylink{a01801}{sf\+::\+Vertex\+Array} can render. 
+
+Points and lines have no area, therefore their thickness will always be 1 pixel, regardless the current transform and view. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}\label{a00652_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785} 
+Points&List of individual points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e}\label{a00652_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e} 
+Lines&List of individual lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineStrip@{LineStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LineStrip@{LineStrip}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba14d9eeec2c7c314f239a57bde35949fa}\label{a00652_gga5ee56ac1339984909610713096283b1ba14d9eeec2c7c314f239a57bde35949fa} 
+Line\+Strip&List of connected lines, a point uses the previous point to form a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}\label{a00652_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670} 
+Triangles&List of individual triangles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleStrip@{TriangleStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleStrip@{TriangleStrip}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba05e55fec6d32c2fc8328f94d07f91184}\label{a00652_gga5ee56ac1339984909610713096283b1ba05e55fec6d32c2fc8328f94d07f91184} 
+Triangle\+Strip&List of connected triangles, a point uses the two previous points to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TriangleFan@{TriangleFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TriangleFan@{TriangleFan}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba363f7762b33706c805c6a451ad554f5e}\label{a00652_gga5ee56ac1339984909610713096283b1ba363f7762b33706c805c6a451ad554f5e} 
+Triangle\+Fan&List of connected triangles, a point uses the common center and the previous point to form a triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}\label{a00652_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743} 
+Quads&List of individual quads (deprecated, don\textquotesingle{}t work with Open\+GL ES) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinesStrip@{LinesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!LinesStrip@{LinesStrip}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}\label{a00652_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3} 
+Lines\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000006}{Deprecated}}]Use Line\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesStrip@{TrianglesStrip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesStrip@{TrianglesStrip}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0}\label{a00652_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0} 
+Triangles\+Strip&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000007}{Deprecated}}]Use Triangle\+Strip instead \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrianglesFan@{TrianglesFan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!TrianglesFan@{TrianglesFan}}}\Hypertarget{a00652_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20}\label{a00652_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20} 
+Triangles\+Fan&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{a00650__deprecated000008}{Deprecated}}]Use Triangle\+Fan instead \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}

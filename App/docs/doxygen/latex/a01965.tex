@@ -1,0 +1,263 @@
+\doxysection{sf\+::Context Class Reference}
+\hypertarget{a01965}{}\label{a01965}\index{sf::Context@{sf::Context}}
+
+
+Class holding a valid drawing context.  
+
+
+
+
+{\ttfamily \#include $<$Context.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Context\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Context\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01965_aba22797a790706ca2c5c04ee39f2b555}{Context}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01965_a2a9e3529e48919120e6b6fc10bad296c}{Context}} (const \mbox{\hyperlink{a01969}{Context\+Settings}} \&settings, unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Construct a in-\/memory context. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a01969}{Context\+Settings}} \& \mbox{\hyperlink{a01965_a5aace0ecfcf9552e97eed9ae88d01f71}{get\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Get the settings of the context. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01965_a0806f915ea81ae1f4e8135a7a3696562}{set\+Active}} (bool active)
+\begin{DoxyCompactList}\small\item\em Activate or deactivate explicitly the context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01965_a805b1bbdb3e52b1fda7c9bf2cd6ca86b}{\texorpdfstring{$\sim$}{\string~}\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{a01965}{Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01965_a31bc6509779067b21d13208ffe85d5ca}{get\+Active\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Get the currently active context. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01965_a61b1cb0a99b8e3ce56579d70aa41fb70}{get\+Active\+Context\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the currently active context\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00669_a0187a0b60bae499f24a4949973657f60}{Gl\+Function\+Pointer}} \mbox{\hyperlink{a01965_a998980d311effdf6223ce40d934c23c3}{get\+Function}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Get the address of an Open\+GL function. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{a01965_a163c7f72c0c20133606657d895faa147}{is\+Extension\+Available}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Check whether a given Open\+GL extension is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a02033_ab171bdaf5eb36789da14b30a846db471}{register\+Context\+Destroy\+Callback}} (\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}} callback, void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em \doxylink{a01585}{Register} a function to be called when a context is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+priv\+::\+Gl\+Context \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01965_ae996b50e48707b7a21ba39aa1a73a998}{m\+\_\+context}}
+\begin{DoxyCompactList}\small\item\em Internal Open\+GL context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class holding a valid drawing context. 
+
+If you need to make Open\+GL calls without having an active window (like in a thread), you can use an instance of this class to get a valid context.
+
+Having a valid context is necessary for {\itshape every} Open\+GL call.
+
+Note that a context is only active in its current thread, if you create a new thread it will have no valid context by default.
+
+To use a \doxylink{a01965}{sf\+::\+Context} instance, just construct it and let it live as long as you need a valid context. No explicit activation is needed, all it has to do is to exist. Its destructor will take care of deactivating and freeing all the attached resources.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ threadFunction(\textcolor{keywordtype}{void}*)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{a01965}{sf::Context}}\ context;}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ from\ now\ on,\ you\ have\ a\ valid\ context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ you\ can\ make\ OpenGL\ calls}}
+\DoxyCodeLine{\ \ \ glClear(GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ context\ is\ automatically\ deactivated\ and\ destroyed}}
+\DoxyCodeLine{\textcolor{comment}{//\ by\ the\ sf::Context\ destructor}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01965_aba22797a790706ca2c5c04ee39f2b555}\label{a01965_aba22797a790706ca2c5c04ee39f2b555} 
+\index{sf::Context@{sf::Context}!Context@{Context}}
+\index{Context@{Context}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Context\+::\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+The constructor creates and activates the context \Hypertarget{a01965_a805b1bbdb3e52b1fda7c9bf2cd6ca86b}\label{a01965_a805b1bbdb3e52b1fda7c9bf2cd6ca86b} 
+\index{sf::Context@{sf::Context}!````~Context@{\texorpdfstring{$\sim$}{\string~}Context}}
+\index{````~Context@{\texorpdfstring{$\sim$}{\string~}Context}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Context()}{\string~Context()}}
+{\footnotesize\ttfamily sf\+::\+Context\+::\texorpdfstring{$\sim$}{\string~}\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+The destructor deactivates and destroys the context \Hypertarget{a01965_a2a9e3529e48919120e6b6fc10bad296c}\label{a01965_a2a9e3529e48919120e6b6fc10bad296c} 
+\index{sf::Context@{sf::Context}!Context@{Context}}
+\index{Context@{Context}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{Context()}{Context()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Context\+::\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01969}{Context\+Settings}} \&}]{settings,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a in-\/memory context. 
+
+This constructor is for internal use, you don\textquotesingle{}t need to bother with it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings} & Creation parameters \\
+\hline
+{\em width} & Back buffer width \\
+\hline
+{\em height} & Back buffer height \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01965_a31bc6509779067b21d13208ffe85d5ca}\label{a01965_a31bc6509779067b21d13208ffe85d5ca} 
+\index{sf::Context@{sf::Context}!getActiveContext@{getActiveContext}}
+\index{getActiveContext@{getActiveContext}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{getActiveContext()}{getActiveContext()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{a01965}{Context}} \texorpdfstring{$\ast$}{*} sf\+::\+Context\+::get\+Active\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the currently active context. 
+
+This function will only return \doxylink{a01965}{sf\+::\+Context} objects. Contexts created e.\+g. by Render\+Targets or for internal use will not be returned by this function.
+
+\begin{DoxyReturn}{Returns}
+The currently active context or NULL if none is active 
+\end{DoxyReturn}
+\Hypertarget{a01965_a61b1cb0a99b8e3ce56579d70aa41fb70}\label{a01965_a61b1cb0a99b8e3ce56579d70aa41fb70} 
+\index{sf::Context@{sf::Context}!getActiveContextId@{getActiveContextId}}
+\index{getActiveContextId@{getActiveContextId}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{getActiveContextId()}{getActiveContextId()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Context\+::get\+Active\+Context\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the currently active context\textquotesingle{}s ID. 
+
+The context ID is used to identify contexts when managing unshareable Open\+GL resources.
+
+\begin{DoxyReturn}{Returns}
+The active context\textquotesingle{}s ID or 0 if no context is currently active 
+\end{DoxyReturn}
+\Hypertarget{a01965_a998980d311effdf6223ce40d934c23c3}\label{a01965_a998980d311effdf6223ce40d934c23c3} 
+\index{sf::Context@{sf::Context}!getFunction@{getFunction}}
+\index{getFunction@{getFunction}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{getFunction()}{getFunction()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00669_a0187a0b60bae499f24a4949973657f60}{Gl\+Function\+Pointer}} sf\+::\+Context\+::get\+Function (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the address of an Open\+GL function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the function to get the address of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address of the Open\+GL function, 0 on failure 
+\end{DoxyReturn}
+\Hypertarget{a01965_a5aace0ecfcf9552e97eed9ae88d01f71}\label{a01965_a5aace0ecfcf9552e97eed9ae88d01f71} 
+\index{sf::Context@{sf::Context}!getSettings@{getSettings}}
+\index{getSettings@{getSettings}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{getSettings()}{getSettings()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01969}{Context\+Settings}} \& sf\+::\+Context\+::get\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the settings of the context. 
+
+Note that these settings may be different than the ones passed to the constructor; they are indeed adjusted if the original settings are not directly supported by the system.
+
+\begin{DoxyReturn}{Returns}
+Structure containing the settings 
+\end{DoxyReturn}
+\Hypertarget{a01965_a163c7f72c0c20133606657d895faa147}\label{a01965_a163c7f72c0c20133606657d895faa147} 
+\index{sf::Context@{sf::Context}!isExtensionAvailable@{isExtensionAvailable}}
+\index{isExtensionAvailable@{isExtensionAvailable}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{isExtensionAvailable()}{isExtensionAvailable()}}
+{\footnotesize\ttfamily static bool sf\+::\+Context\+::is\+Extension\+Available (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a given Open\+GL extension is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the extension to check for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if available, false if unavailable 
+\end{DoxyReturn}
+\Hypertarget{a02033_ab171bdaf5eb36789da14b30a846db471}\label{a02033_ab171bdaf5eb36789da14b30a846db471} 
+\index{sf::Context@{sf::Context}!registerContextDestroyCallback@{registerContextDestroyCallback}}
+\index{registerContextDestroyCallback@{registerContextDestroyCallback}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{registerContextDestroyCallback()}{registerContextDestroyCallback()}}
+{\footnotesize\ttfamily static void sf\+::\+Gl\+Resource\+::register\+Context\+Destroy\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a90389f466699a5737ffa91d2a94b0166}{Context\+Destroy\+Callback}}}]{callback,  }\item[{void \texorpdfstring{$\ast$}{*}}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01585}{Register} a function to be called when a context is destroyed. 
+
+This is used for internal purposes in order to properly clean up Open\+GL resources that cannot be shared between contexts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called when a context is destroyed \\
+\hline
+{\em arg} & Argument to pass when calling the function \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01965_a0806f915ea81ae1f4e8135a7a3696562}\label{a01965_a0806f915ea81ae1f4e8135a7a3696562} 
+\index{sf::Context@{sf::Context}!setActive@{setActive}}
+\index{setActive@{setActive}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
+{\footnotesize\ttfamily bool sf\+::\+Context\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})}
+
+
+
+Activate or deactivate explicitly the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & True to activate, false to deactivate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false on failure 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01965_ae996b50e48707b7a21ba39aa1a73a998}\label{a01965_ae996b50e48707b7a21ba39aa1a73a998} 
+\index{sf::Context@{sf::Context}!m\_context@{m\_context}}
+\index{m\_context@{m\_context}!sf::Context@{sf::Context}}
+\doxysubsubsection{\texorpdfstring{m\_context}{m\_context}}
+{\footnotesize\ttfamily priv\+::\+Gl\+Context\texorpdfstring{$\ast$}{*} sf\+::\+Context\+::m\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal Open\+GL context. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00572}{Context.\+hpp}}\end{DoxyCompactItemize}

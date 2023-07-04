@@ -1,0 +1,41 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/meta/detected.hpp File Reference}
+\hypertarget{a00221}{}\label{a00221}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/detected.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/detected.hpp}}
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/void\+\_\+t.\+hpp$>$}\newline
+Include dependency graph for detected.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01265}{nlohmann\+::detail\+::detector$<$ Default, Always\+Void, Op, Args $>$}}
+\item 
+struct \mbox{\hyperlink{a01269}{nlohmann\+::detail\+::detector$<$ Default, void\+\_\+t$<$ Op$<$ Args... $>$ $>$, Op, Args... $>$}}
+\item 
+struct \mbox{\hyperlink{a01273}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+lazy$<$ Op, Args $>$}}
+\item 
+struct \mbox{\hyperlink{a01261}{nlohmann\+::detail\+::nonesuch}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{nlohmann\+::detail\+::detected\+\_\+or}} = \mbox{\hyperlink{a01265}{detector}}$<$ Default, void, Op, Args... $>$
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a7ac5b8ef0363101275a2827b3b117dcf}{nlohmann\+::detail\+::detected\+\_\+or\+\_\+t}} = typename \mbox{\hyperlink{a00662_a240ce21919ab08e8a6cb3a5cfa412bce}{detected\+\_\+or}}$<$ Default, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{nlohmann\+::detail\+::detected\+\_\+t}} = typename \mbox{\hyperlink{a01265}{detector}}$<$ \mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a9135fcf616d6ac6e231a86e0a055ac44}{nlohmann\+::detail\+::is\+\_\+detected}} = typename \mbox{\hyperlink{a01265}{detector}}$<$ \mbox{\hyperlink{a01261}{nonesuch}}, void, Op, Args... $>$\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{\+::value\+\_\+t}}
+\item 
+{\footnotesize template$<$class To , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a5262e531c46e357b33007060f294673b}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+convertible}} = std\+::is\+\_\+convertible$<$ \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ Op, Args... $>$, To $>$
+\item 
+{\footnotesize template$<$class Expected , template$<$ class... $>$ class Op, class... Args$>$ }\\using \mbox{\hyperlink{a00662_a7542b4dbac07817fd4849ecfa4619def}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+exact}} = std\+::is\+\_\+same$<$ Expected, \mbox{\hyperlink{a00662_a37e97a32d0b94ce5f745427e4e40204d}{detected\+\_\+t}}$<$ Op, Args... $>$ $>$
+\end{DoxyCompactItemize}

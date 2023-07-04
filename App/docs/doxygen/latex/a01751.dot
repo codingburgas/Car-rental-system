@@ -1,0 +1,18 @@
+digraph "sf::RenderTarget::StatesCache"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="sf::RenderTarget::States\lCache",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Render states cache."];
+  Node2 -> Node1 [id="edge6_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" lastBlendMode",fontcolor="grey" ];
+  Node2 [id="Node000002",label="sf::BlendMode",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01677.html",tooltip="Blending modes for drawing."];
+  Node3 -> Node1 [id="edge7_Node000001_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" vertexCache",fontcolor="grey" ];
+  Node3 [id="Node000003",label="sf::Vertex",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01797.html",tooltip="Define a point with color and texture coordinates."];
+  Node4 -> Node3 [id="edge8_Node000003_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" position\ntexCoords",fontcolor="grey" ];
+  Node4 [id="Node000004",label="sf::Vector2\< float \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01953.html",tooltip=" "];
+  Node5 -> Node3 [id="edge9_Node000003_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" color",fontcolor="grey" ];
+  Node5 [id="Node000005",label="sf::Color",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01685.html",tooltip="Utility class for manipulating RGBA colors."];
+  Node5 -> Node5 [id="edge10_Node000005_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" Black\nBlue\nCyan\nGreen\nMagenta\nRed\nTransparent\nWhite\nYellow",fontcolor="grey" ];
+}

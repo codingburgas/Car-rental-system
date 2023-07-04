@@ -1,0 +1,182 @@
+\doxysection{Event.\+hpp}
+\hypertarget{a00581_source}{}\label{a00581_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Window/Event.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Window/Event.hpp}}
+\mbox{\hyperlink{a00581}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_EVENT\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_EVENT\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00359}{SFML/Config.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00587}{SFML/Window/Joystick.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00590}{SFML/Window/Keyboard.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00593}{SFML/Window/Mouse.hpp}}>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00596}{SFML/Window/Sensor.hpp}}>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01977}{Event}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01981}{SizeEvent}}}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01981_a20ea1b78c9bb1604432f8f0067bbfd94}{width}};\ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01981_af0f76a599d5f48189cb8d78d4e5facdb}{height}};\ }
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01985}{KeyEvent}}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02049_acb4cacd7cc5802dec45724cf3314a142}{Keyboard::Key}}\ \mbox{\hyperlink{a01985_a2879fdab8a68cb1c6ecc45730a2d0e61}{code}};\ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01985_a915a483317de67d995188a855701fbd7}{alt}};\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01985_a9255861c2f88501d80ad6b44a310b62f}{control}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01985_a776af1a3ca79abeeec18ebf1c0065aa9}{shift}};\ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01985_ac0557f7edc2a608ec65175fdd843afc5}{system}};\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01989}{TextEvent}}}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ \mbox{\hyperlink{a01989_a00d96b1a5328a1d7cbc276e161befcb0}{unicode}};\ }
+\DoxyCodeLine{00078\ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01993}{MouseMoveEvent}}}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01993_aa3a23809afb905cbb52c66d8512e21fd}{x}};\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a01993_a86d78a2fba5b3abda16ca059f2392ad4}{y}};\ }
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01997}{MouseButtonEvent}}}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02053_a4fb128be433f9aafe66bc0c605daaa90}{Mouse::Button}}\ \mbox{\hyperlink{a01997_a5f53725aa7b647705486eeb95f723024}{button}};\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01997_a49b937b311729174950787781aafcdc7}{x}};\ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01997_aae4735071868d4411d1782bf67619d64}{y}};\ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02001}{MouseWheelEvent}}}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02001_a4d02b524b5530c7863e7b0f211fa522c}{delta}};\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02001_a3079803f836ed7208f43b60332ab053e}{x}};\ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02001_a7ea1b8d8c28e2f530c6e9e6d9a5d32d3}{y}};\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02005}{MouseWheelScrollEvent}}}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02053_a60dd479a43f26f200e7957aa11803ff4}{Mouse::Wheel}}\ \mbox{\hyperlink{a02005_a1d82dccecc46968d517b2fc66639dd74}{wheel}};\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a02005_ac45c164997a594d424071e74b53b5817}{delta}};\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02005_a3d17cae0568d18083f879655abdc8ae4}{x}};\ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02005_aa38bf23704162024eed19917eef3853c}{y}};\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02009}{JoystickConnectEvent}}}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02009_a08e58e8559d3e4fe4654855fec79194b}{joystickId}};\ }
+\DoxyCodeLine{00136\ \ \ \ \ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02013}{JoystickMoveEvent}}}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \mbox{\hyperlink{a02013_a7bf2b2f2941a21ed26a67c95f5e4232f}{joystickId}};\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02041_a48db337092c2e263774f94de6d50baa7}{Joystick::Axis}}\ \mbox{\hyperlink{a02013_add22e8126b7974271991dc6380cbdee3}{axis}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02013_aba5a70815420161375fd2e756689c32a}{position}};\ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02017}{JoystickButtonEvent}}}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02017_a2f80ecdb964a5ae0fc30726a404c41ec}{joystickId}};\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02017_a6412e698a2f7904c5aa875a0d1b34da4}{button}};\ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02021}{TouchEvent}}}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02021_a9a79fe86bf9ac3c16ec7326f96feb61a}{finger}};\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02021_a8993963790b850caa68b98d3cad2be45}{x}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{a02021_add80639dc68bc37e3275744d501cdbe0}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a02025}{SensorEvent}}}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02057_a687375af3ab77b818fca73735bcaea84}{Sensor::Type}}\ \mbox{\hyperlink{a02025_abee7d67bf0947fd1138e4466011e2436}{type}};\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a02025_aa6ccbd13c181b866a6467462158d93d9}{x}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a02025_aecafcd25ecb3ba486e42284e4bb69a57}{y}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a02025_a5704e0d0b82b07f051cc858894f3ea43}{z}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4a}{EventType}}}
+\DoxyCodeLine{00188\ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa316e4212e083f1dce79efd8d9e9c0a95}{Closed}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa67fd26d7e520bc6722db3ff47ef24941}{Resized}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aabd7877b5011a337268357c973e8347bd}{LostFocus}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa8c5003ced508499933d540df8a6023ec}{GainedFocus}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa7e09871dc984080ff528e4f7e073e874}{TextEntered}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aac3c7abfaa98c73bfe6be0b57df09c71b}{KeyPressed}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aaa5bcc1e603d5a6f4c137af39558bd5d1}{KeyReleased}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa5cc9d3941af2a36049f4f9922c934a80}{MouseWheelMoved}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa2fb6925eb3e7f3d468faf639dbd129ad}{MouseWheelScrolled}},\ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa55a3dcc8bf6c40e37f9ff2cdf606481f}{MouseButtonPressed}},\ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa9be69ecc07e484467ebbb133182fe5c1}{MouseButtonReleased}},\ \ \ \ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa4ff4fc3b3dc857e3617a63feb54be209}{MouseMoved}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa50d98590a953e74c7ccf3dabadb22067}{MouseEntered}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aaa90b8526b328e0246d04b026de17c6e7}{MouseLeft}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa6d46855f0253f065689b69cd09437222}{JoystickButtonPressed}},\ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa2246ef5ee33f7fa4b2a53f042ceeac3d}{JoystickButtonReleased}},\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa4d6ad228485c135967831be16ec074dd}{JoystickMoved}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aaabb8877ec2f0c92904170deded09321e}{JoystickConnected}},\ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aab6e161dab7abaf154cc1c7b554558cb6}{JoystickDisconnected}},\ \ \ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aae6f8231ad6013d063929a09b6c28f515}{TouchBegan}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aa9524b7d7665212c6d56f623b5b8311a9}{TouchMoved}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aabc7123492dbca320da5c03fea1a141e5}{TouchEnded}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aaadf9a44c788eb9467a83c074fbf12613}{SensorChanged}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4aae51749211243cab2ab270b29cdc32a70}{Count}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00219\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01977_af41fa9ed45c02449030699f671331d4a}{EventType}}\ \mbox{\hyperlink{a01977_adf2f8044f713fd9d6019077b0d1ffe0a}{type}};\ }
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01981}{SizeEvent}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a85dae56a377eeffd39183c3f6fc96cb9}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01985}{KeyEvent}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a45b92fc6757ca7c193f06b302e424ab0}{key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01989}{TextEvent}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a00c7bba6bee892791847ec22440e0a83}{text}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01993}{MouseMoveEvent}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a786620ec4315d40c7c4cf4ddf3a1881f}{mouseMove}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01997}{MouseButtonEvent}}\ \ \ \ \ \ \mbox{\hyperlink{a01977_a20886a16ab7624de070b97145bb1dcac}{mouseButton}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02001}{MouseWheelEvent}}\ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a8758c6d7998757978fd9146099a02a1e}{mouseWheel}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02005}{MouseWheelScrollEvent}}\ \mbox{\hyperlink{a01977_a5fd91c82198a31a0cd3dc93c4d1ae4c6}{mouseWheelScroll}};\ \ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02013}{JoystickMoveEvent}}\ \ \ \ \ \mbox{\hyperlink{a01977_ac479e8351cc2024d5c1094dc33970f7f}{joystickMove}};\ \ \ \ \ \ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02017}{JoystickButtonEvent}}\ \ \ \mbox{\hyperlink{a01977_a42aad27a054c1c05bd5c3d020e1db174}{joystickButton}};\ \ \ \ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02009}{JoystickConnectEvent}}\ \ \mbox{\hyperlink{a01977_aa354335c9ad73362442bc54ffe81118f}{joystickConnect}};\ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02021}{TouchEvent}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_a5f6ed8e499a4c3d171ff1baab469b2ee}{touch}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a02025}{SensorEvent}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01977_acdeacbb321655b962e27d08eeec5a190}{sensor}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \ \ \ \ \};}
+\DoxyCodeLine{00236\ \};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_EVENT\_HPP}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+
+\end{DoxyCode}

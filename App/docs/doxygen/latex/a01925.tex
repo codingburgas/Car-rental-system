@@ -1,0 +1,117 @@
+\doxysection{sf\+::Thread\+Local Class Reference}
+\hypertarget{a01925}{}\label{a01925}\index{sf::ThreadLocal@{sf::ThreadLocal}}
+
+
+Defines variables with thread-\/local storage.  
+
+
+
+
+{\ttfamily \#include $<$Thread\+Local.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Thread\+Local\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Thread\+Local\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01925_a3273f1976f96a838e386937eae33fc21}{get\+Value}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the thread-\/specific value of the variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01925_ab7e334c83d77644a8e67ee31c3230007}{set\+Value}} (void \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Set the thread-\/specific value of the variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01925_a44ea3c4be4eef118080275cbf4cf04cd}{Thread\+Local}} (void \texorpdfstring{$\ast$}{*}value=NULL)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01925_acc612bddfd0f0507b1c5da8b3b8c75c2}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Local}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+priv\+::\+Thread\+Local\+Impl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01925_ad736c197dd72c45ee48c57fa3704c00a}{m\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em Pointer to the OS specific implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines variables with thread-\/local storage. 
+
+This class manipulates void\texorpdfstring{$\ast$}{*} parameters and thus is not appropriate for strongly-\/typed variables. You should rather use the \doxylink{a01929}{sf\+::\+Thread\+Local\+Ptr} template class.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01925_a44ea3c4be4eef118080275cbf4cf04cd}\label{a01925_a44ea3c4be4eef118080275cbf4cf04cd} 
+\index{sf::ThreadLocal@{sf::ThreadLocal}!ThreadLocal@{ThreadLocal}}
+\index{ThreadLocal@{ThreadLocal}!sf::ThreadLocal@{sf::ThreadLocal}}
+\doxysubsubsection{\texorpdfstring{ThreadLocal()}{ThreadLocal()}}
+{\footnotesize\ttfamily sf\+::\+Thread\+Local\+::\+Thread\+Local (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{value = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Optional value to initialize the variable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01925_acc612bddfd0f0507b1c5da8b3b8c75c2}\label{a01925_acc612bddfd0f0507b1c5da8b3b8c75c2} 
+\index{sf::ThreadLocal@{sf::ThreadLocal}!````~ThreadLocal@{\texorpdfstring{$\sim$}{\string~}ThreadLocal}}
+\index{````~ThreadLocal@{\texorpdfstring{$\sim$}{\string~}ThreadLocal}!sf::ThreadLocal@{sf::ThreadLocal}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ThreadLocal()}{\string~ThreadLocal()}}
+{\footnotesize\ttfamily sf\+::\+Thread\+Local\+::\texorpdfstring{$\sim$}{\string~}\+Thread\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01925_a3273f1976f96a838e386937eae33fc21}\label{a01925_a3273f1976f96a838e386937eae33fc21} 
+\index{sf::ThreadLocal@{sf::ThreadLocal}!getValue@{getValue}}
+\index{getValue@{getValue}!sf::ThreadLocal@{sf::ThreadLocal}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} sf\+::\+Thread\+Local\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the thread-\/specific value of the variable. 
+
+\begin{DoxyReturn}{Returns}
+Value of the variable for the current thread 
+\end{DoxyReturn}
+\Hypertarget{a01925_ab7e334c83d77644a8e67ee31c3230007}\label{a01925_ab7e334c83d77644a8e67ee31c3230007} 
+\index{sf::ThreadLocal@{sf::ThreadLocal}!setValue@{setValue}}
+\index{setValue@{setValue}!sf::ThreadLocal@{sf::ThreadLocal}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void sf\+::\+Thread\+Local\+::set\+Value (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the thread-\/specific value of the variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value of the variable for the current thread \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01925_ad736c197dd72c45ee48c57fa3704c00a}\label{a01925_ad736c197dd72c45ee48c57fa3704c00a} 
+\index{sf::ThreadLocal@{sf::ThreadLocal}!m\_impl@{m\_impl}}
+\index{m\_impl@{m\_impl}!sf::ThreadLocal@{sf::ThreadLocal}}
+\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
+{\footnotesize\ttfamily priv\+::\+Thread\+Local\+Impl\texorpdfstring{$\ast$}{*} sf\+::\+Thread\+Local\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the OS specific implementation. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00536}{Thread\+Local.\+hpp}}\end{DoxyCompactItemize}

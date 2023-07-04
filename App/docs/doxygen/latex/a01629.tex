@@ -1,0 +1,535 @@
+\doxysection{sf\+::Sound\+Buffer Class Reference}
+\hypertarget{a01629}{}\label{a01629}\index{sf::SoundBuffer@{sf::SoundBuffer}}
+
+
+Storage for audio samples defining a sound.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+Buffer.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Sound\+Buffer\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Sound\+Buffer\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01629_a127707b831d875ed790eef1aa2b9fcc3}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of channels used by the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01629_a280a581d9b360fd16121714c51fc8261}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the total duration of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01629_aebe2a4bdbfbd9249353748da3f6a4fa1}{get\+Sample\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of samples stored in the buffer. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01629_a2c2cf0078ce0549246ecc4a1646212b4}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample rate of the sound. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01629_a3d5571a5231d3aea0d2cea933c38cc9e}{get\+Samples}} () const
+\begin{DoxyCompactList}\small\item\em Get the array of audio samples stored in the buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Load the sound buffer from a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Load the sound buffer from a file in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples}} (const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}samples, \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sample\+Count, unsigned int channel\+Count, unsigned int sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Load the sound buffer from an array of audio samples. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_ad292156b1e01f6dabd4c0c277d5e079e}{load\+From\+Stream}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Load the sound buffer from a custom stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01629}{Sound\+Buffer}} \& \mbox{\hyperlink{a01629_ad0b6f45d3008cd7d29d340195e68459a}{operator=}} (const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_aade64260c6375580a085314a30be007e}{save\+To\+File}} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Save the sound buffer to an audio file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01629_a0cabfbfe19b831bf7d5c9592d92ef233}{Sound\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01629_aaf000fc741ff27015907e8588263f4a6}{Sound\+Buffer}} (const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01629_aea240161724ffba74a0d6a9e277d3cd5}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::set$<$ \mbox{\hyperlink{a01625}{Sound}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{a01629_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}}
+\begin{DoxyCompactList}\small\item\em Set of unique sound instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01629_a2761144856e452446cc26fda484b2b16}{attach\+Sound}} (\mbox{\hyperlink{a01625}{Sound}} \texorpdfstring{$\ast$}{*}sound) const
+\begin{DoxyCompactList}\small\item\em Add a sound to the list of sounds that use this buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01629_a02732b7adfaad67c931e2494a14a7027}{detach\+Sound}} (\mbox{\hyperlink{a01625}{Sound}} \texorpdfstring{$\ast$}{*}sound) const
+\begin{DoxyCompactList}\small\item\em Remove a sound from the list of sounds that use this buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_aa3c563ecb5a554c8975d93044be6fc54}{initialize}} (\mbox{\hyperlink{a01605}{Input\+Sound\+File}} \&file)
+\begin{DoxyCompactList}\small\item\em Initialize the internal state after loading a new sound. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01629_afaa542a4b59ac4e8c4f4d163ea61c7e6}{update}} (unsigned int channel\+Count, unsigned int sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Update the internal buffer with the cached audio samples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01629_a90bd207655b9b1a312f6ebb7ae783da2}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Open\+AL buffer identifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01629_ad7a031590faff910c94cc442864eabd3}{m\+\_\+duration}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01625}{Sound} duration. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ \mbox{\hyperlink{a01629_a6c954068fe46d5567f2c94eb3c79c5f3}{m\+\_\+samples}}
+\begin{DoxyCompactList}\small\item\em Samples buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01629_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}} \mbox{\hyperlink{a01629_aa6fc10c994c0aaca70567e8fd1ddabc3}{m\+\_\+sounds}}
+\begin{DoxyCompactList}\small\item\em List of sounds that are using this buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01629_a50914f77c7cf4fb97616c898c5291f4b}{Sound}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Storage for audio samples defining a sound. 
+
+A sound buffer holds the data of a sound, which is an array of audio samples. A sample is a 16 bits signed integer that defines the amplitude of the sound at a given time. The sound is then reconstituted by playing these samples at a high rate (for example, 44100 samples per second is the standard rate used for playing CDs). In short, audio samples are like texture pixels, and a \doxylink{a01629}{sf\+::\+Sound\+Buffer} is similar to a \doxylink{a01785}{sf\+::\+Texture}.
+
+A sound buffer can be loaded from a file (see \doxylink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File()} for the complete list of supported formats), from memory, from a custom stream (see \doxylink{a01881}{sf\+::\+Input\+Stream}) or directly from an array of samples. It can also be saved back to a file.
+
+\doxylink{a01625}{Sound} buffers alone are not very useful\+: they hold the audio data but cannot be played. To do so, you need to use the \doxylink{a01625}{sf\+::\+Sound} class, which provides functions to play/pause/stop the sound as well as changing the way it is outputted (volume, pitch, 3D position, ...). This separation allows more flexibility and better performances\+: indeed a \doxylink{a01629}{sf\+::\+Sound\+Buffer} is a heavy resource, and any operation on it is slow (often too slow for real-\/time applications). On the other side, a \doxylink{a01625}{sf\+::\+Sound} is a lightweight object, which can use the audio data of a sound buffer and change the way it is played without actually modifying that data. Note that it is also possible to bind several \doxylink{a01625}{sf\+::\+Sound} instances to the same \doxylink{a01629}{sf\+::\+Sound\+Buffer}.
+
+It is important to note that the \doxylink{a01625}{sf\+::\+Sound} instance doesn\textquotesingle{}t copy the buffer that it uses, it only keeps a reference to it. Thus, a \doxylink{a01629}{sf\+::\+Sound\+Buffer} must not be destructed while it is used by a \doxylink{a01625}{sf\+::\+Sound} (i.\+e. never write a function that uses a local \doxylink{a01629}{sf\+::\+Sound\+Buffer} instance for loading a sound).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Declare\ a\ new\ sound\ buffer}}
+\DoxyCodeLine{\mbox{\hyperlink{a01629}{sf::SoundBuffer}}\ buffer;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Load\ it\ from\ a\ file}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!buffer.\mbox{\hyperlink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{loadFromFile}}(\textcolor{stringliteral}{"{}sound.wav"{}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ error...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ sound\ source\ and\ bind\ it\ to\ the\ buffer}}
+\DoxyCodeLine{\mbox{\hyperlink{a01625}{sf::Sound}}\ sound1;}
+\DoxyCodeLine{sound1.\mbox{\hyperlink{a01625_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(buffer);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Play\ the\ sound}}
+\DoxyCodeLine{sound1.\mbox{\hyperlink{a01625_a2953ffe632536e72e696fd880ced2532}{play}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ another\ sound\ source\ bound\ to\ the\ same\ buffer}}
+\DoxyCodeLine{\mbox{\hyperlink{a01625}{sf::Sound}}\ sound2;}
+\DoxyCodeLine{sound2.\mbox{\hyperlink{a01625_a8b395e9713d0efa48a18628c8ec1972e}{setBuffer}}(buffer);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Play\ it\ with\ a\ higher\ pitch\ -\/-\/\ the\ first\ sound\ remains\ unchanged}}
+\DoxyCodeLine{sound2.\mbox{\hyperlink{a01665_a72a13695ed48b7f7b55e7cd4431f4bb6}{setPitch}}(2);}
+\DoxyCodeLine{sound2.\mbox{\hyperlink{a01625_a2953ffe632536e72e696fd880ced2532}{play}}();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01625}{sf\+::\+Sound}, \doxylink{a01633}{sf\+::\+Sound\+Buffer\+Recorder} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01629_a0c4edd90a4c83b07369e84f14b385196}\label{a01629_a0c4edd90a4c83b07369e84f14b385196} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!SoundList@{SoundList}}
+\index{SoundList@{SoundList}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{SoundList}{SoundList}}
+{\footnotesize\ttfamily typedef std\+::set$<$\mbox{\hyperlink{a01625}{Sound}}\texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{a01629_a0c4edd90a4c83b07369e84f14b385196}{sf\+::\+Sound\+Buffer\+::\+Sound\+List}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of unique sound instances. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01629_a0cabfbfe19b831bf7d5c9592d92ef233}\label{a01629_a0cabfbfe19b831bf7d5c9592d92ef233} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!SoundBuffer@{SoundBuffer}}
+\index{SoundBuffer@{SoundBuffer}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{SoundBuffer()}{SoundBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Buffer\+::\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01629_aaf000fc741ff27015907e8588263f4a6}\label{a01629_aaf000fc741ff27015907e8588263f4a6} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!SoundBuffer@{SoundBuffer}}
+\index{SoundBuffer@{SoundBuffer}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{SoundBuffer()}{SoundBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Buffer\+::\+Sound\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & Instance to copy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01629_aea240161724ffba74a0d6a9e277d3cd5}\label{a01629_aea240161724ffba74a0d6a9e277d3cd5} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!````~SoundBuffer@{\texorpdfstring{$\sim$}{\string~}SoundBuffer}}
+\index{````~SoundBuffer@{\texorpdfstring{$\sim$}{\string~}SoundBuffer}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundBuffer()}{\string~SoundBuffer()}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01629_a2761144856e452446cc26fda484b2b16}\label{a01629_a2761144856e452446cc26fda484b2b16} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!attachSound@{attachSound}}
+\index{attachSound@{attachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{attachSound()}{attachSound()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::attach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01625}{Sound}} \texorpdfstring{$\ast$}{*}}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add a sound to the list of sounds that use this buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound} & \doxylink{a01625}{Sound} instance to attach \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01629_a02732b7adfaad67c931e2494a14a7027}\label{a01629_a02732b7adfaad67c931e2494a14a7027} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!detachSound@{detachSound}}
+\index{detachSound@{detachSound}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{detachSound()}{detachSound()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Buffer\+::detach\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01625}{Sound}} \texorpdfstring{$\ast$}{*}}]{sound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove a sound from the list of sounds that use this buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound} & \doxylink{a01625}{Sound} instance to detach \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01629_a127707b831d875ed790eef1aa2b9fcc3}\label{a01629_a127707b831d875ed790eef1aa2b9fcc3} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Buffer\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of channels used by the sound. 
+
+If the sound is mono then the number of channels will be 1, 2 for stereo, etc.
+
+\begin{DoxyReturn}{Returns}
+Number of channels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2c2cf0078ce0549246ecc4a1646212b4}{get\+Sample\+Rate}, \doxylink{a01629_a280a581d9b360fd16121714c51fc8261}{get\+Duration} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_a280a581d9b360fd16121714c51fc8261}\label{a01629_a280a581d9b360fd16121714c51fc8261} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Sound\+Buffer\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total duration of the sound. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01625}{Sound} duration
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2c2cf0078ce0549246ecc4a1646212b4}{get\+Sample\+Rate}, \doxylink{a01629_a127707b831d875ed790eef1aa2b9fcc3}{get\+Channel\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_aebe2a4bdbfbd9249353748da3f6a4fa1}\label{a01629_aebe2a4bdbfbd9249353748da3f6a4fa1} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!getSampleCount@{getSampleCount}}
+\index{getSampleCount@{getSampleCount}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{getSampleCount()}{getSampleCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Sound\+Buffer\+::get\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of samples stored in the buffer. 
+
+The array of samples can be accessed with the \doxylink{a01629_a3d5571a5231d3aea0d2cea933c38cc9e}{get\+Samples()} function.
+
+\begin{DoxyReturn}{Returns}
+Number of samples
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a3d5571a5231d3aea0d2cea933c38cc9e}{get\+Samples} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_a2c2cf0078ce0549246ecc4a1646212b4}\label{a01629_a2c2cf0078ce0549246ecc4a1646212b4} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Buffer\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sample rate of the sound. 
+
+The sample rate is the number of samples played per second. The higher, the better the quality (for example, 44100 samples/s is CD quality).
+
+\begin{DoxyReturn}{Returns}
+Sample rate (number of samples per second)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a127707b831d875ed790eef1aa2b9fcc3}{get\+Channel\+Count}, \doxylink{a01629_a280a581d9b360fd16121714c51fc8261}{get\+Duration} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_a3d5571a5231d3aea0d2cea933c38cc9e}\label{a01629_a3d5571a5231d3aea0d2cea933c38cc9e} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!getSamples@{getSamples}}
+\index{getSamples@{getSamples}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{getSamples()}{getSamples()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*} sf\+::\+Sound\+Buffer\+::get\+Samples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the array of audio samples stored in the buffer. 
+
+The format of the returned samples is 16 bits signed integer (\doxylink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}). The total number of samples in this array is given by the \doxylink{a01629_aebe2a4bdbfbd9249353748da3f6a4fa1}{get\+Sample\+Count()} function.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only pointer to the array of sound samples
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_aebe2a4bdbfbd9249353748da3f6a4fa1}{get\+Sample\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_aa3c563ecb5a554c8975d93044be6fc54}\label{a01629_aa3c563ecb5a554c8975d93044be6fc54} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!initialize@{initialize}}
+\index{initialize@{initialize}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01605}{Input\+Sound\+File}} \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the internal state after loading a new sound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \doxylink{a01625}{Sound} file providing access to the new loaded sound\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on successful initialization, false on failure 
+\end{DoxyReturn}
+\Hypertarget{a01629_a2be6a8025c97eb622a7dff6cf2594394}\label{a01629_a2be6a8025c97eb622a7dff6cf2594394} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Load the sound buffer from a file. 
+
+See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}, \doxylink{a01629_ad292156b1e01f6dabd4c0c277d5e079e}{load\+From\+Stream}, \doxylink{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples}, \doxylink{a01629_aade64260c6375580a085314a30be007e}{save\+To\+File} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_af8cfa5599739a7edae69c5cba273d33f}\label{a01629_af8cfa5599739a7edae69c5cba273d33f} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!loadFromMemory@{loadFromMemory}}
+\index{loadFromMemory@{loadFromMemory}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{loadFromMemory()}{loadFromMemory()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::load\+From\+Memory (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Load the sound buffer from a file in memory. 
+
+See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}, \doxylink{a01629_ad292156b1e01f6dabd4c0c277d5e079e}{load\+From\+Stream}, \doxylink{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}\label{a01629_a42d51ce4bb3b60c7ea06f63c273fd063} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!loadFromSamples@{loadFromSamples}}
+\index{loadFromSamples@{loadFromSamples}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{loadFromSamples()}{loadFromSamples()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::load\+From\+Samples (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}}]{samples,  }\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{sample\+Count,  }\item[{unsigned int}]{channel\+Count,  }\item[{unsigned int}]{sample\+Rate }\end{DoxyParamCaption})}
+
+
+
+Load the sound buffer from an array of audio samples. 
+
+The assumed format of the audio samples is 16 bits signed integer (\doxylink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{sf\+::\+Int16}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the array of samples in memory \\
+\hline
+{\em sample\+Count} & Number of samples in the array \\
+\hline
+{\em channel\+Count} & Number of channels (1 = mono, 2 = stereo, ...) \\
+\hline
+{\em sample\+Rate} & Sample rate (number of samples to play per second)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}, \doxylink{a01629_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}, \doxylink{a01629_aade64260c6375580a085314a30be007e}{save\+To\+File} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_ad292156b1e01f6dabd4c0c277d5e079e}\label{a01629_ad292156b1e01f6dabd4c0c277d5e079e} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!loadFromStream@{loadFromStream}}
+\index{loadFromStream@{loadFromStream}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{loadFromStream()}{loadFromStream()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::load\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Load the sound buffer from a custom stream. 
+
+See the documentation of \doxylink{a01605}{sf\+::\+Input\+Sound\+File} for the list of supported formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}, \doxylink{a01629_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}, \doxylink{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_ad0b6f45d3008cd7d29d340195e68459a}\label{a01629_ad0b6f45d3008cd7d29d340195e68459a} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01629}{Sound\+Buffer}} \& sf\+::\+Sound\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a01629_aade64260c6375580a085314a30be007e}\label{a01629_aade64260c6375580a085314a30be007e} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+
+
+Save the sound buffer to an audio file. 
+
+See the documentation of \doxylink{a01621}{sf\+::\+Output\+Sound\+File} for the list of supported formats.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if saving succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01629_a2be6a8025c97eb622a7dff6cf2594394}{load\+From\+File}, \doxylink{a01629_af8cfa5599739a7edae69c5cba273d33f}{load\+From\+Memory}, \doxylink{a01629_a42d51ce4bb3b60c7ea06f63c273fd063}{load\+From\+Samples} 
+\end{DoxySeeAlso}
+\Hypertarget{a01629_afaa542a4b59ac4e8c4f4d163ea61c7e6}\label{a01629_afaa542a4b59ac4e8c4f4d163ea61c7e6} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!update@{update}}
+\index{update@{update}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Buffer\+::update (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Count,  }\item[{unsigned int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the internal buffer with the cached audio samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel\+Count} & Number of channels \\
+\hline
+{\em sample\+Rate} & Sample rate (number of samples per second)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false if any error happened 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01629_a50914f77c7cf4fb97616c898c5291f4b}\label{a01629_a50914f77c7cf4fb97616c898c5291f4b} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!Sound@{Sound}}
+\index{Sound@{Sound}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{Sound}{Sound}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01625}{Sound}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01629_a90bd207655b9b1a312f6ebb7ae783da2}\label{a01629_a90bd207655b9b1a312f6ebb7ae783da2} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Buffer\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+AL buffer identifier. 
+
+\Hypertarget{a01629_ad7a031590faff910c94cc442864eabd3}\label{a01629_ad7a031590faff910c94cc442864eabd3} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_duration@{m\_duration}}
+\index{m\_duration@{m\_duration}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_duration}{m\_duration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Sound\+Buffer\+::m\+\_\+duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01625}{Sound} duration. 
+
+\Hypertarget{a01629_a6c954068fe46d5567f2c94eb3c79c5f3}\label{a01629_a6c954068fe46d5567f2c94eb3c79c5f3} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_samples@{m\_samples}}
+\index{m\_samples@{m\_samples}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}$>$ sf\+::\+Sound\+Buffer\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Samples buffer. 
+
+\Hypertarget{a01629_aa6fc10c994c0aaca70567e8fd1ddabc3}\label{a01629_aa6fc10c994c0aaca70567e8fd1ddabc3} 
+\index{sf::SoundBuffer@{sf::SoundBuffer}!m\_sounds@{m\_sounds}}
+\index{m\_sounds@{m\_sounds}!sf::SoundBuffer@{sf::SoundBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_sounds}{m\_sounds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01629_a0c4edd90a4c83b07369e84f14b385196}{Sound\+List}} sf\+::\+Sound\+Buffer\+::m\+\_\+sounds\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+List of sounds that are using this buffer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00329}{Sound\+Buffer.\+hpp}}\end{DoxyCompactItemize}

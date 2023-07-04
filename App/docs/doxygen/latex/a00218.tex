@@ -1,0 +1,53 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/meta/cpp\+\_\+future.hpp File Reference}
+\hypertarget{a00218}{}\label{a00218}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/cpp\_future.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/cpp\_future.hpp}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+Include dependency graph for cpp\+\_\+future.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01233}{nlohmann\+::detail\+::utility\+\_\+internal\+::\+Extend$<$ integer\+\_\+sequence$<$ T, Ints... $>$, Seq\+Size, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{a01237}{nlohmann\+::detail\+::utility\+\_\+internal\+::\+Extend$<$ integer\+\_\+sequence$<$ T, Ints... $>$, Seq\+Size, 1 $>$}}
+\item 
+struct \mbox{\hyperlink{a01241}{nlohmann\+::detail\+::utility\+\_\+internal\+::\+Gen$<$ T, N $>$}}
+\item 
+struct \mbox{\hyperlink{a01245}{nlohmann\+::detail\+::utility\+\_\+internal\+::\+Gen$<$ T, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{a01225}{nlohmann\+::detail\+::integer\+\_\+sequence$<$ T, Ints $>$}}
+\item 
+struct \mbox{\hyperlink{a01249}{nlohmann\+::detail\+::priority\+\_\+tag$<$ N $>$}}
+\item 
+struct \mbox{\hyperlink{a01253}{nlohmann\+::detail\+::priority\+\_\+tag$<$ 0 $>$}}
+\item 
+struct \mbox{\hyperlink{a01257}{nlohmann\+::detail\+::static\+\_\+const$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00668}{nlohmann\+::detail\+::utility\+\_\+internal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$bool B, typename T  = void$>$ }\\using \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{nlohmann\+::detail\+::enable\+\_\+if\+\_\+t}} = typename std\+::enable\+\_\+if$<$ B, T $>$\+::type
+\item 
+{\footnotesize template$<$size\+\_\+t... Ints$>$ }\\using \mbox{\hyperlink{a00662_a422430dab7adbe4dfcf125dfcfbeffd0}{nlohmann\+::detail\+::index\+\_\+sequence}} = \mbox{\hyperlink{a01225}{integer\+\_\+sequence}}$<$ size\+\_\+t, Ints... $>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{a00662_a24800493c6ec02ce033dcbb47b7fd28e}{nlohmann\+::detail\+::index\+\_\+sequence\+\_\+for}} = \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{make\+\_\+index\+\_\+sequence}}$<$ sizeof...(Ts)$>$
+\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\using \mbox{\hyperlink{a00662_a9b47f1c18e3c9739b20633aeee0d0f62}{nlohmann\+::detail\+::make\+\_\+index\+\_\+sequence}} = \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{make\+\_\+integer\+\_\+sequence}}$<$ size\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$typename T , T N$>$ }\\using \mbox{\hyperlink{a00662_a745268b2c803a873cdbe1fdecb4e88b2}{nlohmann\+::detail\+::make\+\_\+integer\+\_\+sequence}} = typename \mbox{\hyperlink{a01241}{utility\+\_\+internal\+::\+Gen}}$<$ T, N $>$\+::type
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a53a082eedad9f4729fcd8fed552a21f7}{nlohmann\+::detail\+::uncvref\+\_\+t}} = typename std\+::remove\+\_\+cv$<$ typename std\+::remove\+\_\+reference$<$ T $>$\+::type $>$\+::type
+\end{DoxyCompactItemize}

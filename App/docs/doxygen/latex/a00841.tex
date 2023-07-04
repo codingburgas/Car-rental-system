@@ -1,0 +1,87 @@
+\doxysection{cpr\+::ssl\+::Key\+File Class Reference}
+\hypertarget{a00841}{}\label{a00841}\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+
+
+{\ttfamily \#include $<$ssl\+\_\+options.\+h$>$}
+
+
+
+Inheritance diagram for cpr\+::ssl\+::Key\+File\+:
+% FIG 0
+
+
+Collaboration diagram for cpr\+::ssl\+::Key\+File\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00841_afc8371185cfecf5b200ac05cb5635c57}{Get\+Key\+Type}} () const
+\item 
+{\footnotesize template$<$typename File\+Type , typename Pass\+Type $>$ }\\\mbox{\hyperlink{a00841_a1da570b721b62ddaf9312cae292458a2}{Key\+File}} (File\+Type \&\&p\+\_\+filename, Pass\+Type p\+\_\+password)
+\item 
+\mbox{\hyperlink{a00841_a7a7a543cba0ea7ef1e0b53dcaae04187}{Key\+File}} (std\+::string \&\&p\+\_\+filename)
+\item 
+virtual \mbox{\hyperlink{a00841_a0b85fba3226bc0f31e97101ad662f4bd}{\texorpdfstring{$\sim$}{\string~}\+Key\+File}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}{filename}}
+\item 
+std\+::string \mbox{\hyperlink{a00841_a56690047750c7239297d31ebe84cdc79}{password}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00841_a7a7a543cba0ea7ef1e0b53dcaae04187}\label{a00841_a7a7a543cba0ea7ef1e0b53dcaae04187} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!KeyFile@{KeyFile}}
+\index{KeyFile@{KeyFile}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{KeyFile()}{KeyFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cpr\+::ssl\+::\+Key\+File\+::\+Key\+File (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{p\+\_\+filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00841_a1da570b721b62ddaf9312cae292458a2}\label{a00841_a1da570b721b62ddaf9312cae292458a2} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!KeyFile@{KeyFile}}
+\index{KeyFile@{KeyFile}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{KeyFile()}{KeyFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename File\+Type , typename Pass\+Type $>$ \\
+cpr\+::ssl\+::\+Key\+File\+::\+Key\+File (\begin{DoxyParamCaption}\item[{File\+Type \&\&}]{p\+\_\+filename,  }\item[{Pass\+Type}]{p\+\_\+password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00841_a0b85fba3226bc0f31e97101ad662f4bd}\label{a00841_a0b85fba3226bc0f31e97101ad662f4bd} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!````~KeyFile@{\texorpdfstring{$\sim$}{\string~}KeyFile}}
+\index{````~KeyFile@{\texorpdfstring{$\sim$}{\string~}KeyFile}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}KeyFile()}{\string~KeyFile()}}
+{\footnotesize\ttfamily virtual cpr\+::ssl\+::\+Key\+File\+::\texorpdfstring{$\sim$}{\string~}\+Key\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00841_afc8371185cfecf5b200ac05cb5635c57}\label{a00841_afc8371185cfecf5b200ac05cb5635c57} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!GetKeyType@{GetKeyType}}
+\index{GetKeyType@{GetKeyType}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{GetKeyType()}{GetKeyType()}}
+{\footnotesize\ttfamily virtual const char \texorpdfstring{$\ast$}{*} cpr\+::ssl\+::\+Key\+File\+::\+Get\+Key\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{a00845_a43524606ccda7befd06e1292cff68453}{cpr\+::ssl\+::\+Der\+Key}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00841_ad15f96bd9f5dd43df9259e954a1df2e8}\label{a00841_ad15f96bd9f5dd43df9259e954a1df2e8} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!filename@{filename}}
+\index{filename@{filename}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::string cpr\+::ssl\+::\+Key\+File\+::filename}
+
+\Hypertarget{a00841_a56690047750c7239297d31ebe84cdc79}\label{a00841_a56690047750c7239297d31ebe84cdc79} 
+\index{cpr::ssl::KeyFile@{cpr::ssl::KeyFile}!password@{password}}
+\index{password@{password}!cpr::ssl::KeyFile@{cpr::ssl::KeyFile}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily std\+::string cpr\+::ssl\+::\+Key\+File\+::password}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00092}{ssl\+\_\+options.\+h}}\end{DoxyCompactItemize}

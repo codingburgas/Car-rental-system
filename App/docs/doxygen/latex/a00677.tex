@@ -1,0 +1,124 @@
+\doxysection{Handler Class Reference}
+\hypertarget{a00677}{}\label{a00677}\index{Handler@{Handler}}
+
+
+{\ttfamily \#include $<$Handler.\+hpp$>$}
+
+
+
+Collaboration diagram for Handler\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00677_a839d18e9f22e59c3c72c79c058a59ad2}{check\+Login\+Register}} (string entered\+Name, string enetered\+Contact\+Number, string email, string password, string is\+Log\+Or\+Reg)
+\item 
+void \mbox{\hyperlink{a00677_ad70dc3e27610e340fd38b11a12d96eac}{get\+Loggings}} ()
+\item 
+string \mbox{\hyperlink{a00677_ab9ab6a950cfd5e23f45a984648a5ddd0}{get\+Name}} (string entered\+Email)
+\item 
+string \mbox{\hyperlink{a00677_a036daf8764c54f61f7e4986f8f19a132}{get\+Role}} (string entered\+Email)
+\item 
+int \mbox{\hyperlink{a00677_aac1ef6f16a7240d17cd657e829384e4c}{get\+User\+Id}} (string entered\+Email)
+\item 
+void \mbox{\hyperlink{a00677_abd1ff9aa33bcac04394cf9b94dc5e73a}{get\+Users}} ()
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{a00677_ad2e7eafbd6586acfe84424832e14525d}{get\+Vehicle\+Prices\+Index}} (int budget\+Choice, string car\+Type)
+\item 
+void \mbox{\hyperlink{a00677_a55d870c918cfe3f525c6ac36cea1d084}{passed\+Data}} (std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$ data)
+\item 
+void \mbox{\hyperlink{a00677_a8edd3232ef5604584dafa5ec7ec4058c}{post\+Logging}} (int user\+Id, int vehicle\+Id)
+\item 
+void \mbox{\hyperlink{a00677_a7c7cd854ff2d379f13b7a51b033b41ef}{post\+User}} (string entered\+Name, string entered\+Contact\+Number, string entered\+Email, string entered\+Password, string entered\+Role)
+\item 
+void \mbox{\hyperlink{a00677_a8e3899edf7bc93ae7d21ea6a053ab755}{put\+Vehicles}} (string vehicle\+Type, string name, string manufacturer, string model, bool is\+Reserved, string reservation\+Date, string location, string price, int reserved\+By\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00681}{APIHandler}} \mbox{\hyperlink{a00677_a9a6a7e64e4844d938ac7f92f9d70b58c}{handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00677_a839d18e9f22e59c3c72c79c058a59ad2}\label{a00677_a839d18e9f22e59c3c72c79c058a59ad2} 
+\index{Handler@{Handler}!checkLoginRegister@{checkLoginRegister}}
+\index{checkLoginRegister@{checkLoginRegister}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{checkLoginRegister()}{checkLoginRegister()}}
+{\footnotesize\ttfamily bool Handler\+::check\+Login\+Register (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{enetered\+Contact\+Number,  }\item[{string}]{email,  }\item[{string}]{password,  }\item[{string}]{is\+Log\+Or\+Reg }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_ad70dc3e27610e340fd38b11a12d96eac}\label{a00677_ad70dc3e27610e340fd38b11a12d96eac} 
+\index{Handler@{Handler}!getLoggings@{getLoggings}}
+\index{getLoggings@{getLoggings}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getLoggings()}{getLoggings()}}
+{\footnotesize\ttfamily void Handler\+::get\+Loggings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_ab9ab6a950cfd5e23f45a984648a5ddd0}\label{a00677_ab9ab6a950cfd5e23f45a984648a5ddd0} 
+\index{Handler@{Handler}!getName@{getName}}
+\index{getName@{getName}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Handler\+::get\+Name (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_a036daf8764c54f61f7e4986f8f19a132}\label{a00677_a036daf8764c54f61f7e4986f8f19a132} 
+\index{Handler@{Handler}!getRole@{getRole}}
+\index{getRole@{getRole}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getRole()}{getRole()}}
+{\footnotesize\ttfamily string Handler\+::get\+Role (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_aac1ef6f16a7240d17cd657e829384e4c}\label{a00677_aac1ef6f16a7240d17cd657e829384e4c} 
+\index{Handler@{Handler}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily int Handler\+::get\+User\+Id (\begin{DoxyParamCaption}\item[{string}]{entered\+Email }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_abd1ff9aa33bcac04394cf9b94dc5e73a}\label{a00677_abd1ff9aa33bcac04394cf9b94dc5e73a} 
+\index{Handler@{Handler}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily void Handler\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_ad2e7eafbd6586acfe84424832e14525d}\label{a00677_ad2e7eafbd6586acfe84424832e14525d} 
+\index{Handler@{Handler}!getVehiclePricesIndex@{getVehiclePricesIndex}}
+\index{getVehiclePricesIndex@{getVehiclePricesIndex}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{getVehiclePricesIndex()}{getVehiclePricesIndex()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Handler\+::get\+Vehicle\+Prices\+Index (\begin{DoxyParamCaption}\item[{int}]{budget\+Choice,  }\item[{string}]{car\+Type }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_a55d870c918cfe3f525c6ac36cea1d084}\label{a00677_a55d870c918cfe3f525c6ac36cea1d084} 
+\index{Handler@{Handler}!passedData@{passedData}}
+\index{passedData@{passedData}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{passedData()}{passedData()}}
+{\footnotesize\ttfamily void Handler\+::passed\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{a01557}{vehicles}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_a8edd3232ef5604584dafa5ec7ec4058c}\label{a00677_a8edd3232ef5604584dafa5ec7ec4058c} 
+\index{Handler@{Handler}!postLogging@{postLogging}}
+\index{postLogging@{postLogging}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{postLogging()}{postLogging()}}
+{\footnotesize\ttfamily void Handler\+::post\+Logging (\begin{DoxyParamCaption}\item[{int}]{user\+Id,  }\item[{int}]{vehicle\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_a7c7cd854ff2d379f13b7a51b033b41ef}\label{a00677_a7c7cd854ff2d379f13b7a51b033b41ef} 
+\index{Handler@{Handler}!postUser@{postUser}}
+\index{postUser@{postUser}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{postUser()}{postUser()}}
+{\footnotesize\ttfamily void Handler\+::post\+User (\begin{DoxyParamCaption}\item[{string}]{entered\+Name,  }\item[{string}]{entered\+Contact\+Number,  }\item[{string}]{entered\+Email,  }\item[{string}]{entered\+Password,  }\item[{string}]{entered\+Role }\end{DoxyParamCaption})}
+
+\Hypertarget{a00677_a8e3899edf7bc93ae7d21ea6a053ab755}\label{a00677_a8e3899edf7bc93ae7d21ea6a053ab755} 
+\index{Handler@{Handler}!putVehicles@{putVehicles}}
+\index{putVehicles@{putVehicles}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{putVehicles()}{putVehicles()}}
+{\footnotesize\ttfamily void Handler\+::put\+Vehicles (\begin{DoxyParamCaption}\item[{string}]{vehicle\+Type,  }\item[{string}]{name,  }\item[{string}]{manufacturer,  }\item[{string}]{model,  }\item[{bool}]{is\+Reserved,  }\item[{string}]{reservation\+Date,  }\item[{string}]{location,  }\item[{string}]{price,  }\item[{int}]{reserved\+By\+Id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00677_a9a6a7e64e4844d938ac7f92f9d70b58c}\label{a00677_a9a6a7e64e4844d938ac7f92f9d70b58c} 
+\index{Handler@{Handler}!handler@{handler}}
+\index{handler@{handler}!Handler@{Handler}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00681}{APIHandler}} Handler\+::handler\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+BLL/include/\mbox{\hyperlink{a00002}{Handler.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+BLL/src/\mbox{\hyperlink{a00005}{Handler.\+cpp}}\end{DoxyCompactItemize}

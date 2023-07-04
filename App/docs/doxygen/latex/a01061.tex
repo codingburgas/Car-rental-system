@@ -1,0 +1,129 @@
+\doxysection{nlohmann\+::detail\+::invalid\+\_\+iterator Class Reference}
+\hypertarget{a01061}{}\label{a01061}\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+
+
+exception indicating errors with iterators  
+
+
+
+
+{\ttfamily \#include $<$exceptions.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+::detail\+::invalid\+\_\+iterator\+:
+% FIG 0
+
+
+Collaboration diagram for nlohmann\+::detail\+::invalid\+\_\+iterator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01053_ad863f4455f8bb2ea006a78e6fcf0b090}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static \mbox{\hyperlink{a01061}{invalid\+\_\+iterator}} \mbox{\hyperlink{a01061_a34104b98ab00564e564176b4d2ba7c3c}{create}} (int id\+\_\+, const std\+::string \&what\+\_\+arg, const Basic\+Json\+Type \&context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{a01053_a0d4589a3fb54e81646d986c05efa3b9a}{id}}
+\begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\static std\+::string \mbox{\hyperlink{a01053_aa353a7dba4fd179f7224b8a2a238a264}{diagnostics}} (const Basic\+Json\+Type \&leaf\+\_\+element)
+\item 
+static std\+::string \mbox{\hyperlink{a01053_abf41a7e9178356314082284e6cfea278}{name}} (const std\+::string \&ename, int id\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01061_adf4a6697420f3bddb4addfc0b98f6ee2}{invalid\+\_\+iterator}} (int id\+\_\+, const char \texorpdfstring{$\ast$}{*}what\+\_\+arg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::runtime\+\_\+error \mbox{\hyperlink{a01053_ad54778dc4f125488cbce8ec276dfdde2}{m}}
+\begin{DoxyCompactList}\small\item\em an exception object as storage for error messages \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+exception indicating errors with iterators 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://json.nlohmann.me/api/basic_json/invalid_iterator/}{\texttt{ https\+://json.\+nlohmann.\+me/api/basic\+\_\+json/invalid\+\_\+iterator/}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01061_adf4a6697420f3bddb4addfc0b98f6ee2}\label{a01061_adf4a6697420f3bddb4addfc0b98f6ee2} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!invalid\_iterator@{invalid\_iterator}}
+\index{invalid\_iterator@{invalid\_iterator}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{invalid\_iterator()}{invalid\_iterator()}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::invalid\+\_\+iterator\+::invalid\+\_\+iterator (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01061_a34104b98ab00564e564176b4d2ba7c3c}\label{a01061_a34104b98ab00564e564176b4d2ba7c3c} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!create@{create}}
+\index{create@{create}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static \mbox{\hyperlink{a01061}{invalid\+\_\+iterator}} nlohmann\+::detail\+::invalid\+\_\+iterator\+::create (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{const Basic\+Json\+Type \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{a01053_aa353a7dba4fd179f7224b8a2a238a264}\label{a01053_aa353a7dba4fd179f7224b8a2a238a264} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!diagnostics@{diagnostics}}
+\index{diagnostics@{diagnostics}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{diagnostics()}{diagnostics()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static std\+::string nlohmann\+::detail\+::exception\+::diagnostics (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{leaf\+\_\+element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01053_abf41a7e9178356314082284e6cfea278}\label{a01053_abf41a7e9178356314082284e6cfea278} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!name@{name}}
+\index{name@{name}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily static std\+::string nlohmann\+::detail\+::exception\+::name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ename,  }\item[{int}]{id\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+\Hypertarget{a01053_ad863f4455f8bb2ea006a78e6fcf0b090}\label{a01053_ad863f4455f8bb2ea006a78e6fcf0b090} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!what@{what}}
+\index{what@{what}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} nlohmann\+::detail\+::exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}
+
+
+
+returns the explanatory string 
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01053_a0d4589a3fb54e81646d986c05efa3b9a}\label{a01053_a0d4589a3fb54e81646d986c05efa3b9a} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!id@{id}}
+\index{id@{id}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily const int nlohmann\+::detail\+::exception\+::id\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+the id of the exception 
+
+\Hypertarget{a01053_ad54778dc4f125488cbce8ec276dfdde2}\label{a01053_ad54778dc4f125488cbce8ec276dfdde2} 
+\index{nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}!m@{m}}
+\index{m@{m}!nlohmann::detail::invalid\_iterator@{nlohmann::detail::invalid\_iterator}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily std\+::runtime\+\_\+error nlohmann\+::detail\+::exception\+::m\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+an exception object as storage for error messages 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/\mbox{\hyperlink{a00158}{exceptions.\+hpp}}\end{DoxyCompactItemize}

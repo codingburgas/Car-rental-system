@@ -1,0 +1,463 @@
+\doxysection{multi.\+h}
+\hypertarget{a00125_source}{}\label{a00125_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/multi.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/multi.h}}
+\mbox{\hyperlink{a00125}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURLINC\_MULTI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURLINC\_MULTI\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \_\ \_\_\_\_\ \ \_}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ Project\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_\_|\ |\ |\ |\ \ \_\ \(\backslash\)|\ |}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /\ \_\_|\ |\ |\ |\ |\_)\ |\ |}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (\_\_|\ |\_|\ |\ \ \_\ <|\ |\_\_\_}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_|\(\backslash\)\_\_\_/|\_|\ \(\backslash\)\_\(\backslash\)\_\_\_\_\_|}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (C)\ 1998\ -\/\ 2021,\ Daniel\ Stenberg,\ <daniel@haxx.se>,\ et\ al.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ This\ software\ is\ licensed\ as\ described\ in\ the\ file\ COPYING,\ which}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ you\ should\ have\ received\ as\ part\ of\ this\ distribution.\ The\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ are\ also\ available\ at\ https://curl.se/docs/copyright.html.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ You\ may\ opt\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute\ and/or\ sell}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ under\ the\ terms\ of\ the\ COPYING\ file.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ software\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ basis,\ WITHOUT\ WARRANTY\ OF\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ This\ is\ an\ "{}external"{}\ header\ file.\ Don't\ give\ away\ any\ internals\ here!}}
+\DoxyCodeLine{00026\ \textcolor{comment}{}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ GOALS}}
+\DoxyCodeLine{00028\ \textcolor{comment}{}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ o\ Enable\ a\ "{}pull"{}\ interface.\ The\ application\ that\ uses\ libcurl\ decides\ where}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ and\ when\ to\ ask\ libcurl\ to\ get/send\ data.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ o\ Enable\ multiple\ simultaneous\ transfers\ in\ the\ same\ thread\ without\ making\ it}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ complicated\ for\ the\ application.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ o\ Enable\ the\ application\ to\ select()\ on\ its\ own\ file\ descriptors\ and\ curl's}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ file\ descriptors\ simultaneous\ easily.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ This\ header\ file\ should\ not\ really\ need\ to\ include\ "{}curl.h"{}\ since\ curl.h}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ itself\ includes\ this\ file\ and\ we\ expect\ user\ applications\ to\ do\ \#include}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ <curl/curl.h>\ without\ the\ need\ for\ especially\ including\ multi.h.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ For\ some\ reason\ we\ added\ this\ include\ here\ at\ one\ point,\ and\ rather\ than\ to}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *\ break\ existing\ (wrongly\ written)\ libcurl\ applications,\ we\ leave\ it\ as-\/is}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ but\ with\ this\ warning\ attached.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00113}{curl.h}}"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#if\ defined(BUILDING\_LIBCURL)\ ||\ defined(CURL\_STRICTER)}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Curl\_multi\ \mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}};}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}};}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3ada965a9b89eeb3b2f3a012edaa3acdd6}{CURLM\_CALL\_MULTI\_PERFORM}}\ =\ -\/1,\ \textcolor{comment}{/*\ please\ call\ curl\_multi\_perform()\ or}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ curl\_multi\_socket*()\ soon\ */}}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3ae3b5d27fd8dc9cff7a60772cf90cf9d6}{CURLM\_OK}},}
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a8876b8ad10b9b2e9ee4cfb22034803ed}{CURLM\_BAD\_HANDLE}},\ \ \ \ \ \ \textcolor{comment}{/*\ the\ passed-\/in\ handle\ is\ not\ a\ valid\ CURLM\ handle\ */}}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3af6c791401114f6d764dbb8209838ba31}{CURLM\_BAD\_EASY\_HANDLE}},\ \textcolor{comment}{/*\ an\ easy\ handle\ was\ not\ good/valid\ */}}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a323be072bc47b2a7ff1d3fc4533e8f70}{CURLM\_OUT\_OF\_MEMORY}},\ \ \ \textcolor{comment}{/*\ if\ you\ ever\ get\ this,\ you're\ in\ deep\ sh*t\ */}}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a53d037bdcf6900341e9f83efbf14b1d1}{CURLM\_INTERNAL\_ERROR}},\ \ \textcolor{comment}{/*\ this\ is\ a\ libcurl\ bug\ */}}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a13188cf491bdb9a8f77a5bed6365c34c}{CURLM\_BAD\_SOCKET}},\ \ \ \ \ \ \textcolor{comment}{/*\ the\ passed\ in\ socket\ argument\ did\ not\ match\ */}}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3afeaa68ddf000332d41ce915f8658cf4c}{CURLM\_UNKNOWN\_OPTION}},\ \ \textcolor{comment}{/*\ curl\_multi\_setopt()\ with\ unsupported\ option\ */}}
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a0f2a032f9bfe05ff2f3b5fc74d01f7eb}{CURLM\_ADDED\_ALREADY}},\ \ \ \textcolor{comment}{/*\ an\ easy\ handle\ already\ added\ to\ a\ multi\ handle\ was}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attempted\ to\ get\ added\ -\/\ again\ */}}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a02622c2fbef0b11a76595bbfd8353c6a}{CURLM\_RECURSIVE\_API\_CALL}},\ \textcolor{comment}{/*\ an\ api\ function\ was\ called\ from\ inside\ a}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback\ */}}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a305f6f25bbac7e6d8942d6af17881de4}{CURLM\_WAKEUP\_FAILURE}},\ \ \textcolor{comment}{/*\ wakeup\ is\ unavailable\ or\ failed\ */}}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a9dafcc7aacf12078a8c6f0d4f7aaef89}{CURLM\_BAD\_FUNCTION\_ARGUMENT}},\ \textcolor{comment}{/*\ function\ called\ with\ a\ bad\ parameter\ */}}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3a904d8c8ff34bc84d21a82ec08aa76555}{CURLM\_ABORTED\_BY\_CALLBACK}},}
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3adf229fdf86c1ea54a8138f0bf702d3e6}{CURLM\_LAST}}}
+\DoxyCodeLine{00079\ \}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*\ just\ to\ make\ code\ nicer\ when\ using\ curl\_multi\_socket()\ you\ can\ now\ check}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ for\ CURLM\_CALL\_MULTI\_SOCKET\ too\ in\ the\ same\ style\ it\ works\ for}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ curl\_multi\_perform()\ and\ CURLM\_CALL\_MULTI\_PERFORM\ */}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ CURLM\_CALL\_MULTI\_SOCKET\ CURLM\_CALL\_MULTI\_PERFORM}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{/*\ bitmask\ bits\ for\ CURLMOPT\_PIPELINING\ */}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ CURLPIPE\_NOTHING\ \ \ 0L}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ CURLPIPE\_HTTP1\ \ \ \ \ 1L}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CURLPIPE\_MULTIPLEX\ 2L}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{a00125_a7f87d375fc82f79b121ef4adaeedc154ae3b4bbc61ade639e930424147049e4e5}{CURLMSG\_NONE}},\ \textcolor{comment}{/*\ first,\ not\ used\ */}}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{a00125_a7f87d375fc82f79b121ef4adaeedc154a374efd706ae91c3321d6360be3c398b7}{CURLMSG\_DONE}},\ \textcolor{comment}{/*\ This\ easy\ handle\ has\ completed.\ 'result'\ contains}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ CURLcode\ of\ the\ transfer\ */}}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{a00125_a7f87d375fc82f79b121ef4adaeedc154a57d9664397bd951b89bf317b7f4721ec}{CURLMSG\_LAST}}\ \textcolor{comment}{/*\ last,\ not\ used\ */}}
+\DoxyCodeLine{00096\ \}\ \mbox{\hyperlink{a00125_a7f87d375fc82f79b121ef4adaeedc154}{CURLMSG}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00973}{CURLMsg}}\ \{}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{a00125_a7f87d375fc82f79b121ef4adaeedc154}{CURLMSG}}\ \mbox{\hyperlink{a00973_a805019ce36cd301163b184308220c601}{msg}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ what\ this\ message\ means\ */}}
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *\mbox{\hyperlink{a00973_a236add50fa3dc85360e4aa7a85a9dfd1}{easy\_handle}};\ \textcolor{comment}{/*\ the\ handle\ it\ concerns\ */}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{a00973_ae493c9ae3084340faf1aaa50ebf4b105}{whatever}};\ \ \ \ \textcolor{comment}{/*\ message-\/specific\ data\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}\ \mbox{\hyperlink{a00973_ac00f26a84ebe0c2c5cb420a47d15ffec}{result}};\ \ \ \textcolor{comment}{/*\ return\ code\ for\ transfer\ */}}
+\DoxyCodeLine{00104\ \ \ \}\ \mbox{\hyperlink{a00973_a9a9db1a6ba65fa7fea29568f64e07f90}{data}};}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00973}{CURLMsg}}\ \mbox{\hyperlink{a00973}{CURLMsg}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ Based\ on\ poll(2)\ structure\ and\ values.}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ We\ don't\ use\ pollfd\ and\ POLL*\ constants\ explicitly}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ to\ cover\ platforms\ without\ poll().\ */}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ CURL\_WAIT\_POLLIN\ \ \ \ 0x0001}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ CURL\_WAIT\_POLLPRI\ \ \ 0x0002}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ CURL\_WAIT\_POLLOUT\ \ \ 0x0004}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00981}{curl\_waitfd}}\ \{}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ \mbox{\hyperlink{a00981_ae4712fac510d50249e1a430a3d160a17}{fd}};}
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a00981_ac8286d3f03be1a2f2d43a9516251f0f2}{events}};}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a00981_a14e87b528f4a052ec65edbc14b6ab080}{revents}};\ \textcolor{comment}{/*\ not\ supported\ yet\ */}}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_init()}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ *\ Desc:\ \ \ \ inititalize\ multi-\/style\ curl\ usage}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ *\ Returns:\ a\ new\ CURLM\ handle\ to\ use\ in\ all\ 'curl\_multi'\ functions.}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *\mbox{\hyperlink{a00125_aa5fc3c89b75f441ba37aeba7498acf00}{curl\_multi\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_add\_handle()}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ *\ Desc:\ \ \ \ add\ a\ standard\ curl\ handle\ to\ the\ multi\ stack}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *\ Returns:\ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00137\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a85754cc6a7c820735e0fac1ebac7493d}{curl\_multi\_add\_handle}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *curl\_handle);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\ \ *\ Name:\ \ \ \ curl\_multi\_remove\_handle()}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ \ *\ Desc:\ \ \ \ removes\ a\ curl\ handle\ from\ the\ multi\ stack\ again}}
+\DoxyCodeLine{00144\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ *\ Returns:\ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00147\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_abd5c8bf83688f15099b512846f6efc5a}{curl\_multi\_remove\_handle}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *curl\_handle);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ *\ Name:\ \ \ \ curl\_multi\_fdset()}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ *\ Desc:\ \ \ \ Ask\ curl\ for\ its\ fd\_set\ sets.\ The\ app\ can\ use\ these\ to\ select()\ or}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ poll()\ on.\ We\ want\ curl\_multi\_perform()\ called\ as\ soon\ as\ one\ of}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ them\ are\ ready.}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ *\ Returns:\ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00159\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a84ad2ebd58c824fb208616bb160ca0c6}{curl\_multi\_fdset}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fd\_set\ *read\_fd\_set,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fd\_set\ *write\_fd\_set,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fd\_set\ *exc\_fd\_set,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *max\_fd);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ *\ Name:\ \ \ \ \ curl\_multi\_wait()}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00168\ \textcolor{comment}{\ *\ Desc:\ \ \ \ \ Poll\ on\ all\ fds\ within\ a\ CURLM\ set\ as\ well\ as\ any}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ additional\ fds\ passed\ to\ the\ function.}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ *\ Returns:\ \ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00173\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_ac64df2007d846f723958e995f514ac69}{curl\_multi\_wait}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00981}{curl\_waitfd}}\ extra\_fds[],}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ extra\_nfds,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timeout\_ms,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *ret);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ *\ Name:\ \ \ \ \ curl\_multi\_poll()}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00182\ \textcolor{comment}{\ *\ Desc:\ \ \ \ \ Poll\ on\ all\ fds\ within\ a\ CURLM\ set\ as\ well\ as\ any}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ additional\ fds\ passed\ to\ the\ function.}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ *\ Returns:\ \ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00187\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_aef4d83a2f0cab6d4d315fb9b89558b9a}{curl\_multi\_poll}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00981}{curl\_waitfd}}\ extra\_fds[],}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ extra\_nfds,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timeout\_ms,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *ret);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00194\ \textcolor{comment}{\ *\ Name:\ \ \ \ \ curl\_multi\_wakeup()}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ *\ Desc:\ \ \ \ \ wakes\ up\ a\ sleeping\ curl\_multi\_poll\ call.}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ *\ Returns:\ \ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00199\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00200\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a75254741eb8d41e6305b284d34b9300c}{curl\_multi\_wakeup}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00203\ \textcolor{comment}{\ \ *\ Name:\ \ \ \ curl\_multi\_perform()}}
+\DoxyCodeLine{00204\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00205\ \textcolor{comment}{\ \ *\ Desc:\ \ \ \ When\ the\ app\ thinks\ there's\ data\ available\ for\ curl\ it\ calls\ this}}
+\DoxyCodeLine{00206\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ function\ to\ read/write\ whatever\ there\ is\ right\ now.\ This\ returns}}
+\DoxyCodeLine{00207\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ as\ soon\ as\ the\ reads\ and\ writes\ are\ done.\ This\ function\ does\ not}}
+\DoxyCodeLine{00208\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ require\ that\ there\ actually\ is\ data\ available\ for\ reading\ or\ that}}
+\DoxyCodeLine{00209\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ data\ can\ be\ written,\ it\ can\ be\ called\ just\ in\ case.\ It\ returns}}
+\DoxyCodeLine{00210\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ the\ number\ of\ handles\ that\ still\ transfer\ data\ in\ the\ second}}
+\DoxyCodeLine{00211\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ argument's\ integer-\/pointer.}}
+\DoxyCodeLine{00212\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00213\ \textcolor{comment}{\ \ *\ Returns:\ CURLMcode\ type,\ general\ multi\ error\ code.\ *NOTE*\ that\ this\ only}}
+\DoxyCodeLine{00214\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ returns\ errors\ etc\ regarding\ the\ whole\ multi\ stack.\ There\ might}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ still\ have\ occurred\ problems\ on\ individual\ transfers\ even\ when}}
+\DoxyCodeLine{00216\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ this\ returns\ OK.}}
+\DoxyCodeLine{00217\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00218\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a5323c6aff8b4eebc7fed8cf126a46241}{curl\_multi\_perform}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *running\_handles);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ \ *\ Name:\ \ \ \ curl\_multi\_cleanup()}}
+\DoxyCodeLine{00223\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ *\ Desc:\ \ \ \ Cleans\ up\ and\ removes\ a\ whole\ multi\ stack.\ It\ does\ not\ free\ or}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ touch\ any\ individual\ easy\ handles\ in\ any\ way.\ We\ need\ to\ define}}
+\DoxyCodeLine{00226\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ in\ what\ state\ those\ handles\ will\ be\ if\ this\ function\ is\ called}}
+\DoxyCodeLine{00227\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ in\ the\ middle\ of\ a\ transfer.}}
+\DoxyCodeLine{00228\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{00229\ \textcolor{comment}{\ \ *\ Returns:\ CURLMcode\ type,\ general\ multi\ error\ code.}}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00231\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a05ea44148f8932f7d99ef0487ddf7003}{curl\_multi\_cleanup}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_info\_read()}}
+\DoxyCodeLine{00235\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00236\ \textcolor{comment}{\ *\ Desc:\ \ \ \ Ask\ the\ multi\ handle\ if\ there's\ any\ messages/informationals\ from}}
+\DoxyCodeLine{00237\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ the\ individual\ transfers.\ Messages\ include\ informationals\ such\ as}}
+\DoxyCodeLine{00238\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ error\ code\ from\ the\ transfer\ or\ just\ the\ fact\ that\ a\ transfer\ is}}
+\DoxyCodeLine{00239\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ completed.\ More\ details\ on\ these\ should\ be\ written\ down\ as\ well.}}
+\DoxyCodeLine{00240\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00241\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ Repeated\ calls\ to\ this\ function\ will\ return\ a\ new\ struct\ each}}
+\DoxyCodeLine{00242\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ time,\ until\ a\ special\ "{}end\ of\ msgs"{}\ struct\ is\ returned\ as\ a\ signal}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ that\ there\ is\ no\ more\ to\ get\ at\ this\ point.}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00245\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ The\ data\ the\ returned\ pointer\ points\ to\ will\ not\ survive\ calling}}
+\DoxyCodeLine{00246\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ curl\_multi\_cleanup().}}
+\DoxyCodeLine{00247\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00248\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ The\ 'CURLMsg'\ struct\ is\ meant\ to\ be\ very\ simple\ and\ only\ contain}}
+\DoxyCodeLine{00249\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ very\ basic\ information.\ If\ more\ involved\ information\ is\ wanted,}}
+\DoxyCodeLine{00250\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ we\ will\ provide\ the\ particular\ "{}transfer\ handle"{}\ in\ that\ struct}}
+\DoxyCodeLine{00251\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ and\ that\ should/could/would\ be\ used\ in\ subsequent}}
+\DoxyCodeLine{00252\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ curl\_easy\_getinfo()\ calls\ (or\ similar).\ The\ point\ being\ that\ we}}
+\DoxyCodeLine{00253\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ must\ never\ expose\ complex\ structs\ to\ applications,\ as\ then\ we'll}}
+\DoxyCodeLine{00254\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ undoubtably\ get\ backwards\ compatibility\ problems\ in\ the\ future.}}
+\DoxyCodeLine{00255\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00256\ \textcolor{comment}{\ *\ Returns:\ A\ pointer\ to\ a\ filled-\/in\ struct,\ or\ NULL\ if\ it\ failed\ or\ ran\ out}}
+\DoxyCodeLine{00257\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ of\ structs.\ It\ also\ writes\ the\ number\ of\ messages\ left\ in\ the}}
+\DoxyCodeLine{00258\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ queue\ (after\ this\ read)\ in\ the\ integer\ the\ second\ argument\ points}}
+\DoxyCodeLine{00259\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ to.}}
+\DoxyCodeLine{00260\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00261\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00973}{CURLMsg}}\ *\mbox{\hyperlink{a00125_aac906c92ad5465f75677bf910030e794}{curl\_multi\_info\_read}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *msgs\_in\_queue);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00265\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_strerror()}}
+\DoxyCodeLine{00266\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00267\ \textcolor{comment}{\ *\ Desc:\ \ \ \ The\ curl\_multi\_strerror\ function\ may\ be\ used\ to\ turn\ a\ CURLMcode}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ value\ into\ the\ equivalent\ human\ readable\ error\ string.\ \ This\ is}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ useful\ for\ printing\ meaningful\ error\ messages.}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ *\ Returns:\ A\ pointer\ to\ a\ null-\/terminated\ error\ message.}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00273\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00125_a78816f725057bf9e4c88d9999365dda7}{curl\_multi\_strerror}}(\mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}});}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_socket()\ and}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ curl\_multi\_socket\_all()}}
+\DoxyCodeLine{00278\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ *\ Desc:\ \ \ \ An\ alternative\ version\ of\ curl\_multi\_perform()\ that\ allows\ the}}
+\DoxyCodeLine{00280\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ application\ to\ pass\ in\ one\ of\ the\ file\ descriptors\ that\ have\ been}}
+\DoxyCodeLine{00281\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ detected\ to\ have\ "{}action"{}\ on\ them\ and\ let\ libcurl\ perform.}}
+\DoxyCodeLine{00282\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ See\ man\ page\ for\ details.}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ CURL\_POLL\_NONE\ \ \ 0}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ CURL\_POLL\_IN\ \ \ \ \ 1}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ CURL\_POLL\_OUT\ \ \ \ 2}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ CURL\_POLL\_INOUT\ \ 3}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ CURL\_POLL\_REMOVE\ 4}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ CURL\_SOCKET\_TIMEOUT\ CURL\_SOCKET\_BAD}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ CURL\_CSELECT\_IN\ \ \ 0x01}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ CURL\_CSELECT\_OUT\ \ 0x02}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ CURL\_CSELECT\_ERR\ \ 0x04}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00125_a65ca5de50d101fb96d6f58a5fea6241d}{curl\_socket\_callback}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *easy,\ \ \ \ \ \ \textcolor{comment}{/*\ easy\ handle\ */}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ s,\ \textcolor{comment}{/*\ socket\ */}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ what,\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ see\ above\ */}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userp,\ \ \ \ \ \textcolor{comment}{/*\ private\ callback}}
+\DoxyCodeLine{00300\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pointer\ */}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *socketp);\ \ \textcolor{comment}{/*\ private\ socket}}
+\DoxyCodeLine{00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pointer\ */}}
+\DoxyCodeLine{00303\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00304\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_timer\_callback}}
+\DoxyCodeLine{00305\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00306\ \textcolor{comment}{\ *\ Desc:\ \ \ \ Called\ by\ libcurl\ whenever\ the\ library\ detects\ a\ change\ in\ the}}
+\DoxyCodeLine{00307\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ maximum\ number\ of\ milliseconds\ the\ app\ is\ allowed\ to\ wait\ before}}
+\DoxyCodeLine{00308\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ curl\_multi\_socket()\ or\ curl\_multi\_perform()\ must\ be\ called}}
+\DoxyCodeLine{00309\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ (to\ allow\ libcurl's\ timed\ events\ to\ take\ place).}}
+\DoxyCodeLine{00310\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00311\ \textcolor{comment}{\ *\ Returns:\ The\ callback\ should\ return\ zero.}}
+\DoxyCodeLine{00312\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00313\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00125_a18a7e76c1666503b960dfdfa3cf9843f}{curl\_multi\_timer\_callback}})(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi,\ \ \ \ \textcolor{comment}{/*\ multi\ handle\ */}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ timeout\_ms,\ \textcolor{comment}{/*\ see\ above\ */}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userp);\ \ \ \ \textcolor{comment}{/*\ private\ callback}}
+\DoxyCodeLine{00316\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pointer\ */}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_aad2178147cea07493eba9b4da3fb27df}{curl\_multi\_socket}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ s,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *running\_handles);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_a4dd175dae1779c2984f366deffcc99cf}{curl\_multi\_socket\_action}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ s,}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ev\_bitmask,}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *running\_handles);}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_ae92d485b1eed94558d582346ae06f00f}{curl\_multi\_socket\_all}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *running\_handles);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#ifndef\ CURL\_ALLOW\_OLD\_MULTI\_SOCKET}}
+\DoxyCodeLine{00330\ \textcolor{comment}{/*\ This\ macro\ below\ was\ added\ in\ 7.16.3\ to\ push\ users\ who\ recompile\ to\ use}}
+\DoxyCodeLine{00331\ \textcolor{comment}{\ \ \ the\ new\ curl\_multi\_socket\_action()\ instead\ of\ the\ old\ curl\_multi\_socket()}}
+\DoxyCodeLine{00332\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ curl\_multi\_socket(x,y,z)\ curl\_multi\_socket\_action(x,y,0,z)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_timeout()}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00339\ \textcolor{comment}{\ *\ Desc:\ \ \ \ Returns\ the\ maximum\ number\ of\ milliseconds\ the\ app\ is\ allowed\ to}}
+\DoxyCodeLine{00340\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ wait\ before\ curl\_multi\_socket()\ or\ curl\_multi\_perform()\ must\ be}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ called\ (to\ allow\ libcurl's\ timed\ events\ to\ take\ place).}}
+\DoxyCodeLine{00342\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00343\ \textcolor{comment}{\ *\ Returns:\ CURLM\ error\ code.}}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00345\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_aa27e7a4077145833babecc78f88f8feb}{curl\_multi\_timeout}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ *milliseconds);}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00349\ \ \ \textcolor{comment}{/*\ This\ is\ the\ socket\ callback\ function\ pointer\ */}}
+\DoxyCodeLine{00350\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_SOCKETFUNCTION,\ \mbox{\hyperlink{a00113_a8719769991e0fb137b96bc151eb1360b}{CURLOPTTYPE\_FUNCTIONPOINT}},\ 1),}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \textcolor{comment}{/*\ This\ is\ the\ argument\ passed\ to\ the\ socket\ callback\ */}}
+\DoxyCodeLine{00353\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_SOCKETDATA,\ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\_OBJECTPOINT}},\ 2),}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{comment}{/*\ set\ to\ 1\ to\ enable\ pipelining\ for\ this\ multi\ handle\ */}}
+\DoxyCodeLine{00356\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_PIPELINING,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 3),}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \textcolor{comment}{/*\ This\ is\ the\ timer\ callback\ function\ pointer\ */}}
+\DoxyCodeLine{00359\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_TIMERFUNCTION,\ \mbox{\hyperlink{a00113_a8719769991e0fb137b96bc151eb1360b}{CURLOPTTYPE\_FUNCTIONPOINT}},\ 4),}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \textcolor{comment}{/*\ This\ is\ the\ argument\ passed\ to\ the\ timer\ callback\ */}}
+\DoxyCodeLine{00362\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_TIMERDATA,\ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\_OBJECTPOINT}},\ 5),}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \textcolor{comment}{/*\ maximum\ number\ of\ entries\ in\ the\ connection\ cache\ */}}
+\DoxyCodeLine{00365\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_MAXCONNECTS,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 6),}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \textcolor{comment}{/*\ maximum\ number\ of\ (pipelining)\ connections\ to\ one\ host\ */}}
+\DoxyCodeLine{00368\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_MAX\_HOST\_CONNECTIONS,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 7),}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \textcolor{comment}{/*\ maximum\ number\ of\ requests\ in\ a\ pipeline\ */}}
+\DoxyCodeLine{00371\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_MAX\_PIPELINE\_LENGTH,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 8),}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \textcolor{comment}{/*\ a\ connection\ with\ a\ content-\/length\ longer\ than\ this}}
+\DoxyCodeLine{00374\ \textcolor{comment}{\ \ \ \ \ will\ not\ be\ considered\ for\ pipelining\ */}}
+\DoxyCodeLine{00375\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_CONTENT\_LENGTH\_PENALTY\_SIZE,\ \mbox{\hyperlink{a00113_ac8bad04621a0523755477f782b7a656a}{CURLOPTTYPE\_OFF\_T}},\ 9),}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \textcolor{comment}{/*\ a\ connection\ with\ a\ chunk\ length\ longer\ than\ this}}
+\DoxyCodeLine{00378\ \textcolor{comment}{\ \ \ \ \ will\ not\ be\ considered\ for\ pipelining\ */}}
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_CHUNK\_LENGTH\_PENALTY\_SIZE,\ \mbox{\hyperlink{a00113_ac8bad04621a0523755477f782b7a656a}{CURLOPTTYPE\_OFF\_T}},\ 10),}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \textcolor{comment}{/*\ a\ list\ of\ site\ names(+port)\ that\ are\ blocked\ from\ pipelining\ */}}
+\DoxyCodeLine{00382\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_PIPELINING\_SITE\_BL,\ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\_OBJECTPOINT}},\ 11),}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \textcolor{comment}{/*\ a\ list\ of\ server\ types\ that\ are\ blocked\ from\ pipelining\ */}}
+\DoxyCodeLine{00385\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_PIPELINING\_SERVER\_BL,\ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\_OBJECTPOINT}},\ 12),}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \textcolor{comment}{/*\ maximum\ number\ of\ open\ connections\ in\ total\ */}}
+\DoxyCodeLine{00388\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_MAX\_TOTAL\_CONNECTIONS,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 13),}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \textcolor{comment}{/*\ This\ is\ the\ server\ push\ callback\ function\ pointer\ */}}
+\DoxyCodeLine{00391\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_PUSHFUNCTION,\ \mbox{\hyperlink{a00113_a8719769991e0fb137b96bc151eb1360b}{CURLOPTTYPE\_FUNCTIONPOINT}},\ 14),}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \textcolor{comment}{/*\ This\ is\ the\ argument\ passed\ to\ the\ server\ push\ callback\ */}}
+\DoxyCodeLine{00394\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_PUSHDATA,\ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\_OBJECTPOINT}},\ 15),}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \textcolor{comment}{/*\ maximum\ number\ of\ concurrent\ streams\ to\ support\ on\ a\ connection\ */}}
+\DoxyCodeLine{00397\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a66ae8c8516d8c092600e9070479af2c5}{CURLOPT}}(CURLMOPT\_MAX\_CONCURRENT\_STREAMS,\ \mbox{\hyperlink{a00113_abd1ce766be9641babe63203813f8aff2}{CURLOPTTYPE\_LONG}},\ 16),}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5a8b9faed3bc4162b20ab14f775a3ddb88}{CURLMOPT\_LASTENTRY}}\ \textcolor{comment}{/*\ the\ last\ unused\ */}}
+\DoxyCodeLine{00400\ \}\ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5}{CURLMoption}};}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00404\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_setopt()}}
+\DoxyCodeLine{00405\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00406\ \textcolor{comment}{\ *\ Desc:\ \ \ \ Sets\ options\ for\ the\ multi\ handle.}}
+\DoxyCodeLine{00407\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00408\ \textcolor{comment}{\ *\ Returns:\ CURLM\ error\ code.}}
+\DoxyCodeLine{00409\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00410\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00137_afc081c3dd70db2f2641dd96d2513d8d3}{curl\_multi\_setopt}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00125_a63d84039b5e6092edec1f44c87dd1fe5}{CURLMoption}}\ option,\ ...);}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00415\ \textcolor{comment}{\ *\ Name:\ \ \ \ curl\_multi\_assign()}}
+\DoxyCodeLine{00416\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00417\ \textcolor{comment}{\ *\ Desc:\ \ \ \ This\ function\ sets\ an\ association\ in\ the\ multi\ handle\ between\ the}}
+\DoxyCodeLine{00418\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ given\ socket\ and\ a\ private\ pointer\ of\ the\ application.\ This\ is}}
+\DoxyCodeLine{00419\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ (only)\ useful\ for\ curl\_multi\_socket\ uses.}}
+\DoxyCodeLine{00420\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00421\ \textcolor{comment}{\ *\ Returns:\ CURLM\ error\ code.}}
+\DoxyCodeLine{00422\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00423\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \mbox{\hyperlink{a00125_a92acc8d3a23eaae72955b8a8b22c83e3}{CURLMcode}}\ \mbox{\hyperlink{a00125_ae8c35596bdcce4e3a09c5e0dffd45ae8}{curl\_multi\_assign}}(\mbox{\hyperlink{a00125_a5ad3a82c3de54ee92ce4ddb052d18036}{CURLM}}\ *multi\_handle,}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}\ sockfd,\ \textcolor{keywordtype}{void}\ *sockp);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00428\ \textcolor{comment}{\ *\ Name:\ curl\_push\_callback}}
+\DoxyCodeLine{00429\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00430\ \textcolor{comment}{\ *\ Desc:\ This\ callback\ gets\ called\ when\ a\ new\ stream\ is\ being\ pushed\ by\ the}}
+\DoxyCodeLine{00431\ \textcolor{comment}{\ *\ \ \ \ \ \ \ server.\ It\ approves\ or\ denies\ the\ new\ stream.\ It\ can\ also\ decide}}
+\DoxyCodeLine{00432\ \textcolor{comment}{\ *\ \ \ \ \ \ \ to\ completely\ fail\ the\ connection.}}
+\DoxyCodeLine{00433\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00434\ \textcolor{comment}{\ *\ Returns:\ CURL\_PUSH\_OK,\ CURL\_PUSH\_DENY\ or\ CURL\_PUSH\_ERROROUT}}
+\DoxyCodeLine{00435\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ CURL\_PUSH\_OK\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ CURL\_PUSH\_DENY\ \ \ \ \ 1}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ CURL\_PUSH\_ERROROUT\ 2\ }\textcolor{comment}{/*\ added\ in\ 7.72.0\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \textcolor{keyword}{struct\ }curl\_pushheaders;\ \ \textcolor{comment}{/*\ forward\ declaration\ only\ */}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00125_abc5d18de82df4203ca58986d98d2894f}{curl\_pushheader\_bynum}}(\textcolor{keyword}{struct}\ curl\_pushheaders\ *h,}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ num);}
+\DoxyCodeLine{00444\ \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\_EXTERN}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{a00125_a1a52a12cc69b1954bd4378d243862ecf}{curl\_pushheader\_byname}}(\textcolor{keyword}{struct}\ curl\_pushheaders\ *h,}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \textcolor{keyword}{typedef}\ int\ (*\mbox{\hyperlink{a00125_a8407d7bead25caca133cf51544b96406}{curl\_push\_callback}})(\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *parent,}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}}\ *easy,}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ num\_headers,}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }curl\_pushheaders\ *headers,}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *userp);}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00454\ \}\ \textcolor{comment}{/*\ end\ of\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

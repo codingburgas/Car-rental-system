@@ -1,0 +1,517 @@
+\doxysection{sf\+::Sound\+Buffer\+Recorder Class Reference}
+\hypertarget{a01633}{}\label{a01633}\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+
+
+Specialized \doxylink{a01661}{Sound\+Recorder} which stores the captured audio data into a sound buffer.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+Buffer\+Recorder.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Sound\+Buffer\+Recorder\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Sound\+Buffer\+Recorder\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \& \mbox{\hyperlink{a01633_a1befea2bfa3959ff6fabbf7e33cbc864}{get\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Get the sound buffer containing the captured audio data. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01661_a610e98e7a73b316ce26b7c55234f86e9}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of channels used by this recorder. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{a01661_a13d7d97b3ca67efa18f5ee0aa5884f1f}{get\+Device}} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the current audio capture device. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01661_aed292c297a3e0d627db4eb5c18f58c44}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01661_ae4e22ba67d12a74966eb05fad55a317c}{set\+Channel\+Count}} (unsigned int channel\+Count)
+\begin{DoxyCompactList}\small\item\em Set the channel count of the audio capture device. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01661_a8eb3e473292c16e874322815836d3cd3}{set\+Device}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Set the audio capture device. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01661_a715f0fd2f228c83d79aaedca562ae51f}{start}} (unsigned int sample\+Rate=44100)
+\begin{DoxyCompactList}\small\item\em Start the capture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01661_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the capture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01633_a350f7f885ccfd12b4c6c120c23695637}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Buffer\+Recorder}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a01661_a2a0a831148dcf3d979de42029ec0c280}{get\+Available\+Devices}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of the names of all available audio capture devices. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{a01661_ad1d450a80642dab4b632999d72a1bf23}{get\+Default\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the default audio capture device. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{a01661_aab2bd0fee9e48d6cfd449b1cb078ce5a}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Check if the system supports audio capture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{a01633_a9ceb94de14632ae8c1b78faf603b4767}{on\+Process\+Samples}} (const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}samples, std\+::size\+\_\+t sample\+Count)
+\begin{DoxyCompactList}\small\item\em Process a new chunk of recorded samples. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{a01633_a531a7445fc8a48eaf9fc039c83f17c6f}{on\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Start capturing audio data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{a01633_ab8e53849312413431873a5869d509f1e}{on\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop capturing audio data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01661_a85b7fb8a86c08b5084f8f142767bccf6}{set\+Processing\+Interval}} (\mbox{\hyperlink{a01933}{Time}} interval)
+\begin{DoxyCompactList}\small\item\em Set the processing interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01661_a4532acd98a33a6419e1d9f17d6a280e3}{cleanup}} ()
+\begin{DoxyCompactList}\small\item\em Clean up the recorder\textquotesingle{}s internal resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01661_ab1b7b105c79081d044bc79cc74753ddf}{process\+Captured\+Samples}} ()
+\begin{DoxyCompactList}\small\item\em Get the new available audio samples and process them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01661_ac7da8331c382707623dc3671094fc176}{record}} ()
+\begin{DoxyCompactList}\small\item\em Function called as the entry point of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01629}{Sound\+Buffer}} \mbox{\hyperlink{a01633_aacf0812e6e930cbd815073911da4626b}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01625}{Sound} buffer that will contain the recorded data. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01661_a91ceb1464386aa973f2aeeea82ef147c}{m\+\_\+channel\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of recording channels. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01661_a109997f096cf270f6e8516d576b092a1}{m\+\_\+device\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of the audio capture device. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01661_a245820535f8b81716a374bdd8dc726bb}{m\+\_\+is\+Capturing}}
+\begin{DoxyCompactList}\small\item\em Capturing state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01661_a76d2b226244488bc92d870a1ba9c470a}{m\+\_\+processing\+Interval}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01933}{Time} period between calls to on\+Process\+Samples. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01661_a5b318ed67b9cdfdc35bbcbaf3e9ea6da}{m\+\_\+sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em Sample rate. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} $>$ \mbox{\hyperlink{a01633_a87080790cf294e1dc921bb90b7b352bf}{m\+\_\+samples}}
+\begin{DoxyCompactList}\small\item\em Temporary sample buffer to hold the recorded data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01905}{Thread}} \mbox{\hyperlink{a01661_aa61a5840d98b18e1f74a4dbd9e329cc3}{m\+\_\+thread}}
+\begin{DoxyCompactList}\small\item\em \doxylink{a01905}{Thread} running the background recording task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized \doxylink{a01661}{Sound\+Recorder} which stores the captured audio data into a sound buffer. 
+
+\doxylink{a01633}{sf\+::\+Sound\+Buffer\+Recorder} allows to access a recorded sound through a \doxylink{a01629}{sf\+::\+Sound\+Buffer}, so that it can be played, saved to a file, etc.
+
+It has the same simple interface as its base class (\doxylink{a01661_a715f0fd2f228c83d79aaedca562ae51f}{start()}, \doxylink{a01661_a8d9c8346aa9aa409cfed4a1101159c4c}{stop()}) and adds a function to retrieve the recorded sound buffer (\doxylink{a01633_a1befea2bfa3959ff6fabbf7e33cbc864}{get\+Buffer()}).
+
+As usual, don\textquotesingle{}t forget to call the \doxylink{a01661_aab2bd0fee9e48d6cfd449b1cb078ce5a}{is\+Available()} function before using this class (see \doxylink{a01661}{sf\+::\+Sound\+Recorder} for more details about this).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a01661_aab2bd0fee9e48d6cfd449b1cb078ce5a}{sf::SoundBufferRecorder::isAvailable}}())}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Record\ some\ audio\ data}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a01633}{sf::SoundBufferRecorder}}\ recorder;}
+\DoxyCodeLine{\ \ \ \ recorder.\mbox{\hyperlink{a01661_a715f0fd2f228c83d79aaedca562ae51f}{start}}();}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ recorder.\mbox{\hyperlink{a01661_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Get\ the\ buffer\ containing\ the\ captured\ audio\ data}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01629}{sf::SoundBuffer}}\&\ buffer\ =\ recorder.\mbox{\hyperlink{a01633_a1befea2bfa3959ff6fabbf7e33cbc864}{getBuffer}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ it\ to\ a\ file\ (for\ example...)}}
+\DoxyCodeLine{\ \ \ \ buffer.\mbox{\hyperlink{a01629_aade64260c6375580a085314a30be007e}{saveToFile}}(\textcolor{stringliteral}{"{}my\_record.ogg"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661}{sf\+::\+Sound\+Recorder} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01633_a350f7f885ccfd12b4c6c120c23695637}\label{a01633_a350f7f885ccfd12b4c6c120c23695637} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!````~SoundBufferRecorder@{\texorpdfstring{$\sim$}{\string~}SoundBufferRecorder}}
+\index{````~SoundBufferRecorder@{\texorpdfstring{$\sim$}{\string~}SoundBufferRecorder}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundBufferRecorder()}{\string~SoundBufferRecorder()}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Buffer\+Recorder\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+Buffer\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01661_a4532acd98a33a6419e1d9f17d6a280e3}\label{a01661_a4532acd98a33a6419e1d9f17d6a280e3} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Clean up the recorder\textquotesingle{}s internal resources. 
+
+This function is called when the capture stops. \Hypertarget{a01661_a2a0a831148dcf3d979de42029ec0c280}\label{a01661_a2a0a831148dcf3d979de42029ec0c280} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getAvailableDevices@{getAvailableDevices}}
+\index{getAvailableDevices@{getAvailableDevices}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getAvailableDevices()}{getAvailableDevices()}}
+{\footnotesize\ttfamily static std\+::vector$<$ std\+::string $>$ sf\+::\+Sound\+Recorder\+::get\+Available\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Get a list of the names of all available audio capture devices. 
+
+This function returns a vector of strings, containing the names of all available audio capture devices.
+
+\begin{DoxyReturn}{Returns}
+A vector of strings containing the names 
+\end{DoxyReturn}
+\Hypertarget{a01633_a1befea2bfa3959ff6fabbf7e33cbc864}\label{a01633_a1befea2bfa3959ff6fabbf7e33cbc864} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getBuffer()}{getBuffer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a01629}{Sound\+Buffer}} \& sf\+::\+Sound\+Buffer\+Recorder\+::get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sound buffer containing the captured audio data. 
+
+The sound buffer is valid only after the capture has ended. This function provides a read-\/only access to the internal sound buffer, but it can be copied if you need to make any modification to it.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only access to the sound buffer 
+\end{DoxyReturn}
+\Hypertarget{a01661_a610e98e7a73b316ce26b7c55234f86e9}\label{a01661_a610e98e7a73b316ce26b7c55234f86e9} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Recorder\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the number of channels used by this recorder. 
+
+Currently only mono and stereo are supported, so the value is either 1 (for mono) or 2 (for stereo).
+
+\begin{DoxyReturn}{Returns}
+Number of channels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661_ae4e22ba67d12a74966eb05fad55a317c}{set\+Channel\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{a01661_ad1d450a80642dab4b632999d72a1bf23}\label{a01661_ad1d450a80642dab4b632999d72a1bf23} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getDefaultDevice@{getDefaultDevice}}
+\index{getDefaultDevice@{getDefaultDevice}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getDefaultDevice()}{getDefaultDevice()}}
+{\footnotesize\ttfamily static std\+::string sf\+::\+Sound\+Recorder\+::get\+Default\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Get the name of the default audio capture device. 
+
+This function returns the name of the default audio capture device. If none is available, an empty string is returned.
+
+\begin{DoxyReturn}{Returns}
+The name of the default audio capture device 
+\end{DoxyReturn}
+\Hypertarget{a01661_a13d7d97b3ca67efa18f5ee0aa5884f1f}\label{a01661_a13d7d97b3ca67efa18f5ee0aa5884f1f} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getDevice@{getDevice}}
+\index{getDevice@{getDevice}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getDevice()}{getDevice()}}
+{\footnotesize\ttfamily const std\+::string \& sf\+::\+Sound\+Recorder\+::get\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the name of the current audio capture device. 
+
+\begin{DoxyReturn}{Returns}
+The name of the current audio capture device 
+\end{DoxyReturn}
+\Hypertarget{a01661_aed292c297a3e0d627db4eb5c18f58c44}\label{a01661_aed292c297a3e0d627db4eb5c18f58c44} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Recorder\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the sample rate. 
+
+The sample rate defines the number of audio samples captured per second. The higher, the better the quality (for example, 44100 samples/sec is CD quality).
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in samples per second 
+\end{DoxyReturn}
+\Hypertarget{a01661_aab2bd0fee9e48d6cfd449b1cb078ce5a}\label{a01661_aab2bd0fee9e48d6cfd449b1cb078ce5a} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily static bool sf\+::\+Sound\+Recorder\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}
+
+
+
+Check if the system supports audio capture. 
+
+This function should always be called before using the audio capture features. If it returns false, then any attempt to use \doxylink{a01661}{sf\+::\+Sound\+Recorder} or one of its derived classes will fail.
+
+\begin{DoxyReturn}{Returns}
+True if audio capture is supported, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01633_a9ceb94de14632ae8c1b78faf603b4767}\label{a01633_a9ceb94de14632ae8c1b78faf603b4767} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!onProcessSamples@{onProcessSamples}}
+\index{onProcessSamples@{onProcessSamples}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{onProcessSamples()}{onProcessSamples()}}
+{\footnotesize\ttfamily virtual bool sf\+::\+Sound\+Buffer\+Recorder\+::on\+Process\+Samples (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}}]{samples,  }\item[{std\+::size\+\_\+t}]{sample\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Process a new chunk of recorded samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the new chunk of recorded samples \\
+\hline
+{\em sample\+Count} & Number of samples pointed by {\itshape samples} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue the capture, or false to stop it 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{a01661_a2670124cbe7a87c7e46b4840807f4fd7}{sf\+::\+Sound\+Recorder}}.
+
+\Hypertarget{a01633_a531a7445fc8a48eaf9fc039c83f17c6f}\label{a01633_a531a7445fc8a48eaf9fc039c83f17c6f} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!onStart@{onStart}}
+\index{onStart@{onStart}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{onStart()}{onStart()}}
+{\footnotesize\ttfamily virtual bool sf\+::\+Sound\+Buffer\+Recorder\+::on\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Start capturing audio data. 
+
+\begin{DoxyReturn}{Returns}
+True to start the capture, or false to abort it 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{a01661_a7af418fb036201d3f85745bef78ce77f}{sf\+::\+Sound\+Recorder}}.
+
+\Hypertarget{a01633_ab8e53849312413431873a5869d509f1e}\label{a01633_ab8e53849312413431873a5869d509f1e} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!onStop@{onStop}}
+\index{onStop@{onStop}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{onStop()}{onStop()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Sound\+Buffer\+Recorder\+::on\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Stop capturing audio data. 
+
+
+
+Reimplemented from \mbox{\hyperlink{a01661_aefc36138ca1e96c658301280e4a31b64}{sf\+::\+Sound\+Recorder}}.
+
+\Hypertarget{a01661_ab1b7b105c79081d044bc79cc74753ddf}\label{a01661_ab1b7b105c79081d044bc79cc74753ddf} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!processCapturedSamples@{processCapturedSamples}}
+\index{processCapturedSamples@{processCapturedSamples}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{processCapturedSamples()}{processCapturedSamples()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::process\+Captured\+Samples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Get the new available audio samples and process them. 
+
+This function is called continuously during the capture loop. It retrieves the captured samples and forwards them to the derived class. \Hypertarget{a01661_ac7da8331c382707623dc3671094fc176}\label{a01661_ac7da8331c382707623dc3671094fc176} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!record@{record}}
+\index{record@{record}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{record()}{record()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Function called as the entry point of the thread. 
+
+This function starts the recording loop, and returns only when the capture is stopped. \Hypertarget{a01661_ae4e22ba67d12a74966eb05fad55a317c}\label{a01661_ae4e22ba67d12a74966eb05fad55a317c} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!setChannelCount@{setChannelCount}}
+\index{setChannelCount@{setChannelCount}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{setChannelCount()}{setChannelCount()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::set\+Channel\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the channel count of the audio capture device. 
+
+This method allows you to specify the number of channels used for recording. Currently only 16-\/bit mono and 16-\/bit stereo are supported.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel\+Count} & Number of channels. Currently only mono (1) and stereo (2) are supported.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661_a610e98e7a73b316ce26b7c55234f86e9}{get\+Channel\+Count} 
+\end{DoxySeeAlso}
+\Hypertarget{a01661_a8eb3e473292c16e874322815836d3cd3}\label{a01661_a8eb3e473292c16e874322815836d3cd3} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!setDevice@{setDevice}}
+\index{setDevice@{setDevice}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{setDevice()}{setDevice()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Recorder\+::set\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the audio capture device. 
+
+This function sets the audio capture device to the device with the given {\itshape name}. It can be called on the fly (i.\+e\+: while recording). If you do so while recording and opening the device fails, it stops the recording.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the audio capture device\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if it was able to set the requested device
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661_a2a0a831148dcf3d979de42029ec0c280}{get\+Available\+Devices}, \doxylink{a01661_ad1d450a80642dab4b632999d72a1bf23}{get\+Default\+Device} 
+\end{DoxySeeAlso}
+\Hypertarget{a01661_a85b7fb8a86c08b5084f8f142767bccf6}\label{a01661_a85b7fb8a86c08b5084f8f142767bccf6} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!setProcessingInterval@{setProcessingInterval}}
+\index{setProcessingInterval@{setProcessingInterval}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{setProcessingInterval()}{setProcessingInterval()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::set\+Processing\+Interval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Set the processing interval. 
+
+The processing interval controls the period between calls to the on\+Process\+Samples function. You may want to use a small interval if you want to process the recorded data in real time, for example.
+
+Note\+: this is only a hint, the actual period may vary. So don\textquotesingle{}t rely on this parameter to implement precise timing.
+
+The default processing interval is 100 ms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & Processing interval \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01661_a715f0fd2f228c83d79aaedca562ae51f}\label{a01661_a715f0fd2f228c83d79aaedca562ae51f} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!start@{start}}
+\index{start@{start}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Recorder\+::start (\begin{DoxyParamCaption}\item[{unsigned int}]{sample\+Rate = {\ttfamily 44100} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Start the capture. 
+
+The {\itshape sample\+Rate} parameter defines the number of audio samples captured per second. The higher, the better the quality (for example, 44100 samples/sec is CD quality). This function uses its own thread so that it doesn\textquotesingle{}t block the rest of the program while the capture runs. Please note that only one capture can happen at the same time. You can select which capture device will be used, by passing the name to the \doxylink{a01661_a8eb3e473292c16e874322815836d3cd3}{set\+Device()} method. If none was selected before, the default capture device will be used. You can get a list of the names of all available capture devices by calling \doxylink{a01661_a2a0a831148dcf3d979de42029ec0c280}{get\+Available\+Devices()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Rate} & Desired capture rate, in number of samples per second\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if start of capture was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661_a8d9c8346aa9aa409cfed4a1101159c4c}{stop}, \doxylink{a01661_a2a0a831148dcf3d979de42029ec0c280}{get\+Available\+Devices} 
+\end{DoxySeeAlso}
+\Hypertarget{a01661_a8d9c8346aa9aa409cfed4a1101159c4c}\label{a01661_a8d9c8346aa9aa409cfed4a1101159c4c} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!stop@{stop}}
+\index{stop@{stop}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void sf\+::\+Sound\+Recorder\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Stop the capture. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01661_a715f0fd2f228c83d79aaedca562ae51f}{start} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01633_aacf0812e6e930cbd815073911da4626b}\label{a01633_aacf0812e6e930cbd815073911da4626b} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01629}{Sound\+Buffer}} sf\+::\+Sound\+Buffer\+Recorder\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{a01625}{Sound} buffer that will contain the recorded data. 
+
+\Hypertarget{a01661_a91ceb1464386aa973f2aeeea82ef147c}\label{a01661_a91ceb1464386aa973f2aeeea82ef147c} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_channelCount@{m\_channelCount}}
+\index{m\_channelCount@{m\_channelCount}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_channelCount}{m\_channelCount}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Recorder\+::m\+\_\+channel\+Count\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Number of recording channels. 
+
+\Hypertarget{a01661_a109997f096cf270f6e8516d576b092a1}\label{a01661_a109997f096cf270f6e8516d576b092a1} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_deviceName@{m\_deviceName}}
+\index{m\_deviceName@{m\_deviceName}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_deviceName}{m\_deviceName}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Sound\+Recorder\+::m\+\_\+device\+Name\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Name of the audio capture device. 
+
+\Hypertarget{a01661_a245820535f8b81716a374bdd8dc726bb}\label{a01661_a245820535f8b81716a374bdd8dc726bb} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_isCapturing@{m\_isCapturing}}
+\index{m\_isCapturing@{m\_isCapturing}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_isCapturing}{m\_isCapturing}}
+{\footnotesize\ttfamily bool sf\+::\+Sound\+Recorder\+::m\+\_\+is\+Capturing\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Capturing state. 
+
+\Hypertarget{a01661_a76d2b226244488bc92d870a1ba9c470a}\label{a01661_a76d2b226244488bc92d870a1ba9c470a} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_processingInterval@{m\_processingInterval}}
+\index{m\_processingInterval@{m\_processingInterval}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_processingInterval}{m\_processingInterval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Sound\+Recorder\+::m\+\_\+processing\+Interval\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01933}{Time} period between calls to on\+Process\+Samples. 
+
+\Hypertarget{a01661_a5b318ed67b9cdfdc35bbcbaf3e9ea6da}\label{a01661_a5b318ed67b9cdfdc35bbcbaf3e9ea6da} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_sampleRate@{m\_sampleRate}}
+\index{m\_sampleRate@{m\_sampleRate}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_sampleRate}{m\_sampleRate}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Sound\+Recorder\+::m\+\_\+sample\+Rate\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Sample rate. 
+
+\Hypertarget{a01633_a87080790cf294e1dc921bb90b7b352bf}\label{a01633_a87080790cf294e1dc921bb90b7b352bf} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_samples@{m\_samples}}
+\index{m\_samples@{m\_samples}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_samples}{m\_samples}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}$>$ sf\+::\+Sound\+Buffer\+Recorder\+::m\+\_\+samples\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Temporary sample buffer to hold the recorded data. 
+
+\Hypertarget{a01661_aa61a5840d98b18e1f74a4dbd9e329cc3}\label{a01661_aa61a5840d98b18e1f74a4dbd9e329cc3} 
+\index{sf::SoundBufferRecorder@{sf::SoundBufferRecorder}!m\_thread@{m\_thread}}
+\index{m\_thread@{m\_thread}!sf::SoundBufferRecorder@{sf::SoundBufferRecorder}}
+\doxysubsubsection{\texorpdfstring{m\_thread}{m\_thread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01905}{Thread}} sf\+::\+Sound\+Recorder\+::m\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+\doxylink{a01905}{Thread} running the background recording task. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00332}{Sound\+Buffer\+Recorder.\+hpp}}\end{DoxyCompactItemize}

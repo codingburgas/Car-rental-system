@@ -1,0 +1,88 @@
+\doxysection{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, String\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01529}{}\label{a01529}\index{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}}
+
+
+output adapter for basic\+\_\+string  
+
+
+
+
+{\ttfamily \#include $<$output\+\_\+adapters.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, String\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, String\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01529_af3a49ecd0d23fe56ac21e13d8752abc7}{output\+\_\+string\+\_\+adapter}} (String\+Type \&s) noexcept
+\item 
+void \mbox{\hyperlink{a01529_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{write\+\_\+character}} (Char\+Type c) override
+\item 
+void \mbox{\hyperlink{a01529_ab5ea4da075305d225dfd84ad997e8747}{write\+\_\+characters}} (const Char\+Type \texorpdfstring{$\ast$}{*}s, std\+::size\+\_\+t length) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String\+Type \& \mbox{\hyperlink{a01529_ae57cf7d5c5ec641e25860bb9fb8e6cb9}{str}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Char\+Type, typename String\+Type = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$\newline
+class nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}
+output adapter for basic\+\_\+string 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01529_af3a49ecd0d23fe56ac21e13d8752abc7}\label{a01529_af3a49ecd0d23fe56ac21e13d8752abc7} 
+\index{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}!output\_string\_adapter@{output\_string\_adapter}}
+\index{output\_string\_adapter@{output\_string\_adapter}!nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{output\_string\_adapter()}{output\_string\_adapter()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+\mbox{\hyperlink{a01529}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::output\+\_\+string\+\_\+adapter (\begin{DoxyParamCaption}\item[{String\+Type \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01529_a2d76cc6c88ddbc196a63fcfcac9ee7d1}\label{a01529_a2d76cc6c88ddbc196a63fcfcac9ee7d1} 
+\index{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_character@{write\_character}}
+\index{write\_character@{write\_character}!nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{a01529}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{Char\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01517_a3381896fe1be557f591de2e917cdc7d5}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}.
+
+\Hypertarget{a01529_ab5ea4da075305d225dfd84ad997e8747}\label{a01529_ab5ea4da075305d225dfd84ad997e8747} 
+\index{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}!write\_characters@{write\_characters}}
+\index{write\_characters@{write\_characters}!nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{a01529}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{const Char\+Type \texorpdfstring{$\ast$}{*}}]{s,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{a01517_a2f410a164e0eda17cf6561114b0eee4a}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01529_ae57cf7d5c5ec641e25860bb9fb8e6cb9}\label{a01529_ae57cf7d5c5ec641e25860bb9fb8e6cb9} 
+\index{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}!str@{str}}
+\index{str@{str}!nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$@{nlohmann::detail::output\_string\_adapter$<$ CharType, StringType $>$}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename String\+Type  = std\+::basic\+\_\+string$<$\+Char\+Type$>$$>$ \\
+String\+Type\& \mbox{\hyperlink{a01529}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter}}$<$ Char\+Type, String\+Type $>$\+::str\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/output/\mbox{\hyperlink{a00239}{output\+\_\+adapters.\+hpp}}\end{DoxyCompactItemize}

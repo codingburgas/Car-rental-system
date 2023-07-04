@@ -1,0 +1,712 @@
+\doxysection{Utf.\+inl}
+\hypertarget{a00551_source}{}\label{a00551_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Utf.inl@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Utf.inl}}
+\mbox{\hyperlink{a00551}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ References:}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ https://www.unicode.org/}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ https://www.unicode.org/Public/PROGRAMS/CVTUTF/ConvertUTF.c}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ https://www.unicode.org/Public/PROGRAMS/CVTUTF/ConvertUTF.h}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ https://people.w3.org/rishida/scripts/uniview/conversion}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//}}
+\DoxyCodeLine{00035\ \textcolor{comment}{}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00039\ In\ Utf<8>::decode(In\ begin,\ In\ end,\ Uint32\&\ output,\ Uint32\ replacement)}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Some\ useful\ precomputed\ data}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ trailing[256]\ =}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 4,\ 4,\ 4,\ 4,\ 5,\ 5,\ 5,\ 5}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ offsets[6]\ =}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ 0x00000000,\ 0x00003080,\ 0x000E2080,\ 0x03C82080,\ 0xFA082080,\ 0x82082080}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ decode\ the\ character}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ trailingBytes\ =\ trailing[\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin)];}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (begin\ +\ trailingBytes\ <\ end)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ output\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (trailingBytes)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);\ output\ <<=\ 6;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);\ output\ <<=\ 6;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);\ output\ <<=\ 6;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);\ output\ <<=\ 6;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);\ output\ <<=\ 6;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ output\ +=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}(*begin++);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ output\ -\/=\ offsets[trailingBytes];}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incomplete\ character}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ begin\ =\ end;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ output\ =\ replacement;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ begin;}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00087\ Out\ Utf<8>::encode(Uint32\ input,\ Out\ output,\ Uint8\ replacement)}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Some\ useful\ precomputed\ data}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\ firstBytes[7]\ =}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ 0x00,\ 0x00,\ 0xC0,\ 0xE0,\ 0xF0,\ 0xF8,\ 0xFC}
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ encode\ the\ character}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ ((input\ >\ 0x0010FFFF)\ ||\ ((input\ >=\ 0xD800)\ \&\&\ (input\ <=\ 0xDBFF)))}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ character}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (replacement)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ replacement;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Valid\ character}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ number\ of\ bytes\ to\ write}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ std::size\_t\ bytestoWrite\ =\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \ \ \ \ \ (input\ <\ \ 0x80)\ \ \ \ \ \ \ bytestoWrite\ =\ 1;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (input\ <\ \ 0x800)\ \ \ \ \ \ bytestoWrite\ =\ 2;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (input\ <\ \ 0x10000)\ \ \ \ bytestoWrite\ =\ 3;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (input\ <=\ 0x0010FFFF)\ bytestoWrite\ =\ 4;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ bytes\ to\ write}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\ bytes[4];}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (bytestoWrite)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ bytes[3]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}((input\ |\ 0x80)\ \&\ 0xBF);\ input\ >>=\ 6;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ bytes[2]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}((input\ |\ 0x80)\ \&\ 0xBF);\ input\ >>=\ 6;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ bytes[1]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}((input\ |\ 0x80)\ \&\ 0xBF);\ input\ >>=\ 6;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ bytes[0]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\textcolor{keyword}{>}\ (input\ |\ firstBytes[bytestoWrite]);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ them\ to\ the\ output}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ output\ =\ std::copy(bytes,\ bytes\ +\ bytestoWrite,\ output);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00133\ In\ Utf<8>::next(In\ begin,\ In\ end)}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00142\ std::size\_t\ Utf<8>::count(In\ begin,\ In\ end)}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ std::size\_t\ length\ =\ 0;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ begin\ =\ next(begin,\ end);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ ++length;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ length;}
+\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00157\ Out\ Utf<8>::fromAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00158\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint\ =\ Utf<32>::decodeAnsi(*begin++,\ locale);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ output\ =\ encode(codepoint,\ output);}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00171\ Out\ Utf<8>::fromWide(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint\ =\ Utf<32>::decodeWide(*begin++);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ output\ =\ encode(codepoint,\ output);}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00185\ Out\ Utf<8>::fromLatin1(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ output\ =\ encode(*begin++,\ output);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00193\ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00198\ Out\ Utf<8>::toAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00199\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ output\ =\ Utf<32>::encodeAnsi(codepoint,\ output,\ replacement,\ locale);}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00208\ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00213\ Out\ Utf<8>::toWide(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{wchar\_t}\ replacement)}
+\DoxyCodeLine{00214\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00216\ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ output\ =\ Utf<32>::encodeWide(codepoint,\ output,\ replacement);}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00228\ Out\ Utf<8>::toLatin1(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement)}
+\DoxyCodeLine{00229\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00233\ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ *output++\ =\ codepoint\ <\ 256\ ?\ static\_cast<char>(codepoint)\ :\ replacement;}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00245\ Out\ Utf<8>::toUtf8(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{return}\ std::copy(begin,\ end,\ output);}
+\DoxyCodeLine{00248\ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00252\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00253\ Out\ Utf<8>::toUtf16(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00254\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ output\ =\ Utf<16>::encode(codepoint,\ output);}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00268\ Out\ Utf<8>::toUtf32(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00271\ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ *output++\ =\ codepoint;}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00278\ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00282\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00283\ In\ Utf<16>::decode(In\ begin,\ In\ end,\ Uint32\&\ output,\ Uint32\ replacement)}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\ first\ =\ *begin++;}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{comment}{//\ If\ it's\ a\ surrogate\ pair,\ first\ convert\ to\ a\ single\ UTF-\/32\ character}}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordflow}{if}\ ((first\ >=\ 0xD800)\ \&\&\ (first\ <=\ 0xDBFF))}
+\DoxyCodeLine{00289\ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (begin\ <\ end)}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ second\ =\ *begin++;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((second\ >=\ 0xDC00)\ \&\&\ (second\ <=\ 0xDFFF))}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ second\ element\ is\ valid:\ convert\ the\ two\ elements\ to\ a\ UTF-\/32\ character}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\textcolor{keyword}{>}(((first\ -\/\ 0xD800)\ <<\ 10)\ +\ (second\ -\/\ 0xDC00)\ +\ 0x0010000);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ character}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ replacement;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ character}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ begin\ =\ end;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ replacement;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ can\ make\ a\ direct\ copy}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ output\ =\ first;}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{return}\ begin;}
+\DoxyCodeLine{00318\ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00322\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00323\ Out\ Utf<16>::encode(Uint32\ input,\ Out\ output,\ Uint16\ replacement)}
+\DoxyCodeLine{00324\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ <=\ 0xFFFF)}
+\DoxyCodeLine{00326\ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ character\ can\ be\ copied\ directly,\ we\ just\ need\ to\ check\ if\ it's\ in\ the\ valid\ range}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((input\ >=\ 0xD800)\ \&\&\ (input\ <=\ 0xDFFF))}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ character\ (this\ range\ is\ reserved)}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (replacement)}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ replacement;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Valid\ character\ directly\ convertible\ to\ a\ single\ UTF-\/16\ character}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\textcolor{keyword}{>}(input);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \}}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (input\ >\ 0x0010FFFF)}
+\DoxyCodeLine{00341\ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ character\ (greater\ than\ the\ maximum\ Unicode\ value)}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (replacement)}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ replacement;}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00347\ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ input\ character\ will\ be\ converted\ to\ two\ UTF-\/16\ elements}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ input\ -\/=\ 0x0010000;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ *output++\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\textcolor{keyword}{>}((input\ >>\ 10)\ \ \ \ \ +\ 0xD800);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ *output++\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\textcolor{keyword}{>}((input\ \&\ 0x3FFUL)\ +\ 0xDC00);}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00355\ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00359\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00360\ In\ Utf<16>::next(In\ begin,\ In\ end)}
+\DoxyCodeLine{00361\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{return}\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00364\ \}}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00368\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00369\ std::size\_t\ Utf<16>::count(In\ begin,\ In\ end)}
+\DoxyCodeLine{00370\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ std::size\_t\ length\ =\ 0;}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00373\ \ \ \ \ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ begin\ =\ next(begin,\ end);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ ++length;}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordflow}{return}\ length;}
+\DoxyCodeLine{00379\ \}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00383\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00384\ Out\ Utf<16>::fromAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00385\ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00387\ \ \ \ \ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint\ =\ Utf<32>::decodeAnsi(*begin++,\ locale);}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ output\ =\ encode(codepoint,\ output);}
+\DoxyCodeLine{00390\ \ \ \ \ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00393\ \}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00397\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00398\ Out\ Utf<16>::fromWide(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00399\ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00401\ \ \ \ \ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint\ =\ Utf<32>::decodeWide(*begin++);}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ output\ =\ encode(codepoint,\ output);}
+\DoxyCodeLine{00404\ \ \ \ \ \}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00407\ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00411\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00412\ Out\ Utf<16>::fromLatin1(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00413\ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordflow}{return}\ std::copy(begin,\ end,\ output);}
+\DoxyCodeLine{00417\ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00421\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00422\ Out\ Utf<16>::toAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00423\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00425\ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ output\ =\ Utf<32>::encodeAnsi(codepoint,\ output,\ replacement,\ locale);}
+\DoxyCodeLine{00429\ \ \ \ \ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00432\ \}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00436\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00437\ Out\ Utf<16>::toWide(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{wchar\_t}\ replacement)}
+\DoxyCodeLine{00438\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00440\ \ \ \ \ \{}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ output\ =\ Utf<32>::encodeWide(codepoint,\ output,\ replacement);}
+\DoxyCodeLine{00444\ \ \ \ \ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00447\ \}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00451\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00452\ Out\ Utf<16>::toLatin1(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement)}
+\DoxyCodeLine{00453\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00457\ \ \ \ \ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ *output++\ =\ *begin\ <\ 256\ ?\ static\_cast<char>(*begin)\ :\ replacement;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ begin++;}
+\DoxyCodeLine{00460\ \ \ \ \ \}}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00463\ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00467\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00468\ Out\ Utf<16>::toUtf8(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00469\ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ output\ =\ Utf<8>::encode(codepoint,\ output);}
+\DoxyCodeLine{00475\ \ \ \ \ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00478\ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00482\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00483\ Out\ Utf<16>::toUtf16(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00484\ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{return}\ std::copy(begin,\ end,\ output);}
+\DoxyCodeLine{00486\ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00490\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00491\ Out\ Utf<16>::toUtf32(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00492\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00494\ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ codepoint;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ begin\ =\ decode(begin,\ end,\ codepoint);}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ *output++\ =\ codepoint;}
+\DoxyCodeLine{00498\ \ \ \ \ \}}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00501\ \}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00505\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00506\ In\ Utf<32>::decode(In\ begin,\ In\ \textcolor{comment}{/*end*/},\ Uint32\&\ output,\ Uint32\ \textcolor{comment}{/*replacement*/})}
+\DoxyCodeLine{00507\ \{}
+\DoxyCodeLine{00508\ \ \ \ \ output\ =\ *begin++;}
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keywordflow}{return}\ begin;}
+\DoxyCodeLine{00510\ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00514\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00515\ Out\ Utf<32>::encode(Uint32\ input,\ Out\ output,\ Uint32\ \textcolor{comment}{/*replacement*/})}
+\DoxyCodeLine{00516\ \{}
+\DoxyCodeLine{00517\ \ \ \ \ *output++\ =\ input;}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00519\ \}}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00523\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00524\ In\ Utf<32>::next(In\ begin,\ In\ \textcolor{comment}{/*end*/})}
+\DoxyCodeLine{00525\ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordflow}{return}\ ++begin;}
+\DoxyCodeLine{00527\ \}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00531\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00532\ std::size\_t\ Utf<32>::count(In\ begin,\ In\ end)}
+\DoxyCodeLine{00533\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{return}\ begin\ -\/\ end;}
+\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00539\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00540\ Out\ Utf<32>::fromAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00541\ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ *output++\ =\ decodeAnsi(*begin++,\ locale);}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00546\ \}}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00550\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00551\ Out\ Utf<32>::fromWide(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00552\ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ *output++\ =\ decodeWide(*begin++);}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00557\ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00561\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00562\ Out\ Utf<32>::fromLatin1(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00563\ \{}
+\DoxyCodeLine{00564\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordflow}{return}\ std::copy(begin,\ end,\ output);}
+\DoxyCodeLine{00567\ \}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00571\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00572\ Out\ Utf<32>::toAnsi(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00573\ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ output\ =\ encodeAnsi(*begin++,\ output,\ replacement,\ locale);}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00578\ \}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00582\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00583\ Out\ Utf<32>::toWide(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{wchar\_t}\ replacement)}
+\DoxyCodeLine{00584\ \{}
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ output\ =\ encodeWide(*begin++,\ output,\ replacement);}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00589\ \}}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00593\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00594\ Out\ Utf<32>::toLatin1(In\ begin,\ In\ end,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement)}
+\DoxyCodeLine{00595\ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{comment}{//\ Latin-\/1\ is\ directly\ compatible\ with\ Unicode\ encodings,}}
+\DoxyCodeLine{00597\ \ \ \ \ \textcolor{comment}{//\ and\ can\ thus\ be\ treated\ as\ (a\ sub-\/range\ of)\ UTF-\/32}}
+\DoxyCodeLine{00598\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00599\ \ \ \ \ \{}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ *output++\ =\ *begin\ <\ 256\ ?\ static\_cast<char>(*begin)\ :\ replacement;}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ begin++;}
+\DoxyCodeLine{00602\ \ \ \ \ \}}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00605\ \}}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00609\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00610\ Out\ Utf<32>::toUtf8(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00611\ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ output\ =\ Utf<8>::encode(*begin++,\ output);}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00616\ \}}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00619\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00620\ Out\ Utf<32>::toUtf16(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00621\ \{}
+\DoxyCodeLine{00622\ \ \ \ \ \textcolor{keywordflow}{while}\ (begin\ <\ end)}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ output\ =\ Utf<16>::encode(*begin++,\ output);}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00626\ \}}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00630\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In,\ \textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00631\ Out\ Utf<32>::toUtf32(In\ begin,\ In\ end,\ Out\ output)}
+\DoxyCodeLine{00632\ \{}
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keywordflow}{return}\ std::copy(begin,\ end,\ output);}
+\DoxyCodeLine{00634\ \}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00638\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00639\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ Utf<32>::decodeAnsi(In\ input,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00640\ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \textcolor{comment}{//\ On\ Windows,\ GCC's\ standard\ library\ (glibc++)\ has\ almost}}
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{comment}{//\ no\ support\ for\ Unicode\ stuff.\ As\ a\ consequence,\ in\ this}}
+\DoxyCodeLine{00643\ \ \ \ \ \textcolor{comment}{//\ context\ we\ can\ only\ use\ the\ default\ locale\ and\ ignore}}
+\DoxyCodeLine{00644\ \ \ \ \ \textcolor{comment}{//\ the\ one\ passed\ as\ parameter.}}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(SFML\_SYSTEM\_WINDOWS)\ \&\&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ if\ Windows\ ...\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (defined(\_\_GLIBCPP\_\_)\ ||\ defined\ (\_\_GLIBCXX\_\_))\ \&\&\ \ \ \ \ }\textcolor{comment}{/*\ ...\ and\ standard\ library\ is\ glibc++\ ...\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\ \ \ \ \ \ !(defined(\_\_SGI\_STL\_PORT)\ ||\ defined(\_STLPORT\_VERSION))\ }\textcolor{comment}{/*\ ...\ and\ STLPort\ is\ not\ used\ on\ top\ of\ it\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ (void)locale;\ \textcolor{comment}{//\ to\ avoid\ warnings}}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{wchar\_t}\ character\ =\ 0;}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ mbtowc(\&character,\ \&input,\ 1);}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\textcolor{keyword}{>}(character);}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ facet\ of\ the\ locale\ which\ deals\ with\ character\ conversion}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::ctype<wchar\_t>\&\ facet\ =\ std::use\_facet<\ std::ctype<wchar\_t>\ >(locale);}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ the\ facet\ to\ convert\ each\ character\ of\ the\ input\ string}}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\textcolor{keyword}{>}(facet.widen(input));}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00665\ \}}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00669\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ In>}
+\DoxyCodeLine{00670\ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ Utf<32>::decodeWide(In\ input)}
+\DoxyCodeLine{00671\ \{}
+\DoxyCodeLine{00672\ \ \ \ \ \textcolor{comment}{//\ The\ encoding\ of\ wide\ characters\ is\ not\ well\ defined\ and\ is\ left\ to\ the\ system;}}
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{comment}{//\ however\ we\ can\ safely\ assume\ that\ it\ is\ UCS-\/2\ on\ Windows\ and}}
+\DoxyCodeLine{00674\ \ \ \ \ \textcolor{comment}{//\ UCS-\/4\ on\ Unix\ systems.}}
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{comment}{//\ In\ both\ cases,\ a\ simple\ copy\ is\ enough\ (UCS-\/2\ is\ a\ subset\ of\ UCS-\/4,}}
+\DoxyCodeLine{00676\ \ \ \ \ \textcolor{comment}{//\ and\ UCS-\/4\ *is*\ UTF-\/32).}}
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keywordflow}{return}\ input;}
+\DoxyCodeLine{00679\ \}}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00683\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00684\ Out\ Utf<32>::encodeAnsi(Uint32\ codepoint,\ Out\ output,\ \textcolor{keywordtype}{char}\ replacement,\ \textcolor{keyword}{const}\ std::locale\&\ locale)}
+\DoxyCodeLine{00685\ \{}
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{comment}{//\ On\ Windows,\ gcc's\ standard\ library\ (glibc++)\ has\ almost}}
+\DoxyCodeLine{00687\ \ \ \ \ \textcolor{comment}{//\ no\ support\ for\ Unicode\ stuff.\ As\ a\ consequence,\ in\ this}}
+\DoxyCodeLine{00688\ \ \ \ \ \textcolor{comment}{//\ context\ we\ can\ only\ use\ the\ default\ locale\ and\ ignore}}
+\DoxyCodeLine{00689\ \ \ \ \ \textcolor{comment}{//\ the\ one\ passed\ as\ parameter.}}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(SFML\_SYSTEM\_WINDOWS)\ \&\&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ if\ Windows\ ...\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\ \ \ \ \ \ \ (defined(\_\_GLIBCPP\_\_)\ ||\ defined\ (\_\_GLIBCXX\_\_))\ \&\&\ \ \ \ \ }\textcolor{comment}{/*\ ...\ and\ standard\ library\ is\ glibc++\ ...\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\ \ \ \ \ \ !(defined(\_\_SGI\_STL\_PORT)\ ||\ defined(\_STLPORT\_VERSION))\ }\textcolor{comment}{/*\ ...\ and\ STLPort\ is\ not\ used\ on\ top\ of\ it\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ (void)locale;\ \textcolor{comment}{//\ to\ avoid\ warnings}}
+\DoxyCodeLine{00696\ }
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ character\ =\ 0;}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wctomb(\&character,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(codepoint))\ >=\ 0)}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ character;}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (replacement)}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ replacement;}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ facet\ of\ the\ locale\ which\ deals\ with\ character\ conversion}}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::ctype<wchar\_t>\&\ facet\ =\ std::use\_facet<\ std::ctype<wchar\_t>\ >(locale);}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ the\ facet\ to\ convert\ each\ character\ of\ the\ input\ string}}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ *output++\ =\ facet.narrow(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(codepoint),\ replacement);}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00716\ \}}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00720\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Out>}
+\DoxyCodeLine{00721\ Out\ Utf<32>::encodeWide(Uint32\ codepoint,\ Out\ output,\ \textcolor{keywordtype}{wchar\_t}\ replacement)}
+\DoxyCodeLine{00722\ \{}
+\DoxyCodeLine{00723\ \ \ \ \ \textcolor{comment}{//\ The\ encoding\ of\ wide\ characters\ is\ not\ well\ defined\ and\ is\ left\ to\ the\ system;}}
+\DoxyCodeLine{00724\ \ \ \ \ \textcolor{comment}{//\ however\ we\ can\ safely\ assume\ that\ it\ is\ UCS-\/2\ on\ Windows\ and}}
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{comment}{//\ UCS-\/4\ on\ Unix\ systems.}}
+\DoxyCodeLine{00726\ \ \ \ \ \textcolor{comment}{//\ For\ UCS-\/2\ we\ need\ to\ check\ if\ the\ source\ characters\ fits\ in\ (UCS-\/2\ is\ a\ subset\ of\ UCS-\/4).}}
+\DoxyCodeLine{00727\ \ \ \ \ \textcolor{comment}{//\ For\ UCS-\/4\ we\ can\ do\ a\ direct\ copy\ (UCS-\/4\ *is*\ UTF-\/32).}}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{wchar\_t}))}
+\DoxyCodeLine{00730\ \ \ \ \ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(codepoint);}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((codepoint\ <=\ 0xFFFF)\ \&\&\ ((codepoint\ <\ 0xD800)\ ||\ (codepoint\ >\ 0xDFFF)))}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(codepoint);}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (replacement)}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *output++\ =\ replacement;}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00749\ \ \ \ \ \}}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00752\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl\texorpdfstring{$<$}{<} Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} std\+::is\+\_\+integral\texorpdfstring{$<$}{<} Real\+Integer\+Type \texorpdfstring{$>$}{>}\+::value \&\&std\+::is\+\_\+integral\texorpdfstring{$<$}{<} Compatible\+Number\+Integer\+Type \texorpdfstring{$>$}{>}\+::value \&\&!std\+::is\+\_\+same\texorpdfstring{$<$}{<} bool, Compatible\+Number\+Integer\+Type \texorpdfstring{$>$}{>}\+::value \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01473}{}\label{a01473}\index{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}}
+
+
+{\ttfamily \#include $<$type\+\_\+traits.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01473_a24d97696ca33fba8096e452b1901a8e6}{Compatible\+Limits}} = std\+::numeric\+\_\+limits$<$ Compatible\+Number\+Integer\+Type $>$
+\item 
+using \mbox{\hyperlink{a01473_ab267aabfe36c5b9c305c5e5faf06ea36}{Real\+Limits}} = std\+::numeric\+\_\+limits$<$ Real\+Integer\+Type $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01473_a24d97696ca33fba8096e452b1901a8e6}\label{a01473_a24d97696ca33fba8096e452b1901a8e6} 
+\index{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}!CompatibleLimits@{CompatibleLimits}}
+\index{CompatibleLimits@{CompatibleLimits}!nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{CompatibleLimits}{CompatibleLimits}}
+{\footnotesize\ttfamily template$<$typename Real\+Integer\+Type , typename Compatible\+Number\+Integer\+Type $>$ \\
+using \mbox{\hyperlink{a01469}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl}}$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+integral$<$ Real\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} \&\&std\+::is\+\_\+integral$<$ Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} \&\&!std\+::is\+\_\+same$<$ bool, Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} $>$ $>$\+::\+Compatible\+Limits =  std\+::numeric\+\_\+limits$<$Compatible\+Number\+Integer\+Type$>$}
+
+\Hypertarget{a01473_ab267aabfe36c5b9c305c5e5faf06ea36}\label{a01473_ab267aabfe36c5b9c305c5e5faf06ea36} 
+\index{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}!RealLimits@{RealLimits}}
+\index{RealLimits@{RealLimits}!nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{RealLimits}{RealLimits}}
+{\footnotesize\ttfamily template$<$typename Real\+Integer\+Type , typename Compatible\+Number\+Integer\+Type $>$ \\
+using \mbox{\hyperlink{a01469}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl}}$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+integral$<$ Real\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} \&\&std\+::is\+\_\+integral$<$ Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} \&\&!std\+::is\+\_\+same$<$ bool, Compatible\+Number\+Integer\+Type $>$\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{\+::value}} $>$ $>$\+::\+Real\+Limits =  std\+::numeric\+\_\+limits$<$Real\+Integer\+Type$>$}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}\label{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded} 
+\index{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}!value@{value}}
+\index{value@{value}!nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$@{nlohmann::detail::is\_compatible\_integer\_type\_impl$<$ RealIntegerType, CompatibleNumberIntegerType, enable\_if\_t$<$ std::is\_integral$<$ RealIntegerType $>$::value \&\&std::is\_integral$<$ CompatibleNumberIntegerType $>$::value \&\&"!std::is\_same$<$ bool, CompatibleNumberIntegerType $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename Real\+Integer\+Type , typename Compatible\+Number\+Integer\+Type $>$ \\
+constexpr auto \mbox{\hyperlink{a01469}{nlohmann\+::detail\+::is\+\_\+compatible\+\_\+integer\+\_\+type\+\_\+impl}}$<$ Real\+Integer\+Type, Compatible\+Number\+Integer\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+integral$<$ Real\+Integer\+Type $>$\+::value \&\&std\+::is\+\_\+integral$<$ Compatible\+Number\+Integer\+Type $>$\+::value \&\&!std\+::is\+\_\+same$<$ bool, Compatible\+Number\+Integer\+Type $>$\+::value $>$ $>$\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_constructible<RealIntegerType,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CompatibleNumberIntegerType>\mbox{\hyperlink{a01473_a8fd20d5e7d65d14b4e9f4ee181a3aded}{::value}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CompatibleLimits::is\_integer\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ RealLimits::is\_signed\ ==\ CompatibleLimits::is\_signed}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/meta/\mbox{\hyperlink{a00230}{type\+\_\+traits.\+hpp}}\end{DoxyCompactItemize}

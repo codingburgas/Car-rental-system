@@ -1,0 +1,291 @@
+\doxysection{cpr\+::String\+Holder\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a00725}{}\label{a00725}\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+
+
+{\ttfamily \#include $<$cprtypes.\+h$>$}
+
+
+
+Collaboration diagram for cpr\+::String\+Holder\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725_a727c61b36da764619317de7b3ebfa8ad}{c\+\_\+str}} () const
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725_a72c0acc4b7f55cb5c693cc27fcb56915}{data}} () const
+\item 
+\mbox{\hyperlink{a00725_aeb41249828c81f6c3783f7f86345a35f}{operator std\+::string}} () const
+\item 
+bool \mbox{\hyperlink{a00725_a9701e498aa8572c28eeff5caafffa763}{operator!=}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a2dd122ee639850b79634e3c7d4fe7f2a}{operator!=}} (const std\+::string \&rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a96c7ef876c513b56f038ecfb7d346a2e}{operator!=}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&rhs) const
+\item 
+T \mbox{\hyperlink{a00725_a9272d8be0343b9b75e5e5640bbae7a38}{operator+}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+T \mbox{\hyperlink{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53}{operator+}} (const std\+::string \&rhs) const
+\item 
+T \mbox{\hyperlink{a00725_af43737e127104c855dd3c666ad433008}{operator+}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&rhs) const
+\item 
+void \mbox{\hyperlink{a00725_aae920cdb69e03c90567d719c3ca43ed8}{operator+=}} (const char \texorpdfstring{$\ast$}{*}rhs)
+\item 
+void \mbox{\hyperlink{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95}{operator+=}} (const std\+::string \&rhs)
+\item 
+void \mbox{\hyperlink{a00725_a0e5a3862ef488508a5b9082425009768}{operator+=}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{a00725}{String\+Holder}} \& \mbox{\hyperlink{a00725_a7c1101b70858a26d9997e95998924d8a}{operator=}} (const \mbox{\hyperlink{a00725}{String\+Holder}} \&other)=default
+\item 
+\mbox{\hyperlink{a00725}{String\+Holder}} \& \mbox{\hyperlink{a00725_aecf7f6ab726cbc153f55eeeb4707cbbe}{operator=}} (\mbox{\hyperlink{a00725}{String\+Holder}} \&\&old) noexcept=default
+\item 
+bool \mbox{\hyperlink{a00725_ae720e1f1ed52614908fea9d84bbd5dde}{operator==}} (const char \texorpdfstring{$\ast$}{*}rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_a823e98c9d8e60cf066da254363deedf2}{operator==}} (const std\+::string \&rhs) const
+\item 
+bool \mbox{\hyperlink{a00725_ae5a35462c8f42418eb82863f07a97b40}{operator==}} (const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&rhs) const
+\item 
+const std\+::string \& \mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{a00725_ad24a9739eab461fb6ae444775912f7bc}{str}} () const
+\item 
+\mbox{\hyperlink{a00725_ac9dbcc62457c72a5c17f67d6ee9222ce}{String\+Holder}} ()=default
+\item 
+\mbox{\hyperlink{a00725_a91e9e0a7ae7fa08faa6c06dcf4690bda}{String\+Holder}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}})
+\item 
+\mbox{\hyperlink{a00725_ac1af42f2c84ad7e587268d8be73d8e82}{String\+Holder}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}}, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{a00725_a84b9b36945beaa83b9561beef910dfd5}{String\+Holder}} (const std\+::initializer\+\_\+list$<$ std\+::string $>$ args)
+\item 
+\mbox{\hyperlink{a00725_acaf3650ffd8ab9019621535578c5bb93}{String\+Holder}} (const std\+::string \&\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}})
+\item 
+\mbox{\hyperlink{a00725_aae30bc1fe22aa42d29ce8b584a8f2170}{String\+Holder}} (const \mbox{\hyperlink{a00725}{String\+Holder}} \&other)=default
+\item 
+\mbox{\hyperlink{a00725_ae98260f9b9133f4e492bc420ef20ac84}{String\+Holder}} (std\+::string \&\&\mbox{\hyperlink{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}{str}})
+\item 
+\mbox{\hyperlink{a00725_ac23589d81287c4849562fa3030f3ee1c}{String\+Holder}} (\mbox{\hyperlink{a00725}{String\+Holder}} \&\&old) noexcept=default
+\item 
+virtual \mbox{\hyperlink{a00725_ad9c3fba17dfeb5eac5ca96231b85707b}{\texorpdfstring{$\sim$}{\string~}\+String\+Holder}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a00725_a179907e27e38541a85460a8b193b37de}{str\+\_\+}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00725_ac9dbcc62457c72a5c17f67d6ee9222ce}\label{a00725_ac9dbcc62457c72a5c17f67d6ee9222ce} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00725_acaf3650ffd8ab9019621535578c5bb93}\label{a00725_acaf3650ffd8ab9019621535578c5bb93} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00725_ae98260f9b9133f4e492bc420ef20ac84}\label{a00725_ae98260f9b9133f4e492bc420ef20ac84} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00725_a91e9e0a7ae7fa08faa6c06dcf4690bda}\label{a00725_a91e9e0a7ae7fa08faa6c06dcf4690bda} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00725_ac1af42f2c84ad7e587268d8be73d8e82}\label{a00725_ac1af42f2c84ad7e587268d8be73d8e82} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a84b9b36945beaa83b9561beef910dfd5}\label{a00725_a84b9b36945beaa83b9561beef910dfd5} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ std\+::string $>$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_aae30bc1fe22aa42d29ce8b584a8f2170}\label{a00725_aae30bc1fe22aa42d29ce8b584a8f2170} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00725_ac23589d81287c4849562fa3030f3ee1c}\label{a00725_ac23589d81287c4849562fa3030f3ee1c} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!StringHolder@{StringHolder}}
+\index{StringHolder@{StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringHolder()}{StringHolder()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\+String\+Holder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00725_ad9c3fba17dfeb5eac5ca96231b85707b}\label{a00725_ad9c3fba17dfeb5eac5ca96231b85707b} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!````~StringHolder@{\texorpdfstring{$\sim$}{\string~}StringHolder}}
+\index{````~StringHolder@{\texorpdfstring{$\sim$}{\string~}StringHolder}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StringHolder()}{\string~StringHolder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{a00725}{String\+Holder}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00725_a727c61b36da764619317de7b3ebfa8ad}\label{a00725_a727c61b36da764619317de7b3ebfa8ad} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{c\_str()}{c\_str()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a72c0acc4b7f55cb5c693cc27fcb56915}\label{a00725_a72c0acc4b7f55cb5c693cc27fcb56915} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!data@{data}}
+\index{data@{data}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_aeb41249828c81f6c3783f7f86345a35f}\label{a00725_aeb41249828c81f6c3783f7f86345a35f} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{a00725_a9701e498aa8572c28eeff5caafffa763}\label{a00725_a9701e498aa8572c28eeff5caafffa763} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a2dd122ee639850b79634e3c7d4fe7f2a}\label{a00725_a2dd122ee639850b79634e3c7d4fe7f2a} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a96c7ef876c513b56f038ecfb7d346a2e}\label{a00725_a96c7ef876c513b56f038ecfb7d346a2e} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a9272d8be0343b9b75e5e5640bbae7a38}\label{a00725_a9272d8be0343b9b75e5e5640bbae7a38} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53}\label{a00725_a3ffafc9a0dbdfa7ebba7d238f536eb53} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_af43737e127104c855dd3c666ad433008}\label{a00725_af43737e127104c855dd3c666ad433008} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_aae920cdb69e03c90567d719c3ca43ed8}\label{a00725_aae920cdb69e03c90567d719c3ca43ed8} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95}\label{a00725_a3241d8fc03c6d3b5d842cb3b1dbc8e95} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a0e5a3862ef488508a5b9082425009768}\label{a00725_a0e5a3862ef488508a5b9082425009768} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a7c1101b70858a26d9997e95998924d8a}\label{a00725_a7c1101b70858a26d9997e95998924d8a} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{String\+Holder}} \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00725_aecf7f6ab726cbc153f55eeeb4707cbbe}\label{a00725_aecf7f6ab726cbc153f55eeeb4707cbbe} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{a00725}{String\+Holder}} \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00725_ae720e1f1ed52614908fea9d84bbd5dde}\label{a00725_ae720e1f1ed52614908fea9d84bbd5dde} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a823e98c9d8e60cf066da254363deedf2}\label{a00725_a823e98c9d8e60cf066da254363deedf2} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_ae5a35462c8f42418eb82863f07a97b40}\label{a00725_ae5a35462c8f42418eb82863f07a97b40} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_a50a014af2ca84fbf4bd05d65a96d05bd}\label{a00725_a50a014af2ca84fbf4bd05d65a96d05bd} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!str@{str}}
+\index{str@{str}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const std\+::string \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{a00725_ad24a9739eab461fb6ae444775912f7bc}\label{a00725_ad24a9739eab461fb6ae444775912f7bc} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!str@{str}}
+\index{str@{str}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const std\+::string \& \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00725_a179907e27e38541a85460a8b193b37de}\label{a00725_a179907e27e38541a85460a8b193b37de} 
+\index{cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}!str\_@{str\_}}
+\index{str\_@{str\_}!cpr::StringHolder$<$ T $>$@{cpr::StringHolder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{str\_}{str\_}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::string \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder}}$<$ T $>$\+::str\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00035}{cprtypes.\+h}}\end{DoxyCompactItemize}

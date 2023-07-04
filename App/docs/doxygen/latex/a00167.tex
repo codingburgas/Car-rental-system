@@ -1,0 +1,89 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/input/input\+\_\+adapters.hpp File Reference}
+\hypertarget{a00167}{}\label{a00167}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/input\_adapters.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/input/input\_adapters.hpp}}
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/iterators/iterator\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/macro\+\_\+scope.\+hpp$>$}\newline
+Include dependency graph for input\+\_\+adapters.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01121}{nlohmann\+::detail\+::container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl\+::container\+\_\+input\+\_\+adapter\+\_\+factory$<$ Container\+Type, Enable $>$}}
+\item 
+struct \mbox{\hyperlink{a01125}{nlohmann\+::detail\+::container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl\+::container\+\_\+input\+\_\+adapter\+\_\+factory$<$ Container\+Type, void\+\_\+t$<$ decltype(begin(std\+::declval$<$ Container\+Type $>$()), end(std\+::declval$<$ Container\+Type $>$()))$>$ $>$}}
+\item 
+class \mbox{\hyperlink{a01081}{nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter}}
+\item 
+class \mbox{\hyperlink{a01085}{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
+\item 
+struct \mbox{\hyperlink{a01113}{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+of\+\_\+multibyte$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{a01089}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter$<$ Iterator\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01109}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory$<$ Iterator\+Type, Enable $>$}}
+\item 
+struct \mbox{\hyperlink{a01117}{nlohmann\+::detail\+::iterator\+\_\+input\+\_\+adapter\+\_\+factory$<$ Iterator\+Type, enable\+\_\+if\+\_\+t$<$ is\+\_\+iterator\+\_\+of\+\_\+multibyte$<$ Iterator\+Type $>$\+::value $>$ $>$}}
+\item 
+class \mbox{\hyperlink{a01129}{nlohmann\+::detail\+::span\+\_\+input\+\_\+adapter}}
+\item 
+class \mbox{\hyperlink{a01105}{nlohmann\+::detail\+::wide\+\_\+string\+\_\+input\+\_\+adapter$<$ Base\+Input\+Adapter, Wide\+Char\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01101}{nlohmann\+::detail\+::wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 2 $>$}}
+\item 
+struct \mbox{\hyperlink{a01097}{nlohmann\+::detail\+::wide\+\_\+string\+\_\+input\+\_\+helper$<$ Base\+Input\+Adapter, 4 $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00666}{nlohmann\+::detail\+::container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{nlohmann\+::detail\+::contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} = decltype(\mbox{\hyperlink{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}{input\+\_\+adapter}}(std\+::declval$<$ const char \texorpdfstring{$\ast$}{*} $>$(), std\+::declval$<$ const char \texorpdfstring{$\ast$}{*} $>$()))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40}{nlohmann\+::detail\+::input\+\_\+format\+\_\+t}} \{ \newline
+\mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a466deec76ecdf5fca6d38571f6324d54}{nlohmann\+::detail\+::json}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea}{nlohmann\+::detail\+::cbor}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a}{nlohmann\+::detail\+::msgpack}}
+, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8}{nlohmann\+::detail\+::ubjson}}
+, \newline
+\mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4}{nlohmann\+::detail\+::bson}}
+ \}
+\begin{DoxyCompactList}\small\item\em the supported input formats \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename CharT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+array$<$ CharT $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+integral$<$ typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&sizeof(typename std\+::remove\+\_\+pointer$<$ CharT $>$\+::type)==1, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{a00662_abc51edd46a1d1a0ff06a19f08ceff563}{contiguous\+\_\+bytes\+\_\+input\+\_\+adapter}} \mbox{\hyperlink{a00662_a690f7e555056ce490bd47dd5cdf9b48d}{nlohmann\+::detail\+::input\+\_\+adapter}} (CharT b)
+\item 
+{\footnotesize template$<$typename Container\+Type $>$ }\\\mbox{\hyperlink{a01121}{container\+\_\+input\+\_\+adapter\+\_\+factory\+\_\+impl\+::container\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Container\+Type $>$\+::adapter\+\_\+type \mbox{\hyperlink{a00662_ae3a7ab0e7df1d14fcb7b8d2e671d2360}{nlohmann\+::detail\+::input\+\_\+adapter}} (const Container\+Type \&container)
+\item 
+{\footnotesize template$<$typename Iterator\+Type $>$ }\\\mbox{\hyperlink{a01109}{iterator\+\_\+input\+\_\+adapter\+\_\+factory}}$<$ Iterator\+Type $>$\+::adapter\+\_\+type \mbox{\hyperlink{a00662_a616a53cc3114fdc113fc44e6af4c3c7f}{nlohmann\+::detail\+::input\+\_\+adapter}} (Iterator\+Type first, Iterator\+Type last)
+\item 
+\mbox{\hyperlink{a01081}{file\+\_\+input\+\_\+adapter}} \mbox{\hyperlink{a00662_a520988513cac994a1dfd16b5859a1ca6}{nlohmann\+::detail\+::input\+\_\+adapter}} (std\+::\+FILE \texorpdfstring{$\ast$}{*}file)
+\item 
+\mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} \mbox{\hyperlink{a00662_aaf150c2591ecac4e821e9036ef847ef8}{nlohmann\+::detail\+::input\+\_\+adapter}} (std\+::istream \&\&stream)
+\item 
+\mbox{\hyperlink{a01085}{input\+\_\+stream\+\_\+adapter}} \mbox{\hyperlink{a00662_af9fa97bf92767dc7f9dfe1abdfb1c6ce}{nlohmann\+::detail\+::input\+\_\+adapter}} (std\+::istream \&stream)
+\item 
+{\footnotesize template$<$typename T , std\+::size\+\_\+t N$>$ }\\auto \mbox{\hyperlink{a00662_a7908f7aa06f20e6083619d1d4b4eb769}{nlohmann\+::detail\+::input\+\_\+adapter}} (T(\&\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}})\mbox{[}N\mbox{]}) -\/$>$ decltype(input\+\_\+adapter(\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}, \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}}+N))
+\end{DoxyCompactItemize}

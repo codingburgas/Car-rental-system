@@ -1,0 +1,39 @@
+\doxysection{Map.\+hpp}
+\hypertarget{a00287_source}{}\label{a00287_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/Map.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/Map.hpp}}
+\mbox{\hyperlink{a00287}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{precompile.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00302}{Scene.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00305}{SceneManager.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01577}{Map}}\ :\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01593}{Scene}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ fstream\ \mbox{\hyperlink{a01577_a3057c0bc5bd80fed77c5d4606916b8a8}{authenticationToken}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01577_a7ab79a88cf94eef85805f062ee6dc031}{htmlPath}};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a01857}{TcpListener}}\ \mbox{\hyperlink{a01577_a641e36f58b3afe7d49b538adb2a2b24b}{listener}};}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{a01861}{TcpSocket}}\ \mbox{\hyperlink{a01577_ab06cdb666766b66ebf6791d58e6415b3}{socket}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01577_a8846f129d72d7af630170e8821f48e48}{API\_KEY}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a01577}{Map}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{a01577_ac994171254714ad2e8161f995b70e499}{\string~Map}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01577_aa47b2935f4bc9af5b045f05bfebe0f2f}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01577_a51aa616935222f799c14ed4a5084a067}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01577_a51aa616935222f799c14ed4a5084a067}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \textcolor{keywordtype}{int}\ counter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01577_a60f6cddb8674ebbe96d457c68e818ccb}{textHandler}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \mbox{\hyperlink{a01977}{Event}}\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01577_a6db239da3075fb93d51e18a83bf7e0d6}{getInputs}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01577_aa85322516788968183877971ddcbac94}{haltInput}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01577_a6cc0a03fc59118f2c938abf05229cb88}{geocodeAddress}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00033\ \};}
+
+\end{DoxyCode}

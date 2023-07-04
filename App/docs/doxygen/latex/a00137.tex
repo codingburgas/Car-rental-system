@@ -1,0 +1,1143 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/curl/typecheck-\/gcc.h File Reference}
+\hypertarget{a00137}{}\label{a00137}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/typecheck-\/gcc.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/typecheck-\/gcc.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}}(handle,  info,  arg)
+\item 
+\#define \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}}(handle,  option,  value)
+\item 
+\#define \mbox{\hyperlink{a00137_afc081c3dd70db2f2641dd96d2513d8d3}{curl\+\_\+multi\+\_\+setopt}}(handle,  opt,  param)~curl\+\_\+multi\+\_\+setopt(handle,opt,param)
+\item 
+\#define \mbox{\hyperlink{a00137_a3770cd3713e7cd0f49af3c076d58805a}{curl\+\_\+share\+\_\+setopt}}(share,  opt,  param)~curl\+\_\+share\+\_\+setopt(share,opt,param)
+\item 
+\#define \mbox{\hyperlink{a00137_ab8a97425fa21877cdd1219c2cfeaebb1}{curlcheck\+\_\+any\+\_\+ptr}}(expr)~  (sizeof(expr) == sizeof(void \texorpdfstring{$\ast$}{*}))
+\item 
+\#define \mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\+\_\+arr}}(expr,  type)
+\item 
+\#define \mbox{\hyperlink{a00137_aac76baeb3cc753d3bb71dfd8de8cb8d1}{curlcheck\+\_\+cb\+\_\+compatible}}(func,  type)
+\item 
+\#define \mbox{\hyperlink{a00137_a0a36f2e90af660683631968022bb7a43}{curlcheck\+\_\+cb\+\_\+data}}(expr)~  \mbox{\hyperlink{a00137_ab8a97425fa21877cdd1219c2cfeaebb1}{curlcheck\+\_\+any\+\_\+ptr}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_ac63237fdc802bba336dbfb1276323349}{curlcheck\+\_\+cb\+\_\+data\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_ad56eff7c1bcf7759da6264f88463062d}{curlcheck\+\_\+certinfo\+\_\+info}}(info)~((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba1124f7410b73edb2956d61266e457d73}{CURLINFO\+\_\+\+CERTINFO}})
+\item 
+\#define \mbox{\hyperlink{a00137_a46abdcb5a46bc20c714a0b64194493b6}{curlcheck\+\_\+conv\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a481e48464809f1ae3e0698e0053a62b1}{curlcheck\+\_\+conv\+\_\+cb\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_aaac9e3169b1cd960cb271aa50d61490e}{curlcheck\+\_\+debug\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a4a880353b1cfcff009a8ff4b9b9aa4fb}{curlcheck\+\_\+double\+\_\+info}}(info)~  (\mbox{\hyperlink{a00113_a363ca12d0c8bf659e5464e4b04b8606c}{CURLINFO\+\_\+\+DOUBLE}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a49a110fda25ca4982e67a0c547f0826c}{CURLINFO\+\_\+\+SLIST}})
+\item 
+\#define \mbox{\hyperlink{a00137_a9b81381cff895774560d7b8dc67507fd}{curlcheck\+\_\+error\+\_\+buffer}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a1b1021cc03a38c08b194a13e52605c71}{curlcheck\+\_\+\+FILE}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a6f6ebc998501f56c2a6f029fc5be4831}{curlcheck\+\_\+ioctl\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a9b6dd5025cb79403c0fd51a1b8bd2b87}{curlcheck\+\_\+long}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a0c455f40ee8a342385f5c417605ab59b}{curlcheck\+\_\+long\+\_\+info}}(info)~  (\mbox{\hyperlink{a00113_ad7be151454940ae2241677a25623ff4d}{CURLINFO\+\_\+\+LONG}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a363ca12d0c8bf659e5464e4b04b8606c}{CURLINFO\+\_\+\+DOUBLE}})
+\item 
+\#define \mbox{\hyperlink{a00137_acc5876bfb2f24332dfaf4a039fb38f2c}{curlcheck\+\_\+long\+\_\+option}}(option)~  (0 $<$ (option) \&\& (option) $<$ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\+\_\+\+OBJECTPOINT}})
+\item 
+\#define \mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\+\_\+\+NULL}}(expr)~  (\+\_\+\+\_\+builtin\+\_\+types\+\_\+compatible\+\_\+p(\+\_\+\+\_\+typeof\+\_\+\+\_\+(expr), \+\_\+\+\_\+typeof\+\_\+\+\_\+(NULL)))
+\item 
+\#define \mbox{\hyperlink{a00137_a5012751926751e944f25c541141605e9}{curlcheck\+\_\+off\+\_\+t}}(expr)~  (\+\_\+\+\_\+builtin\+\_\+types\+\_\+compatible\+\_\+p(\+\_\+\+\_\+typeof\+\_\+\+\_\+(expr), \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}))
+\item 
+\#define \mbox{\hyperlink{a00137_a365bb74efcc0486028b2efdf4c82d435}{curlcheck\+\_\+off\+\_\+t\+\_\+info}}(info)~  (\mbox{\hyperlink{a00113_a3339529b1567216dd4b7813efd48999c}{CURLINFO\+\_\+\+OFF\+\_\+T}} $<$ (info))
+\item 
+\#define \mbox{\hyperlink{a00137_a6d415bc77930407a9505108c4c9dbaba}{curlcheck\+\_\+off\+\_\+t\+\_\+option}}(option)~  (((option) $>$ \mbox{\hyperlink{a00113_ac8bad04621a0523755477f782b7a656a}{CURLOPTTYPE\+\_\+\+OFF\+\_\+T}}) \&\& ((option) $<$ \mbox{\hyperlink{a00113_a4750ffbb048852f72df31bbfc623ef23}{CURLOPTTYPE\+\_\+\+BLOB}}))
+\item 
+\#define \mbox{\hyperlink{a00137_aeff83a2316cbe2f6587b8ef084063b20}{curlcheck\+\_\+opensocket\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a0d4bc2ae8616c1cdc48be9c090c7843e}{curlcheck\+\_\+postfields}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a364ec1f7fa6be608a2a888395addedcd}{curlcheck\+\_\+postfields\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_a78aabb77b1c32aa51f74fa0da991bbf3}{curlcheck\+\_\+progress\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_ac307c57e10031919a3bac8ae260f4176}{curlcheck\+\_\+ptr}}(expr,  type)
+\item 
+\#define \mbox{\hyperlink{a00137_a8eafd3e90dc67ab2ff2452fae4156148}{curlcheck\+\_\+read\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_aa4c3dd9b64e7c3b4a0fff79e892160c1}{curlcheck\+\_\+resolver\+\_\+start\+\_\+callback}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a4e69146c587a8017dcec221ba6e48f25}{curlcheck\+\_\+seek\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a5ce708c5c75fc949efda5ed4f40099d4}{curlcheck\+\_\+slist\+\_\+info}}(info)~  (((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba082caa7a00b724df7b7987772bee6bc8}{CURLINFO\+\_\+\+SSL\+\_\+\+ENGINES}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba500b467f799c735b639a78ca87b17fb6}{CURLINFO\+\_\+\+COOKIELIST}}))
+\item 
+\#define \mbox{\hyperlink{a00137_ab966bbbecd7428e33f863663a35d72f4}{curlcheck\+\_\+slist\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_a14a4514fe52fb4c2326e2806c6c31a03}{curlcheck\+\_\+socket\+\_\+info}}(info)~  (\mbox{\hyperlink{a00113_a0764d55819d984a29b6a01243e8ee3e3}{CURLINFO\+\_\+\+SOCKET}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a3339529b1567216dd4b7813efd48999c}{CURLINFO\+\_\+\+OFF\+\_\+T}})
+\item 
+\#define \mbox{\hyperlink{a00137_ab44a811e9df30e81b9be42eeb4c7d0a7}{curlcheck\+\_\+sockopt\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_adfd0df36ac8d7a62e84fb1aa3e8b05d5}{curlcheck\+\_\+ssl\+\_\+ctx\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_ab7a1a3dd6f3490d12c8194b41e326b91}{curlcheck\+\_\+string}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a0f06be9345f921864fea6496209cc0d2}{curlcheck\+\_\+string\+\_\+info}}(info)
+\item 
+\#define \mbox{\hyperlink{a00137_a4490bd2c3d15f99630e65308fda8f932}{curlcheck\+\_\+string\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_a016439f3e6481bd4b8c35a35cc38b2c4}{curlcheck\+\_\+tlssessioninfo\+\_\+info}}(info)~  (((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba1ac604453ce985575f8c45bb4dc22ab4}{CURLINFO\+\_\+\+TLS\+\_\+\+SSL\+\_\+\+PTR}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7baec99d0c4534207509d00a0f2feee97fb}{CURLINFO\+\_\+\+TLS\+\_\+\+SESSION}}))
+\item 
+\#define \mbox{\hyperlink{a00137_a0db2017882c727b9a956fc1d83d6f8d9}{curlcheck\+\_\+write\+\_\+cb}}(expr)
+\item 
+\#define \mbox{\hyperlink{a00137_a1276468ffb43d562568ff75a201b7cb2}{curlcheck\+\_\+write\+\_\+cb\+\_\+option}}(option)
+\item 
+\#define \mbox{\hyperlink{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}{CURLWARNING}}(id,  message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_ae23e3d9711c086a0e6d7ed71528af612}{\+\_\+curl\+\_\+conv\+\_\+callback1}}) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t length)
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a0fea29cfe79074a01e621e1a60991ef5}{\+\_\+curl\+\_\+conv\+\_\+callback2}}) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t length)
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a860c9f69cd61f0d62fe6d1c07f997557}{\+\_\+curl\+\_\+conv\+\_\+callback3}}) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t length)
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_ac3b116e3ba589ed78cc87e7c3112ea3a}{\+\_\+curl\+\_\+conv\+\_\+callback4}}) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t length)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a905fe54d1b3b440e018416beec106189}{\+\_\+curl\+\_\+debug\+\_\+callback1}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a3642779ad78ad0b93bef0cd3fbe34f0b}{\+\_\+curl\+\_\+debug\+\_\+callback2}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a3db426b2a5b83fd90d67d9657a9ca2a9}{\+\_\+curl\+\_\+debug\+\_\+callback3}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a817b3e1f4c7849792288cc9ebc7c407c}{\+\_\+curl\+\_\+debug\+\_\+callback4}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_afe2ada9913295617d1b1255d025c649a}{\+\_\+curl\+\_\+debug\+\_\+callback5}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a8bb900b90c8e024cab1089db1e5646a4}{\+\_\+curl\+\_\+debug\+\_\+callback6}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a22eff22e058a10231ff96a540f2b7d65}{\+\_\+curl\+\_\+debug\+\_\+callback7}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a9970f7cec319006f1bb7f73633a88a70}{\+\_\+curl\+\_\+debug\+\_\+callback8}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_aec8e2c9251f04a8c7b51664ba0369269}{\+\_\+curl\+\_\+ioctl\+\_\+callback1}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a9dac65f9b65c11726cb5048d31292200}{\+\_\+curl\+\_\+ioctl\+\_\+callback2}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a55d2ffa0e79788cc5409349296b6fe51}{\+\_\+curl\+\_\+ioctl\+\_\+callback3}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}}, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a01acc993bc13db9d0aa10e70039502f5}{\+\_\+curl\+\_\+ioctl\+\_\+callback4}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}}, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a819bb252904432a41f3a5f92c3b9b549}{\+\_\+curl\+\_\+opensocket\+\_\+callback1}}) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a6df6792a0a55cef77b0da1df205043e8}{\+\_\+curl\+\_\+opensocket\+\_\+callback2}}) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, const struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a1c1d3a193d4500643fbdb6b1e386f791}{\+\_\+curl\+\_\+opensocket\+\_\+callback3}}) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_adecf08e4c0d78c6d51309b12664b0737}{\+\_\+curl\+\_\+opensocket\+\_\+callback4}}) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, const struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_adbcff69be30b73e3d35f7b7d0d5bd11e}{\+\_\+curl\+\_\+progress\+\_\+callback1}}) (void \texorpdfstring{$\ast$}{*}, double, double, double, double)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a941c9ed8a0fa75c1dfd6cff36c2f829b}{\+\_\+curl\+\_\+progress\+\_\+callback2}}) (const void \texorpdfstring{$\ast$}{*}, double, double, double, double)
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_aacfd185dafa598f8b5df1eaa1ac900b0}{\+\_\+curl\+\_\+read\+\_\+callback1}}) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a576c249c3991b21165876ca119d64d62}{\+\_\+curl\+\_\+read\+\_\+callback2}}) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a82a99add955b5c643b3f1ea170b8e554}{\+\_\+curl\+\_\+read\+\_\+callback3}}) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_aafe8965a018fd6d8b344ce3eea6a2c6b}{\+\_\+curl\+\_\+read\+\_\+callback4}}) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a9dd031c624308e056537f4751e9bd5ef}{\+\_\+curl\+\_\+read\+\_\+callback5}}) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a35bde23c703bc5ae3657b6a89c519a5d}{\+\_\+curl\+\_\+read\+\_\+callback6}}) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_adebe91c0cf6ae015cc98752e4fe2c363}{\+\_\+curl\+\_\+seek\+\_\+callback1}}) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}, int)
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a704fb61f39b18a5fde22c82d59b60865}{\+\_\+curl\+\_\+seek\+\_\+callback2}}) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}, int)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a8095bc0db8d83538b34e95870b2ae70a}{\+\_\+curl\+\_\+sockopt\+\_\+callback1}}) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_acdd8dd1aa1817d2dd29e808b90a40a3a}{\+\_\+curl\+\_\+sockopt\+\_\+callback2}}) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}})
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_abbd25dcbb87d03ee1aaae5be3d988b4c}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback2}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a51942fbbfdca41bfdf71dd7eb2656d71}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback3}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_acd15cc21030062058bc5b01a4c448ec9}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback4}}) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_ab603023e8514bafb4f44a5f7830beda0}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback5}}
+\item 
+typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback6}}
+\item 
+typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_ae2ebdce539e2b1b1348bca8c74831d86}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback7}}
+\item 
+typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_aeea9c5ad63d27b7ce77216a872b737c6}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback8}}
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a669540a16ae7f1648d735c63d96e1355}{\+\_\+curl\+\_\+write\+\_\+callback1}}) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_acd7fd194408321ca707af083fee0b99b}{\+\_\+curl\+\_\+write\+\_\+callback2}}) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a8841fa71ec5ea92a87c7b2e666267c10}{\+\_\+curl\+\_\+write\+\_\+callback3}}) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a390241e810677d2f53c3e0c00ac78059}{\+\_\+curl\+\_\+write\+\_\+callback4}}) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a3cede95e6bd530a0b60bf73ef043eb9b}{\+\_\+curl\+\_\+write\+\_\+callback5}}) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00137_a379005b0ccb12abf8d0150e2241e1328}{\+\_\+curl\+\_\+write\+\_\+callback6}}) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00957}{curl\+\_\+certinfo}} \texorpdfstring{$\ast$}{*}for this info \mbox{\hyperlink{a00137_ace953e7cd427d107372e7e2ebc003ce9}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+socket, \"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}} for this info\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+off\+\_\+t
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}for this info \mbox{\hyperlink{a00137_a52226bf43316a90dd13f7b7ce7874c35}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+tlssesssioninfo, \"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \"{} \"{}\textquotesingle{}struct \mbox{\hyperlink{a00961}{curl\+\_\+tlssessioninfo}} \texorpdfstring{$\ast$}{*}\textquotesingle{} for this info\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+certinfo
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info \mbox{\hyperlink{a00137_a68b239af8f093fb103760b2cb4746ac6}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+double, \"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to double for this info\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+slist
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_aa70aa5f973a963b34551c7401667e3dd}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+string, \"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \textquotesingle{}char \texorpdfstring{$\ast$}{*}\textquotesingle{} for this info\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+long
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af0481f94c69a26d67cfcc5c9981a6410}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+cb\+\_\+data, \"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}private data pointer as argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+error\+\_\+buffer
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_ac5887d95c987537cfb61884d91124db8}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+conv\+\_\+cb, \"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_acb230bf6dbf7bcb6e4e8740ea42ca3b3}{curl\+\_\+conv\+\_\+callback}} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+seek\+\_\+cb
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a075ec81524259fbe2484fb8c75eea200}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+httpost, \"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}struct \mbox{\hyperlink{a00917}{curl\+\_\+httppost}} \texorpdfstring{$\ast$}{*}\textquotesingle{} \"{} \"{}argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+mimepost
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a5e6885f6025464634708bbc764ba6771}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+slist, \"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}\textquotesingle{} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+\+CURLSH
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_a0af5dfaa0747b1397c7791d28aaef8e2}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+debug\+\_\+cb, \"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_ad967e4ffcbaf6c9dc7105b798d0f5b32}{curl\+\_\+debug\+\_\+callback}} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+ssl\+\_\+ctx\+\_\+cb
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_aa35a1d746973541bca2fe6ad2c1ae220}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+\+FILE, \"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}FILE \texorpdfstring{$\ast$}{*}\textquotesingle{} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+postfields
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_a110c810f9ad3c8135fb30cf826a8a64b}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+ioctl\+\_\+cb, \"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_ae0524f6ec082005e39eb275c71c59a3b}{curl\+\_\+ioctl\+\_\+callback}} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+sockopt\+\_\+cb
+\item 
+\mbox{\hyperlink{a00137_afdbc1f35df7f65ded9402546e7208dc4}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+long, \"{}curl\+\_\+easy\+\_\+setopt expects a long argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+off\+\_\+t
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_abe5f6cc9046727e51d67688a93f06e8b}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+opensocket\+\_\+cb, \"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}\mbox{\hyperlink{a00113_a1b8b8f3e1a4e538a6bb1dd83a3388547}{curl\+\_\+opensocket\+\_\+callback}} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+progress\+\_\+cb
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_a535e432c14ddb6253152a941592941ad}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+resolver\+\_\+start\+\_\+callback, \"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}\mbox{\hyperlink{a00113_a9cfebb6f48d46c45ca37ff3db2f6ce6f}{curl\+\_\+resolver\+\_\+start\+\_\+callback}} argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+read\+\_\+cb
+\item 
+\mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_ab5fc4d0a570d5dc086d2050fe827381e}{CURLWARNING}} (\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+string, \"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}string (\textquotesingle{}char \texorpdfstring{$\ast$}{*}\textquotesingle{} or char\mbox{[}$\,$\mbox{]}) argument for this option\"{}) CURLWARNING(\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+write\+\_\+callback
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00137_a978f4e7a75943f3c2a518eb72da213f2}\label{a00137_a978f4e7a75943f3c2a518eb72da213f2} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curl\_easy\_getinfo@{curl\_easy\_getinfo}}
+\index{curl\_easy\_getinfo@{curl\_easy\_getinfo}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_getinfo}{curl\_easy\_getinfo}}
+{\footnotesize\ttfamily \#define curl\+\_\+easy\+\_\+getinfo(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{info,  }\item[{}]{arg }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \_\_extension\_\_(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \_\_typeof\_\_(info)\ \_curl\_info\ =\ info;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ if(\_\_builtin\_constant\_p(\_curl\_info))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a0f06be9345f921864fea6496209cc0d2}{curlcheck\_string\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keywordtype}{char}\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_string();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a0c455f40ee8a342385f5c417605ab59b}{curlcheck\_long\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keywordtype}{long}))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_long();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a4a880353b1cfcff009a8ff4b9b9aa4fb}{curlcheck\_double\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keywordtype}{double}))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_double();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a5ce708c5c75fc949efda5ed4f40099d4}{curlcheck\_slist\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00949}{curl\_slist}}\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_slist();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a016439f3e6481bd4b8c35a35cc38b2c4}{curlcheck\_tlssessioninfo\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00961}{curl\_tlssessioninfo}}\ *))\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_tlssesssioninfo();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_ad56eff7c1bcf7759da6264f88463062d}{curlcheck\_certinfo\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{a00957}{curl\_certinfo}}\ *))\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_certinfo();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a14a4514fe52fb4c2326e2806c6c31a03}{curlcheck\_socket\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\_socket\_t}}))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_socket();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(\mbox{\hyperlink{a00137_a365bb74efcc0486028b2efdf4c82d435}{curlcheck\_off\_t\_info}}(\_curl\_info))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if(!\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((arg),\ \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\_off\_t}}))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_curl\_easy\_getinfo\_err\_curl\_off\_t();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ curl\_easy\_getinfo(handle,\ \_curl\_info,\ arg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \})}
+
+\end{DoxyCode}
+\Hypertarget{a00137_af8d527555aeac344caa3754445c6ecba}\label{a00137_af8d527555aeac344caa3754445c6ecba} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curl\_easy\_setopt@{curl\_easy\_setopt}}
+\index{curl\_easy\_setopt@{curl\_easy\_setopt}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curl\_easy\_setopt}{curl\_easy\_setopt}}
+{\footnotesize\ttfamily \#define curl\+\_\+easy\+\_\+setopt(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{option,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_afc081c3dd70db2f2641dd96d2513d8d3}\label{a00137_afc081c3dd70db2f2641dd96d2513d8d3} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curl\_multi\_setopt@{curl\_multi\_setopt}}
+\index{curl\_multi\_setopt@{curl\_multi\_setopt}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curl\_multi\_setopt}{curl\_multi\_setopt}}
+{\footnotesize\ttfamily \#define curl\+\_\+multi\+\_\+setopt(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{opt,  }\item[{}]{param }\end{DoxyParamCaption})~curl\+\_\+multi\+\_\+setopt(handle,opt,param)}
+
+\Hypertarget{a00137_a3770cd3713e7cd0f49af3c076d58805a}\label{a00137_a3770cd3713e7cd0f49af3c076d58805a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curl\_share\_setopt@{curl\_share\_setopt}}
+\index{curl\_share\_setopt@{curl\_share\_setopt}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curl\_share\_setopt}{curl\_share\_setopt}}
+{\footnotesize\ttfamily \#define curl\+\_\+share\+\_\+setopt(\begin{DoxyParamCaption}\item[{}]{share,  }\item[{}]{opt,  }\item[{}]{param }\end{DoxyParamCaption})~curl\+\_\+share\+\_\+setopt(share,opt,param)}
+
+\Hypertarget{a00137_ab8a97425fa21877cdd1219c2cfeaebb1}\label{a00137_ab8a97425fa21877cdd1219c2cfeaebb1} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_any\_ptr@{curlcheck\_any\_ptr}}
+\index{curlcheck\_any\_ptr@{curlcheck\_any\_ptr}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_any\_ptr}{curlcheck\_any\_ptr}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+any\+\_\+ptr(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~  (sizeof(expr) == sizeof(void \texorpdfstring{$\ast$}{*}))}
+
+\Hypertarget{a00137_a646d48f836c076ecbce7b39a9b86b1a6}\label{a00137_a646d48f836c076ecbce7b39a9b86b1a6} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_arr@{curlcheck\_arr}}
+\index{curlcheck\_arr@{curlcheck\_arr}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_arr}{curlcheck\_arr}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+arr(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_ac307c57e10031919a3bac8ae260f4176}{curlcheck\_ptr}}((expr),\ type)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ type\ []))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_aac76baeb3cc753d3bb71dfd8de8cb8d1}\label{a00137_aac76baeb3cc753d3bb71dfd8de8cb8d1} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_cb\_compatible@{curlcheck\_cb\_compatible}}
+\index{curlcheck\_cb\_compatible@{curlcheck\_cb\_compatible}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_cb\_compatible}{curlcheck\_cb\_compatible}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+cb\+\_\+compatible(\begin{DoxyParamCaption}\item[{}]{func,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(func),\ type)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(func)\ *,\ type))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a0a36f2e90af660683631968022bb7a43}\label{a00137_a0a36f2e90af660683631968022bb7a43} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_cb\_data@{curlcheck\_cb\_data}}
+\index{curlcheck\_cb\_data@{curlcheck\_cb\_data}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_cb\_data}{curlcheck\_cb\_data}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+cb\+\_\+data(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~  \mbox{\hyperlink{a00137_ab8a97425fa21877cdd1219c2cfeaebb1}{curlcheck\+\_\+any\+\_\+ptr}}(expr)}
+
+\Hypertarget{a00137_ac63237fdc802bba336dbfb1276323349}\label{a00137_ac63237fdc802bba336dbfb1276323349} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_cb\_data\_option@{curlcheck\_cb\_data\_option}}
+\index{curlcheck\_cb\_data\_option@{curlcheck\_cb\_data\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_cb\_data\_option}{curlcheck\_cb\_data\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+cb\+\_\+data\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((option)\ ==\ CURLOPT\_CHUNK\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_CLOSESOCKETDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_DEBUGDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_FNMATCH\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_HEADERDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_HSTSREADDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_HSTSWRITEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_INTERLEAVEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_IOCTLDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_OPENSOCKETDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_PREREQDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ \mbox{\hyperlink{a00113_a7e59209a6818a3b219f44b2eddd01ced}{CURLOPT\_PROGRESSDATA}}\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_READDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_SEEKDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_SOCKOPTDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_SSH\_KEYDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_SSL\_CTX\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_WRITEDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_RESOLVER\_START\_DATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_TRAILERDATA\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ 0)}
+
+\end{DoxyCode}
+\Hypertarget{a00137_ad56eff7c1bcf7759da6264f88463062d}\label{a00137_ad56eff7c1bcf7759da6264f88463062d} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_certinfo\_info@{curlcheck\_certinfo\_info}}
+\index{curlcheck\_certinfo\_info@{curlcheck\_certinfo\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_certinfo\_info}{curlcheck\_certinfo\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+certinfo\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba1124f7410b73edb2956d61266e457d73}{CURLINFO\+\_\+\+CERTINFO}})}
+
+\Hypertarget{a00137_a46abdcb5a46bc20c714a0b64194493b6}\label{a00137_a46abdcb5a46bc20c714a0b64194493b6} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_conv\_cb@{curlcheck\_conv\_cb}}
+\index{curlcheck\_conv\_cb@{curlcheck\_conv\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_conv\_cb}{curlcheck\_conv\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+conv\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_acb230bf6dbf7bcb6e4e8740ea42ca3b3}{curl\_conv\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_ae23e3d9711c086a0e6d7ed71528af612}{\_curl\_conv\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a0fea29cfe79074a01e621e1a60991ef5}{\_curl\_conv\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a860c9f69cd61f0d62fe6d1c07f997557}{\_curl\_conv\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_ac3b116e3ba589ed78cc87e7c3112ea3a}{\_curl\_conv\_callback4}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a481e48464809f1ae3e0698e0053a62b1}\label{a00137_a481e48464809f1ae3e0698e0053a62b1} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_conv\_cb\_option@{curlcheck\_conv\_cb\_option}}
+\index{curlcheck\_conv\_cb\_option@{curlcheck\_conv\_cb\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_conv\_cb\_option}{curlcheck\_conv\_cb\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+conv\+\_\+cb\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((option)\ ==\ CURLOPT\_CONV\_TO\_NETWORK\_FUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_CONV\_FROM\_NETWORK\_FUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_CONV\_FROM\_UTF8\_FUNCTION)}
+
+\end{DoxyCode}
+\Hypertarget{a00137_aaac9e3169b1cd960cb271aa50d61490e}\label{a00137_aaac9e3169b1cd960cb271aa50d61490e} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_debug\_cb@{curlcheck\_debug\_cb}}
+\index{curlcheck\_debug\_cb@{curlcheck\_debug\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_debug\_cb}{curlcheck\_debug\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+debug\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_ad967e4ffcbaf6c9dc7105b798d0f5b32}{curl\_debug\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a905fe54d1b3b440e018416beec106189}{\_curl\_debug\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a3642779ad78ad0b93bef0cd3fbe34f0b}{\_curl\_debug\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a3db426b2a5b83fd90d67d9657a9ca2a9}{\_curl\_debug\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a817b3e1f4c7849792288cc9ebc7c407c}{\_curl\_debug\_callback4}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_afe2ada9913295617d1b1255d025c649a}{\_curl\_debug\_callback5}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a8bb900b90c8e024cab1089db1e5646a4}{\_curl\_debug\_callback6}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a22eff22e058a10231ff96a540f2b7d65}{\_curl\_debug\_callback7}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a9970f7cec319006f1bb7f73633a88a70}{\_curl\_debug\_callback8}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a4a880353b1cfcff009a8ff4b9b9aa4fb}\label{a00137_a4a880353b1cfcff009a8ff4b9b9aa4fb} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_double\_info@{curlcheck\_double\_info}}
+\index{curlcheck\_double\_info@{curlcheck\_double\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_double\_info}{curlcheck\_double\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+double\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (\mbox{\hyperlink{a00113_a363ca12d0c8bf659e5464e4b04b8606c}{CURLINFO\+\_\+\+DOUBLE}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a49a110fda25ca4982e67a0c547f0826c}{CURLINFO\+\_\+\+SLIST}})}
+
+\Hypertarget{a00137_a9b81381cff895774560d7b8dc67507fd}\label{a00137_a9b81381cff895774560d7b8dc67507fd} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_error\_buffer@{curlcheck\_error\_buffer}}
+\index{curlcheck\_error\_buffer@{curlcheck\_error\_buffer}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_error\_buffer}{curlcheck\_error\_buffer}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+error\+\_\+buffer(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{char}\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{char}[]))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a1b1021cc03a38c08b194a13e52605c71}\label{a00137_a1b1021cc03a38c08b194a13e52605c71} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_FILE@{curlcheck\_FILE}}
+\index{curlcheck\_FILE@{curlcheck\_FILE}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_FILE}{curlcheck\_FILE}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+\+FILE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ FILE\ *)))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a6f6ebc998501f56c2a6f029fc5be4831}\label{a00137_a6f6ebc998501f56c2a6f029fc5be4831} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_ioctl\_cb@{curlcheck\_ioctl\_cb}}
+\index{curlcheck\_ioctl\_cb@{curlcheck\_ioctl\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_ioctl\_cb}{curlcheck\_ioctl\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+ioctl\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_ae0524f6ec082005e39eb275c71c59a3b}{curl\_ioctl\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_aec8e2c9251f04a8c7b51664ba0369269}{\_curl\_ioctl\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a9dac65f9b65c11726cb5048d31292200}{\_curl\_ioctl\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a55d2ffa0e79788cc5409349296b6fe51}{\_curl\_ioctl\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a01acc993bc13db9d0aa10e70039502f5}{\_curl\_ioctl\_callback4}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a9b6dd5025cb79403c0fd51a1b8bd2b87}\label{a00137_a9b6dd5025cb79403c0fd51a1b8bd2b87} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_long@{curlcheck\_long}}
+\index{curlcheck\_long@{curlcheck\_long}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_long}{curlcheck\_long}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+long(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{long})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{long})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long})\ ||\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{int})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{int})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{short})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{short})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{char})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{char})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a0c455f40ee8a342385f5c417605ab59b}\label{a00137_a0c455f40ee8a342385f5c417605ab59b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_long\_info@{curlcheck\_long\_info}}
+\index{curlcheck\_long\_info@{curlcheck\_long\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_long\_info}{curlcheck\_long\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+long\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (\mbox{\hyperlink{a00113_ad7be151454940ae2241677a25623ff4d}{CURLINFO\+\_\+\+LONG}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a363ca12d0c8bf659e5464e4b04b8606c}{CURLINFO\+\_\+\+DOUBLE}})}
+
+\Hypertarget{a00137_acc5876bfb2f24332dfaf4a039fb38f2c}\label{a00137_acc5876bfb2f24332dfaf4a039fb38f2c} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_long\_option@{curlcheck\_long\_option}}
+\index{curlcheck\_long\_option@{curlcheck\_long\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_long\_option}{curlcheck\_long\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+long\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})~  (0 $<$ (option) \&\& (option) $<$ \mbox{\hyperlink{a00113_a88edcf8f9aaf67683b27caca050e87b6}{CURLOPTTYPE\+\_\+\+OBJECTPOINT}})}
+
+\Hypertarget{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}\label{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_NULL@{curlcheck\_NULL}}
+\index{curlcheck\_NULL@{curlcheck\_NULL}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_NULL}{curlcheck\_NULL}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+\+NULL(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~  (\+\_\+\+\_\+builtin\+\_\+types\+\_\+compatible\+\_\+p(\+\_\+\+\_\+typeof\+\_\+\+\_\+(expr), \+\_\+\+\_\+typeof\+\_\+\+\_\+(NULL)))}
+
+\Hypertarget{a00137_a5012751926751e944f25c541141605e9}\label{a00137_a5012751926751e944f25c541141605e9} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_off\_t@{curlcheck\_off\_t}}
+\index{curlcheck\_off\_t@{curlcheck\_off\_t}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_off\_t}{curlcheck\_off\_t}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+off\+\_\+t(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~  (\+\_\+\+\_\+builtin\+\_\+types\+\_\+compatible\+\_\+p(\+\_\+\+\_\+typeof\+\_\+\+\_\+(expr), \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}))}
+
+\Hypertarget{a00137_a365bb74efcc0486028b2efdf4c82d435}\label{a00137_a365bb74efcc0486028b2efdf4c82d435} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_off\_t\_info@{curlcheck\_off\_t\_info}}
+\index{curlcheck\_off\_t\_info@{curlcheck\_off\_t\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_off\_t\_info}{curlcheck\_off\_t\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+off\+\_\+t\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (\mbox{\hyperlink{a00113_a3339529b1567216dd4b7813efd48999c}{CURLINFO\+\_\+\+OFF\+\_\+T}} $<$ (info))}
+
+\Hypertarget{a00137_a6d415bc77930407a9505108c4c9dbaba}\label{a00137_a6d415bc77930407a9505108c4c9dbaba} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_off\_t\_option@{curlcheck\_off\_t\_option}}
+\index{curlcheck\_off\_t\_option@{curlcheck\_off\_t\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_off\_t\_option}{curlcheck\_off\_t\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+off\+\_\+t\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})~  (((option) $>$ \mbox{\hyperlink{a00113_ac8bad04621a0523755477f782b7a656a}{CURLOPTTYPE\+\_\+\+OFF\+\_\+T}}) \&\& ((option) $<$ \mbox{\hyperlink{a00113_a4750ffbb048852f72df31bbfc623ef23}{CURLOPTTYPE\+\_\+\+BLOB}}))}
+
+\Hypertarget{a00137_aeff83a2316cbe2f6587b8ef084063b20}\label{a00137_aeff83a2316cbe2f6587b8ef084063b20} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_opensocket\_cb@{curlcheck\_opensocket\_cb}}
+\index{curlcheck\_opensocket\_cb@{curlcheck\_opensocket\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_opensocket\_cb}{curlcheck\_opensocket\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+opensocket\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_a1b8b8f3e1a4e538a6bb1dd83a3388547}{curl\_opensocket\_callback}})\ ||\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a819bb252904432a41f3a5f92c3b9b549}{\_curl\_opensocket\_callback1}})\ ||\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a6df6792a0a55cef77b0da1df205043e8}{\_curl\_opensocket\_callback2}})\ ||\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a1c1d3a193d4500643fbdb6b1e386f791}{\_curl\_opensocket\_callback3}})\ ||\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_adecf08e4c0d78c6d51309b12664b0737}{\_curl\_opensocket\_callback4}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a0d4bc2ae8616c1cdc48be9c090c7843e}\label{a00137_a0d4bc2ae8616c1cdc48be9c090c7843e} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_postfields@{curlcheck\_postfields}}
+\index{curlcheck\_postfields@{curlcheck\_postfields}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_postfields}{curlcheck\_postfields}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+postfields(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_ac307c57e10031919a3bac8ae260f4176}{curlcheck\_ptr}}((expr),\ \textcolor{keywordtype}{void})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_arr((expr),\ \textcolor{keywordtype}{char})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_arr((expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a364ec1f7fa6be608a2a888395addedcd}\label{a00137_a364ec1f7fa6be608a2a888395addedcd} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_postfields\_option@{curlcheck\_postfields\_option}}
+\index{curlcheck\_postfields\_option@{curlcheck\_postfields\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_postfields\_option}{curlcheck\_postfields\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+postfields\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((option)\ ==\ CURLOPT\_POSTFIELDS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_COPYPOSTFIELDS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ 0)}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a78aabb77b1c32aa51f74fa0da991bbf3}\label{a00137_a78aabb77b1c32aa51f74fa0da991bbf3} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_progress\_cb@{curlcheck\_progress\_cb}}
+\index{curlcheck\_progress\_cb@{curlcheck\_progress\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_progress\_cb}{curlcheck\_progress\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+progress\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\_progress\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_adbcff69be30b73e3d35f7b7d0d5bd11e}{\_curl\_progress\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a941c9ed8a0fa75c1dfd6cff36c2f829b}{\_curl\_progress\_callback2}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_ac307c57e10031919a3bac8ae260f4176}\label{a00137_ac307c57e10031919a3bac8ae260f4176} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_ptr@{curlcheck\_ptr}}
+\index{curlcheck\_ptr@{curlcheck\_ptr}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_ptr}{curlcheck\_ptr}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+ptr(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ type\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \_\_builtin\_types\_compatible\_p(\_\_typeof\_\_(expr),\ \textcolor{keyword}{const}\ type\ *))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a8eafd3e90dc67ab2ff2452fae4156148}\label{a00137_a8eafd3e90dc67ab2ff2452fae4156148} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_read\_cb@{curlcheck\_read\_cb}}
+\index{curlcheck\_read\_cb@{curlcheck\_read\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_read\_cb}{curlcheck\_read\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+read\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \_\_typeof\_\_(\mbox{\hyperlink{a00131_aae22dd41ebe1e64904429c5a31e7e642}{fread}})\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\_read\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_aacfd185dafa598f8b5df1eaa1ac900b0}{\_curl\_read\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a576c249c3991b21165876ca119d64d62}{\_curl\_read\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a82a99add955b5c643b3f1ea170b8e554}{\_curl\_read\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_aafe8965a018fd6d8b344ce3eea6a2c6b}{\_curl\_read\_callback4}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a9dd031c624308e056537f4751e9bd5ef}{\_curl\_read\_callback5}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a35bde23c703bc5ae3657b6a89c519a5d}{\_curl\_read\_callback6}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_aa4c3dd9b64e7c3b4a0fff79e892160c1}\label{a00137_aa4c3dd9b64e7c3b4a0fff79e892160c1} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_resolver\_start\_callback@{curlcheck\_resolver\_start\_callback}}
+\index{curlcheck\_resolver\_start\_callback@{curlcheck\_resolver\_start\_callback}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_resolver\_start\_callback}{curlcheck\_resolver\_start\_callback}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+resolver\+\_\+start\+\_\+callback(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_a9cfebb6f48d46c45ca37ff3db2f6ce6f}{curl\_resolver\_start\_callback}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a4e69146c587a8017dcec221ba6e48f25}\label{a00137_a4e69146c587a8017dcec221ba6e48f25} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_seek\_cb@{curlcheck\_seek\_cb}}
+\index{curlcheck\_seek\_cb@{curlcheck\_seek\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_seek\_cb}{curlcheck\_seek\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+seek\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\_seek\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_adebe91c0cf6ae015cc98752e4fe2c363}{\_curl\_seek\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a704fb61f39b18a5fde22c82d59b60865}{\_curl\_seek\_callback2}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a5ce708c5c75fc949efda5ed4f40099d4}\label{a00137_a5ce708c5c75fc949efda5ed4f40099d4} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_slist\_info@{curlcheck\_slist\_info}}
+\index{curlcheck\_slist\_info@{curlcheck\_slist\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_slist\_info}{curlcheck\_slist\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+slist\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba082caa7a00b724df7b7987772bee6bc8}{CURLINFO\+\_\+\+SSL\+\_\+\+ENGINES}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba500b467f799c735b639a78ca87b17fb6}{CURLINFO\+\_\+\+COOKIELIST}}))}
+
+\Hypertarget{a00137_ab966bbbecd7428e33f863663a35d72f4}\label{a00137_ab966bbbecd7428e33f863663a35d72f4} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_slist\_option@{curlcheck\_slist\_option}}
+\index{curlcheck\_slist\_option@{curlcheck\_slist\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_slist\_option}{curlcheck\_slist\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+slist\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((option)\ ==\ CURLOPT\_HTTP200ALIASES\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_HTTPHEADER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_MAIL\_RCPT\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_POSTQUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_PREQUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_PROXYHEADER\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_QUOTE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_RESOLVE\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_TELNETOPTIONS\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_CONNECT\_TO\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ 0)}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a14a4514fe52fb4c2326e2806c6c31a03}\label{a00137_a14a4514fe52fb4c2326e2806c6c31a03} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_socket\_info@{curlcheck\_socket\_info}}
+\index{curlcheck\_socket\_info@{curlcheck\_socket\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_socket\_info}{curlcheck\_socket\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+socket\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (\mbox{\hyperlink{a00113_a0764d55819d984a29b6a01243e8ee3e3}{CURLINFO\+\_\+\+SOCKET}} $<$ (info) \&\& (info) $<$ \mbox{\hyperlink{a00113_a3339529b1567216dd4b7813efd48999c}{CURLINFO\+\_\+\+OFF\+\_\+T}})}
+
+\Hypertarget{a00137_ab44a811e9df30e81b9be42eeb4c7d0a7}\label{a00137_ab44a811e9df30e81b9be42eeb4c7d0a7} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_sockopt\_cb@{curlcheck\_sockopt\_cb}}
+\index{curlcheck\_sockopt\_cb@{curlcheck\_sockopt\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_sockopt\_cb}{curlcheck\_sockopt\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+sockopt\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\_sockopt\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a8095bc0db8d83538b34e95870b2ae70a}{\_curl\_sockopt\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_acdd8dd1aa1817d2dd29e808b90a40a3a}{\_curl\_sockopt\_callback2}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_adfd0df36ac8d7a62e84fb1aa3e8b05d5}\label{a00137_adfd0df36ac8d7a62e84fb1aa3e8b05d5} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_ssl\_ctx\_cb@{curlcheck\_ssl\_ctx\_cb}}
+\index{curlcheck\_ssl\_ctx\_cb@{curlcheck\_ssl\_ctx\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_ssl\_ctx\_cb}{curlcheck\_ssl\_ctx\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+ssl\+\_\+ctx\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a0836feb8b5b224a4cfd1e52da4b8ab4b}{curlcheck\_NULL}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\_ssl\_ctx\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\_curl\_ssl\_ctx\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_abbd25dcbb87d03ee1aaae5be3d988b4c}{\_curl\_ssl\_ctx\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a51942fbbfdca41bfdf71dd7eb2656d71}{\_curl\_ssl\_ctx\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_acd15cc21030062058bc5b01a4c448ec9}{\_curl\_ssl\_ctx\_callback4}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_ab603023e8514bafb4f44a5f7830beda0}{\_curl\_ssl\_ctx\_callback5}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}{\_curl\_ssl\_ctx\_callback6}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_ae2ebdce539e2b1b1348bca8c74831d86}{\_curl\_ssl\_ctx\_callback7}})\ ||\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_aeea9c5ad63d27b7ce77216a872b737c6}{\_curl\_ssl\_ctx\_callback8}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_ab7a1a3dd6f3490d12c8194b41e326b91}\label{a00137_ab7a1a3dd6f3490d12c8194b41e326b91} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_string@{curlcheck\_string}}
+\index{curlcheck\_string@{curlcheck\_string}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_string}{curlcheck\_string}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+string(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a646d48f836c076ecbce7b39a9b86b1a6}{curlcheck\_arr}}((expr),\ \textcolor{keywordtype}{char})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_arr((expr),\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{char})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_arr((expr),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a0f06be9345f921864fea6496209cc0d2}\label{a00137_a0f06be9345f921864fea6496209cc0d2} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_string\_info@{curlcheck\_string\_info}}
+\index{curlcheck\_string\_info@{curlcheck\_string\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_string\_info}{curlcheck\_string\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+string\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00113_a2df6a052fcaceae309702c24d19ce5f5}{CURLINFO\_STRING}}\ <\ (info)\ \&\&\ (info)\ <\ \mbox{\hyperlink{a00113_ad7be151454940ae2241677a25623ff4d}{CURLINFO\_LONG}}\ \&\&\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (info)\ !=\ \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba38845390775c1b7e34a83056232eee7b}{CURLINFO\_PRIVATE}})}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a4490bd2c3d15f99630e65308fda8f932}\label{a00137_a4490bd2c3d15f99630e65308fda8f932} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_string\_option@{curlcheck\_string\_option}}
+\index{curlcheck\_string\_option@{curlcheck\_string\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_string\_option}{curlcheck\_string\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+string\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a016439f3e6481bd4b8c35a35cc38b2c4}\label{a00137_a016439f3e6481bd4b8c35a35cc38b2c4} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_tlssessioninfo\_info@{curlcheck\_tlssessioninfo\_info}}
+\index{curlcheck\_tlssessioninfo\_info@{curlcheck\_tlssessioninfo\_info}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_tlssessioninfo\_info}{curlcheck\_tlssessioninfo\_info}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+tlssessioninfo\+\_\+info(\begin{DoxyParamCaption}\item[{}]{info }\end{DoxyParamCaption})~  (((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7ba1ac604453ce985575f8c45bb4dc22ab4}{CURLINFO\+\_\+\+TLS\+\_\+\+SSL\+\_\+\+PTR}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((info) == \mbox{\hyperlink{a00113_aabc03ec968a2fdccde5c6709f712dd7baec99d0c4534207509d00a0f2feee97fb}{CURLINFO\+\_\+\+TLS\+\_\+\+SESSION}}))}
+
+\Hypertarget{a00137_a0db2017882c727b9a956fc1d83d6f8d9}\label{a00137_a0db2017882c727b9a956fc1d83d6f8d9} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_write\_cb@{curlcheck\_write\_cb}}
+\index{curlcheck\_write\_cb@{curlcheck\_write\_cb}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_write\_cb}{curlcheck\_write\_cb}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+write\+\_\+cb(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{a00137_a8eafd3e90dc67ab2ff2452fae4156148}{curlcheck\_read\_cb}}(expr)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \_\_typeof\_\_(\mbox{\hyperlink{a00131_ae791f89cbd418b3074b1349d8f5075dd}{fwrite}})\ *)\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\_write\_callback}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a669540a16ae7f1648d735c63d96e1355}{\_curl\_write\_callback1}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_acd7fd194408321ca707af083fee0b99b}{\_curl\_write\_callback2}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a8841fa71ec5ea92a87c7b2e666267c10}{\_curl\_write\_callback3}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a390241e810677d2f53c3e0c00ac78059}{\_curl\_write\_callback4}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a3cede95e6bd530a0b60bf73ef043eb9b}{\_curl\_write\_callback5}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ curlcheck\_cb\_compatible((expr),\ \mbox{\hyperlink{a00137_a379005b0ccb12abf8d0150e2241e1328}{\_curl\_write\_callback6}}))}
+
+\end{DoxyCode}
+\Hypertarget{a00137_a1276468ffb43d562568ff75a201b7cb2}\label{a00137_a1276468ffb43d562568ff75a201b7cb2} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!curlcheck\_write\_cb\_option@{curlcheck\_write\_cb\_option}}
+\index{curlcheck\_write\_cb\_option@{curlcheck\_write\_cb\_option}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{curlcheck\_write\_cb\_option}{curlcheck\_write\_cb\_option}}
+{\footnotesize\ttfamily \#define curlcheck\+\_\+write\+\_\+cb\+\_\+option(\begin{DoxyParamCaption}\item[{}]{option }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((option)\ ==\ CURLOPT\_HEADERFUNCTION\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (option)\ ==\ CURLOPT\_WRITEFUNCTION)}
+
+\end{DoxyCode}
+\Hypertarget{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc}\label{a00137_ade7b4f3d43ddc94c21229df1f02f6dbc} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING}{CURLWARNING}}
+{\footnotesize\ttfamily \#define CURLWARNING(\begin{DoxyParamCaption}\item[{}]{id,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_\_attribute\_\_((\_\_warning\_\_(message)))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \_\_attribute\_\_((\_\_unused\_\_))\ \_\_attribute\_\_((\_\_noinline\_\_))\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ id(\textcolor{keywordtype}{void})\ \{\ \_\_asm\_\_(\textcolor{stringliteral}{"{}"{}});\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00137_ae23e3d9711c086a0e6d7ed71528af612}\label{a00137_ae23e3d9711c086a0e6d7ed71528af612} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_conv\_callback1@{\_curl\_conv\_callback1}}
+\index{\_curl\_conv\_callback1@{\_curl\_conv\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_conv\_callback1}{\_curl\_conv\_callback1}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+conv\+\_\+callback1) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t length)}
+
+\Hypertarget{a00137_a0fea29cfe79074a01e621e1a60991ef5}\label{a00137_a0fea29cfe79074a01e621e1a60991ef5} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_conv\_callback2@{\_curl\_conv\_callback2}}
+\index{\_curl\_conv\_callback2@{\_curl\_conv\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_conv\_callback2}{\_curl\_conv\_callback2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+conv\+\_\+callback2) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t length)}
+
+\Hypertarget{a00137_a860c9f69cd61f0d62fe6d1c07f997557}\label{a00137_a860c9f69cd61f0d62fe6d1c07f997557} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_conv\_callback3@{\_curl\_conv\_callback3}}
+\index{\_curl\_conv\_callback3@{\_curl\_conv\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_conv\_callback3}{\_curl\_conv\_callback3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+conv\+\_\+callback3) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t length)}
+
+\Hypertarget{a00137_ac3b116e3ba589ed78cc87e7c3112ea3a}\label{a00137_ac3b116e3ba589ed78cc87e7c3112ea3a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_conv\_callback4@{\_curl\_conv\_callback4}}
+\index{\_curl\_conv\_callback4@{\_curl\_conv\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_conv\_callback4}{\_curl\_conv\_callback4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+conv\+\_\+callback4) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t length)}
+
+\Hypertarget{a00137_a905fe54d1b3b440e018416beec106189}\label{a00137_a905fe54d1b3b440e018416beec106189} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback1@{\_curl\_debug\_callback1}}
+\index{\_curl\_debug\_callback1@{\_curl\_debug\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback1}{\_curl\_debug\_callback1}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback1) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a3642779ad78ad0b93bef0cd3fbe34f0b}\label{a00137_a3642779ad78ad0b93bef0cd3fbe34f0b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback2@{\_curl\_debug\_callback2}}
+\index{\_curl\_debug\_callback2@{\_curl\_debug\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback2}{\_curl\_debug\_callback2}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback2) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a3db426b2a5b83fd90d67d9657a9ca2a9}\label{a00137_a3db426b2a5b83fd90d67d9657a9ca2a9} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback3@{\_curl\_debug\_callback3}}
+\index{\_curl\_debug\_callback3@{\_curl\_debug\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback3}{\_curl\_debug\_callback3}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback3) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a817b3e1f4c7849792288cc9ebc7c407c}\label{a00137_a817b3e1f4c7849792288cc9ebc7c407c} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback4@{\_curl\_debug\_callback4}}
+\index{\_curl\_debug\_callback4@{\_curl\_debug\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback4}{\_curl\_debug\_callback4}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback4) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_afe2ada9913295617d1b1255d025c649a}\label{a00137_afe2ada9913295617d1b1255d025c649a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback5@{\_curl\_debug\_callback5}}
+\index{\_curl\_debug\_callback5@{\_curl\_debug\_callback5}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback5}{\_curl\_debug\_callback5}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback5) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a8bb900b90c8e024cab1089db1e5646a4}\label{a00137_a8bb900b90c8e024cab1089db1e5646a4} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback6@{\_curl\_debug\_callback6}}
+\index{\_curl\_debug\_callback6@{\_curl\_debug\_callback6}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback6}{\_curl\_debug\_callback6}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback6) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a22eff22e058a10231ff96a540f2b7d65}\label{a00137_a22eff22e058a10231ff96a540f2b7d65} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback7@{\_curl\_debug\_callback7}}
+\index{\_curl\_debug\_callback7@{\_curl\_debug\_callback7}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback7}{\_curl\_debug\_callback7}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback7) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a9970f7cec319006f1bb7f73633a88a70}\label{a00137_a9970f7cec319006f1bb7f73633a88a70} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_debug\_callback8@{\_curl\_debug\_callback8}}
+\index{\_curl\_debug\_callback8@{\_curl\_debug\_callback8}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_debug\_callback8}{\_curl\_debug\_callback8}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+debug\+\_\+callback8) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a9704d2633927f77efaa3e3c6f1c23a14}{curl\+\_\+infotype}}, const unsigned char \texorpdfstring{$\ast$}{*}, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_aec8e2c9251f04a8c7b51664ba0369269}\label{a00137_aec8e2c9251f04a8c7b51664ba0369269} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ioctl\_callback1@{\_curl\_ioctl\_callback1}}
+\index{\_curl\_ioctl\_callback1@{\_curl\_ioctl\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ioctl\_callback1}{\_curl\_ioctl\_callback1}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ioctl\+\_\+callback1) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a9dac65f9b65c11726cb5048d31292200}\label{a00137_a9dac65f9b65c11726cb5048d31292200} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ioctl\_callback2@{\_curl\_ioctl\_callback2}}
+\index{\_curl\_ioctl\_callback2@{\_curl\_ioctl\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ioctl\_callback2}{\_curl\_ioctl\_callback2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ioctl\+\_\+callback2) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a55d2ffa0e79788cc5409349296b6fe51}\label{a00137_a55d2ffa0e79788cc5409349296b6fe51} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ioctl\_callback3@{\_curl\_ioctl\_callback3}}
+\index{\_curl\_ioctl\_callback3@{\_curl\_ioctl\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ioctl\_callback3}{\_curl\_ioctl\_callback3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ioctl\+\_\+callback3) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}}, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a01acc993bc13db9d0aa10e70039502f5}\label{a00137_a01acc993bc13db9d0aa10e70039502f5} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ioctl\_callback4@{\_curl\_ioctl\_callback4}}
+\index{\_curl\_ioctl\_callback4@{\_curl\_ioctl\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ioctl\_callback4}{\_curl\_ioctl\_callback4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_aed08c6203949f0b52a655e094f241920}{curlioerr}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ioctl\+\_\+callback4) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_a3781556120d1f44d126ef1cf50019cf4}{curliocmd}}, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a819bb252904432a41f3a5f92c3b9b549}\label{a00137_a819bb252904432a41f3a5f92c3b9b549} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_opensocket\_callback1@{\_curl\_opensocket\_callback1}}
+\index{\_curl\_opensocket\_callback1@{\_curl\_opensocket\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_opensocket\_callback1}{\_curl\_opensocket\_callback1}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+opensocket\+\_\+callback1) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a6df6792a0a55cef77b0da1df205043e8}\label{a00137_a6df6792a0a55cef77b0da1df205043e8} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_opensocket\_callback2@{\_curl\_opensocket\_callback2}}
+\index{\_curl\_opensocket\_callback2@{\_curl\_opensocket\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_opensocket\_callback2}{\_curl\_opensocket\_callback2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+opensocket\+\_\+callback2) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, const struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a1c1d3a193d4500643fbdb6b1e386f791}\label{a00137_a1c1d3a193d4500643fbdb6b1e386f791} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_opensocket\_callback3@{\_curl\_opensocket\_callback3}}
+\index{\_curl\_opensocket\_callback3@{\_curl\_opensocket\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_opensocket\_callback3}{\_curl\_opensocket\_callback3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+opensocket\+\_\+callback3) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_adecf08e4c0d78c6d51309b12664b0737}\label{a00137_adecf08e4c0d78c6d51309b12664b0737} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_opensocket\_callback4@{\_curl\_opensocket\_callback4}}
+\index{\_curl\_opensocket\_callback4@{\_curl\_opensocket\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_opensocket\_callback4}{\_curl\_opensocket\_callback4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+opensocket\+\_\+callback4) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}}, const struct \mbox{\hyperlink{a00929}{curl\+\_\+sockaddr}} \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_adbcff69be30b73e3d35f7b7d0d5bd11e}\label{a00137_adbcff69be30b73e3d35f7b7d0d5bd11e} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_progress\_callback1@{\_curl\_progress\_callback1}}
+\index{\_curl\_progress\_callback1@{\_curl\_progress\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_progress\_callback1}{\_curl\_progress\_callback1}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+progress\+\_\+callback1) (void \texorpdfstring{$\ast$}{*}, double, double, double, double)}
+
+\Hypertarget{a00137_a941c9ed8a0fa75c1dfd6cff36c2f829b}\label{a00137_a941c9ed8a0fa75c1dfd6cff36c2f829b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_progress\_callback2@{\_curl\_progress\_callback2}}
+\index{\_curl\_progress\_callback2@{\_curl\_progress\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_progress\_callback2}{\_curl\_progress\_callback2}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+progress\+\_\+callback2) (const void \texorpdfstring{$\ast$}{*}, double, double, double, double)}
+
+\Hypertarget{a00137_aacfd185dafa598f8b5df1eaa1ac900b0}\label{a00137_aacfd185dafa598f8b5df1eaa1ac900b0} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback1@{\_curl\_read\_callback1}}
+\index{\_curl\_read\_callback1@{\_curl\_read\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback1}{\_curl\_read\_callback1}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback1) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a576c249c3991b21165876ca119d64d62}\label{a00137_a576c249c3991b21165876ca119d64d62} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback2@{\_curl\_read\_callback2}}
+\index{\_curl\_read\_callback2@{\_curl\_read\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback2}{\_curl\_read\_callback2}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback2) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a82a99add955b5c643b3f1ea170b8e554}\label{a00137_a82a99add955b5c643b3f1ea170b8e554} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback3@{\_curl\_read\_callback3}}
+\index{\_curl\_read\_callback3@{\_curl\_read\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback3}{\_curl\_read\_callback3}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback3) (char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_aafe8965a018fd6d8b344ce3eea6a2c6b}\label{a00137_aafe8965a018fd6d8b344ce3eea6a2c6b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback4@{\_curl\_read\_callback4}}
+\index{\_curl\_read\_callback4@{\_curl\_read\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback4}{\_curl\_read\_callback4}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback4) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a9dd031c624308e056537f4751e9bd5ef}\label{a00137_a9dd031c624308e056537f4751e9bd5ef} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback5@{\_curl\_read\_callback5}}
+\index{\_curl\_read\_callback5@{\_curl\_read\_callback5}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback5}{\_curl\_read\_callback5}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback5) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a35bde23c703bc5ae3657b6a89c519a5d}\label{a00137_a35bde23c703bc5ae3657b6a89c519a5d} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_read\_callback6@{\_curl\_read\_callback6}}
+\index{\_curl\_read\_callback6@{\_curl\_read\_callback6}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_read\_callback6}{\_curl\_read\_callback6}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+read\+\_\+callback6) (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_adebe91c0cf6ae015cc98752e4fe2c363}\label{a00137_adebe91c0cf6ae015cc98752e4fe2c363} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_seek\_callback1@{\_curl\_seek\_callback1}}
+\index{\_curl\_seek\_callback1@{\_curl\_seek\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_seek\_callback1}{\_curl\_seek\_callback1}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+seek\+\_\+callback1) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}, int)}
+
+\Hypertarget{a00137_a704fb61f39b18a5fde22c82d59b60865}\label{a00137_a704fb61f39b18a5fde22c82d59b60865} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_seek\_callback2@{\_curl\_seek\_callback2}}
+\index{\_curl\_seek\_callback2@{\_curl\_seek\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_seek\_callback2}{\_curl\_seek\_callback2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+seek\+\_\+callback2) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}, int)}
+
+\Hypertarget{a00137_a8095bc0db8d83538b34e95870b2ae70a}\label{a00137_a8095bc0db8d83538b34e95870b2ae70a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_sockopt\_callback1@{\_curl\_sockopt\_callback1}}
+\index{\_curl\_sockopt\_callback1@{\_curl\_sockopt\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_sockopt\_callback1}{\_curl\_sockopt\_callback1}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+sockopt\+\_\+callback1) (void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}})}
+
+\Hypertarget{a00137_acdd8dd1aa1817d2dd29e808b90a40a3a}\label{a00137_acdd8dd1aa1817d2dd29e808b90a40a3a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_sockopt\_callback2@{\_curl\_sockopt\_callback2}}
+\index{\_curl\_sockopt\_callback2@{\_curl\_sockopt\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_sockopt\_callback2}{\_curl\_sockopt\_callback2}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+sockopt\+\_\+callback2) (const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}}, \mbox{\hyperlink{a00113_ae319cab849319fca1b222de282506ad9}{curlsocktype}})}
+
+\Hypertarget{a00137_a7573635c946bccd6cf9af1186501c9f2}\label{a00137_a7573635c946bccd6cf9af1186501c9f2} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback1@{\_curl\_ssl\_ctx\_callback1}}
+\index{\_curl\_ssl\_ctx\_callback1@{\_curl\_ssl\_ctx\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback1}{\_curl\_ssl\_ctx\_callback1}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_abbd25dcbb87d03ee1aaae5be3d988b4c}\label{a00137_abbd25dcbb87d03ee1aaae5be3d988b4c} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback2@{\_curl\_ssl\_ctx\_callback2}}
+\index{\_curl\_ssl\_ctx\_callback2@{\_curl\_ssl\_ctx\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback2}{\_curl\_ssl\_ctx\_callback2}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback2) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a51942fbbfdca41bfdf71dd7eb2656d71}\label{a00137_a51942fbbfdca41bfdf71dd7eb2656d71} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback3@{\_curl\_ssl\_ctx\_callback3}}
+\index{\_curl\_ssl\_ctx\_callback3@{\_curl\_ssl\_ctx\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback3}{\_curl\_ssl\_ctx\_callback3}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback3) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_acd15cc21030062058bc5b01a4c448ec9}\label{a00137_acd15cc21030062058bc5b01a4c448ec9} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback4@{\_curl\_ssl\_ctx\_callback4}}
+\index{\_curl\_ssl\_ctx\_callback4@{\_curl\_ssl\_ctx\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback4}{\_curl\_ssl\_ctx\_callback4}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00113_af0691941698240652e0a391394217951}{CURLcode}}(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback4) (\mbox{\hyperlink{a00113_ace655e3633b6533591283994d6b5cdda}{CURL}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_ab603023e8514bafb4f44a5f7830beda0}\label{a00137_ab603023e8514bafb4f44a5f7830beda0} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback5@{\_curl\_ssl\_ctx\_callback5}}
+\index{\_curl\_ssl\_ctx\_callback5@{\_curl\_ssl\_ctx\_callback5}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback5}{\_curl\_ssl\_ctx\_callback5}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_ab603023e8514bafb4f44a5f7830beda0}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback5}}}
+
+\Hypertarget{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}\label{a00137_a6c4618e2a8fc4dac60df619ad8679b5a} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback6@{\_curl\_ssl\_ctx\_callback6}}
+\index{\_curl\_ssl\_ctx\_callback6@{\_curl\_ssl\_ctx\_callback6}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback6}{\_curl\_ssl\_ctx\_callback6}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_a6c4618e2a8fc4dac60df619ad8679b5a}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback6}}}
+
+\Hypertarget{a00137_ae2ebdce539e2b1b1348bca8c74831d86}\label{a00137_ae2ebdce539e2b1b1348bca8c74831d86} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback7@{\_curl\_ssl\_ctx\_callback7}}
+\index{\_curl\_ssl\_ctx\_callback7@{\_curl\_ssl\_ctx\_callback7}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback7}{\_curl\_ssl\_ctx\_callback7}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_ae2ebdce539e2b1b1348bca8c74831d86}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback7}}}
+
+\Hypertarget{a00137_aeea9c5ad63d27b7ce77216a872b737c6}\label{a00137_aeea9c5ad63d27b7ce77216a872b737c6} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_ssl\_ctx\_callback8@{\_curl\_ssl\_ctx\_callback8}}
+\index{\_curl\_ssl\_ctx\_callback8@{\_curl\_ssl\_ctx\_callback8}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_ssl\_ctx\_callback8}{\_curl\_ssl\_ctx\_callback8}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{a00137_a7573635c946bccd6cf9af1186501c9f2}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback1}} \mbox{\hyperlink{a00137_aeea9c5ad63d27b7ce77216a872b737c6}{\+\_\+curl\+\_\+ssl\+\_\+ctx\+\_\+callback8}}}
+
+\Hypertarget{a00137_a669540a16ae7f1648d735c63d96e1355}\label{a00137_a669540a16ae7f1648d735c63d96e1355} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback1@{\_curl\_write\_callback1}}
+\index{\_curl\_write\_callback1@{\_curl\_write\_callback1}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback1}{\_curl\_write\_callback1}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback1) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_acd7fd194408321ca707af083fee0b99b}\label{a00137_acd7fd194408321ca707af083fee0b99b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback2@{\_curl\_write\_callback2}}
+\index{\_curl\_write\_callback2@{\_curl\_write\_callback2}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback2}{\_curl\_write\_callback2}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback2) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a8841fa71ec5ea92a87c7b2e666267c10}\label{a00137_a8841fa71ec5ea92a87c7b2e666267c10} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback3@{\_curl\_write\_callback3}}
+\index{\_curl\_write\_callback3@{\_curl\_write\_callback3}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback3}{\_curl\_write\_callback3}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback3) (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a390241e810677d2f53c3e0c00ac78059}\label{a00137_a390241e810677d2f53c3e0c00ac78059} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback4@{\_curl\_write\_callback4}}
+\index{\_curl\_write\_callback4@{\_curl\_write\_callback4}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback4}{\_curl\_write\_callback4}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback4) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a3cede95e6bd530a0b60bf73ef043eb9b}\label{a00137_a3cede95e6bd530a0b60bf73ef043eb9b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback5@{\_curl\_write\_callback5}}
+\index{\_curl\_write\_callback5@{\_curl\_write\_callback5}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback5}{\_curl\_write\_callback5}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback5) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, const void \texorpdfstring{$\ast$}{*})}
+
+\Hypertarget{a00137_a379005b0ccb12abf8d0150e2241e1328}\label{a00137_a379005b0ccb12abf8d0150e2241e1328} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!\_curl\_write\_callback6@{\_curl\_write\_callback6}}
+\index{\_curl\_write\_callback6@{\_curl\_write\_callback6}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{\_curl\_write\_callback6}{\_curl\_write\_callback6}}
+{\footnotesize\ttfamily typedef size\+\_\+t(\texorpdfstring{$\ast$}{*} \+\_\+curl\+\_\+write\+\_\+callback6) (const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, FILE \texorpdfstring{$\ast$}{*})}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00137_ace953e7cd427d107372e7e2ebc003ce9}\label{a00137_ace953e7cd427d107372e7e2ebc003ce9} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00957}{curl\+\_\+certinfo}} \texorpdfstring{$\ast$}{*}for this info CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+socket}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \mbox{\hyperlink{a00113_adb5a46d02359d2379dc7e0904c987828}{curl\+\_\+socket\+\_\+t}} for this info\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a52226bf43316a90dd13f7b7ce7874c35}\label{a00137_a52226bf43316a90dd13f7b7ce7874c35} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}for this info CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+curl\+\_\+tlssesssioninfo}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \"{} \"{}\textquotesingle{}struct \mbox{\hyperlink{a00961}{curl\+\_\+tlssessioninfo}} \texorpdfstring{$\ast$}{*}\textquotesingle{} for this info\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a68b239af8f093fb103760b2cb4746ac6}\label{a00137_a68b239af8f093fb103760b2cb4746ac6} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_a978f4e7a75943f3c2a518eb72da213f2}{curl\+\_\+easy\+\_\+getinfo}} expects a pointer to long for this info CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+double}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to double for this info\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_aa70aa5f973a963b34551c7401667e3dd}\label{a00137_aa70aa5f973a963b34551c7401667e3dd} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a746d4e7ba89fe28a008e91cffb343ef0}{CURLSH}} \texorpdfstring{$\ast$}{*}argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+getinfo\+\_\+err\+\_\+string}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+getinfo expects a pointer to \textquotesingle{}char \texorpdfstring{$\ast$}{*}\textquotesingle{} for this info\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_af0481f94c69a26d67cfcc5c9981a6410}\label{a00137_af0481f94c69a26d67cfcc5c9981a6410} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+cb\+\_\+data}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}private data pointer as argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_ac5887d95c987537cfb61884d91124db8}\label{a00137_ac5887d95c987537cfb61884d91124db8} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+conv\+\_\+cb}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_acb230bf6dbf7bcb6e4e8740ea42ca3b3}{curl\+\_\+conv\+\_\+callback}} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a075ec81524259fbe2484fb8c75eea200}\label{a00137_a075ec81524259fbe2484fb8c75eea200} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+httpost}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}struct \mbox{\hyperlink{a00917}{curl\+\_\+httppost}} \texorpdfstring{$\ast$}{*}\textquotesingle{} \"{} \"{}argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a5e6885f6025464634708bbc764ba6771}\label{a00137_a5e6885f6025464634708bbc764ba6771} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a void \texorpdfstring{$\ast$}{*}or char \texorpdfstring{$\ast$}{*}argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad6e2fa241954eacd6b25bae1b23f9364}{curl\+\_\+mime}} \texorpdfstring{$\ast$}{*}argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+curl\+\_\+slist}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}struct \mbox{\hyperlink{a00949}{curl\+\_\+slist}} \texorpdfstring{$\ast$}{*}\textquotesingle{} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a0af5dfaa0747b1397c7791d28aaef8e2}\label{a00137_a0af5dfaa0747b1397c7791d28aaef8e2} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+debug\+\_\+cb}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_ad967e4ffcbaf6c9dc7105b798d0f5b32}{curl\+\_\+debug\+\_\+callback}} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_aa35a1d746973541bca2fe6ad2c1ae220}\label{a00137_aa35a1d746973541bca2fe6ad2c1ae220} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af0a8c6d62890980b259658d6a4b5454a}{curl\+\_\+progress\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_af115314713f05549afb04f2690fe3799}{curl\+\_\+ssl\+\_\+ctx\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a8ea5d0b350bebdf47cfb237e7caac14a}{curl\+\_\+seek\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a char buffer of \mbox{\hyperlink{a00113_a9b030d9fa7b7487eb12d53c6188a2bde}{CURL\+\_\+\+ERROR\+\_\+\+SIZE}} as argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+\+FILE}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \textquotesingle{}FILE \texorpdfstring{$\ast$}{*}\textquotesingle{} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a110c810f9ad3c8135fb30cf826a8a64b}\label{a00137_a110c810f9ad3c8135fb30cf826a8a64b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+ioctl\+\_\+cb}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \mbox{\hyperlink{a00113_ae0524f6ec082005e39eb275c71c59a3b}{curl\+\_\+ioctl\+\_\+callback}} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_afdbc1f35df7f65ded9402546e7208dc4}\label{a00137_afdbc1f35df7f65ded9402546e7208dc4} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+long}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a long argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_abe5f6cc9046727e51d67688a93f06e8b}\label{a00137_abe5f6cc9046727e51d67688a93f06e8b} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a7516630ec17f247697dd3272be7ada74}{curl\+\_\+read\+\_\+callback}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_a687bc180c1842bae4d28f8803c307c70}{curl\+\_\+sockopt\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+opensocket\+\_\+cb}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}\mbox{\hyperlink{a00113_a1b8b8f3e1a4e538a6bb1dd83a3388547}{curl\+\_\+opensocket\+\_\+callback}} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_a535e432c14ddb6253152a941592941ad}\label{a00137_a535e432c14ddb6253152a941592941ad} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00113_ad65e62dcde45b356254b0f25f38dd802}{curl\+\_\+write\+\_\+callback}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+resolver\+\_\+start\+\_\+callback}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}\mbox{\hyperlink{a00113_a9cfebb6f48d46c45ca37ff3db2f6ce6f}{curl\+\_\+resolver\+\_\+start\+\_\+callback}} argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00137_ab5fc4d0a570d5dc086d2050fe827381e}\label{a00137_ab5fc4d0a570d5dc086d2050fe827381e} 
+\index{typecheck-\/gcc.h@{typecheck-\/gcc.h}!CURLWARNING@{CURLWARNING}}
+\index{CURLWARNING@{CURLWARNING}!typecheck-\/gcc.h@{typecheck-\/gcc.h}}
+\doxysubsubsection{\texorpdfstring{CURLWARNING()}{CURLWARNING()}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_af8d527555aeac344caa3754445c6ecba}{curl\+\_\+easy\+\_\+setopt}} expects a \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}} argument for this option CURLWARNING (\begin{DoxyParamCaption}\item[{\+\_\+curl\+\_\+easy\+\_\+setopt\+\_\+err\+\_\+string}]{,  }\item[{\"{}curl\+\_\+easy\+\_\+setopt expects a \"{} \"{}string (\textquotesingle{}char \texorpdfstring{$\ast$}{*}\textquotesingle{} or char\mbox{[}$\,$\mbox{]}) argument for this option\"{}}]{ }\end{DoxyParamCaption})}
+

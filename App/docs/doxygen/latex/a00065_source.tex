@@ -1,0 +1,85 @@
+\doxysection{multipart.\+h}
+\hypertarget{a00065_source}{}\label{a00065_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/multipart.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/multipart.h}}
+\mbox{\hyperlink{a00065}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_MULTIPART\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_MULTIPART\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00777}{File}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00777_adc2920e443bac2f9b8851041f98bce98}{File}}(std::string\&\&\ p\_filepath)\ :\ \mbox{\hyperlink{a00777_adc28c9e4c4b34b4694884558bdb64acd}{filepath}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filepath))\ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00777_a2b5da2d0ff44b68958e67a15439f1a8e}{File}}(\textcolor{keyword}{const}\ std::string\&\ p\_filepath)\ :\ \mbox{\hyperlink{a00777_adc28c9e4c4b34b4694884558bdb64acd}{filepath}}(p\_filepath)\ \{\}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{a00777_adc28c9e4c4b34b4694884558bdb64acd}{filepath}};}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00781}{Buffer}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\_t}}\ =\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{a00781_aaa0ae2c19323b635e34437d71f93af71}{Buffer}}(Iterator\ begin,\ Iterator\ end,\ std::string\&\&\ p\_filename)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ignored\ here\ since\ libcurl\ reqires\ a\ long.}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ There\ is\ also\ no\ way\ around\ the\ reinterpret\_cast.}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/runtime-\/int,\ cppcoreguidelines-\/pro-\/type-\/reinterpret-\/cast)}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00781_a44d2b524dfc543480c3fae25bcf55c33}{data}}\{reinterpret\_cast<\mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\_t}}>(\&(*begin))\},\ \mbox{\hyperlink{a00781_a49c92d4e3f64843666a5946e0171e249}{datalen}}\{static\_cast<long>(}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00667}{std}}::distance(begin,\ end))\},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00781_a8754f2b96831c8fc125d7a5821c0e066}{filename}}(\mbox{\hyperlink{a00667}{std}}::move(p\_filename))\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00781_a0cb4fd0074c304d9ebe702558ba8f4b3}{is\_random\_access\_iterator}}(begin,\ end);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(*begin)\ ==\ 1,\ \textcolor{stringliteral}{"{}only\ byte\ buffers\ can\ be\ used"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_same<typename\ std::iterator\_traits<Iterator>::iterator\_category,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::random\_access\_iterator\_tag>::value>::type}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a00781_a0cb4fd0074c304d9ebe702558ba8f4b3}{is\_random\_access\_iterator}}(Iterator\ \textcolor{comment}{/*\ begin\ */},\ Iterator\ \textcolor{comment}{/*\ end\ */})\ \{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{data\_t}}\ \mbox{\hyperlink{a00781_a44d2b524dfc543480c3fae25bcf55c33}{data}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Ignored\ here\ since\ libcurl\ reqires\ a\ long:}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/runtime-\/int)}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00781_a49c92d4e3f64843666a5946e0171e249}{datalen}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{a00781_a8754f2b96831c8fc125d7a5821c0e066}{filename}};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a00785}{Part}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00785_a2faed268c6a2546fb48f5ea9213cabe7}{Part}}(\textcolor{keyword}{const}\ std::string\&\ p\_name,\ \textcolor{keyword}{const}\ std::string\&\ p\_value,\ \textcolor{keyword}{const}\ std::string\&\ p\_content\_type\ =\ \{\})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00785_a365f16fdd5d600e319e1a0ae4b1ed9fd}{name}}\{p\_name\},\ \mbox{\hyperlink{a00785_acb61e9a9123567de71b82659d7b432ae}{value}}\{p\_value\},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00785_a922e1f27eeebe1915b369d69c0870a52}{content\_type}}\{p\_content\_type\},\ \mbox{\hyperlink{a00785_a4deab344a64ce2df554f2fd985d4e292}{is\_file}}\{false\},\ \mbox{\hyperlink{a00785_a6be200f882ee08a66c25247471ed0d9b}{is\_buffer}}\{false\}\ \{\}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a00785_a34779f8e6e6d45e8965c789dc5dad1fb}{Part}}(\textcolor{keyword}{const}\ std::string\&\ p\_name,\ \textcolor{keyword}{const}\ std::int32\_t\&\ p\_value,\ \textcolor{keyword}{const}\ std::string\&\ p\_content\_type\ =\ \{\})}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00785_a365f16fdd5d600e319e1a0ae4b1ed9fd}{name}}\{p\_name\},\ \mbox{\hyperlink{a00785_acb61e9a9123567de71b82659d7b432ae}{value}}\{\mbox{\hyperlink{a00667}{std}}::to\_string(p\_value)\},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00785_a922e1f27eeebe1915b369d69c0870a52}{content\_type}}\{p\_content\_type\},\ \mbox{\hyperlink{a00785_a4deab344a64ce2df554f2fd985d4e292}{is\_file}}\{false\},\ \mbox{\hyperlink{a00785_a6be200f882ee08a66c25247471ed0d9b}{is\_buffer}}\{false\}\ \{\}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a00785_ac3679d7ab661c43acf01e53f56db5582}{Part}}(\textcolor{keyword}{const}\ std::string\&\ p\_name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00777}{File}}\&\ file,\ \textcolor{keyword}{const}\ std::string\&\ p\_content\_type\ =\ \{\})}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00785_a365f16fdd5d600e319e1a0ae4b1ed9fd}{name}}\{p\_name\},\ \mbox{\hyperlink{a00785_acb61e9a9123567de71b82659d7b432ae}{value}}\{file.filepath\},}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00785_a922e1f27eeebe1915b369d69c0870a52}{content\_type}}\{p\_content\_type\},\ \mbox{\hyperlink{a00785_a4deab344a64ce2df554f2fd985d4e292}{is\_file}}\{true\},\ \mbox{\hyperlink{a00785_a6be200f882ee08a66c25247471ed0d9b}{is\_buffer}}\{false\}\ \{\}}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a00785_aceb976936169bdbca8093dc985da1c72}{Part}}(\textcolor{keyword}{const}\ std::string\&\ p\_name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00781}{Buffer}}\&\ buffer,\ \textcolor{keyword}{const}\ std::string\&\ p\_content\_type\ =\ \{\})}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00785_a365f16fdd5d600e319e1a0ae4b1ed9fd}{name}}\{p\_name\},\ \mbox{\hyperlink{a00785_acb61e9a9123567de71b82659d7b432ae}{value}}\{buffer.filename\},\ \mbox{\hyperlink{a00785_a922e1f27eeebe1915b369d69c0870a52}{content\_type}}\{p\_content\_type\},\ \mbox{\hyperlink{a00785_a4af3618fb049bdf135a4fc966fa94de3}{data}}\{buffer.\mbox{\hyperlink{a00785_a4af3618fb049bdf135a4fc966fa94de3}{data}}\},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00785_ac65e7c41c33fd06b2a20401a5e061501}{datalen}}\{buffer.\mbox{\hyperlink{a00785_ac65e7c41c33fd06b2a20401a5e061501}{datalen}}\},\ \mbox{\hyperlink{a00785_a4deab344a64ce2df554f2fd985d4e292}{is\_file}}\{false\},\ \mbox{\hyperlink{a00785_a6be200f882ee08a66c25247471ed0d9b}{is\_buffer}}\{true\}\ \{\}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ std::string\ \mbox{\hyperlink{a00785_a365f16fdd5d600e319e1a0ae4b1ed9fd}{name}};}
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ \mbox{\hyperlink{a00785_acb61e9a9123567de71b82659d7b432ae}{value}};}
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ \mbox{\hyperlink{a00785_a922e1f27eeebe1915b369d69c0870a52}{content\_type}};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{a00781_ad6ec4a159cd1c5f45db32f27dac92050}{Buffer::data\_t}}\ \mbox{\hyperlink{a00785_a4af3618fb049bdf135a4fc966fa94de3}{data}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Ignored\ here\ since\ libcurl\ reqires\ a\ long:}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/runtime-\/int)}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00785_ac65e7c41c33fd06b2a20401a5e061501}{datalen}}\{0\};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00785_a4deab344a64ce2df554f2fd985d4e292}{is\_file}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00785_a6be200f882ee08a66c25247471ed0d9b}{is\_buffer}};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00789}{Multipart}}\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{a00789_ab1f9937ee82a8814ead9f8474b9a9658}{Multipart}}(\textcolor{keyword}{const}\ std::initializer\_list<Part>\&\ \mbox{\hyperlink{a00789_aa4c245c8e8e73021312826651dcc73c5}{parts}});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ std::vector<Part>\ \mbox{\hyperlink{a00789_aa4c245c8e8e73021312826651dcc73c5}{parts}};}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

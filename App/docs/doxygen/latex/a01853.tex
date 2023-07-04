@@ -1,0 +1,295 @@
+\doxysection{sf\+::Socket\+Selector Class Reference}
+\hypertarget{a01853}{}\label{a01853}\index{sf::SocketSelector@{sf::SocketSelector}}
+
+
+Multiplexer that allows to read from multiple sockets.  
+
+
+
+
+{\ttfamily \#include $<$Socket\+Selector.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01853_ade952013232802ff7b9b33668f8d2096}{add}} (\mbox{\hyperlink{a01849}{Socket}} \&socket)
+\begin{DoxyCompactList}\small\item\em Add a new socket to the selector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01853_a76e650acb0199d4be91e90a493fbc91a}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Remove all the sockets stored in the selector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01853_a917a4bac708290a6782e6686fd3bf889}{is\+Ready}} (\mbox{\hyperlink{a01849}{Socket}} \&socket) const
+\begin{DoxyCompactList}\small\item\em Test a socket to know if it is ready to receive data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01853}{Socket\+Selector}} \& \mbox{\hyperlink{a01853_af7247f1c8badd43932f3adcbc1fec7e8}{operator=}} (const \mbox{\hyperlink{a01853}{Socket\+Selector}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01853_a98b6ab693a65b82caa375639232357c1}{remove}} (\mbox{\hyperlink{a01849}{Socket}} \&socket)
+\begin{DoxyCompactList}\small\item\em Remove a socket from the selector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01853_a741959c5158aeb1e4457cad47d90f76b}{Socket\+Selector}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01853_a50b1b955eb7ecb2e7c2764f3f4722fbf}{Socket\+Selector}} (const \mbox{\hyperlink{a01853}{Socket\+Selector}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01853_a9cfda5475f17925e65889394d70af702}{wait}} (\mbox{\hyperlink{a01933}{Time}} timeout=\mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero}})
+\begin{DoxyCompactList}\small\item\em Wait until one or more sockets are ready to receive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01853_a9069cd61208260b8ed9cf233afa1f73d}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Selector}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Socket\+Selector\+Impl \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01853_a5867d4d088758ef472f1cb8f5d08e053}{m\+\_\+impl}}
+\begin{DoxyCompactList}\small\item\em Opaque pointer to the implementation (which requires OS-\/specific types) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multiplexer that allows to read from multiple sockets. 
+
+\doxylink{a01849}{Socket} selectors provide a way to wait until some data is available on a set of sockets, instead of just one. This is convenient when you have multiple sockets that may possibly receive data, but you don\textquotesingle{}t know which one will be ready first. In particular, it avoids to use a thread for each socket; with selectors, a single thread can handle all the sockets.
+
+All types of sockets can be used in a selector\+: \begin{DoxyItemize}
+\item \doxylink{a01857}{sf\+::\+Tcp\+Listener} \item \doxylink{a01861}{sf\+::\+Tcp\+Socket} \item \doxylink{a01869}{sf\+::\+Udp\+Socket}\end{DoxyItemize}
+A selector doesn\textquotesingle{}t store its own copies of the sockets (socket classes are not copyable anyway), it simply keeps a reference to the original sockets that you pass to the \"{}add\"{} function. Therefore, you can\textquotesingle{}t use the selector as a socket container, you must store them outside and make sure that they are alive as long as they are used in the selector.
+
+Using a selector is simple\+: \begin{DoxyItemize}
+\item populate the selector with all the sockets that you want to observe \item make it wait until there is data available on any of the sockets \item test each socket to find out which ones are ready\end{DoxyItemize}
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ socket\ to\ listen\ to\ new\ connections}}
+\DoxyCodeLine{\mbox{\hyperlink{a01857}{sf::TcpListener}}\ listener;}
+\DoxyCodeLine{listener.\mbox{\hyperlink{a01857_a9504758ea3570e62cb20b209c11776a1}{listen}}(55001);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ list\ to\ store\ the\ future\ clients}}
+\DoxyCodeLine{std::list<sf::TcpSocket*>\ clients;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ selector}}
+\DoxyCodeLine{\mbox{\hyperlink{a01853}{sf::SocketSelector}}\ selector;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Add\ the\ listener\ to\ the\ selector}}
+\DoxyCodeLine{selector.\mbox{\hyperlink{a01853_ade952013232802ff7b9b33668f8d2096}{add}}(listener);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Endless\ loop\ that\ waits\ for\ new\ connections}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (running)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Make\ the\ selector\ wait\ for\ data\ on\ any\ socket}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (selector.\mbox{\hyperlink{a01853_a9cfda5475f17925e65889394d70af702}{wait}}())}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ the\ listener}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selector.\mbox{\hyperlink{a01853_a917a4bac708290a6782e6686fd3bf889}{isReady}}(listener))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ listener\ is\ ready:\ there\ is\ a\ pending\ connection}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01861}{sf::TcpSocket}}*\ client\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{a01861}{sf::TcpSocket}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (listener.\mbox{\hyperlink{a01857_ae2c83ce5a64d50b68180c46bef0a7346}{accept}}(*client)\ ==\ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}{sf::Socket::Done}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ new\ client\ to\ the\ clients\ list}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clients.push\_back(client);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ new\ client\ to\ the\ selector\ so\ that\ we\ will}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ be\ notified\ when\ he\ sends\ something}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selector.\mbox{\hyperlink{a01853_ade952013232802ff7b9b33668f8d2096}{add}}(*client);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error,\ we\ won't\ get\ a\ new\ connection,\ delete\ the\ socket}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ client;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ listener\ socket\ is\ not\ ready,\ test\ all\ other\ sockets\ (the\ clients)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::list<sf::TcpSocket*>::iterator\ it\ =\ clients.begin();\ it\ !=\ clients.end();\ ++it)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01861}{sf::TcpSocket}}\&\ client\ =\ **it;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selector.\mbox{\hyperlink{a01853_a917a4bac708290a6782e6686fd3bf889}{isReady}}(client))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ client\ has\ sent\ some\ data,\ we\ can\ receive\ it}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01845}{sf::Packet}}\ packet;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client.\mbox{\hyperlink{a01861_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(packet)\ ==\ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dca1de3a85bc56d3ae85b3d0f3cfd04ae90}{sf::Socket::Done}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01849}{sf\+::\+Socket} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01853_a741959c5158aeb1e4457cad47d90f76b}\label{a01853_a741959c5158aeb1e4457cad47d90f76b} 
+\index{sf::SocketSelector@{sf::SocketSelector}!SocketSelector@{SocketSelector}}
+\index{SocketSelector@{SocketSelector}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{SocketSelector()}{SocketSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Socket\+Selector\+::\+Socket\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01853_a50b1b955eb7ecb2e7c2764f3f4722fbf}\label{a01853_a50b1b955eb7ecb2e7c2764f3f4722fbf} 
+\index{sf::SocketSelector@{sf::SocketSelector}!SocketSelector@{SocketSelector}}
+\index{SocketSelector@{SocketSelector}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{SocketSelector()}{SocketSelector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sf\+::\+Socket\+Selector\+::\+Socket\+Selector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01853}{Socket\+Selector}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & Instance to copy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01853_a9069cd61208260b8ed9cf233afa1f73d}\label{a01853_a9069cd61208260b8ed9cf233afa1f73d} 
+\index{sf::SocketSelector@{sf::SocketSelector}!````~SocketSelector@{\texorpdfstring{$\sim$}{\string~}SocketSelector}}
+\index{````~SocketSelector@{\texorpdfstring{$\sim$}{\string~}SocketSelector}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SocketSelector()}{\string~SocketSelector()}}
+{\footnotesize\ttfamily sf\+::\+Socket\+Selector\+::\texorpdfstring{$\sim$}{\string~}\+Socket\+Selector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01853_ade952013232802ff7b9b33668f8d2096}\label{a01853_ade952013232802ff7b9b33668f8d2096} 
+\index{sf::SocketSelector@{sf::SocketSelector}!add@{add}}
+\index{add@{add}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+Selector\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01849}{Socket}} \&}]{socket }\end{DoxyParamCaption})}
+
+
+
+Add a new socket to the selector. 
+
+This function keeps a weak reference to the socket, so you have to make sure that the socket is not destroyed while it is stored in the selector. This function does nothing if the socket is not valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Reference to the socket to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01853_a98b6ab693a65b82caa375639232357c1}{remove}, \doxylink{a01853_a76e650acb0199d4be91e90a493fbc91a}{clear} 
+\end{DoxySeeAlso}
+\Hypertarget{a01853_a76e650acb0199d4be91e90a493fbc91a}\label{a01853_a76e650acb0199d4be91e90a493fbc91a} 
+\index{sf::SocketSelector@{sf::SocketSelector}!clear@{clear}}
+\index{clear@{clear}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+Selector\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all the sockets stored in the selector. 
+
+This function doesn\textquotesingle{}t destroy any instance, it simply removes all the references that the selector has to external sockets.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01853_ade952013232802ff7b9b33668f8d2096}{add}, \doxylink{a01853_a98b6ab693a65b82caa375639232357c1}{remove} 
+\end{DoxySeeAlso}
+\Hypertarget{a01853_a917a4bac708290a6782e6686fd3bf889}\label{a01853_a917a4bac708290a6782e6686fd3bf889} 
+\index{sf::SocketSelector@{sf::SocketSelector}!isReady@{isReady}}
+\index{isReady@{isReady}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{isReady()}{isReady()}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+Selector\+::is\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01849}{Socket}} \&}]{socket }\end{DoxyParamCaption}) const}
+
+
+
+Test a socket to know if it is ready to receive data. 
+
+This function must be used after a call to Wait, to know which sockets are ready to receive data. If a socket is ready, a call to receive will never block because we know that there is data available to read. Note that if this function returns true for a \doxylink{a01857}{Tcp\+Listener}, this means that it is ready to accept a new connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & \doxylink{a01849}{Socket} to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the socket is ready to read, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01853_a917a4bac708290a6782e6686fd3bf889}{is\+Ready} 
+\end{DoxySeeAlso}
+\Hypertarget{a01853_af7247f1c8badd43932f3adcbc1fec7e8}\label{a01853_af7247f1c8badd43932f3adcbc1fec7e8} 
+\index{sf::SocketSelector@{sf::SocketSelector}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01853}{Socket\+Selector}} \& sf\+::\+Socket\+Selector\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01853}{Socket\+Selector}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a01853_a98b6ab693a65b82caa375639232357c1}\label{a01853_a98b6ab693a65b82caa375639232357c1} 
+\index{sf::SocketSelector@{sf::SocketSelector}!remove@{remove}}
+\index{remove@{remove}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void sf\+::\+Socket\+Selector\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01849}{Socket}} \&}]{socket }\end{DoxyParamCaption})}
+
+
+
+Remove a socket from the selector. 
+
+This function doesn\textquotesingle{}t destroy the socket, it simply removes the reference that the selector has to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Reference to the socket to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01853_ade952013232802ff7b9b33668f8d2096}{add}, \doxylink{a01853_a76e650acb0199d4be91e90a493fbc91a}{clear} 
+\end{DoxySeeAlso}
+\Hypertarget{a01853_a9cfda5475f17925e65889394d70af702}\label{a01853_a9cfda5475f17925e65889394d70af702} 
+\index{sf::SocketSelector@{sf::SocketSelector}!wait@{wait}}
+\index{wait@{wait}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily bool sf\+::\+Socket\+Selector\+::wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{timeout = {\ttfamily \mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero}}} }\end{DoxyParamCaption})}
+
+
+
+Wait until one or more sockets are ready to receive. 
+
+This function returns as soon as at least one socket has some data available to be received. To know which sockets are ready, use the is\+Ready function. If you use a timeout and no socket is ready before the timeout is over, the function returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Maximum time to wait, (use \doxylink{a01933_a8db127b632fa8da21550e7282af11fa0}{Time\+::\+Zero} for infinity)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there are sockets ready, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01853_a917a4bac708290a6782e6686fd3bf889}{is\+Ready} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01853_a5867d4d088758ef472f1cb8f5d08e053}\label{a01853_a5867d4d088758ef472f1cb8f5d08e053} 
+\index{sf::SocketSelector@{sf::SocketSelector}!m\_impl@{m\_impl}}
+\index{m\_impl@{m\_impl}!sf::SocketSelector@{sf::SocketSelector}}
+\doxysubsubsection{\texorpdfstring{m\_impl}{m\_impl}}
+{\footnotesize\ttfamily Socket\+Selector\+Impl\texorpdfstring{$\ast$}{*} sf\+::\+Socket\+Selector\+::m\+\_\+impl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Opaque pointer to the implementation (which requires OS-\/specific types) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00476}{Socket\+Selector.\+hpp}}\end{DoxyCompactItemize}

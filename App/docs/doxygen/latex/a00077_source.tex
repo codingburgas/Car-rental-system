@@ -1,0 +1,28 @@
+\doxysection{proxies.\+h}
+\hypertarget{a00077_source}{}\label{a00077_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/proxies.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/proxies.h}}
+\mbox{\hyperlink{a00077}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_PROXIES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_PROXIES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00805}{Proxies}}\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a00805_a00640a3afe33435d427fa15aaae01910}{Proxies}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a00805_a199a36268b483f36cc75b38925b24f9b}{Proxies}}(\textcolor{keyword}{const}\ std::initializer\_list<std::pair<const\ std::string,\ std::string>>\&\ hosts);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00805_aa116cc62f4fb556782b95c3277e764d5}{has}}(\textcolor{keyword}{const}\ std::string\&\ protocol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{a00805_ab981ed4646ea8ff8c0b0e39227919810}{operator[]}}(\textcolor{keyword}{const}\ std::string\&\ protocol);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{a00805_acd732d367e0ca22e38e28c2781877020}{hosts\_}};}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

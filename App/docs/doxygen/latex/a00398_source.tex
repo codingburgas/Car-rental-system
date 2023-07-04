@@ -1,0 +1,86 @@
+\doxysection{Rect.\+hpp}
+\hypertarget{a00398_source}{}\label{a00398_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Rect.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Rect.hpp}}
+\mbox{\hyperlink{a00398}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_RECT\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_RECT\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00554}{SFML/System/Vector2.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01737}{Rect}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{a01737_a0f87ebaef9722a6222fd2e04ce8efb37}{Rect}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{a01737_a15cdbc5a1aed3a8fc7be1bd5004f19f9}{Rect}}(T\ rectLeft,\ T\ rectTop,\ T\ rectWidth,\ T\ rectHeight);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{a01737_a27fdf85caa6d12caeeff78913cc59936}{Rect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ position,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ size);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01737_a6fff2bb7e93677839461a66bc2957de0}{Rect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<U>}}\&\ rectangle);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_a1d8a4a3aecec18310f6e3e23db43dfb8}{contains}}(T\ x,\ T\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_a1d8a4a3aecec18310f6e3e23db43dfb8}{contains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2<T>}}\&\ point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_ad90321b1135cad31589f2db2f9b772db}{intersects}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ rectangle)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01737_ad90321b1135cad31589f2db2f9b772db}{intersects}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ rectangle,\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ intersection)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00157\ \textcolor{comment}{}\ \ \ \ T\ \mbox{\hyperlink{a01737_aa49960fa465103d9cb7069ceb25c7c32}{left}};\ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ T\ \mbox{\hyperlink{a01737_abd3d3a2d0ad211ef0082bd0aa1a5c0e3}{top}};\ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ T\ \mbox{\hyperlink{a01737_a4dd5b9d4333bebbc51bd309298fd500f}{width}};\ \ }
+\DoxyCodeLine{00160\ \ \ \ \ T\ \mbox{\hyperlink{a01737_a6fa0fc7de1636d78cae1a1b54eef95cd}{height}};\ }
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ right);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{Rect<T>}}\&\ right);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00401}{SFML/Graphics/Rect.inl}}>}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ Create\ typedefs\ for\ the\ most\ common\ types}}
+\DoxyCodeLine{00196\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a01737}{Rect<int>}}\ \ \ \mbox{\hyperlink{a00669_aae67411782674934f78d55fa3af18403}{IntRect}};}
+\DoxyCodeLine{00197\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{a01737}{Rect<float>}}\ \mbox{\hyperlink{a00669_aed4e58f586b2eed2621c0365d0b7554e}{FloatRect}};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_RECT\_HPP}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+
+\end{DoxyCode}

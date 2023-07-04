@@ -1,0 +1,424 @@
+\doxysection{sf\+::Input\+Sound\+File Class Reference}
+\hypertarget{a01605}{}\label{a01605}\index{sf::InputSoundFile@{sf::InputSoundFile}}
+
+
+Provide read access to sound files.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Sound\+File.\+hpp$>$}
+
+
+
+Inheritance diagram for sf\+::Input\+Sound\+File\+:
+% FIG 0
+
+
+Collaboration diagram for sf\+::Input\+Sound\+File\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01605_a54307c308ba05dea63aba54a29c804a4}{get\+Channel\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of channels used by the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01605_aa081bd4d9732408d10b48227a360778e}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the total duration of the sound file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01605_a665b7fed6cdca3e0c622909e5a6655e4}{get\+Sample\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get the total number of audio samples in the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01605_a73a99f159e8aca6e39478f6cf686d7ad}{get\+Sample\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in samples. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01605_a6b8177e40dd8020752f6d52f96b774c3}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Get the sample rate of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01933}{Time}} \mbox{\hyperlink{a01605_ad1a2238acb734d8b1144ecd75cccc2e7}{get\+Time\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Get the read offset of the file in time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01605_a3b95347de25d1d93a3230287cf47a077}{Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01605_af68e54bc9bfac19554c84601156fe93f}{open\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Open a sound file from the disk for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01605_a4e034a8e9e69ca3c33a3f11180250400}{open\+From\+Memory}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Open a sound file in memory for reading. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01605_a32b76497aeb088a2b46dc6efd819b909}{open\+From\+Stream}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Open a sound file from a custom stream for reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01605_a83d6f64617456601edeb0daf9d14a17f}{read}} (\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}samples, \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} max\+Count)
+\begin{DoxyCompactList}\small\item\em Read audio samples from the open file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01605_a8eee7af58ad75ddc61f93ad72e2d66c1}{seek}} (\mbox{\hyperlink{a01933}{Time}} time\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given time offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01605_aaf97be15020a42e159ff88f76f22af20}{seek}} (\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sample\+Offset)
+\begin{DoxyCompactList}\small\item\em Change the current read position to the given sample offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01605_a326a1a486587038123de0c187bf5c635}{\texorpdfstring{$\sim$}{\string~}\+Input\+Sound\+File}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01605_ad28182aea9dc9f7d0dfc7f78691825b4}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the current file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01605_a8139ba49fe8f159bc338766d7c761f2d}{m\+\_\+channel\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of channels of the sound. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01605_ae3b8b2a9b8a60163cdd87ae4f2e1cf86}{m\+\_\+reader}}
+\begin{DoxyCompactList}\small\item\em Reader that handles I/O on the file\textquotesingle{}s format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01605_a6cac79628c9ae40da0db0a218304c3b6}{m\+\_\+sample\+Count}}
+\begin{DoxyCompactList}\small\item\em Total number of samples in the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \mbox{\hyperlink{a01605_a616395e2cbf4ff2f23aa7f7e4fb731a9}{m\+\_\+sample\+Offset}}
+\begin{DoxyCompactList}\small\item\em Sample Read Position. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01605_a7ce1620cc87d165b3ab9c4f623cad57d}{m\+\_\+sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em Number of samples per second. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01881}{Input\+Stream}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01605_ae009b2dd3290ab49f6866d5eabbd5b54}{m\+\_\+stream}}
+\begin{DoxyCompactList}\small\item\em Input stream used to access the file\textquotesingle{}s data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01605_a6dd8c6ef3876d886a9d4c2df538bd3a4}{m\+\_\+stream\+Owned}}
+\begin{DoxyCompactList}\small\item\em Is the stream internal or external? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide read access to sound files. 
+
+This class decodes audio samples from a sound file. It is used internally by higher-\/level classes such as \doxylink{a01629}{sf\+::\+Sound\+Buffer} and \doxylink{a01613}{sf\+::\+Music}, but can also be useful if you want to process or analyze audio files without playing them, or if you want to implement your own version of \doxylink{a01613}{sf\+::\+Music} with more specific features.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Open\ a\ sound\ file}}
+\DoxyCodeLine{\mbox{\hyperlink{a01605}{sf::InputSoundFile}}\ file;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!file.\mbox{\hyperlink{a01605_af68e54bc9bfac19554c84601156fe93f}{openFromFile}}(\textcolor{stringliteral}{"{}music.ogg"{}}))}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{/*\ error\ */};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Print\ the\ sound\ attributes}}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}duration:\ "{}}\ <<\ file.\mbox{\hyperlink{a01605_aa081bd4d9732408d10b48227a360778e}{getDuration}}().\mbox{\hyperlink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}()\ <<\ std::endl;}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}channels:\ "{}}\ <<\ file.\mbox{\hyperlink{a01605_a54307c308ba05dea63aba54a29c804a4}{getChannelCount}}()\ <<\ std::endl;}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}sample\ rate:\ "{}}\ <<\ file.\mbox{\hyperlink{a01605_a6b8177e40dd8020752f6d52f96b774c3}{getSampleRate}}()\ <<\ std::endl;}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}sample\ count:\ "{}}\ <<\ file.\mbox{\hyperlink{a01605_a665b7fed6cdca3e0c622909e5a6655e4}{getSampleCount}}()\ <<\ std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Read\ and\ process\ batches\ of\ samples\ until\ the\ end\ of\ file\ is\ reached}}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{sf::Int16}}\ samples[1024];}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{sf::Uint64}}\ count;}
+\DoxyCodeLine{\textcolor{keywordflow}{do}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ count\ =\ file.\mbox{\hyperlink{a01605_a83d6f64617456601edeb0daf9d14a17f}{read}}(samples,\ 1024);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ process,\ analyze,\ play,\ convert,\ or\ whatever}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ you\ want\ to\ do\ with\ the\ samples...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (count\ >\ 0);}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01649}{sf\+::\+Sound\+File\+Reader}, \doxylink{a01621}{sf\+::\+Output\+Sound\+File} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01605_a3b95347de25d1d93a3230287cf47a077}\label{a01605_a3b95347de25d1d93a3230287cf47a077} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!InputSoundFile@{InputSoundFile}}
+\index{InputSoundFile@{InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{InputSoundFile()}{InputSoundFile()}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{a01605_a326a1a486587038123de0c187bf5c635}\label{a01605_a326a1a486587038123de0c187bf5c635} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!````~InputSoundFile@{\texorpdfstring{$\sim$}{\string~}InputSoundFile}}
+\index{````~InputSoundFile@{\texorpdfstring{$\sim$}{\string~}InputSoundFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InputSoundFile()}{\string~InputSoundFile()}}
+{\footnotesize\ttfamily sf\+::\+Input\+Sound\+File\+::\texorpdfstring{$\sim$}{\string~}\+Input\+Sound\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01605_ad28182aea9dc9f7d0dfc7f78691825b4}\label{a01605_ad28182aea9dc9f7d0dfc7f78691825b4} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!close@{close}}
+\index{close@{close}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Close the current file. 
+
+\Hypertarget{a01605_a54307c308ba05dea63aba54a29c804a4}\label{a01605_a54307c308ba05dea63aba54a29c804a4} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getChannelCount@{getChannelCount}}
+\index{getChannelCount@{getChannelCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getChannelCount()}{getChannelCount()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Channel\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of channels used by the sound. 
+
+\begin{DoxyReturn}{Returns}
+Number of channels (1 = mono, 2 = stereo) 
+\end{DoxyReturn}
+\Hypertarget{a01605_aa081bd4d9732408d10b48227a360778e}\label{a01605_aa081bd4d9732408d10b48227a360778e} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total duration of the sound file. 
+
+This function is provided for convenience, the duration is deduced from the other sound file attributes.
+
+\begin{DoxyReturn}{Returns}
+Duration of the sound file 
+\end{DoxyReturn}
+\Hypertarget{a01605_a665b7fed6cdca3e0c622909e5a6655e4}\label{a01605_a665b7fed6cdca3e0c622909e5a6655e4} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleCount@{getSampleCount}}
+\index{getSampleCount@{getSampleCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleCount()}{getSampleCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total number of audio samples in the file. 
+
+\begin{DoxyReturn}{Returns}
+Number of samples 
+\end{DoxyReturn}
+\Hypertarget{a01605_a73a99f159e8aca6e39478f6cf686d7ad}\label{a01605_a73a99f159e8aca6e39478f6cf686d7ad} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleOffset@{getSampleOffset}}
+\index{getSampleOffset@{getSampleOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleOffset()}{getSampleOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::get\+Sample\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in samples. 
+
+\begin{DoxyReturn}{Returns}
+Sample position 
+\end{DoxyReturn}
+\Hypertarget{a01605_a6b8177e40dd8020752f6d52f96b774c3}\label{a01605_a6b8177e40dd8020752f6d52f96b774c3} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sample rate of the sound. 
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in samples per second 
+\end{DoxyReturn}
+\Hypertarget{a01605_ad1a2238acb734d8b1144ecd75cccc2e7}\label{a01605_ad1a2238acb734d8b1144ecd75cccc2e7} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!getTimeOffset@{getTimeOffset}}
+\index{getTimeOffset@{getTimeOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{getTimeOffset()}{getTimeOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01933}{Time}} sf\+::\+Input\+Sound\+File\+::get\+Time\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the read offset of the file in time. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01933}{Time} position 
+\end{DoxyReturn}
+\Hypertarget{a01605_af68e54bc9bfac19554c84601156fe93f}\label{a01605_af68e54bc9bfac19554c84601156fe93f} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromFile@{openFromFile}}
+\index{openFromFile@{openFromFile}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromFile()}{openFromFile()}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from the disk for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\Hypertarget{a01605_a4e034a8e9e69ca3c33a3f11180250400}\label{a01605_a4e034a8e9e69ca3c33a3f11180250400} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromMemory@{openFromMemory}}
+\index{openFromMemory@{openFromMemory}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromMemory()}{openFromMemory()}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Memory (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Open a sound file in memory for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\Hypertarget{a01605_a32b76497aeb088a2b46dc6efd819b909}\label{a01605_a32b76497aeb088a2b46dc6efd819b909} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!openFromStream@{openFromStream}}
+\index{openFromStream@{openFromStream}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{openFromStream()}{openFromStream()}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::open\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Open a sound file from a custom stream for reading. 
+
+The supported audio formats are\+: WAV (PCM only), OGG/\+Vorbis, FLAC. The supported sample sizes for FLAC and WAV are 8, 16, 24 and 32 bit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was successfully opened 
+\end{DoxyReturn}
+\Hypertarget{a01605_a83d6f64617456601edeb0daf9d14a17f}\label{a01605_a83d6f64617456601edeb0daf9d14a17f} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!read@{read}}
+\index{read@{read}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \texorpdfstring{$\ast$}{*}}]{samples,  }\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{max\+Count }\end{DoxyParamCaption})}
+
+
+
+Read audio samples from the open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the sample array to fill \\
+\hline
+{\em max\+Count} & Maximum number of samples to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples actually read (may be less than {\itshape max\+Count}) 
+\end{DoxyReturn}
+\Hypertarget{a01605_a8eee7af58ad75ddc61f93ad72e2d66c1}\label{a01605_a8eee7af58ad75ddc61f93ad72e2d66c1} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01933}{Time}}}]{time\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given time offset. 
+
+Using a time offset is handy but imprecise. If you need an accurate result, consider using the overload which takes a sample offset.
+
+If the given time exceeds to total duration, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Offset} & \doxylink{a01933}{Time} to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01605_aaf97be15020a42e159ff88f76f22af20}\label{a01605_aaf97be15020a42e159ff88f76f22af20} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!seek@{seek}}
+\index{seek@{seek}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+Input\+Sound\+File\+::seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{sample\+Offset }\end{DoxyParamCaption})}
+
+
+
+Change the current read position to the given sample offset. 
+
+This function takes a sample offset to provide maximum precision. If you need to jump to a given time, use the other overload.
+
+The sample offset takes the channels into account. If you have a time offset instead, you can easily find the corresponding sample offset with the following formula\+: {\ttfamily time\+In\+Seconds \texorpdfstring{$\ast$}{*} sample\+Rate \texorpdfstring{$\ast$}{*} channel\+Count} If the given offset exceeds to total number of samples, this function jumps to the end of the sound file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Offset} & Index of the sample to jump to, relative to the beginning \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01605_a8139ba49fe8f159bc338766d7c761f2d}\label{a01605_a8139ba49fe8f159bc338766d7c761f2d} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_channelCount@{m\_channelCount}}
+\index{m\_channelCount@{m\_channelCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_channelCount}{m\_channelCount}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::m\+\_\+channel\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of channels of the sound. 
+
+\Hypertarget{a01605_ae3b8b2a9b8a60163cdd87ae4f2e1cf86}\label{a01605_ae3b8b2a9b8a60163cdd87ae4f2e1cf86} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_reader@{m\_reader}}
+\index{m\_reader@{m\_reader}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_reader}{m\_reader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01649}{Sound\+File\+Reader}}\texorpdfstring{$\ast$}{*} sf\+::\+Input\+Sound\+File\+::m\+\_\+reader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reader that handles I/O on the file\textquotesingle{}s format. 
+
+\Hypertarget{a01605_a6cac79628c9ae40da0db0a218304c3b6}\label{a01605_a6cac79628c9ae40da0db0a218304c3b6} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleCount@{m\_sampleCount}}
+\index{m\_sampleCount@{m\_sampleCount}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleCount}{m\_sampleCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total number of samples in the file. 
+
+\Hypertarget{a01605_a616395e2cbf4ff2f23aa7f7e4fb731a9}\label{a01605_a616395e2cbf4ff2f23aa7f7e4fb731a9} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleOffset@{m\_sampleOffset}}
+\index{m\_sampleOffset@{m\_sampleOffset}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleOffset}{m\_sampleOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sample Read Position. 
+
+\Hypertarget{a01605_a7ce1620cc87d165b3ab9c4f623cad57d}\label{a01605_a7ce1620cc87d165b3ab9c4f623cad57d} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_sampleRate@{m\_sampleRate}}
+\index{m\_sampleRate@{m\_sampleRate}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_sampleRate}{m\_sampleRate}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Input\+Sound\+File\+::m\+\_\+sample\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of samples per second. 
+
+\Hypertarget{a01605_ae009b2dd3290ab49f6866d5eabbd5b54}\label{a01605_ae009b2dd3290ab49f6866d5eabbd5b54} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_stream@{m\_stream}}
+\index{m\_stream@{m\_stream}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_stream}{m\_stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01881}{Input\+Stream}}\texorpdfstring{$\ast$}{*} sf\+::\+Input\+Sound\+File\+::m\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input stream used to access the file\textquotesingle{}s data. 
+
+\Hypertarget{a01605_a6dd8c6ef3876d886a9d4c2df538bd3a4}\label{a01605_a6dd8c6ef3876d886a9d4c2df538bd3a4} 
+\index{sf::InputSoundFile@{sf::InputSoundFile}!m\_streamOwned@{m\_streamOwned}}
+\index{m\_streamOwned@{m\_streamOwned}!sf::InputSoundFile@{sf::InputSoundFile}}
+\doxysubsubsection{\texorpdfstring{m\_streamOwned}{m\_streamOwned}}
+{\footnotesize\ttfamily bool sf\+::\+Input\+Sound\+File\+::m\+\_\+stream\+Owned\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Is the stream internal or external? 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00314}{Input\+Sound\+File.\+hpp}}\end{DoxyCompactItemize}

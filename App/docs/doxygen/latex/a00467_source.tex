@@ -1,0 +1,162 @@
+\doxysection{Packet.\+hpp}
+\hypertarget{a00467_source}{}\label{a00467_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/Packet.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/Packet.hpp}}
+\mbox{\hyperlink{a00467}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_PACKET\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_PACKET\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02209}{SFML/Network/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }String;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }TcpSocket;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }UdpSocket;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01845}{Packet}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ A\ bool-\/like\ type\ that\ cannot\ be\ converted\ to\ integer\ or\ pointer\ types}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typedef}\ bool\ (\mbox{\hyperlink{a01845}{Packet}}::*BoolType)(\mbox{\hyperlink{a00667}{std}}::size\_t);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a01845_a786e5d4ced83992ceefa1799963ea858}{Packet}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a01845_adc0490ca3c7c3d1e321bd742e5213913}{\string~Packet}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01845_a7dd6e429b87520008326c4d71f1cf011}{append}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ sizeInBytes);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01845_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{a01845_a998b70df024bee4792e2ecdc915ae46e}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{a01845_a0fae6eccf2ca704fc5099cd90a9f56f7}{getDataSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01845_a61e354fa670da053907c14b738839560}{endOfPacket}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{operator}\ BoolType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\textcolor{keywordtype}{bool}\&\ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}}\&\ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\&\ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}\&\ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}\&\ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\&\ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\textcolor{keywordtype}{float}\&\ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\textcolor{keywordtype}{double}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(std::string\&\ \ data);}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\textcolor{keywordtype}{wchar\_t}*\ \ \ \ \ \ data);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(std::wstring\&\ data);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ >>(\mbox{\hyperlink{a01901}{String}}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00283\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00308\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keyword}{const}\ std::string\&\ \ data);}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00323\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ \ \ \ \ \ data);}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00328\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keyword}{const}\ std::wstring\&\ data);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00333\ \ \ \ \ \mbox{\hyperlink{a01845}{Packet}}\&\ operator\ <<(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01901}{String}}\&\ \ \ \ \ \ \ data);}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01861}{TcpSocket}};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01869}{UdpSocket}};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{a01845_af0003506bcb290407dcf5fe7f13a887d}{onSend}}(std::size\_t\&\ size);}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01845_ab71a31ef0f1d5d856de6f9fc75434128}{onReceive}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00401_ab3488b5dbd0e587c4d7cb80605affc46}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01845}{Packet}}\&\ right)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00401_a03fc4c105687b7d0f07b6b4ed4b45581}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01845}{Packet}}\&\ right)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01845_a54bea2433002686cf1de8c5c6466fe5f}{checkSize}}(std::size\_t\ size);}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00403\ \textcolor{comment}{}\ \ \ \ std::vector<char>\ \mbox{\hyperlink{a01845_a185e3d4b4c2b31560ea7723d6f2b22dd}{m\_data}};\ \ \ \ }
+\DoxyCodeLine{00404\ \ \ \ \ std::size\_t\ \ \ \ \ \ \ \mbox{\hyperlink{a01845_a874eea8a5654957a404c3b40b7ef9284}{m\_readPos}};\ }
+\DoxyCodeLine{00405\ \ \ \ \ std::size\_t\ \ \ \ \ \ \ \mbox{\hyperlink{a01845_a321ac7748c681850fad1c52fa265434d}{m\_sendPos}};\ }
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01845_a7119dcd69dbd57041e60a3062ced96e6}{m\_isValid}};\ }
+\DoxyCodeLine{00407\ \};}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_PACKET\_HPP}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ }
+
+\end{DoxyCode}

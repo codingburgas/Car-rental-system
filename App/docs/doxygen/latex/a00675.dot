@@ -1,0 +1,24 @@
+digraph "Handler"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Handler",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge8_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" handler",fontcolor="grey" ];
+  Node2 [id="Node000002",label="APIHandler",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a00681.html",tooltip=" "];
+  Node3 -> Node2 [id="edge9_Node000002_Node000003",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" adminName\nadminPassword",fontcolor="grey" ];
+  Node3 [id="Node000003",label="string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node2 [id="edge10_Node000002_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" JSONRes\nobj",fontcolor="grey" ];
+  Node4 [id="Node000004",label="nlohmann::basic_json\l\< ObjectType, ArrayType,\l StringType, BooleanType,\l NumberIntegerType, NumberUnsigned\lType, NumberFloatType, AllocatorType,\l JSONSerializer, BinaryType \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01541.html",tooltip="a class to store JSON values"];
+  Node5 -> Node4 [id="edge11_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" binary",fontcolor="grey" ];
+  Node5 [id="Node000005",label="nlohmann::byte_container\l_with_subtype\< BinaryType \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a00993.html",tooltip="an internal type for a backed binary type"];
+  Node6 -> Node5 [id="edge12_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="BinaryType",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node2 [id="edge13_Node000002_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" verify",fontcolor="grey" ];
+  Node7 [id="Node000007",label="APIHandler::verification",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a00685.html",tooltip=" "];
+  Node8 -> Node2 [id="edge14_Node000002_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" vehicle",fontcolor="grey" ];
+  Node8 [id="Node000008",label="vehicles",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$a01557.html",tooltip=" "];
+}

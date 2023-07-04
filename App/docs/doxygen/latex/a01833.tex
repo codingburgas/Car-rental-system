@@ -1,0 +1,351 @@
+\doxysection{sf\+::Http\+::Request Class Reference}
+\hypertarget{a01833}{}\label{a01833}\index{sf::Http::Request@{sf::Http::Request}}
+
+
+Define a HTTP request.  
+
+
+
+
+{\ttfamily \#include $<$Http.\+hpp$>$}
+
+
+
+Collaboration diagram for sf\+::Http\+::Request\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}} \{ \newline
+\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}}
+, \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a}{Post}}
+, \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b}{Head}}
+, \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598a523b94f9af069c1f35061d32011e2495}{Put}}
+, \newline
+\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598abc9555b94c1b896185015ec3990999f9}{Delete}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerate the available HTTP methods for a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01833_a8e89d9e8ffcc1163259b35d79809a61c}{Request}} (const std\+::string \&uri=\"{}/\"{}, \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}} method=\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}}, const std\+::string \&body=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01833_ae9f61ec3fa1639c70e9b5780cb35578e}{set\+Body}} (const std\+::string \&body)
+\begin{DoxyCompactList}\small\item\em Set the body of the request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01833_aea672fae5dd089f4b6b3745ed46210d2}{set\+Field}} (const std\+::string \&field, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Set the value of a field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01833_aa683b607b737a6224a91387b4108d3c7}{set\+Http\+Version}} (unsigned int major, unsigned int minor)
+\begin{DoxyCompactList}\small\item\em Set the HTTP version for the request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01833_abab148554e873e80d2e41376fde1cb62}{set\+Method}} (\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}} method)
+\begin{DoxyCompactList}\small\item\em Set the request method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01833_a3723de4b4f1a14b744477841c4ac22e6}{set\+Uri}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em Set the requested URI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{a01833_a0a7c6144d2f18977068655c96c8cf298}{Field\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01833_a5f54bdf9da421af7bf4eb1a5b0c12447}{has\+Field}} (const std\+::string \&field) const
+\begin{DoxyCompactList}\small\item\em Check if the request defines a field. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01833_a4f53faef789d95aa21d72264adc74fba}{prepare}} () const
+\begin{DoxyCompactList}\small\item\em Prepare the final request to send to the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{a01833_a3f4e4882547f34b7e6be3becdc291979}{m\+\_\+body}}
+\begin{DoxyCompactList}\small\item\em Body of the request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01833_a0a7c6144d2f18977068655c96c8cf298}{Field\+Table}} \mbox{\hyperlink{a01833_a956e3ad74753c26c817fca64af7c79af}{m\+\_\+fields}}
+\begin{DoxyCompactList}\small\item\em Fields of the header associated to their value. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01833_a13d0fd10599606b0ff24469286a40256}{m\+\_\+major\+Version}}
+\begin{DoxyCompactList}\small\item\em Major HTTP version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}} \mbox{\hyperlink{a01833_a5f6cecce1933263483692ead4f1b1dde}{m\+\_\+method}}
+\begin{DoxyCompactList}\small\item\em Method to use for the request. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01833_a43358640d27bfba18c2fce2bcbb0de5b}{m\+\_\+minor\+Version}}
+\begin{DoxyCompactList}\small\item\em Minor HTTP version. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01833_ac02540198edb59c49b3996dc02200991}{m\+\_\+uri}}
+\begin{DoxyCompactList}\small\item\em Target URI of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01833_aba95e2a7762bb5df986048b05d03a22e}{Http}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define a HTTP request. 
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01833_a0a7c6144d2f18977068655c96c8cf298}\label{a01833_a0a7c6144d2f18977068655c96c8cf298} 
+\index{sf::Http::Request@{sf::Http::Request}!FieldTable@{FieldTable}}
+\index{FieldTable@{FieldTable}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{FieldTable}{FieldTable}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, std\+::string$>$ \mbox{\hyperlink{a01833_a0a7c6144d2f18977068655c96c8cf298}{sf\+::\+Http\+::\+Request\+::\+Field\+Table}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598} 
+\index{sf::Http::Request@{sf::Http::Request}!Method@{Method}}
+\index{Method@{Method}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{Method}{Method}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{sf\+::\+Http\+::\+Request\+::\+Method}}}
+
+
+
+Enumerate the available HTTP methods for a request. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Get@{Get}!sf::Http::Request@{sf::Http::Request}}\index{sf::Http::Request@{sf::Http::Request}!Get@{Get}}}\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4} 
+Get&\doxylink{a01833}{Request} in get mode, standard method to retrieve a page. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Post@{Post}!sf::Http::Request@{sf::Http::Request}}\index{sf::Http::Request@{sf::Http::Request}!Post@{Post}}}\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a} 
+Post&\doxylink{a01833}{Request} in post mode, usually to send data to a page. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Head@{Head}!sf::Http::Request@{sf::Http::Request}}\index{sf::Http::Request@{sf::Http::Request}!Head@{Head}}}\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b} 
+Head&\doxylink{a01833}{Request} a page\textquotesingle{}s header only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Put@{Put}!sf::Http::Request@{sf::Http::Request}}\index{sf::Http::Request@{sf::Http::Request}!Put@{Put}}}\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598a523b94f9af069c1f35061d32011e2495}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598a523b94f9af069c1f35061d32011e2495} 
+Put&\doxylink{a01833}{Request} in put mode, useful for a REST API. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Delete@{Delete}!sf::Http::Request@{sf::Http::Request}}\index{sf::Http::Request@{sf::Http::Request}!Delete@{Delete}}}\Hypertarget{a01833_a620f8bff6f43e1378f321bf53fbf5598abc9555b94c1b896185015ec3990999f9}\label{a01833_a620f8bff6f43e1378f321bf53fbf5598abc9555b94c1b896185015ec3990999f9} 
+Delete&\doxylink{a01833}{Request} in delete mode, useful for a REST API. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01833_a8e89d9e8ffcc1163259b35d79809a61c}\label{a01833_a8e89d9e8ffcc1163259b35d79809a61c} 
+\index{sf::Http::Request@{sf::Http::Request}!Request@{Request}}
+\index{Request@{Request}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily sf\+::\+Http\+::\+Request\+::\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri = {\ttfamily \"{}/\"{}},  }\item[{\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}}}]{method = {\ttfamily \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}}},  }\item[{const std\+::string \&}]{body = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates a GET request, with the root URI (\"{}/\"{}) and an empty body.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & Target URI \\
+\hline
+{\em method} & Method to use for the request \\
+\hline
+{\em body} & Content of the request\textquotesingle{}s body \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01833_a5f54bdf9da421af7bf4eb1a5b0c12447}\label{a01833_a5f54bdf9da421af7bf4eb1a5b0c12447} 
+\index{sf::Http::Request@{sf::Http::Request}!hasField@{hasField}}
+\index{hasField@{hasField}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{hasField()}{hasField()}}
+{\footnotesize\ttfamily bool sf\+::\+Http\+::\+Request\+::has\+Field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if the request defines a field. 
+
+This function uses case-\/insensitive comparisons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Name of the field to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the field exists, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{a01833_a4f53faef789d95aa21d72264adc74fba}\label{a01833_a4f53faef789d95aa21d72264adc74fba} 
+\index{sf::Http::Request@{sf::Http::Request}!prepare@{prepare}}
+\index{prepare@{prepare}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Http\+::\+Request\+::prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prepare the final request to send to the server. 
+
+This is used internally by \doxylink{a01829}{Http} before sending the request to the web server.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{a01901}{String} containing the request, ready to be sent 
+\end{DoxyReturn}
+\Hypertarget{a01833_ae9f61ec3fa1639c70e9b5780cb35578e}\label{a01833_ae9f61ec3fa1639c70e9b5780cb35578e} 
+\index{sf::Http::Request@{sf::Http::Request}!setBody@{setBody}}
+\index{setBody@{setBody}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{setBody()}{setBody()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Request\+::set\+Body (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{body }\end{DoxyParamCaption})}
+
+
+
+Set the body of the request. 
+
+The body of a request is optional and only makes sense for POST requests. It is ignored for all other methods. The body is empty by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Content of the body \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01833_aea672fae5dd089f4b6b3745ed46210d2}\label{a01833_aea672fae5dd089f4b6b3745ed46210d2} 
+\index{sf::Http::Request@{sf::Http::Request}!setField@{setField}}
+\index{setField@{setField}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{setField()}{setField()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Request\+::set\+Field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of a field. 
+
+The field is created if it doesn\textquotesingle{}t exist. The name of the field is case-\/insensitive. By default, a request doesn\textquotesingle{}t contain any field (but the mandatory fields are added later by the HTTP client when sending the request).
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Name of the field to set \\
+\hline
+{\em value} & Value of the field \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01833_aa683b607b737a6224a91387b4108d3c7}\label{a01833_aa683b607b737a6224a91387b4108d3c7} 
+\index{sf::Http::Request@{sf::Http::Request}!setHttpVersion@{setHttpVersion}}
+\index{setHttpVersion@{setHttpVersion}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{setHttpVersion()}{setHttpVersion()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Request\+::set\+Http\+Version (\begin{DoxyParamCaption}\item[{unsigned int}]{major,  }\item[{unsigned int}]{minor }\end{DoxyParamCaption})}
+
+
+
+Set the HTTP version for the request. 
+
+The HTTP version is 1.\+0 by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em major} & Major HTTP version number \\
+\hline
+{\em minor} & Minor HTTP version number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01833_abab148554e873e80d2e41376fde1cb62}\label{a01833_abab148554e873e80d2e41376fde1cb62} 
+\index{sf::Http::Request@{sf::Http::Request}!setMethod@{setMethod}}
+\index{setMethod@{setMethod}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{setMethod()}{setMethod()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Request\+::set\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}}}]{method }\end{DoxyParamCaption})}
+
+
+
+Set the request method. 
+
+See the Method enumeration for a complete list of all the availale methods. The method is \doxylink{a01833_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Http\+::\+Request\+::\+Get} by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Method to use for the request \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01833_a3723de4b4f1a14b744477841c4ac22e6}\label{a01833_a3723de4b4f1a14b744477841c4ac22e6} 
+\index{sf::Http::Request@{sf::Http::Request}!setUri@{setUri}}
+\index{setUri@{setUri}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{setUri()}{setUri()}}
+{\footnotesize\ttfamily void sf\+::\+Http\+::\+Request\+::set\+Uri (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+Set the requested URI. 
+
+The URI is the resource (usually a web page or a file) that you want to get or post. The URI is \"{}/\"{} (the root page) by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & URI to request, relative to the host \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01833_aba95e2a7762bb5df986048b05d03a22e}\label{a01833_aba95e2a7762bb5df986048b05d03a22e} 
+\index{sf::Http::Request@{sf::Http::Request}!Http@{Http}}
+\index{Http@{Http}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{Http}{Http}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01829}{Http}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01833_a3f4e4882547f34b7e6be3becdc291979}\label{a01833_a3f4e4882547f34b7e6be3becdc291979} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_body@{m\_body}}
+\index{m\_body@{m\_body}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_body}{m\_body}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Http\+::\+Request\+::m\+\_\+body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Body of the request. 
+
+\Hypertarget{a01833_a956e3ad74753c26c817fca64af7c79af}\label{a01833_a956e3ad74753c26c817fca64af7c79af} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_fields@{m\_fields}}
+\index{m\_fields@{m\_fields}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_fields}{m\_fields}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01833_a0a7c6144d2f18977068655c96c8cf298}{Field\+Table}} sf\+::\+Http\+::\+Request\+::m\+\_\+fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fields of the header associated to their value. 
+
+\Hypertarget{a01833_a13d0fd10599606b0ff24469286a40256}\label{a01833_a13d0fd10599606b0ff24469286a40256} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_majorVersion@{m\_majorVersion}}
+\index{m\_majorVersion@{m\_majorVersion}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_majorVersion}{m\_majorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Request\+::m\+\_\+major\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Major HTTP version. 
+
+\Hypertarget{a01833_a5f6cecce1933263483692ead4f1b1dde}\label{a01833_a5f6cecce1933263483692ead4f1b1dde} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_method@{m\_method}}
+\index{m\_method@{m\_method}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_method}{m\_method}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01833_a620f8bff6f43e1378f321bf53fbf5598}{Method}} sf\+::\+Http\+::\+Request\+::m\+\_\+method\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method to use for the request. 
+
+\Hypertarget{a01833_a43358640d27bfba18c2fce2bcbb0de5b}\label{a01833_a43358640d27bfba18c2fce2bcbb0de5b} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_minorVersion@{m\_minorVersion}}
+\index{m\_minorVersion@{m\_minorVersion}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_minorVersion}{m\_minorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Http\+::\+Request\+::m\+\_\+minor\+Version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minor HTTP version. 
+
+\Hypertarget{a01833_ac02540198edb59c49b3996dc02200991}\label{a01833_ac02540198edb59c49b3996dc02200991} 
+\index{sf::Http::Request@{sf::Http::Request}!m\_uri@{m\_uri}}
+\index{m\_uri@{m\_uri}!sf::Http::Request@{sf::Http::Request}}
+\doxysubsubsection{\texorpdfstring{m\_uri}{m\_uri}}
+{\footnotesize\ttfamily std\+::string sf\+::\+Http\+::\+Request\+::m\+\_\+uri\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Target URI of the request. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00461}{Http.\+hpp}}\end{DoxyCompactItemize}

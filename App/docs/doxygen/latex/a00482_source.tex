@@ -1,0 +1,93 @@
+\doxysection{Tcp\+Socket.\+hpp}
+\hypertarget{a00482_source}{}\label{a00482_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/TcpSocket.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/TcpSocket.hpp}}
+\mbox{\hyperlink{a00482}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_TCPSOCKET\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_TCPSOCKET\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02209}{SFML/Network/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00470}{SFML/Network/Socket.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00545}{SFML/System/Time.hpp}}>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }TcpListener;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }IpAddress;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }Packet;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01861}{TcpSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01849}{Socket}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{a01861_a62a9bf81fd7f15fedb29fd1348483236}{TcpSocket}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a01861_a98e45f0f49af1fd99216b9195e86d86b}{getLocalPort}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{a01841}{IpAddress}}\ \mbox{\hyperlink{a01861_aa8579c203b1fd21beb74d7f76444a94c}{getRemoteAddress}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{a01861_a93bced0afd4b1c60797a85725be04951}{getRemotePort}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_a68cd42d5ab70ab54b16787f555951c40}{connect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ remoteAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ remotePort,\ \mbox{\hyperlink{a01933}{Time}}\ timeout\ =\ Time::Zero);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01861_ac18f518a9be3d6be5e74b9404c253c1e}{disconnect}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_affce26ab3bcc4f5b9269dad79db544c0}{send}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_a31f5b280126a96c6f3ad430f4cbcb54d}{send}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size,\ std::size\_t\&\ sent);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_a90ce50811ea61d4f00efc62bb99ae1af}{receive}}(\textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size,\ std::size\_t\&\ received);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_a0f8276e2b1c75aac4a7b0a707b250f44}{send}}(\mbox{\hyperlink{a01845}{Packet}}\&\ packet);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{a01849_a51bf0fd51057b98a10fbb866246176dc}{Status}}\ \mbox{\hyperlink{a01861_aa655352609bc9804f2baa020df3e7331}{receive}}(\mbox{\hyperlink{a01845}{Packet}}\&\ packet);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01857}{TcpListener}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01865}{PendingPacket}}}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01865_aacd99bc4b0bb1ab937db0dae4b9fa61e}{PendingPacket}}();}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01865_a99f5a620c08f0dc81aee252846455f7b}{Size}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ std::size\_t\ \ \ \ \ \ \ \mbox{\hyperlink{a01865_abb050cdf4dab2d1dc0c55bed6a085941}{SizeReceived}};\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ std::vector<char>\ \mbox{\hyperlink{a01865_aed40be724851c582f4427af1960689e4}{Data}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00226\ \ \ \ \ \};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00231\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01865}{PendingPacket}}\ \mbox{\hyperlink{a01861_ab46b6b5cfafbc4255d8bdca3148584a8}{m\_pendingPacket}};\ }
+\DoxyCodeLine{00232\ \};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_TCPSOCKET\_HPP}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ }
+
+\end{DoxyCode}

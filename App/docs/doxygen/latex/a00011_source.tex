@@ -1,0 +1,230 @@
+\doxysection{api.\+h}
+\hypertarget{a00011_source}{}\label{a00011_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/api.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/api.h}}
+\mbox{\hyperlink{a00011}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_API\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_API\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00014}{cpr/auth.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00017}{cpr/bearer.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00035}{cpr/cprtypes.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00047}{cpr/digest.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00065}{cpr/multipart.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00068}{cpr/ntlm.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00074}{cpr/payload.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00086}{cpr/response.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00089}{cpr/session.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ =\ std::future<Response>;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00672}{priv}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{set\_option}}(\mbox{\hyperlink{a00825}{Session}}\&\ session,\ Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ std::initializer\_list<int>\ ignore\ =\ \{\ (session.\mbox{\hyperlink{a00825_a8b6ed0ac4062760c9234c5cf69c146d3}{SetOption}}(std::forward<Ts>(ts)),\ 0)...\ \};}
+\DoxyCodeLine{00030\ \ \ \ \ (void)ignore;}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{//\ namespace\ priv}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Get\ methods}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_a782e3ef742ca63169e21702326e4ff0b}{Get}}();}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Get\ async\ methods}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_a6ddc78599d4070f14593e9a8e1e2ca55}{GetAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Get(std::move(ts\_inner)...);\ \},\ std::move(ts)...);}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ Get\ callback\ methods}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a888bb911c71f356fb3837dc4253b093c}{GetCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Get(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Post\ methods}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_a3d96d865fc382114cd3daee45ec67b66}{Post}}();}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ Post\ async\ methods}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_a12f500a94e602da952eef6af080db046}{PostAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Post(std::move(ts\_inner)...);\ \},\ std::move(ts)...);}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ Post\ callback\ methods}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a7ffd75668a6d9d780c1974f775ef14bc}{PostCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Post(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Put\ methods}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_a62082c07d46ef678b8a81f1d5684e910}{Put}}();}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ Put\ async\ methods}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_a173d01d70c4d1e1b7f62ea1bce858ff8}{PutAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Put(std::move(ts\_inner)...);\ \},\ std::move(ts)...);}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ Put\ callback\ methods}}
+\DoxyCodeLine{00099\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a2899a20ce3fdf2721a9c922d7a8b8a42}{PutCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Put(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00105\ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ Head\ methods}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00109\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_a6a12f412e2b424c054cf795acc21ff66}{Head}}();}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ Head\ async\ methods}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_a30c20f83989805f7e9192c33e85129a3}{HeadAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Head(std::move(ts\_inner)...);\ \},\ std::move(ts)...);}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ Head\ callback\ methods}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a0411865dc73bcd1cdd903787ca7bdf9e}{HeadCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Head(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ Delete\ methods}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_a0ad49a747a0c56a7fc3cd10fe4032337}{Delete}}();}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ Delete\ async\ methods}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00141\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_a79e60b6d3b51c2a11777581e83c24078}{DeleteAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Delete(std::move(ts\_inner)...);\ \},}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(ts)...);}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ Delete\ callback\ methods}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a31bec11dd3a04f49cf0ef4a17b7ad5a9}{DeleteCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Delete(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ Options\ methods}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00158\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_ab296793770689d344b69926ec1258b03}{Options}}();}
+\DoxyCodeLine{00162\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ Options\ async\ methods}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_aaaa20103315f42e5d1862823d2a93a14}{OptionsAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Options(std::move(ts\_inner)...);\ \},}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(ts)...);}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ Options\ callback\ methods}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00175\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_ae1080defc6d3c26c884b691024c85e4f}{OptionsCallback}}(Then\ then,\ Ts...\ ts)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Options(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ Patch\ methods}}
+\DoxyCodeLine{00183\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00184\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}}(Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_ab79c7500603b3f2d4f14316ab4b7c65b}{Patch}}();}
+\DoxyCodeLine{00188\ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ Patch\ async\ methods}}
+\DoxyCodeLine{00191\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{AsyncResponse}}\ \mbox{\hyperlink{a00656_accbc3d2d8edfe66ab4947e61d06f2178}{PatchAsync}}(Ts...\ ts)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Ts...\ ts\_inner)\ \{\ return\ Patch(std::move(ts\_inner)...);\ \},\ std::move(ts)...);}
+\DoxyCodeLine{00195\ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{comment}{//\ Patch\ callback\ methods}}
+\DoxyCodeLine{00198\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Then,\ \textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ NOLINTNEXTLINE(fuchsia-\/trailing-\/return)}}
+\DoxyCodeLine{00200\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{a00656_a8ac4bf6e25311eb7f2a4383ccf3d84b8}{PatchCallback}}(Then\ then,\ Ts...\ ts)\ -\/>\ std::future<\textcolor{keyword}{decltype}(then(\mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}}(std::move(ts)...)))>\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{return}\ std::async(}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ std::launch::async,\ [](Then\ then\_inner,\ Ts...\ ts\_inner)\ \{\ return\ then\_inner(Patch(std::move(ts\_inner)...));\ \},}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ std::move(then),\ std::move(ts)...);}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ Download\ methods}}
+\DoxyCodeLine{00207\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_aa19a54b99d723129c9f01521bfadc95d}{Download}}(std::ofstream\&\ file,\ Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_ae5c95118d805ce8c12c819b57d89e9a7}{Download}}(file);}
+\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{comment}{//\ Download\ with\ user\ callback}}
+\DoxyCodeLine{00215\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{a00821}{Response}}\ \mbox{\hyperlink{a00656_aa19a54b99d723129c9f01521bfadc95d}{Download}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00705}{WriteCallback}}\&\ write,\ Ts\&\&...\ ts)\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{a00825}{Session}}\ session;}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{a00657_a1e947998e62a5c7fe74549099410a2cf}{priv::set\_option}}(session,\ std::forward<Ts>(ts)...);}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{return}\ session.\mbox{\hyperlink{a00825_ae5c95118d805ce8c12c819b57d89e9a7}{Download}}(write);}
+\DoxyCodeLine{00220\ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,869 @@
+\doxysection{sf\+::Packet Class Reference}
+\hypertarget{a01845}{}\label{a01845}\index{sf::Packet@{sf::Packet}}
+
+
+Utility class to build blocks of data to transfer over the network.  
+
+
+
+
+{\ttfamily \#include $<$Packet.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a01845_a7dd6e429b87520008326c4d71f1cf011}{append}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Append data to the end of the packet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01845_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the packet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01845_a61e354fa670da053907c14b738839560}{end\+Of\+Packet}} () const
+\begin{DoxyCompactList}\small\item\em Tell if the reading position has reached the end of the packet. \end{DoxyCompactList}\item 
+const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01845_a998b70df024bee4792e2ecdc915ae46e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the data contained in the packet. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01845_a0fae6eccf2ca704fc5099cd90a9f56f7}{get\+Data\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the data contained in the packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845_a8ab20be4a63921b7cb1a4d8ca5c30f75}{operator Bool\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Test the validity of the packet, for reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ae02c874e0aac18a0497fca982a8f9083}{operator$<$$<$}} (bool data)
+\begin{DoxyCompactList}\small\item\em Overload of operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} to write data into the packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a94522071d95189ddff1ae7ca832695ff}{operator$<$$<$}} (const char \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ac45aab054ddee7de9599bc3b2d8e025f}{operator$<$$<$}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a97acaefaee7d3ffb36f4e8a00d4c3970}{operator$<$$<$}} (const std\+::wstring \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a5ef2e3308b93b80214b42a7d4683704a}{operator$<$$<$}} (const \mbox{\hyperlink{a01901}{String}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ac5a13e3280cac77799f7fdadfe3e37b6}{operator$<$$<$}} (const wchar\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_abee2df335bdc3ab40521248cdb187c02}{operator$<$$<$}} (double data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_acf1a231e48452a1cd55af2c027a1c1ee}{operator$<$$<$}} (float data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a9d9c5a1bef415046aa46d51e7d2a9f1c}{operator$<$$<$}} (\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_af7f5c31c2d2749d3088783525f9fc974}{operator$<$$<$}} (\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a6dc89edcfcf19daf781b776439aba94a}{operator$<$$<$}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a97aa4ecba66b8f528438fc41ed020825}{operator$<$$<$}} (\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_afb6b2958f8a55923297da432c2a4f3e9}{operator$<$$<$}} (\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ad1837e0990f71e3727e0e118ab9fd20e}{operator$<$$<$}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_af3802406ed3430e20259e8551fa6554b}{operator$<$$<$}} (\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ad5cc1857ed14878ab7a8509db8d99335}{operator$<$$<$}} (\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a8b6403506fec6b69f033278de33c8145}{operator$>$$>$}} (bool \&data)
+\begin{DoxyCompactList}\small\item\em Overload of operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} to read data from the packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_aaed01fec1a3eae27a028506195607f82}{operator$>$$>$}} (char \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a1854ca771105fb281edf349fc6507c73}{operator$>$$>$}} (double \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a741849607d428e93c532e11eadcc39f1}{operator$>$$>$}} (float \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ae455be24bfd8dbaa4cd5097e0fb70ecd}{operator$>$$>$}} (\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a663e71b25a9352e3c4ddf4a3ce9db921}{operator$>$$>$}} (\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_ae76105996a6c2217bb3a4571603e92f6}{operator$>$$>$}} (\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a1c7814f9dbc637986ac498094add5ca5}{operator$>$$>$}} (\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a60484dff69997db11e2d4ab3704ab921}{operator$>$$>$}} (std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a8621056995c32bcf59809e2aecf08635}{operator$>$$>$}} (std\+::wstring \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a27d0ae92891dbf8a7914e5d5232940d0}{operator$>$$>$}} (\mbox{\hyperlink{a01901}{String}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a6bc20f1be9a63407079e6d26171ac71f}{operator$>$$>$}} (\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_aa3b0fabe6c14bcfa29bb04844b8bb987}{operator$>$$>$}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a79f7c144fd07a4036ffc7b0870a36613}{operator$>$$>$}} (\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a48df8986fc24551f1287144d3e990859}{operator$>$$>$}} (\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845}{Packet}} \& \mbox{\hyperlink{a01845_a8805e66013f9f84ec8a883e42ae259d4}{operator$>$$>$}} (wchar\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01845_a786e5d4ced83992ceefa1799963ea858}{Packet}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{a01845_adc0490ca3c7c3d1e321bd742e5213913}{\texorpdfstring{$\sim$}{\string~}\+Packet}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{a01845_ab71a31ef0f1d5d856de6f9fc75434128}{on\+Receive}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Called after the packet is received over the network. \end{DoxyCompactList}\item 
+virtual const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01845_af0003506bcb290407dcf5fe7f13a887d}{on\+Send}} (std\+::size\+\_\+t \&size)
+\begin{DoxyCompactList}\small\item\em Called before the packet is sent over the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool(Packet\+::\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01845_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}}) (std\+::size\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a01845_a54bea2433002686cf1de8c5c6466fe5f}{check\+Size}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Check if the packet can extract a given number of bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01845_aba88e3aab53d6991bf7c001f8a416871}{operator!=}} (const \mbox{\hyperlink{a01845}{Packet}} \&right) const
+\item 
+bool \mbox{\hyperlink{a01845_aa3136a586a93cde1f54e669b7430dcc9}{operator==}} (const \mbox{\hyperlink{a01845}{Packet}} \&right) const
+\begin{DoxyCompactList}\small\item\em Disallow comparisons between packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{a01845_a185e3d4b4c2b31560ea7723d6f2b22dd}{m\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Data stored in the packet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01845_a7119dcd69dbd57041e60a3062ced96e6}{m\+\_\+is\+Valid}}
+\begin{DoxyCompactList}\small\item\em Reading state of the packet. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01845_a874eea8a5654957a404c3b40b7ef9284}{m\+\_\+read\+Pos}}
+\begin{DoxyCompactList}\small\item\em Current reading position in the packet. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01845_a321ac7748c681850fad1c52fa265434d}{m\+\_\+send\+Pos}}
+\begin{DoxyCompactList}\small\item\em Current send position in the packet (for handling partial sends) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a01845_aa8b32310b01d4bb702d6bcb969d5f130}{Tcp\+Socket}}
+\item 
+class \mbox{\hyperlink{a01845_ae128c6687ced82c6157c5f865f8dec5c}{Udp\+Socket}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class to build blocks of data to transfer over the network. 
+
+Packets provide a safe and easy way to serialize data, in order to send it over the network using sockets (\doxylink{a01861}{sf\+::\+Tcp\+Socket}, \doxylink{a01869}{sf\+::\+Udp\+Socket}).
+
+Packets solve 2 fundamental problems that arise when transferring data over the network\+: \begin{DoxyItemize}
+\item data is interpreted correctly according to the endianness \item the bounds of the packet are preserved (one send == one receive)\end{DoxyItemize}
+The \doxylink{a01845}{sf\+::\+Packet} class provides both input and output modes. It is designed to follow the behavior of standard C++ streams, using operators \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} and \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} to extract and insert data.
+
+It is recommended to use only fixed-\/size types (like \doxylink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{sf\+::\+Int32}, etc.), to avoid possible differences between the sender and the receiver. Indeed, the native C++ types may have different sizes on two platforms and your data may be corrupted if that happens.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{sf::Uint32}}\ x\ =\ 24;}
+\DoxyCodeLine{std::string\ s\ =\ \textcolor{stringliteral}{"{}hello"{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ d\ =\ 5.89;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Group\ the\ variables\ to\ send\ into\ a\ packet}}
+\DoxyCodeLine{\mbox{\hyperlink{a01845}{sf::Packet}}\ packet;}
+\DoxyCodeLine{packet\ <<\ x\ <<\ s\ <<\ d;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Send\ it\ over\ the\ network\ (socket\ is\ a\ valid\ sf::TcpSocket)}}
+\DoxyCodeLine{socket.send(packet);}
+\DoxyCodeLine{}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Receive\ the\ packet\ at\ the\ other\ end}}
+\DoxyCodeLine{\mbox{\hyperlink{a01845}{sf::Packet}}\ packet;}
+\DoxyCodeLine{socket.receive(packet);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Extract\ the\ variables\ contained\ in\ the\ packet}}
+\DoxyCodeLine{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{sf::Uint32}}\ x;}
+\DoxyCodeLine{std::string\ s;}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ d;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (packet\ >>\ x\ >>\ s\ >>\ d)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Data\ extracted\ successfully...}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Packets have built-\/in operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} and \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} overloads for standard types\+: \begin{DoxyItemize}
+\item bool \item fixed-\/size integer types (\doxylink{a00669_a69b109973eac74e22b97e5339bdb68dd}{sf\+::\+Int8}/16/32, \doxylink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{sf\+::\+Uint8}/16/32) \item floating point numbers (float, double) \item string types (char\texorpdfstring{$\ast$}{*}, wchar\+\_\+t\texorpdfstring{$\ast$}{*}, std\+::string, std\+::wstring, \doxylink{a01901}{sf\+::\+String})\end{DoxyItemize}
+Like standard streams, it is also possible to define your own overloads of operators \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} and \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} in order to handle your custom types.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }MyStruct}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ number;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{sf::Int8}}\ \ \ \ integer;}
+\DoxyCodeLine{\ \ \ \ std::string\ str;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01845}{sf::Packet}}\&\ \mbox{\hyperlink{a01845_ae02c874e0aac18a0497fca982a8f9083}{operator\ <<}}(\mbox{\hyperlink{a01845}{sf::Packet}}\&\ packet,\ \textcolor{keyword}{const}\ MyStruct\&\ m)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ packet\ <<\ m.number\ <<\ m.integer\ <<\ m.str;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{a01845}{sf::Packet}}\&\ \mbox{\hyperlink{a01845_a8b6403506fec6b69f033278de33c8145}{operator\ >>}}(\mbox{\hyperlink{a01845}{sf::Packet}}\&\ packet,\ MyStruct\&\ m)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ packet\ >>\ m.number\ >>\ m.integer\ >>\ m.str;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Packets also provide an extra feature that allows to apply custom transformations to the data before it is sent, and after it is received. This is typically used to handle automatic compression or encryption of the data. This is achieved by inheriting from \doxylink{a01845}{sf\+::\+Packet}, and overriding the on\+Send and on\+Receive functions.
+
+Here is an example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }ZipPacket\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01845}{sf::Packet}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ onSend(std::size\_t\&\ size)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ srcData\ =\ getData();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::size\_t\ srcSize\ =\ getDataSize();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MySuperZipFunction(srcData,\ srcSize,\ \&size);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onReceive(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ std::size\_t\ size)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::size\_t\ dstSize;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ dstData\ =\ MySuperUnzipFunction(data,\ size,\ \&dstSize);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ append(dstData,\ dstSize);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Use\ like\ regular\ packets:}}
+\DoxyCodeLine{ZipPacket\ packet;}
+\DoxyCodeLine{packet\ <<\ x\ <<\ s\ <<\ d;}
+\DoxyCodeLine{...}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01861}{sf\+::\+Tcp\+Socket}, \doxylink{a01869}{sf\+::\+Udp\+Socket} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01845_af4e23b49b9465634c0b23aaabd94b820}\label{a01845_af4e23b49b9465634c0b23aaabd94b820} 
+\index{sf::Packet@{sf::Packet}!BoolType@{BoolType}}
+\index{BoolType@{BoolType}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{BoolType}{BoolType}}
+{\footnotesize\ttfamily typedef bool(Packet\+::\texorpdfstring{$\ast$}{*} sf\+::\+Packet\+::\+Bool\+Type) (std\+::size\+\_\+t)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01845_a786e5d4ced83992ceefa1799963ea858}\label{a01845_a786e5d4ced83992ceefa1799963ea858} 
+\index{sf::Packet@{sf::Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{Packet()}{Packet()}}
+{\footnotesize\ttfamily sf\+::\+Packet\+::\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Creates an empty packet. \Hypertarget{a01845_adc0490ca3c7c3d1e321bd742e5213913}\label{a01845_adc0490ca3c7c3d1e321bd742e5213913} 
+\index{sf::Packet@{sf::Packet}!````~Packet@{\texorpdfstring{$\sim$}{\string~}Packet}}
+\index{````~Packet@{\texorpdfstring{$\sim$}{\string~}Packet}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Packet()}{\string~Packet()}}
+{\footnotesize\ttfamily virtual sf\+::\+Packet\+::\texorpdfstring{$\sim$}{\string~}\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01845_a7dd6e429b87520008326c4d71f1cf011}\label{a01845_a7dd6e429b87520008326c4d71f1cf011} 
+\index{sf::Packet@{sf::Packet}!append@{append}}
+\index{append@{append}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void sf\+::\+Packet\+::append (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Append data to the end of the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to append \\
+\hline
+{\em size\+In\+Bytes} & Number of bytes to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_a54bea2433002686cf1de8c5c6466fe5f}\label{a01845_a54bea2433002686cf1de8c5c6466fe5f} 
+\index{sf::Packet@{sf::Packet}!checkSize@{checkSize}}
+\index{checkSize@{checkSize}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{checkSize()}{checkSize()}}
+{\footnotesize\ttfamily bool sf\+::\+Packet\+::check\+Size (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if the packet can extract a given number of bytes. 
+
+This function updates accordingly the state of the packet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape size} bytes can be read from the packet 
+\end{DoxyReturn}
+\Hypertarget{a01845_a133ea8b8fe6e93c230f0d79f19a3bf0d}\label{a01845_a133ea8b8fe6e93c230f0d79f19a3bf0d} 
+\index{sf::Packet@{sf::Packet}!clear@{clear}}
+\index{clear@{clear}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void sf\+::\+Packet\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the packet. 
+
+After calling Clear, the packet is empty.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_a7dd6e429b87520008326c4d71f1cf011}{append} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_a61e354fa670da053907c14b738839560}\label{a01845_a61e354fa670da053907c14b738839560} 
+\index{sf::Packet@{sf::Packet}!endOfPacket@{endOfPacket}}
+\index{endOfPacket@{endOfPacket}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{endOfPacket()}{endOfPacket()}}
+{\footnotesize\ttfamily bool sf\+::\+Packet\+::end\+Of\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tell if the reading position has reached the end of the packet. 
+
+This function is useful to know if there is some data left to be read, without actually reading it.
+
+\begin{DoxyReturn}{Returns}
+True if all data was read, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+operator bool 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_a998b70df024bee4792e2ecdc915ae46e}\label{a01845_a998b70df024bee4792e2ecdc915ae46e} 
+\index{sf::Packet@{sf::Packet}!getData@{getData}}
+\index{getData@{getData}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const void \texorpdfstring{$\ast$}{*} sf\+::\+Packet\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a pointer to the data contained in the packet. 
+
+Warning\+: the returned pointer may become invalid after you append data to the packet, therefore it should never be stored. The return pointer is NULL if the packet is empty.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the data
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_a0fae6eccf2ca704fc5099cd90a9f56f7}{get\+Data\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_a0fae6eccf2ca704fc5099cd90a9f56f7}\label{a01845_a0fae6eccf2ca704fc5099cd90a9f56f7} 
+\index{sf::Packet@{sf::Packet}!getDataSize@{getDataSize}}
+\index{getDataSize@{getDataSize}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{getDataSize()}{getDataSize()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Packet\+::get\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the data contained in the packet. 
+
+This function returns the number of bytes pointed to by what get\+Data returns.
+
+\begin{DoxyReturn}{Returns}
+Data size, in bytes
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_a998b70df024bee4792e2ecdc915ae46e}{get\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_ab71a31ef0f1d5d856de6f9fc75434128}\label{a01845_ab71a31ef0f1d5d856de6f9fc75434128} 
+\index{sf::Packet@{sf::Packet}!onReceive@{onReceive}}
+\index{onReceive@{onReceive}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{onReceive()}{onReceive()}}
+{\footnotesize\ttfamily virtual void sf\+::\+Packet\+::on\+Receive (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called after the packet is received over the network. 
+
+This function can be defined by derived classes to transform the data after it is received; this can be used for decompression, decryption, etc. The function receives a pointer to the received data, and must fill the packet with the transformed bytes. The default implementation fills the packet directly without transforming the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the received bytes \\
+\hline
+{\em size} & Number of bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_af0003506bcb290407dcf5fe7f13a887d}{on\+Send} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_af0003506bcb290407dcf5fe7f13a887d}\label{a01845_af0003506bcb290407dcf5fe7f13a887d} 
+\index{sf::Packet@{sf::Packet}!onSend@{onSend}}
+\index{onSend@{onSend}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{onSend()}{onSend()}}
+{\footnotesize\ttfamily virtual const void \texorpdfstring{$\ast$}{*} sf\+::\+Packet\+::on\+Send (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called before the packet is sent over the network. 
+
+This function can be defined by derived classes to transform the data before it is sent; this can be used for compression, encryption, etc. The function must return a pointer to the modified data, as well as the number of bytes pointed. The default implementation provides the packet\textquotesingle{}s data without transforming it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Variable to fill with the size of data to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the array of bytes to send
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_ab71a31ef0f1d5d856de6f9fc75434128}{on\+Receive} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_a8ab20be4a63921b7cb1a4d8ca5c30f75}\label{a01845_a8ab20be4a63921b7cb1a4d8ca5c30f75} 
+\index{sf::Packet@{sf::Packet}!operator BoolType@{operator BoolType}}
+\index{operator BoolType@{operator BoolType}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator BoolType()}{operator BoolType()}}
+{\footnotesize\ttfamily sf\+::\+Packet\+::operator \mbox{\hyperlink{a01845_af4e23b49b9465634c0b23aaabd94b820}{Bool\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Test the validity of the packet, for reading. 
+
+This operator allows to test the packet as a boolean variable, to check if a reading operation was successful.
+
+A packet will be in an invalid state if it has no more data to read.
+
+This behavior is the same as standard C++ streams.
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{packet\ >>\ x;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (packet)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ ok,\ x\ was\ extracted\ successfully}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/\ or\ -\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (packet\ >>\ x)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ ok,\ x\ was\ extracted\ successfully}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Don\textquotesingle{}t focus on the return type, it\textquotesingle{}s equivalent to bool but it disallows unwanted implicit conversions to integer or pointer types.
+
+\begin{DoxyReturn}{Returns}
+True if last data extraction from packet was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01845_a61e354fa670da053907c14b738839560}{end\+Of\+Packet} 
+\end{DoxySeeAlso}
+\Hypertarget{a01845_aba88e3aab53d6991bf7c001f8a416871}\label{a01845_aba88e3aab53d6991bf7c001f8a416871} 
+\index{sf::Packet@{sf::Packet}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01845}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01845_ae02c874e0aac18a0497fca982a8f9083}\label{a01845_ae02c874e0aac18a0497fca982a8f9083} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{bool}]{data }\end{DoxyParamCaption})}
+
+
+
+Overload of operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} to write data into the packet. 
+
+\Hypertarget{a01845_a94522071d95189ddff1ae7ca832695ff}\label{a01845_a94522071d95189ddff1ae7ca832695ff} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ac45aab054ddee7de9599bc3b2d8e025f}\label{a01845_ac45aab054ddee7de9599bc3b2d8e025f} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a97acaefaee7d3ffb36f4e8a00d4c3970}\label{a01845_a97acaefaee7d3ffb36f4e8a00d4c3970} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a5ef2e3308b93b80214b42a7d4683704a}\label{a01845_a5ef2e3308b93b80214b42a7d4683704a} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ac5a13e3280cac77799f7fdadfe3e37b6}\label{a01845_ac5a13e3280cac77799f7fdadfe3e37b6} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [6/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_abee2df335bdc3ab40521248cdb187c02}\label{a01845_abee2df335bdc3ab40521248cdb187c02} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [7/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{double}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_acf1a231e48452a1cd55af2c027a1c1ee}\label{a01845_acf1a231e48452a1cd55af2c027a1c1ee} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [8/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{float}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a9d9c5a1bef415046aa46d51e7d2a9f1c}\label{a01845_a9d9c5a1bef415046aa46d51e7d2a9f1c} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [9/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_af7f5c31c2d2749d3088783525f9fc974}\label{a01845_af7f5c31c2d2749d3088783525f9fc974} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [10/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a6dc89edcfcf19daf781b776439aba94a}\label{a01845_a6dc89edcfcf19daf781b776439aba94a} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [11/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a97aa4ecba66b8f528438fc41ed020825}\label{a01845_a97aa4ecba66b8f528438fc41ed020825} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [12/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_afb6b2958f8a55923297da432c2a4f3e9}\label{a01845_afb6b2958f8a55923297da432c2a4f3e9} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [13/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ad1837e0990f71e3727e0e118ab9fd20e}\label{a01845_ad1837e0990f71e3727e0e118ab9fd20e} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [14/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_af3802406ed3430e20259e8551fa6554b}\label{a01845_af3802406ed3430e20259e8551fa6554b} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [15/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ad5cc1857ed14878ab7a8509db8d99335}\label{a01845_ad5cc1857ed14878ab7a8509db8d99335} 
+\index{sf::Packet@{sf::Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [16/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_aa3136a586a93cde1f54e669b7430dcc9}\label{a01845_aa3136a586a93cde1f54e669b7430dcc9} 
+\index{sf::Packet@{sf::Packet}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool sf\+::\+Packet\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01845}{Packet}} \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Disallow comparisons between packets. 
+
+\Hypertarget{a01845_a8b6403506fec6b69f033278de33c8145}\label{a01845_a8b6403506fec6b69f033278de33c8145} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{bool \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Overload of operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} to read data from the packet. 
+
+\Hypertarget{a01845_aaed01fec1a3eae27a028506195607f82}\label{a01845_aaed01fec1a3eae27a028506195607f82} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a1854ca771105fb281edf349fc6507c73}\label{a01845_a1854ca771105fb281edf349fc6507c73} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{double \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a741849607d428e93c532e11eadcc39f1}\label{a01845_a741849607d428e93c532e11eadcc39f1} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [4/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{float \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ae455be24bfd8dbaa4cd5097e0fb70ecd}\label{a01845_ae455be24bfd8dbaa4cd5097e0fb70ecd} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [5/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a3c8e10435e2a310a7741755e66b5c94e}{Int16}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a663e71b25a9352e3c4ddf4a3ce9db921}\label{a01845_a663e71b25a9352e3c4ddf4a3ce9db921} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [6/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_ae76105996a6c2217bb3a4571603e92f6}\label{a01845_ae76105996a6c2217bb3a4571603e92f6} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [7/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a1c7814f9dbc637986ac498094add5ca5}\label{a01845_a1c7814f9dbc637986ac498094add5ca5} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [8/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a69b109973eac74e22b97e5339bdb68dd}{Int8}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a60484dff69997db11e2d4ab3704ab921}\label{a01845_a60484dff69997db11e2d4ab3704ab921} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [9/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a8621056995c32bcf59809e2aecf08635}\label{a01845_a8621056995c32bcf59809e2aecf08635} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [10/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::wstring \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a27d0ae92891dbf8a7914e5d5232940d0}\label{a01845_a27d0ae92891dbf8a7914e5d5232940d0} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [11/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01901}{String}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a6bc20f1be9a63407079e6d26171ac71f}\label{a01845_a6bc20f1be9a63407079e6d26171ac71f} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [12/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_aa3b0fabe6c14bcfa29bb04844b8bb987}\label{a01845_aa3b0fabe6c14bcfa29bb04844b8bb987} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [13/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a79f7c144fd07a4036ffc7b0870a36613}\label{a01845_a79f7c144fd07a4036ffc7b0870a36613} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [14/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_add9ac83466d96b9f50a009b9f4064266}{Uint64}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a48df8986fc24551f1287144d3e990859}\label{a01845_a48df8986fc24551f1287144d3e990859} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [15/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{a01845_a8805e66013f9f84ec8a883e42ae259d4}\label{a01845_a8805e66013f9f84ec8a883e42ae259d4} 
+\index{sf::Packet@{sf::Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [16/16]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01845}{Packet}} \& sf\+::\+Packet\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01845_aa8b32310b01d4bb702d6bcb969d5f130}\label{a01845_aa8b32310b01d4bb702d6bcb969d5f130} 
+\index{sf::Packet@{sf::Packet}!TcpSocket@{TcpSocket}}
+\index{TcpSocket@{TcpSocket}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{TcpSocket}{TcpSocket}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01861}{Tcp\+Socket}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01845_ae128c6687ced82c6157c5f865f8dec5c}\label{a01845_ae128c6687ced82c6157c5f865f8dec5c} 
+\index{sf::Packet@{sf::Packet}!UdpSocket@{UdpSocket}}
+\index{UdpSocket@{UdpSocket}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{UdpSocket}{UdpSocket}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{a01869}{Udp\+Socket}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01845_a185e3d4b4c2b31560ea7723d6f2b22dd}\label{a01845_a185e3d4b4c2b31560ea7723d6f2b22dd} 
+\index{sf::Packet@{sf::Packet}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily std\+::vector$<$char$>$ sf\+::\+Packet\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data stored in the packet. 
+
+\Hypertarget{a01845_a7119dcd69dbd57041e60a3062ced96e6}\label{a01845_a7119dcd69dbd57041e60a3062ced96e6} 
+\index{sf::Packet@{sf::Packet}!m\_isValid@{m\_isValid}}
+\index{m\_isValid@{m\_isValid}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{m\_isValid}{m\_isValid}}
+{\footnotesize\ttfamily bool sf\+::\+Packet\+::m\+\_\+is\+Valid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reading state of the packet. 
+
+\Hypertarget{a01845_a874eea8a5654957a404c3b40b7ef9284}\label{a01845_a874eea8a5654957a404c3b40b7ef9284} 
+\index{sf::Packet@{sf::Packet}!m\_readPos@{m\_readPos}}
+\index{m\_readPos@{m\_readPos}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{m\_readPos}{m\_readPos}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Packet\+::m\+\_\+read\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current reading position in the packet. 
+
+\Hypertarget{a01845_a321ac7748c681850fad1c52fa265434d}\label{a01845_a321ac7748c681850fad1c52fa265434d} 
+\index{sf::Packet@{sf::Packet}!m\_sendPos@{m\_sendPos}}
+\index{m\_sendPos@{m\_sendPos}!sf::Packet@{sf::Packet}}
+\doxysubsubsection{\texorpdfstring{m\_sendPos}{m\_sendPos}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+Packet\+::m\+\_\+send\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current send position in the packet (for handling partial sends) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Network/\mbox{\hyperlink{a00467}{Packet.\+hpp}}\end{DoxyCompactItemize}

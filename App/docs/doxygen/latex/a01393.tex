@@ -1,0 +1,51 @@
+\doxysection{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+traits\texorpdfstring{$<$}{<} iterator\+\_\+traits\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01393}{}\label{a01393}\index{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$@{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$}}
+
+
+{\ttfamily \#include $<$type\+\_\+traits.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{a01393_ac2711760b352b8921accc6609957dc90}{value}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01393_a1cbceaaa83a3ad294c3cb66b9df48e78}{traits}} = \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$ T $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01393_a1cbceaaa83a3ad294c3cb66b9df48e78}\label{a01393_a1cbceaaa83a3ad294c3cb66b9df48e78} 
+\index{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$@{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$}!traits@{traits}}
+\index{traits@{traits}!nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$@{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{traits}{traits}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{a01389}{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+traits}}$<$ \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$ T $>$ $>$\+::traits =  \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$T$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01393_ac2711760b352b8921accc6609957dc90}\label{a01393_ac2711760b352b8921accc6609957dc90} 
+\index{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$@{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$}!value@{value}}
+\index{value@{value}!nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$@{nlohmann::detail::is\_iterator\_traits$<$ iterator\_traits$<$ T $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr auto \mbox{\hyperlink{a01389}{nlohmann\+::detail\+::is\+\_\+iterator\+\_\+traits}}$<$ \mbox{\hyperlink{a01197}{iterator\+\_\+traits}}$<$ T $>$ $>$\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_detected<value\_type\_t,\ traits>::value\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_detected<difference\_type\_t,\ traits>::value\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_detected<pointer\_t,\ traits>::value\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_detected<iterator\_category\_t,\ traits>::value\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ is\_detected<reference\_t,\ traits>::value}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/meta/\mbox{\hyperlink{a00230}{type\+\_\+traits.\+hpp}}\end{DoxyCompactItemize}

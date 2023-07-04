@@ -1,0 +1,220 @@
+\doxysection{Ftp.\+hpp}
+\hypertarget{a00458_source}{}\label{a00458_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/Ftp.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Network/Ftp.hpp}}
+\mbox{\hyperlink{a00458}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_FTP\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_FTP\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02209}{SFML/Network/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00482}{SFML/Network/TcpSocket.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00518}{SFML/System/NonCopyable.hpp}}>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00545}{SFML/System/Time.hpp}}>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }IpAddress;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01813}{Ftp}}\ :\ \mbox{\hyperlink{a01897}{NonCopyable}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{a01813_a1cd6b89ad23253f6d97e6d4ca4d558cb}{TransferMode}}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01813_a1cd6b89ad23253f6d97e6d4ca4d558cba6f253b362639fb5e059dc292762a21ee}{Binary}},\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01813_a1cd6b89ad23253f6d97e6d4ca4d558cbac9e544a22dce8ef3177449cb235d15c2}{Ascii}},\ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Ebcdic\ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01817}{Response}}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1xx:\ the\ requested\ action\ is\ being\ initiated,}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ expect\ another\ reply\ before\ proceeding\ with\ a\ new\ command}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ RestartMarkerReply\ \ \ \ \ \ \ \ \ \ =\ 110,\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ ServiceReadySoon\ \ \ \ \ \ \ \ \ \ \ \ =\ 120,\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ DataConnectionAlreadyOpened\ =\ 125,\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ OpeningDataConnection\ \ \ \ \ \ \ =\ 150,\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2xx:\ the\ requested\ action\ has\ been\ successfully\ completed}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ Ok\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 200,\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ PointlessCommand\ \ \ \ \ \ =\ 202,\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ SystemStatus\ \ \ \ \ \ \ \ \ \ =\ 211,\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ DirectoryStatus\ \ \ \ \ \ \ =\ 212,\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ FileStatus\ \ \ \ \ \ \ \ \ \ \ \ =\ 213,\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ HelpMessage\ \ \ \ \ \ \ \ \ \ \ =\ 214,\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ SystemType\ \ \ \ \ \ \ \ \ \ \ \ =\ 215,\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ ServiceReady\ \ \ \ \ \ \ \ \ \ =\ 220,\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ ClosingConnection\ \ \ \ \ =\ 221,\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ DataConnectionOpened\ \ =\ 225,\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ ClosingDataConnection\ =\ 226,\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ EnteringPassiveMode\ \ \ =\ 227,\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ LoggedIn\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 230,\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ FileActionOk\ \ \ \ \ \ \ \ \ \ =\ 250,\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ DirectoryOk\ \ \ \ \ \ \ \ \ \ \ =\ 257,\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3xx:\ the\ command\ has\ been\ accepted,\ but\ the\ requested\ action}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ is\ dormant,\ pending\ receipt\ of\ further\ information}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ NeedPassword\ \ \ \ \ \ \ =\ 331,\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ NeedAccountToLogIn\ =\ 332,\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ NeedInformation\ \ \ \ =\ 350,\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4xx:\ the\ command\ was\ not\ accepted\ and\ the\ requested\ action\ did\ not\ take\ place,}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ but\ the\ error\ condition\ is\ temporary\ and\ the\ action\ may\ be\ requested\ again}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ ServiceUnavailable\ \ \ \ \ \ \ \ =\ 421,\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ DataConnectionUnavailable\ =\ 425,\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ TransferAborted\ \ \ \ \ \ \ \ \ \ \ =\ 426,\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ FileActionAborted\ \ \ \ \ \ \ \ \ =\ 450,\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ LocalError\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 451,\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ InsufficientStorageSpace\ \ =\ 452,\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 5xx:\ the\ command\ was\ not\ accepted\ and}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ requested\ action\ did\ not\ take\ place}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ CommandUnknown\ \ \ \ \ \ \ \ \ \ =\ 500,\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ ParametersUnknown\ \ \ \ \ \ \ =\ 501,\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ CommandNotImplemented\ \ \ =\ 502,\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ BadCommandSequence\ \ \ \ \ \ =\ 503,\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ ParameterNotImplemented\ =\ 504,\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ NotLoggedIn\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 530,\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ NeedAccountToStore\ \ \ \ \ \ =\ 532,\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ FileUnavailable\ \ \ \ \ \ \ \ \ =\ 550,\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ PageTypeUnknown\ \ \ \ \ \ \ \ \ =\ 551,\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ NotEnoughMemory\ \ \ \ \ \ \ \ \ =\ 552,\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ FilenameNotAllowed\ \ \ \ \ \ =\ 553,\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 10xx:\ SFML\ custom\ codes}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ InvalidResponse\ \ =\ 1000,\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ ConnectionFailed\ =\ 1001,\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ ConnectionClosed\ =\ 1002,\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ InvalidFile\ \ \ \ \ \ =\ 1003\ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01817_af300fffd4862774102f978eb22f85d9b}{Response}}(\mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}}\ code\ =\ InvalidResponse,\ \textcolor{keyword}{const}\ std::string\&\ message\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01817_a5102552955a2652c1a39e9046e617b36}{isOk}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}}\ \mbox{\hyperlink{a01817_a52bbca9fbf5451157bc055e3d8430c25}{getStatus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{a01817_adc2890c93c9f8ee997b828fcbef82c97}{getMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00180\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a01817_af81738f06b6f571761696291276acb3b}{Status}}\ \ \ \ \ \ \mbox{\hyperlink{a01817_af3a8918ddd408ff8fbcce5c0beda11d4}{m\_status}};\ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{a01817_aaf692d0df6066d4a1f4d0677869b8f7b}{m\_message}};\ }
+\DoxyCodeLine{00182\ \ \ \ \ \};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01821}{DirectoryResponse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01817}{Response}}}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01821_a36b6d2728fa53c4ad37b7a6307f4d388}{DirectoryResponse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01817}{Response}}\&\ response);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{a01821_a983b0ce3d99c687e0862212040158d67}{getDirectory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00213\ \textcolor{comment}{}\ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{a01821_a3f782abfe5fbe7ee6c2748d3b4ae6a40}{m\_directory}};\ }
+\DoxyCodeLine{00214\ \ \ \ \ \};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02209_ac5d46d4ffd98e947e28c54d051b338e7}{SFML\_NETWORK\_API}}\ \mbox{\hyperlink{a01825}{ListingResponse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{a01817}{Response}}}
+\DoxyCodeLine{00222\ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01825_a7e98d0aed70105c71adb52e5b6ce0bb8}{ListingResponse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01817}{Response}}\&\ response,\ \textcolor{keyword}{const}\ std::string\&\ data);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ \mbox{\hyperlink{a01825_a0d0579db7e0531761992dbbae1174bf2}{getListing}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00247\ \textcolor{comment}{}\ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{a01825_a65ca6597417d650fe73efc856ca551d6}{m\_listing}};\ }
+\DoxyCodeLine{00248\ \ \ \ \ \};}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{a01813_a2edfa8e9009caf27bce74459ae76dc52}{\string~Ftp}}();}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_af02fb3de3f450a50a27981961c69c860}{connect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01841}{IpAddress}}\&\ server,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port\ =\ 21,\ \mbox{\hyperlink{a01933}{Time}}\ timeout\ =\ Time::Zero);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_acf7459926f3391cd06bf84337ed6a0f4}{disconnect}}();}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a686262bc377584cd50e52e1576aa3a9b}{login}}();}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a99d8114793c1659e9d51d45cecdcd965}{login}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ password);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00327\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_aa1127d442b4acb2105aa8060a39d04fc}{keepAlive}}();}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00340\ \ \ \ \ \mbox{\hyperlink{a01821}{DirectoryResponse}}\ \mbox{\hyperlink{a01813_a79c654fcdd0c81e68c4fa29af3b45e0c}{getWorkingDirectory}}();}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00357\ \ \ \ \ \mbox{\hyperlink{a01825}{ListingResponse}}\ \mbox{\hyperlink{a01813_a8f37258e461fcb9e2a0655e9df0be4a0}{getDirectoryListing}}(\textcolor{keyword}{const}\ std::string\&\ directory\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00371\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a7e93488ea6330dd4dd76e428da9bb6d3}{changeDirectory}}(\textcolor{keyword}{const}\ std::string\&\ directory);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_ad295cf77f30f9ad07b5c401fd9849189}{parentDirectory}}();}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00396\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a247b84c4b25da37804218c2b748c4787}{createDirectory}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00413\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a2a8a7ef9144204b5b319c9a4be8806c2}{deleteDirectory}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00429\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a8f99251d7153e1dc26723e4006deb764}{renameFile}}(\textcolor{keyword}{const}\ std::string\&\ file,\ \textcolor{keyword}{const}\ std::string\&\ newName);}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a8aa272b0eb7769a850006e70fcad370f}{deleteFile}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00468\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a20c1600ec5fd6f5a2ad1429ab8aa5df4}{download}}(\textcolor{keyword}{const}\ std::string\&\ remoteFile,\ \textcolor{keyword}{const}\ std::string\&\ localPath,\ \mbox{\hyperlink{a01813_a1cd6b89ad23253f6d97e6d4ca4d558cb}{TransferMode}}\ mode\ =\ Binary);}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00491\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a0402d2cec27a197ffba34c88ffaddeac}{upload}}(\textcolor{keyword}{const}\ std::string\&\ localFile,\ \textcolor{keyword}{const}\ std::string\&\ remotePath,\ \mbox{\hyperlink{a01813_a1cd6b89ad23253f6d97e6d4ca4d558cb}{TransferMode}}\ mode\ =\ Binary,\ \textcolor{keywordtype}{bool}\ append\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00509\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a44e095103ecbce175a33eaf0820440ff}{sendCommand}}(\textcolor{keyword}{const}\ std::string\&\ command,\ \textcolor{keyword}{const}\ std::string\&\ parameter\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00522\ \ \ \ \ \mbox{\hyperlink{a01817}{Response}}\ \mbox{\hyperlink{a01813_a605a3ecae3bbba58fd1f250be500e741}{getResponse}}();}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keyword}{class\ }DataChannel;}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DataChannel;}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00536\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01861}{TcpSocket}}\ \ \ \mbox{\hyperlink{a01813_a36e68897d2219b1a56f1c30545bc6cce}{m\_commandSocket}};\ }
+\DoxyCodeLine{00537\ \ \ \ \ std::string\ \mbox{\hyperlink{a01813_a24e8c6bd093823fb24caab23f9c798a0}{m\_receiveBuffer}};\ }
+\DoxyCodeLine{00538\ \};}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_FTP\_HPP}}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ }
+
+\end{DoxyCode}

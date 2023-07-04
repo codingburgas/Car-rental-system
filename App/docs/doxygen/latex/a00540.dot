@@ -1,0 +1,22 @@
+digraph "D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/ThreadLocalPtr.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="D:/doxygen shitnqta\l/App/carSystem.PL/SFML\l/include/SFML/System/ThreadLocal\lPtr.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="SFML/System/ThreadLocal.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00536.html",tooltip=" "];
+  Node2 -> Node3 [id="edge9_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="SFML/System/Export.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a02212.html",tooltip=" "];
+  Node3 -> Node4 [id="edge10_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="SFML/Config.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00359.html",tooltip=" "];
+  Node2 -> Node5 [id="edge11_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="SFML/System/NonCopyable.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00518.html",tooltip=" "];
+  Node5 -> Node3 [id="edge12_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node6 [id="edge13_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="cstdlib",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node7 [id="edge14_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="SFML/System/ThreadLocalPtr.inl",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00542.html",tooltip=" "];
+}

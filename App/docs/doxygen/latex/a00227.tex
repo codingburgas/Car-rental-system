@@ -1,0 +1,54 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/nlohmann/detail/meta/is\+\_\+sax.hpp File Reference}
+\hypertarget{a00227}{}\label{a00227}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/is\_sax.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/meta/is\_sax.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/detected.\+hpp$>$}\newline
+{\ttfamily \#include $<$nlohmann/detail/meta/type\+\_\+traits.\+hpp$>$}\newline
+Include dependency graph for is\+\_\+sax.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01281}{nlohmann\+::detail\+::is\+\_\+sax$<$ SAX, Basic\+Json\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{a01285}{nlohmann\+::detail\+::is\+\_\+sax\+\_\+static\+\_\+asserts$<$ SAX, Basic\+Json\+Type $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00661}{nlohmann}}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{a00662}{nlohmann\+::detail}}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Binary $>$ }\\using \mbox{\hyperlink{a00662_a4948bef216c2594dae7921d9c4045455}{nlohmann\+::detail\+::binary\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{binary}}(std\+::declval$<$ Binary \& $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a45ec87326503b8884b664a9ef23a6c99}{nlohmann\+::detail\+::boolean\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}}(std\+::declval$<$ bool $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_aec53c029383b34a72182210e58fadb79}{nlohmann\+::detail\+::end\+\_\+array\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().end\+\_\+array())
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_af52d6d2521c386998ae940d118182ebc}{nlohmann\+::detail\+::end\+\_\+object\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().end\+\_\+object())
+\item 
+{\footnotesize template$<$typename T , typename String $>$ }\\using \mbox{\hyperlink{a00662_a44869ca9f422b260625d78e4e8121559}{nlohmann\+::detail\+::key\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}}(std\+::declval$<$ String \& $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_ac1b4e524746bf8b790b2b776048b93c4}{nlohmann\+::detail\+::null\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}}())
+\item 
+{\footnotesize template$<$typename T , typename Float , typename String $>$ }\\using \mbox{\hyperlink{a00662_ad42df56e913abe26ed556e0e92f386f4}{nlohmann\+::detail\+::number\+\_\+float\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{number\+\_\+float}}(std\+::declval$<$ Float $>$(), std\+::declval$<$ const String \& $>$()))
+\item 
+{\footnotesize template$<$typename T , typename Integer $>$ }\\using \mbox{\hyperlink{a00662_a4a3e14a011b9ea1ff849fc6d2411e6a0}{nlohmann\+::detail\+::number\+\_\+integer\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{number\+\_\+integer}}(std\+::declval$<$ Integer $>$()))
+\item 
+{\footnotesize template$<$typename T , typename Unsigned $>$ }\\using \mbox{\hyperlink{a00662_a74da7b17bda76f65d276feb18209c913}{nlohmann\+::detail\+::number\+\_\+unsigned\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{number\+\_\+unsigned}}(std\+::declval$<$ Unsigned $>$()))
+\item 
+{\footnotesize template$<$typename T , typename Exception $>$ }\\using \mbox{\hyperlink{a00662_a264d4d58bc1fd82bcc7bf6bf73d6acad}{nlohmann\+::detail\+::parse\+\_\+error\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a01057}{parse\+\_\+error}}(std\+::declval$<$ std\+::size\+\_\+t $>$(), std\+::declval$<$ const std\+::string \& $>$(), std\+::declval$<$ const Exception \& $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a80273cecc45765d7b2826ec931fbffdd}{nlohmann\+::detail\+::start\+\_\+array\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().start\+\_\+array(std\+::declval$<$ std\+::size\+\_\+t $>$()))
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{a00662_a5fff1e6dcaabd367d9b1109a5682f9d4}{nlohmann\+::detail\+::start\+\_\+object\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().start\+\_\+object(std\+::declval$<$ std\+::size\+\_\+t $>$()))
+\item 
+{\footnotesize template$<$typename T , typename String $>$ }\\using \mbox{\hyperlink{a00662_a27c3fc3bd42ac406f763184aa8ae4cb0}{nlohmann\+::detail\+::string\+\_\+function\+\_\+t}} = decltype(std\+::declval$<$ T \& $>$().\mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{string}}(std\+::declval$<$ String \& $>$()))
+\end{DoxyCompactItemize}

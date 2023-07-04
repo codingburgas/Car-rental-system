@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['r_0',['r',['../a01685.html#a6a5256ca24a4f9f0e0808f6fc23e01e1',1,'sf::Color']]],
+  ['raw_5fheader_1',['raw_header',['../a00821.html#a8b2417c68c6babbaf308bf295538bf44',1,'cpr::Response']]],
+  ['reason_2',['reason',['../a00821.html#a117698a9c8260200e46ea745eea6d1b5',1,'cpr::Response']]],
+  ['red_3',['Red',['../a01685.html#a127dbf55db9c07d0fa8f4bfcbb97594a',1,'sf::Color']]],
+  ['redirect_5fcode_5foffset_4',['REDIRECT_CODE_OFFSET',['../a00659.html#a5dcc2eb629e68ef4ff427dab876b3053',1,'cpr::status']]],
+  ['redirect_5fcount_5',['redirect_count',['../a00821.html#aaa2b82ce61174bb4d00e8fe1b64f12cb',1,'cpr::Response']]],
+  ['ref_5fstack_6',['ref_stack',['../a01137.html#aa7526e7ae7be7f63803a23fd8cf36e5d',1,'nlohmann::detail::json_sax_dom_parser::ref_stack'],['../a01141.html#a82a0e49479660b9903597e1ef55c6601',1,'nlohmann::detail::json_sax_dom_callback_parser::ref_stack']]],
+  ['reference_5ftokens_7',['reference_tokens',['../a01217.html#a468dde132b1384d962c75eca7306f6cb',1,'nlohmann::json_pointer::reference_tokens'],['../a01217.html#a07a990a6838de4f38ee9d881e7b9fd61',1,'nlohmann::json_pointer::reference_tokens']]],
+  ['registerblack_8',['registerBlack',['../a01585.html#a2b13f182bb5761d85b33d9b6584df93b',1,'Register']]],
+  ['registerblacktexture_9',['registerBlackTexture',['../a01585.html#ad9bbfc28906670ab7ebcdfbf2292c6c5',1,'Register']]],
+  ['registerwhite_10',['registerWhite',['../a01585.html#ad682745cfd1d70a9f2f2b36d68b6872f',1,'Register']]],
+  ['registerwhitetexture_11',['registerWhiteTexture',['../a01585.html#ac9d1a5aa9c97ff3f7ed1296a1ea2b4e5',1,'Register']]],
+  ['rendertexture_12',['renderTexture',['../a01565.html#a6a3bd8ff980c4a1882dea2ccd3b31e02',1,'Login::renderTexture'],['../a01585.html#a3dc65af0ab97dc7c0261902b3d4fa0ce',1,'Register::renderTexture']]],
+  ['reservationdates_13',['reservationDates',['../a01557.html#a0ba3acf95f4539eec016e2ad15791131',1,'vehicles']]],
+  ['reservedbyids_14',['reservedByIds',['../a01557.html#aa7da314047e0845a2bdaf50fd05713b7',1,'vehicles']]],
+  ['reserveids_15',['reserveIds',['../a00681.html#a9faa14c1a4610bc6661283aa156c4530',1,'APIHandler']]],
+  ['result_16',['result',['../a00973.html#ac00f26a84ebe0c2c5cb420a47d15ffec',1,'CURLMsg::result'],['../a01217.html#ae3d35f4085faec07b87c88ba0dae457d',1,'nlohmann::json_pointer::result'],['../a01217.html#a8473b794a810d3fdb46cf985bfa9e2bb',1,'nlohmann::json_pointer::result'],['../a01561.html#af1b3125c601978e6989f049991b33780',1,'InputField::result']]],
+  ['revents_17',['revents',['../a00981.html#a14e87b528f4a052ec65edbc14b6ab080',1,'curl_waitfd']]],
+  ['role_18',['role',['../a01573.html#aaf2ac839eeccaa6c52ef2dd0a8e2da61',1,'MainMenu']]],
+  ['root_19',['root',['../a01137.html#aef0477277389e399d7128898841b71c0',1,'nlohmann::detail::json_sax_dom_parser::root'],['../a01141.html#a7b12037ca38be3ddec09c42bd71080cc',1,'nlohmann::detail::json_sax_dom_callback_parser::root']]],
+  ['rows_20',['rows',['../a01709.html#a85c391fe41dba5f50cc5d80116e3a2fe',1,'sf::Font::Page']]]
+];

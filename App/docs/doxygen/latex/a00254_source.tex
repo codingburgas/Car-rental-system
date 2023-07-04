@@ -1,0 +1,46 @@
+\doxysection{json\+\_\+fwd.\+hpp}
+\hypertarget{a00254_source}{}\label{a00254_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/json\_fwd.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/json\_fwd.hpp}}
+\mbox{\hyperlink{a00254}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_NLOHMANN\_JSON\_FWD\_HPP\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INCLUDE\_NLOHMANN\_JSON\_FWD\_HPP\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}\ \textcolor{comment}{//\ int64\_t,\ uint64\_t}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}\ \textcolor{comment}{//\ map}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}\ \textcolor{comment}{//\ allocator}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}\ \textcolor{comment}{//\ string}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}\ \textcolor{comment}{//\ vector}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ \textcolor{keywordtype}{void},\ \textcolor{keyword}{typename}\ SFINAE\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }adl\_serializer;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{template}<\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}\ V,\ \textcolor{keyword}{typename}...\ Args>\ \textcolor{keyword}{class\ }ObjectType\ =}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ std::map,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}...\ Args>\ \textcolor{keyword}{class\ }ArrayType\ =\ std::vector,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }StringType\ =\ std::string,\ \textcolor{keyword}{class\ }BooleanType\ =\ bool,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }NumberIntegerType\ =\ std::int64\_t,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }NumberUnsignedType\ =\ std::uint64\_t,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }NumberFloatType\ =\ double,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>\ \textcolor{keyword}{class\ }AllocatorType\ =\ std::allocator,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ SFINAE\ =\ \textcolor{keywordtype}{void}>\ \textcolor{keyword}{class\ }JSONSerializer\ =}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ adl\_serializer,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }BinaryType\ =\ std::vector<std::uint8\_t>>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }basic\_json;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ BasicJsonType>}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }json\_pointer;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01541}{json}}\ =\ \mbox{\hyperlink{a01541}{basic\_json<>}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Key,\ \textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ IgnoredLess,\ \textcolor{keyword}{class}\ Allocator>}
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{a01553}{ordered\_map}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{using\ }\mbox{\hyperlink{a01541}{ordered\_json}}\ =\ \mbox{\hyperlink{a01541}{basic\_json<nlohmann::ordered\_map>}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \}\ \ \textcolor{comment}{//\ namespace\ nlohmann}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INCLUDE\_NLOHMANN\_JSON\_FWD\_HPP\_}}
+
+\end{DoxyCode}

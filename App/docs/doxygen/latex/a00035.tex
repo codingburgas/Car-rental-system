@@ -1,0 +1,38 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/cpr/cprtypes.h File Reference}
+\hypertarget{a00035}{}\label{a00035}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/cprtypes.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/cprtypes.h}}
+{\ttfamily \#include $<$curl/curl.\+h$>$}\newline
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for cprtypes.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00733}{cpr\+::\+Case\+Insensitive\+Compare}}
+\item 
+class \mbox{\hyperlink{a00725}{cpr\+::\+String\+Holder$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{a00729}{cpr\+::\+Url}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00656}{cpr}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+::cpr\+\_\+off\+\_\+t}} = \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wrapper around \"{}curl\+\_\+off\+\_\+t\"{} to prevent applications from having to link against libcurl. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{cpr\+::\+Header}} = std\+::map$<$ std\+::string, std\+::string, \mbox{\hyperlink{a00733}{Case\+Insensitive\+Compare}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \mbox{\hyperlink{a00656_a52ab23890a87abeff3664a42ac062d2b}{cpr\+::operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&s)
+\end{DoxyCompactItemize}

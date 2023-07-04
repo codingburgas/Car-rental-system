@@ -1,0 +1,608 @@
+\doxysection{cpr Namespace Reference}
+\hypertarget{a00656}{}\label{a00656}\index{cpr@{cpr}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{a00657}{priv}}
+\item 
+namespace \mbox{\hyperlink{a00658}{ssl}}
+\item 
+namespace \mbox{\hyperlink{a00659}{status}}
+\item 
+namespace \mbox{\hyperlink{a00660}{util}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{a00689}{Authentication}}
+\item 
+class \mbox{\hyperlink{a00693}{Body}}
+\item 
+struct \mbox{\hyperlink{a00781}{Buffer}}
+\item 
+struct \mbox{\hyperlink{a00733}{Case\+Insensitive\+Compare}}
+\item 
+class \mbox{\hyperlink{a00717}{Connect\+Timeout}}
+\item 
+class \mbox{\hyperlink{a00721}{Cookies}}
+\item 
+class \mbox{\hyperlink{a00745}{Curl\+Container}}
+\item 
+struct \mbox{\hyperlink{a00749}{Curl\+Holder}}
+\item 
+class \mbox{\hyperlink{a00713}{Debug\+Callback}}
+\item 
+class \mbox{\hyperlink{a00753}{Digest}}
+\item 
+class \mbox{\hyperlink{a00809}{Encoded\+Authentication}}
+\item 
+class \mbox{\hyperlink{a00757}{Error}}
+\item 
+struct \mbox{\hyperlink{a00777}{File}}
+\item 
+class \mbox{\hyperlink{a00701}{Header\+Callback}}
+\item 
+class \mbox{\hyperlink{a00761}{Http\+Version}}
+\item 
+class \mbox{\hyperlink{a00765}{Interface}}
+\item 
+class \mbox{\hyperlink{a00769}{Limit\+Rate}}
+\item 
+class \mbox{\hyperlink{a00773}{Low\+Speed}}
+\item 
+class \mbox{\hyperlink{a00789}{Multipart}}
+\item 
+class \mbox{\hyperlink{a00793}{NTLM}}
+\item 
+struct \mbox{\hyperlink{a00741}{Pair}}
+\item 
+struct \mbox{\hyperlink{a00737}{Parameter}}
+\item 
+class \mbox{\hyperlink{a00797}{Parameters}}
+\item 
+struct \mbox{\hyperlink{a00785}{Part}}
+\item 
+class \mbox{\hyperlink{a00801}{Payload}}
+\item 
+class \mbox{\hyperlink{a00709}{Progress\+Callback}}
+\item 
+class \mbox{\hyperlink{a00805}{Proxies}}
+\item 
+class \mbox{\hyperlink{a00813}{Proxy\+Authentication}}
+\item 
+class \mbox{\hyperlink{a00697}{Read\+Callback}}
+\item 
+class \mbox{\hyperlink{a00817}{Redirect}}
+\item 
+class \mbox{\hyperlink{a00821}{Response}}
+\item 
+class \mbox{\hyperlink{a00825}{Session}}
+\item 
+struct \mbox{\hyperlink{a00897}{Ssl\+Options}}
+\item 
+class \mbox{\hyperlink{a00725}{String\+Holder}}
+\item 
+class \mbox{\hyperlink{a00901}{Timeout}}
+\item 
+class \mbox{\hyperlink{a00905}{Unix\+Socket}}
+\item 
+class \mbox{\hyperlink{a00729}{Url}}
+\item 
+class \mbox{\hyperlink{a00909}{User\+Agent}}
+\item 
+class \mbox{\hyperlink{a00913}{Verbose}}
+\item 
+class \mbox{\hyperlink{a00829}{Verify\+Ssl}}
+\item 
+class \mbox{\hyperlink{a00705}{Write\+Callback}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} = std\+::future$<$ \mbox{\hyperlink{a00821}{Response}} $>$
+\item 
+using \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} = \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wrapper around \"{}curl\+\_\+off\+\_\+t\"{} to prevent applications from having to link against libcurl. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} = std\+::map$<$ std\+::string, std\+::string, \mbox{\hyperlink{a00733}{Case\+Insensitive\+Compare}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{Error\+Code}} \{ \newline
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae0aa021e21dddbd6d8cecec71e9cf564}{OK}} = 0
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9ce818a4b52e8a8c6539fe6391392369}{CONNECTION\+\_\+\+FAILURE}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aafc9db2877457de2d37c2fb6d6fea874}{EMPTY\+\_\+\+RESPONSE}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233afd6a1f3244b09378480b6acba23246a7}{HOST\+\_\+\+RESOLUTION\+\_\+\+FAILURE}}
+, \newline
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae8c0c70879b5895c615677261d64a1ee}{INTERNAL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad83f249774659f38fa67887425ead2fd}{INVALID\+\_\+\+URL\+\_\+\+FORMAT}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a8b69396d5bf4d280ebf266cc2819f5db}{NETWORK\+\_\+\+RECEIVE\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9dbc901be7177f134a95d0c49c1fe47c}{NETWORK\+\_\+\+SEND\+\_\+\+FAILURE}}
+, \newline
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a39f86b9064b85a08c0cd5fefaa5f7eab}{OPERATION\+\_\+\+TIMEDOUT}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad0c1193dae463a87696b6912364e9a57}{PROXY\+\_\+\+RESOLUTION\+\_\+\+FAILURE}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ada25ce6a6e857a712f7faae3b3396c81}{SSL\+\_\+\+CONNECT\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a012e62bf7352640fa18e649f4cd26ffa}{SSL\+\_\+\+LOCAL\+\_\+\+CERTIFICATE\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233acb2f1af99c323c481c3e586610aff84b}{SSL\+\_\+\+REMOTE\+\_\+\+CERTIFICATE\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233af5460cd0c192531bb959774afeec14ad}{SSL\+\_\+\+CACERT\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a3ed87e5f1e8a4a67252b7643013bc56c}{GENERIC\+\_\+\+SSL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a735c3d53d46c84c25dc772162b02ca6c}{UNSUPPORTED\+\_\+\+PROTOCOL}}
+, \newline
+\mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a62ae639f237da64207b048621cd82f29}{REQUEST\+\_\+\+CANCELLED}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aad9cfab1abea44e9d23a8b87158f00e2}{TOO\+\_\+\+MANY\+\_\+\+REDIRECTS}}
+, \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9a10f345b0f755d461a8673a5e9ef6b4}{UNKNOWN\+\_\+\+ERROR}} = 1000
+ \}
+\item 
+enum class \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79}{Http\+Version\+Code}} \{ \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79a75fb8bdfea8679c27cecfcc04f61c0a9}{VERSION\+\_\+\+NONE}}
+, \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79a67b2ce8a14f27e3af2bc4a027099df6e}{VERSION\+\_\+1\+\_\+0}}
+, \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79ab4abd26b93226f8ce368709dd09c1eb7}{VERSION\+\_\+1\+\_\+1}}
+ \}
+\item 
+enum class \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a3b6f62c0ded0d9889359bee1f48b4654}{POST\+\_\+301}} = 0x1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ac590c61ac7ceb51d23374612a330a02d}{POST\+\_\+302}} = 0x1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ace47f9fb200433c4f162de2cb87a721a}{POST\+\_\+303}} = 0x1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}{POST\+\_\+\+ALL}} = POST\+\_\+301 \texorpdfstring{$\vert$}{|} POST\+\_\+302 \texorpdfstring{$\vert$}{|} POST\+\_\+303
+, \newline
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0x0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{a00656_a336b8aa644e736812d604055afdf1a8b}{any}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} flag)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a79e60b6d3b51c2a11777581e83c24078}{Delete\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a31bec11dd3a04f49cf0ef4a17b7ad5a9}{Delete\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_af9bc75f8995c6c0d1415c9a595997b4b}{Download}} (const \mbox{\hyperlink{a00705}{Write\+Callback}} \&write, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_aa19a54b99d723129c9f01521bfadc95d}{Download}} (std\+::ofstream \&file, Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a6ddc78599d4070f14593e9a8e1e2ca55}{Get\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a888bb911c71f356fb3837dc4253b093c}{Get\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a30c20f83989805f7e9192c33e85129a3}{Head\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a0411865dc73bcd1cdd903787ca7bdf9e}{Head\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}}(std\+::move(ts)...)))$>$
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \mbox{\hyperlink{a00656_ab94426a33fb391d362b87155fe155106}{operator\&}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& \mbox{\hyperlink{a00656_a23552659679e680a439fdfbae90438ff}{operator\&=}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \mbox{\hyperlink{a00656_a52ab23890a87abeff3664a42ac062d2b}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&s)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \mbox{\hyperlink{a00656_a6beb07b71650c1f1e5c0b9abccdcdb3e}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& \mbox{\hyperlink{a00656_a86e8a836925d68155bd252189ca4ef4a}{operator\texorpdfstring{$^\wedge$}{\string^}=}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \mbox{\hyperlink{a00656_a1e44daa1280b7a93b5ceea74267fb1a1}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& \mbox{\hyperlink{a00656_a59c9ff6c626e108b3c9d1203e631438a}{operator\texorpdfstring{$\vert$}{|}=}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&lhs, \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} rhs)
+\item 
+\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \mbox{\hyperlink{a00656_af45fc432d6f5e309e73b71d965007924}{operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} flag)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_aaaa20103315f42e5d1862823d2a93a14}{Options\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_ae1080defc6d3c26c884b691024c85e4f}{Options\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_accbc3d2d8edfe66ab4947e61d06f2178}{Patch\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a8ac4bf6e25311eb7f2a4383ccf3d84b8}{Patch\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a12f500a94e602da952eef6af080db046}{Post\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a7ffd75668a6d9d780c1974f775ef14bc}{Post\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00821}{Response}} \mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}} (Ts \&\&... ts)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} \mbox{\hyperlink{a00656_a173d01d70c4d1e1b7f62ea1bce858ff8}{Put\+Async}} (Ts... ts)
+\item 
+{\footnotesize template$<$typename Then , typename... Ts$>$ }\\auto \mbox{\hyperlink{a00656_a2899a20ce3fdf2721a9c922d7a8b8a42}{Put\+Callback}} (Then then, Ts... ts) -\/$>$ std\+::future$<$ decltype(then(\mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}}(std\+::move(ts)...)))$>$
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{a00897}{Ssl\+Options}} \mbox{\hyperlink{a00656_ab6ba1be905e3cd62c1968ea5d4578ccd}{Ssl}} (Ts \&\&... ts)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00656_a841013760107b5053d0496ef1c8c9c87}\label{a00656_a841013760107b5053d0496ef1c8c9c87} 
+\index{cpr@{cpr}!AsyncResponse@{AsyncResponse}}
+\index{AsyncResponse@{AsyncResponse}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{AsyncResponse}{AsyncResponse}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{cpr\+::\+Async\+Response}} = typedef std\+::future$<$\mbox{\hyperlink{a00821}{Response}}$>$}
+
+\Hypertarget{a00656_a2c8e66b193e30723e356ca8319e0b478}\label{a00656_a2c8e66b193e30723e356ca8319e0b478} 
+\index{cpr@{cpr}!cpr\_off\_t@{cpr\_off\_t}}
+\index{cpr\_off\_t@{cpr\_off\_t}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{cpr\_off\_t}{cpr\_off\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+::cpr\+\_\+off\+\_\+t}} = typedef \mbox{\hyperlink{a00134_a494e2b4279dc064f7ed1d0abd602b28d}{curl\+\_\+off\+\_\+t}}}
+
+
+
+Wrapper around \"{}curl\+\_\+off\+\_\+t\"{} to prevent applications from having to link against libcurl. 
+
+\Hypertarget{a00656_a3302e4bcc4cd4fba6cf094dae553594f}\label{a00656_a3302e4bcc4cd4fba6cf094dae553594f} 
+\index{cpr@{cpr}!Header@{Header}}
+\index{Header@{Header}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Header}{Header}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{cpr\+::\+Header}} = typedef std\+::map$<$std\+::string, std\+::string, \mbox{\hyperlink{a00733}{Case\+Insensitive\+Compare}}$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233} 
+\index{cpr@{cpr}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233}{cpr\+::\+Error\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!cpr@{cpr}}\index{cpr@{cpr}!OK@{OK}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae0aa021e21dddbd6d8cecec71e9cf564}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae0aa021e21dddbd6d8cecec71e9cf564} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECTION\_FAILURE@{CONNECTION\_FAILURE}!cpr@{cpr}}\index{cpr@{cpr}!CONNECTION\_FAILURE@{CONNECTION\_FAILURE}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9ce818a4b52e8a8c6539fe6391392369}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9ce818a4b52e8a8c6539fe6391392369} 
+CONNECTION\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY\_RESPONSE@{EMPTY\_RESPONSE}!cpr@{cpr}}\index{cpr@{cpr}!EMPTY\_RESPONSE@{EMPTY\_RESPONSE}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aafc9db2877457de2d37c2fb6d6fea874}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aafc9db2877457de2d37c2fb6d6fea874} 
+EMPTY\+\_\+\+RESPONSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HOST\_RESOLUTION\_FAILURE@{HOST\_RESOLUTION\_FAILURE}!cpr@{cpr}}\index{cpr@{cpr}!HOST\_RESOLUTION\_FAILURE@{HOST\_RESOLUTION\_FAILURE}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233afd6a1f3244b09378480b6acba23246a7}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233afd6a1f3244b09378480b6acba23246a7} 
+HOST\+\_\+\+RESOLUTION\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERNAL\_ERROR@{INTERNAL\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!INTERNAL\_ERROR@{INTERNAL\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae8c0c70879b5895c615677261d64a1ee}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ae8c0c70879b5895c615677261d64a1ee} 
+INTERNAL\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_URL\_FORMAT@{INVALID\_URL\_FORMAT}!cpr@{cpr}}\index{cpr@{cpr}!INVALID\_URL\_FORMAT@{INVALID\_URL\_FORMAT}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad83f249774659f38fa67887425ead2fd}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad83f249774659f38fa67887425ead2fd} 
+INVALID\+\_\+\+URL\+\_\+\+FORMAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_RECEIVE\_ERROR@{NETWORK\_RECEIVE\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!NETWORK\_RECEIVE\_ERROR@{NETWORK\_RECEIVE\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a8b69396d5bf4d280ebf266cc2819f5db}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a8b69396d5bf4d280ebf266cc2819f5db} 
+NETWORK\+\_\+\+RECEIVE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NETWORK\_SEND\_FAILURE@{NETWORK\_SEND\_FAILURE}!cpr@{cpr}}\index{cpr@{cpr}!NETWORK\_SEND\_FAILURE@{NETWORK\_SEND\_FAILURE}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9dbc901be7177f134a95d0c49c1fe47c}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9dbc901be7177f134a95d0c49c1fe47c} 
+NETWORK\+\_\+\+SEND\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPERATION\_TIMEDOUT@{OPERATION\_TIMEDOUT}!cpr@{cpr}}\index{cpr@{cpr}!OPERATION\_TIMEDOUT@{OPERATION\_TIMEDOUT}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a39f86b9064b85a08c0cd5fefaa5f7eab}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a39f86b9064b85a08c0cd5fefaa5f7eab} 
+OPERATION\+\_\+\+TIMEDOUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROXY\_RESOLUTION\_FAILURE@{PROXY\_RESOLUTION\_FAILURE}!cpr@{cpr}}\index{cpr@{cpr}!PROXY\_RESOLUTION\_FAILURE@{PROXY\_RESOLUTION\_FAILURE}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad0c1193dae463a87696b6912364e9a57}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ad0c1193dae463a87696b6912364e9a57} 
+PROXY\+\_\+\+RESOLUTION\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_CONNECT\_ERROR@{SSL\_CONNECT\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!SSL\_CONNECT\_ERROR@{SSL\_CONNECT\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ada25ce6a6e857a712f7faae3b3396c81}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233ada25ce6a6e857a712f7faae3b3396c81} 
+SSL\+\_\+\+CONNECT\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_LOCAL\_CERTIFICATE\_ERROR@{SSL\_LOCAL\_CERTIFICATE\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!SSL\_LOCAL\_CERTIFICATE\_ERROR@{SSL\_LOCAL\_CERTIFICATE\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a012e62bf7352640fa18e649f4cd26ffa}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a012e62bf7352640fa18e649f4cd26ffa} 
+SSL\+\_\+\+LOCAL\+\_\+\+CERTIFICATE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_REMOTE\_CERTIFICATE\_ERROR@{SSL\_REMOTE\_CERTIFICATE\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!SSL\_REMOTE\_CERTIFICATE\_ERROR@{SSL\_REMOTE\_CERTIFICATE\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233acb2f1af99c323c481c3e586610aff84b}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233acb2f1af99c323c481c3e586610aff84b} 
+SSL\+\_\+\+REMOTE\+\_\+\+CERTIFICATE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SSL\_CACERT\_ERROR@{SSL\_CACERT\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!SSL\_CACERT\_ERROR@{SSL\_CACERT\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233af5460cd0c192531bb959774afeec14ad}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233af5460cd0c192531bb959774afeec14ad} 
+SSL\+\_\+\+CACERT\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GENERIC\_SSL\_ERROR@{GENERIC\_SSL\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!GENERIC\_SSL\_ERROR@{GENERIC\_SSL\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a3ed87e5f1e8a4a67252b7643013bc56c}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a3ed87e5f1e8a4a67252b7643013bc56c} 
+GENERIC\+\_\+\+SSL\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNSUPPORTED\_PROTOCOL@{UNSUPPORTED\_PROTOCOL}!cpr@{cpr}}\index{cpr@{cpr}!UNSUPPORTED\_PROTOCOL@{UNSUPPORTED\_PROTOCOL}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a735c3d53d46c84c25dc772162b02ca6c}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a735c3d53d46c84c25dc772162b02ca6c} 
+UNSUPPORTED\+\_\+\+PROTOCOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REQUEST\_CANCELLED@{REQUEST\_CANCELLED}!cpr@{cpr}}\index{cpr@{cpr}!REQUEST\_CANCELLED@{REQUEST\_CANCELLED}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a62ae639f237da64207b048621cd82f29}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a62ae639f237da64207b048621cd82f29} 
+REQUEST\+\_\+\+CANCELLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOO\_MANY\_REDIRECTS@{TOO\_MANY\_REDIRECTS}!cpr@{cpr}}\index{cpr@{cpr}!TOO\_MANY\_REDIRECTS@{TOO\_MANY\_REDIRECTS}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aad9cfab1abea44e9d23a8b87158f00e2}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233aad9cfab1abea44e9d23a8b87158f00e2} 
+TOO\+\_\+\+MANY\+\_\+\+REDIRECTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN\_ERROR@{UNKNOWN\_ERROR}!cpr@{cpr}}\index{cpr@{cpr}!UNKNOWN\_ERROR@{UNKNOWN\_ERROR}}}\Hypertarget{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9a10f345b0f755d461a8673a5e9ef6b4}\label{a00656_a99f4e64f5d19cb6ab0cc0fa76afaf233a9a10f345b0f755d461a8673a5e9ef6b4} 
+UNKNOWN\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00656_a1ea5fb47b59d560fe292e611984c1d79}\label{a00656_a1ea5fb47b59d560fe292e611984c1d79} 
+\index{cpr@{cpr}!HttpVersionCode@{HttpVersionCode}}
+\index{HttpVersionCode@{HttpVersionCode}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{HttpVersionCode}{HttpVersionCode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00656_a1ea5fb47b59d560fe292e611984c1d79}{cpr\+::\+Http\+Version\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERSION\_NONE@{VERSION\_NONE}!cpr@{cpr}}\index{cpr@{cpr}!VERSION\_NONE@{VERSION\_NONE}}}\Hypertarget{a00656_a1ea5fb47b59d560fe292e611984c1d79a75fb8bdfea8679c27cecfcc04f61c0a9}\label{a00656_a1ea5fb47b59d560fe292e611984c1d79a75fb8bdfea8679c27cecfcc04f61c0a9} 
+VERSION\+\_\+\+NONE&Let libcurl decide which version is the best. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERSION\_1\_0@{VERSION\_1\_0}!cpr@{cpr}}\index{cpr@{cpr}!VERSION\_1\_0@{VERSION\_1\_0}}}\Hypertarget{a00656_a1ea5fb47b59d560fe292e611984c1d79a67b2ce8a14f27e3af2bc4a027099df6e}\label{a00656_a1ea5fb47b59d560fe292e611984c1d79a67b2ce8a14f27e3af2bc4a027099df6e} 
+VERSION\+\_\+1\+\_\+0&Enforce HTTP 1.\+0 requests. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERSION\_1\_1@{VERSION\_1\_1}!cpr@{cpr}}\index{cpr@{cpr}!VERSION\_1\_1@{VERSION\_1\_1}}}\Hypertarget{a00656_a1ea5fb47b59d560fe292e611984c1d79ab4abd26b93226f8ce368709dd09c1eb7}\label{a00656_a1ea5fb47b59d560fe292e611984c1d79ab4abd26b93226f8ce368709dd09c1eb7} 
+VERSION\+\_\+1\+\_\+1&Enforce HTTP 1.\+1 requests. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803} 
+\index{cpr@{cpr}!PostRedirectFlags@{PostRedirectFlags}}
+\index{PostRedirectFlags@{PostRedirectFlags}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PostRedirectFlags}{PostRedirectFlags}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{cpr\+::\+Post\+Redirect\+Flags}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POST\_301@{POST\_301}!cpr@{cpr}}\index{cpr@{cpr}!POST\_301@{POST\_301}}}\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a3b6f62c0ded0d9889359bee1f48b4654}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a3b6f62c0ded0d9889359bee1f48b4654} 
+POST\+\_\+301&Respect RFC 7231 (section 6.\+4.\+2 to 6.\+4.\+4). Same as CURL\+\_\+\+REDIR\+\_\+\+POST\+\_\+301 (\href{https://curl.se/libcurl/c/CURLOPT_POSTREDIR.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+POSTREDIR.\+html}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POST\_302@{POST\_302}!cpr@{cpr}}\index{cpr@{cpr}!POST\_302@{POST\_302}}}\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ac590c61ac7ceb51d23374612a330a02d}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ac590c61ac7ceb51d23374612a330a02d} 
+POST\+\_\+302&Maintain the request method after a 302 redirect. Same as CURL\+\_\+\+REDIR\+\_\+\+POST\+\_\+302 (\href{https://curl.se/libcurl/c/CURLOPT_POSTREDIR.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+POSTREDIR.\+html}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POST\_303@{POST\_303}!cpr@{cpr}}\index{cpr@{cpr}!POST\_303@{POST\_303}}}\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ace47f9fb200433c4f162de2cb87a721a}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ace47f9fb200433c4f162de2cb87a721a} 
+POST\+\_\+303&Maintain the request method after a 303 redirect. Same as CURL\+\_\+\+REDIR\+\_\+\+POST\+\_\+303 (\href{https://curl.se/libcurl/c/CURLOPT_POSTREDIR.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+POSTREDIR.\+html}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POST\_ALL@{POST\_ALL}!cpr@{cpr}}\index{cpr@{cpr}!POST\_ALL@{POST\_ALL}}}\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1} 
+POST\+\_\+\+ALL&Default value. Convenience option to enable all flags. Same as CURL\+\_\+\+REDIR\+\_\+\+POST\+\_\+\+ALL (\href{https://curl.se/libcurl/c/CURLOPT_POSTREDIR.html}{\texttt{ https\+://curl.\+se/libcurl/c/\+CURLOPT\+\_\+\+POSTREDIR.\+html}}). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!cpr@{cpr}}\index{cpr@{cpr}!NONE@{NONE}}}\Hypertarget{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ab50339a10e1de285ac99d4c3990b8693}\label{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ab50339a10e1de285ac99d4c3990b8693} 
+NONE&
+\begin{DoxyItemize}
+\item Convenience option to disable all flags. 
+\end{DoxyItemize}\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00656_a336b8aa644e736812d604055afdf1a8b}\label{a00656_a336b8aa644e736812d604055afdf1a8b} 
+\index{cpr@{cpr}!any@{any}}
+\index{any@{any}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily bool cpr\+::any (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{flag }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_ac73efc59a10aa2e213147d3ec09f3919}\label{a00656_ac73efc59a10aa2e213147d3ec09f3919} 
+\index{cpr@{cpr}!Delete@{Delete}}
+\index{Delete@{Delete}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Delete (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a79e60b6d3b51c2a11777581e83c24078}\label{a00656_a79e60b6d3b51c2a11777581e83c24078} 
+\index{cpr@{cpr}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Delete\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a31bec11dd3a04f49cf0ef4a17b7ad5a9}\label{a00656_a31bec11dd3a04f49cf0ef4a17b7ad5a9} 
+\index{cpr@{cpr}!DeleteCallback@{DeleteCallback}}
+\index{DeleteCallback@{DeleteCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{DeleteCallback()}{DeleteCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Delete\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_ac73efc59a10aa2e213147d3ec09f3919}{Delete}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_af9bc75f8995c6c0d1415c9a595997b4b}\label{a00656_af9bc75f8995c6c0d1415c9a595997b4b} 
+\index{cpr@{cpr}!Download@{Download}}
+\index{Download@{Download}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Download()}{Download()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Download (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00705}{Write\+Callback}} \&}]{write,  }\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_aa19a54b99d723129c9f01521bfadc95d}\label{a00656_aa19a54b99d723129c9f01521bfadc95d} 
+\index{cpr@{cpr}!Download@{Download}}
+\index{Download@{Download}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Download()}{Download()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Download (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a2e5891d7dca1eb783d958b497b7510d4}\label{a00656_a2e5891d7dca1eb783d958b497b7510d4} 
+\index{cpr@{cpr}!Get@{Get}}
+\index{Get@{Get}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Get (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a6ddc78599d4070f14593e9a8e1e2ca55}\label{a00656_a6ddc78599d4070f14593e9a8e1e2ca55} 
+\index{cpr@{cpr}!GetAsync@{GetAsync}}
+\index{GetAsync@{GetAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{GetAsync()}{GetAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Get\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a888bb911c71f356fb3837dc4253b093c}\label{a00656_a888bb911c71f356fb3837dc4253b093c} 
+\index{cpr@{cpr}!GetCallback@{GetCallback}}
+\index{GetCallback@{GetCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{GetCallback()}{GetCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Get\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_a2e5891d7dca1eb783d958b497b7510d4}{Get}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_a3d938fde3349f8693495c2f40ab0f829}\label{a00656_a3d938fde3349f8693495c2f40ab0f829} 
+\index{cpr@{cpr}!Head@{Head}}
+\index{Head@{Head}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Head()}{Head()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Head (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a30c20f83989805f7e9192c33e85129a3}\label{a00656_a30c20f83989805f7e9192c33e85129a3} 
+\index{cpr@{cpr}!HeadAsync@{HeadAsync}}
+\index{HeadAsync@{HeadAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{HeadAsync()}{HeadAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Head\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a0411865dc73bcd1cdd903787ca7bdf9e}\label{a00656_a0411865dc73bcd1cdd903787ca7bdf9e} 
+\index{cpr@{cpr}!HeadCallback@{HeadCallback}}
+\index{HeadCallback@{HeadCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{HeadCallback()}{HeadCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Head\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_a3d938fde3349f8693495c2f40ab0f829}{Head}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_ab94426a33fb391d362b87155fe155106}\label{a00656_ab94426a33fb391d362b87155fe155106} 
+\index{cpr@{cpr}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} cpr\+::operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a23552659679e680a439fdfbae90438ff}\label{a00656_a23552659679e680a439fdfbae90438ff} 
+\index{cpr@{cpr}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\&=()}{operator\&=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& cpr\+::operator\&= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a52ab23890a87abeff3664a42ac062d2b}\label{a00656_a52ab23890a87abeff3664a42ac062d2b} 
+\index{cpr@{cpr}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream \& cpr\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{a00725}{String\+Holder}}$<$ T $>$ \&}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a6beb07b71650c1f1e5c0b9abccdcdb3e}\label{a00656_a6beb07b71650c1f1e5c0b9abccdcdb3e} 
+\index{cpr@{cpr}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} cpr\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a86e8a836925d68155bd252189ca4ef4a}\label{a00656_a86e8a836925d68155bd252189ca4ef4a} 
+\index{cpr@{cpr}!operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}=()}{operator\string^=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& cpr\+::operator\texorpdfstring{$^\wedge$}{\string^}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a1e44daa1280b7a93b5ceea74267fb1a1}\label{a00656_a1e44daa1280b7a93b5ceea74267fb1a1} 
+\index{cpr@{cpr}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} cpr\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a59c9ff6c626e108b3c9d1203e631438a}\label{a00656_a59c9ff6c626e108b3c9d1203e631438a} 
+\index{cpr@{cpr}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}=()}{operator|=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \& cpr\+::operator\texorpdfstring{$\vert$}{|}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} \&}]{lhs,  }\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{rhs }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_af45fc432d6f5e309e73b71d965007924}\label{a00656_af45fc432d6f5e309e73b71d965007924} 
+\index{cpr@{cpr}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}} cpr\+::operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{Post\+Redirect\+Flags}}}]{flag }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}\label{a00656_a9ec1d46d3776b0df9dd727ddb18b9686} 
+\index{cpr@{cpr}!Options@{Options}}
+\index{Options@{Options}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Options()}{Options()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Options (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_aaaa20103315f42e5d1862823d2a93a14}\label{a00656_aaaa20103315f42e5d1862823d2a93a14} 
+\index{cpr@{cpr}!OptionsAsync@{OptionsAsync}}
+\index{OptionsAsync@{OptionsAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{OptionsAsync()}{OptionsAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Options\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_ae1080defc6d3c26c884b691024c85e4f}\label{a00656_ae1080defc6d3c26c884b691024c85e4f} 
+\index{cpr@{cpr}!OptionsCallback@{OptionsCallback}}
+\index{OptionsCallback@{OptionsCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{OptionsCallback()}{OptionsCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Options\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_a9ec1d46d3776b0df9dd727ddb18b9686}{Options}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_a23fa05b46215817922072b8b1e1170ad}\label{a00656_a23fa05b46215817922072b8b1e1170ad} 
+\index{cpr@{cpr}!Patch@{Patch}}
+\index{Patch@{Patch}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Patch()}{Patch()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Patch (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_accbc3d2d8edfe66ab4947e61d06f2178}\label{a00656_accbc3d2d8edfe66ab4947e61d06f2178} 
+\index{cpr@{cpr}!PatchAsync@{PatchAsync}}
+\index{PatchAsync@{PatchAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PatchAsync()}{PatchAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Patch\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a8ac4bf6e25311eb7f2a4383ccf3d84b8}\label{a00656_a8ac4bf6e25311eb7f2a4383ccf3d84b8} 
+\index{cpr@{cpr}!PatchCallback@{PatchCallback}}
+\index{PatchCallback@{PatchCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PatchCallback()}{PatchCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Patch\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_a23fa05b46215817922072b8b1e1170ad}{Patch}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}\label{a00656_ab67d3dd3119e50410ce9e5bf5761e6da} 
+\index{cpr@{cpr}!Post@{Post}}
+\index{Post@{Post}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Post()}{Post()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Post (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a12f500a94e602da952eef6af080db046}\label{a00656_a12f500a94e602da952eef6af080db046} 
+\index{cpr@{cpr}!PostAsync@{PostAsync}}
+\index{PostAsync@{PostAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PostAsync()}{PostAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Post\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a7ffd75668a6d9d780c1974f775ef14bc}\label{a00656_a7ffd75668a6d9d780c1974f775ef14bc} 
+\index{cpr@{cpr}!PostCallback@{PostCallback}}
+\index{PostCallback@{PostCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PostCallback()}{PostCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Post\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_ab67d3dd3119e50410ce9e5bf5761e6da}{Post}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_af8be6e7a7daac01e0bd15134468b3413}\label{a00656_af8be6e7a7daac01e0bd15134468b3413} 
+\index{cpr@{cpr}!Put@{Put}}
+\index{Put@{Put}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00821}{Response}} cpr\+::\+Put (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a173d01d70c4d1e1b7f62ea1bce858ff8}\label{a00656_a173d01d70c4d1e1b7f62ea1bce858ff8} 
+\index{cpr@{cpr}!PutAsync@{PutAsync}}
+\index{PutAsync@{PutAsync}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PutAsync()}{PutAsync()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00656_a841013760107b5053d0496ef1c8c9c87}{Async\+Response}} cpr\+::\+Put\+Async (\begin{DoxyParamCaption}\item[{Ts...}]{ts }\end{DoxyParamCaption})}
+
+\Hypertarget{a00656_a2899a20ce3fdf2721a9c922d7a8b8a42}\label{a00656_a2899a20ce3fdf2721a9c922d7a8b8a42} 
+\index{cpr@{cpr}!PutCallback@{PutCallback}}
+\index{PutCallback@{PutCallback}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{PutCallback()}{PutCallback()}}
+{\footnotesize\ttfamily template$<$typename Then , typename... Ts$>$ \\
+auto cpr\+::\+Put\+Callback (\begin{DoxyParamCaption}\item[{Then}]{then,  }\item[{Ts...}]{ts }\end{DoxyParamCaption}) -\/$>$ std\+::future$<$decltype(then(\mbox{\hyperlink{a00656_af8be6e7a7daac01e0bd15134468b3413}{Put}}(std\+::move(ts)...)))$>$ }
+
+\Hypertarget{a00656_ab6ba1be905e3cd62c1968ea5d4578ccd}\label{a00656_ab6ba1be905e3cd62c1968ea5d4578ccd} 
+\index{cpr@{cpr}!Ssl@{Ssl}}
+\index{Ssl@{Ssl}!cpr@{cpr}}
+\doxysubsubsection{\texorpdfstring{Ssl()}{Ssl()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{a00897}{Ssl\+Options}} cpr\+::\+Ssl (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption})}
+

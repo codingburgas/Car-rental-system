@@ -1,0 +1,265 @@
+\doxysection{sf\+::Sound\+File\+Factory Class Reference}
+\hypertarget{a01637}{}\label{a01637}\index{sf::SoundFileFactory@{sf::SoundFileFactory}}
+
+
+Manages and instantiates sound file readers and writers.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+File\+Factory.\+hpp$>$}
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a01641}{Reader\+Factory}}
+\item 
+struct \mbox{\hyperlink{a01645}{Writer\+Factory}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01637_ae68185540db5e2a451d626be45036fe0}{create\+Reader\+From\+Filename}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Instantiate the right reader for the given file on disk. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01637_a2384ed647b08c5b2bbf43566d5d7b5fd}{create\+Reader\+From\+Memory}} (const void \texorpdfstring{$\ast$}{*}data, std\+::size\+\_\+t size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Instantiate the right codec for the given file in memory. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01637_af64ce454cde415ebd3ca5442801d87d8}{create\+Reader\+From\+Stream}} (\mbox{\hyperlink{a01881}{Input\+Stream}} \&stream)
+\begin{DoxyCompactList}\small\item\em Instantiate the right codec for the given file in stream. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01657}{Sound\+File\+Writer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01637_a2bc9da55d78be2c41a273bbbea4c0978}{create\+Writer\+From\+Filename}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Instantiate the right writer for the given file on disk. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}{register\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{a01585}{Register} a new reader. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{a01637_a3a59140e6ccf1f252f721b790eddd661}{register\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{a01585}{Register} a new writer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{a01637_a9e6765c41e2784bc755388afb4a2f432}{unregister\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em Unregister a reader. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{a01637_a2306f90d1f72e474732e4bcceeb34215}{unregister\+Writer}} ()
+\begin{DoxyCompactList}\small\item\em Unregister a writer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{a01641}{Reader\+Factory}} $>$ \mbox{\hyperlink{a01637_ac17e17e2acd7955119f54e32d45293a2}{Reader\+Factory\+Array}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{a01645}{Writer\+Factory}} $>$ \mbox{\hyperlink{a01637_a5ef91a693abbf9ebffcd86379ddb9930}{Writer\+Factory\+Array}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a01637_ac17e17e2acd7955119f54e32d45293a2}{Reader\+Factory\+Array}} \mbox{\hyperlink{a01637_a823e083321d592370ce4b258d0da10aa}{s\+\_\+readers}}
+\begin{DoxyCompactList}\small\item\em List of all registered readers. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a01637_a5ef91a693abbf9ebffcd86379ddb9930}{Writer\+Factory\+Array}} \mbox{\hyperlink{a01637_ad9e5d855ef07f5895bcb91eb3431f088}{s\+\_\+writers}}
+\begin{DoxyCompactList}\small\item\em List of all registered writers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages and instantiates sound file readers and writers. 
+
+This class is where all the sound file readers and writers are registered. You should normally only need to use its registration and unregistration functions; readers/writers creation and manipulation are wrapped into the higher-\/level classes \doxylink{a01605}{sf\+::\+Input\+Sound\+File} and \doxylink{a01621}{sf\+::\+Output\+Sound\+File}.
+
+To register a new reader (writer) use the \doxylink{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}{sf\+::\+Sound\+File\+Factory\+::register\+Reader} (register\+Writer) static function. You don\textquotesingle{}t have to call the unregister\+Reader (unregister\+Writer) function, unless you want to unregister a format before your application ends (typically, when a plugin is unloaded).
+
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sf::SoundFileFactory::registerReader<MySoundFileReader>();}
+\DoxyCodeLine{sf::SoundFileFactory::registerWriter<MySoundFileWriter>();}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01605}{sf\+::\+Input\+Sound\+File}, \doxylink{a01621}{sf\+::\+Output\+Sound\+File}, \doxylink{a01649}{sf\+::\+Sound\+File\+Reader}, \doxylink{a01657}{sf\+::\+Sound\+File\+Writer} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01637_ac17e17e2acd7955119f54e32d45293a2}\label{a01637_ac17e17e2acd7955119f54e32d45293a2} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!ReaderFactoryArray@{ReaderFactoryArray}}
+\index{ReaderFactoryArray@{ReaderFactoryArray}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{ReaderFactoryArray}{ReaderFactoryArray}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{a01641}{Reader\+Factory}}$>$ \mbox{\hyperlink{a01637_ac17e17e2acd7955119f54e32d45293a2}{sf\+::\+Sound\+File\+Factory\+::\+Reader\+Factory\+Array}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01637_a5ef91a693abbf9ebffcd86379ddb9930}\label{a01637_a5ef91a693abbf9ebffcd86379ddb9930} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!WriterFactoryArray@{WriterFactoryArray}}
+\index{WriterFactoryArray@{WriterFactoryArray}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{WriterFactoryArray}{WriterFactoryArray}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{a01645}{Writer\+Factory}}$>$ \mbox{\hyperlink{a01637_a5ef91a693abbf9ebffcd86379ddb9930}{sf\+::\+Sound\+File\+Factory\+::\+Writer\+Factory\+Array}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01637_ae68185540db5e2a451d626be45036fe0}\label{a01637_ae68185540db5e2a451d626be45036fe0} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!createReaderFromFilename@{createReaderFromFilename}}
+\index{createReaderFromFilename@{createReaderFromFilename}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{createReaderFromFilename()}{createReaderFromFilename()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} sf\+::\+Sound\+File\+Factory\+::create\+Reader\+From\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instantiate the right reader for the given file on disk. 
+
+It\textquotesingle{}s up to the caller to release the returned reader
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new sound file reader that can read the given file, or null if no reader can handle it
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_a2384ed647b08c5b2bbf43566d5d7b5fd}{create\+Reader\+From\+Memory}, \doxylink{a01637_af64ce454cde415ebd3ca5442801d87d8}{create\+Reader\+From\+Stream} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_a2384ed647b08c5b2bbf43566d5d7b5fd}\label{a01637_a2384ed647b08c5b2bbf43566d5d7b5fd} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!createReaderFromMemory@{createReaderFromMemory}}
+\index{createReaderFromMemory@{createReaderFromMemory}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{createReaderFromMemory()}{createReaderFromMemory()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} sf\+::\+Sound\+File\+Factory\+::create\+Reader\+From\+Memory (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{std\+::size\+\_\+t}]{size\+In\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instantiate the right codec for the given file in memory. 
+
+It\textquotesingle{}s up to the caller to release the returned reader
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\+In\+Bytes} & Total size of the file data, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new sound file codec that can read the given file, or null if no codec can handle it
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_ae68185540db5e2a451d626be45036fe0}{create\+Reader\+From\+Filename}, \doxylink{a01637_af64ce454cde415ebd3ca5442801d87d8}{create\+Reader\+From\+Stream} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_af64ce454cde415ebd3ca5442801d87d8}\label{a01637_af64ce454cde415ebd3ca5442801d87d8} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!createReaderFromStream@{createReaderFromStream}}
+\index{createReaderFromStream@{createReaderFromStream}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{createReaderFromStream()}{createReaderFromStream()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01649}{Sound\+File\+Reader}} \texorpdfstring{$\ast$}{*} sf\+::\+Sound\+File\+Factory\+::create\+Reader\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01881}{Input\+Stream}} \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instantiate the right codec for the given file in stream. 
+
+It\textquotesingle{}s up to the caller to release the returned reader
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new sound file codec that can read the given file, or null if no codec can handle it
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_ae68185540db5e2a451d626be45036fe0}{create\+Reader\+From\+Filename}, \doxylink{a01637_a2384ed647b08c5b2bbf43566d5d7b5fd}{create\+Reader\+From\+Memory} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_a2bc9da55d78be2c41a273bbbea4c0978}\label{a01637_a2bc9da55d78be2c41a273bbbea4c0978} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!createWriterFromFilename@{createWriterFromFilename}}
+\index{createWriterFromFilename@{createWriterFromFilename}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{createWriterFromFilename()}{createWriterFromFilename()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a01657}{Sound\+File\+Writer}} \texorpdfstring{$\ast$}{*} sf\+::\+Sound\+File\+Factory\+::create\+Writer\+From\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instantiate the right writer for the given file on disk. 
+
+It\textquotesingle{}s up to the caller to release the returned writer
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the sound file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new sound file writer that can write given file, or null if no writer can handle it 
+\end{DoxyReturn}
+\Hypertarget{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}\label{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!registerReader@{registerReader}}
+\index{registerReader@{registerReader}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{registerReader()}{registerReader()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void sf\+::\+Sound\+File\+Factory\+::register\+Reader\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxylink{a01585}{Register} a new reader. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_a9e6765c41e2784bc755388afb4a2f432}{unregister\+Reader} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_a3a59140e6ccf1f252f721b790eddd661}\label{a01637_a3a59140e6ccf1f252f721b790eddd661} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!registerWriter@{registerWriter}}
+\index{registerWriter@{registerWriter}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{registerWriter()}{registerWriter()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void sf\+::\+Sound\+File\+Factory\+::register\+Writer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxylink{a01585}{Register} a new writer. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_a2306f90d1f72e474732e4bcceeb34215}{unregister\+Writer} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_a9e6765c41e2784bc755388afb4a2f432}\label{a01637_a9e6765c41e2784bc755388afb4a2f432} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!unregisterReader@{unregisterReader}}
+\index{unregisterReader@{unregisterReader}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{unregisterReader()}{unregisterReader()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void sf\+::\+Sound\+File\+Factory\+::unregister\+Reader\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unregister a reader. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_acaf1f0bf1b7c7b9988ec76b33e33fe95}{register\+Reader} 
+\end{DoxySeeAlso}
+\Hypertarget{a01637_a2306f90d1f72e474732e4bcceeb34215}\label{a01637_a2306f90d1f72e474732e4bcceeb34215} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!unregisterWriter@{unregisterWriter}}
+\index{unregisterWriter@{unregisterWriter}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{unregisterWriter()}{unregisterWriter()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void sf\+::\+Sound\+File\+Factory\+::unregister\+Writer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Unregister a writer. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01637_a3a59140e6ccf1f252f721b790eddd661}{register\+Writer} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01637_a823e083321d592370ce4b258d0da10aa}\label{a01637_a823e083321d592370ce4b258d0da10aa} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!s\_readers@{s\_readers}}
+\index{s\_readers@{s\_readers}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{s\_readers}{s\_readers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01637_ac17e17e2acd7955119f54e32d45293a2}{Reader\+Factory\+Array}} sf\+::\+Sound\+File\+Factory\+::s\+\_\+readers\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+List of all registered readers. 
+
+\Hypertarget{a01637_ad9e5d855ef07f5895bcb91eb3431f088}\label{a01637_ad9e5d855ef07f5895bcb91eb3431f088} 
+\index{sf::SoundFileFactory@{sf::SoundFileFactory}!s\_writers@{s\_writers}}
+\index{s\_writers@{s\_writers}!sf::SoundFileFactory@{sf::SoundFileFactory}}
+\doxysubsubsection{\texorpdfstring{s\_writers}{s\_writers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01637_a5ef91a693abbf9ebffcd86379ddb9930}{Writer\+Factory\+Array}} sf\+::\+Sound\+File\+Factory\+::s\+\_\+writers\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+List of all registered writers. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00335}{Sound\+File\+Factory.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Audio/\mbox{\hyperlink{a00338}{Sound\+File\+Factory.\+inl}}\end{DoxyCompactItemize}

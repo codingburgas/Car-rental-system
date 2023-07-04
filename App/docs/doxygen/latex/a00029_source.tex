@@ -1,0 +1,50 @@
+\doxysection{cookies.\+h}
+\hypertarget{a00029_source}{}\label{a00029_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/cookies.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/cookies.h}}
+\mbox{\hyperlink{a00029}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_COOKIES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_COOKIES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00041}{cpr/curlholder.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00721}{Cookies}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00721_aaa2d99b5d192958c59f1e057ab7f4257}{encode}}\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{a00721_a1387ee9510ac60af99137d7d246e15e2}{Cookies}}(\textcolor{keywordtype}{bool}\ p\_encode\ =\ \textcolor{keyword}{true})\ :\ \mbox{\hyperlink{a00721_aaa2d99b5d192958c59f1e057ab7f4257}{encode}}(p\_encode)\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{a00721_a5779b901b876b4f6f6a2cb68a0d9db60}{Cookies}}(\textcolor{keyword}{const}\ std::initializer\_list<std::pair<const\ std::string,\ std::string>>\&\ pairs,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ p\_encode\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00721_aaa2d99b5d192958c59f1e057ab7f4257}{encode}}(p\_encode),\ \mbox{\hyperlink{a00721_aac3942d80e16e07fc940fd91668b8436}{map\_}}\{pairs\}\ \{\}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{a00721_af6308bd2bd982098aedaf63e9a203a82}{Cookies}}(\textcolor{keyword}{const}\ std::map<std::string,\ std::string>\&\ map,\ \textcolor{keywordtype}{bool}\ p\_encode\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{a00721_aaa2d99b5d192958c59f1e057ab7f4257}{encode}}(p\_encode),\ \mbox{\hyperlink{a00721_aac3942d80e16e07fc940fd91668b8436}{map\_}}\{map\}\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\&\ \mbox{\hyperlink{a00721_aa73faaf27f427fc4feb308b22b45a1ca}{operator[]}}(\textcolor{keyword}{const}\ std::string\&\ key);}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \mbox{\hyperlink{a00721_a731d1769d444cc86b0fb5817a07584c7}{GetEncoded}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00749}{CurlHolder}}\&\ holder)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}}\ =\ std::map<std::string,\ std::string>::iterator;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\_iterator}}\ =\ std::map<std::string,\ std::string>::const\_iterator;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}}\ \mbox{\hyperlink{a00721_a997e9c8e0725422e500252f117ca6428}{begin}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{a00721_a36b09375809b229c3db60c874e5f8360}{iterator}}\ \mbox{\hyperlink{a00721_ac252e547024cbf931e75c65c52ac820a}{end}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\_iterator}}\ \mbox{\hyperlink{a00721_a893e233b0f85c9eb6336888af9d30175}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\_iterator}}\ \mbox{\hyperlink{a00721_ab4b50d04014a96eb12965ec3fd8536d1}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\_iterator}}\ \mbox{\hyperlink{a00721_aa0bb5278380f72b89b8066eda6e802df}{cbegin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a00721_af454600aba5841d46a135a8950c381c9}{const\_iterator}}\ \mbox{\hyperlink{a00721_ae6a7bf70dbd60e2ea36f2b58900e172f}{cend}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{a00721_aac3942d80e16e07fc940fd91668b8436}{map\_}};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\doxysection{value\+\_\+t.\+hpp}
+\hypertarget{a00248_source}{}\label{a00248_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/value\_t.hpp@{D:/doxygen shitnqta/App/carSystem.DAL/include/nlohmann/detail/value\_t.hpp}}
+\mbox{\hyperlink{a00248}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <array>}\ \textcolor{comment}{//\ array}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstddef>}\ \textcolor{comment}{//\ size\_t}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}\ \textcolor{comment}{//\ uint8\_t}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}\ \textcolor{comment}{//\ string}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00661}{nlohmann}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ JSON\ type\ enumeration\ //}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\_t}}\ :\ std::uint8\_t}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{object}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{array}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{string}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{boolean}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{number\_integer}},\ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{number\_unsigned}},\ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{number\_float}},\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{binary}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46}{discarded}}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00662_a09169efff3bd1771fff29bd92cea19e0}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\_t}}\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00662_a1ed8fc6239da25abcaf681d30ace4985}{value\_t}}\ rhs)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::array<std::uint8\_t,\ 9>\ order\ =\ \{\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \textcolor{comment}{/*\ null\ */},\ 3\ \textcolor{comment}{/*\ object\ */},\ 4\ \textcolor{comment}{/*\ array\ */},\ 5\ \textcolor{comment}{/*\ string\ */},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \textcolor{comment}{/*\ boolean\ */},\ 2\ \textcolor{comment}{/*\ integer\ */},\ 2\ \textcolor{comment}{/*\ unsigned\ */},\ 2\ \textcolor{comment}{/*\ float\ */},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \textcolor{comment}{/*\ binary\ */}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ l\_index\ =\ \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(lhs);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ r\_index\ =\ \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(rhs);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ l\_index\ <\ order.size()\ \&\&\ r\_index\ <\ order.size()\ \&\&\ order[l\_index]\ <\ order[r\_index];}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00081\ \}\ \ \textcolor{comment}{//\ namespace\ nlohmann}}
+
+\end{DoxyCode}

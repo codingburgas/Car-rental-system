@@ -1,0 +1,33 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{a00302_source}{}\label{a00302_source}\index{D:/doxygen shitnqta/App/carSystem.PL/include/Scene.hpp@{D:/doxygen shitnqta/App/carSystem.PL/include/Scene.hpp}}
+\mbox{\hyperlink{a00302}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a02200}{precompile.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00275}{KeyInput.hpp}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a01593}{Scene}}\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{a01593}{Scene}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}});}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{a01593_a631eef7493cafce5d74739a2cad12a58}{\string~Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ vector\ of\ input\ field\ pointers}}
+\DoxyCodeLine{00011\ \ \ \ \ vector<InputField*>\ \mbox{\hyperlink{a01593_a932f17f65402993340d8355e6cb249a9}{inputs}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ vector\ of\ values\ inside\ input\ fields}}
+\DoxyCodeLine{00014\ \ \ \ \ vector<string>\ \mbox{\hyperlink{a01593_aff7fc38fcf4e2bea5310224748caac3a}{answers}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ 2d\ vector\ with\ each\ button\ position\ and\ their\ respective\ size}}
+\DoxyCodeLine{00017\ \ \ \ \ vector<Vector2f>\ \mbox{\hyperlink{a01593_a736b445d86477efc09bccb0537cca871}{loginRegButton}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{a01593_a1ed9404c0b2198c5dc6b7df2e8740994}{type}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01593_ae4154243f2354068c7644c8087551191}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01593_ad561c930945ff79dbf442b4c85995e0e}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window)\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01593_a0bcc0d0adacb81e61a0dde9b67a2cd71}{draw}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \textcolor{keywordtype}{int}\ counter)\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01593_a7e07245e8761ac9023a23098de489493}{textHandler}}(\mbox{\hyperlink{a01761}{RenderWindow}}\&\ window,\ \mbox{\hyperlink{a01977}{Event}}\&\ event)\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01593_afc68d68a1b03fabbf213d127e17bc36c}{getInputs}}()\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a01593_a0b7698c3a7bc93a13afd02befa01ef78}{haltInput}}()\ =\ 0;}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

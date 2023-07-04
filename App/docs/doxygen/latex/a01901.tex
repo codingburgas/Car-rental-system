@@ -1,0 +1,1113 @@
+\doxysection{sf\+::String Class Reference}
+\hypertarget{a01901}{}\label{a01901}\index{sf::String@{sf::String}}
+
+
+Utility string class that automatically handles conversions between types and encodings.  
+
+
+
+
+{\ttfamily \#include $<$String.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{Const\+Iterator}}
+\begin{DoxyCompactList}\small\item\em Read-\/only iterator type. \end{DoxyCompactList}\item 
+typedef std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$\+::iterator \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}}
+\begin{DoxyCompactList}\small\item\em Iterator type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}} \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{Const\+Iterator}} \mbox{\hyperlink{a01901_a0e4755d6b4d51de7c3dc2e984b79f95d}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01901_a391c1b4950cbf3d3f8040cea73af2969}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}} \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to the end of the string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{Const\+Iterator}} \mbox{\hyperlink{a01901_af1ab4c82ff2bdfb6903b4b1bb78a8e5c}{end}} () const
+\begin{DoxyCompactList}\small\item\em Return an iterator to the end of the string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01901_aaa78a0a46b3fbe200a4ccdedc326eb93}{erase}} (std\+::size\+\_\+t position, std\+::size\+\_\+t count=1)
+\begin{DoxyCompactList}\small\item\em Erase one or more characters from the string. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01901_aa189ec8656854106ab8d2e935fd9cbcc}{find}} (const \mbox{\hyperlink{a01901}{String}} \&str, std\+::size\+\_\+t start=0) const
+\begin{DoxyCompactList}\small\item\em Find a sequence of one or more characters in the string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_acf4be994a8f801ef399ef934e892c891}{from\+Utf16}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_aecbcc789c2505f1583c586516be82a94}{from\+Utf32}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_a0b93eacbb10ea41f25669f2ace0148c2}{from\+Utf8}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\item 
+const \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a01901_a3ed7f3ad41659a2b31a8d8e99a7b8199}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the C-\/style array of characters. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{a01901_ae7aff54e178f5d3e399953adff5cad20}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01901_ad0b1455deabf07af13ee79812e05fa02}{insert}} (std\+::size\+\_\+t position, const \mbox{\hyperlink{a01901}{String}} \&str)
+\begin{DoxyCompactList}\small\item\em Insert one or more characters into the string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01901_a2ba26cb6945d2bbb210b822f222aa7f6}{is\+Empty}} () const
+\begin{DoxyCompactList}\small\item\em Check whether the string is empty or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a884816a0f688cfd48f9324c9741dc257}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em Implicit conversion operator to std\+::string (ANSI string) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a6bd1444bebaca9bbf01ba203061f5076}{operator std\+::wstring}} () const
+\begin{DoxyCompactList}\small\item\em Implicit conversion operator to std\+::wstring (wide string) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901}{String}} \& \mbox{\hyperlink{a01901_afdae61e813b2951a6e39015e34a143f7}{operator+=}} (const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of += operator to append an UTF-\/32 string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901}{String}} \& \mbox{\hyperlink{a01901_af14c8e1bf351cf18486f0258c36260d7}{operator=}} (const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \& \mbox{\hyperlink{a01901_a3e2041bd9ae84d223e6b12e46e5aa5d6}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Overload of \mbox{[}\mbox{]} operator to access a character by its position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01901_a035c1b585a0ebed81e773ecafed57926}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Overload of \mbox{[}\mbox{]} operator to access a character by its position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01901_a82bbfee2bf23c641e5361ad505c07921}{replace}} (const \mbox{\hyperlink{a01901}{String}} \&search\+For, const \mbox{\hyperlink{a01901}{String}} \&replace\+With)
+\begin{DoxyCompactList}\small\item\em Replace all occurrences of a substring with a replacement string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01901_ad460e628c287b0fa88deba2eb0b6744b}{replace}} (std\+::size\+\_\+t position, std\+::size\+\_\+t length, const \mbox{\hyperlink{a01901}{String}} \&replace\+With)
+\begin{DoxyCompactList}\small\item\em Replace a substring with another string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a9563a4e93f692e0c8e8702b374ef8692}{String}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_ac9df7f7696cff164794e338f3c89ccc5}{String}} (char ansi\+Char, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Construct from a single ANSI character and a locale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a57d2b8c289f9894f859564cad034bfc7}{String}} (const char \texorpdfstring{$\ast$}{*}ansi\+String, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Construct from a null-\/terminated C-\/style ANSI string and a locale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a6eee86dbe75d16bbcc26e97416c2e1ca}{String}} (const std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$ \&utf32\+String)
+\begin{DoxyCompactList}\small\item\em Construct from an UTF-\/32 string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a0aa41dcbd17b0c36c74d03d3b0147f1e}{String}} (const std\+::string \&ansi\+String, const std\+::locale \&locale=std\+::locale())
+\begin{DoxyCompactList}\small\item\em Construct from an ANSI string and a locale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a5e38151340af4f9a5f74ad24c0664074}{String}} (const std\+::wstring \&wide\+String)
+\begin{DoxyCompactList}\small\item\em Construct from a wide string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_af862594d3c4070d8ddbf08cf8dce4f59}{String}} (const \mbox{\hyperlink{a01901}{String}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_aea3629adf19f9fe713d4946f6c75b214}{String}} (const \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \texorpdfstring{$\ast$}{*}utf32\+String)
+\begin{DoxyCompactList}\small\item\em Construct from a null-\/terminated C-\/style UTF-\/32 string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a5742d0a9b0c754f711820c2b5c40fa55}{String}} (const wchar\+\_\+t \texorpdfstring{$\ast$}{*}wide\+String)
+\begin{DoxyCompactList}\small\item\em Construct from null-\/terminated C-\/style wide string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_a8e1a5027416d121187908e2ed77079ff}{String}} (\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} utf32\+Char)
+\begin{DoxyCompactList}\small\item\em Construct from single UTF-\/32 character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901_aefaa202d2aa5ff85b4f75a5983367e86}{String}} (wchar\+\_\+t wide\+Char)
+\begin{DoxyCompactList}\small\item\em Construct from single wide character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_a492645e00032455e6d92ff0e992654ce}{substring}} (std\+::size\+\_\+t position, std\+::size\+\_\+t length=\mbox{\hyperlink{a01901_abaadecaf12a6b41c54d725c75fd28527}{Invalid\+Pos}}) const
+\begin{DoxyCompactList}\small\item\em Return a part of the string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{to\+Ansi\+String}} (const std\+::locale \&locale=std\+::locale()) const
+\begin{DoxyCompactList}\small\item\em Convert the Unicode string to an ANSI string. \end{DoxyCompactList}\item 
+std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}} $>$ \mbox{\hyperlink{a01901_ab805f230a0b2e972f9f32ac4cf11d912}{to\+Utf16}} () const
+\begin{DoxyCompactList}\small\item\em Convert the Unicode string to a UTF-\/16 string. \end{DoxyCompactList}\item 
+std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$ \mbox{\hyperlink{a01901_aef4f51ebe43465c665c78692d0262e43}{to\+Utf32}} () const
+\begin{DoxyCompactList}\small\item\em Convert the Unicode string to a UTF-\/32 string. \end{DoxyCompactList}\item 
+std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $>$ \mbox{\hyperlink{a01901_a2a4f366d5db833ae818881507b46e13a}{to\+Utf8}} () const
+\begin{DoxyCompactList}\small\item\em Convert the Unicode string to a UTF-\/8 string. \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}{to\+Wide\+String}} () const
+\begin{DoxyCompactList}\small\item\em Convert the Unicode string to a wide string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_a81f70eecad0000a4f2e4d66f97b80300}{from\+Utf16}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/16 encoded string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_ab023a4900dce37ee71ab9e29b30a23cb}{from\+Utf32}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/32 encoded string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b}{from\+Utf8}} (T \mbox{\hyperlink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin}}, T \mbox{\hyperlink{a01901_ac823012f39cb6f61100418876e99d53b}{end}})
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/8 encoded string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::size\+\_\+t \mbox{\hyperlink{a01901_abaadecaf12a6b41c54d725c75fd28527}{Invalid\+Pos}}
+\begin{DoxyCompactList}\small\item\em Represents an invalid position in the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$ \mbox{\hyperlink{a01901_ac31f912a1ff7315ed52ddab1b8ac0c98}{m\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em Internal string of UTF-\/32 characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_ac2ca5a7703402a2bbafd85eec6d1e846}{operator$<$}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_a2a385459fa9a237e61a712fa956d489e}{operator==}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_a2b592c36be218b4811795fdc84eecc69}{operator!=}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01901}{String}} \mbox{\hyperlink{a01901_a55ef2bf7dc6b295ef7127b0bc1e58760}{operator+}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary + operator to concatenate two strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_ac2ca5a7703402a2bbafd85eec6d1e846}{operator$<$}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<} operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_abd342b6094b81cd086c7929b53b112ae}{operator$<$=}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$<$}{<}= operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_a2a385459fa9a237e61a712fa956d489e}{operator==}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_a5efc1eca58cf5c17d01eb8501d303538}{operator$>$}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>} operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool \mbox{\hyperlink{a01901_a8d2979d7829d6616330a768956f251e1}{operator$>$=}} (const \mbox{\hyperlink{a01901}{String}} \&left, const \mbox{\hyperlink{a01901}{String}} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of \texorpdfstring{$>$}{>}= operator to compare two UTF-\/32 strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility string class that automatically handles conversions between types and encodings. 
+
+\doxylink{a01901}{sf\+::\+String} is a utility string class defined mainly for convenience. It is a Unicode string (implemented using UTF-\/32), thus it can store any character in the world (European, Chinese, Arabic, Hebrew, etc.).
+
+It automatically handles conversions from/to ANSI and wide strings, so that you can work with standard string classes and still be compatible with functions taking a \doxylink{a01901}{sf\+::\+String}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{a01901}{sf::String}}\ s;}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::string\ s1\ =\ s;\ \ \textcolor{comment}{//\ automatically\ converted\ to\ ANSI\ string}}
+\DoxyCodeLine{std::wstring\ s2\ =\ s;\ \textcolor{comment}{//\ automatically\ converted\ to\ wide\ string}}
+\DoxyCodeLine{s\ =\ \textcolor{stringliteral}{"{}hello"{}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ converted\ from\ ANSI\ string}}
+\DoxyCodeLine{s\ =\ L\textcolor{stringliteral}{"{}hello"{}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ converted\ from\ wide\ string}}
+\DoxyCodeLine{s\ +=\ \textcolor{charliteral}{'a'};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ converted\ from\ ANSI\ string}}
+\DoxyCodeLine{s\ +=\ L\textcolor{charliteral}{'a'};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ converted\ from\ wide\ string}}
+
+\end{DoxyCode}
+
+
+Conversions involving ANSI strings use the default user locale. However it is possible to use a custom locale if necessary\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::locale\ locale;}
+\DoxyCodeLine{\mbox{\hyperlink{a01901}{sf::String}}\ s;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{std::string\ s1\ =\ s.\mbox{\hyperlink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{toAnsiString}}(locale);}
+\DoxyCodeLine{s\ =\ \mbox{\hyperlink{a01901}{sf::String}}(\textcolor{stringliteral}{"{}hello"{}},\ locale);}
+
+\end{DoxyCode}
+
+
+\doxylink{a01901}{sf\+::\+String} defines the most important functions of the standard std\+::string class\+: removing, random access, iterating, appending, comparing, etc. However it is a simple class provided for convenience, and you may have to consider using a more optimized class if your program requires complex string handling. The automatic conversion functions will then take care of converting your string to \doxylink{a01901}{sf\+::\+String} whenever SFML requires it.
+
+Please note that SFML also defines a low-\/level, generic interface for Unicode handling, see the \doxylink{a01937}{sf\+::\+Utf} classes. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01901_a8e18efc2e8464f6eb82818902d527efa}\label{a01901_a8e18efc2e8464f6eb82818902d527efa} 
+\index{sf::String@{sf::String}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}}
+{\footnotesize\ttfamily typedef std\+::basic\+\_\+string$<$\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{sf\+::\+String\+::\+Const\+Iterator}}}
+
+
+
+Read-\/only iterator type. 
+
+\Hypertarget{a01901_ac90f2b7b28f703020f8d027e98806235}\label{a01901_ac90f2b7b28f703020f8d027e98806235} 
+\index{sf::String@{sf::String}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{Iterator}{Iterator}}
+{\footnotesize\ttfamily typedef std\+::basic\+\_\+string$<$\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}$>$\+::iterator \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{sf\+::\+String\+::\+Iterator}}}
+
+
+
+Iterator type. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01901_a9563a4e93f692e0c8e8702b374ef8692}\label{a01901_a9563a4e93f692e0c8e8702b374ef8692} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor creates an empty string. \Hypertarget{a01901_ac9df7f7696cff164794e338f3c89ccc5}\label{a01901_ac9df7f7696cff164794e338f3c89ccc5} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{char}]{ansi\+Char,  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})}
+
+
+
+Construct from a single ANSI character and a locale. 
+
+The source character is converted to UTF-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\+Char} & ANSI character to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_aefaa202d2aa5ff85b4f75a5983367e86}\label{a01901_aefaa202d2aa5ff85b4f75a5983367e86} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{wchar\+\_\+t}]{wide\+Char }\end{DoxyParamCaption})}
+
+
+
+Construct from single wide character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\+Char} & Wide character to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a8e1a5027416d121187908e2ed77079ff}\label{a01901_a8e1a5027416d121187908e2ed77079ff} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}}]{utf32\+Char }\end{DoxyParamCaption})}
+
+
+
+Construct from single UTF-\/32 character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\+Char} & UTF-\/32 character to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a57d2b8c289f9894f859564cad034bfc7}\label{a01901_a57d2b8c289f9894f859564cad034bfc7} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ansi\+String,  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})}
+
+
+
+Construct from a null-\/terminated C-\/style ANSI string and a locale. 
+
+The source string is converted to UTF-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\+String} & ANSI string to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a0aa41dcbd17b0c36c74d03d3b0147f1e}\label{a01901_a0aa41dcbd17b0c36c74d03d3b0147f1e} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ansi\+String,  }\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption})}
+
+
+
+Construct from an ANSI string and a locale. 
+
+The source string is converted to UTF-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\+String} & ANSI string to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a5742d0a9b0c754f711820c2b5c40fa55}\label{a01901_a5742d0a9b0c754f711820c2b5c40fa55} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{wide\+String }\end{DoxyParamCaption})}
+
+
+
+Construct from null-\/terminated C-\/style wide string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\+String} & Wide string to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a5e38151340af4f9a5f74ad24c0664074}\label{a01901_a5e38151340af4f9a5f74ad24c0664074} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wide\+String }\end{DoxyParamCaption})}
+
+
+
+Construct from a wide string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\+String} & Wide string to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_aea3629adf19f9fe713d4946f6c75b214}\label{a01901_aea3629adf19f9fe713d4946f6c75b214} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \texorpdfstring{$\ast$}{*}}]{utf32\+String }\end{DoxyParamCaption})}
+
+
+
+Construct from a null-\/terminated C-\/style UTF-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\+String} & UTF-\/32 string to assign \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a6eee86dbe75d16bbcc26e97416c2e1ca}\label{a01901_a6eee86dbe75d16bbcc26e97416c2e1ca} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$ \&}]{utf32\+String }\end{DoxyParamCaption})}
+
+
+
+Construct from an UTF-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\+String} & UTF-\/32 string to assign \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_af862594d3c4070d8ddbf08cf8dce4f59}\label{a01901_af862594d3c4070d8ddbf08cf8dce4f59} 
+\index{sf::String@{sf::String}!String@{String}}
+\index{String@{String}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily sf\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & Instance to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}\label{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe} 
+\index{sf::String@{sf::String}!begin@{begin}}
+\index{begin@{begin}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}} sf\+::\+String\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return an iterator to the beginning of the string. 
+
+\begin{DoxyReturn}{Returns}
+Read-\/write iterator to the beginning of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_ac823012f39cb6f61100418876e99d53b}{end} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a0e4755d6b4d51de7c3dc2e984b79f95d}\label{a01901_a0e4755d6b4d51de7c3dc2e984b79f95d} 
+\index{sf::String@{sf::String}!begin@{begin}}
+\index{begin@{begin}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{Const\+Iterator}} sf\+::\+String\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return an iterator to the beginning of the string. 
+
+\begin{DoxyReturn}{Returns}
+Read-\/only iterator to the beginning of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_ac823012f39cb6f61100418876e99d53b}{end} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a391c1b4950cbf3d3f8040cea73af2969}\label{a01901_a391c1b4950cbf3d3f8040cea73af2969} 
+\index{sf::String@{sf::String}!clear@{clear}}
+\index{clear@{clear}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void sf\+::\+String\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the string. 
+
+This function removes all the characters from the string.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a2ba26cb6945d2bbb210b822f222aa7f6}{is\+Empty}, \doxylink{a01901_aaa78a0a46b3fbe200a4ccdedc326eb93}{erase} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_ac823012f39cb6f61100418876e99d53b}\label{a01901_ac823012f39cb6f61100418876e99d53b} 
+\index{sf::String@{sf::String}!end@{end}}
+\index{end@{end}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901_ac90f2b7b28f703020f8d027e98806235}{Iterator}} sf\+::\+String\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return an iterator to the end of the string. 
+
+The end iterator refers to 1 position past the last character; thus it represents an invalid character and should never be accessed.
+
+\begin{DoxyReturn}{Returns}
+Read-\/write iterator to the end of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_af1ab4c82ff2bdfb6903b4b1bb78a8e5c}\label{a01901_af1ab4c82ff2bdfb6903b4b1bb78a8e5c} 
+\index{sf::String@{sf::String}!end@{end}}
+\index{end@{end}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901_a8e18efc2e8464f6eb82818902d527efa}{Const\+Iterator}} sf\+::\+String\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return an iterator to the end of the string. 
+
+The end iterator refers to 1 position past the last character; thus it represents an invalid character and should never be accessed.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only iterator to the end of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_aaa78a0a46b3fbe200a4ccdedc326eb93}\label{a01901_aaa78a0a46b3fbe200a4ccdedc326eb93} 
+\index{sf::String@{sf::String}!erase@{erase}}
+\index{erase@{erase}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily void sf\+::\+String\+::erase (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{position,  }\item[{std\+::size\+\_\+t}]{count = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Erase one or more characters from the string. 
+
+This function removes a sequence of {\itshape count} characters starting from {\itshape position}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the first character to erase \\
+\hline
+{\em count} & Number of characters to erase \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_aa189ec8656854106ab8d2e935fd9cbcc}\label{a01901_aa189ec8656854106ab8d2e935fd9cbcc} 
+\index{sf::String@{sf::String}!find@{find}}
+\index{find@{find}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+String\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{str,  }\item[{std\+::size\+\_\+t}]{start = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Find a sequence of one or more characters in the string. 
+
+This function searches for the characters of {\itshape str} in the string, starting from {\itshape start}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Characters to find \\
+\hline
+{\em start} & Where to begin searching\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of {\itshape str} in the string, or \doxylink{a01901_abaadecaf12a6b41c54d725c75fd28527}{String\+::\+Invalid\+Pos} if not found 
+\end{DoxyReturn}
+\Hypertarget{a01901_a81f70eecad0000a4f2e4d66f97b80300}\label{a01901_a81f70eecad0000a4f2e4d66f97b80300} 
+\index{sf::String@{sf::String}!fromUtf16@{fromUtf16}}
+\index{fromUtf16@{fromUtf16}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf16()}{fromUtf16()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf16 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/16 encoded string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Forward iterator to the beginning of the UTF-\/16 sequence \\
+\hline
+{\em end} & Forward iterator to the end of the UTF-\/16 sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{a01901}{sf\+::\+String} containing the source string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b}{from\+Utf8}, \doxylink{a01901_ab023a4900dce37ee71ab9e29b30a23cb}{from\+Utf32} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_acf4be994a8f801ef399ef934e892c891}\label{a01901_acf4be994a8f801ef399ef934e892c891} 
+\index{sf::String@{sf::String}!fromUtf16@{fromUtf16}}
+\index{fromUtf16@{fromUtf16}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf16()}{fromUtf16()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf16 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})}
+
+\Hypertarget{a01901_ab023a4900dce37ee71ab9e29b30a23cb}\label{a01901_ab023a4900dce37ee71ab9e29b30a23cb} 
+\index{sf::String@{sf::String}!fromUtf32@{fromUtf32}}
+\index{fromUtf32@{fromUtf32}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf32()}{fromUtf32()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf32 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/32 encoded string. 
+
+This function is provided for consistency, it is equivalent to using the constructors that takes a const \doxylink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{sf\+::\+Uint32}\texorpdfstring{$\ast$}{*} or a std\+::basic\+\_\+string$<$sf\+::\+Uint32$>$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Forward iterator to the beginning of the UTF-\/32 sequence \\
+\hline
+{\em end} & Forward iterator to the end of the UTF-\/32 sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{a01901}{sf\+::\+String} containing the source string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b}{from\+Utf8}, \doxylink{a01901_a81f70eecad0000a4f2e4d66f97b80300}{from\+Utf16} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_aecbcc789c2505f1583c586516be82a94}\label{a01901_aecbcc789c2505f1583c586516be82a94} 
+\index{sf::String@{sf::String}!fromUtf32@{fromUtf32}}
+\index{fromUtf32@{fromUtf32}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf32()}{fromUtf32()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf32 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})}
+
+\Hypertarget{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b}\label{a01901_aa7beb7ae5b26e63dcbbfa390e27a9e4b} 
+\index{sf::String@{sf::String}!fromUtf8@{fromUtf8}}
+\index{fromUtf8@{fromUtf8}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf8()}{fromUtf8()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf8 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new \doxylink{a01901}{sf\+::\+String} from a UTF-\/8 encoded string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & Forward iterator to the beginning of the UTF-\/8 sequence \\
+\hline
+{\em end} & Forward iterator to the end of the UTF-\/8 sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{a01901}{sf\+::\+String} containing the source string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a81f70eecad0000a4f2e4d66f97b80300}{from\+Utf16}, \doxylink{a01901_ab023a4900dce37ee71ab9e29b30a23cb}{from\+Utf32} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a0b93eacbb10ea41f25669f2ace0148c2}\label{a01901_a0b93eacbb10ea41f25669f2ace0148c2} 
+\index{sf::String@{sf::String}!fromUtf8@{fromUtf8}}
+\index{fromUtf8@{fromUtf8}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{fromUtf8()}{fromUtf8()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::from\+Utf8 (\begin{DoxyParamCaption}\item[{T}]{begin,  }\item[{T}]{end }\end{DoxyParamCaption})}
+
+\Hypertarget{a01901_a3ed7f3ad41659a2b31a8d8e99a7b8199}\label{a01901_a3ed7f3ad41659a2b31a8d8e99a7b8199} 
+\index{sf::String@{sf::String}!getData@{getData}}
+\index{getData@{getData}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \texorpdfstring{$\ast$}{*} sf\+::\+String\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a pointer to the C-\/style array of characters. 
+
+This functions provides a read-\/only access to a null-\/terminated C-\/style representation of the string. The returned pointer is temporary and is meant only for immediate use, thus it is not recommended to store it.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only pointer to the array of characters 
+\end{DoxyReturn}
+\Hypertarget{a01901_ae7aff54e178f5d3e399953adff5cad20}\label{a01901_ae7aff54e178f5d3e399953adff5cad20} 
+\index{sf::String@{sf::String}!getSize@{getSize}}
+\index{getSize@{getSize}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t sf\+::\+String\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of the string. 
+
+\begin{DoxyReturn}{Returns}
+Number of characters in the string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a2ba26cb6945d2bbb210b822f222aa7f6}{is\+Empty} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_ad0b1455deabf07af13ee79812e05fa02}\label{a01901_ad0b1455deabf07af13ee79812e05fa02} 
+\index{sf::String@{sf::String}!insert@{insert}}
+\index{insert@{insert}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void sf\+::\+String\+::insert (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{position,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Insert one or more characters into the string. 
+
+This function inserts the characters of {\itshape str} into the string, starting from {\itshape position}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of insertion \\
+\hline
+{\em str} & Characters to insert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a2ba26cb6945d2bbb210b822f222aa7f6}\label{a01901_a2ba26cb6945d2bbb210b822f222aa7f6} 
+\index{sf::String@{sf::String}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool sf\+::\+String\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check whether the string is empty or not. 
+
+\begin{DoxyReturn}{Returns}
+True if the string is empty (i.\+e. contains no character)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a391c1b4950cbf3d3f8040cea73af2969}{clear}, \doxylink{a01901_ae7aff54e178f5d3e399953adff5cad20}{get\+Size} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a884816a0f688cfd48f9324c9741dc257}\label{a01901_a884816a0f688cfd48f9324c9741dc257} 
+\index{sf::String@{sf::String}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily sf\+::\+String\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Implicit conversion operator to std\+::string (ANSI string) 
+
+The current global locale is used for conversion. If you want to explicitly specify a locale, see to\+Ansi\+String. Characters that do not fit in the target encoding are discarded from the returned string. This operator is defined for convenience, and is equivalent to calling \doxylink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{to\+Ansi\+String()}.
+
+\begin{DoxyReturn}{Returns}
+Converted ANSI string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{to\+Ansi\+String}, operator std\+::wstring 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a6bd1444bebaca9bbf01ba203061f5076}\label{a01901_a6bd1444bebaca9bbf01ba203061f5076} 
+\index{sf::String@{sf::String}!operator std::wstring@{operator std::wstring}}
+\index{operator std::wstring@{operator std::wstring}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator std::wstring()}{operator std::wstring()}}
+{\footnotesize\ttfamily sf\+::\+String\+::operator std\+::wstring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Implicit conversion operator to std\+::wstring (wide string) 
+
+Characters that do not fit in the target encoding are discarded from the returned string. This operator is defined for convenience, and is equivalent to calling \doxylink{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}{to\+Wide\+String()}.
+
+\begin{DoxyReturn}{Returns}
+Converted wide string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}{to\+Wide\+String}, operator std\+::string 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_afdae61e813b2951a6e39015e34a143f7}\label{a01901_afdae61e813b2951a6e39015e34a143f7} 
+\index{sf::String@{sf::String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901}{String}} \& sf\+::\+String\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of += operator to append an UTF-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & \doxylink{a01901}{String} to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a01901_af14c8e1bf351cf18486f0258c36260d7}\label{a01901_af14c8e1bf351cf18486f0258c36260d7} 
+\index{sf::String@{sf::String}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901}{String}} \& sf\+::\+String\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\Hypertarget{a01901_a3e2041bd9ae84d223e6b12e46e5aa5d6}\label{a01901_a3e2041bd9ae84d223e6b12e46e5aa5d6} 
+\index{sf::String@{sf::String}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \& sf\+::\+String\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Overload of \mbox{[}\mbox{]} operator to access a character by its position. 
+
+This function provides read and write access to characters. Note\+: the behavior is undefined if {\itshape index} is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the character at position {\itshape index} 
+\end{DoxyReturn}
+\Hypertarget{a01901_a035c1b585a0ebed81e773ecafed57926}\label{a01901_a035c1b585a0ebed81e773ecafed57926} 
+\index{sf::String@{sf::String}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+String\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Overload of \mbox{[}\mbox{]} operator to access a character by its position. 
+
+This function provides read-\/only access to characters. Note\+: the behavior is undefined if {\itshape index} is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Character at position {\itshape index} 
+\end{DoxyReturn}
+\Hypertarget{a01901_a82bbfee2bf23c641e5361ad505c07921}\label{a01901_a82bbfee2bf23c641e5361ad505c07921} 
+\index{sf::String@{sf::String}!replace@{replace}}
+\index{replace@{replace}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sf\+::\+String\+::replace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{search\+For,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{replace\+With }\end{DoxyParamCaption})}
+
+
+
+Replace all occurrences of a substring with a replacement string. 
+
+This function replaces all occurrences of {\itshape search\+For} in this string with the string {\itshape replace\+With}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+For} & The value being searched for \\
+\hline
+{\em replace\+With} & The value that replaces found {\itshape search\+For} values \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_ad460e628c287b0fa88deba2eb0b6744b}\label{a01901_ad460e628c287b0fa88deba2eb0b6744b} 
+\index{sf::String@{sf::String}!replace@{replace}}
+\index{replace@{replace}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sf\+::\+String\+::replace (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{position,  }\item[{std\+::size\+\_\+t}]{length,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{replace\+With }\end{DoxyParamCaption})}
+
+
+
+Replace a substring with another string. 
+
+This function replaces the substring that starts at index {\itshape position} and spans {\itshape length} characters with the string {\itshape replace\+With}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Index of the first character to be replaced \\
+\hline
+{\em length} & Number of characters to replace. You can pass Invalid\+Pos to replace all characters until the end of the string. \\
+\hline
+{\em replace\+With} & \doxylink{a01901}{String} that replaces the given substring. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01901_a492645e00032455e6d92ff0e992654ce}\label{a01901_a492645e00032455e6d92ff0e992654ce} 
+\index{sf::String@{sf::String}!substring@{substring}}
+\index{substring@{substring}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{substring()}{substring()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01901}{String}} sf\+::\+String\+::substring (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{position,  }\item[{std\+::size\+\_\+t}]{length = {\ttfamily \mbox{\hyperlink{a01901_abaadecaf12a6b41c54d725c75fd28527}{Invalid\+Pos}}} }\end{DoxyParamCaption}) const}
+
+
+
+Return a part of the string. 
+
+This function returns the substring that starts at index {\itshape position} and spans {\itshape length} characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Index of the first character \\
+\hline
+{\em length} & Number of characters to include in the substring (if the string is shorter, as many characters as possible are included). \doxylink{a01901_abaadecaf12a6b41c54d725c75fd28527}{Invalid\+Pos} can be used to include all characters until the end of the string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{a01901}{String} object containing a substring of this object 
+\end{DoxyReturn}
+\Hypertarget{a01901_ada5d5bba4528aceb0a1e298553e6c30a}\label{a01901_ada5d5bba4528aceb0a1e298553e6c30a} 
+\index{sf::String@{sf::String}!toAnsiString@{toAnsiString}}
+\index{toAnsiString@{toAnsiString}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{toAnsiString()}{toAnsiString()}}
+{\footnotesize\ttfamily std\+::string sf\+::\+String\+::to\+Ansi\+String (\begin{DoxyParamCaption}\item[{const std\+::locale \&}]{locale = {\ttfamily std\+:\+:locale()} }\end{DoxyParamCaption}) const}
+
+
+
+Convert the Unicode string to an ANSI string. 
+
+The UTF-\/32 string is converted to an ANSI string in the encoding defined by {\itshape locale}. Characters that do not fit in the target encoding are discarded from the returned string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted ANSI string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}{to\+Wide\+String}, operator std\+::string 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_ab805f230a0b2e972f9f32ac4cf11d912}\label{a01901_ab805f230a0b2e972f9f32ac4cf11d912} 
+\index{sf::String@{sf::String}!toUtf16@{toUtf16}}
+\index{toUtf16@{toUtf16}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{toUtf16()}{toUtf16()}}
+{\footnotesize\ttfamily std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_a2fcaf787248b0b83dfb6b145ca348246}{Uint16}} $>$ sf\+::\+String\+::to\+Utf16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert the Unicode string to a UTF-\/16 string. 
+
+\begin{DoxyReturn}{Returns}
+Converted UTF-\/16 string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a2a4f366d5db833ae818881507b46e13a}{to\+Utf8}, \doxylink{a01901_aef4f51ebe43465c665c78692d0262e43}{to\+Utf32} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_aef4f51ebe43465c665c78692d0262e43}\label{a01901_aef4f51ebe43465c665c78692d0262e43} 
+\index{sf::String@{sf::String}!toUtf32@{toUtf32}}
+\index{toUtf32@{toUtf32}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{toUtf32()}{toUtf32()}}
+{\footnotesize\ttfamily std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} $>$ sf\+::\+String\+::to\+Utf32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert the Unicode string to a UTF-\/32 string. 
+
+This function doesn\textquotesingle{}t perform any conversion, since the string is already stored as UTF-\/32 internally.
+
+\begin{DoxyReturn}{Returns}
+Converted UTF-\/32 string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_a2a4f366d5db833ae818881507b46e13a}{to\+Utf8}, \doxylink{a01901_ab805f230a0b2e972f9f32ac4cf11d912}{to\+Utf16} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a2a4f366d5db833ae818881507b46e13a}\label{a01901_a2a4f366d5db833ae818881507b46e13a} 
+\index{sf::String@{sf::String}!toUtf8@{toUtf8}}
+\index{toUtf8@{toUtf8}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{toUtf8()}{toUtf8()}}
+{\footnotesize\ttfamily std\+::basic\+\_\+string$<$ \mbox{\hyperlink{a00669_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8}} $>$ sf\+::\+String\+::to\+Utf8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert the Unicode string to a UTF-\/8 string. 
+
+\begin{DoxyReturn}{Returns}
+Converted UTF-\/8 string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_ab805f230a0b2e972f9f32ac4cf11d912}{to\+Utf16}, \doxylink{a01901_aef4f51ebe43465c665c78692d0262e43}{to\+Utf32} 
+\end{DoxySeeAlso}
+\Hypertarget{a01901_a9d81aa3103e7e2062bd85d912a5aecf1}\label{a01901_a9d81aa3103e7e2062bd85d912a5aecf1} 
+\index{sf::String@{sf::String}!toWideString@{toWideString}}
+\index{toWideString@{toWideString}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{toWideString()}{toWideString()}}
+{\footnotesize\ttfamily std\+::wstring sf\+::\+String\+::to\+Wide\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert the Unicode string to a wide string. 
+
+Characters that do not fit in the target encoding are discarded from the returned string.
+
+\begin{DoxyReturn}{Returns}
+Converted wide string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{a01901_ada5d5bba4528aceb0a1e298553e6c30a}{to\+Ansi\+String}, operator std\+::wstring 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01901_a2b592c36be218b4811795fdc84eecc69}\label{a01901_a2b592c36be218b4811795fdc84eecc69} 
+\index{sf::String@{sf::String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of != operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both strings are different 
+\end{DoxyReturn}
+\Hypertarget{a01901_a55ef2bf7dc6b295ef7127b0bc1e58760}\label{a01901_a55ef2bf7dc6b295ef7127b0bc1e58760} 
+\index{sf::String@{sf::String}!operator+@{operator+}}
+\index{operator+@{operator+}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} \mbox{\hyperlink{a01901}{String}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of binary + operator to concatenate two strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Concatenated string 
+\end{DoxyReturn}
+\Hypertarget{a01901_ac2ca5a7703402a2bbafd85eec6d1e846}\label{a01901_ac2ca5a7703402a2bbafd85eec6d1e846} 
+\index{sf::String@{sf::String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01901_ac2ca5a7703402a2bbafd85eec6d1e846}\label{a01901_ac2ca5a7703402a2bbafd85eec6d1e846} 
+\index{sf::String@{sf::String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<} operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lexicographically before {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01901_abd342b6094b81cd086c7929b53b112ae}\label{a01901_abd342b6094b81cd086c7929b53b112ae} 
+\index{sf::String@{sf::String}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$<$}{<}= operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lexicographically before or equivalent to {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01901_a2a385459fa9a237e61a712fa956d489e}\label{a01901_a2a385459fa9a237e61a712fa956d489e} 
+\index{sf::String@{sf::String}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01901_a2a385459fa9a237e61a712fa956d489e}\label{a01901_a2a385459fa9a237e61a712fa956d489e} 
+\index{sf::String@{sf::String}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of == operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both strings are equal 
+\end{DoxyReturn}
+\Hypertarget{a01901_a5efc1eca58cf5c17d01eb8501d303538}\label{a01901_a5efc1eca58cf5c17d01eb8501d303538} 
+\index{sf::String@{sf::String}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>} operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lexicographically after {\itshape right} 
+\end{DoxyReturn}
+\Hypertarget{a01901_a8d2979d7829d6616330a768956f251e1}\label{a01901_a8d2979d7829d6616330a768956f251e1} 
+\index{sf::String@{sf::String}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\+\_\+\+SYSTEM\+\_\+\+API}} bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{left,  }\item[{const \mbox{\hyperlink{a01901}{String}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Overload of \texorpdfstring{$>$}{>}= operator to compare two UTF-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lexicographically after or equivalent to {\itshape right} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01901_abaadecaf12a6b41c54d725c75fd28527}\label{a01901_abaadecaf12a6b41c54d725c75fd28527} 
+\index{sf::String@{sf::String}!InvalidPos@{InvalidPos}}
+\index{InvalidPos@{InvalidPos}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{InvalidPos}{InvalidPos}}
+{\footnotesize\ttfamily const std\+::size\+\_\+t sf\+::\+String\+::\+Invalid\+Pos\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Represents an invalid position in the string. 
+
+\Hypertarget{a01901_ac31f912a1ff7315ed52ddab1b8ac0c98}\label{a01901_ac31f912a1ff7315ed52ddab1b8ac0c98} 
+\index{sf::String@{sf::String}!m\_string@{m\_string}}
+\index{m\_string@{m\_string}!sf::String@{sf::String}}
+\doxysubsubsection{\texorpdfstring{m\_string}{m\_string}}
+{\footnotesize\ttfamily std\+::basic\+\_\+string$<$\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}}$>$ sf\+::\+String\+::m\+\_\+string\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal string of UTF-\/32 characters. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00524}{String.\+hpp}}\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+System/\mbox{\hyperlink{a00527}{String.\+inl}}\end{DoxyCompactItemize}

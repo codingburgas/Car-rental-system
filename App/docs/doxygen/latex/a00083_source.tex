@@ -1,0 +1,49 @@
+\doxysection{redirect.\+h}
+\hypertarget{a00083_source}{}\label{a00083_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/redirect.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/redirect.h}}
+\mbox{\hyperlink{a00083}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_REDIRECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_REDIRECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a3b6f62c0ded0d9889359bee1f48b4654}{POST\_301}}\ =\ 0x1\ <<\ 0,}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ac590c61ac7ceb51d23374612a330a02d}{POST\_302}}\ =\ 0x1\ <<\ 1,}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ace47f9fb200433c4f162de2cb87a721a}{POST\_303}}\ =\ 0x1\ <<\ 2,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}{POST\_ALL}}\ =\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a3b6f62c0ded0d9889359bee1f48b4654}{POST\_301}}\ |\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ac590c61ac7ceb51d23374612a330a02d}{POST\_302}}\ |\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ace47f9fb200433c4f162de2cb87a721a}{POST\_303}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803ab50339a10e1de285ac99d4c3990b8693}{NONE}}\ =\ 0x0}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ \mbox{\hyperlink{a00656_a1e44daa1280b7a93b5ceea74267fb1a1}{operator|}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ \mbox{\hyperlink{a00656_ab94426a33fb391d362b87155fe155106}{operator\&}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ \mbox{\hyperlink{a00656_a6beb07b71650c1f1e5c0b9abccdcdb3e}{operator\string^}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ \mbox{\hyperlink{a00656_af45fc432d6f5e309e73b71d965007924}{operator\string~}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ flag);}
+\DoxyCodeLine{00039\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ \mbox{\hyperlink{a00656_a59c9ff6c626e108b3c9d1203e631438a}{operator|=}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ \mbox{\hyperlink{a00656_a23552659679e680a439fdfbae90438ff}{operator\&=}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00041\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ \mbox{\hyperlink{a00656_a86e8a836925d68155bd252189ca4ef4a}{operator\string^=}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\&\ lhs,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ rhs);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00656_a336b8aa644e736812d604055afdf1a8b}{any}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ flag);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00817}{Redirect}}\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE\ (cppcoreguidelines-\/avoid-\/magic-\/numbers,\ google-\/runtime-\/int)}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{a00817_a4dac151d8c3b3cfcedbff97db7494f67}{maximum}}\{50L\};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}{follow}}\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00817_af7e48da58181594e5847edc3ac3fab15}{cont\_send\_cred}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ \mbox{\hyperlink{a00817_a6337024269fd4d3d145b4d6f299b718a}{post\_flags}}\{\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803a29f98fc22a83ad29580cd9e83227e2b1}{PostRedirectFlags::POST\_ALL}}\};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{a00817_a95cd07c2d04d70e17374e8500707371b}{Redirect}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE\ (google-\/runtime-\/int)}}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{a00817_ae2b0bc7ce7e500919f66a6f29525659d}{Redirect}}(\textcolor{keywordtype}{long}\ p\_maximum,\ \textcolor{keywordtype}{bool}\ p\_follow,\ \textcolor{keywordtype}{bool}\ p\_cont\_send\_cred,\ \mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ p\_post\_flags)\ :\ \mbox{\hyperlink{a00817_a4dac151d8c3b3cfcedbff97db7494f67}{maximum}}(p\_maximum),\ \mbox{\hyperlink{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}{follow}}(p\_follow),\ \mbox{\hyperlink{a00817_af7e48da58181594e5847edc3ac3fab15}{cont\_send\_cred}}(p\_cont\_send\_cred),\ \mbox{\hyperlink{a00817_a6337024269fd4d3d145b4d6f299b718a}{post\_flags}}(p\_post\_flags)\{\};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE\ (google-\/runtime-\/int)}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00817_a77945bceeae71311bf87f6413637b23a}{Redirect}}(\textcolor{keywordtype}{long}\ p\_maximum)\ :\ \mbox{\hyperlink{a00817_a4dac151d8c3b3cfcedbff97db7494f67}{maximum}}(p\_maximum)\{\};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00817_aa44713f5048b76e26ca6dbd560b5be44}{Redirect}}(\textcolor{keywordtype}{bool}\ p\_follow)\ :\ \mbox{\hyperlink{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}{follow}}(p\_follow)\{\};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{a00817_ad05c8f3d6987132aac4b1d5ab2a6123b}{Redirect}}(\textcolor{keywordtype}{bool}\ p\_follow,\ \textcolor{keywordtype}{bool}\ p\_cont\_send\_cred)\ :\ \mbox{\hyperlink{a00817_a1feca07ac0a6c640dd2b31e0c87cbe0f}{follow}}(p\_follow),\ \mbox{\hyperlink{a00817_af7e48da58181594e5847edc3ac3fab15}{cont\_send\_cred}}(p\_cont\_send\_cred)\{\};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a00817_a9dcbdd29be81a1684603ce0934733899}{Redirect}}(\mbox{\hyperlink{a00656_a63d46ed6d5d682b3e0581d6f8b39f803}{PostRedirectFlags}}\ p\_post\_flags)\ :\ \mbox{\hyperlink{a00817_a6337024269fd4d3d145b4d6f299b718a}{post\_flags}}(p\_post\_flags)\{\};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

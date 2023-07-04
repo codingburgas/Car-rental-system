@@ -1,0 +1,617 @@
+\doxysection{nlohmann\+::detail\+::binary\+\_\+writer\texorpdfstring{$<$}{<} Basic\+Json\+Type, Char\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{a01513}{}\label{a01513}\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+
+
+serialization to CBOR and Message\+Pack values  
+
+
+
+
+{\ttfamily \#include $<$binary\+\_\+writer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01513_a373289af95a946c19bb4a58a5df71a78}{binary\+\_\+writer}} (\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ adapter)
+\begin{DoxyCompactList}\small\item\em create a binary writer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a9ffc566db5219b473762462234b47db9}{write\+\_\+bson}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{a01513_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\+\_\+cbor}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{a01513_ae4e0852b64102ce4b07d99f08f828b7c}{write\+\_\+msgpack}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{a01513_a0f6c65053d859269f88eb4ebb0cd7060}{write\+\_\+ubjson}} (const Basic\+Json\+Type \&j, const bool use\+\_\+count, const bool use\+\_\+type, const bool add\+\_\+prefix=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{a01513_a2c2b2132ce56b3b45593374b622baa67}{to\+\_\+char\+\_\+type}} (Input\+Char\+Type x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+unsigned$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static Char\+Type \mbox{\hyperlink{a01513_a5e46f0dd3550901b15cf85265808d1ec}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01513_a3169b4f7abb773ea30348770629c53e8}{binary\+\_\+t}} = typename Basic\+Json\+Type\+::binary\+\_\+t
+\item 
+using \mbox{\hyperlink{a01513_abb4b7c621d0cb7633b5806c603f3c51a}{number\+\_\+float\+\_\+t}} = typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t
+\item 
+using \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} = typename Basic\+Json\+Type\+::string\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Char\+Type \mbox{\hyperlink{a01513_a4c129249a5aee8e4ec8add6c6184e4f7}{ubjson\+\_\+prefix}} (const Basic\+Json\+Type \&j) const noexcept
+\begin{DoxyCompactList}\small\item\em determine the type prefix of container values \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a025212bd170253638b9f05b3b6aa5bf9}{write\+\_\+bson\+\_\+array}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const typename Basic\+Json\+Type\+::array\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and array {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a97d34d9a70ddc06ae782c55454df42bc}{write\+\_\+bson\+\_\+binary}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const \mbox{\hyperlink{a01513_a3169b4f7abb773ea30348770629c53e8}{binary\+\_\+t}} \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and binary value {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_ae099435e1df3096e0fc78333282f8f67}{write\+\_\+bson\+\_\+boolean}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const bool \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and boolean value {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a263ec18815467bb9919021ef126919ca}{write\+\_\+bson\+\_\+double}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const double \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and double value {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a7ff58bf1a80018148bed860667ffca07}{write\+\_\+bson\+\_\+element}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const Basic\+Json\+Type \&j)
+\begin{DoxyCompactList}\small\item\em Serializes the JSON value {\itshape j} to BSON and associates it with the key {\itshape name}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a1b5b7f5c03b1f8b1f59ea61db9634108}{write\+\_\+bson\+\_\+entry\+\_\+header}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const std\+::uint8\+\_\+t element\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Writes the given {\itshape element\+\_\+type} and {\itshape name} to the output adapter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a553ad4dbdf27238eef90867e4bf2f3e5}{write\+\_\+bson\+\_\+integer}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const std\+::int64\+\_\+t \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and integer {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a9927c1110b18661e0224a76156e5a7a9}{write\+\_\+bson\+\_\+null}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name)
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and null value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a29b3e0f83a8e5f2307804023109ba2c9}{write\+\_\+bson\+\_\+object}} (const typename Basic\+Json\+Type\+::object\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+void \mbox{\hyperlink{a01513_a6231302930265eccb3f56c378f7b0661}{write\+\_\+bson\+\_\+object\+\_\+entry}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const typename Basic\+Json\+Type\+::object\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and object {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_a5e6574416915208fc035b57338ae3252}{write\+\_\+bson\+\_\+string}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and string value {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_ac274e3d7a803e7223bb1a4fcb7cd594c}{write\+\_\+bson\+\_\+unsigned}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const Basic\+Json\+Type \&j)
+\begin{DoxyCompactList}\small\item\em Writes a BSON element with key {\itshape name} and unsigned {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01513_ae69dc3c5b2e8c1c8e461779cddb87436}{write\+\_\+compact\+\_\+float}} (const \mbox{\hyperlink{a01513_abb4b7c621d0cb7633b5806c603f3c51a}{number\+\_\+float\+\_\+t}} n, \mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40}{detail\+::input\+\_\+format\+\_\+t}} format)
+\item 
+{\footnotesize template$<$typename Number\+Type , bool Output\+Is\+Little\+Endian = false$>$ }\\void \mbox{\hyperlink{a01513_a6e11b7227fcecc25a548ed45507b7d1c}{write\+\_\+number}} (const Number\+Type n)
+\item 
+{\footnotesize template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+floating\+\_\+point$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ }\\void \mbox{\hyperlink{a01513_a0ea6745f944c0c61672146886b4ee90f}{write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix}} (const Number\+Type n, const bool add\+\_\+prefix)
+\item 
+{\footnotesize template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+unsigned$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ }\\void \mbox{\hyperlink{a01513_a0ea6745f944c0c61672146886b4ee90f}{write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix}} (const Number\+Type n, const bool add\+\_\+prefix)
+\item 
+{\footnotesize template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+signed$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+floating\+\_\+point$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ }\\void \mbox{\hyperlink{a01513_a0ea6745f944c0c61672146886b4ee90f}{write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix}} (const Number\+Type n, const bool add\+\_\+prefix)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_af08f9302a02516ff8cf358a99aaa1ddf}{calc\+\_\+bson\+\_\+array\+\_\+size}} (const typename Basic\+Json\+Type\+::array\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_a9dd6062fd249a695e0f93d558dba4685}{calc\+\_\+bson\+\_\+binary\+\_\+size}} (const typename Basic\+Json\+Type\+::binary\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_a1e4372c5984184eb5bcc09af1fcc2ee0}{calc\+\_\+bson\+\_\+element\+\_\+size}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const Basic\+Json\+Type \&j)
+\begin{DoxyCompactList}\small\item\em Calculates the size necessary to serialize the JSON value {\itshape j} with its {\itshape name}. \end{DoxyCompactList}\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_a11637a023d22e57a7e7aff3f98b10f84}{calc\+\_\+bson\+\_\+entry\+\_\+header\+\_\+size}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&name, const Basic\+Json\+Type \&j)
+\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_aeab70c895931b96ea598306b37eca271}{calc\+\_\+bson\+\_\+integer\+\_\+size}} (const std\+::int64\+\_\+t \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_acc6f1cc1fd370ee84ebc8cf7b8712840}{calc\+\_\+bson\+\_\+object\+\_\+size}} (const typename Basic\+Json\+Type\+::object\+\_\+t \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\begin{DoxyCompactList}\small\item\em Calculates the size of the BSON serialization of the given JSON-\/object {\itshape j}. \end{DoxyCompactList}\item 
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513_aea44fd97a5cb9b4f175e66e3e4fdf158}{calc\+\_\+bson\+\_\+string\+\_\+size}} (const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{a01513_aa1d6bb9f3af16f07ce2440c354b5787b}{calc\+\_\+bson\+\_\+unsigned\+\_\+size}} (const std\+::uint64\+\_\+t \mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}}) noexcept
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_afe5ac43e05973ba09ee79227bb589b59}{get\+\_\+cbor\+\_\+float\+\_\+prefix}} (double)
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_a2b5cb010077da6241a18bb334736464c}{get\+\_\+cbor\+\_\+float\+\_\+prefix}} (float)
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_a47234a6e7ac9206d43553985f4cacbf2}{get\+\_\+msgpack\+\_\+float\+\_\+prefix}} (double)
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_ad452d114696407b98abc69b6001c270e}{get\+\_\+msgpack\+\_\+float\+\_\+prefix}} (float)
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_a19eb47a53dbbe28f319532bef25d84e6}{get\+\_\+ubjson\+\_\+float\+\_\+prefix}} (double)
+\item 
+static constexpr Char\+Type \mbox{\hyperlink{a01513_a6837b20574152f7f645d0f6cd9fafdeb}{get\+\_\+ubjson\+\_\+float\+\_\+prefix}} (float)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{a01513_a048887c907afe39759b777e8c888414c}{is\+\_\+little\+\_\+endian}} = \mbox{\hyperlink{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9}{little\+\_\+endianness}}()
+\begin{DoxyCompactList}\small\item\em whether we can assume little endianness \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ \mbox{\hyperlink{a01513_a6f15b782a7900f50ef37d123008e601b}{oa}} = nullptr
+\begin{DoxyCompactList}\small\item\em the output \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Char\+Type$>$\newline
+class nlohmann\+::detail\+::binary\+\_\+writer$<$ Basic\+Json\+Type, Char\+Type $>$}
+serialization to CBOR and Message\+Pack values 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01513_a3169b4f7abb773ea30348770629c53e8}\label{a01513_a3169b4f7abb773ea30348770629c53e8} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_t@{binary\_t}}
+\index{binary\_t@{binary\_t}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_t}{binary\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+using \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::binary\+\_\+t =  typename Basic\+Json\+Type\+::binary\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01513_abb4b7c621d0cb7633b5806c603f3c51a}\label{a01513_abb4b7c621d0cb7633b5806c603f3c51a} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!number\_float\_t@{number\_float\_t}}
+\index{number\_float\_t@{number\_float\_t}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{number\_float\_t}{number\_float\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+using \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::number\+\_\+float\+\_\+t =  typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}\label{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!string\_t@{string\_t}}
+\index{string\_t@{string\_t}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{string\_t}{string\_t}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+using \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::string\+\_\+t =  typename Basic\+Json\+Type\+::string\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01513_a373289af95a946c19bb4a58a5df71a78}\label{a01513_a373289af95a946c19bb4a58a5df71a78} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_writer@{binary\_writer}}
+\index{binary\_writer@{binary\_writer}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_writer()}{binary\_writer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+\mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::binary\+\_\+writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+create a binary writer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter} & output adapter to write to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01513_af08f9302a02516ff8cf358a99aaa1ddf}\label{a01513_af08f9302a02516ff8cf358a99aaa1ddf} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_array\_size@{calc\_bson\_array\_size}}
+\index{calc\_bson\_array\_size@{calc\_bson\_array\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_array\_size()}{calc\_bson\_array\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+array\+\_\+size (\begin{DoxyParamCaption}\item[{const typename Basic\+Json\+Type\+::array\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the BSON-\/encoded array {\itshape value} 
+\end{DoxyReturn}
+\Hypertarget{a01513_a9dd6062fd249a695e0f93d558dba4685}\label{a01513_a9dd6062fd249a695e0f93d558dba4685} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_binary\_size@{calc\_bson\_binary\_size}}
+\index{calc\_bson\_binary\_size@{calc\_bson\_binary\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_binary\_size()}{calc\_bson\_binary\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+binary\+\_\+size (\begin{DoxyParamCaption}\item[{const typename Basic\+Json\+Type\+::binary\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the BSON-\/encoded binary array {\itshape value} 
+\end{DoxyReturn}
+\Hypertarget{a01513_a1e4372c5984184eb5bcc09af1fcc2ee0}\label{a01513_a1e4372c5984184eb5bcc09af1fcc2ee0} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_element\_size@{calc\_bson\_element\_size}}
+\index{calc\_bson\_element\_size@{calc\_bson\_element\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_element\_size()}{calc\_bson\_element\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+element\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates the size necessary to serialize the JSON value {\itshape j} with its {\itshape name}. 
+
+\begin{DoxyReturn}{Returns}
+The calculated size for the BSON document entry for {\itshape j} with the given {\itshape name}. 
+\end{DoxyReturn}
+\Hypertarget{a01513_a11637a023d22e57a7e7aff3f98b10f84}\label{a01513_a11637a023d22e57a7e7aff3f98b10f84} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_entry\_header\_size@{calc\_bson\_entry\_header\_size}}
+\index{calc\_bson\_entry\_header\_size@{calc\_bson\_entry\_header\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_entry\_header\_size()}{calc\_bson\_entry\_header\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+entry\+\_\+header\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The size of a BSON document entry header, including the id marker and the entry name size (and its null-\/terminator). 
+\end{DoxyReturn}
+\Hypertarget{a01513_aeab70c895931b96ea598306b37eca271}\label{a01513_aeab70c895931b96ea598306b37eca271} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_integer\_size@{calc\_bson\_integer\_size}}
+\index{calc\_bson\_integer\_size@{calc\_bson\_integer\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_integer\_size()}{calc\_bson\_integer\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+integer\+\_\+size (\begin{DoxyParamCaption}\item[{const std\+::int64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the BSON-\/encoded integer {\itshape value} 
+\end{DoxyReturn}
+\Hypertarget{a01513_acc6f1cc1fd370ee84ebc8cf7b8712840}\label{a01513_acc6f1cc1fd370ee84ebc8cf7b8712840} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_object\_size@{calc\_bson\_object\_size}}
+\index{calc\_bson\_object\_size@{calc\_bson\_object\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_object\_size()}{calc\_bson\_object\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+object\+\_\+size (\begin{DoxyParamCaption}\item[{const typename Basic\+Json\+Type\+::object\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Calculates the size of the BSON serialization of the given JSON-\/object {\itshape j}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+value.\+type() == \doxylink{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object} 
+\end{DoxyPrecond}
+\Hypertarget{a01513_aea44fd97a5cb9b4f175e66e3e4fdf158}\label{a01513_aea44fd97a5cb9b4f175e66e3e4fdf158} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_string\_size@{calc\_bson\_string\_size}}
+\index{calc\_bson\_string\_size@{calc\_bson\_string\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_string\_size()}{calc\_bson\_string\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+string\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the BSON-\/encoded string in {\itshape value} 
+\end{DoxyReturn}
+\Hypertarget{a01513_aa1d6bb9f3af16f07ce2440c354b5787b}\label{a01513_aa1d6bb9f3af16f07ce2440c354b5787b} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!calc\_bson\_unsigned\_size@{calc\_bson\_unsigned\_size}}
+\index{calc\_bson\_unsigned\_size@{calc\_bson\_unsigned\_size}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{calc\_bson\_unsigned\_size()}{calc\_bson\_unsigned\_size()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::calc\+\_\+bson\+\_\+unsigned\+\_\+size (\begin{DoxyParamCaption}\item[{const std\+::uint64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\begin{DoxyReturn}{Returns}
+The size of the BSON-\/encoded unsigned integer in {\itshape j} 
+\end{DoxyReturn}
+\Hypertarget{a01513_afe5ac43e05973ba09ee79227bb589b59}\label{a01513_afe5ac43e05973ba09ee79227bb589b59} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_cbor\_float\_prefix@{get\_cbor\_float\_prefix}}
+\index{get\_cbor\_float\_prefix@{get\_cbor\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_cbor\_float\_prefix()}{get\_cbor\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+cbor\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a2b5cb010077da6241a18bb334736464c}\label{a01513_a2b5cb010077da6241a18bb334736464c} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_cbor\_float\_prefix@{get\_cbor\_float\_prefix}}
+\index{get\_cbor\_float\_prefix@{get\_cbor\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_cbor\_float\_prefix()}{get\_cbor\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+cbor\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a47234a6e7ac9206d43553985f4cacbf2}\label{a01513_a47234a6e7ac9206d43553985f4cacbf2} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_msgpack\_float\_prefix@{get\_msgpack\_float\_prefix}}
+\index{get\_msgpack\_float\_prefix@{get\_msgpack\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_msgpack\_float\_prefix()}{get\_msgpack\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+msgpack\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_ad452d114696407b98abc69b6001c270e}\label{a01513_ad452d114696407b98abc69b6001c270e} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_msgpack\_float\_prefix@{get\_msgpack\_float\_prefix}}
+\index{get\_msgpack\_float\_prefix@{get\_msgpack\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_msgpack\_float\_prefix()}{get\_msgpack\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+msgpack\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a19eb47a53dbbe28f319532bef25d84e6}\label{a01513_a19eb47a53dbbe28f319532bef25d84e6} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_ubjson\_float\_prefix@{get\_ubjson\_float\_prefix}}
+\index{get\_ubjson\_float\_prefix@{get\_ubjson\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_ubjson\_float\_prefix()}{get\_ubjson\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+ubjson\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a6837b20574152f7f645d0f6cd9fafdeb}\label{a01513_a6837b20574152f7f645d0f6cd9fafdeb} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!get\_ubjson\_float\_prefix@{get\_ubjson\_float\_prefix}}
+\index{get\_ubjson\_float\_prefix@{get\_ubjson\_float\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_ubjson\_float\_prefix()}{get\_ubjson\_float\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::get\+\_\+ubjson\+\_\+float\+\_\+prefix (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a2c2b2132ce56b3b45593374b622baa67}\label{a01513_a2c2b2132ce56b3b45593374b622baa67} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{Input\+Char\+Type}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+signed$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01513_a5e46f0dd3550901b15cf85265808d1ec}\label{a01513_a5e46f0dd3550901b15cf85265808d1ec} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&std\+::is\+\_\+unsigned$<$ char $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+static Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{a01513_ab77aa48692bd4e64e4f051ce6aeb6d2d} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{a00662_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01513_a4c129249a5aee8e4ec8add6c6184e4f7}\label{a01513_a4c129249a5aee8e4ec8add6c6184e4f7} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!ubjson\_prefix@{ubjson\_prefix}}
+\index{ubjson\_prefix@{ubjson\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{ubjson\_prefix()}{ubjson\_prefix()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+Char\+Type \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::ubjson\+\_\+prefix (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+determine the type prefix of container values 
+
+\Hypertarget{a01513_a9ffc566db5219b473762462234b47db9}\label{a01513_a9ffc566db5219b473762462234b47db9} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson@{write\_bson}}
+\index{write\_bson@{write\_bson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson()}{write\_bson()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+j.\+type() == \doxylink{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object} 
+\end{DoxyPrecond}
+\Hypertarget{a01513_a025212bd170253638b9f05b3b6aa5bf9}\label{a01513_a025212bd170253638b9f05b3b6aa5bf9} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_array@{write\_bson\_array}}
+\index{write\_bson\_array@{write\_bson\_array}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_array()}{write\_bson\_array()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const typename Basic\+Json\+Type\+::array\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and array {\itshape value}. 
+
+\Hypertarget{a01513_a97d34d9a70ddc06ae782c55454df42bc}\label{a01513_a97d34d9a70ddc06ae782c55454df42bc} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_binary@{write\_bson\_binary}}
+\index{write\_bson\_binary@{write\_bson\_binary}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_binary()}{write\_bson\_binary()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+binary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const \mbox{\hyperlink{a01513_a3169b4f7abb773ea30348770629c53e8}{binary\+\_\+t}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and binary value {\itshape value}. 
+
+\Hypertarget{a01513_ae099435e1df3096e0fc78333282f8f67}\label{a01513_ae099435e1df3096e0fc78333282f8f67} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_boolean@{write\_bson\_boolean}}
+\index{write\_bson\_boolean@{write\_bson\_boolean}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_boolean()}{write\_bson\_boolean()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+boolean (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and boolean value {\itshape value}. 
+
+\Hypertarget{a01513_a263ec18815467bb9919021ef126919ca}\label{a01513_a263ec18815467bb9919021ef126919ca} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_double@{write\_bson\_double}}
+\index{write\_bson\_double@{write\_bson\_double}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_double()}{write\_bson\_double()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+double (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and double value {\itshape value}. 
+
+\Hypertarget{a01513_a7ff58bf1a80018148bed860667ffca07}\label{a01513_a7ff58bf1a80018148bed860667ffca07} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_element@{write\_bson\_element}}
+\index{write\_bson\_element@{write\_bson\_element}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_element()}{write\_bson\_element()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+element (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Serializes the JSON value {\itshape j} to BSON and associates it with the key {\itshape name}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to associate with the JSON entity {\itshape j} within the current BSON document \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01513_a1b5b7f5c03b1f8b1f59ea61db9634108}\label{a01513_a1b5b7f5c03b1f8b1f59ea61db9634108} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_entry\_header@{write\_bson\_entry\_header}}
+\index{write\_bson\_entry\_header@{write\_bson\_entry\_header}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_entry\_header()}{write\_bson\_entry\_header()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+entry\+\_\+header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const std\+::uint8\+\_\+t}]{element\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes the given {\itshape element\+\_\+type} and {\itshape name} to the output adapter. 
+
+\Hypertarget{a01513_a553ad4dbdf27238eef90867e4bf2f3e5}\label{a01513_a553ad4dbdf27238eef90867e4bf2f3e5} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_integer@{write\_bson\_integer}}
+\index{write\_bson\_integer@{write\_bson\_integer}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_integer()}{write\_bson\_integer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+integer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const std\+::int64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and integer {\itshape value}. 
+
+\Hypertarget{a01513_a9927c1110b18661e0224a76156e5a7a9}\label{a01513_a9927c1110b18661e0224a76156e5a7a9} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_null@{write\_bson\_null}}
+\index{write\_bson\_null@{write\_bson\_null}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_null()}{write\_bson\_null()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+null (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and null value. 
+
+\Hypertarget{a01513_a29b3e0f83a8e5f2307804023109ba2c9}\label{a01513_a29b3e0f83a8e5f2307804023109ba2c9} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_object@{write\_bson\_object}}
+\index{write\_bson\_object@{write\_bson\_object}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_object()}{write\_bson\_object()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+object (\begin{DoxyParamCaption}\item[{const typename Basic\+Json\+Type\+::object\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+value.\+type() == \doxylink{a00662_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object} 
+\end{DoxyPrecond}
+\Hypertarget{a01513_a6231302930265eccb3f56c378f7b0661}\label{a01513_a6231302930265eccb3f56c378f7b0661} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_object\_entry@{write\_bson\_object\_entry}}
+\index{write\_bson\_object\_entry@{write\_bson\_object\_entry}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_object\_entry()}{write\_bson\_object\_entry()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+object\+\_\+entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const typename Basic\+Json\+Type\+::object\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and object {\itshape value}. 
+
+\Hypertarget{a01513_a5e6574416915208fc035b57338ae3252}\label{a01513_a5e6574416915208fc035b57338ae3252} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_string@{write\_bson\_string}}
+\index{write\_bson\_string@{write\_bson\_string}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_string()}{write\_bson\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+string (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and string value {\itshape value}. 
+
+\Hypertarget{a01513_ac274e3d7a803e7223bb1a4fcb7cd594c}\label{a01513_ac274e3d7a803e7223bb1a4fcb7cd594c} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson\_unsigned@{write\_bson\_unsigned}}
+\index{write\_bson\_unsigned@{write\_bson\_unsigned}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson\_unsigned()}{write\_bson\_unsigned()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson\+\_\+unsigned (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_a29f2ae7a5c4a8c1dae47b3b2310de8a8}{string\+\_\+t}} \&}]{name,  }\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Writes a BSON element with key {\itshape name} and unsigned {\itshape value}. 
+
+\Hypertarget{a01513_aa0ab8d27fd88a33a2f801413ac4c7fbc}\label{a01513_aa0ab8d27fd88a33a2f801413ac4c7fbc} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_cbor@{write\_cbor}}
+\index{write\_cbor@{write\_cbor}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_cbor()}{write\_cbor()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+cbor (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01513_ae69dc3c5b2e8c1c8e461779cddb87436}\label{a01513_ae69dc3c5b2e8c1c8e461779cddb87436} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_compact\_float@{write\_compact\_float}}
+\index{write\_compact\_float@{write\_compact\_float}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_compact\_float()}{write\_compact\_float()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+compact\+\_\+float (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a01513_abb4b7c621d0cb7633b5806c603f3c51a}{number\+\_\+float\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{a00662_aa554fc6a11519e4f347deb25a9f0db40}{detail\+::input\+\_\+format\+\_\+t}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_ae4e0852b64102ce4b07d99f08f828b7c}\label{a01513_ae4e0852b64102ce4b07d99f08f828b7c} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_msgpack@{write\_msgpack}}
+\index{write\_msgpack@{write\_msgpack}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_msgpack()}{write\_msgpack()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+msgpack (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a01513_a6e11b7227fcecc25a548ed45507b7d1c}\label{a01513_a6e11b7227fcecc25a548ed45507b7d1c} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_number@{write\_number}}
+\index{write\_number@{write\_number}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_number()}{write\_number()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Number\+Type , bool Output\+Is\+Little\+Endian = false$>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+number (\begin{DoxyParamCaption}\item[{const Number\+Type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a0ea6745f944c0c61672146886b4ee90f}\label{a01513_a0ea6745f944c0c61672146886b4ee90f} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}}
+\index{write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_number\_with\_ubjson\_prefix()}{write\_number\_with\_ubjson\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+floating\+\_\+point$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix (\begin{DoxyParamCaption}\item[{const Number\+Type}]{n,  }\item[{const bool}]{add\+\_\+prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a0ea6745f944c0c61672146886b4ee90f}\label{a01513_a0ea6745f944c0c61672146886b4ee90f} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}}
+\index{write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_number\_with\_ubjson\_prefix()}{write\_number\_with\_ubjson\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+unsigned$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix (\begin{DoxyParamCaption}\item[{const Number\+Type}]{n,  }\item[{const bool}]{add\+\_\+prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a0ea6745f944c0c61672146886b4ee90f}\label{a01513_a0ea6745f944c0c61672146886b4ee90f} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}}
+\index{write\_number\_with\_ubjson\_prefix@{write\_number\_with\_ubjson\_prefix}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_number\_with\_ubjson\_prefix()}{write\_number\_with\_ubjson\_prefix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Number\+Type , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+signed$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}} \&\&!std\+::is\+\_\+floating\+\_\+point$<$ Number\+Type $>$\mbox{\hyperlink{a00662_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{\+::value}}, int $>$\+::type  = 0$>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+number\+\_\+with\+\_\+ubjson\+\_\+prefix (\begin{DoxyParamCaption}\item[{const Number\+Type}]{n,  }\item[{const bool}]{add\+\_\+prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{a01513_a0f6c65053d859269f88eb4ebb0cd7060}\label{a01513_a0f6c65053d859269f88eb4ebb0cd7060} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_ubjson@{write\_ubjson}}
+\index{write\_ubjson@{write\_ubjson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_ubjson()}{write\_ubjson()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+ubjson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{const bool}]{use\+\_\+count,  }\item[{const bool}]{use\+\_\+type,  }\item[{const bool}]{add\+\_\+prefix = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+count} & whether to use \textquotesingle{}\#\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+type} & whether to use \textquotesingle{}\$\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em add\+\_\+prefix} & whether prefixes need to be used for this value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01513_a048887c907afe39759b777e8c888414c}\label{a01513_a048887c907afe39759b777e8c888414c} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!is\_little\_endian@{is\_little\_endian}}
+\index{is\_little\_endian@{is\_little\_endian}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{is\_little\_endian}{is\_little\_endian}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+const bool \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::is\+\_\+little\+\_\+endian = \mbox{\hyperlink{a00662_a6d9410847162a2ad2f1cff0dcce3b1d9}{little\+\_\+endianness}}()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+whether we can assume little endianness 
+
+\Hypertarget{a01513_a6f15b782a7900f50ef37d123008e601b}\label{a01513_a6f15b782a7900f50ef37d123008e601b} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!oa@{oa}}
+\index{oa@{oa}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{oa}{oa}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+\mbox{\hyperlink{a00662_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$Char\+Type$>$ \mbox{\hyperlink{a01513}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::oa = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the output 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/output/\mbox{\hyperlink{a00236}{binary\+\_\+writer.\+hpp}}\end{DoxyCompactItemize}

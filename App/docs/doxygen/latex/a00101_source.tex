@@ -1,0 +1,27 @@
+\doxysection{unix\+\_\+socket.\+h}
+\hypertarget{a00101_source}{}\label{a00101_source}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/unix\_socket.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/cpr/unix\_socket.h}}
+\mbox{\hyperlink{a00101}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPR\_UNIX\_SOCKET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPR\_UNIX\_SOCKET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00656}{cpr}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a00905}{UnixSocket}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ NOLINTNEXTLINE(google-\/explicit-\/constructor,\ hicpp-\/explicit-\/conversions)}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{a00905_ab1056fce0538abc5a9b6af529caa0525}{UnixSocket}}(std::string\&\&\ unix\_socket)\ :\ \mbox{\hyperlink{a00905_a617b02131eea16426251a4fdf003a1ef}{unix\_socket\_}}(\mbox{\hyperlink{a00667}{std}}::move(unix\_socket))\ \{\}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{a00905_ab12922ac38663bbc299ce0433193925d}{GetUnixSocketString}}()\ const\ noexcept;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ private:}
+\DoxyCodeLine{00016\ \ \ \ \ const\ \mbox{\hyperlink{a00667}{std}}::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{a00905_a617b02131eea16426251a4fdf003a1ef}{unix\_socket\_}};}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \}\ \textcolor{comment}{//\ namespace\ cpr}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

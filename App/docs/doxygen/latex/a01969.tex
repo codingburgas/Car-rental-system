@@ -1,0 +1,195 @@
+\doxysection{sf\+::Context\+Settings Class Reference}
+\hypertarget{a01969}{}\label{a01969}\index{sf::ContextSettings@{sf::ContextSettings}}
+
+
+Structure defining the settings of the Open\+GL context attached to a window.  
+
+
+
+
+{\ttfamily \#include $<$Context\+Settings.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2c}{Attribute}} \{ \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb}{Default}} = 0
+, \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cacb581130734cbd87cbbc9438429f4a8b}{Core}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2ca6043f67afb3d48918d5336474eabaafc}{Debug}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the context attribute flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a01969_ac56869ccbb6bf0df48b88880754e12b7}{Context\+Settings}} (unsigned int depth=0, unsigned int stencil=0, unsigned int antialiasing=0, unsigned int major=1, unsigned int minor=1, unsigned int attributes=\mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb}{Default}}, bool s\+Rgb=false)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{a01969_ac4a097be18994dba38d73f36b0418bdc}{antialiasing\+Level}}
+\begin{DoxyCompactList}\small\item\em Level of antialiasing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} \mbox{\hyperlink{a01969_a0ef3fc53802bc0197d2739466915ada5}{attribute\+Flags}}
+\begin{DoxyCompactList}\small\item\em The attribute flags to create the context with. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01969_a4809e22089c2af7276b8809b5aede7bb}{depth\+Bits}}
+\begin{DoxyCompactList}\small\item\em Bits of the depth buffer. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01969_a99a680d5c15a7e34c935654155dd5166}{major\+Version}}
+\begin{DoxyCompactList}\small\item\em Major number of the context version to create. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01969_aaeb0efe9d2658b840da93b30554b100f}{minor\+Version}}
+\begin{DoxyCompactList}\small\item\em Minor number of the context version to create. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{a01969_ac93b041bfb6cbd36034997797708a0a3}{s\+Rgb\+Capable}}
+\begin{DoxyCompactList}\small\item\em Whether the context framebuffer is s\+RGB capable. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{a01969_ac2e788c201ca20e84fd38a28071abd29}{stencil\+Bits}}
+\begin{DoxyCompactList}\small\item\em Bits of the stencil buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure defining the settings of the Open\+GL context attached to a window. 
+
+\doxylink{a01969}{Context\+Settings} allows to define several advanced settings of the Open\+GL context attached to a window. All these settings with the exception of the compatibility flag and anti-\/aliasing level have no impact on the regular SFML rendering (graphics module), so you may need to use this structure only if you\textquotesingle{}re using SFML as a windowing system for custom Open\+GL rendering.
+
+The depth\+Bits and stencil\+Bits members define the number of bits per pixel requested for the (respectively) depth and stencil buffers.
+
+antialiasing\+Level represents the requested number of multisampling levels for anti-\/aliasing.
+
+major\+Version and minor\+Version define the version of the Open\+GL context that you want. Only versions greater or equal to 3.\+0 are relevant; versions lesser than 3.\+0 are all handled the same way (i.\+e. you can use any version \texorpdfstring{$<$}{<} 3.\+0 if you don\textquotesingle{}t want an Open\+GL 3 context).
+
+When requesting a context with a version greater or equal to 3.\+2, you have the option of specifying whether the context should follow the core or compatibility profile of all newer (\texorpdfstring{$>$}{>}= 3.\+2) Open\+GL specifications. For versions 3.\+0 and 3.\+1 there is only the core profile. By default a compatibility context is created. You only need to specify the core flag if you want a core profile context to use with your own Open\+GL rendering. {\bfseries{Warning\+: The graphics module will not function if you request a core profile context. Make sure the attributes are set to Default if you want to use the graphics module.}}
+
+Setting the debug attribute flag will request a context with additional debugging features enabled. Depending on the system, this might be required for advanced Open\+GL debugging. Open\+GL debugging is disabled by default.
+
+{\bfseries{Special Note for OS X\+:}} Apple only supports choosing between either a legacy context (Open\+GL 2.\+1) or a core context (Open\+GL version depends on the operating system version but is at least 3.\+2). Compatibility contexts are not supported. Further information is available on the \href{https://developer.apple.com/opengl/capabilities/index.html}{\texttt{ Open\+GL Capabilities Tables}} page. OS X also currently does not support debug contexts.
+
+Please note that these values are only a hint. No failure will be reported if one or more of these values are not supported by the system; instead, SFML will try to find the closest valid match. You can then retrieve the settings that the window actually used to create its context, with \doxylink{a02069_a0605afbaceb02b098f9d731b7ab4203d}{Window\+::get\+Settings()}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{a01969_af2e91e57e8d26c40afe2ec8efaa32a2c}\label{a01969_af2e91e57e8d26c40afe2ec8efaa32a2c} 
+\index{sf::ContextSettings@{sf::ContextSettings}!Attribute@{Attribute}}
+\index{Attribute@{Attribute}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{Attribute}{Attribute}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2c}{sf\+::\+Context\+Settings\+::\+Attribute}}}
+
+
+
+Enumeration of the context attribute flags. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!sf::ContextSettings@{sf::ContextSettings}}\index{sf::ContextSettings@{sf::ContextSettings}!Default@{Default}}}\Hypertarget{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb}\label{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb} 
+Default&Non-\/debug, compatibility context (this and the core attribute are mutually exclusive) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Core@{Core}!sf::ContextSettings@{sf::ContextSettings}}\index{sf::ContextSettings@{sf::ContextSettings}!Core@{Core}}}\Hypertarget{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cacb581130734cbd87cbbc9438429f4a8b}\label{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cacb581130734cbd87cbbc9438429f4a8b} 
+Core&Core attribute. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Debug@{Debug}!sf::ContextSettings@{sf::ContextSettings}}\index{sf::ContextSettings@{sf::ContextSettings}!Debug@{Debug}}}\Hypertarget{a01969_af2e91e57e8d26c40afe2ec8efaa32a2ca6043f67afb3d48918d5336474eabaafc}\label{a01969_af2e91e57e8d26c40afe2ec8efaa32a2ca6043f67afb3d48918d5336474eabaafc} 
+Debug&Debug attribute. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a01969_ac56869ccbb6bf0df48b88880754e12b7}\label{a01969_ac56869ccbb6bf0df48b88880754e12b7} 
+\index{sf::ContextSettings@{sf::ContextSettings}!ContextSettings@{ContextSettings}}
+\index{ContextSettings@{ContextSettings}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{ContextSettings()}{ContextSettings()}}
+{\footnotesize\ttfamily sf\+::\+Context\+Settings\+::\+Context\+Settings (\begin{DoxyParamCaption}\item[{unsigned int}]{depth = {\ttfamily 0},  }\item[{unsigned int}]{stencil = {\ttfamily 0},  }\item[{unsigned int}]{antialiasing = {\ttfamily 0},  }\item[{unsigned int}]{major = {\ttfamily 1},  }\item[{unsigned int}]{minor = {\ttfamily 1},  }\item[{unsigned int}]{attributes = {\ttfamily \mbox{\hyperlink{a01969_af2e91e57e8d26c40afe2ec8efaa32a2cabf868dcb751b909bf031484ed42a93bb}{Default}}},  }\item[{bool}]{s\+Rgb = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & Depth buffer bits \\
+\hline
+{\em stencil} & Stencil buffer bits \\
+\hline
+{\em antialiasing} & Antialiasing level \\
+\hline
+{\em major} & Major number of the context version \\
+\hline
+{\em minor} & Minor number of the context version \\
+\hline
+{\em attributes} & Attribute flags of the context \\
+\hline
+{\em s\+Rgb} & s\+RGB capable framebuffer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01969_ac4a097be18994dba38d73f36b0418bdc}\label{a01969_ac4a097be18994dba38d73f36b0418bdc} 
+\index{sf::ContextSettings@{sf::ContextSettings}!antialiasingLevel@{antialiasingLevel}}
+\index{antialiasingLevel@{antialiasingLevel}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{antialiasingLevel}{antialiasingLevel}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Context\+Settings\+::antialiasing\+Level}
+
+
+
+Level of antialiasing. 
+
+\Hypertarget{a01969_a0ef3fc53802bc0197d2739466915ada5}\label{a01969_a0ef3fc53802bc0197d2739466915ada5} 
+\index{sf::ContextSettings@{sf::ContextSettings}!attributeFlags@{attributeFlags}}
+\index{attributeFlags@{attributeFlags}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{attributeFlags}{attributeFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00669_aa746fb1ddef4410bddf198ebb27e727c}{Uint32}} sf\+::\+Context\+Settings\+::attribute\+Flags}
+
+
+
+The attribute flags to create the context with. 
+
+\Hypertarget{a01969_a4809e22089c2af7276b8809b5aede7bb}\label{a01969_a4809e22089c2af7276b8809b5aede7bb} 
+\index{sf::ContextSettings@{sf::ContextSettings}!depthBits@{depthBits}}
+\index{depthBits@{depthBits}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{depthBits}{depthBits}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Context\+Settings\+::depth\+Bits}
+
+
+
+Bits of the depth buffer. 
+
+\Hypertarget{a01969_a99a680d5c15a7e34c935654155dd5166}\label{a01969_a99a680d5c15a7e34c935654155dd5166} 
+\index{sf::ContextSettings@{sf::ContextSettings}!majorVersion@{majorVersion}}
+\index{majorVersion@{majorVersion}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{majorVersion}{majorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Context\+Settings\+::major\+Version}
+
+
+
+Major number of the context version to create. 
+
+\Hypertarget{a01969_aaeb0efe9d2658b840da93b30554b100f}\label{a01969_aaeb0efe9d2658b840da93b30554b100f} 
+\index{sf::ContextSettings@{sf::ContextSettings}!minorVersion@{minorVersion}}
+\index{minorVersion@{minorVersion}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{minorVersion}{minorVersion}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Context\+Settings\+::minor\+Version}
+
+
+
+Minor number of the context version to create. 
+
+\Hypertarget{a01969_ac93b041bfb6cbd36034997797708a0a3}\label{a01969_ac93b041bfb6cbd36034997797708a0a3} 
+\index{sf::ContextSettings@{sf::ContextSettings}!sRgbCapable@{sRgbCapable}}
+\index{sRgbCapable@{sRgbCapable}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{sRgbCapable}{sRgbCapable}}
+{\footnotesize\ttfamily bool sf\+::\+Context\+Settings\+::s\+Rgb\+Capable}
+
+
+
+Whether the context framebuffer is s\+RGB capable. 
+
+\Hypertarget{a01969_ac2e788c201ca20e84fd38a28071abd29}\label{a01969_ac2e788c201ca20e84fd38a28071abd29} 
+\index{sf::ContextSettings@{sf::ContextSettings}!stencilBits@{stencilBits}}
+\index{stencilBits@{stencilBits}!sf::ContextSettings@{sf::ContextSettings}}
+\doxysubsubsection{\texorpdfstring{stencilBits}{stencilBits}}
+{\footnotesize\ttfamily unsigned int sf\+::\+Context\+Settings\+::stencil\+Bits}
+
+
+
+Bits of the stencil buffer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+PL/\+SFML/include/\+SFML/\+Window/\mbox{\hyperlink{a00575}{Context\+Settings.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,105 @@
+\doxysection{Transform.\+hpp}
+\hypertarget{a00434_source}{}\label{a00434_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Transform.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Transform.hpp}}
+\mbox{\hyperlink{a00434}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_TRANSFORM\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_TRANSFORM\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02206}{SFML/Graphics/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00398}{SFML/Graphics/Rect.hpp}}>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00554}{SFML/System/Vector2.hpp}}>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01789}{Transform}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a01789_ac32de51bd0b9f3d52fbe0838225ee83b}{Transform}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{a01789_a78c48677712fcf41122d02f1301d71a3}{Transform}}(\textcolor{keywordtype}{float}\ a00,\ \textcolor{keywordtype}{float}\ a01,\ \textcolor{keywordtype}{float}\ a02,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a10,\ \textcolor{keywordtype}{float}\ a11,\ \textcolor{keywordtype}{float}\ a12,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ a20,\ \textcolor{keywordtype}{float}\ a21,\ \textcolor{keywordtype}{float}\ a22);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{a01789_ab85cb4194f42a965d337a8f02783c534}{getMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\ \mbox{\hyperlink{a01789_a14f49e81af44aabcff7611f6703a1e4a}{getInverse}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{a01953}{Vector2f}}\ \mbox{\hyperlink{a01789_af2e38c3c077d28898686662558b41135}{transformPoint}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{a01953}{Vector2f}}\ \mbox{\hyperlink{a01789_ab42a0bb7a252c6d221004f6372ce5fdc}{transformPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a01737}{FloatRect}}\ \mbox{\hyperlink{a01789_a3824a20505d81a94bc22be1ffee57d3d}{transformRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01737}{FloatRect}}\&\ rectangle)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_ad8403f888799b5c9f781cb9f3757f2a4}{combine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ transform);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a053cd024e320ae719837386d126d0f51}{translate}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a2426209f1fd3cc02129dec373a3c6f69}{translate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ offset);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_ad09ce22a1fb08709f66f30befc7b2e7b}{rotate}}(\textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_ad78237e81d1de866d1b3c040ad003971}{rotate}}(\textcolor{keywordtype}{float}\ angle,\ \textcolor{keywordtype}{float}\ centerX,\ \textcolor{keywordtype}{float}\ centerY);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a11aa9a4fbd9254e7d22b96f92f018d09}{rotate}}(\textcolor{keywordtype}{float}\ angle,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ center);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a846e9ff8567f50adea9b3ce4c70c1554}{scale}}(\textcolor{keywordtype}{float}\ scaleX,\ \textcolor{keywordtype}{float}\ scaleY);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_af1ad4ae13dacaf812b6411142243042b}{scale}}(\textcolor{keywordtype}{float}\ scaleX,\ \textcolor{keywordtype}{float}\ scaleY,\ \textcolor{keywordtype}{float}\ centerX,\ \textcolor{keywordtype}{float}\ centerY);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00324\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a23fe4e63821354600b7592be90f2d65e}{scale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ factors);}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01789_a486a4a1946208a883c7f8ec1e9cf2e35}{scale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ factors,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ center);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{comment}{//\ Static\ member\ data}}
+\DoxyCodeLine{00354\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\ \mbox{\hyperlink{a01789_aa4eb1eecbcb9979d76e2543b337fdb13}{Identity}};\ }
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00361\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{float}\ m\_matrix[16];\ }
+\DoxyCodeLine{00362\ \};}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00376\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01789}{Transform}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ right);}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00390\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a00557_abea24cb28c0d6e2957e259ba4e65d70e}{operator\ *=}}(\mbox{\hyperlink{a01789}{Transform}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ right);}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00404\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01953}{Vector2f}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ right);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00419\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ right);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00433\ \mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ left,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ right);}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_TRANSFORM\_HPP}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ }
+
+\end{DoxyCode}

@@ -1,0 +1,206 @@
+\doxysection{nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t Class Reference}
+\hypertarget{a01213}{}\label{a01213}\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+
+
+{\ttfamily \#include $<$primitive\+\_\+iterator.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} \mbox{\hyperlink{a01213_ae952990886ca1756229f916661a8af81}{get\+\_\+value}} () const noexcept
+\item 
+constexpr bool \mbox{\hyperlink{a01213_a8d1a7d46b3fcd06edd034f04ededb5e4}{is\+\_\+begin}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return whether the iterator can be dereferenced \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{a01213_a45a7e301c23b5b90417baf2277f40b1d}{is\+\_\+end}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return whether the iterator is at end \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \mbox{\hyperlink{a01213_a00ce828d0fe58046c10e0445504df7bf}{operator+}} (\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} n) noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& \mbox{\hyperlink{a01213_a2fdc1a85e44a3d34050e369d81f2a355}{operator++}} () noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} const \mbox{\hyperlink{a01213_aa011863621357b3cf891670bf63a48b1}{operator++}} (int) noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& \mbox{\hyperlink{a01213_afc325f7c33206e1feda29897054008ee}{operator+=}} (\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} n) noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& \mbox{\hyperlink{a01213_acae513574ba082b5a3bc94b43d1181c5}{operator-\/-\/}} () noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} const \mbox{\hyperlink{a01213_aef3b5dfeb2cb04dc9d0a024fc1898b98}{operator-\/-\/}} (int) noexcept
+\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& \mbox{\hyperlink{a01213_a5d64b1bfc34b392ccc167f0823d4cc19}{operator-\/=}} (\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} n) noexcept
+\item 
+void \mbox{\hyperlink{a01213_a9d9b005906106e12aed738f97d7fee42}{set\+\_\+begin}} () noexcept
+\begin{DoxyCompactList}\small\item\em set iterator to a defined beginning \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a01213_ad26a823483846a12d890c3feed3097eb}{set\+\_\+end}} () noexcept
+\begin{DoxyCompactList}\small\item\em set iterator to a defined past the end \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} = std\+::ptrdiff\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} \+: \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} m\+\_\+it = (std\+::numeric\+\_\+limits$<$std\+::ptrdiff\+\_\+t$>$\+::min)()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} \mbox{\hyperlink{a01213_afcb3bcf9da8aa95bd82067d1a67c2326}{begin\+\_\+value}} = 0
+\item 
+static constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} \mbox{\hyperlink{a01213_aa37c37da44f19e6ec1d7d4a9910511c7}{end\+\_\+value}} = \mbox{\hyperlink{a01213_afcb3bcf9da8aa95bd82067d1a67c2326}{begin\+\_\+value}} + 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} \mbox{\hyperlink{a01213_ac6d902d6ec9a02dabed5452d3ae78f7e}{operator-\/}} (\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} lhs, \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} rhs) noexcept
+\item 
+constexpr bool \mbox{\hyperlink{a01213_a901a95e6d73c9509d3dcde914f6c8a9d}{operator$<$}} (\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} lhs, \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} rhs) noexcept
+\item 
+constexpr bool \mbox{\hyperlink{a01213_aae1e1e2ec0e229d1291d69de57d76bbe}{operator==}} (\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} lhs, \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} rhs) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{a01213_af3db0d5c90de427d51645fe73a015553}\label{a01213_af3db0d5c90de427d51645fe73a015553} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::difference\+\_\+type}} =  std\+::ptrdiff\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a01213_ae952990886ca1756229f916661a8af81}\label{a01213_ae952990886ca1756229f916661a8af81} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::get\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_a8d1a7d46b3fcd06edd034f04ededb5e4}\label{a01213_a8d1a7d46b3fcd06edd034f04ededb5e4} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!is\_begin@{is\_begin}}
+\index{is\_begin@{is\_begin}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{is\_begin()}{is\_begin()}}
+{\footnotesize\ttfamily constexpr bool nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::is\+\_\+begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return whether the iterator can be dereferenced 
+
+\Hypertarget{a01213_a45a7e301c23b5b90417baf2277f40b1d}\label{a01213_a45a7e301c23b5b90417baf2277f40b1d} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!is\_end@{is\_end}}
+\index{is\_end@{is\_end}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{is\_end()}{is\_end()}}
+{\footnotesize\ttfamily constexpr bool nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::is\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return whether the iterator is at end 
+
+\Hypertarget{a01213_a00ce828d0fe58046c10e0445504df7bf}\label{a01213_a00ce828d0fe58046c10e0445504df7bf} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator+@{operator+}}
+\index{operator+@{operator+}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_a2fdc1a85e44a3d34050e369d81f2a355}\label{a01213_a2fdc1a85e44a3d34050e369d81f2a355} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator++@{operator++}}
+\index{operator++@{operator++}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_aa011863621357b3cf891670bf63a48b1}\label{a01213_aa011863621357b3cf891670bf63a48b1} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator++@{operator++}}
+\index{operator++@{operator++}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} const nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_afc325f7c33206e1feda29897054008ee}\label{a01213_afc325f7c33206e1feda29897054008ee} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_acae513574ba082b5a3bc94b43d1181c5}\label{a01213_acae513574ba082b5a3bc94b43d1181c5} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_aef3b5dfeb2cb04dc9d0a024fc1898b98}\label{a01213_aef3b5dfeb2cb04dc9d0a024fc1898b98} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} const nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_a5d64b1bfc34b392ccc167f0823d4cc19}\label{a01213_a5d64b1bfc34b392ccc167f0823d4cc19} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \& nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a01213_a9d9b005906106e12aed738f97d7fee42}\label{a01213_a9d9b005906106e12aed738f97d7fee42} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!set\_begin@{set\_begin}}
+\index{set\_begin@{set\_begin}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{set\_begin()}{set\_begin()}}
+{\footnotesize\ttfamily void nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::set\+\_\+begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+set iterator to a defined beginning 
+
+\Hypertarget{a01213_ad26a823483846a12d890c3feed3097eb}\label{a01213_ad26a823483846a12d890c3feed3097eb} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!set\_end@{set\_end}}
+\index{set\_end@{set\_end}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{set\_end()}{set\_end()}}
+{\footnotesize\ttfamily void nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::set\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+set iterator to a defined past the end 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{a01213_ac6d902d6ec9a02dabed5452d3ae78f7e}\label{a01213_ac6d902d6ec9a02dabed5452d3ae78f7e} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{lhs,  }\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01213_a901a95e6d73c9509d3dcde914f6c8a9d}\label{a01213_a901a95e6d73c9509d3dcde914f6c8a9d} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily constexpr bool operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{lhs,  }\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{a01213_aae1e1e2ec0e229d1291d69de57d76bbe}\label{a01213_aae1e1e2ec0e229d1291d69de57d76bbe} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!operator==@{operator==}}
+\index{operator==@{operator==}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily constexpr bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{lhs,  }\item[{\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}}}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01213_adc7b6ab7810f58afa4d6a5133995c9ba}\label{a01213_adc7b6ab7810f58afa4d6a5133995c9ba} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!\_\_pad0\_\_@{\_\_pad0\_\_}}
+\index{\_\_pad0\_\_@{\_\_pad0\_\_}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{\_\_pad0\_\_}{\_\_pad0\_\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00206_a2cf645f34610e7f7d6e09ab88a2ab917}{JSON\+\_\+\+PRIVATE\+\_\+\+UNLESS\+\_\+\+TESTED}} nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::\+\_\+\+\_\+pad0\+\_\+\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a01213_afcb3bcf9da8aa95bd82067d1a67c2326}\label{a01213_afcb3bcf9da8aa95bd82067d1a67c2326} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!begin\_value@{begin\_value}}
+\index{begin\_value@{begin\_value}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{begin\_value}{begin\_value}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::begin\+\_\+value = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{a01213_aa37c37da44f19e6ec1d7d4a9910511c7}\label{a01213_aa37c37da44f19e6ec1d7d4a9910511c7} 
+\index{nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}!end\_value@{end\_value}}
+\index{end\_value@{end\_value}!nlohmann::detail::primitive\_iterator\_t@{nlohmann::detail::primitive\_iterator\_t}}
+\doxysubsubsection{\texorpdfstring{end\_value}{end\_value}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{a01213_af3db0d5c90de427d51645fe73a015553}{difference\+\_\+type}} nlohmann\+::detail\+::primitive\+\_\+iterator\+\_\+t\+::end\+\_\+value = \mbox{\hyperlink{a01213_afcb3bcf9da8aa95bd82067d1a67c2326}{begin\+\_\+value}} + 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/iterators/\mbox{\hyperlink{a00197}{primitive\+\_\+iterator.\+hpp}}\end{DoxyCompactItemize}

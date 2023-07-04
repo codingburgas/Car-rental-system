@@ -1,0 +1,102 @@
+\doxysection{Transformable.\+hpp}
+\hypertarget{a00437_source}{}\label{a00437_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Transformable.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/Graphics/Transformable.hpp}}
+\mbox{\hyperlink{a00437}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_TRANSFORMABLE\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_TRANSFORMABLE\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02206}{SFML/Graphics/Export.hpp}}>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00434}{SFML/Graphics/Transform.hpp}}>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02206_ab84c9f1035e146917de3bc0f98d72b35}{SFML\_GRAPHICS\_API}}\ \mbox{\hyperlink{a01793}{Transformable}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a01793_ae71710de0fef423121bab1c684954a2e}{Transformable}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{a01793_a43253abcb863195a673c2a347a7425cc}{\string~Transformable}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_af1a42209ce2b5d3f07b00f917bcd8015}{setPosition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ position);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a32baf2bf1a74699b03bf8c95030a38ed}{setRotation}}(\textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_aaec50b46b3f41b054763304d1e727471}{setScale}}(\textcolor{keywordtype}{float}\ factorX,\ \textcolor{keywordtype}{float}\ factorY);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a4c48a87f1626047e448f9c1a68ff167e}{setScale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ factors);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a56c67bd80aae8418d13fb96c034d25ec}{setOrigin}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_aa93a835ffbf3bee2098dfbbc695a7f05}{setOrigin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ origin);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ \mbox{\hyperlink{a01793_aea8b18e91a7bf7be589851bb9dd11241}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01793_aa00b5c5d4a06ac24a94dd72c56931d3a}{getRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ \mbox{\hyperlink{a01793_a7bcae0e924213f2e89edd8926f2453af}{getScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ \mbox{\hyperlink{a01793_a898b33eb6513161eb5c747a072364f15}{getOrigin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a86b461d6a941ad390c2ad8b6a4a20391}{move}}(\textcolor{keywordtype}{float}\ offsetX,\ \textcolor{keywordtype}{float}\ offsetY);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_ab9ca691522f6ddc1a40406849b87c469}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ offset);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}}(\textcolor{keywordtype}{float}\ angle);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_a3de0c6d8957f3cf318092f3f60656391}{scale}}(\textcolor{keywordtype}{float}\ factorX,\ \textcolor{keywordtype}{float}\ factorY);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{a01793_adecaa6c69b1f27dd5194b067d96bb694}{scale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{a01953}{Vector2f}}\&\ factor);}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01793_a3e1b4772a451ec66ac7e6af655726154}{getTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01789}{Transform}}\&\ \mbox{\hyperlink{a01793_ac5e75d724436069d2268791c6b486916}{getInverseTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00319\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a01953}{Vector2f}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01793_ad52a72593cb43a30a0cac33737a3a60c}{m\_origin}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{a01953}{Vector2f}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01793_a7081bf508f612cb63e9ce3b149758217}{m\_position}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01793_a206c593d926ee30a3c79520c2fae448b}{m\_rotation}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00322\ \ \ \ \ \mbox{\hyperlink{a01953}{Vector2f}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a01793_adf2c5e463aefb41c6d43a140c0ad151f}{m\_scale}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{a01789}{Transform}}\ \mbox{\hyperlink{a01793_ae7451ed9c4d1065fc050ce3e5ad7b34c}{m\_transform}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \mbox{\hyperlink{a01793_a394b22bfe9e9e44c672244e4da0b3c58}{m\_transformNeedUpdate}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{a01789}{Transform}}\ \mbox{\hyperlink{a01793_a6538c7efb49ad3a430d45c8a52368f36}{m\_inverseTransform}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \mbox{\hyperlink{a01793_afbb99d25b4ea10943e883d45a7594761}{m\_inverseTransformNeedUpdate}};\ }
+\DoxyCodeLine{00327\ \};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_TRANSFORMABLE\_HPP}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+
+\end{DoxyCode}

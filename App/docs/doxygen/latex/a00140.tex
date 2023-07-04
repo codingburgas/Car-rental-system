@@ -1,0 +1,443 @@
+\doxysection{D\+:/doxygen shitnqta/\+App/car\+System.DAL/include/curl/urlapi.h File Reference}
+\hypertarget{a00140}{}\label{a00140}\index{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/urlapi.h@{D:/doxygen shitnqta/App/carSystem.DAL/include/curl/urlapi.h}}
+{\ttfamily \#include \"{}curl.\+h\"{}}\newline
+Include dependency graph for urlapi.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00140_a0dd89b5b67069c83d58f2f0d02a2f0ad}{CURLU\+\_\+\+ALLOW\+\_\+\+SPACE}}~(1$<$$<$11)       /\texorpdfstring{$\ast$}{*} Allow spaces in the URL \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_ac306a2611e3457b672fdba50d4459d19}{CURLU\+\_\+\+APPENDQUERY}}~(1$<$$<$8)        /\texorpdfstring{$\ast$}{*} append a form style part \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a263ef15af3683aaf88338dcb6f0cda83}{CURLU\+\_\+\+DEFAULT\+\_\+\+PORT}}~(1$<$$<$0)       /\texorpdfstring{$\ast$}{*} return default port number \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_ae1ea321bd8b451610b3220c81dc4a701}{CURLU\+\_\+\+DEFAULT\+\_\+\+SCHEME}}
+\item 
+\#define \mbox{\hyperlink{a00140_ad93f0f34e1e550dc6c45ecddccfc0efb}{CURLU\+\_\+\+DISALLOW\+\_\+\+USER}}~(1$<$$<$5)      /\texorpdfstring{$\ast$}{*} no user+password allowed \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a1923d8f5dadb5924e5824c73282e6b64}{CURLU\+\_\+\+GUESS\+\_\+\+SCHEME}}~(1$<$$<$9)       /\texorpdfstring{$\ast$}{*} legacy curl-\/style guessing \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a5045fb6fea36bca72a2a1c7dea18b4b4}{CURLU\+\_\+\+NO\+\_\+\+AUTHORITY}}
+\item 
+\#define \mbox{\hyperlink{a00140_a7391c977f1051597540b2efc493faf74}{CURLU\+\_\+\+NO\+\_\+\+DEFAULT\+\_\+\+PORT}}
+\item 
+\#define \mbox{\hyperlink{a00140_a38354ba89f94ee9d65db974f5040f6db}{CURLU\+\_\+\+NON\+\_\+\+SUPPORT\+\_\+\+SCHEME}}~(1$<$$<$3) /\texorpdfstring{$\ast$}{*} allow non-\/supported scheme \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a36838c77a48b01b7b6bfd546c5aa55b5}{CURLU\+\_\+\+PATH\+\_\+\+AS\+\_\+\+IS}}~(1$<$$<$4)         /\texorpdfstring{$\ast$}{*} leave dot sequences \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a454384246f1932a3493fa5eb9f671ffc}{CURLU\+\_\+\+URLDECODE}}~(1$<$$<$6)          /\texorpdfstring{$\ast$}{*} URL decode on get \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{a00140_a9305c2e0493f32991a8981ba56f81ca2}{CURLU\+\_\+\+URLENCODE}}~(1$<$$<$7)          /\texorpdfstring{$\ast$}{*} URL encode on set \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Curl\+\_\+\+URL \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}} \{ \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6978036a5edd2be695e5ab72f86d983e}{CURLUE\+\_\+\+OK}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae8291f68426ea3dfbe38cd9dfd16ac14}{CURLUE\+\_\+\+BAD\+\_\+\+HANDLE}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea091341eba174530893461cbc196adbf9}{CURLUE\+\_\+\+BAD\+\_\+\+PARTPOINTER}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae32cb8539b7e8ec6fcfafcb7c3567638}{CURLUE\+\_\+\+MALFORMED\+\_\+\+INPUT}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea0ba90c652a34f6aa06c90cab4ea6dcb0}{CURLUE\+\_\+\+BAD\+\_\+\+PORT\+\_\+\+NUMBER}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3cd335f8655b5ae976a00795cdde5474}{CURLUE\+\_\+\+UNSUPPORTED\+\_\+\+SCHEME}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea061d471905cef7476aede5eb6afafb87}{CURLUE\+\_\+\+URLDECODE}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae947d8e39c047c7d45c735b736225e0b}{CURLUE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+MEMORY}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2e085bf461f244975782d033af83813}{CURLUE\+\_\+\+USER\+\_\+\+NOT\+\_\+\+ALLOWED}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf51060f7da011a1ef255ae71a8b16d19}{CURLUE\+\_\+\+UNKNOWN\+\_\+\+PART}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea61e604b67efc46cfc616571c17315cc0}{CURLUE\+\_\+\+NO\+\_\+\+SCHEME}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaac4dd71b6c5300cd470ad231634337b3}{CURLUE\+\_\+\+NO\+\_\+\+USER}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea094bcca2e67eb06c2a1386a43b4b8c7f}{CURLUE\+\_\+\+NO\+\_\+\+PASSWORD}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dead6544c3594d9fccf22317dc96b109c75}{CURLUE\+\_\+\+NO\+\_\+\+OPTIONS}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deae33b2ef7005707fe7c69f9ac1196233e}{CURLUE\+\_\+\+NO\+\_\+\+HOST}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaecd176f6842d34eb9b49ff0f7ab27129}{CURLUE\+\_\+\+NO\+\_\+\+PORT}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea97e5b574504124bb31e46bd6cb2dfbd6}{CURLUE\+\_\+\+NO\+\_\+\+QUERY}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea7c177b1f52f0b54102e1e1ed82bcf24e}{CURLUE\+\_\+\+NO\+\_\+\+FRAGMENT}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea48be9da4e87eaad2ce30be2236504331}{CURLUE\+\_\+\+NO\+\_\+\+ZONEID}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea90dcad88582c3682bb7cc63a3c043b6d}{CURLUE\+\_\+\+BAD\+\_\+\+FILE\+\_\+\+URL}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2b675d6639fea01ba998be2f37956b0}{CURLUE\+\_\+\+BAD\+\_\+\+FRAGMENT}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deafc06a12dc204cfa1e941402ed0fbdfc1}{CURLUE\+\_\+\+BAD\+\_\+\+HOSTNAME}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea12897c330005da0b76b6a667694db9dd}{CURLUE\+\_\+\+BAD\+\_\+\+IPV6}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea38ebdd66c97ee165ce264e128dae1bf3}{CURLUE\+\_\+\+BAD\+\_\+\+LOGIN}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf554fd97e913301ac052fb12684b2dee}{CURLUE\+\_\+\+BAD\+\_\+\+PASSWORD}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6920a3c8c16a247b54eb38d330e4ac8c}{CURLUE\+\_\+\+BAD\+\_\+\+PATH}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf2a5d7e1bb8488da41312de0bfe3c405}{CURLUE\+\_\+\+BAD\+\_\+\+QUERY}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea37dd5f3421a062bf2dc6507bc1e8bccd}{CURLUE\+\_\+\+BAD\+\_\+\+SCHEME}}
+, \newline
+\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea95b975c74629b9ae62820de01b22490b}{CURLUE\+\_\+\+BAD\+\_\+\+SLASHES}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea86405410a804d0ad4ead2368ac754c1f}{CURLUE\+\_\+\+BAD\+\_\+\+USER}}
+, \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3a5a66ce79df211fd430594760e3a9cd}{CURLUE\+\_\+\+LAST}}
+ \}
+\item 
+enum \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}} \{ \newline
+\mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba652d7cac677d1aca71efd0386e57f927}{CURLUPART\+\_\+\+URL}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba78d43413bf7e618d74014aea871032a1}{CURLUPART\+\_\+\+SCHEME}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba31b7e4d52954c2d447b851e4891cf7a0}{CURLUPART\+\_\+\+USER}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba236a55190e38fc4c46bfcff176207e72}{CURLUPART\+\_\+\+PASSWORD}}
+, \newline
+\mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba46b928429eaa2b25f385a437ba6f8146}{CURLUPART\+\_\+\+OPTIONS}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba347b25d9d344dbf29c5274bd184ac706}{CURLUPART\+\_\+\+HOST}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebabc452edee4006b5ff6a86d2a4d916dee}{CURLUPART\+\_\+\+PORT}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba55cc24daefc3debfca5396c267a5d04b}{CURLUPART\+\_\+\+PATH}}
+, \newline
+\mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebad44a6470deff9d6fc0b423aab47462e8}{CURLUPART\+\_\+\+QUERY}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab322766509b004b024796aa64977308b}{CURLUPART\+\_\+\+FRAGMENT}}
+, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab36449974c5d036fce6a92a73055f4c4}{CURLUPART\+\_\+\+ZONEID}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00140_a22fb38de1b8f65bd40f9b8d877d0930c}{curl\+\_\+url}} (void)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void \mbox{\hyperlink{a00140_a41c5e8b4caf610a0984ef4473ca4163e}{curl\+\_\+url\+\_\+cleanup}} (\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}handle)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00140_a5759ad7262d19c14728a8226317c6b92}{curl\+\_\+url\+\_\+dup}} (\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}in)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}} \mbox{\hyperlink{a00140_abfb2378e801e13033e70c3819d8afca1}{curl\+\_\+url\+\_\+get}} (\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}} what, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}part, unsigned int flags)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}} \mbox{\hyperlink{a00140_a1cb93c92958648f06fab038f397cfeae}{curl\+\_\+url\+\_\+set}} (\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}} what, const char \texorpdfstring{$\ast$}{*}part, unsigned int flags)
+\item 
+\mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00140_ac626e2d285a90685b9076453a14ad967}{curl\+\_\+url\+\_\+strerror}} (\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00140_a0dd89b5b67069c83d58f2f0d02a2f0ad}\label{a00140_a0dd89b5b67069c83d58f2f0d02a2f0ad} 
+\index{urlapi.h@{urlapi.h}!CURLU\_ALLOW\_SPACE@{CURLU\_ALLOW\_SPACE}}
+\index{CURLU\_ALLOW\_SPACE@{CURLU\_ALLOW\_SPACE}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_ALLOW\_SPACE}{CURLU\_ALLOW\_SPACE}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+ALLOW\+\_\+\+SPACE~(1$<$$<$11)       /\texorpdfstring{$\ast$}{*} Allow spaces in the URL \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_ac306a2611e3457b672fdba50d4459d19}\label{a00140_ac306a2611e3457b672fdba50d4459d19} 
+\index{urlapi.h@{urlapi.h}!CURLU\_APPENDQUERY@{CURLU\_APPENDQUERY}}
+\index{CURLU\_APPENDQUERY@{CURLU\_APPENDQUERY}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_APPENDQUERY}{CURLU\_APPENDQUERY}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+APPENDQUERY~(1$<$$<$8)        /\texorpdfstring{$\ast$}{*} append a form style part \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a263ef15af3683aaf88338dcb6f0cda83}\label{a00140_a263ef15af3683aaf88338dcb6f0cda83} 
+\index{urlapi.h@{urlapi.h}!CURLU\_DEFAULT\_PORT@{CURLU\_DEFAULT\_PORT}}
+\index{CURLU\_DEFAULT\_PORT@{CURLU\_DEFAULT\_PORT}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_DEFAULT\_PORT}{CURLU\_DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+DEFAULT\+\_\+\+PORT~(1$<$$<$0)       /\texorpdfstring{$\ast$}{*} return default port number \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_ae1ea321bd8b451610b3220c81dc4a701}\label{a00140_ae1ea321bd8b451610b3220c81dc4a701} 
+\index{urlapi.h@{urlapi.h}!CURLU\_DEFAULT\_SCHEME@{CURLU\_DEFAULT\_SCHEME}}
+\index{CURLU\_DEFAULT\_SCHEME@{CURLU\_DEFAULT\_SCHEME}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_DEFAULT\_SCHEME}{CURLU\_DEFAULT\_SCHEME}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+DEFAULT\+\_\+\+SCHEME}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)\ \ \ \ \ \textcolor{comment}{/*\ return\ default\ scheme\ if}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ missing\ */}}
+
+\end{DoxyCode}
+\Hypertarget{a00140_ad93f0f34e1e550dc6c45ecddccfc0efb}\label{a00140_ad93f0f34e1e550dc6c45ecddccfc0efb} 
+\index{urlapi.h@{urlapi.h}!CURLU\_DISALLOW\_USER@{CURLU\_DISALLOW\_USER}}
+\index{CURLU\_DISALLOW\_USER@{CURLU\_DISALLOW\_USER}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_DISALLOW\_USER}{CURLU\_DISALLOW\_USER}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+DISALLOW\+\_\+\+USER~(1$<$$<$5)      /\texorpdfstring{$\ast$}{*} no user+password allowed \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a1923d8f5dadb5924e5824c73282e6b64}\label{a00140_a1923d8f5dadb5924e5824c73282e6b64} 
+\index{urlapi.h@{urlapi.h}!CURLU\_GUESS\_SCHEME@{CURLU\_GUESS\_SCHEME}}
+\index{CURLU\_GUESS\_SCHEME@{CURLU\_GUESS\_SCHEME}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_GUESS\_SCHEME}{CURLU\_GUESS\_SCHEME}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+GUESS\+\_\+\+SCHEME~(1$<$$<$9)       /\texorpdfstring{$\ast$}{*} legacy curl-\/style guessing \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a5045fb6fea36bca72a2a1c7dea18b4b4}\label{a00140_a5045fb6fea36bca72a2a1c7dea18b4b4} 
+\index{urlapi.h@{urlapi.h}!CURLU\_NO\_AUTHORITY@{CURLU\_NO\_AUTHORITY}}
+\index{CURLU\_NO\_AUTHORITY@{CURLU\_NO\_AUTHORITY}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_NO\_AUTHORITY}{CURLU\_NO\_AUTHORITY}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+NO\+\_\+\+AUTHORITY}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<10)\ \ \ \ \ \ \textcolor{comment}{/*\ Allow\ empty\ authority\ when\ the}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scheme\ is\ unknown.\ */}}
+
+\end{DoxyCode}
+\Hypertarget{a00140_a7391c977f1051597540b2efc493faf74}\label{a00140_a7391c977f1051597540b2efc493faf74} 
+\index{urlapi.h@{urlapi.h}!CURLU\_NO\_DEFAULT\_PORT@{CURLU\_NO\_DEFAULT\_PORT}}
+\index{CURLU\_NO\_DEFAULT\_PORT@{CURLU\_NO\_DEFAULT\_PORT}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_NO\_DEFAULT\_PORT}{CURLU\_NO\_DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+NO\+\_\+\+DEFAULT\+\_\+\+PORT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)\ \ \ \ \textcolor{comment}{/*\ act\ as\ if\ no\ port\ number\ was\ set,}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ the\ port\ number\ matches\ the}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ default\ for\ the\ scheme\ */}}
+
+\end{DoxyCode}
+\Hypertarget{a00140_a38354ba89f94ee9d65db974f5040f6db}\label{a00140_a38354ba89f94ee9d65db974f5040f6db} 
+\index{urlapi.h@{urlapi.h}!CURLU\_NON\_SUPPORT\_SCHEME@{CURLU\_NON\_SUPPORT\_SCHEME}}
+\index{CURLU\_NON\_SUPPORT\_SCHEME@{CURLU\_NON\_SUPPORT\_SCHEME}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_NON\_SUPPORT\_SCHEME}{CURLU\_NON\_SUPPORT\_SCHEME}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+NON\+\_\+\+SUPPORT\+\_\+\+SCHEME~(1$<$$<$3) /\texorpdfstring{$\ast$}{*} allow non-\/supported scheme \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a36838c77a48b01b7b6bfd546c5aa55b5}\label{a00140_a36838c77a48b01b7b6bfd546c5aa55b5} 
+\index{urlapi.h@{urlapi.h}!CURLU\_PATH\_AS\_IS@{CURLU\_PATH\_AS\_IS}}
+\index{CURLU\_PATH\_AS\_IS@{CURLU\_PATH\_AS\_IS}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_PATH\_AS\_IS}{CURLU\_PATH\_AS\_IS}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+PATH\+\_\+\+AS\+\_\+\+IS~(1$<$$<$4)         /\texorpdfstring{$\ast$}{*} leave dot sequences \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a454384246f1932a3493fa5eb9f671ffc}\label{a00140_a454384246f1932a3493fa5eb9f671ffc} 
+\index{urlapi.h@{urlapi.h}!CURLU\_URLDECODE@{CURLU\_URLDECODE}}
+\index{CURLU\_URLDECODE@{CURLU\_URLDECODE}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_URLDECODE}{CURLU\_URLDECODE}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+URLDECODE~(1$<$$<$6)          /\texorpdfstring{$\ast$}{*} URL decode on get \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{a00140_a9305c2e0493f32991a8981ba56f81ca2}\label{a00140_a9305c2e0493f32991a8981ba56f81ca2} 
+\index{urlapi.h@{urlapi.h}!CURLU\_URLENCODE@{CURLU\_URLENCODE}}
+\index{CURLU\_URLENCODE@{CURLU\_URLENCODE}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU\_URLENCODE}{CURLU\_URLENCODE}}
+{\footnotesize\ttfamily \#define CURLU\+\_\+\+URLENCODE~(1$<$$<$7)          /\texorpdfstring{$\ast$}{*} URL encode on set \texorpdfstring{$\ast$}{*}/}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}\label{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee} 
+\index{urlapi.h@{urlapi.h}!CURLU@{CURLU}}
+\index{CURLU@{CURLU}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLU}{CURLU}}
+{\footnotesize\ttfamily typedef struct Curl\+\_\+\+URL \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1de}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1de} 
+\index{urlapi.h@{urlapi.h}!CURLUcode@{CURLUcode}}
+\index{CURLUcode@{CURLUcode}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLUcode}{CURLUcode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_OK@{CURLUE\_OK}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_OK@{CURLUE\_OK}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6978036a5edd2be695e5ab72f86d983e}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6978036a5edd2be695e5ab72f86d983e} 
+CURLUE\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_HANDLE@{CURLUE\_BAD\_HANDLE}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_HANDLE@{CURLUE\_BAD\_HANDLE}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deae8291f68426ea3dfbe38cd9dfd16ac14}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deae8291f68426ea3dfbe38cd9dfd16ac14} 
+CURLUE\+\_\+\+BAD\+\_\+\+HANDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_PARTPOINTER@{CURLUE\_BAD\_PARTPOINTER}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_PARTPOINTER@{CURLUE\_BAD\_PARTPOINTER}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea091341eba174530893461cbc196adbf9}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea091341eba174530893461cbc196adbf9} 
+CURLUE\+\_\+\+BAD\+\_\+\+PARTPOINTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_MALFORMED\_INPUT@{CURLUE\_MALFORMED\_INPUT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_MALFORMED\_INPUT@{CURLUE\_MALFORMED\_INPUT}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deae32cb8539b7e8ec6fcfafcb7c3567638}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deae32cb8539b7e8ec6fcfafcb7c3567638} 
+CURLUE\+\_\+\+MALFORMED\+\_\+\+INPUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_PORT\_NUMBER@{CURLUE\_BAD\_PORT\_NUMBER}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_PORT\_NUMBER@{CURLUE\_BAD\_PORT\_NUMBER}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea0ba90c652a34f6aa06c90cab4ea6dcb0}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea0ba90c652a34f6aa06c90cab4ea6dcb0} 
+CURLUE\+\_\+\+BAD\+\_\+\+PORT\+\_\+\+NUMBER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_UNSUPPORTED\_SCHEME@{CURLUE\_UNSUPPORTED\_SCHEME}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_UNSUPPORTED\_SCHEME@{CURLUE\_UNSUPPORTED\_SCHEME}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3cd335f8655b5ae976a00795cdde5474}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3cd335f8655b5ae976a00795cdde5474} 
+CURLUE\+\_\+\+UNSUPPORTED\+\_\+\+SCHEME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_URLDECODE@{CURLUE\_URLDECODE}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_URLDECODE@{CURLUE\_URLDECODE}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea061d471905cef7476aede5eb6afafb87}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea061d471905cef7476aede5eb6afafb87} 
+CURLUE\+\_\+\+URLDECODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_OUT\_OF\_MEMORY@{CURLUE\_OUT\_OF\_MEMORY}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_OUT\_OF\_MEMORY@{CURLUE\_OUT\_OF\_MEMORY}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deae947d8e39c047c7d45c735b736225e0b}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deae947d8e39c047c7d45c735b736225e0b} 
+CURLUE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+MEMORY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_USER\_NOT\_ALLOWED@{CURLUE\_USER\_NOT\_ALLOWED}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_USER\_NOT\_ALLOWED@{CURLUE\_USER\_NOT\_ALLOWED}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2e085bf461f244975782d033af83813}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2e085bf461f244975782d033af83813} 
+CURLUE\+\_\+\+USER\+\_\+\+NOT\+\_\+\+ALLOWED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_UNKNOWN\_PART@{CURLUE\_UNKNOWN\_PART}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_UNKNOWN\_PART@{CURLUE\_UNKNOWN\_PART}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf51060f7da011a1ef255ae71a8b16d19}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf51060f7da011a1ef255ae71a8b16d19} 
+CURLUE\+\_\+\+UNKNOWN\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_SCHEME@{CURLUE\_NO\_SCHEME}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_SCHEME@{CURLUE\_NO\_SCHEME}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea61e604b67efc46cfc616571c17315cc0}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea61e604b67efc46cfc616571c17315cc0} 
+CURLUE\+\_\+\+NO\+\_\+\+SCHEME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_USER@{CURLUE\_NO\_USER}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_USER@{CURLUE\_NO\_USER}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deaac4dd71b6c5300cd470ad231634337b3}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deaac4dd71b6c5300cd470ad231634337b3} 
+CURLUE\+\_\+\+NO\+\_\+\+USER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_PASSWORD@{CURLUE\_NO\_PASSWORD}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_PASSWORD@{CURLUE\_NO\_PASSWORD}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea094bcca2e67eb06c2a1386a43b4b8c7f}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea094bcca2e67eb06c2a1386a43b4b8c7f} 
+CURLUE\+\_\+\+NO\+\_\+\+PASSWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_OPTIONS@{CURLUE\_NO\_OPTIONS}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_OPTIONS@{CURLUE\_NO\_OPTIONS}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dead6544c3594d9fccf22317dc96b109c75}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dead6544c3594d9fccf22317dc96b109c75} 
+CURLUE\+\_\+\+NO\+\_\+\+OPTIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_HOST@{CURLUE\_NO\_HOST}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_HOST@{CURLUE\_NO\_HOST}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deae33b2ef7005707fe7c69f9ac1196233e}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deae33b2ef7005707fe7c69f9ac1196233e} 
+CURLUE\+\_\+\+NO\+\_\+\+HOST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_PORT@{CURLUE\_NO\_PORT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_PORT@{CURLUE\_NO\_PORT}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deaecd176f6842d34eb9b49ff0f7ab27129}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deaecd176f6842d34eb9b49ff0f7ab27129} 
+CURLUE\+\_\+\+NO\+\_\+\+PORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_QUERY@{CURLUE\_NO\_QUERY}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_QUERY@{CURLUE\_NO\_QUERY}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea97e5b574504124bb31e46bd6cb2dfbd6}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea97e5b574504124bb31e46bd6cb2dfbd6} 
+CURLUE\+\_\+\+NO\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_FRAGMENT@{CURLUE\_NO\_FRAGMENT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_FRAGMENT@{CURLUE\_NO\_FRAGMENT}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea7c177b1f52f0b54102e1e1ed82bcf24e}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea7c177b1f52f0b54102e1e1ed82bcf24e} 
+CURLUE\+\_\+\+NO\+\_\+\+FRAGMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_NO\_ZONEID@{CURLUE\_NO\_ZONEID}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_NO\_ZONEID@{CURLUE\_NO\_ZONEID}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea48be9da4e87eaad2ce30be2236504331}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea48be9da4e87eaad2ce30be2236504331} 
+CURLUE\+\_\+\+NO\+\_\+\+ZONEID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_FILE\_URL@{CURLUE\_BAD\_FILE\_URL}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_FILE\_URL@{CURLUE\_BAD\_FILE\_URL}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea90dcad88582c3682bb7cc63a3c043b6d}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea90dcad88582c3682bb7cc63a3c043b6d} 
+CURLUE\+\_\+\+BAD\+\_\+\+FILE\+\_\+\+URL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_FRAGMENT@{CURLUE\_BAD\_FRAGMENT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_FRAGMENT@{CURLUE\_BAD\_FRAGMENT}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2b675d6639fea01ba998be2f37956b0}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deac2b675d6639fea01ba998be2f37956b0} 
+CURLUE\+\_\+\+BAD\+\_\+\+FRAGMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_HOSTNAME@{CURLUE\_BAD\_HOSTNAME}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_HOSTNAME@{CURLUE\_BAD\_HOSTNAME}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deafc06a12dc204cfa1e941402ed0fbdfc1}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deafc06a12dc204cfa1e941402ed0fbdfc1} 
+CURLUE\+\_\+\+BAD\+\_\+\+HOSTNAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_IPV6@{CURLUE\_BAD\_IPV6}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_IPV6@{CURLUE\_BAD\_IPV6}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea12897c330005da0b76b6a667694db9dd}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea12897c330005da0b76b6a667694db9dd} 
+CURLUE\+\_\+\+BAD\+\_\+\+IPV6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_LOGIN@{CURLUE\_BAD\_LOGIN}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_LOGIN@{CURLUE\_BAD\_LOGIN}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea38ebdd66c97ee165ce264e128dae1bf3}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea38ebdd66c97ee165ce264e128dae1bf3} 
+CURLUE\+\_\+\+BAD\+\_\+\+LOGIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_PASSWORD@{CURLUE\_BAD\_PASSWORD}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_PASSWORD@{CURLUE\_BAD\_PASSWORD}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf554fd97e913301ac052fb12684b2dee}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf554fd97e913301ac052fb12684b2dee} 
+CURLUE\+\_\+\+BAD\+\_\+\+PASSWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_PATH@{CURLUE\_BAD\_PATH}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_PATH@{CURLUE\_BAD\_PATH}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6920a3c8c16a247b54eb38d330e4ac8c}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea6920a3c8c16a247b54eb38d330e4ac8c} 
+CURLUE\+\_\+\+BAD\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_QUERY@{CURLUE\_BAD\_QUERY}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_QUERY@{CURLUE\_BAD\_QUERY}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf2a5d7e1bb8488da41312de0bfe3c405}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1deaf2a5d7e1bb8488da41312de0bfe3c405} 
+CURLUE\+\_\+\+BAD\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_SCHEME@{CURLUE\_BAD\_SCHEME}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_SCHEME@{CURLUE\_BAD\_SCHEME}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea37dd5f3421a062bf2dc6507bc1e8bccd}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea37dd5f3421a062bf2dc6507bc1e8bccd} 
+CURLUE\+\_\+\+BAD\+\_\+\+SCHEME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_SLASHES@{CURLUE\_BAD\_SLASHES}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_SLASHES@{CURLUE\_BAD\_SLASHES}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea95b975c74629b9ae62820de01b22490b}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea95b975c74629b9ae62820de01b22490b} 
+CURLUE\+\_\+\+BAD\+\_\+\+SLASHES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_BAD\_USER@{CURLUE\_BAD\_USER}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_BAD\_USER@{CURLUE\_BAD\_USER}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea86405410a804d0ad4ead2368ac754c1f}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea86405410a804d0ad4ead2368ac754c1f} 
+CURLUE\+\_\+\+BAD\+\_\+\+USER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUE\_LAST@{CURLUE\_LAST}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUE\_LAST@{CURLUE\_LAST}}}\Hypertarget{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3a5a66ce79df211fd430594760e3a9cd}\label{a00140_a6a5b8d5c719d5d893048d2410d74d1dea3a5a66ce79df211fd430594760e3a9cd} 
+CURLUE\+\_\+\+LAST&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb} 
+\index{urlapi.h@{urlapi.h}!CURLUPart@{CURLUPart}}
+\index{CURLUPart@{CURLUPart}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{CURLUPart}{CURLUPart}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_URL@{CURLUPART\_URL}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_URL@{CURLUPART\_URL}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba652d7cac677d1aca71efd0386e57f927}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba652d7cac677d1aca71efd0386e57f927} 
+CURLUPART\+\_\+\+URL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_SCHEME@{CURLUPART\_SCHEME}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_SCHEME@{CURLUPART\_SCHEME}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba78d43413bf7e618d74014aea871032a1}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba78d43413bf7e618d74014aea871032a1} 
+CURLUPART\+\_\+\+SCHEME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_USER@{CURLUPART\_USER}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_USER@{CURLUPART\_USER}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba31b7e4d52954c2d447b851e4891cf7a0}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba31b7e4d52954c2d447b851e4891cf7a0} 
+CURLUPART\+\_\+\+USER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_PASSWORD@{CURLUPART\_PASSWORD}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_PASSWORD@{CURLUPART\_PASSWORD}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba236a55190e38fc4c46bfcff176207e72}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba236a55190e38fc4c46bfcff176207e72} 
+CURLUPART\+\_\+\+PASSWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_OPTIONS@{CURLUPART\_OPTIONS}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_OPTIONS@{CURLUPART\_OPTIONS}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba46b928429eaa2b25f385a437ba6f8146}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba46b928429eaa2b25f385a437ba6f8146} 
+CURLUPART\+\_\+\+OPTIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_HOST@{CURLUPART\_HOST}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_HOST@{CURLUPART\_HOST}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba347b25d9d344dbf29c5274bd184ac706}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba347b25d9d344dbf29c5274bd184ac706} 
+CURLUPART\+\_\+\+HOST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_PORT@{CURLUPART\_PORT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_PORT@{CURLUPART\_PORT}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebabc452edee4006b5ff6a86d2a4d916dee}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebabc452edee4006b5ff6a86d2a4d916dee} 
+CURLUPART\+\_\+\+PORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_PATH@{CURLUPART\_PATH}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_PATH@{CURLUPART\_PATH}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba55cc24daefc3debfca5396c267a5d04b}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2eba55cc24daefc3debfca5396c267a5d04b} 
+CURLUPART\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_QUERY@{CURLUPART\_QUERY}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_QUERY@{CURLUPART\_QUERY}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebad44a6470deff9d6fc0b423aab47462e8}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebad44a6470deff9d6fc0b423aab47462e8} 
+CURLUPART\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_FRAGMENT@{CURLUPART\_FRAGMENT}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_FRAGMENT@{CURLUPART\_FRAGMENT}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab322766509b004b024796aa64977308b}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab322766509b004b024796aa64977308b} 
+CURLUPART\+\_\+\+FRAGMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CURLUPART\_ZONEID@{CURLUPART\_ZONEID}!urlapi.h@{urlapi.h}}\index{urlapi.h@{urlapi.h}!CURLUPART\_ZONEID@{CURLUPART\_ZONEID}}}\Hypertarget{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab36449974c5d036fce6a92a73055f4c4}\label{a00140_aa61ba3e924e11f4a7f208aa051a5d2ebab36449974c5d036fce6a92a73055f4c4} 
+CURLUPART\+\_\+\+ZONEID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00140_a22fb38de1b8f65bd40f9b8d877d0930c}\label{a00140_a22fb38de1b8f65bd40f9b8d877d0930c} 
+\index{urlapi.h@{urlapi.h}!curl\_url@{curl\_url}}
+\index{curl\_url@{curl\_url}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url()}{curl\_url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*} curl\+\_\+url (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00140_a41c5e8b4caf610a0984ef4473ca4163e}\label{a00140_a41c5e8b4caf610a0984ef4473ca4163e} 
+\index{urlapi.h@{urlapi.h}!curl\_url\_cleanup@{curl\_url\_cleanup}}
+\index{curl\_url\_cleanup@{curl\_url\_cleanup}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url\_cleanup()}{curl\_url\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} void curl\+\_\+url\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}}]{handle }\end{DoxyParamCaption})}
+
+\Hypertarget{a00140_a5759ad7262d19c14728a8226317c6b92}\label{a00140_a5759ad7262d19c14728a8226317c6b92} 
+\index{urlapi.h@{urlapi.h}!curl\_url\_dup@{curl\_url\_dup}}
+\index{curl\_url\_dup@{curl\_url\_dup}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url\_dup()}{curl\_url\_dup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*} curl\+\_\+url\+\_\+dup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}}]{in }\end{DoxyParamCaption})}
+
+\Hypertarget{a00140_abfb2378e801e13033e70c3819d8afca1}\label{a00140_abfb2378e801e13033e70c3819d8afca1} 
+\index{urlapi.h@{urlapi.h}!curl\_url\_get@{curl\_url\_get}}
+\index{curl\_url\_get@{curl\_url\_get}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url\_get()}{curl\_url\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}} curl\+\_\+url\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}}]{handle,  }\item[{\mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}}}]{what,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{part,  }\item[{unsigned int}]{flags }\end{DoxyParamCaption})}
+
+\Hypertarget{a00140_a1cb93c92958648f06fab038f397cfeae}\label{a00140_a1cb93c92958648f06fab038f397cfeae} 
+\index{urlapi.h@{urlapi.h}!curl\_url\_set@{curl\_url\_set}}
+\index{curl\_url\_set@{curl\_url\_set}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url\_set()}{curl\_url\_set()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} \mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}} curl\+\_\+url\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00140_ae18ff120c834c77d2a448d1cbcd1b4ee}{CURLU}} \texorpdfstring{$\ast$}{*}}]{handle,  }\item[{\mbox{\hyperlink{a00140_aa61ba3e924e11f4a7f208aa051a5d2eb}{CURLUPart}}}]{what,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{part,  }\item[{unsigned int}]{flags }\end{DoxyParamCaption})}
+
+\Hypertarget{a00140_ac626e2d285a90685b9076453a14ad967}\label{a00140_ac626e2d285a90685b9076453a14ad967} 
+\index{urlapi.h@{urlapi.h}!curl\_url\_strerror@{curl\_url\_strerror}}
+\index{curl\_url\_strerror@{curl\_url\_strerror}!urlapi.h@{urlapi.h}}
+\doxysubsubsection{\texorpdfstring{curl\_url\_strerror()}{curl\_url\_strerror()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00113_a3adb15f21a822fbf7e879d3b78474490}{CURL\+\_\+\+EXTERN}} const char \texorpdfstring{$\ast$}{*} curl\+\_\+url\+\_\+strerror (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00140_a6a5b8d5c719d5d893048d2410d74d1de}{CURLUcode}}}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,75 @@
+\doxysection{nlohmann\+::detail\+::internal\+\_\+iterator\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{a01165}{}\label{a01165}\index{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}}
+
+
+an iterator value  
+
+
+
+
+{\ttfamily \#include $<$internal\+\_\+iterator.\+hpp$>$}
+
+
+
+Collaboration diagram for nlohmann\+::detail\+::internal\+\_\+iterator\texorpdfstring{$<$}{<} Basic\+Json\+Type \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+Basic\+Json\+Type\+::array\+\_\+t\+::iterator \mbox{\hyperlink{a01165_a8294a6e6f01b58e1cce8fbae66a50b5d}{array\+\_\+iterator}} \{\}
+\begin{DoxyCompactList}\small\item\em iterator for JSON arrays \end{DoxyCompactList}\item 
+Basic\+Json\+Type\+::object\+\_\+t\+::iterator \mbox{\hyperlink{a01165_a8cb0af3498061426c1d0a65ad6220408}{object\+\_\+iterator}} \{\}
+\begin{DoxyCompactList}\small\item\em iterator for JSON objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \mbox{\hyperlink{a01165_a2b3bb45f968210e42c282017eeeb63a8}{primitive\+\_\+iterator}} \{\}
+\begin{DoxyCompactList}\small\item\em generic iterator for all other types \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+struct nlohmann\+::detail\+::internal\+\_\+iterator$<$ Basic\+Json\+Type $>$}
+an iterator value 
+
+\begin{DoxyNote}{Note}
+This structure could easily be a union, but MSVC currently does not allow unions members with complex constructors, see \href{https://github.com/nlohmann/json/pull/105}{\texttt{ https\+://github.\+com/nlohmann/json/pull/105}}. 
+\end{DoxyNote}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a01165_a8294a6e6f01b58e1cce8fbae66a50b5d}\label{a01165_a8294a6e6f01b58e1cce8fbae66a50b5d} 
+\index{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}!array\_iterator@{array\_iterator}}
+\index{array\_iterator@{array\_iterator}!nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{array\_iterator}{array\_iterator}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+Basic\+Json\+Type\+::array\+\_\+t\+::iterator \mbox{\hyperlink{a01165}{nlohmann\+::detail\+::internal\+\_\+iterator}}$<$ Basic\+Json\+Type $>$\+::array\+\_\+iterator \{\}}
+
+
+
+iterator for JSON arrays 
+
+\Hypertarget{a01165_a8cb0af3498061426c1d0a65ad6220408}\label{a01165_a8cb0af3498061426c1d0a65ad6220408} 
+\index{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}!object\_iterator@{object\_iterator}}
+\index{object\_iterator@{object\_iterator}!nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{object\_iterator}{object\_iterator}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+Basic\+Json\+Type\+::object\+\_\+t\+::iterator \mbox{\hyperlink{a01165}{nlohmann\+::detail\+::internal\+\_\+iterator}}$<$ Basic\+Json\+Type $>$\+::object\+\_\+iterator \{\}}
+
+
+
+iterator for JSON objects 
+
+\Hypertarget{a01165_a2b3bb45f968210e42c282017eeeb63a8}\label{a01165_a2b3bb45f968210e42c282017eeeb63a8} 
+\index{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}!primitive\_iterator@{primitive\_iterator}}
+\index{primitive\_iterator@{primitive\_iterator}!nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$@{nlohmann::detail::internal\_iterator$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{primitive\_iterator}{primitive\_iterator}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{a01213}{primitive\+\_\+iterator\+\_\+t}} \mbox{\hyperlink{a01165}{nlohmann\+::detail\+::internal\+\_\+iterator}}$<$ Basic\+Json\+Type $>$\+::primitive\+\_\+iterator \{\}}
+
+
+
+generic iterator for all other types 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/nlohmann/detail/iterators/\mbox{\hyperlink{a00182}{internal\+\_\+iterator.\+hpp}}\end{DoxyCompactItemize}

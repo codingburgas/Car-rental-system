@@ -1,0 +1,127 @@
+\doxysection{Time.\+hpp}
+\hypertarget{a00545_source}{}\label{a00545_source}\index{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Time.hpp@{D:/doxygen shitnqta/App/carSystem.PL/SFML/include/SFML/System/Time.hpp}}
+\mbox{\hyperlink{a00545}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ SFML\ -\/\ Simple\ and\ Fast\ Multimedia\ Library}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2007-\/2018\ Laurent\ Gomila\ (laurent@sfml-\/dev.org)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ warranty.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it\ freely,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ you\ must\ not\ claim\ that\ you\ wrote\ the\ original\ software.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ \ If\ you\ use\ this\ software\ in\ a\ product,\ an\ acknowledgment}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ in\ the\ product\ documentation\ would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ and\ must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SFML\_TIME\_HPP}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SFML\_TIME\_HPP}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Headers}}
+\DoxyCodeLine{00031\ \textcolor{comment}{}\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a02212}{SFML/System/Export.hpp}}>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{a00669}{sf}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a01933_acba0cfbc49e3a09a22a8e079eb67a05c}{Time}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a01933_aa3df2f992d0b0041b4eb02258d43f0e3}{asSeconds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}\ \mbox{\hyperlink{a01933_aa16858ca030a07eb18958c321f256e5a}{asMilliseconds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ \mbox{\hyperlink{a01933_a000c2c64b74658ebd228b9294a464275}{asMicroseconds}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ Static\ member\ data}}
+\DoxyCodeLine{00085\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_a8db127b632fa8da21550e7282af11fa0}{Zero}};\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_abe757d058fd820b4c84232c1451c1efa}{seconds}}(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_a8dc1cb5f5fdde2ed2221d5af80cce853}{milliseconds}}(\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}});}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_ab4f5b719ece75ebd11593f935fbe3bcb}{microseconds}}(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{a01933_abb009ceaef7f7e234572128cc81ba9b0}{Time}}(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ microseconds);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Member\ data}}
+\DoxyCodeLine{00109\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ \mbox{\hyperlink{a01933_a9f00785b8e837350682e056ada05dd51}{m\_microseconds}};\ }
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00123\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_ae36b9ef700f0ed0516abf0194ceb546b}{seconds}}(\textcolor{keywordtype}{float}\ amount);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00136\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_ae379d420bc07170668f51522023957b9}{milliseconds}}(\mbox{\hyperlink{a00669_ac2dfd4952377a26dee4750e2e4a30a15}{Int32}}\ amount);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00149\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a01933_a951fd7219641f1e8191887f5dfe0dc31}{microseconds}}(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ amount);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00161\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ac911326160206c1038ceff6face28b89}{operator\ ==}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00173\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_ad68fc42c15ea415b59023a4a277f8946}{operator\ !=}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00185\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a62e90a478e790defc429ecd94ad67ab3}{operator\ <}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00197\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a7344fe65b9ee438bab496c9889a34202}{operator\ >}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00209\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_aeb411e03dd15af718fe95ed4626190ad}{operator\ <=}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00221\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{a00669_a457fb40b390861abae4234f6059d1c48}{operator\ >=}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00232\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a3885c2e66dc427cec7eaa178d59d8e8b}{operator\ -\/}}(\mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00244\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a72421239823c38a6b780c86a710ead07}{operator\ +}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00256\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_ad4b7a9d355d57790bfc7df0ade8bb628}{operator\ +=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00268\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a3885c2e66dc427cec7eaa178d59d8e8b}{operator\ -\/}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00280\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_a30a5a12ad03c9a3a982a0a313bf84e6f}{operator\ -\/=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00292\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \textcolor{keywordtype}{float}\ right);}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00304\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ right);}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00316\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\textcolor{keywordtype}{float}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00328\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a5f48ca928995b41c89f155afe8d16b02}{operator\ *}}(\mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00340\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_abea24cb28c0d6e2957e259ba4e65d70e}{operator\ *=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \textcolor{keywordtype}{float}\ right);}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00352\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_abea24cb28c0d6e2957e259ba4e65d70e}{operator\ *=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ right);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00364\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a7409dd89cb3aad6c3bc6622311107311}{operator\ /}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \textcolor{keywordtype}{float}\ right);}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00376\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ \mbox{\hyperlink{a00557_a7409dd89cb3aad6c3bc6622311107311}{operator\ /}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ right);}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00388\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_ac4d293c9dc7954ccfd5e373972f38b03}{operator\ /=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \textcolor{keywordtype}{float}\ right);}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00400\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ \mbox{\hyperlink{a00557_ac4d293c9dc7954ccfd5e373972f38b03}{operator\ /=}}(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \mbox{\hyperlink{a00669_a2840579fed3494d9f330baf7a5a19903}{Int64}}\ right);}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00412\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{a00557_a7409dd89cb3aad6c3bc6622311107311}{operator\ /}}(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00424\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\ operator\ \%(\mbox{\hyperlink{a01933}{Time}}\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00436\ \mbox{\hyperlink{a02212_a6476c9e422606477a4c23d92b1d79a1f}{SFML\_SYSTEM\_API}}\ \mbox{\hyperlink{a01933}{Time}}\&\ operator\ \%=(\mbox{\hyperlink{a01933}{Time}}\&\ left,\ \mbox{\hyperlink{a01933}{Time}}\ right);}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \}\ \textcolor{comment}{//\ namespace\ sf}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SFML\_TIME\_HPP}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ }
+
+\end{DoxyCode}

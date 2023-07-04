@@ -1,0 +1,209 @@
+\doxysection{cpr\+::Response Class Reference}
+\hypertarget{a00821}{}\label{a00821}\index{cpr::Response@{cpr::Response}}
+
+
+{\ttfamily \#include $<$response.\+h$>$}
+
+
+
+Collaboration diagram for cpr\+::Response\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{a00821_ac134eded6998658d90abbdc79d6e19f4}{Get\+Cert\+Info}} ()
+\item 
+\mbox{\hyperlink{a00821}{Response}} \& \mbox{\hyperlink{a00821_a4806b984c5ac72ad06842d6e03697507}{operator=}} (const \mbox{\hyperlink{a00821}{Response}} \&other)=default
+\item 
+\mbox{\hyperlink{a00821}{Response}} \& \mbox{\hyperlink{a00821_a025eb3e75219b5a52d65f7bfad08d322}{operator=}} (\mbox{\hyperlink{a00821}{Response}} \&\&old) noexcept=default
+\item 
+\mbox{\hyperlink{a00821_ac5bfce635fe31e3a05a8a6c8efc40331}{Response}} ()=default
+\item 
+\mbox{\hyperlink{a00821_ab1bdbe42397cfe372731a40cf7fe5841}{Response}} (const \mbox{\hyperlink{a00821}{Response}} \&other)=default
+\item 
+\mbox{\hyperlink{a00821_a1774691268a92c7cb9703ec6998dd80a}{Response}} (\mbox{\hyperlink{a00821}{Response}} \&\&old) noexcept=default
+\item 
+\mbox{\hyperlink{a00821_adbf16f551133570e1277b7e910cb5cdf}{Response}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a00749}{Curl\+Holder}} $>$ curl, std\+::string \&\&p\+\_\+text, std\+::string \&\&p\+\_\+header\+\_\+string, \mbox{\hyperlink{a00721}{Cookies}} \&\&p\+\_\+cookies, \mbox{\hyperlink{a00757}{Error}} \&\&p\+\_\+error)
+\item 
+\mbox{\hyperlink{a00821_aac6ba8f1d0c459c8526fe9f31f0ad985}{\texorpdfstring{$\sim$}{\string~}\+Response}} () noexcept=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00721}{Cookies}} \mbox{\hyperlink{a00821_ac30075e69a58ab37307108c74b2fbdd6}{cookies}} \{\}
+\item 
+\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} \mbox{\hyperlink{a00821_aeb011f2f2d95fe4fe9b2e03a9fe844d9}{downloaded\+\_\+bytes}} \{\}
+\item 
+double \mbox{\hyperlink{a00821_a4c2d12b598f137f0957dd624295e308e}{elapsed}} \{\}
+\item 
+\mbox{\hyperlink{a00757}{Error}} \mbox{\hyperlink{a00821_a587d8f63b339d0d6bfad56b89ab4f674}{error}} \{\}
+\item 
+\mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} \mbox{\hyperlink{a00821_a0c405d612fa08b13455b6364fb685331}{header}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{a00821_a8b2417c68c6babbaf308bf295538bf44}{raw\+\_\+header}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{a00821_a117698a9c8260200e46ea745eea6d1b5}{reason}} \{\}
+\item 
+long \mbox{\hyperlink{a00821_aaa2b82ce61174bb4d00e8fe1b64f12cb}{redirect\+\_\+count}} \{\}
+\item 
+long \mbox{\hyperlink{a00821_a3de04c80a4b5f96d272e6517d9a399b9}{status\+\_\+code}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{a00821_a060f40cbb044505566171eb66c0eb714}{status\+\_\+line}} \{\}
+\item 
+std\+::string \mbox{\hyperlink{a00821_a35ae7e576f1d94d1108c73dd324aafe8}{text}} \{\}
+\item 
+\mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} \mbox{\hyperlink{a00821_a3e075f268f6f830c67d77fe9a25d8269}{uploaded\+\_\+bytes}} \{\}
+\item 
+\mbox{\hyperlink{a00729}{Url}} \mbox{\hyperlink{a00821_a1479c2995de84e3bd52c267583a969ed}{url}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a00749}{Curl\+Holder}} $>$ \mbox{\hyperlink{a00821_a8dfafdf01f188b0cfb8052622d027397}{curl\+\_\+}} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{a00821_ac5bfce635fe31e3a05a8a6c8efc40331}\label{a00821_ac5bfce635fe31e3a05a8a6c8efc40331} 
+\index{cpr::Response@{cpr::Response}!Response@{Response}}
+\index{Response@{Response}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily cpr\+::\+Response\+::\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00821_adbf16f551133570e1277b7e910cb5cdf}\label{a00821_adbf16f551133570e1277b7e910cb5cdf} 
+\index{cpr::Response@{cpr::Response}!Response@{Response}}
+\index{Response@{Response}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily cpr\+::\+Response\+::\+Response (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{a00749}{Curl\+Holder}} $>$}]{curl,  }\item[{std\+::string \&\&}]{p\+\_\+text,  }\item[{std\+::string \&\&}]{p\+\_\+header\+\_\+string,  }\item[{\mbox{\hyperlink{a00721}{Cookies}} \&\&}]{p\+\_\+cookies,  }\item[{\mbox{\hyperlink{a00757}{Error}} \&\&}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+\Hypertarget{a00821_ab1bdbe42397cfe372731a40cf7fe5841}\label{a00821_ab1bdbe42397cfe372731a40cf7fe5841} 
+\index{cpr::Response@{cpr::Response}!Response@{Response}}
+\index{Response@{Response}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily cpr\+::\+Response\+::\+Response (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00821}{Response}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00821_a1774691268a92c7cb9703ec6998dd80a}\label{a00821_a1774691268a92c7cb9703ec6998dd80a} 
+\index{cpr::Response@{cpr::Response}!Response@{Response}}
+\index{Response@{Response}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{Response()}{Response()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily cpr\+::\+Response\+::\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00821}{Response}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{a00821_aac6ba8f1d0c459c8526fe9f31f0ad985}\label{a00821_aac6ba8f1d0c459c8526fe9f31f0ad985} 
+\index{cpr::Response@{cpr::Response}!````~Response@{\texorpdfstring{$\sim$}{\string~}Response}}
+\index{````~Response@{\texorpdfstring{$\sim$}{\string~}Response}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Response()}{\string~Response()}}
+{\footnotesize\ttfamily cpr\+::\+Response\+::\texorpdfstring{$\sim$}{\string~}\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{a00821_ac134eded6998658d90abbdc79d6e19f4}\label{a00821_ac134eded6998658d90abbdc79d6e19f4} 
+\index{cpr::Response@{cpr::Response}!GetCertInfo@{GetCertInfo}}
+\index{GetCertInfo@{GetCertInfo}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{GetCertInfo()}{GetCertInfo()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ cpr\+::\+Response\+::\+Get\+Cert\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00821_a4806b984c5ac72ad06842d6e03697507}\label{a00821_a4806b984c5ac72ad06842d6e03697507} 
+\index{cpr::Response@{cpr::Response}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} \& cpr\+::\+Response\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00821}{Response}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{a00821_a025eb3e75219b5a52d65f7bfad08d322}\label{a00821_a025eb3e75219b5a52d65f7bfad08d322} 
+\index{cpr::Response@{cpr::Response}!operator=@{operator=}}
+\index{operator=@{operator=}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00821}{Response}} \& cpr\+::\+Response\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00821}{Response}} \&\&}]{old }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00821_ac30075e69a58ab37307108c74b2fbdd6}\label{a00821_ac30075e69a58ab37307108c74b2fbdd6} 
+\index{cpr::Response@{cpr::Response}!cookies@{cookies}}
+\index{cookies@{cookies}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{cookies}{cookies}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00721}{Cookies}} cpr\+::\+Response\+::cookies \{\}}
+
+\Hypertarget{a00821_a8dfafdf01f188b0cfb8052622d027397}\label{a00821_a8dfafdf01f188b0cfb8052622d027397} 
+\index{cpr::Response@{cpr::Response}!curl\_@{curl\_}}
+\index{curl\_@{curl\_}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{curl\_}{curl\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{a00749}{Curl\+Holder}}$>$ cpr\+::\+Response\+::curl\+\_\+ \{nullptr\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{a00821_aeb011f2f2d95fe4fe9b2e03a9fe844d9}\label{a00821_aeb011f2f2d95fe4fe9b2e03a9fe844d9} 
+\index{cpr::Response@{cpr::Response}!downloaded\_bytes@{downloaded\_bytes}}
+\index{downloaded\_bytes@{downloaded\_bytes}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{downloaded\_bytes}{downloaded\_bytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} cpr\+::\+Response\+::downloaded\+\_\+bytes \{\}}
+
+\Hypertarget{a00821_a4c2d12b598f137f0957dd624295e308e}\label{a00821_a4c2d12b598f137f0957dd624295e308e} 
+\index{cpr::Response@{cpr::Response}!elapsed@{elapsed}}
+\index{elapsed@{elapsed}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{elapsed}{elapsed}}
+{\footnotesize\ttfamily double cpr\+::\+Response\+::elapsed \{\}}
+
+\Hypertarget{a00821_a587d8f63b339d0d6bfad56b89ab4f674}\label{a00821_a587d8f63b339d0d6bfad56b89ab4f674} 
+\index{cpr::Response@{cpr::Response}!error@{error}}
+\index{error@{error}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00757}{Error}} cpr\+::\+Response\+::error \{\}}
+
+\Hypertarget{a00821_a0c405d612fa08b13455b6364fb685331}\label{a00821_a0c405d612fa08b13455b6364fb685331} 
+\index{cpr::Response@{cpr::Response}!header@{header}}
+\index{header@{header}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a3302e4bcc4cd4fba6cf094dae553594f}{Header}} cpr\+::\+Response\+::header \{\}}
+
+\Hypertarget{a00821_a8b2417c68c6babbaf308bf295538bf44}\label{a00821_a8b2417c68c6babbaf308bf295538bf44} 
+\index{cpr::Response@{cpr::Response}!raw\_header@{raw\_header}}
+\index{raw\_header@{raw\_header}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{raw\_header}{raw\_header}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Response\+::raw\+\_\+header \{\}}
+
+\Hypertarget{a00821_a117698a9c8260200e46ea745eea6d1b5}\label{a00821_a117698a9c8260200e46ea745eea6d1b5} 
+\index{cpr::Response@{cpr::Response}!reason@{reason}}
+\index{reason@{reason}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{reason}{reason}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Response\+::reason \{\}}
+
+\Hypertarget{a00821_aaa2b82ce61174bb4d00e8fe1b64f12cb}\label{a00821_aaa2b82ce61174bb4d00e8fe1b64f12cb} 
+\index{cpr::Response@{cpr::Response}!redirect\_count@{redirect\_count}}
+\index{redirect\_count@{redirect\_count}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{redirect\_count}{redirect\_count}}
+{\footnotesize\ttfamily long cpr\+::\+Response\+::redirect\+\_\+count \{\}}
+
+\Hypertarget{a00821_a3de04c80a4b5f96d272e6517d9a399b9}\label{a00821_a3de04c80a4b5f96d272e6517d9a399b9} 
+\index{cpr::Response@{cpr::Response}!status\_code@{status\_code}}
+\index{status\_code@{status\_code}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{status\_code}{status\_code}}
+{\footnotesize\ttfamily long cpr\+::\+Response\+::status\+\_\+code \{\}}
+
+\Hypertarget{a00821_a060f40cbb044505566171eb66c0eb714}\label{a00821_a060f40cbb044505566171eb66c0eb714} 
+\index{cpr::Response@{cpr::Response}!status\_line@{status\_line}}
+\index{status\_line@{status\_line}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{status\_line}{status\_line}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Response\+::status\+\_\+line \{\}}
+
+\Hypertarget{a00821_a35ae7e576f1d94d1108c73dd324aafe8}\label{a00821_a35ae7e576f1d94d1108c73dd324aafe8} 
+\index{cpr::Response@{cpr::Response}!text@{text}}
+\index{text@{text}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily std\+::string cpr\+::\+Response\+::text \{\}}
+
+\Hypertarget{a00821_a3e075f268f6f830c67d77fe9a25d8269}\label{a00821_a3e075f268f6f830c67d77fe9a25d8269} 
+\index{cpr::Response@{cpr::Response}!uploaded\_bytes@{uploaded\_bytes}}
+\index{uploaded\_bytes@{uploaded\_bytes}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{uploaded\_bytes}{uploaded\_bytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00656_a2c8e66b193e30723e356ca8319e0b478}{cpr\+\_\+off\+\_\+t}} cpr\+::\+Response\+::uploaded\+\_\+bytes \{\}}
+
+\Hypertarget{a00821_a1479c2995de84e3bd52c267583a969ed}\label{a00821_a1479c2995de84e3bd52c267583a969ed} 
+\index{cpr::Response@{cpr::Response}!url@{url}}
+\index{url@{url}!cpr::Response@{cpr::Response}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00729}{Url}} cpr\+::\+Response\+::url \{\}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/doxygen shitnqta/\+App/car\+System.\+DAL/include/cpr/\mbox{\hyperlink{a00086}{response.\+h}}\end{DoxyCompactItemize}
