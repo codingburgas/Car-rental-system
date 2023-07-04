@@ -48,7 +48,7 @@
 You can download our project by using the green "Code" button.
 
 Or by pasting the following code in your CMD:
-git clone https://github.com/SYSolakov20/onsens.git
+git clone https://github.com/codingburgas/2223-otj-10-project-the-car-rental-system-DNDonchev20.git
 ```
 ## 🔑 Application Access
 
