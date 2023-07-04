@@ -42,7 +42,7 @@
     <a href="https://www.testcaselab.com/"><img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_d64820c5928a1ce8f91d728566c58d72/testcaselab.jpg" alt="Test Case Lab" width=48px /></a>
     <a href="https://www.figma.com/"><img src="https://img.icons8.com/color/48/null/blender-3d.png"/></a>
   </p>   
-## 🔧 Installation
+🔧 Installation
 
 ```
 You can download our project by using the green "Code" button.
