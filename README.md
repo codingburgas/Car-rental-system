@@ -1,6 +1,3 @@
-Shoutout za ivailo, soner, janet I
-vili
-<br>
 <h1 align="center">Car Rental project</h1>
 <br>
 
